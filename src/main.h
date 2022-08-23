@@ -1,12 +1,11 @@
 ﻿/*******************************************************************************
- *
  * @file main.h
+ * @author your name (you@domain.com)
+ * @brief Reference headers your program requires here.
+ * @version 0.1
+ * @date 2022-08-23
  *
- * @author Nathan J. Hood (nathanjhood@googlemail.com)
- * @version 1.0.0.1
- * @date 2022-08-13
- *
- * @copyright Copyright (c) 2022 @StoneyDSP
+ * @copyright Copyright (c) 2022
  *
  *******************************************************************************
 */
@@ -19,13 +18,20 @@
 // Global app config header.
 #include "../cfg/CMakeProject1_Config.h"
 
-// Standard C++ Library includes go here.
+// Standard C++ Library.
 #include <assert.h>
 #include <iostream>
 #include <string.h>
 
-// TODO: Reference additional headers your program requires here.
+// Third-Party packages.
 #include <fmt/format.h>
 #include <cppunit/Asserter.h>
+
+/**
+ * @brief Declaration the entry point of the application.
+ *
+ * @return int
+ */
+int main();
 
 #endif // MAIN_H_INCLUDED
