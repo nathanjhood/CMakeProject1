@@ -49,7 +49,11 @@ Generic CMake Project template for a full CI pipeline, with in-built package dep
 # How to use it?
 Just <a href= "https://github.com/StoneyDSP/CMakeProject1.git">clone the repo</a>, generate the project build files, and run.
 
-## Further reading;
+# Further reading:
+
+Read the <a href= "https://stoneydsp.github.io/CMakeProject1/index.html">docs.</a>
+
+View the <a href= "https://github.com/StoneyDSP/CMakeProject1.git">source code.</a>
 
 ## Before you go...
 
