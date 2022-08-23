@@ -1,0 +1,92 @@
+\hypertarget{class_test_success_listener}{}\doxysection{Test\+Success\+Listener Class Reference}
+\label{class_test_success_listener}\index{TestSuccessListener@{TestSuccessListener}}
+
+
+\mbox{\hyperlink{class_test_listener}{Test\+Listener}} that checks if any test case failed.  
+
+
+
+
+{\ttfamily \#include $<$Test\+Success\+Listener.\+h$>$}
+
+Inheritance diagram for Test\+Success\+Listener\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_test_success_listener}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_success_listener_a88e82abf23a0563e345e0883d132f267}{Test\+Success\+Listener}} (\mbox{\hyperlink{class_synchronized_object_1_1_synchronization_object}{Synchronization\+Object}} $\ast$sync\+Object=0)
+\item 
+virtual \mbox{\hyperlink{class_test_success_listener_a0d51db5b1bfc10a479563244d6dcd98c}{$\sim$\+Test\+Success\+Listener}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_test_success_listener_a912bb5ea408b2be5b39cfb45e1bb402f}{add\+Failure}} (const \mbox{\hyperlink{class_test_failure}{Test\+Failure}} \&failure)
+\begin{DoxyCompactList}\small\item\em Called when a failure occurs while running a test. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_test_success_listener_a251a5d4379772e342c050ca15fc3bf6c}{was\+Successful}} () const
+\begin{DoxyCompactList}\small\item\em Returns whether the entire test was successful or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_test_listener}{Test\+Listener}} that checks if any test case failed. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_test_success_listener_a88e82abf23a0563e345e0883d132f267}\label{class_test_success_listener_a88e82abf23a0563e345e0883d132f267}} 
+\index{TestSuccessListener@{TestSuccessListener}!TestSuccessListener@{TestSuccessListener}}
+\index{TestSuccessListener@{TestSuccessListener}!TestSuccessListener@{TestSuccessListener}}
+\doxysubsubsection{\texorpdfstring{TestSuccessListener()}{TestSuccessListener()}}
+{\footnotesize\ttfamily Test\+Success\+Listener\+::\+Test\+Success\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_synchronized_object_1_1_synchronization_object}{Synchronization\+Object}} $\ast$}]{sync\+Object = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Constructs a \mbox{\hyperlink{class_test_success_listener}{Test\+Success\+Listener}} object. \mbox{\Hypertarget{class_test_success_listener_a0d51db5b1bfc10a479563244d6dcd98c}\label{class_test_success_listener_a0d51db5b1bfc10a479563244d6dcd98c}} 
+\index{TestSuccessListener@{TestSuccessListener}!````~TestSuccessListener@{$\sim$TestSuccessListener}}
+\index{````~TestSuccessListener@{$\sim$TestSuccessListener}!TestSuccessListener@{TestSuccessListener}}
+\doxysubsubsection{\texorpdfstring{$\sim$TestSuccessListener()}{~TestSuccessListener()}}
+{\footnotesize\ttfamily virtual Test\+Success\+Listener\+::$\sim$\+Test\+Success\+Listener (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_test_success_listener_a912bb5ea408b2be5b39cfb45e1bb402f}\label{class_test_success_listener_a912bb5ea408b2be5b39cfb45e1bb402f}} 
+\index{TestSuccessListener@{TestSuccessListener}!addFailure@{addFailure}}
+\index{addFailure@{addFailure}!TestSuccessListener@{TestSuccessListener}}
+\doxysubsubsection{\texorpdfstring{addFailure()}{addFailure()}}
+{\footnotesize\ttfamily void Test\+Success\+Listener\+::add\+Failure (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_test_failure}{Test\+Failure}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Called when a failure occurs while running a test. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_test_failure}{Test\+Failure}}. 
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+{\itshape failure} is a temporary object that is destroyed after the method call. Use Test\+Failure\+::clone() to create a duplicate. 
+\end{DoxyWarning}
+
+
+Reimplemented from \mbox{\hyperlink{class_test_listener_a103216a5814c907f7b752b969477e765}{Test\+Listener}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_text_test_result_a05d3b0e8e51b3430092166bbc3d17708}{Text\+Test\+Result}}, and \mbox{\hyperlink{class_text_test_result_aa423474527cbc89141763ea41336a188}{Text\+Test\+Result}}.
+
+\mbox{\Hypertarget{class_test_success_listener_a251a5d4379772e342c050ca15fc3bf6c}\label{class_test_success_listener_a251a5d4379772e342c050ca15fc3bf6c}} 
+\index{TestSuccessListener@{TestSuccessListener}!wasSuccessful@{wasSuccessful}}
+\index{wasSuccessful@{wasSuccessful}!TestSuccessListener@{TestSuccessListener}}
+\doxysubsubsection{\texorpdfstring{wasSuccessful()}{wasSuccessful()}}
+{\footnotesize\ttfamily virtual bool Test\+Success\+Listener\+::was\+Successful (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns whether the entire test was successful or not. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/Test\+Success\+Listener.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,144 @@
+\hypertarget{class_additional_message}{}\doxysection{Additional\+Message Class Reference}
+\label{class_additional_message}\index{AdditionalMessage@{AdditionalMessage}}
+
+
+An additional \mbox{\hyperlink{class_message}{Message}} for assertions.  
+
+
+
+
+{\ttfamily \#include $<$Additional\+Message.\+h$>$}
+
+Inheritance diagram for Additional\+Message\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_additional_message}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_additional_message_a888715179848c5e5c385789b962a3cfb}{Additional\+Message}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty \mbox{\hyperlink{class_message}{Message}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_additional_message_a990455bbfe260bc04f99e5acc58d1c06}{Additional\+Message}} (const std\+::string \&detail1)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{class_message}{Message}} with the specified detail string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_additional_message_a6486540f9b5d1957230e9e1f969adc9d}{Additional\+Message}} (const char $\ast$detail1)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{class_message}{Message}} with the specified detail string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_additional_message_a75735b6fd65686f31349d01c97c73bc7}{Additional\+Message}} (const \mbox{\hyperlink{class_message}{Message}} \&other)
+\begin{DoxyCompactList}\small\item\em Constructs a copy of the specified message. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_additional_message}{Additional\+Message}} \& \mbox{\hyperlink{class_additional_message_ae2ade7e5b91c72250892cceb276fefaf}{operator=}} (const \mbox{\hyperlink{class_message}{Message}} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An additional \mbox{\hyperlink{class_message}{Message}} for assertions. 
+
+Provides a implicit constructor that takes a single string. This allow this class to be used as the message arguments in macros.
+
+The constructed object is either a \mbox{\hyperlink{class_message}{Message}} with a single detail string if a string was passed to the macro, or a copy of the \mbox{\hyperlink{class_message}{Message}} passed to the macro.
+
+Here is an example of usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} checkStringEquals( \textcolor{keyword}{const} std::string \&expected,}
+\DoxyCodeLine{                       \textcolor{keyword}{const} std::string \&actual,}
+\DoxyCodeLine{                        \textcolor{keyword}{const} CppUnit::SourceLine \&sourceLine,}
+\DoxyCodeLine{                        \textcolor{keyword}{const} CppUnit::AdditionalMessage \&message );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define XTLUT\_ASSERT\_STRING\_EQUAL\_MESSAGE( expected, actual, message )  \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{  ::XtlUt::Impl::checkStringEquals( ::Xtl::toString(expected),        \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                                    ::Xtl::toString(actual),          \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                                    CPPUNIT\_SOURCELINE(),             \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                                    message )}}
+
+\end{DoxyCode}
+
+
+In the previous example, the user can specify a simple string for {\itshape message}, or a complex \mbox{\hyperlink{class_message}{Message}} object.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_message}{Message}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_additional_message_a888715179848c5e5c385789b962a3cfb}\label{class_additional_message_a888715179848c5e5c385789b962a3cfb}} 
+\index{AdditionalMessage@{AdditionalMessage}!AdditionalMessage@{AdditionalMessage}}
+\index{AdditionalMessage@{AdditionalMessage}!AdditionalMessage@{AdditionalMessage}}
+\doxysubsubsection{\texorpdfstring{AdditionalMessage()}{AdditionalMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Additional\+Message\+::\+Additional\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs an empty \mbox{\hyperlink{class_message}{Message}}. 
+
+\mbox{\Hypertarget{class_additional_message_a990455bbfe260bc04f99e5acc58d1c06}\label{class_additional_message_a990455bbfe260bc04f99e5acc58d1c06}} 
+\index{AdditionalMessage@{AdditionalMessage}!AdditionalMessage@{AdditionalMessage}}
+\index{AdditionalMessage@{AdditionalMessage}!AdditionalMessage@{AdditionalMessage}}
+\doxysubsubsection{\texorpdfstring{AdditionalMessage()}{AdditionalMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Additional\+Message\+::\+Additional\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{detail1 }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{class_message}{Message}} with the specified detail string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em detail1} & Detail string of the message. If empty, then it is not added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_additional_message_a6486540f9b5d1957230e9e1f969adc9d}\label{class_additional_message_a6486540f9b5d1957230e9e1f969adc9d}} 
+\index{AdditionalMessage@{AdditionalMessage}!AdditionalMessage@{AdditionalMessage}}
+\index{AdditionalMessage@{AdditionalMessage}!AdditionalMessage@{AdditionalMessage}}
+\doxysubsubsection{\texorpdfstring{AdditionalMessage()}{AdditionalMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Additional\+Message\+::\+Additional\+Message (\begin{DoxyParamCaption}\item[{const char $\ast$}]{detail1 }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{class_message}{Message}} with the specified detail string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em detail1} & Detail string of the message. If empty, then it is not added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_additional_message_a75735b6fd65686f31349d01c97c73bc7}\label{class_additional_message_a75735b6fd65686f31349d01c97c73bc7}} 
+\index{AdditionalMessage@{AdditionalMessage}!AdditionalMessage@{AdditionalMessage}}
+\index{AdditionalMessage@{AdditionalMessage}!AdditionalMessage@{AdditionalMessage}}
+\doxysubsubsection{\texorpdfstring{AdditionalMessage()}{AdditionalMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Additional\+Message\+::\+Additional\+Message (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_message}{Message}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Constructs a copy of the specified message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_message}{Message}} to copy. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_additional_message_ae2ade7e5b91c72250892cceb276fefaf}\label{class_additional_message_ae2ade7e5b91c72250892cceb276fefaf}} 
+\index{AdditionalMessage@{AdditionalMessage}!operator=@{operator=}}
+\index{operator=@{operator=}!AdditionalMessage@{AdditionalMessage}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_additional_message}{Additional\+Message}} \& Additional\+Message\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_message}{Message}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_message}{Message}} to copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference on this object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/Additional\+Message.\+h\end{DoxyCompactItemize}

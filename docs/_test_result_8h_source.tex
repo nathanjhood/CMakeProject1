@@ -1,0 +1,99 @@
+\hypertarget{_test_result_8h_source}{}\doxysection{Test\+Result.\+h}
+\label{_test_result_8h_source}\index{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/TestResult.h@{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/TestResult.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CPPUNIT\_TESTRESULT\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CPPUNIT\_TESTRESULT\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cppunit/Portability.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#if CPPUNIT\_NEED\_DLL\_DECL}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#pragma warning( push )}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#pragma warning( disable: 4251 )  }\textcolor{comment}{// X needs to have dll-\/interface to be used by clients of class Z}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <cppunit/SynchronizedObject.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <deque>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 CPPUNIT\_NS\_BEGIN}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_exception}{Exception}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }Functor;}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_protector}{Protector}};}
+\DoxyCodeLine{21 \textcolor{keyword}{class }ProtectorChain;}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{class_test}{Test}};}
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{class_test_failure}{TestFailure}};}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_test_listener}{TestListener}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{47 \textcolor{keyword}{class }CPPUNIT\_API \mbox{\hyperlink{class_test_result}{TestResult}} : \textcolor{keyword}{protected} \mbox{\hyperlink{class_synchronized_object}{SynchronizedObject}}}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{49 \textcolor{keyword}{public}:}
+\DoxyCodeLine{51   \mbox{\hyperlink{class_test_result_a51781d20e0edeceae06589f1d9c90b48}{TestResult}}( \mbox{\hyperlink{class_synchronized_object_1_1_synchronization_object}{SynchronizationObject}} *syncObject = 0 );}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{54   \textcolor{keyword}{virtual} \mbox{\hyperlink{class_test_result_a318d2696f70564678f866bad6d5510b6}{\string~TestResult}}();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} addListener( \mbox{\hyperlink{class_test_listener}{TestListener}} *listener );}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} removeListener( \mbox{\hyperlink{class_test_listener}{TestListener}} *listener );}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_result_a5122b5d4edddb4b2d4ea9c214eed8c3f}{reset}}();}
+\DoxyCodeLine{62   }
+\DoxyCodeLine{64   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_result_ada481ef1a01dfa7737a1bf019f352855}{stop}}();}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_test_result_a20067407262c5370ca895209d46d76c6}{shouldStop}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{70   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_result_a4acd959411284f57a26eefe4c79c30d3}{startTest}}( \mbox{\hyperlink{class_test}{Test}} *test );}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{76   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_result_a25b7f26ec9a52ea4e05b38a490d381c5}{addError}}( \mbox{\hyperlink{class_test}{Test}} *test, \mbox{\hyperlink{class_exception}{Exception}} *e );}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{81   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_result_a648e7986cd583f7687dfaa88b5b2c080}{addFailure}}( \mbox{\hyperlink{class_test}{Test}} *test, \mbox{\hyperlink{class_exception}{Exception}} *e );}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{84   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_result_abad5c059d9f01f251057c6065a5c35b3}{endTest}}( \mbox{\hyperlink{class_test}{Test}} *test );}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{87   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_result_a9e21095aa704141c285819b99785326f}{startSuite}}( \mbox{\hyperlink{class_test}{Test}} *test );}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{90   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_result_acacd853a4392a0473b3407051d79d471}{endSuite}}( \mbox{\hyperlink{class_test}{Test}} *test );}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{96   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_result_ae00af1cdee85b14923b80a01678478ee}{runTest}}( \mbox{\hyperlink{class_test}{Test}} *test );}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{113   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_test_result_a243b3097a3d9468abc61e7910bbaa8b7}{protect}}( \textcolor{keyword}{const} Functor \&functor,}
+\DoxyCodeLine{114                         \mbox{\hyperlink{class_test}{Test}} *test,}
+\DoxyCodeLine{115                         \textcolor{keyword}{const} std::string \&shortDescription = std::string(\textcolor{stringliteral}{"{}"{}}) );}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{118   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_result_a1a4fbbca38cb73e8e00905193b7593dc}{pushProtector}}( \mbox{\hyperlink{class_protector}{Protector}} *protector );}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{121   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_result_acfbbc6037e1af423f93cdb0360076524}{popProtector}}();}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{126   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_result_aa423474527cbc89141763ea41336a188}{addFailure}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_test_failure}{TestFailure}} \&failure );}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} startTestRun( \mbox{\hyperlink{class_test}{Test}} *test );}
+\DoxyCodeLine{129   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} endTestRun( \mbox{\hyperlink{class_test}{Test}} *test );}
+\DoxyCodeLine{130   }
+\DoxyCodeLine{131 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{132   \textcolor{keyword}{typedef} std::deque<TestListener *> TestListeners;}
+\DoxyCodeLine{133   TestListeners m\_listeners;}
+\DoxyCodeLine{134   ProtectorChain *m\_protectorChain;}
+\DoxyCodeLine{135   \textcolor{keywordtype}{bool} m\_stop;}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{keyword}{private}: }
+\DoxyCodeLine{138   \mbox{\hyperlink{class_test_result}{TestResult}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_test_result}{TestResult}} \&other );}
+\DoxyCodeLine{139   \mbox{\hyperlink{class_test_result}{TestResult}} \&\mbox{\hyperlink{class_synchronized_object_af555e5afee40975c212831d0e5aee070}{operator =}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_test_result}{TestResult}} \&other );}
+\DoxyCodeLine{140 \};}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 CPPUNIT\_NS\_END}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#if CPPUNIT\_NEED\_DLL\_DECL}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#pragma warning( pop )}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// CPPUNIT\_TESTRESULT\_H}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 }
+
+\end{DoxyCode}

@@ -1,0 +1,51 @@
+\hypertarget{class_test_plug_in_default_impl}{}\doxysection{Test\+Plug\+In\+Default\+Impl Class Reference}
+\label{class_test_plug_in_default_impl}\index{TestPlugInDefaultImpl@{TestPlugInDefaultImpl}}
+
+
+Default implementation of test plug-\/in interface.  
+
+
+
+
+{\ttfamily \#include $<$Test\+Plug\+In\+Default\+Impl.\+h$>$}
+
+Inheritance diagram for Test\+Plug\+In\+Default\+Impl\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_test_plug_in_default_impl}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_test_plug_in_default_impl_aa4fa891e799ff362dece734417afd93d}{remove\+Xml\+Outputter\+Hooks}} ()
+\begin{DoxyCompactList}\small\item\em Called when the \mbox{\hyperlink{class_xml_outputter}{Xml\+Outputter}} is destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Default implementation of test plug-\/in interface. 
+
+Override get\+Suite\+Name() to specify the suite name. Default is \char`\"{}\+All Tests\char`\"{}.
+
+Cpp\+Unit\+Test\+Plug\+In\+::get\+Test\+Suite() returns a suite that contains all the test registered to the default test factory registry ( \mbox{\hyperlink{class_test_factory_registry_ade673d8465371d581c7a704a7baa4620}{Test\+Factory\+Registry\+::get\+Registry()}} ). 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_test_plug_in_default_impl_aa4fa891e799ff362dece734417afd93d}\label{class_test_plug_in_default_impl_aa4fa891e799ff362dece734417afd93d}} 
+\index{TestPlugInDefaultImpl@{TestPlugInDefaultImpl}!removeXmlOutputterHooks@{removeXmlOutputterHooks}}
+\index{removeXmlOutputterHooks@{removeXmlOutputterHooks}!TestPlugInDefaultImpl@{TestPlugInDefaultImpl}}
+\doxysubsubsection{\texorpdfstring{removeXmlOutputterHooks()}{removeXmlOutputterHooks()}}
+{\footnotesize\ttfamily void Test\+Plug\+In\+Default\+Impl\+::remove\+Xml\+Outputter\+Hooks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Called when the \mbox{\hyperlink{class_xml_outputter}{Xml\+Outputter}} is destroyed. 
+
+Can be used to free some resources allocated by add\+Xml\+Outputter\+Hooks(). 
+
+Implements \mbox{\hyperlink{struct_cpp_unit_test_plug_in_a045727ad9658525838b0b9157065fbcd}{Cpp\+Unit\+Test\+Plug\+In}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/plugin/Test\+Plug\+In\+Default\+Impl.\+h\end{DoxyCompactItemize}

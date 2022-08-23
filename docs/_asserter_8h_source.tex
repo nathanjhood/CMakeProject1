@@ -1,0 +1,97 @@
+\hypertarget{_asserter_8h_source}{}\doxysection{Asserter.\+h}
+\label{_asserter_8h_source}\index{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/Asserter.h@{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/Asserter.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CPPUNIT\_ASSERTER\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CPPUNIT\_ASSERTER\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cppunit/AdditionalMessage.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <cppunit/SourceLine.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 CPPUNIT\_NS\_BEGIN}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_message}{Message}};}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{46 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_asserter}{Asserter}}}
+\DoxyCodeLine{47 \{}
+\DoxyCodeLine{50   [[noreturn]] \textcolor{keyword}{static} \textcolor{keywordtype}{void} CPPUNIT\_API \mbox{\hyperlink{struct_asserter_a5a67b6042625cc87d271a53ac555e437}{fail}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_message}{Message}} \&message, }
+\DoxyCodeLine{51                                 \textcolor{keyword}{const} \mbox{\hyperlink{class_source_line}{SourceLine}} \&sourceLine = \mbox{\hyperlink{class_source_line}{SourceLine}}() );}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{56   [[noreturn]] \textcolor{keyword}{static} \textcolor{keywordtype}{void} CPPUNIT\_API \mbox{\hyperlink{struct_asserter_a74825fc71909baa1286f9282ba5a2a54}{fail}}( std::string message, }
+\DoxyCodeLine{57                                 \textcolor{keyword}{const} \mbox{\hyperlink{class_source_line}{SourceLine}} \&sourceLine = \mbox{\hyperlink{class_source_line}{SourceLine}}() );}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{65   \textcolor{keyword}{static} \textcolor{keywordtype}{void} CPPUNIT\_API \mbox{\hyperlink{struct_asserter_a425da14df34fad7e23a35456fce0eb2b}{failIf}}( \textcolor{keywordtype}{bool} shouldFail, }
+\DoxyCodeLine{66                                   \textcolor{keyword}{const} \mbox{\hyperlink{class_message}{Message}} \&message, }
+\DoxyCodeLine{67                                   \textcolor{keyword}{const} \mbox{\hyperlink{class_source_line}{SourceLine}} \&sourceLine = \mbox{\hyperlink{class_source_line}{SourceLine}}() );}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{76   \textcolor{keyword}{static} \textcolor{keywordtype}{void} CPPUNIT\_API \mbox{\hyperlink{struct_asserter_a71a4667a9d3f5d483f1a82157f715824}{failIf}}( \textcolor{keywordtype}{bool} shouldFail, }
+\DoxyCodeLine{77                                   std::string message, }
+\DoxyCodeLine{78                                   \textcolor{keyword}{const} \mbox{\hyperlink{class_source_line}{SourceLine}} \&sourceLine = \mbox{\hyperlink{class_source_line}{SourceLine}}() );}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{90   \textcolor{keyword}{static} std::string CPPUNIT\_API \mbox{\hyperlink{struct_asserter_adcbee7c01d58bfaee72cc984627e6432}{makeExpected}}( \textcolor{keyword}{const} std::string \&expectedValue );}
+\DoxyCodeLine{100   \textcolor{keyword}{static} std::string CPPUNIT\_API \mbox{\hyperlink{struct_asserter_a9fe1976b56152e9ae20723ed1757606a}{makeExpectedEqual}}( \textcolor{keyword}{const} std::string \&expectedValue );}
+\DoxyCodeLine{107   \textcolor{keyword}{static} std::string CPPUNIT\_API \mbox{\hyperlink{struct_asserter_a0b24cf9414c75e755d37adf80c0776dc}{makeExpectedLess}}( \textcolor{keyword}{const} std::string \&expectedValue );}
+\DoxyCodeLine{114   \textcolor{keyword}{static} std::string CPPUNIT\_API \mbox{\hyperlink{struct_asserter_a9f02c1760167159c3ccd0156920164d4}{makeExpectedLessEqual}}( \textcolor{keyword}{const} std::string \&expectedValue );}
+\DoxyCodeLine{121   \textcolor{keyword}{static} std::string CPPUNIT\_API \mbox{\hyperlink{struct_asserter_abc8e14e7be489bcc08385a1b519dec6c}{makeExpectedGreater}}( \textcolor{keyword}{const} std::string \&expectedValue );}
+\DoxyCodeLine{128   \textcolor{keyword}{static} std::string CPPUNIT\_API \mbox{\hyperlink{struct_asserter_a77c73d79e4976cfe3b3638fd5d9736b0}{makeExpectedGreaterEqual}}( \textcolor{keyword}{const} std::string \&expectedValue );}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{139   \textcolor{keyword}{static} std::string CPPUNIT\_API \mbox{\hyperlink{struct_asserter_ae52920ca7ffd981df61d7a3cfd88793b}{makeActual}}( \textcolor{keyword}{const} std::string \&actualValue );}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{144   \textcolor{keyword}{static} \mbox{\hyperlink{class_message}{Message}} CPPUNIT\_API \mbox{\hyperlink{struct_asserter_adb8ac36c8f0d385430e5a087a66219db}{makeNotEqualMessage}}( \textcolor{keyword}{const} std::string \&expectedValue,}
+\DoxyCodeLine{145                                                   \textcolor{keyword}{const} std::string \&actualValue,}
+\DoxyCodeLine{146                                                   \textcolor{keyword}{const} \mbox{\hyperlink{class_additional_message}{AdditionalMessage}} \&additionalMessage = \mbox{\hyperlink{class_additional_message}{AdditionalMessage}}(),}
+\DoxyCodeLine{147                                                   \textcolor{keyword}{const} std::string \&shortDescription = \textcolor{stringliteral}{"{}equality assertion failed"{}});}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149   \textcolor{keyword}{static} \mbox{\hyperlink{class_message}{Message}} CPPUNIT\_API makeMessage( \textcolor{keyword}{const} std::string \&expectedValue,}
+\DoxyCodeLine{150                                                   \textcolor{keyword}{const} std::string \&actualValue,}
+\DoxyCodeLine{151                                                   \textcolor{keyword}{const} std::string \&shortDescription,}
+\DoxyCodeLine{152                                                   \textcolor{keyword}{const} \mbox{\hyperlink{class_additional_message}{AdditionalMessage}} \&additionalMessage = \mbox{\hyperlink{class_additional_message}{AdditionalMessage}}());}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{162   [[noreturn]] \textcolor{keyword}{static} \textcolor{keywordtype}{void} CPPUNIT\_API \mbox{\hyperlink{struct_asserter_ac6234767e7d986bace97dc44f8d80d6c}{failNotEqual}}( std::string expected, }
+\DoxyCodeLine{163                                         std::string actual, }
+\DoxyCodeLine{164                                         \textcolor{keyword}{const} \mbox{\hyperlink{class_source_line}{SourceLine}} \&sourceLine,}
+\DoxyCodeLine{165                                         \textcolor{keyword}{const} \mbox{\hyperlink{class_additional_message}{AdditionalMessage}} \&additionalMessage = \mbox{\hyperlink{class_additional_message}{AdditionalMessage}}(),}
+\DoxyCodeLine{166                                         std::string shortDescription = \textcolor{stringliteral}{"{}equality assertion failed"{}} );}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{176   \textcolor{keyword}{static} \textcolor{keywordtype}{void} CPPUNIT\_API \mbox{\hyperlink{struct_asserter_a526d3dfb925ded96ee572c9172e45719}{failNotLess}}( std::string expected, }
+\DoxyCodeLine{177                                         std::string actual, }
+\DoxyCodeLine{178                                         \textcolor{keyword}{const} \mbox{\hyperlink{class_source_line}{SourceLine}} \&sourceLine,}
+\DoxyCodeLine{179                                         \textcolor{keyword}{const} \mbox{\hyperlink{class_additional_message}{AdditionalMessage}} \&additionalMessage = \mbox{\hyperlink{class_additional_message}{AdditionalMessage}}(),}
+\DoxyCodeLine{180                                         std::string shortDescription = \textcolor{stringliteral}{"{}less assertion failed"{}} );}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{190   \textcolor{keyword}{static} \textcolor{keywordtype}{void} CPPUNIT\_API \mbox{\hyperlink{struct_asserter_af81d6b5ea7304353a0b4789dd21c2e5a}{failNotGreater}}( std::string expected, }
+\DoxyCodeLine{191                                         std::string actual, }
+\DoxyCodeLine{192                                         \textcolor{keyword}{const} \mbox{\hyperlink{class_source_line}{SourceLine}} \&sourceLine,}
+\DoxyCodeLine{193                                         \textcolor{keyword}{const} \mbox{\hyperlink{class_additional_message}{AdditionalMessage}} \&additionalMessage = \mbox{\hyperlink{class_additional_message}{AdditionalMessage}}(),}
+\DoxyCodeLine{194                                         std::string shortDescription = \textcolor{stringliteral}{"{}greater assertion failed"{}} );}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{204   \textcolor{keyword}{static} \textcolor{keywordtype}{void} CPPUNIT\_API \mbox{\hyperlink{struct_asserter_acaa889193acf3b6a396d7d637db406d9}{failNotLessEqual}}( std::string expected, }
+\DoxyCodeLine{205                                         std::string actual, }
+\DoxyCodeLine{206                                         \textcolor{keyword}{const} \mbox{\hyperlink{class_source_line}{SourceLine}} \&sourceLine,}
+\DoxyCodeLine{207                                         \textcolor{keyword}{const} \mbox{\hyperlink{class_additional_message}{AdditionalMessage}} \&additionalMessage = \mbox{\hyperlink{class_additional_message}{AdditionalMessage}}(),}
+\DoxyCodeLine{208                                         std::string shortDescription = \textcolor{stringliteral}{"{}less equal assertion failed"{}} );}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{218   \textcolor{keyword}{static} \textcolor{keywordtype}{void} CPPUNIT\_API \mbox{\hyperlink{struct_asserter_a87037d0c7e6df18a4043fb3f238f56ed}{failNotGreaterEqual}}( std::string expected, }
+\DoxyCodeLine{219                                         std::string actual, }
+\DoxyCodeLine{220                                         \textcolor{keyword}{const} \mbox{\hyperlink{class_source_line}{SourceLine}} \&sourceLine,}
+\DoxyCodeLine{221                                         \textcolor{keyword}{const} \mbox{\hyperlink{class_additional_message}{AdditionalMessage}} \&additionalMessage = \mbox{\hyperlink{class_additional_message}{AdditionalMessage}}(),}
+\DoxyCodeLine{222                                         std::string shortDescription = \textcolor{stringliteral}{"{}greater equal assertion failed"{}} );  }
+\DoxyCodeLine{233   \textcolor{keyword}{static} \textcolor{keywordtype}{void} CPPUNIT\_API \mbox{\hyperlink{struct_asserter_a3a805c9f8c641d65353bcff2da80624f}{failNotEqualIf}}( \textcolor{keywordtype}{bool} shouldFail,}
+\DoxyCodeLine{234                                           std::string expected, }
+\DoxyCodeLine{235                                           std::string actual, }
+\DoxyCodeLine{236                                           \textcolor{keyword}{const} \mbox{\hyperlink{class_source_line}{SourceLine}} \&sourceLine,}
+\DoxyCodeLine{237                                           \textcolor{keyword}{const} \mbox{\hyperlink{class_additional_message}{AdditionalMessage}} \&additionalMessage = \mbox{\hyperlink{class_additional_message}{AdditionalMessage}}(),}
+\DoxyCodeLine{238                                           std::string shortDescription = \textcolor{stringliteral}{"{}equality assertion failed"{}} );}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240 \};}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243 CPPUNIT\_NS\_END}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// CPPUNIT\_ASSERTER\_H}}
+
+\end{DoxyCode}

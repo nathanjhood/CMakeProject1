@@ -1,0 +1,271 @@
+\hypertarget{class_message}{}\doxysection{Message Class Reference}
+\label{class_message}\index{Message@{Message}}
+
+
+\mbox{\hyperlink{class_message}{Message}} associated to an \mbox{\hyperlink{class_exception}{Exception}}.
+
+A message is composed of two items\+:  
+
+
+
+
+{\ttfamily \#include $<$Message.\+h$>$}
+
+Inheritance diagram for Message\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_message}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \mbox{\hyperlink{class_message_a07decbd0373be76cf46ad204bde67436}{short\+Description}} () const
+\begin{DoxyCompactList}\small\item\em Returns the short description. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_message_a325b8030a8a9facbe5a7dc040e7d232b}{detail\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of detail string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_message_a03169977b6795895d09943a646a5bad3}{detail\+At}} (int index) const
+\begin{DoxyCompactList}\small\item\em Returns the detail at the specified index. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_message_aff3af1683aa917327bd2c13a1208a91a}{details}} () const
+\begin{DoxyCompactList}\small\item\em Returns a string that represents a list of the detail strings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_message_af5a1d2f3def9208bb603587f79c5d711}{clear\+Details}} ()
+\begin{DoxyCompactList}\small\item\em Removes all detail strings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_message_a7cc56c24bc9d7516247cd865c472ab2f}{add\+Detail}} (const std\+::string \&detail)
+\begin{DoxyCompactList}\small\item\em Adds a single detail string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_message_a2c67e0d82c3b4e3f3d21cec40537d6de}{add\+Detail}} (const std\+::string \&detail1, const std\+::string \&detail2)
+\begin{DoxyCompactList}\small\item\em Adds two detail strings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_message_a9d83e2c5fd0d817291331e65830b824a}{add\+Detail}} (const std\+::string \&detail1, const std\+::string \&detail2, const std\+::string \&detail3)
+\begin{DoxyCompactList}\small\item\em Adds three detail strings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_message_a576d9d2c563c11ff0a000d22bb235d1c}{add\+Detail}} (const \mbox{\hyperlink{class_message}{Message}} \&message)
+\begin{DoxyCompactList}\small\item\em Adds the detail strings of the specified message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_message_a3f2362cf70c38b79a188dd8545d24d03}{set\+Short\+Description}} (const std\+::string \&\mbox{\hyperlink{class_message_a07decbd0373be76cf46ad204bde67436}{short\+Description}})
+\begin{DoxyCompactList}\small\item\em Sets the short description. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_message_afaf1be8bfcdb713dd88615903d8d9f9d}{operator==}} (const \mbox{\hyperlink{class_message}{Message}} \&other) const
+\begin{DoxyCompactList}\small\item\em Tests if a message is identical to another one. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_message_aec22f4933c82e334d110e993f7a04b4b}{operator!=}} (const \mbox{\hyperlink{class_message}{Message}} \&other) const
+\begin{DoxyCompactList}\small\item\em Tests if a message is different from another one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_message}{Message}} associated to an \mbox{\hyperlink{class_exception}{Exception}}.
+
+A message is composed of two items\+: 
+
+
+\begin{DoxyItemize}
+\item a short description ($\sim$20/30 characters)
+\item a list of detail strings
+\end{DoxyItemize}
+
+The short description is used to indicate how the detail strings should be interpreted. It usually indicates the failure types, such as \char`\"{}assertion failed\char`\"{}, \char`\"{}forced failure\char`\"{}, \char`\"{}unexpected exception caught\char`\"{}, \char`\"{}equality assertion failed\char`\"{}... It should not contains new line character (~\newline
+).
+
+Detail strings are used to provide more information about the failure. It can contains the asserted expression, the expected and actual values in an equality assertion, some addional messages... Detail strings can contains new line characters (~\newline
+). 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_message_a576d9d2c563c11ff0a000d22bb235d1c}\label{class_message_a576d9d2c563c11ff0a000d22bb235d1c}} 
+\index{Message@{Message}!addDetail@{addDetail}}
+\index{addDetail@{addDetail}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{addDetail()}{addDetail()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Message\+::add\+Detail (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_message}{Message}} \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Adds the detail strings of the specified message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & All the detail strings of this message are added to this one. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_message_a7cc56c24bc9d7516247cd865c472ab2f}\label{class_message_a7cc56c24bc9d7516247cd865c472ab2f}} 
+\index{Message@{Message}!addDetail@{addDetail}}
+\index{addDetail@{addDetail}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{addDetail()}{addDetail()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Message\+::add\+Detail (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{detail }\end{DoxyParamCaption})}
+
+
+
+Adds a single detail string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em detail} & Detail string to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_message_a2c67e0d82c3b4e3f3d21cec40537d6de}\label{class_message_a2c67e0d82c3b4e3f3d21cec40537d6de}} 
+\index{Message@{Message}!addDetail@{addDetail}}
+\index{addDetail@{addDetail}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{addDetail()}{addDetail()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Message\+::add\+Detail (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{detail1,  }\item[{const std\+::string \&}]{detail2 }\end{DoxyParamCaption})}
+
+
+
+Adds two detail strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em detail1} & Detail string to add. \\
+\hline
+{\em detail2} & Detail string to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_message_a9d83e2c5fd0d817291331e65830b824a}\label{class_message_a9d83e2c5fd0d817291331e65830b824a}} 
+\index{Message@{Message}!addDetail@{addDetail}}
+\index{addDetail@{addDetail}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{addDetail()}{addDetail()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Message\+::add\+Detail (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{detail1,  }\item[{const std\+::string \&}]{detail2,  }\item[{const std\+::string \&}]{detail3 }\end{DoxyParamCaption})}
+
+
+
+Adds three detail strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em detail1} & Detail string to add. \\
+\hline
+{\em detail2} & Detail string to add. \\
+\hline
+{\em detail3} & Detail string to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_message_af5a1d2f3def9208bb603587f79c5d711}\label{class_message_af5a1d2f3def9208bb603587f79c5d711}} 
+\index{Message@{Message}!clearDetails@{clearDetails}}
+\index{clearDetails@{clearDetails}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{clearDetails()}{clearDetails()}}
+{\footnotesize\ttfamily void Message\+::clear\+Details (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Removes all detail strings. 
+
+\mbox{\Hypertarget{class_message_a03169977b6795895d09943a646a5bad3}\label{class_message_a03169977b6795895d09943a646a5bad3}} 
+\index{Message@{Message}!detailAt@{detailAt}}
+\index{detailAt@{detailAt}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{detailAt()}{detailAt()}}
+{\footnotesize\ttfamily std\+::string Message\+::detail\+At (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Returns the detail at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Zero based index of the detail string to return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Detail string at the specified index. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if {\itshape index} \texorpdfstring{$<$}{<} 0 or index \texorpdfstring{$>$}{>}= \mbox{\hyperlink{class_message_a325b8030a8a9facbe5a7dc040e7d232b}{detail\+Count()}}. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_message_a325b8030a8a9facbe5a7dc040e7d232b}\label{class_message_a325b8030a8a9facbe5a7dc040e7d232b}} 
+\index{Message@{Message}!detailCount@{detailCount}}
+\index{detailCount@{detailCount}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{detailCount()}{detailCount()}}
+{\footnotesize\ttfamily int Message\+::detail\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of detail string. 
+
+\begin{DoxyReturn}{Returns}
+Number of detail string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_message_aff3af1683aa917327bd2c13a1208a91a}\label{class_message_aff3af1683aa917327bd2c13a1208a91a}} 
+\index{Message@{Message}!details@{details}}
+\index{details@{details}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{details()}{details()}}
+{\footnotesize\ttfamily std\+::string Message\+::details (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns a string that represents a list of the detail strings. 
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_message}{Message}} message( \textcolor{stringliteral}{"{}not equal"{}}, \textcolor{stringliteral}{"{}Expected: 3"{}}, \textcolor{stringliteral}{"{}Actual: 7"{}} );}
+\DoxyCodeLine{std::string \mbox{\hyperlink{class_message_aff3af1683aa917327bd2c13a1208a91a}{details}} = message.details();}
+\DoxyCodeLine{\textcolor{comment}{// details contains:}}
+\DoxyCodeLine{\textcolor{comment}{// "{}-\/ Expected: 3\(\backslash\)n-\/ Actual: 7\(\backslash\)n"{}  }}
+
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+A string that is a concatenation of all the detail strings. Each detail string is prefixed with \textquotesingle{}-\/ \textquotesingle{} and suffixed with \textquotesingle{}~\newline
+\textquotesingle{} before being concatenated to the other. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_message_aec22f4933c82e334d110e993f7a04b4b}\label{class_message_aec22f4933c82e334d110e993f7a04b4b}} 
+\index{Message@{Message}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Message\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_message}{Message}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Tests if a message is different from another one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_message}{Message}} this message is compared to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the two message are not identical, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_message_afaf1be8bfcdb713dd88615903d8d9f9d}\label{class_message_afaf1be8bfcdb713dd88615903d8d9f9d}} 
+\index{Message@{Message}!operator==@{operator==}}
+\index{operator==@{operator==}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Message\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_message}{Message}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Tests if a message is identical to another one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_message}{Message}} this message is compared to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the two message are identical, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_message_a3f2362cf70c38b79a188dd8545d24d03}\label{class_message_a3f2362cf70c38b79a188dd8545d24d03}} 
+\index{Message@{Message}!setShortDescription@{setShortDescription}}
+\index{setShortDescription@{setShortDescription}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{setShortDescription()}{setShortDescription()}}
+{\footnotesize\ttfamily void Message\+::set\+Short\+Description (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{short\+Description }\end{DoxyParamCaption})}
+
+
+
+Sets the short description. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em short\+Description} & New short description. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_message_a07decbd0373be76cf46ad204bde67436}\label{class_message_a07decbd0373be76cf46ad204bde67436}} 
+\index{Message@{Message}!shortDescription@{shortDescription}}
+\index{shortDescription@{shortDescription}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{shortDescription()}{shortDescription()}}
+{\footnotesize\ttfamily const std\+::string \& Message\+::short\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the short description. 
+
+\begin{DoxyReturn}{Returns}
+Short description. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/Message.\+h\end{DoxyCompactItemize}

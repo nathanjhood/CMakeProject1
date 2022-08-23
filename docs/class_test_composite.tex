@@ -1,0 +1,95 @@
+\hypertarget{class_test_composite}{}\doxysection{Test\+Composite Class Reference}
+\label{class_test_composite}\index{TestComposite@{TestComposite}}
+
+
+A Composite of Tests.  
+
+
+
+
+{\ttfamily \#include $<$Test\+Composite.\+h$>$}
+
+Inheritance diagram for Test\+Composite\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_test_composite}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_test_composite_a2ba14045b1a1e83963dd4db746b04dfd}{run}} (\mbox{\hyperlink{class_test_result}{Test\+Result}} $\ast$result)
+\begin{DoxyCompactList}\small\item\em Run the test, collecting results. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_test_composite_a55fa91b2f8ef7078e0221d09656fadd4}{count\+Test\+Cases}} () const
+\begin{DoxyCompactList}\small\item\em Return the number of test cases invoked by \mbox{\hyperlink{class_test_composite_a2ba14045b1a1e83963dd4db746b04dfd}{run()}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_test_composite_a744c14d2610bd223e853600417a4cadb}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Returns the test name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A Composite of Tests. 
+
+Base class for all test composites. Subclass this class if you need to implement a custom \mbox{\hyperlink{class_test_suite}{Test\+Suite}}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_test}{Test}}, \mbox{\hyperlink{class_test_suite}{Test\+Suite}}. 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_test_composite_a55fa91b2f8ef7078e0221d09656fadd4}\label{class_test_composite_a55fa91b2f8ef7078e0221d09656fadd4}} 
+\index{TestComposite@{TestComposite}!countTestCases@{countTestCases}}
+\index{countTestCases@{countTestCases}!TestComposite@{TestComposite}}
+\doxysubsubsection{\texorpdfstring{countTestCases()}{countTestCases()}}
+{\footnotesize\ttfamily int Test\+Composite\+::count\+Test\+Cases (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Return the number of test cases invoked by \mbox{\hyperlink{class_test_composite_a2ba14045b1a1e83963dd4db746b04dfd}{run()}}. 
+
+The base unit of testing is the class \mbox{\hyperlink{class_test_case}{Test\+Case}}. This method returns the number of \mbox{\hyperlink{class_test_case}{Test\+Case}} objects invoked by the \mbox{\hyperlink{class_test_composite_a2ba14045b1a1e83963dd4db746b04dfd}{run()}} method. 
+
+Implements \mbox{\hyperlink{class_test_aad2b7244c7cec3f3aa9f81d12b15c8cf}{Test}}.
+
+\mbox{\Hypertarget{class_test_composite_a744c14d2610bd223e853600417a4cadb}\label{class_test_composite_a744c14d2610bd223e853600417a4cadb}} 
+\index{TestComposite@{TestComposite}!getName@{getName}}
+\index{getName@{getName}!TestComposite@{TestComposite}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Test\+Composite\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the test name. 
+
+Each test has a name. This name may be used to find the test in a suite or registry of tests. 
+
+Implements \mbox{\hyperlink{class_test_a5e024da199f811a33264e432c21dcc94}{Test}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_test_runner_1_1_wrapping_suite_a0015e42bd741cbf8ca64e754cd93e7c6}{Test\+Runner\+::\+Wrapping\+Suite}}.
+
+\mbox{\Hypertarget{class_test_composite_a2ba14045b1a1e83963dd4db746b04dfd}\label{class_test_composite_a2ba14045b1a1e83963dd4db746b04dfd}} 
+\index{TestComposite@{TestComposite}!run@{run}}
+\index{run@{run}!TestComposite@{TestComposite}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Test\+Composite\+::run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_test_result}{Test\+Result}} $\ast$}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Run the test, collecting results. 
+
+
+
+Implements \mbox{\hyperlink{class_test_a7beeb95dc0d058bd3bfea1a75463cb03}{Test}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_test_runner_1_1_wrapping_suite_aa486bfea64b60206ac1d8fbb006f2f64}{Test\+Runner\+::\+Wrapping\+Suite}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/Test\+Composite.\+h\end{DoxyCompactItemize}

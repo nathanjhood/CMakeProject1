@@ -1,19 +1,17 @@
 var searchData=
 [
-  ['parse_5frange_0',['parse_range',['../d5/d04/structformatter_3_01std_1_1chrono_1_1duration_3_01_rep_00_01_period_01_4_00_01_char_01_4_1_1parse__range.html',1,'formatter&lt; std::chrono::duration&lt; Rep, Period &gt;, Char &gt;']]],
-  ['pathtestnames_1',['PathTestNames',['../d9/d05/class_test_path.html#aed1deb8047755b522f19e173b3afe788',1,'TestPath']]],
-  ['plugininfo_2',['PlugInInfo',['../df/dd6/struct_plug_in_manager_1_1_plug_in_info.html',1,'PlugInManager']]],
-  ['pluginmanager_3',['PlugInManager',['../d8/ddd/class_plug_in_manager.html',1,'PlugInManager'],['../d8/ddd/class_plug_in_manager.html#a7789a7e258e750bd14267d20cac7d288',1,'PlugInManager::PlugInManager()'],['../d8/ddd/class_plug_in_manager.html#ab33846008e25d243896844cbdfcc5706',1,'PlugInManager::PlugInManager(const PlugInManager &amp;copy)']]],
-  ['pluginparameters_4',['PlugInParameters',['../db/d28/class_plug_in_parameters.html',1,'PlugInParameters'],['../db/d28/class_plug_in_parameters.html#acbf183c92faaa4e17dc66dec87ddc033',1,'PlugInParameters::PlugInParameters()']]],
-  ['popprotector_5',['popProtector',['../dd/dd3/class_test_result.html#acfbbc6037e1af423f93cdb0360076524',1,'TestResult']]],
-  ['precision_5fchecker_6',['precision_checker',['../db/d35/classprecision__checker.html',1,'']]],
-  ['printf_5farg_5fformatter_7',['printf_arg_formatter',['../d5/deb/classprintf__arg__formatter.html',1,'']]],
-  ['printf_5fformatter_8',['printf_formatter',['../d3/d8f/structprintf__formatter.html',1,'']]],
-  ['printf_5fprecision_5fhandler_9',['printf_precision_handler',['../db/df3/classprintf__precision__handler.html',1,'']]],
-  ['printf_5fwidth_5fhandler_10',['printf_width_handler',['../d1/d26/classprintf__width__handler.html',1,'']]],
-  ['protect_11',['protect',['../dd/dd3/class_test_result.html#a243b3097a3d9468abc61e7910bbaa8b7',1,'TestResult']]],
-  ['protector_12',['Protector',['../d3/d70/class_protector.html',1,'']]],
-  ['protectorguard_13',['ProtectorGuard',['../d4/db8/class_protector_guard.html',1,'ProtectorGuard'],['../d4/db8/class_protector_guard.html#abc4a3b2b51b6d93fb3dd9fed1bbc85db',1,'ProtectorGuard::ProtectorGuard()']]],
-  ['push_5fback_14',['push_back',['../d1/dad/classdynamic__format__arg__store.html#a710e994685e69fd1cd4f56d29efc0d95',1,'dynamic_format_arg_store::push_back(const T &amp;arg)'],['../d1/dad/classdynamic__format__arg__store.html#ac58637a7965cbfeab47c2f50e923dc07',1,'dynamic_format_arg_store::push_back(std::reference_wrapper&lt; T &gt; arg)'],['../d1/dad/classdynamic__format__arg__store.html#a14baaad39c59b82fdf86dc4276f7d7cc',1,'dynamic_format_arg_store::push_back(const detail::named_arg&lt; char_type, T &gt; &amp;arg)']]],
-  ['pushprotector_15',['pushProtector',['../dd/dd3/class_test_result.html#a1a4fbbca38cb73e8e00905193b7593dc',1,'TestResult']]]
+  ['registerfactory_0',['registerFactory',['../class_test_factory_registry.html#a632c38375727ca735e2c1897bd625b99',1,'TestFactoryRegistry::registerFactory(TestFactory *factory)'],['../class_test_factory_registry.html#aff8d8215ec83fbb77d46706264e2f161',1,'TestFactoryRegistry::registerFactory(const std::string &amp;name, TestFactory *factory)']]],
+  ['releaselibrary_1',['releaseLibrary',['../class_dynamic_library_manager.html#a3bb952ae43103fe9ea0b83c693210ebf',1,'DynamicLibraryManager']]],
+  ['removehook_2',['removeHook',['../class_xml_outputter.html#ac4659712ab6b0f168119a22fbdb70255',1,'XmlOutputter']]],
+  ['removelistener_3',['removeListener',['../class_plug_in_manager.html#aea9b8b61e256169b823516868e1d8ad0',1,'PlugInManager::removeListener()'],['../struct_cpp_unit_test_plug_in.html#a8f36157014b515d38efbc8ab67923d85',1,'CppUnitTestPlugIn::removeListener()']]],
+  ['removetest_4',['removeTest',['../class_test_path.html#afd1769a314ef84b6cbdd01af35009a0e',1,'TestPath']]],
+  ['removetests_5',['removeTests',['../class_test_path.html#a98bbd84f8dea8793cfda496ecea1be75',1,'TestPath']]],
+  ['removexmloutputterhooks_6',['removeXmlOutputterHooks',['../class_plug_in_manager.html#a0fe59f82fd430ea57159a6ffad9a4035',1,'PlugInManager::removeXmlOutputterHooks()'],['../struct_cpp_unit_test_plug_in.html#a045727ad9658525838b0b9157065fbcd',1,'CppUnitTestPlugIn::removeXmlOutputterHooks()'],['../class_test_plug_in_default_impl.html#aa4fa891e799ff362dece734417afd93d',1,'TestPlugInDefaultImpl::removeXmlOutputterHooks()']]],
+  ['repeatedtest_7',['RepeatedTest',['../class_repeated_test.html',1,'']]],
+  ['reserve_8',['reserve',['../classdynamic__format__arg__store.html#a9c6983c46b69775b5066f6ad748be584',1,'dynamic_format_arg_store::reserve()'],['../classbasic__memory__buffer.html#a27f096451ed4e6738d3a33161fda3e90',1,'basic_memory_buffer::reserve()']]],
+  ['reset_9',['reset',['../class_test_result.html#a5122b5d4edddb4b2d4ea9c214eed8c3f',1,'TestResult']]],
+  ['resize_10',['resize',['../classbasic__memory__buffer.html#a153c47788d6d1a76ec97780748755ea1',1,'basic_memory_buffer']]],
+  ['resolvetestpath_11',['resolveTestPath',['../class_test.html#a753686ebe945115dcf480019ca814c94',1,'Test']]],
+  ['run_12',['run',['../class_repeated_test.html#a6faffcd29b619305a75dd4c1995beaad',1,'RepeatedTest::run()'],['../class_test_decorator.html#a64dd70aae76f31f2e2f7b5ac84a8e829',1,'TestDecorator::run()'],['../class_test_set_up.html#aa3f79125254c288d6effee6df8e7d5fb',1,'TestSetUp::run()'],['../class_test.html#a7beeb95dc0d058bd3bfea1a75463cb03',1,'Test::run()'],['../class_test_case.html#a6bc50d62de5b2d0addf9b0167e34b134',1,'TestCase::run()'],['../class_test_composite.html#a2ba14045b1a1e83963dd4db746b04dfd',1,'TestComposite::run()'],['../class_test_runner.html#aa6a62ec693b671ed1d73b2184d012733',1,'TestRunner::run()'],['../class_test_runner_1_1_wrapping_suite.html#aa486bfea64b60206ac1d8fbb006f2f64',1,'TestRunner::WrappingSuite::run()']]],
+  ['runtest_13',['runTest',['../class_exception_test_case_decorator.html#a3f78294d459a94f55413162d814f291d',1,'ExceptionTestCaseDecorator::runTest()'],['../class_test_case_decorator.html#ad083ca55ff2e7f1f3f442364aa1dde66',1,'TestCaseDecorator::runTest()'],['../class_test_caller.html#aad0c877a47b75d056a4f8f323d3169ab',1,'TestCaller::runTest()'],['../class_test_case.html#a6b55957ac1dfef01e5d9fa2475676f34',1,'TestCase::runTest()'],['../class_test_result.html#ae00af1cdee85b14923b80a01678478ee',1,'TestResult::runTest()']]]
 ];

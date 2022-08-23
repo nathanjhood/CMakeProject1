@@ -1,0 +1,71 @@
+\hypertarget{_exception_8h_source}{}\doxysection{Exception.\+h}
+\label{_exception_8h_source}\index{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/Exception.h@{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/Exception.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CPPUNIT\_EXCEPTION\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CPPUNIT\_EXCEPTION\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cppunit/Portability.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <cppunit/Message.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <cppunit/SourceLine.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <exception>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 CPPUNIT\_NS\_BEGIN}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }CPPUNIT\_API \mbox{\hyperlink{class_exception}{Exception}} : \textcolor{keyword}{public} std::exception}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26   \mbox{\hyperlink{class_exception_aac5e9386080a8eac2edebf02c8169ecc}{Exception}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_message}{Message}} \&message = \mbox{\hyperlink{class_message}{Message}}(), }
+\DoxyCodeLine{27              \textcolor{keyword}{const} \mbox{\hyperlink{class_source_line}{SourceLine}} \&sourceLine = \mbox{\hyperlink{class_source_line}{SourceLine}}() );}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#ifdef CPPUNIT\_ENABLE\_SOURCELINE\_DEPRECATED}}
+\DoxyCodeLine{33   \mbox{\hyperlink{class_exception}{Exception}}( std::string  message, }
+\DoxyCodeLine{34          \textcolor{keywordtype}{long} lineNumber, }
+\DoxyCodeLine{35          std::string fileName );}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{41   \mbox{\hyperlink{class_exception_ae0fd52e62283ee92c085d767d0aab736}{Exception}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_exception}{Exception}} \&other );}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44   \textcolor{keyword}{virtual} \mbox{\hyperlink{class_exception_ad1ba411de295ef2eeb02ba26284a829a}{\string~Exception}}() throw();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47   \mbox{\hyperlink{class_exception}{Exception}} \&operator =( const \mbox{\hyperlink{class_exception}{Exception}} \&other );}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{50   const \textcolor{keywordtype}{char} *what() const throw();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{53   \mbox{\hyperlink{class_source_line}{SourceLine}} sourceLine() const;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56   \mbox{\hyperlink{class_message}{Message}} message() const;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{59   \textcolor{keywordtype}{void} setMessage( const \mbox{\hyperlink{class_message}{Message}} \&message );}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#ifdef CPPUNIT\_ENABLE\_SOURCELINE\_DEPRECATED}}
+\DoxyCodeLine{63   \textcolor{keywordtype}{long} lineNumber() \textcolor{keyword}{const};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{66   std::string fileName() \textcolor{keyword}{const};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68   \textcolor{keyword}{static} \textcolor{keyword}{const} std::string UNKNOWNFILENAME;}
+\DoxyCodeLine{69   \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{long} UNKNOWNLINENUMBER;}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{73   \textcolor{keyword}{virtual} \mbox{\hyperlink{class_exception}{Exception}} *\mbox{\hyperlink{class_exception_a9be72022bdafae30358764e31493ba3a}{clone}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{76   \textcolor{comment}{// VC++ does not recognize call to parent class when prefixed}}
+\DoxyCodeLine{77   \textcolor{comment}{// with a namespace. This is a workaround.}}
+\DoxyCodeLine{78   \textcolor{keyword}{typedef} std::exception SuperClass;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80   \mbox{\hyperlink{class_message}{Message}} m\_message;}
+\DoxyCodeLine{81   \mbox{\hyperlink{class_source_line}{SourceLine}} m\_sourceLine;}
+\DoxyCodeLine{82   std::string m\_whatMessage;}
+\DoxyCodeLine{83 \};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 CPPUNIT\_NS\_END}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// CPPUNIT\_EXCEPTION\_H}}
+\DoxyCodeLine{90 }
+
+\end{DoxyCode}

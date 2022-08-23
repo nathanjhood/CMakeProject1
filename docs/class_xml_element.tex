@@ -1,0 +1,290 @@
+\hypertarget{class_xml_element}{}\doxysection{Xml\+Element Class Reference}
+\label{class_xml_element}\index{XmlElement@{XmlElement}}
+
+
+A XML Element.  
+
+
+
+
+{\ttfamily \#include $<$Xml\+Element.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_xml_element_a94d6c15e996994d62316b198f369d675}{Xml\+Element}} (std\+::string element\+Name, std\+::string \mbox{\hyperlink{class_xml_element_a53d24b7838e5e76daeb2ca2d14ce086d}{content}}=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructs an element with the specified name and string content. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_xml_element_a879b90d96dc87b6f7ebb9c67ba92cb73}{Xml\+Element}} (std\+::string element\+Name, int numeric\+Content)
+\begin{DoxyCompactList}\small\item\em Constructs an element with the specified name and numeric content. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_xml_element_ac862c3db543830858fba97c6196afd6b}{$\sim$\+Xml\+Element}} ()
+\begin{DoxyCompactList}\small\item\em Destructs the element and its child elements. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_xml_element_ac3a480c2b65a9b6fa529f32f7fce33b9}{name}} () const
+\begin{DoxyCompactList}\small\item\em Returns the name of the element. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_xml_element_a53d24b7838e5e76daeb2ca2d14ce086d}{content}} () const
+\begin{DoxyCompactList}\small\item\em Returns the content of the element. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_xml_element_a0ed6ad08fd972865cca13ae2594fedda}{set\+Name}} (const std\+::string \&\mbox{\hyperlink{class_xml_element_ac3a480c2b65a9b6fa529f32f7fce33b9}{name}})
+\begin{DoxyCompactList}\small\item\em Sets the name of the element. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_xml_element_aaf32abf7cdaf31b8896f52a7859d9826}{set\+Content}} (const std\+::string \&\mbox{\hyperlink{class_xml_element_a53d24b7838e5e76daeb2ca2d14ce086d}{content}})
+\begin{DoxyCompactList}\small\item\em Sets the content of the element. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_xml_element_a14387be9ca6d014a38e95a7aa98f86c5}{add\+Attribute}} (std\+::string attribute\+Name, std\+::string value)
+\begin{DoxyCompactList}\small\item\em Adds an attribute with the specified string value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_xml_element_aec69fb49cf9e563cff9858ddc818f055}{add\+Attribute}} (std\+::string attribute\+Name, int numeric\+Value)
+\begin{DoxyCompactList}\small\item\em Adds an attribute with the specified numeric value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_xml_element_a444321a1de2a7f52994c53f9e6e0d942}{add\+Element}} (\mbox{\hyperlink{class_xml_element}{Xml\+Element}} $\ast$element)
+\begin{DoxyCompactList}\small\item\em Adds a child element to the element. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_xml_element_ada7e66977cd0f62bae9dcc3f96cb95e5}{element\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of child elements. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_xml_element}{Xml\+Element}} $\ast$ \mbox{\hyperlink{class_xml_element_a786964a575dfb71c3465ed8e2e9172e8}{element\+At}} (int index) const
+\begin{DoxyCompactList}\small\item\em Returns the child element at the specified index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_xml_element}{Xml\+Element}} $\ast$ \mbox{\hyperlink{class_xml_element_a67f1c3dc6744e384ca6aa560567e878d}{element\+For}} (const std\+::string \&\mbox{\hyperlink{class_xml_element_ac3a480c2b65a9b6fa529f32f7fce33b9}{name}}) const
+\begin{DoxyCompactList}\small\item\em Returns the first child element with the specified name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_xml_element_ac61eb02df41acf8de22d50898ccfe371}{to\+String}} (const std\+::string \&indent=\char`\"{}\char`\"{}) const
+\begin{DoxyCompactList}\small\item\em Returns a XML string that represents the element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A XML Element. 
+
+A XML element has\+:
+\begin{DoxyItemize}
+\item a name, specified on construction,
+\item a content, specified on construction (may be empty),
+\item zero or more attributes, added with \mbox{\hyperlink{class_xml_element_a14387be9ca6d014a38e95a7aa98f86c5}{add\+Attribute()}},
+\item zero or more child elements, added with \mbox{\hyperlink{class_xml_element_a444321a1de2a7f52994c53f9e6e0d942}{add\+Element()}}. 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_xml_element_a94d6c15e996994d62316b198f369d675}\label{class_xml_element_a94d6c15e996994d62316b198f369d675}} 
+\index{XmlElement@{XmlElement}!XmlElement@{XmlElement}}
+\index{XmlElement@{XmlElement}!XmlElement@{XmlElement}}
+\doxysubsubsection{\texorpdfstring{XmlElement()}{XmlElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Xml\+Element\+::\+Xml\+Element (\begin{DoxyParamCaption}\item[{std\+::string}]{element\+Name,  }\item[{std\+::string}]{content = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Constructs an element with the specified name and string content. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element\+Name} & Name of the element. Must not be empty. \\
+\hline
+{\em content} & Content of the element. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_xml_element_a879b90d96dc87b6f7ebb9c67ba92cb73}\label{class_xml_element_a879b90d96dc87b6f7ebb9c67ba92cb73}} 
+\index{XmlElement@{XmlElement}!XmlElement@{XmlElement}}
+\index{XmlElement@{XmlElement}!XmlElement@{XmlElement}}
+\doxysubsubsection{\texorpdfstring{XmlElement()}{XmlElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Xml\+Element\+::\+Xml\+Element (\begin{DoxyParamCaption}\item[{std\+::string}]{element\+Name,  }\item[{int}]{numeric\+Content }\end{DoxyParamCaption})}
+
+
+
+Constructs an element with the specified name and numeric content. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element\+Name} & Name of the element. Must not be empty. \\
+\hline
+{\em numeric\+Content} & Content of the element. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_xml_element_ac862c3db543830858fba97c6196afd6b}\label{class_xml_element_ac862c3db543830858fba97c6196afd6b}} 
+\index{XmlElement@{XmlElement}!````~XmlElement@{$\sim$XmlElement}}
+\index{````~XmlElement@{$\sim$XmlElement}!XmlElement@{XmlElement}}
+\doxysubsubsection{\texorpdfstring{$\sim$XmlElement()}{~XmlElement()}}
+{\footnotesize\ttfamily virtual Xml\+Element\+::$\sim$\+Xml\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructs the element and its child elements. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_xml_element_aec69fb49cf9e563cff9858ddc818f055}\label{class_xml_element_aec69fb49cf9e563cff9858ddc818f055}} 
+\index{XmlElement@{XmlElement}!addAttribute@{addAttribute}}
+\index{addAttribute@{addAttribute}!XmlElement@{XmlElement}}
+\doxysubsubsection{\texorpdfstring{addAttribute()}{addAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Xml\+Element\+::add\+Attribute (\begin{DoxyParamCaption}\item[{std\+::string}]{attribute\+Name,  }\item[{int}]{numeric\+Value }\end{DoxyParamCaption})}
+
+
+
+Adds an attribute with the specified numeric value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attribute\+Name} & Name of the attribute. Must not be empty. \\
+\hline
+{\em numeric\+Value} & Numeric value of the attribute. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_xml_element_a14387be9ca6d014a38e95a7aa98f86c5}\label{class_xml_element_a14387be9ca6d014a38e95a7aa98f86c5}} 
+\index{XmlElement@{XmlElement}!addAttribute@{addAttribute}}
+\index{addAttribute@{addAttribute}!XmlElement@{XmlElement}}
+\doxysubsubsection{\texorpdfstring{addAttribute()}{addAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Xml\+Element\+::add\+Attribute (\begin{DoxyParamCaption}\item[{std\+::string}]{attribute\+Name,  }\item[{std\+::string}]{value }\end{DoxyParamCaption})}
+
+
+
+Adds an attribute with the specified string value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attribute\+Name} & Name of the attribute. Must not be an empty. \\
+\hline
+{\em value} & Value of the attribute. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_xml_element_a444321a1de2a7f52994c53f9e6e0d942}\label{class_xml_element_a444321a1de2a7f52994c53f9e6e0d942}} 
+\index{XmlElement@{XmlElement}!addElement@{addElement}}
+\index{addElement@{addElement}!XmlElement@{XmlElement}}
+\doxysubsubsection{\texorpdfstring{addElement()}{addElement()}}
+{\footnotesize\ttfamily void Xml\+Element\+::add\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_xml_element}{Xml\+Element}} $\ast$}]{element }\end{DoxyParamCaption})}
+
+
+
+Adds a child element to the element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & Child element to add. Must not be {\ttfamily NULL}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_xml_element_a53d24b7838e5e76daeb2ca2d14ce086d}\label{class_xml_element_a53d24b7838e5e76daeb2ca2d14ce086d}} 
+\index{XmlElement@{XmlElement}!content@{content}}
+\index{content@{content}!XmlElement@{XmlElement}}
+\doxysubsubsection{\texorpdfstring{content()}{content()}}
+{\footnotesize\ttfamily std\+::string Xml\+Element\+::content (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the content of the element. 
+
+\begin{DoxyReturn}{Returns}
+Content of the element. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_xml_element_a786964a575dfb71c3465ed8e2e9172e8}\label{class_xml_element_a786964a575dfb71c3465ed8e2e9172e8}} 
+\index{XmlElement@{XmlElement}!elementAt@{elementAt}}
+\index{elementAt@{elementAt}!XmlElement@{XmlElement}}
+\doxysubsubsection{\texorpdfstring{elementAt()}{elementAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_xml_element}{Xml\+Element}} $\ast$ Xml\+Element\+::element\+At (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Returns the child element at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Zero based index of the element to return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Element at the specified index. Never {\ttfamily NULL}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if {\itshape index} \texorpdfstring{$<$}{<} 0 or index \texorpdfstring{$>$}{>}= \mbox{\hyperlink{class_xml_element_ada7e66977cd0f62bae9dcc3f96cb95e5}{element\+Count()}}. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_xml_element_ada7e66977cd0f62bae9dcc3f96cb95e5}\label{class_xml_element_ada7e66977cd0f62bae9dcc3f96cb95e5}} 
+\index{XmlElement@{XmlElement}!elementCount@{elementCount}}
+\index{elementCount@{elementCount}!XmlElement@{XmlElement}}
+\doxysubsubsection{\texorpdfstring{elementCount()}{elementCount()}}
+{\footnotesize\ttfamily int Xml\+Element\+::element\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of child elements. 
+
+\begin{DoxyReturn}{Returns}
+Number of child elements (element added with \mbox{\hyperlink{class_xml_element_a444321a1de2a7f52994c53f9e6e0d942}{add\+Element()}}). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_xml_element_a67f1c3dc6744e384ca6aa560567e878d}\label{class_xml_element_a67f1c3dc6744e384ca6aa560567e878d}} 
+\index{XmlElement@{XmlElement}!elementFor@{elementFor}}
+\index{elementFor@{elementFor}!XmlElement@{XmlElement}}
+\doxysubsubsection{\texorpdfstring{elementFor()}{elementFor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_xml_element}{Xml\+Element}} $\ast$ Xml\+Element\+::element\+For (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Returns the first child element with the specified name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the child element to return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+First child element found which is named {\itshape name}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if there is no child element with the specified name. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_xml_element_ac3a480c2b65a9b6fa529f32f7fce33b9}\label{class_xml_element_ac3a480c2b65a9b6fa529f32f7fce33b9}} 
+\index{XmlElement@{XmlElement}!name@{name}}
+\index{name@{name}!XmlElement@{XmlElement}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily std\+::string Xml\+Element\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the name of the element. 
+
+\begin{DoxyReturn}{Returns}
+Name of the element. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_xml_element_aaf32abf7cdaf31b8896f52a7859d9826}\label{class_xml_element_aaf32abf7cdaf31b8896f52a7859d9826}} 
+\index{XmlElement@{XmlElement}!setContent@{setContent}}
+\index{setContent@{setContent}!XmlElement@{XmlElement}}
+\doxysubsubsection{\texorpdfstring{setContent()}{setContent()}}
+{\footnotesize\ttfamily void Xml\+Element\+::set\+Content (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{content }\end{DoxyParamCaption})}
+
+
+
+Sets the content of the element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em content} & New content for the element.\\
+\hline
+\end{DoxyParams}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.\mbox{\Hypertarget{class_xml_element_a0ed6ad08fd972865cca13ae2594fedda}\label{class_xml_element_a0ed6ad08fd972865cca13ae2594fedda}} 
+\index{XmlElement@{XmlElement}!setName@{setName}}
+\index{setName@{setName}!XmlElement@{XmlElement}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Xml\+Element\+::set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Sets the name of the element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & New name for the element. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_xml_element_ac61eb02df41acf8de22d50898ccfe371}\label{class_xml_element_ac61eb02df41acf8de22d50898ccfe371}} 
+\index{XmlElement@{XmlElement}!toString@{toString}}
+\index{toString@{toString}!XmlElement@{XmlElement}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Xml\+Element\+::to\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{indent = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption}) const}
+
+
+
+Returns a XML string that represents the element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indent} & String of spaces representing the amount of \textquotesingle{}indent\textquotesingle{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+XML string that represents the element, its attributes and its child elements. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/tools/Xml\+Element.\+h\end{DoxyCompactItemize}

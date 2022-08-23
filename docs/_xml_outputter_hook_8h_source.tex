@@ -1,0 +1,48 @@
+\hypertarget{_xml_outputter_hook_8h_source}{}\doxysection{Xml\+Outputter\+Hook.\+h}
+\label{_xml_outputter_hook_8h_source}\index{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/XmlOutputterHook.h@{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/XmlOutputterHook.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CPPUNIT\_XMLOUTPUTTERHOOK\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CPPUNIT\_XMLOUTPUTTERHOOK\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cppunit/Portability.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 CPPUNIT\_NS\_BEGIN}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_test}{Test}};}
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_test_failure}{TestFailure}};}
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_xml_document}{XmlDocument}};}
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_xml_element}{XmlElement}};}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{117 \textcolor{keyword}{class }CPPUNIT\_API \mbox{\hyperlink{class_xml_outputter_hook}{XmlOutputterHook}}}
+\DoxyCodeLine{118 \{}
+\DoxyCodeLine{119 \textcolor{keyword}{public}:}
+\DoxyCodeLine{123   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_xml_outputter_hook_a1d2b5d5d0fc42d273d6430522a70ccbb}{beginDocument}}( \mbox{\hyperlink{class_xml_document}{XmlDocument}} *document );}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{128   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_xml_outputter_hook_a300e2a4ef46db4e76428e32f7c7e6a23}{endDocument}}( \mbox{\hyperlink{class_xml_document}{XmlDocument}} *document );}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{136   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_xml_outputter_hook_a77310985e055cc2c67e91a42c524fbbe}{failTestAdded}}( \mbox{\hyperlink{class_xml_document}{XmlDocument}} *document,}
+\DoxyCodeLine{137                               \mbox{\hyperlink{class_xml_element}{XmlElement}} *testElement,}
+\DoxyCodeLine{138                               \mbox{\hyperlink{class_test}{Test}} *test,}
+\DoxyCodeLine{139                               \mbox{\hyperlink{class_test_failure}{TestFailure}} *failure );}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{146   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_xml_outputter_hook_adbcf6ad2cb85d6f1015306fadb7eadcf}{successfulTestAdded}}( \mbox{\hyperlink{class_xml_document}{XmlDocument}} *document,}
+\DoxyCodeLine{147                                     \mbox{\hyperlink{class_xml_element}{XmlElement}} *testElement,}
+\DoxyCodeLine{148                                     \mbox{\hyperlink{class_test}{Test}} *test );}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{154   \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_xml_outputter_hook_a0e602260274d4f005affb4ee84ce4c4a}{statisticsAdded}}( \mbox{\hyperlink{class_xml_document}{XmlDocument}} *document,}
+\DoxyCodeLine{155                                 \mbox{\hyperlink{class_xml_element}{XmlElement}} *statisticsElement );}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157   \textcolor{keyword}{virtual} \mbox{\hyperlink{class_xml_outputter_hook}{\string~XmlOutputterHook}}() \{\}}
+\DoxyCodeLine{158 \};}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 CPPUNIT\_NS\_END}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// CPPUNIT\_XMLOUTPUTTERHOOK\_H}}
+
+\end{DoxyCode}

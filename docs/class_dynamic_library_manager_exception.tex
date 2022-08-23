@@ -1,0 +1,69 @@
+\hypertarget{class_dynamic_library_manager_exception}{}\doxysection{Dynamic\+Library\+Manager\+Exception Class Reference}
+\label{class_dynamic_library_manager_exception}\index{DynamicLibraryManagerException@{DynamicLibraryManagerException}}
+
+
+\mbox{\hyperlink{class_exception}{Exception}} thrown by \mbox{\hyperlink{class_dynamic_library_manager}{Dynamic\+Library\+Manager}} when a failure occurs.  
+
+
+
+
+{\ttfamily \#include $<$Dynamic\+Library\+Manager\+Exception.\+h$>$}
+
+
+
+Inherits std\+::runtime\+\_\+error.
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_dynamic_library_manager_exception_a73b4694c152e0693fbc19fb04987a0b9}{Cause}} \{ \mbox{\hyperlink{class_dynamic_library_manager_exception_a73b4694c152e0693fbc19fb04987a0b9a778b42fb996bf018bdc26934649cad63}{loading\+Failed}} =0
+, \mbox{\hyperlink{class_dynamic_library_manager_exception_a73b4694c152e0693fbc19fb04987a0b9a193fc58bb852e09790da269e2b613045}{symbol\+Not\+Found}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dynamic_library_manager_exception_a15629092a054849f1cb73f8f468f8125}{Dynamic\+Library\+Manager\+Exception}} (const std\+::string \&library\+Name, const std\+::string \&error\+Detail, \mbox{\hyperlink{class_dynamic_library_manager_exception_a73b4694c152e0693fbc19fb04987a0b9}{Cause}} cause)
+\begin{DoxyCompactList}\small\item\em Failed to load the dynamic library or Symbol not found in the dynamic library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_exception}{Exception}} thrown by \mbox{\hyperlink{class_dynamic_library_manager}{Dynamic\+Library\+Manager}} when a failure occurs. 
+
+Use get\+Cause() to know what function caused the failure. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_dynamic_library_manager_exception_a73b4694c152e0693fbc19fb04987a0b9}\label{class_dynamic_library_manager_exception_a73b4694c152e0693fbc19fb04987a0b9}} 
+\index{DynamicLibraryManagerException@{DynamicLibraryManagerException}!Cause@{Cause}}
+\index{Cause@{Cause}!DynamicLibraryManagerException@{DynamicLibraryManagerException}}
+\doxysubsubsection{\texorpdfstring{Cause}{Cause}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_dynamic_library_manager_exception_a73b4694c152e0693fbc19fb04987a0b9}{Dynamic\+Library\+Manager\+Exception\+::\+Cause}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{loadingFailed@{loadingFailed}!DynamicLibraryManagerException@{DynamicLibraryManagerException}}\index{DynamicLibraryManagerException@{DynamicLibraryManagerException}!loadingFailed@{loadingFailed}}}\mbox{\Hypertarget{class_dynamic_library_manager_exception_a73b4694c152e0693fbc19fb04987a0b9a778b42fb996bf018bdc26934649cad63}\label{class_dynamic_library_manager_exception_a73b4694c152e0693fbc19fb04987a0b9a778b42fb996bf018bdc26934649cad63}} 
+loading\+Failed&Failed to load the dynamic library. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{symbolNotFound@{symbolNotFound}!DynamicLibraryManagerException@{DynamicLibraryManagerException}}\index{DynamicLibraryManagerException@{DynamicLibraryManagerException}!symbolNotFound@{symbolNotFound}}}\mbox{\Hypertarget{class_dynamic_library_manager_exception_a73b4694c152e0693fbc19fb04987a0b9a193fc58bb852e09790da269e2b613045}\label{class_dynamic_library_manager_exception_a73b4694c152e0693fbc19fb04987a0b9a193fc58bb852e09790da269e2b613045}} 
+symbol\+Not\+Found&Symbol not found in the dynamic library. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_dynamic_library_manager_exception_a15629092a054849f1cb73f8f468f8125}\label{class_dynamic_library_manager_exception_a15629092a054849f1cb73f8f468f8125}} 
+\index{DynamicLibraryManagerException@{DynamicLibraryManagerException}!DynamicLibraryManagerException@{DynamicLibraryManagerException}}
+\index{DynamicLibraryManagerException@{DynamicLibraryManagerException}!DynamicLibraryManagerException@{DynamicLibraryManagerException}}
+\doxysubsubsection{\texorpdfstring{DynamicLibraryManagerException()}{DynamicLibraryManagerException()}}
+{\footnotesize\ttfamily Dynamic\+Library\+Manager\+Exception\+::\+Dynamic\+Library\+Manager\+Exception (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{library\+Name,  }\item[{const std\+::string \&}]{error\+Detail,  }\item[{\mbox{\hyperlink{class_dynamic_library_manager_exception_a73b4694c152e0693fbc19fb04987a0b9}{Cause}}}]{cause }\end{DoxyParamCaption})}
+
+
+
+Failed to load the dynamic library or Symbol not found in the dynamic library. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/plugin/Dynamic\+Library\+Manager\+Exception.\+h\end{DoxyCompactItemize}

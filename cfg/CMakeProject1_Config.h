@@ -23,6 +23,6 @@
 #define projectName "CMakeProject1"
 #define projectDescription "Generic CMake Project with in-built package manager"
 #define projectVersion "v0.0.0.1"
-#define projectWebsite "https://github.com/StoneyDSP/CMakeProject1"
+#define projectWebsite "https://stoneydsp.github.io/CMakeProject1/index.html"
 
 #endif // CONFIG_H_INCLUDED

@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['value_0',['value',['../d1/d18/unionarg__ref_1_1value.html',1,'arg_ref&lt; Char &gt;::value'],['../d7/d71/classvalue.html',1,'value&lt; Context &gt;']]],
-  ['value_5ftype_1',['value_type',['../dc/da3/structcounting__iterator_1_1value__type.html',1,'counting_iterator']]],
-  ['view_2',['view',['../d8/db1/structview.html',1,'']]]
+  ['xmldocument_0',['XmlDocument',['../class_xml_document.html',1,'XmlDocument'],['../class_xml_document.html#a3bc4c5ea5f22b4ff8776422125b31d42',1,'XmlDocument::XmlDocument(const std::string &amp;encoding=&quot;&quot;, const std::string &amp;styleSheet=&quot;&quot;)'],['../class_xml_document.html#a5e344194c740ec037c4303c343b64c50',1,'XmlDocument::XmlDocument(const XmlDocument &amp;copy)']]],
+  ['xmlelement_1',['XmlElement',['../class_xml_element.html',1,'XmlElement'],['../class_xml_element.html#a94d6c15e996994d62316b198f369d675',1,'XmlElement::XmlElement(std::string elementName, std::string content=&quot;&quot;)'],['../class_xml_element.html#a879b90d96dc87b6f7ebb9c67ba92cb73',1,'XmlElement::XmlElement(std::string elementName, int numericContent)']]],
+  ['xmloutputter_2',['XmlOutputter',['../class_xml_outputter.html',1,'XmlOutputter'],['../class_xml_outputter.html#a62c1e447c5a4646d38ae11e06581af70',1,'XmlOutputter::XmlOutputter(TestResultCollector *result, OStream &amp;stream, const std::string &amp;encoding=std::string(&quot;ISO-8859-1&quot;))'],['../class_xml_outputter.html#a5bf3760d02d06decd57733fd1169b635',1,'XmlOutputter::XmlOutputter(const XmlOutputter &amp;copy)']]],
+  ['xmloutputterhook_3',['XmlOutputterHook',['../class_xml_outputter_hook.html',1,'']]]
 ];

@@ -1,0 +1,54 @@
+\hypertarget{config-mac_8h_source}{}\doxysection{config-\/mac.h}
+\label{config-mac_8h_source}\index{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/config/config-\/mac.h@{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/config/config-\/mac.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_INCLUDE\_CPPUNIT\_CONFIG\_MAC\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_INCLUDE\_CPPUNIT\_CONFIG\_MAC\_H 1}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{/* MacOS X should be installed using the configure script.}}
+\DoxyCodeLine{5 \textcolor{comment}{   This file is for other macs.}}
+\DoxyCodeLine{6 \textcolor{comment}{}}
+\DoxyCodeLine{7 \textcolor{comment}{   It is not integrated into <cppunit/Portability.h> because we don't}}
+\DoxyCodeLine{8 \textcolor{comment}{   know a suitable preprocessor symbol that will distinguish MacOS X}}
+\DoxyCodeLine{9 \textcolor{comment}{   from other MacOS versions.  Email us if you know the answer.}}
+\DoxyCodeLine{10 \textcolor{comment}{*/}}
+\DoxyCodeLine{11  }
+\DoxyCodeLine{12 \textcolor{comment}{/* define if library uses std::string::compare(string,pos,n) */}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifdef CPPUNIT\_FUNC\_STRING\_COMPARE\_STRING\_FIRST }}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#undef CPPUNIT\_FUNC\_STRING\_COMPARE\_STRING\_FIRST}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{/* define if the library defines strstream */}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef CPPUNIT\_HAVE\_CLASS\_STRSTREAM }}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define CPPUNIT\_HAVE\_CLASS\_STRSTREAM  1 }}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{/* Define if you have the <cmath> header file. */}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#ifdef CPPUNIT\_HAVE\_CMATH }}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#undef CPPUNIT\_HAVE\_CMATH}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{/* Define if you have the <dlfcn.h> header file. */}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifdef CPPUNIT\_HAVE\_DLFCN\_H }}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#undef CPPUNIT\_HAVE\_DLFCN\_H}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{/* define to 1 if the compiler implements namespaces */}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#ifndef CPPUNIT\_HAVE\_NAMESPACES }}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define CPPUNIT\_HAVE\_NAMESPACES  1 }}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{/* define if the compiler has stringstream */}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#ifndef CPPUNIT\_HAVE\_SSTREAM }}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define CPPUNIT\_HAVE\_SSTREAM  1 }}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{/* Define if you have the <strstream> header file. */}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#ifndef CPPUNIT\_HAVE\_STRSTREAM }}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define CPPUNIT\_HAVE\_STRSTREAM  1 }}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{comment}{/* \_INCLUDE\_CPPUNIT\_CONFIG\_MAC\_H */}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

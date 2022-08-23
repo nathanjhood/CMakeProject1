@@ -1,0 +1,86 @@
+\hypertarget{class_test_case}{}\doxysection{Test\+Case Class Reference}
+\label{class_test_case}\index{TestCase@{TestCase}}
+
+
+A single test object.  
+
+
+
+
+{\ttfamily \#include $<$Test\+Case.\+h$>$}
+
+Inheritance diagram for Test\+Case\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.444445cm]{class_test_case}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_test_case_a6bc50d62de5b2d0addf9b0167e34b134}{run}} (\mbox{\hyperlink{class_test_result}{Test\+Result}} $\ast$result)
+\begin{DoxyCompactList}\small\item\em Run the test, collecting results. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_test_case_a2f3532470cf17ba70b37caa3c8cdd8ce}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Returns the test name. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_test_case_a6b55957ac1dfef01e5d9fa2475676f34}{run\+Test}} ()
+\begin{DoxyCompactList}\small\item\em FIXME\+: this should probably be pure virtual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A single test object. 
+
+This class is used to implement a simple test case\+: define a subclass that overrides the run\+Test method.
+
+You don\textquotesingle{}t usually need to use that class, but \mbox{\hyperlink{class_test_fixture}{Test\+Fixture}} and \mbox{\hyperlink{class_test_caller}{Test\+Caller}} instead.
+
+You are expected to subclass \mbox{\hyperlink{class_test_case}{Test\+Case}} is you need to write a class similiar to \mbox{\hyperlink{class_test_caller}{Test\+Caller}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_test_case_a2f3532470cf17ba70b37caa3c8cdd8ce}\label{class_test_case_a2f3532470cf17ba70b37caa3c8cdd8ce}} 
+\index{TestCase@{TestCase}!getName@{getName}}
+\index{getName@{getName}!TestCase@{TestCase}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Test\+Case\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the test name. 
+
+Each test has a name. This name may be used to find the test in a suite or registry of tests. 
+
+Implements \mbox{\hyperlink{class_test_a5e024da199f811a33264e432c21dcc94}{Test}}.
+
+\mbox{\Hypertarget{class_test_case_a6bc50d62de5b2d0addf9b0167e34b134}\label{class_test_case_a6bc50d62de5b2d0addf9b0167e34b134}} 
+\index{TestCase@{TestCase}!run@{run}}
+\index{run@{run}!TestCase@{TestCase}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily virtual void Test\+Case\+::run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_test_result}{Test\+Result}} $\ast$}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Run the test, collecting results. 
+
+
+
+Implements \mbox{\hyperlink{class_test_a7beeb95dc0d058bd3bfea1a75463cb03}{Test}}.
+
+\mbox{\Hypertarget{class_test_case_a6b55957ac1dfef01e5d9fa2475676f34}\label{class_test_case_a6b55957ac1dfef01e5d9fa2475676f34}} 
+\index{TestCase@{TestCase}!runTest@{runTest}}
+\index{runTest@{runTest}!TestCase@{TestCase}}
+\doxysubsubsection{\texorpdfstring{runTest()}{runTest()}}
+{\footnotesize\ttfamily virtual void Test\+Case\+::run\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+FIXME\+: this should probably be pure virtual. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_exception_test_case_decorator_a3f78294d459a94f55413162d814f291d}{Exception\+Test\+Case\+Decorator$<$ Expected\+Exception $>$}}, \mbox{\hyperlink{class_test_case_decorator_ad083ca55ff2e7f1f3f442364aa1dde66}{Test\+Case\+Decorator}}, and \mbox{\hyperlink{class_test_caller_aad0c877a47b75d056a4f8f323d3169ab}{Test\+Caller$<$ Fixture $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/Test\+Case.\+h\end{DoxyCompactItemize}

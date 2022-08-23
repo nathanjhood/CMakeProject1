@@ -1,0 +1,55 @@
+\hypertarget{structassertion__traits}{}\doxysection{assertion\+\_\+traits\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structassertion__traits}\index{assertion\_traits$<$ T $>$@{assertion\_traits$<$ T $>$}}
+
+
+Traits used by CPPUNIT\+\_\+\+ASSERT$\ast$ macros.  
+
+
+
+
+{\ttfamily \#include $<$Test\+Assert.\+h$>$}
+
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+struct assertion\+\_\+traits$<$ T $>$}
+Traits used by CPPUNIT\+\_\+\+ASSERT$\ast$ macros. 
+
+Here is an example of specialising these traits\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<>}
+\DoxyCodeLine{\textcolor{keyword}{struct }\mbox{\hyperlink{structassertion__traits}{assertion\_traits}}<std::string>   \textcolor{comment}{// specialization for the std::string type}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{keyword}{static} \textcolor{keywordtype}{bool} equal( \textcolor{keyword}{const} std::string\& x, \textcolor{keyword}{const} std::string\& y )}
+\DoxyCodeLine{  \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} x == y;}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keyword}{static} \textcolor{keywordtype}{bool} less( \textcolor{keyword}{const} std::string\& x, \textcolor{keyword}{const} std::string\& y )}
+\DoxyCodeLine{  \{}
+\DoxyCodeLine{     \textcolor{keywordflow}{return} x < y;}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keyword}{static} \textcolor{keywordtype}{bool} lessEqual( \textcolor{keyword}{const} std::string\& x, \textcolor{keyword}{const} std::string\& y )}
+\DoxyCodeLine{  \{}
+\DoxyCodeLine{     \textcolor{keywordflow}{return} x <= y;}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keyword}{static} std::string toString( \textcolor{keyword}{const} std::string\& x )}
+\DoxyCodeLine{  \{}
+\DoxyCodeLine{    std::string text = \textcolor{charliteral}{'"{}'} + x + \textcolor{charliteral}{'"{}'};    \textcolor{comment}{// adds quote around the string to see whitespace}}
+\DoxyCodeLine{    OStringStream ost;}
+\DoxyCodeLine{    ost << text;}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} ost.str();}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+ 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/Test\+Assert.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,136 @@
+\hypertarget{_portability_8h_source}{}\doxysection{Portability.\+h}
+\label{_portability_8h_source}\index{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/Portability.h@{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/Portability.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CPPUNIT\_PORTABILITY\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CPPUNIT\_PORTABILITY\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#if defined(\_WIN32) \&\& !defined(WIN32)}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\# define WIN32 1}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{/* include platform specific config */}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#if defined(\_\_BORLANDC\_\_)}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#  include <cppunit/config/config-\/bcb5.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#elif defined (\_MSC\_VER)}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#  if \_MSC\_VER == 1200 \&\& defined(\_WIN32\_WCE) }\textcolor{comment}{//evc4}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#    include <cppunit/config/config-\/evc4.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#  else}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#    include <cppunit/config/config-\/msvc6.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#    include <cppunit/config-\/auto.h>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{// Version number of package}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#ifndef CPPUNIT\_VERSION }}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define CPPUNIT\_VERSION  "{}1.15.0"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{25  }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <cppunit/config/CppUnitApi.h>}    \textcolor{comment}{// define CPPUNIT\_API \& CPPUNIT\_NEED\_DLL\_DECL}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_select_dll_loader_8h}{cppunit/config/SelectDllLoader.h}}>}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{/* Options that the library user may switch on or off.}}
+\DoxyCodeLine{31 \textcolor{comment}{ * If the user has not done so, we chose default values.}}
+\DoxyCodeLine{32 \textcolor{comment}{ */}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{/* Define to 1 if you wish to have the old-\/style macros}}
+\DoxyCodeLine{36 \textcolor{comment}{   assert(), assertEqual(), assertDoublesEqual(), and assertLongsEqual() */}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#if !defined(CPPUNIT\_ENABLE\_NAKED\_ASSERT)}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\# define CPPUNIT\_ENABLE\_NAKED\_ASSERT          0}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{comment}{/* Define to 1 if you wish to have the old-\/style CU\_TEST family}}
+\DoxyCodeLine{42 \textcolor{comment}{   of macros. */}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#if !defined(CPPUNIT\_ENABLE\_CU\_TEST\_MACROS)}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\# define CPPUNIT\_ENABLE\_CU\_TEST\_MACROS        0}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{comment}{/* Define to 1 if the preprocessor expands (\#foo) to "{}foo"{} (quotes incl.) }}
+\DoxyCodeLine{48 \textcolor{comment}{   I don't think there is any C preprocess that does NOT support this! */}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#if !defined(CPPUNIT\_HAVE\_CPP\_SOURCE\_ANNOTATION)}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\# define CPPUNIT\_HAVE\_CPP\_SOURCE\_ANNOTATION   1}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{comment}{/* Assumes that STL and CppUnit are in global space if the compiler does not}}
+\DoxyCodeLine{54 \textcolor{comment}{   support namespace. */}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#if !defined(CPPUNIT\_HAVE\_NAMESPACES)}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\# if !defined(CPPUNIT\_NO\_NAMESPACE)}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#  define CPPUNIT\_NO\_NAMESPACE 1}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\# endif }\textcolor{comment}{// !defined(CPPUNIT\_NO\_NAMESPACE)}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\# if !defined(CPPUNIT\_NO\_STD\_NAMESPACE)}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#  define CPPUNIT\_NO\_STD\_NAMESPACE 1}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\# endif }\textcolor{comment}{// !defined(CPPUNIT\_NO\_STD\_NAMESPACE)}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !defined(CPPUNIT\_HAVE\_NAMESPACES)}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{comment}{// Compiler error location format for CompilerOutputter}}
+\DoxyCodeLine{65 \textcolor{comment}{// If not define, assumes that it's gcc}}
+\DoxyCodeLine{66 \textcolor{comment}{// See class CompilerOutputter for format.}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#if !defined(CPPUNIT\_COMPILER\_LOCATION\_FORMAT)}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#if defined(\_\_GNUC\_\_) \&\& ( defined(\_\_APPLE\_CPP\_\_) || defined(\_\_APPLE\_CC\_\_) )}}
+\DoxyCodeLine{69 \textcolor{comment}{// gcc/Xcode integration on Mac OS X}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\# define CPPUNIT\_COMPILER\_LOCATION\_FORMAT "{}\%p:\%l: "{}} }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\# define CPPUNIT\_COMPILER\_LOCATION\_FORMAT "{}\%f:\%l:"{}}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{comment}{// If CPPUNIT\_HAVE\_CPP\_CAST is defined, then c++ style cast will be used,}}
+\DoxyCodeLine{77 \textcolor{comment}{// otherwise, C style cast are used.}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#if defined( CPPUNIT\_HAVE\_CPP\_CAST )}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\# define CPPUNIT\_CONST\_CAST( TargetType, pointer ) \(\backslash\)}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{    const\_cast<TargetType>( pointer )}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{preprocessor}{\# define CPPUNIT\_STATIC\_CAST( TargetType, pointer ) \(\backslash\)}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{    static\_cast<TargetType>( pointer )}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#else }\textcolor{comment}{// defined( CPPUNIT\_HAVE\_CPP\_CAST )}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\# define CPPUNIT\_CONST\_CAST( TargetType, pointer ) \(\backslash\)}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{    ((TargetType)( pointer ))}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\# define CPPUNIT\_STATIC\_CAST( TargetType, pointer ) \(\backslash\)}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{    ((TargetType)( pointer ))}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// defined( CPPUNIT\_HAVE\_CPP\_CAST )}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{comment}{// If CPPUNIT\_NO\_STD\_NAMESPACE is defined then STL are in the global space.}}
+\DoxyCodeLine{92 \textcolor{comment}{// => Define macro 'std' to nothing}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#if defined(CPPUNIT\_NO\_STD\_NAMESPACE)}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\# undef std}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\# define std}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// defined(CPPUNIT\_NO\_STD\_NAMESPACE)}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{comment}{// If CPPUNIT\_NO\_NAMESPACE is defined, then put CppUnit classes in the}}
+\DoxyCodeLine{99 \textcolor{comment}{// global namespace: the compiler does not support namespace.}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#if defined(CPPUNIT\_NO\_NAMESPACE)}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\# define CPPUNIT\_NS\_BEGIN}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\# define CPPUNIT\_NS\_END}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\# define CPPUNIT\_NS}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#else   }\textcolor{comment}{// defined(CPPUNIT\_NO\_NAMESPACE)}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\# define CPPUNIT\_NS\_BEGIN namespace CppUnit \{}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\# define CPPUNIT\_NS\_END \}}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\# define CPPUNIT\_NS CppUnit}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// defined(CPPUNIT\_NO\_NAMESPACE)}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define CPPUNIT\_STRINGIZE( symbol ) \_CPPUNIT\_DO\_STRINGIZE( symbol )}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define \_CPPUNIT\_DO\_STRINGIZE( symbol ) \#symbol}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define CPPUNIT\_JOIN( symbol1, symbol2 ) \_CPPUNIT\_DO\_JOIN( symbol1, symbol2 )}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define \_CPPUNIT\_DO\_JOIN( symbol1, symbol2 ) \_CPPUNIT\_DO\_JOIN2( symbol1, symbol2 )}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define \_CPPUNIT\_DO\_JOIN2( symbol1, symbol2 ) symbol1\#\#symbol2}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#ifndef CPPUNIT\_UNIQUE\_COUNTER}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\# define CPPUNIT\_UNIQUE\_COUNTER \_\_LINE\_\_}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define CPPUNIT\_MAKE\_UNIQUE\_NAME( prefix ) CPPUNIT\_JOIN( prefix, CPPUNIT\_UNIQUE\_COUNTER )}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#if !defined(CPPUNIT\_WRAP\_COLUMN)}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\# define CPPUNIT\_WRAP\_COLUMN 79}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// CPPUNIT\_PORTABILITY\_H}}
+
+\end{DoxyCode}

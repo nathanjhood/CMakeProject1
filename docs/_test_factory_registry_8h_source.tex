@@ -1,0 +1,69 @@
+\hypertarget{_test_factory_registry_8h_source}{}\doxysection{Test\+Factory\+Registry.\+h}
+\label{_test_factory_registry_8h_source}\index{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/extensions/TestFactoryRegistry.h@{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/extensions/TestFactoryRegistry.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CPPUNIT\_EXTENSIONS\_TESTFACTORYREGISTRY\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CPPUNIT\_EXTENSIONS\_TESTFACTORYREGISTRY\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cppunit/Portability.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#if CPPUNIT\_NEED\_DLL\_DECL}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#pragma warning( push )}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#pragma warning( disable: 4251)  }\textcolor{comment}{// X needs to have dll-\/interface to be used by clients of class Z}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <cppunit/extensions/TestFactory.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 CPPUNIT\_NS\_BEGIN}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_test_suite}{TestSuite}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{75 \textcolor{keyword}{class }CPPUNIT\_API \mbox{\hyperlink{class_test_factory_registry}{TestFactoryRegistry}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_test_factory}{TestFactory}}}
+\DoxyCodeLine{76 \{}
+\DoxyCodeLine{77 \textcolor{keyword}{public}:}
+\DoxyCodeLine{82   \mbox{\hyperlink{class_test_factory_registry_a704548465fea8b52fa449845b8b42caf}{TestFactoryRegistry}}( std::string name );}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{85   \textcolor{keyword}{virtual} \mbox{\hyperlink{class_test_factory_registry_a1c0c5589eb993ad6a5b1a17d439db457}{\string~TestFactoryRegistry}}();}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{91   \textcolor{keyword}{virtual} \mbox{\hyperlink{class_test}{Test}} *\mbox{\hyperlink{class_test_factory_registry_a32337a90fd885e55dbba1d26e4d9c2e2}{makeTest}}();}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{102   \textcolor{keyword}{static} \mbox{\hyperlink{class_test_factory_registry}{TestFactoryRegistry}} \&\mbox{\hyperlink{class_test_factory_registry_ade673d8465371d581c7a704a7baa4620}{getRegistry}}( \textcolor{keyword}{const} std::string \&name = \textcolor{stringliteral}{"{}All Tests"{}} );}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{107   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_factory_registry_a39180636ddd11a499d15614a335b17d5}{addTestToSuite}}( \mbox{\hyperlink{class_test_suite}{TestSuite}} *suite );}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{113   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_factory_registry_a632c38375727ca735e2c1897bd625b99}{registerFactory}}( \mbox{\hyperlink{class_test_factory}{TestFactory}} *factory );}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{121   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_factory_registry_afa3fb925b07eb34e9ccfab84812afc18}{unregisterFactory}}( \mbox{\hyperlink{class_test_factory}{TestFactory}} *factory );}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{133   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_factory_registry_abb68b347450c97ff0dfc9ea3dfe03f4c}{addRegistry}}( \textcolor{keyword}{const} std::string \&name );}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{148   \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_test_factory_registry_a8638d92944309341c68089aa098800cb}{isValid}}();}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{155   \textcolor{keywordtype}{void} \mbox{\hyperlink{class_test_factory_registry_aff8d8215ec83fbb77d46706264e2f161}{registerFactory}}( \textcolor{keyword}{const} std::string \&name,}
+\DoxyCodeLine{156                         \mbox{\hyperlink{class_test_factory}{TestFactory}} *factory );}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \textcolor{keyword}{private}:}
+\DoxyCodeLine{159   \mbox{\hyperlink{class_test_factory_registry}{TestFactoryRegistry}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_test_factory_registry}{TestFactoryRegistry}} \&copy );}
+\DoxyCodeLine{160   \textcolor{keywordtype}{void} operator =( \textcolor{keyword}{const} \mbox{\hyperlink{class_test_factory_registry}{TestFactoryRegistry}} \&copy );}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \textcolor{keyword}{private}:}
+\DoxyCodeLine{163   \textcolor{keyword}{typedef} std::set<TestFactory *, std::less<TestFactory*> > Factories;}
+\DoxyCodeLine{164   Factories m\_factories;}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166   std::string m\_name;}
+\DoxyCodeLine{167 \};}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 CPPUNIT\_NS\_END}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#if CPPUNIT\_NEED\_DLL\_DECL}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#pragma warning( pop )}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// CPPUNIT\_EXTENSIONS\_TESTFACTORYREGISTRY\_H}}
+
+\end{DoxyCode}

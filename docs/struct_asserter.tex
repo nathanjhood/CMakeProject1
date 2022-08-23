@@ -1,0 +1,448 @@
+\hypertarget{struct_asserter}{}\doxysection{Asserter Struct Reference}
+\label{struct_asserter}\index{Asserter@{Asserter}}
+
+
+A set of functions to help writing assertion macros.  
+
+
+
+
+{\ttfamily \#include $<$Asserter.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void CPPUNIT\+\_\+\+API \mbox{\hyperlink{struct_asserter_a5a67b6042625cc87d271a53ac555e437}{fail}} (const \mbox{\hyperlink{class_message}{Message}} \&message, const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&source\+Line=\mbox{\hyperlink{class_source_line}{Source\+Line}}())
+\begin{DoxyCompactList}\small\item\em Throws a \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. \end{DoxyCompactList}\item 
+static void CPPUNIT\+\_\+\+API \mbox{\hyperlink{struct_asserter_a74825fc71909baa1286f9282ba5a2a54}{fail}} (std\+::string message, const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&source\+Line=\mbox{\hyperlink{class_source_line}{Source\+Line}}())
+\begin{DoxyCompactList}\small\item\em Throws a \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. \end{DoxyCompactList}\item 
+static void CPPUNIT\+\_\+\+API \mbox{\hyperlink{struct_asserter_a425da14df34fad7e23a35456fce0eb2b}{fail\+If}} (bool should\+Fail, const \mbox{\hyperlink{class_message}{Message}} \&message, const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&source\+Line=\mbox{\hyperlink{class_source_line}{Source\+Line}}())
+\begin{DoxyCompactList}\small\item\em Throws a \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. \end{DoxyCompactList}\item 
+static void CPPUNIT\+\_\+\+API \mbox{\hyperlink{struct_asserter_a71a4667a9d3f5d483f1a82157f715824}{fail\+If}} (bool should\+Fail, std\+::string message, const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&source\+Line=\mbox{\hyperlink{class_source_line}{Source\+Line}}())
+\begin{DoxyCompactList}\small\item\em Throws a \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. \end{DoxyCompactList}\item 
+static std\+::string CPPUNIT\+\_\+\+API \mbox{\hyperlink{struct_asserter_adcbee7c01d58bfaee72cc984627e6432}{make\+Expected}} (const std\+::string \&expected\+Value)
+\begin{DoxyCompactList}\small\item\em Returns a expected value string for a message, case equal than Typically used to create \textquotesingle{}not equal\textquotesingle{} message, or to check that a message contains the expected content when writing unit tests for your custom assertions. \end{DoxyCompactList}\item 
+static std\+::string CPPUNIT\+\_\+\+API \mbox{\hyperlink{struct_asserter_a9fe1976b56152e9ae20723ed1757606a}{make\+Expected\+Equal}} (const std\+::string \&expected\+Value)
+\begin{DoxyCompactList}\small\item\em Returns a expected value string for a message, case equal than Typically used to create \textquotesingle{}not equal\textquotesingle{} message, or to check that a message contains the expected content when writing unit tests for your custom assertions. \end{DoxyCompactList}\item 
+static std\+::string CPPUNIT\+\_\+\+API \mbox{\hyperlink{struct_asserter_a0b24cf9414c75e755d37adf80c0776dc}{make\+Expected\+Less}} (const std\+::string \&expected\+Value)
+\begin{DoxyCompactList}\small\item\em Returns a expected value string for a message, case less than. \end{DoxyCompactList}\item 
+static std\+::string CPPUNIT\+\_\+\+API \mbox{\hyperlink{struct_asserter_a9f02c1760167159c3ccd0156920164d4}{make\+Expected\+Less\+Equal}} (const std\+::string \&expected\+Value)
+\begin{DoxyCompactList}\small\item\em Returns a expected value string for a message, case less or equal than. \end{DoxyCompactList}\item 
+static std\+::string CPPUNIT\+\_\+\+API \mbox{\hyperlink{struct_asserter_abc8e14e7be489bcc08385a1b519dec6c}{make\+Expected\+Greater}} (const std\+::string \&expected\+Value)
+\begin{DoxyCompactList}\small\item\em Returns a expected value string for a message, case greater than. \end{DoxyCompactList}\item 
+static std\+::string CPPUNIT\+\_\+\+API \mbox{\hyperlink{struct_asserter_a77c73d79e4976cfe3b3638fd5d9736b0}{make\+Expected\+Greater\+Equal}} (const std\+::string \&expected\+Value)
+\begin{DoxyCompactList}\small\item\em Returns a expected value string for a message, greater or equal than. \end{DoxyCompactList}\item 
+static std\+::string CPPUNIT\+\_\+\+API \mbox{\hyperlink{struct_asserter_ae52920ca7ffd981df61d7a3cfd88793b}{make\+Actual}} (const std\+::string \&actual\+Value)
+\begin{DoxyCompactList}\small\item\em Returns an actual value string for a message. Typically used to create \textquotesingle{}not equal\textquotesingle{} message, or to check that a message contains the expected content when writing unit tests for your custom assertions. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_message}{Message}} CPPUNIT\+\_\+\+API \mbox{\hyperlink{struct_asserter_adb8ac36c8f0d385430e5a087a66219db}{make\+Not\+Equal\+Message}} (const std\+::string \&expected\+Value, const std\+::string \&actual\+Value, const \mbox{\hyperlink{class_additional_message}{Additional\+Message}} \&additional\+Message=\mbox{\hyperlink{class_additional_message}{Additional\+Message}}(), const std\+::string \&short\+Description=\char`\"{}equality assertion failed\char`\"{})
+\item 
+static void CPPUNIT\+\_\+\+API \mbox{\hyperlink{struct_asserter_ac6234767e7d986bace97dc44f8d80d6c}{fail\+Not\+Equal}} (std\+::string expected, std\+::string actual, const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&source\+Line, const \mbox{\hyperlink{class_additional_message}{Additional\+Message}} \&additional\+Message=\mbox{\hyperlink{class_additional_message}{Additional\+Message}}(), std\+::string short\+Description=\char`\"{}equality assertion failed\char`\"{})
+\begin{DoxyCompactList}\small\item\em Throws an \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. \end{DoxyCompactList}\item 
+static void CPPUNIT\+\_\+\+API \mbox{\hyperlink{struct_asserter_a526d3dfb925ded96ee572c9172e45719}{fail\+Not\+Less}} (std\+::string expected, std\+::string actual, const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&source\+Line, const \mbox{\hyperlink{class_additional_message}{Additional\+Message}} \&additional\+Message=\mbox{\hyperlink{class_additional_message}{Additional\+Message}}(), std\+::string short\+Description=\char`\"{}less assertion failed\char`\"{})
+\begin{DoxyCompactList}\small\item\em Throws an \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. \end{DoxyCompactList}\item 
+static void CPPUNIT\+\_\+\+API \mbox{\hyperlink{struct_asserter_af81d6b5ea7304353a0b4789dd21c2e5a}{fail\+Not\+Greater}} (std\+::string expected, std\+::string actual, const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&source\+Line, const \mbox{\hyperlink{class_additional_message}{Additional\+Message}} \&additional\+Message=\mbox{\hyperlink{class_additional_message}{Additional\+Message}}(), std\+::string short\+Description=\char`\"{}greater assertion failed\char`\"{})
+\begin{DoxyCompactList}\small\item\em Throws an \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. \end{DoxyCompactList}\item 
+static void CPPUNIT\+\_\+\+API \mbox{\hyperlink{struct_asserter_acaa889193acf3b6a396d7d637db406d9}{fail\+Not\+Less\+Equal}} (std\+::string expected, std\+::string actual, const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&source\+Line, const \mbox{\hyperlink{class_additional_message}{Additional\+Message}} \&additional\+Message=\mbox{\hyperlink{class_additional_message}{Additional\+Message}}(), std\+::string short\+Description=\char`\"{}less equal assertion failed\char`\"{})
+\begin{DoxyCompactList}\small\item\em Throws an \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. \end{DoxyCompactList}\item 
+static void CPPUNIT\+\_\+\+API \mbox{\hyperlink{struct_asserter_a87037d0c7e6df18a4043fb3f238f56ed}{fail\+Not\+Greater\+Equal}} (std\+::string expected, std\+::string actual, const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&source\+Line, const \mbox{\hyperlink{class_additional_message}{Additional\+Message}} \&additional\+Message=\mbox{\hyperlink{class_additional_message}{Additional\+Message}}(), std\+::string short\+Description=\char`\"{}greater equal assertion failed\char`\"{})
+\begin{DoxyCompactList}\small\item\em Throws an \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. \end{DoxyCompactList}\item 
+static void CPPUNIT\+\_\+\+API \mbox{\hyperlink{struct_asserter_a3a805c9f8c641d65353bcff2da80624f}{fail\+Not\+Equal\+If}} (bool should\+Fail, std\+::string expected, std\+::string actual, const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&source\+Line, const \mbox{\hyperlink{class_additional_message}{Additional\+Message}} \&additional\+Message=\mbox{\hyperlink{class_additional_message}{Additional\+Message}}(), std\+::string short\+Description=\char`\"{}equality assertion failed\char`\"{})
+\begin{DoxyCompactList}\small\item\em Throws an \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A set of functions to help writing assertion macros. 
+
+Here is an example of assertion, a simplified version of the actual assertion implemented in examples/cppunittest/\+Xml\+Uniformiser.\+h\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <cppunit/SourceLine.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <cppunit/TestAssert.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} }
+\DoxyCodeLine{checkXmlEqual( std::string expectedXml,}
+\DoxyCodeLine{               std::string actualXml,}
+\DoxyCodeLine{               CppUnit::SourceLine sourceLine )}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  std::string expected = XmlUniformiser( expectedXml ).stripped();}
+\DoxyCodeLine{  std::string actual = XmlUniformiser( actualXml ).stripped();}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} ( expected == actual )}
+\DoxyCodeLine{    \textcolor{keywordflow}{return};}
+\DoxyCodeLine{}
+\DoxyCodeLine{  ::CppUnit::Asserter::failNotEqual( expected,}
+\DoxyCodeLine{                                     actual,}
+\DoxyCodeLine{                                     sourceLine );}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define CPPUNITTEST\_ASSERT\_XML\_EQUAL( expected, actual ) \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    checkXmlEqual( expected, actual,                     \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                   CPPUNIT\_SOURCELINE() )}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_asserter_a5a67b6042625cc87d271a53ac555e437}\label{struct_asserter_a5a67b6042625cc87d271a53ac555e437}} 
+\index{Asserter@{Asserter}!fail@{fail}}
+\index{fail@{fail}!Asserter@{Asserter}}
+\doxysubsubsection{\texorpdfstring{fail()}{fail()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void CPPUNIT\+\_\+\+API Asserter\+::fail (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_message}{Message}} \&}]{message,  }\item[{const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&}]{source\+Line = {\ttfamily \mbox{\hyperlink{class_source_line}{Source\+Line}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Throws a \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. 
+
+\mbox{\Hypertarget{struct_asserter_a74825fc71909baa1286f9282ba5a2a54}\label{struct_asserter_a74825fc71909baa1286f9282ba5a2a54}} 
+\index{Asserter@{Asserter}!fail@{fail}}
+\index{fail@{fail}!Asserter@{Asserter}}
+\doxysubsubsection{\texorpdfstring{fail()}{fail()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void CPPUNIT\+\_\+\+API Asserter\+::fail (\begin{DoxyParamCaption}\item[{std\+::string}]{message,  }\item[{const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&}]{source\+Line = {\ttfamily \mbox{\hyperlink{class_source_line}{Source\+Line}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Throws a \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Use fail( Message, Source\+Line ) instead. \end{DoxyRefDesc}
+\mbox{\Hypertarget{struct_asserter_a425da14df34fad7e23a35456fce0eb2b}\label{struct_asserter_a425da14df34fad7e23a35456fce0eb2b}} 
+\index{Asserter@{Asserter}!failIf@{failIf}}
+\index{failIf@{failIf}!Asserter@{Asserter}}
+\doxysubsubsection{\texorpdfstring{failIf()}{failIf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void CPPUNIT\+\_\+\+API Asserter\+::fail\+If (\begin{DoxyParamCaption}\item[{bool}]{should\+Fail,  }\item[{const \mbox{\hyperlink{class_message}{Message}} \&}]{message,  }\item[{const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&}]{source\+Line = {\ttfamily \mbox{\hyperlink{class_source_line}{Source\+Line}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Throws a \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em should\+Fail} & if {\ttfamily true} then the exception is thrown. Otherwise nothing happen. \\
+\hline
+{\em message} & \mbox{\hyperlink{class_message}{Message}} explaining the assertion failiure. \\
+\hline
+{\em source\+Line} & Location of the assertion. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_asserter_a71a4667a9d3f5d483f1a82157f715824}\label{struct_asserter_a71a4667a9d3f5d483f1a82157f715824}} 
+\index{Asserter@{Asserter}!failIf@{failIf}}
+\index{failIf@{failIf}!Asserter@{Asserter}}
+\doxysubsubsection{\texorpdfstring{failIf()}{failIf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void CPPUNIT\+\_\+\+API Asserter\+::fail\+If (\begin{DoxyParamCaption}\item[{bool}]{should\+Fail,  }\item[{std\+::string}]{message,  }\item[{const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&}]{source\+Line = {\ttfamily \mbox{\hyperlink{class_source_line}{Source\+Line}}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Throws a \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000002}{Deprecated}}]Use fail\+If( bool, Message, Source\+Line ) instead. \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em should\+Fail} & if {\ttfamily true} then the exception is thrown. Otherwise nothing happen. \\
+\hline
+{\em message} & \mbox{\hyperlink{class_message}{Message}} explaining the assertion failiure. \\
+\hline
+{\em source\+Line} & Location of the assertion. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_asserter_ac6234767e7d986bace97dc44f8d80d6c}\label{struct_asserter_ac6234767e7d986bace97dc44f8d80d6c}} 
+\index{Asserter@{Asserter}!failNotEqual@{failNotEqual}}
+\index{failNotEqual@{failNotEqual}!Asserter@{Asserter}}
+\doxysubsubsection{\texorpdfstring{failNotEqual()}{failNotEqual()}}
+{\footnotesize\ttfamily static void CPPUNIT\+\_\+\+API Asserter\+::fail\+Not\+Equal (\begin{DoxyParamCaption}\item[{std\+::string}]{expected,  }\item[{std\+::string}]{actual,  }\item[{const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&}]{source\+Line,  }\item[{const \mbox{\hyperlink{class_additional_message}{Additional\+Message}} \&}]{additional\+Message = {\ttfamily \mbox{\hyperlink{class_additional_message}{Additional\+Message}}()},  }\item[{std\+::string}]{short\+Description = {\ttfamily \char`\"{}equality~assertion~failed\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Throws an \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expected} & Text describing the expected value. \\
+\hline
+{\em actual} & Text describing the actual value. \\
+\hline
+{\em source\+Line} & Location of the assertion. \\
+\hline
+{\em additional\+Message} & Additional message. Usually used to report what are the differences between the expected and actual value. \\
+\hline
+{\em short\+Description} & Short description for the failure message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_asserter_a3a805c9f8c641d65353bcff2da80624f}\label{struct_asserter_a3a805c9f8c641d65353bcff2da80624f}} 
+\index{Asserter@{Asserter}!failNotEqualIf@{failNotEqualIf}}
+\index{failNotEqualIf@{failNotEqualIf}!Asserter@{Asserter}}
+\doxysubsubsection{\texorpdfstring{failNotEqualIf()}{failNotEqualIf()}}
+{\footnotesize\ttfamily static void CPPUNIT\+\_\+\+API Asserter\+::fail\+Not\+Equal\+If (\begin{DoxyParamCaption}\item[{bool}]{should\+Fail,  }\item[{std\+::string}]{expected,  }\item[{std\+::string}]{actual,  }\item[{const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&}]{source\+Line,  }\item[{const \mbox{\hyperlink{class_additional_message}{Additional\+Message}} \&}]{additional\+Message = {\ttfamily \mbox{\hyperlink{class_additional_message}{Additional\+Message}}()},  }\item[{std\+::string}]{short\+Description = {\ttfamily \char`\"{}equality~assertion~failed\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Throws an \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em should\+Fail} & if {\ttfamily true} then the exception is thrown. Otherwise nothing happen. \\
+\hline
+{\em expected} & Text describing the expected value. \\
+\hline
+{\em actual} & Text describing the actual value. \\
+\hline
+{\em source\+Line} & Location of the assertion. \\
+\hline
+{\em additional\+Message} & Additional message. Usually used to report where the \char`\"{}difference\char`\"{} is located. \\
+\hline
+{\em short\+Description} & Short description for the failure message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_asserter_af81d6b5ea7304353a0b4789dd21c2e5a}\label{struct_asserter_af81d6b5ea7304353a0b4789dd21c2e5a}} 
+\index{Asserter@{Asserter}!failNotGreater@{failNotGreater}}
+\index{failNotGreater@{failNotGreater}!Asserter@{Asserter}}
+\doxysubsubsection{\texorpdfstring{failNotGreater()}{failNotGreater()}}
+{\footnotesize\ttfamily static void CPPUNIT\+\_\+\+API Asserter\+::fail\+Not\+Greater (\begin{DoxyParamCaption}\item[{std\+::string}]{expected,  }\item[{std\+::string}]{actual,  }\item[{const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&}]{source\+Line,  }\item[{const \mbox{\hyperlink{class_additional_message}{Additional\+Message}} \&}]{additional\+Message = {\ttfamily \mbox{\hyperlink{class_additional_message}{Additional\+Message}}()},  }\item[{std\+::string}]{short\+Description = {\ttfamily \char`\"{}greater~assertion~failed\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Throws an \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expected} & Text describing the expected value. \\
+\hline
+{\em actual} & Text describing the actual value. \\
+\hline
+{\em source\+Line} & Location of the assertion. \\
+\hline
+{\em additional\+Message} & Additional message. Usually used to report what are the differences between the expected and actual value. \\
+\hline
+{\em short\+Description} & Short description for the failure message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_asserter_a87037d0c7e6df18a4043fb3f238f56ed}\label{struct_asserter_a87037d0c7e6df18a4043fb3f238f56ed}} 
+\index{Asserter@{Asserter}!failNotGreaterEqual@{failNotGreaterEqual}}
+\index{failNotGreaterEqual@{failNotGreaterEqual}!Asserter@{Asserter}}
+\doxysubsubsection{\texorpdfstring{failNotGreaterEqual()}{failNotGreaterEqual()}}
+{\footnotesize\ttfamily static void CPPUNIT\+\_\+\+API Asserter\+::fail\+Not\+Greater\+Equal (\begin{DoxyParamCaption}\item[{std\+::string}]{expected,  }\item[{std\+::string}]{actual,  }\item[{const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&}]{source\+Line,  }\item[{const \mbox{\hyperlink{class_additional_message}{Additional\+Message}} \&}]{additional\+Message = {\ttfamily \mbox{\hyperlink{class_additional_message}{Additional\+Message}}()},  }\item[{std\+::string}]{short\+Description = {\ttfamily \char`\"{}greater~equal~assertion~failed\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Throws an \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expected} & Text describing the expected value. \\
+\hline
+{\em actual} & Text describing the actual value. \\
+\hline
+{\em source\+Line} & Location of the assertion. \\
+\hline
+{\em additional\+Message} & Additional message. Usually used to report what are the differences between the expected and actual value. \\
+\hline
+{\em short\+Description} & Short description for the failure message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_asserter_a526d3dfb925ded96ee572c9172e45719}\label{struct_asserter_a526d3dfb925ded96ee572c9172e45719}} 
+\index{Asserter@{Asserter}!failNotLess@{failNotLess}}
+\index{failNotLess@{failNotLess}!Asserter@{Asserter}}
+\doxysubsubsection{\texorpdfstring{failNotLess()}{failNotLess()}}
+{\footnotesize\ttfamily static void CPPUNIT\+\_\+\+API Asserter\+::fail\+Not\+Less (\begin{DoxyParamCaption}\item[{std\+::string}]{expected,  }\item[{std\+::string}]{actual,  }\item[{const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&}]{source\+Line,  }\item[{const \mbox{\hyperlink{class_additional_message}{Additional\+Message}} \&}]{additional\+Message = {\ttfamily \mbox{\hyperlink{class_additional_message}{Additional\+Message}}()},  }\item[{std\+::string}]{short\+Description = {\ttfamily \char`\"{}less~assertion~failed\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Throws an \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expected} & Text describing the expected value. \\
+\hline
+{\em actual} & Text describing the actual value. \\
+\hline
+{\em source\+Line} & Location of the assertion. \\
+\hline
+{\em additional\+Message} & Additional message. Usually used to report what are the differences between the expected and actual value. \\
+\hline
+{\em short\+Description} & Short description for the failure message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_asserter_acaa889193acf3b6a396d7d637db406d9}\label{struct_asserter_acaa889193acf3b6a396d7d637db406d9}} 
+\index{Asserter@{Asserter}!failNotLessEqual@{failNotLessEqual}}
+\index{failNotLessEqual@{failNotLessEqual}!Asserter@{Asserter}}
+\doxysubsubsection{\texorpdfstring{failNotLessEqual()}{failNotLessEqual()}}
+{\footnotesize\ttfamily static void CPPUNIT\+\_\+\+API Asserter\+::fail\+Not\+Less\+Equal (\begin{DoxyParamCaption}\item[{std\+::string}]{expected,  }\item[{std\+::string}]{actual,  }\item[{const \mbox{\hyperlink{class_source_line}{Source\+Line}} \&}]{source\+Line,  }\item[{const \mbox{\hyperlink{class_additional_message}{Additional\+Message}} \&}]{additional\+Message = {\ttfamily \mbox{\hyperlink{class_additional_message}{Additional\+Message}}()},  }\item[{std\+::string}]{short\+Description = {\ttfamily \char`\"{}less~equal~assertion~failed\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Throws an \mbox{\hyperlink{class_exception}{Exception}} with the specified message and location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expected} & Text describing the expected value. \\
+\hline
+{\em actual} & Text describing the actual value. \\
+\hline
+{\em source\+Line} & Location of the assertion. \\
+\hline
+{\em additional\+Message} & Additional message. Usually used to report what are the differences between the expected and actual value. \\
+\hline
+{\em short\+Description} & Short description for the failure message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_asserter_ae52920ca7ffd981df61d7a3cfd88793b}\label{struct_asserter_ae52920ca7ffd981df61d7a3cfd88793b}} 
+\index{Asserter@{Asserter}!makeActual@{makeActual}}
+\index{makeActual@{makeActual}!Asserter@{Asserter}}
+\doxysubsubsection{\texorpdfstring{makeActual()}{makeActual()}}
+{\footnotesize\ttfamily static std\+::string CPPUNIT\+\_\+\+API Asserter\+::make\+Actual (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{actual\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns an actual value string for a message. Typically used to create \textquotesingle{}not equal\textquotesingle{} message, or to check that a message contains the expected content when writing unit tests for your custom assertions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em actual\+Value} & String that represents the actual value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape actual\+Value} prefixed with \char`\"{}\+Actual  \+: \char`\"{}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_asserter_adcbee7c01d58bfaee72cc984627e6432}{make\+Expected()}}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{struct_asserter_adcbee7c01d58bfaee72cc984627e6432}\label{struct_asserter_adcbee7c01d58bfaee72cc984627e6432}} 
+\index{Asserter@{Asserter}!makeExpected@{makeExpected}}
+\index{makeExpected@{makeExpected}!Asserter@{Asserter}}
+\doxysubsubsection{\texorpdfstring{makeExpected()}{makeExpected()}}
+{\footnotesize\ttfamily static std\+::string CPPUNIT\+\_\+\+API Asserter\+::make\+Expected (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{expected\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns a expected value string for a message, case equal than Typically used to create \textquotesingle{}not equal\textquotesingle{} message, or to check that a message contains the expected content when writing unit tests for your custom assertions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expected\+Value} & String that represents the expected value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape expected\+Value} prefixed with \char`\"{}\+Expected\+: \char`\"{}. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000003}{Deprecated}}]Use make\+Expected\+Equal instead \end{DoxyRefDesc}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_asserter_ae52920ca7ffd981df61d7a3cfd88793b}{make\+Actual()}}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{struct_asserter_a9fe1976b56152e9ae20723ed1757606a}\label{struct_asserter_a9fe1976b56152e9ae20723ed1757606a}} 
+\index{Asserter@{Asserter}!makeExpectedEqual@{makeExpectedEqual}}
+\index{makeExpectedEqual@{makeExpectedEqual}!Asserter@{Asserter}}
+\doxysubsubsection{\texorpdfstring{makeExpectedEqual()}{makeExpectedEqual()}}
+{\footnotesize\ttfamily static std\+::string CPPUNIT\+\_\+\+API Asserter\+::make\+Expected\+Equal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{expected\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns a expected value string for a message, case equal than Typically used to create \textquotesingle{}not equal\textquotesingle{} message, or to check that a message contains the expected content when writing unit tests for your custom assertions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expected\+Value} & String that represents the expected value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape expected\+Value} prefixed with \char`\"{}\+Expected\+: \char`\"{}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_asserter_ae52920ca7ffd981df61d7a3cfd88793b}{make\+Actual()}}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{struct_asserter_abc8e14e7be489bcc08385a1b519dec6c}\label{struct_asserter_abc8e14e7be489bcc08385a1b519dec6c}} 
+\index{Asserter@{Asserter}!makeExpectedGreater@{makeExpectedGreater}}
+\index{makeExpectedGreater@{makeExpectedGreater}!Asserter@{Asserter}}
+\doxysubsubsection{\texorpdfstring{makeExpectedGreater()}{makeExpectedGreater()}}
+{\footnotesize\ttfamily static std\+::string CPPUNIT\+\_\+\+API Asserter\+::make\+Expected\+Greater (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{expected\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns a expected value string for a message, case greater than. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expected\+Value} & String that represents the expected value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape expected\+Value} prefixed with \char`\"{}\+Expected\+: \char`\"{}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_asserter_a9fe1976b56152e9ae20723ed1757606a}{make\+Expected\+Equal()}}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{struct_asserter_a77c73d79e4976cfe3b3638fd5d9736b0}\label{struct_asserter_a77c73d79e4976cfe3b3638fd5d9736b0}} 
+\index{Asserter@{Asserter}!makeExpectedGreaterEqual@{makeExpectedGreaterEqual}}
+\index{makeExpectedGreaterEqual@{makeExpectedGreaterEqual}!Asserter@{Asserter}}
+\doxysubsubsection{\texorpdfstring{makeExpectedGreaterEqual()}{makeExpectedGreaterEqual()}}
+{\footnotesize\ttfamily static std\+::string CPPUNIT\+\_\+\+API Asserter\+::make\+Expected\+Greater\+Equal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{expected\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns a expected value string for a message, greater or equal than. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expected\+Value} & String that represents the expected value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape expected\+Value} prefixed with \char`\"{}\+Expected\+: \char`\"{}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_asserter_a9fe1976b56152e9ae20723ed1757606a}{make\+Expected\+Equal()}}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{struct_asserter_a0b24cf9414c75e755d37adf80c0776dc}\label{struct_asserter_a0b24cf9414c75e755d37adf80c0776dc}} 
+\index{Asserter@{Asserter}!makeExpectedLess@{makeExpectedLess}}
+\index{makeExpectedLess@{makeExpectedLess}!Asserter@{Asserter}}
+\doxysubsubsection{\texorpdfstring{makeExpectedLess()}{makeExpectedLess()}}
+{\footnotesize\ttfamily static std\+::string CPPUNIT\+\_\+\+API Asserter\+::make\+Expected\+Less (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{expected\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns a expected value string for a message, case less than. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expected\+Value} & String that represents the expected value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape expected\+Value} prefixed with \char`\"{}\+Expected less than\+: \char`\"{}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_asserter_a9fe1976b56152e9ae20723ed1757606a}{make\+Expected\+Equal()}}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{struct_asserter_a9f02c1760167159c3ccd0156920164d4}\label{struct_asserter_a9f02c1760167159c3ccd0156920164d4}} 
+\index{Asserter@{Asserter}!makeExpectedLessEqual@{makeExpectedLessEqual}}
+\index{makeExpectedLessEqual@{makeExpectedLessEqual}!Asserter@{Asserter}}
+\doxysubsubsection{\texorpdfstring{makeExpectedLessEqual()}{makeExpectedLessEqual()}}
+{\footnotesize\ttfamily static std\+::string CPPUNIT\+\_\+\+API Asserter\+::make\+Expected\+Less\+Equal (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{expected\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns a expected value string for a message, case less or equal than. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expected\+Value} & String that represents the expected value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape expected\+Value} prefixed with \char`\"{}\+Expected\+: \char`\"{}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_asserter_a9fe1976b56152e9ae20723ed1757606a}{make\+Expected\+Equal()}}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{struct_asserter_adb8ac36c8f0d385430e5a087a66219db}\label{struct_asserter_adb8ac36c8f0d385430e5a087a66219db}} 
+\index{Asserter@{Asserter}!makeNotEqualMessage@{makeNotEqualMessage}}
+\index{makeNotEqualMessage@{makeNotEqualMessage}!Asserter@{Asserter}}
+\doxysubsubsection{\texorpdfstring{makeNotEqualMessage()}{makeNotEqualMessage()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_message}{Message}} CPPUNIT\+\_\+\+API Asserter\+::make\+Not\+Equal\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{expected\+Value,  }\item[{const std\+::string \&}]{actual\+Value,  }\item[{const \mbox{\hyperlink{class_additional_message}{Additional\+Message}} \&}]{additional\+Message = {\ttfamily \mbox{\hyperlink{class_additional_message}{Additional\+Message}}()},  }\item[{const std\+::string \&}]{short\+Description = {\ttfamily \char`\"{}equality~assertion~failed\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000004}{Deprecated}}]Use make\+Message instead \end{DoxyRefDesc}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/Asserter.\+h\end{DoxyCompactItemize}

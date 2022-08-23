@@ -1,0 +1,63 @@
+\hypertarget{_auto_register_suite_8h_source}{}\doxysection{Auto\+Register\+Suite.\+h}
+\label{_auto_register_suite_8h_source}\index{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/extensions/AutoRegisterSuite.h@{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/extensions/AutoRegisterSuite.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CPPUNIT\_EXTENSIONS\_AUTOREGISTERSUITE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CPPUNIT\_EXTENSIONS\_AUTOREGISTERSUITE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cppunit/extensions/TestSuiteFactory.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <cppunit/extensions/TestFactoryRegistry.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 CPPUNIT\_NS\_BEGIN}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{27 \textcolor{keyword}{template}<\textcolor{keyword}{class} TestCaseType>}
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{class_auto_register_suite}{AutoRegisterSuite}}}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{33   \mbox{\hyperlink{class_auto_register_suite_a4c02d0d6e3de726f67b875dc5615e22a}{AutoRegisterSuite}}()}
+\DoxyCodeLine{34       : m\_registry( \&\mbox{\hyperlink{class_test_factory_registry}{TestFactoryRegistry}}::getRegistry() )}
+\DoxyCodeLine{35   \{}
+\DoxyCodeLine{36     m\_registry-\/>\mbox{\hyperlink{class_test_factory_registry_a632c38375727ca735e2c1897bd625b99}{registerFactory}}( \&m\_factory );}
+\DoxyCodeLine{37   \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{42   \mbox{\hyperlink{class_auto_register_suite_a9350fa1995545aad03b61b7a6db690e4}{AutoRegisterSuite}}( \textcolor{keyword}{const} std::string \&name )}
+\DoxyCodeLine{43       : m\_registry( \&\mbox{\hyperlink{class_test_factory_registry}{TestFactoryRegistry}}::getRegistry( name ) )}
+\DoxyCodeLine{44   \{}
+\DoxyCodeLine{45     m\_registry-\/>\mbox{\hyperlink{class_test_factory_registry_a632c38375727ca735e2c1897bd625b99}{registerFactory}}( \&m\_factory );}
+\DoxyCodeLine{46   \}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48   \mbox{\hyperlink{class_auto_register_suite}{\string~AutoRegisterSuite}}()}
+\DoxyCodeLine{49   \{}
+\DoxyCodeLine{50     \textcolor{keywordflow}{if} ( \mbox{\hyperlink{class_test_factory_registry_a8638d92944309341c68089aa098800cb}{TestFactoryRegistry::isValid}}() )}
+\DoxyCodeLine{51       m\_registry-\/>\mbox{\hyperlink{class_test_factory_registry_afa3fb925b07eb34e9ccfab84812afc18}{unregisterFactory}}( \&m\_factory );}
+\DoxyCodeLine{52   \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{private}:}
+\DoxyCodeLine{55   \mbox{\hyperlink{class_test_factory_registry}{TestFactoryRegistry}} *m\_registry;}
+\DoxyCodeLine{56   \mbox{\hyperlink{class_test_suite_factory}{TestSuiteFactory<TestCaseType>}} m\_factory;}
+\DoxyCodeLine{57 \};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{65 \textcolor{keyword}{class }\mbox{\hyperlink{class_auto_register_registry}{AutoRegisterRegistry}}}
+\DoxyCodeLine{66 \{}
+\DoxyCodeLine{67 \textcolor{keyword}{public}:}
+\DoxyCodeLine{68   \mbox{\hyperlink{class_auto_register_registry}{AutoRegisterRegistry}}( \textcolor{keyword}{const} std::string \&which,}
+\DoxyCodeLine{69                         \textcolor{keyword}{const} std::string \&to )}
+\DoxyCodeLine{70   \{}
+\DoxyCodeLine{71     \mbox{\hyperlink{class_test_factory_registry_ade673d8465371d581c7a704a7baa4620}{TestFactoryRegistry::getRegistry}}( to ).\mbox{\hyperlink{class_test_factory_registry_abb68b347450c97ff0dfc9ea3dfe03f4c}{addRegistry}}( which );}
+\DoxyCodeLine{72   \}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   \mbox{\hyperlink{class_auto_register_registry}{AutoRegisterRegistry}}( \textcolor{keyword}{const} std::string \&which )}
+\DoxyCodeLine{75   \{}
+\DoxyCodeLine{76     \mbox{\hyperlink{class_test_factory_registry_ade673d8465371d581c7a704a7baa4620}{TestFactoryRegistry::getRegistry}}().\mbox{\hyperlink{class_test_factory_registry_abb68b347450c97ff0dfc9ea3dfe03f4c}{addRegistry}}( which );}
+\DoxyCodeLine{77   \}}
+\DoxyCodeLine{78 \};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 CPPUNIT\_NS\_END}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// CPPUNIT\_EXTENSIONS\_AUTOREGISTERSUITE\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,190 @@
+\hypertarget{class_plug_in_manager}{}\doxysection{Plug\+In\+Manager Class Reference}
+\label{class_plug_in_manager}\index{PlugInManager@{PlugInManager}}
+
+
+Manges Test\+Plug\+In.  
+
+
+
+
+{\ttfamily \#include $<$Plug\+In\+Manager.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_plug_in_manager_1_1_plug_in_info}{Plug\+In\+Info}}
+\begin{DoxyCompactList}\small\item\em (INTERNAL) Information about a specific plug-\/in. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_plug_in_manager_a7789a7e258e750bd14267d20cac7d288}{Plug\+In\+Manager}} ()
+\item 
+virtual \mbox{\hyperlink{class_plug_in_manager_a093797f2d979b22fcf8df2230985b246}{$\sim$\+Plug\+In\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plug_in_manager_aa617ef22c19ff90d7a56cd048c975afa}{load}} (const std\+::string \&library\+File\+Name, const \mbox{\hyperlink{class_plug_in_parameters}{Plug\+In\+Parameters}} \&parameters=\mbox{\hyperlink{class_plug_in_parameters}{Plug\+In\+Parameters}}())
+\begin{DoxyCompactList}\small\item\em Loads the specified plug-\/in. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plug_in_manager_a5366b1e0e2e96e84d09e26893c00c4bf}{unload}} (const std\+::string \&library\+File\+Name)
+\begin{DoxyCompactList}\small\item\em Unloads the specified plug-\/in. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plug_in_manager_a3c51a256e3d6ee3bf6fa6c98d74053d1}{add\+Listener}} (\mbox{\hyperlink{class_test_result}{Test\+Result}} $\ast$event\+Manager)
+\begin{DoxyCompactList}\small\item\em Gives a chance to each loaded plug-\/in to register \mbox{\hyperlink{class_test_listener}{Test\+Listener}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plug_in_manager_aea9b8b61e256169b823516868e1d8ad0}{remove\+Listener}} (\mbox{\hyperlink{class_test_result}{Test\+Result}} $\ast$event\+Manager)
+\begin{DoxyCompactList}\small\item\em Gives a chance to each loaded plug-\/in to unregister \mbox{\hyperlink{class_test_listener}{Test\+Listener}}. For each plug-\/in, call \mbox{\hyperlink{struct_cpp_unit_test_plug_in_a8f36157014b515d38efbc8ab67923d85}{Cpp\+Unit\+Test\+Plug\+In\+::remove\+Listener()}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plug_in_manager_a4a9c64e0ac3f762b100b993d7e33f889}{add\+Xml\+Outputter\+Hooks}} (\mbox{\hyperlink{class_xml_outputter}{Xml\+Outputter}} $\ast$outputter)
+\begin{DoxyCompactList}\small\item\em Provides a way for the plug-\/in to register some \mbox{\hyperlink{class_xml_outputter_hook}{Xml\+Outputter\+Hook}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plug_in_manager_a0fe59f82fd430ea57159a6ffad9a4035}{remove\+Xml\+Outputter\+Hooks}} ()
+\begin{DoxyCompactList}\small\item\em Called when the \mbox{\hyperlink{class_xml_outputter}{Xml\+Outputter}} is destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_plug_in_manager_afc1fa045afaac73cd44f69839056f1e1}{unload}} (\mbox{\hyperlink{struct_plug_in_manager_1_1_plug_in_info}{Plug\+In\+Info}} \&plug\+In)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_plug_in_manager_ab33846008e25d243896844cbdfcc5706}{Plug\+In\+Manager}} (const \mbox{\hyperlink{class_plug_in_manager}{Plug\+In\+Manager}} \&copy)
+\begin{DoxyCompactList}\small\item\em Prevents the use of the copy constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_plug_in_manager_aa9a781046d8381a1f6c32b132655f961}{operator=}} (const \mbox{\hyperlink{class_plug_in_manager}{Plug\+In\+Manager}} \&copy)
+\begin{DoxyCompactList}\small\item\em Prevents the use of the copy operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manges Test\+Plug\+In. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_plug_in_manager_a7789a7e258e750bd14267d20cac7d288}\label{class_plug_in_manager_a7789a7e258e750bd14267d20cac7d288}} 
+\index{PlugInManager@{PlugInManager}!PlugInManager@{PlugInManager}}
+\index{PlugInManager@{PlugInManager}!PlugInManager@{PlugInManager}}
+\doxysubsubsection{\texorpdfstring{PlugInManager()}{PlugInManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Plug\+In\+Manager\+::\+Plug\+In\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs a \mbox{\hyperlink{class_plug_in_manager}{Plug\+In\+Manager}} object. \mbox{\Hypertarget{class_plug_in_manager_a093797f2d979b22fcf8df2230985b246}\label{class_plug_in_manager_a093797f2d979b22fcf8df2230985b246}} 
+\index{PlugInManager@{PlugInManager}!````~PlugInManager@{$\sim$PlugInManager}}
+\index{````~PlugInManager@{$\sim$PlugInManager}!PlugInManager@{PlugInManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$PlugInManager()}{~PlugInManager()}}
+{\footnotesize\ttfamily virtual Plug\+In\+Manager\+::$\sim$\+Plug\+In\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+\mbox{\Hypertarget{class_plug_in_manager_ab33846008e25d243896844cbdfcc5706}\label{class_plug_in_manager_ab33846008e25d243896844cbdfcc5706}} 
+\index{PlugInManager@{PlugInManager}!PlugInManager@{PlugInManager}}
+\index{PlugInManager@{PlugInManager}!PlugInManager@{PlugInManager}}
+\doxysubsubsection{\texorpdfstring{PlugInManager()}{PlugInManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Plug\+In\+Manager\+::\+Plug\+In\+Manager (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_plug_in_manager}{Plug\+In\+Manager}} \&}]{copy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Prevents the use of the copy constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_plug_in_manager_a3c51a256e3d6ee3bf6fa6c98d74053d1}\label{class_plug_in_manager_a3c51a256e3d6ee3bf6fa6c98d74053d1}} 
+\index{PlugInManager@{PlugInManager}!addListener@{addListener}}
+\index{addListener@{addListener}!PlugInManager@{PlugInManager}}
+\doxysubsubsection{\texorpdfstring{addListener()}{addListener()}}
+{\footnotesize\ttfamily void Plug\+In\+Manager\+::add\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_test_result}{Test\+Result}} $\ast$}]{event\+Manager }\end{DoxyParamCaption})}
+
+
+
+Gives a chance to each loaded plug-\/in to register \mbox{\hyperlink{class_test_listener}{Test\+Listener}}. 
+
+For each plug-\/in, call \mbox{\hyperlink{struct_cpp_unit_test_plug_in_aad8038dc72d0f9798379937fe5692c97}{Cpp\+Unit\+Test\+Plug\+In\+::add\+Listener()}}. \mbox{\Hypertarget{class_plug_in_manager_a4a9c64e0ac3f762b100b993d7e33f889}\label{class_plug_in_manager_a4a9c64e0ac3f762b100b993d7e33f889}} 
+\index{PlugInManager@{PlugInManager}!addXmlOutputterHooks@{addXmlOutputterHooks}}
+\index{addXmlOutputterHooks@{addXmlOutputterHooks}!PlugInManager@{PlugInManager}}
+\doxysubsubsection{\texorpdfstring{addXmlOutputterHooks()}{addXmlOutputterHooks()}}
+{\footnotesize\ttfamily void Plug\+In\+Manager\+::add\+Xml\+Outputter\+Hooks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_xml_outputter}{Xml\+Outputter}} $\ast$}]{outputter }\end{DoxyParamCaption})}
+
+
+
+Provides a way for the plug-\/in to register some \mbox{\hyperlink{class_xml_outputter_hook}{Xml\+Outputter\+Hook}}. 
+
+\mbox{\Hypertarget{class_plug_in_manager_aa617ef22c19ff90d7a56cd048c975afa}\label{class_plug_in_manager_aa617ef22c19ff90d7a56cd048c975afa}} 
+\index{PlugInManager@{PlugInManager}!load@{load}}
+\index{load@{load}!PlugInManager@{PlugInManager}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Plug\+In\+Manager\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{library\+File\+Name,  }\item[{const \mbox{\hyperlink{class_plug_in_parameters}{Plug\+In\+Parameters}} \&}]{parameters = {\ttfamily \mbox{\hyperlink{class_plug_in_parameters}{Plug\+In\+Parameters}}()} }\end{DoxyParamCaption})}
+
+
+
+Loads the specified plug-\/in. 
+
+After being loaded, the \mbox{\hyperlink{struct_cpp_unit_test_plug_in_aec670330e7fced26c2a66b1dcd56edc0}{Cpp\+Unit\+Test\+Plug\+In\+::initialize()}} is called.
+
+
+\begin{DoxyParams}{Parameters}
+{\em library\+File\+Name} & Name of the file that contains the Test\+Plug\+In. \\
+\hline
+{\em parameters} & List of string passed to the plug-\/in. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer on the \mbox{\hyperlink{class_dynamic_library_manager}{Dynamic\+Library\+Manager}} associated to the library. Valid until the library is unloaded. Never {\ttfamily NULL}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_dynamic_library_manager_exception}{Dynamic\+Library\+Manager\+Exception}}} & is thrown if an error occurs during loading. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_plug_in_manager_aa9a781046d8381a1f6c32b132655f961}\label{class_plug_in_manager_aa9a781046d8381a1f6c32b132655f961}} 
+\index{PlugInManager@{PlugInManager}!operator=@{operator=}}
+\index{operator=@{operator=}!PlugInManager@{PlugInManager}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void Plug\+In\+Manager\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_plug_in_manager}{Plug\+In\+Manager}} \&}]{copy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Prevents the use of the copy operator. 
+
+\mbox{\Hypertarget{class_plug_in_manager_aea9b8b61e256169b823516868e1d8ad0}\label{class_plug_in_manager_aea9b8b61e256169b823516868e1d8ad0}} 
+\index{PlugInManager@{PlugInManager}!removeListener@{removeListener}}
+\index{removeListener@{removeListener}!PlugInManager@{PlugInManager}}
+\doxysubsubsection{\texorpdfstring{removeListener()}{removeListener()}}
+{\footnotesize\ttfamily void Plug\+In\+Manager\+::remove\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_test_result}{Test\+Result}} $\ast$}]{event\+Manager }\end{DoxyParamCaption})}
+
+
+
+Gives a chance to each loaded plug-\/in to unregister \mbox{\hyperlink{class_test_listener}{Test\+Listener}}. For each plug-\/in, call \mbox{\hyperlink{struct_cpp_unit_test_plug_in_a8f36157014b515d38efbc8ab67923d85}{Cpp\+Unit\+Test\+Plug\+In\+::remove\+Listener()}}. 
+
+\mbox{\Hypertarget{class_plug_in_manager_a0fe59f82fd430ea57159a6ffad9a4035}\label{class_plug_in_manager_a0fe59f82fd430ea57159a6ffad9a4035}} 
+\index{PlugInManager@{PlugInManager}!removeXmlOutputterHooks@{removeXmlOutputterHooks}}
+\index{removeXmlOutputterHooks@{removeXmlOutputterHooks}!PlugInManager@{PlugInManager}}
+\doxysubsubsection{\texorpdfstring{removeXmlOutputterHooks()}{removeXmlOutputterHooks()}}
+{\footnotesize\ttfamily void Plug\+In\+Manager\+::remove\+Xml\+Outputter\+Hooks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Called when the \mbox{\hyperlink{class_xml_outputter}{Xml\+Outputter}} is destroyed. 
+
+Can be used to free some resources allocated by \mbox{\hyperlink{class_plug_in_manager_a4a9c64e0ac3f762b100b993d7e33f889}{add\+Xml\+Outputter\+Hooks()}}. \mbox{\Hypertarget{class_plug_in_manager_a5366b1e0e2e96e84d09e26893c00c4bf}\label{class_plug_in_manager_a5366b1e0e2e96e84d09e26893c00c4bf}} 
+\index{PlugInManager@{PlugInManager}!unload@{unload}}
+\index{unload@{unload}!PlugInManager@{PlugInManager}}
+\doxysubsubsection{\texorpdfstring{unload()}{unload()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Plug\+In\+Manager\+::unload (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{library\+File\+Name }\end{DoxyParamCaption})}
+
+
+
+Unloads the specified plug-\/in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em library\+File\+Name} & Name of the file that contains the Test\+Plug\+In passed to a previous call to \mbox{\hyperlink{class_plug_in_manager_aa617ef22c19ff90d7a56cd048c975afa}{load()}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_plug_in_manager_afc1fa045afaac73cd44f69839056f1e1}\label{class_plug_in_manager_afc1fa045afaac73cd44f69839056f1e1}} 
+\index{PlugInManager@{PlugInManager}!unload@{unload}}
+\index{unload@{unload}!PlugInManager@{PlugInManager}}
+\doxysubsubsection{\texorpdfstring{unload()}{unload()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Plug\+In\+Manager\+::unload (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_plug_in_manager_1_1_plug_in_info}{Plug\+In\+Info}} \&}]{plug\+In }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Unloads the specified plug-\/in. 
+\begin{DoxyParams}{Parameters}
+{\em plug\+In} & Information about the plug-\/in. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/plugin/Plug\+In\+Manager.\+h\end{DoxyCompactItemize}
