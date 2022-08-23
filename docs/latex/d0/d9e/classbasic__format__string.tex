@@ -1,0 +1,95 @@
+\hypertarget{classbasic__format__string}{}\doxysection{basic\+\_\+format\+\_\+string\texorpdfstring{$<$}{<} Char, Args \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classbasic__format__string}\index{basic\_format\_string$<$ Char, Args $>$@{basic\_format\_string$<$ Char, Args $>$}}
+
+
+A compile-\/time format string.  
+
+
+
+
+{\ttfamily \#include $<$core.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename S , FMT\+\_\+\+ENABLE\+\_\+\+IF( std\+::is\+\_\+convertible$<$ const S \&, \mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$ $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\FMT\+\_\+\+CONSTEVAL FMT\+\_\+\+INLINE \mbox{\hyperlink{classbasic__format__string_af9361b6999425ca9e9dde8f99119ac45}{basic\+\_\+format\+\_\+string}} (const S \&s)
+\item 
+\mbox{\hyperlink{classbasic__format__string_affea1973363f7ecf99bff7b136f3d247}{basic\+\_\+format\+\_\+string}} (\mbox{\hyperlink{structbasic__runtime}{basic\+\_\+runtime}}$<$ Char $>$ r)
+\item 
+FMT\+\_\+\+INLINE \mbox{\hyperlink{classbasic__format__string_af889d1f517385a2f505973f9c63cfeb4}{operator basic\+\_\+string\+\_\+view$<$ Char $>$}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbasic__format__string_a05322dcfb4b3d74c9dfe5a377f4e992b}\label{classbasic__format__string_a05322dcfb4b3d74c9dfe5a377f4e992b}} 
+\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$ {\bfseries str\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Char, typename... Args$>$\newline
+class basic\+\_\+format\+\_\+string$<$ Char, Args $>$}
+A compile-\/time format string. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbasic__format__string_af9361b6999425ca9e9dde8f99119ac45}\label{classbasic__format__string_af9361b6999425ca9e9dde8f99119ac45}} 
+\index{basic\_format\_string$<$ Char, Args $>$@{basic\_format\_string$<$ Char, Args $>$}!basic\_format\_string@{basic\_format\_string}}
+\index{basic\_format\_string@{basic\_format\_string}!basic\_format\_string$<$ Char, Args $>$@{basic\_format\_string$<$ Char, Args $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_format\_string()}{basic\_format\_string()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Char , typename... Args$>$ \\
+template$<$typename S , FMT\+\_\+\+ENABLE\+\_\+\+IF( std\+::is\+\_\+convertible$<$ const S \&, \mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$ $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
+FMT\+\_\+\+CONSTEVAL FMT\+\_\+\+INLINE \mbox{\hyperlink{classbasic__format__string}{basic\+\_\+format\+\_\+string}}$<$ Char, Args $>$\mbox{\hyperlink{classbasic__format__string}{\+::basic\+\_\+format\+\_\+string}} (\begin{DoxyParamCaption}\item[{const S \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3105                                                            : str\_(s) \{}
+\DoxyCodeLine{3106     \textcolor{keyword}{static\_assert}(}
+\DoxyCodeLine{3107         detail::count<}
+\DoxyCodeLine{3108             (std::is\_base\_of<detail::view, remove\_reference\_t<Args>>\mbox{\hyperlink{classvalue}{::value}} \&\&}
+\DoxyCodeLine{3109              std::is\_reference<Args>::value)...>() == 0,}
+\DoxyCodeLine{3110         \textcolor{stringliteral}{"{}passing views as lvalues is disallowed"{}});}
+\DoxyCodeLine{3111 \textcolor{preprocessor}{\#ifdef FMT\_HAS\_CONSTEVAL}}
+\DoxyCodeLine{3112     \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (detail::count\_named\_args<Args...>() ==}
+\DoxyCodeLine{3113                   detail::count\_statically\_named\_args<Args...>()) \{}
+\DoxyCodeLine{3114       \textcolor{keyword}{using }checker = detail::format\_string\_checker<Char, detail::error\_handler,}
+\DoxyCodeLine{3115                                                     remove\_cvref\_t<Args>...>;}
+\DoxyCodeLine{3116       detail::parse\_format\_string<true>(str\_, checker(s, \{\}));}
+\DoxyCodeLine{3117     \}}
+\DoxyCodeLine{3118 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{3119     detail::check\_format\_string<Args...>(s);}
+\DoxyCodeLine{3120 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{3121   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbasic__format__string_affea1973363f7ecf99bff7b136f3d247}\label{classbasic__format__string_affea1973363f7ecf99bff7b136f3d247}} 
+\index{basic\_format\_string$<$ Char, Args $>$@{basic\_format\_string$<$ Char, Args $>$}!basic\_format\_string@{basic\_format\_string}}
+\index{basic\_format\_string@{basic\_format\_string}!basic\_format\_string$<$ Char, Args $>$@{basic\_format\_string$<$ Char, Args $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_format\_string()}{basic\_format\_string()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Char , typename... Args$>$ \\
+\mbox{\hyperlink{classbasic__format__string}{basic\+\_\+format\+\_\+string}}$<$ Char, Args $>$\mbox{\hyperlink{classbasic__format__string}{\+::basic\+\_\+format\+\_\+string}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbasic__runtime}{basic\+\_\+runtime}}$<$ Char $>$}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3122 : str\_(r.str) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbasic__format__string_af889d1f517385a2f505973f9c63cfeb4}\label{classbasic__format__string_af889d1f517385a2f505973f9c63cfeb4}} 
+\index{basic\_format\_string$<$ Char, Args $>$@{basic\_format\_string$<$ Char, Args $>$}!operator basic\_string\_view$<$ Char $>$@{operator basic\_string\_view$<$ Char $>$}}
+\index{operator basic\_string\_view$<$ Char $>$@{operator basic\_string\_view$<$ Char $>$}!basic\_format\_string$<$ Char, Args $>$@{basic\_format\_string$<$ Char, Args $>$}}
+\doxysubsubsection{\texorpdfstring{operator basic\_string\_view$<$ Char $>$()}{operator basic\_string\_view< Char >()}}
+{\footnotesize\ttfamily template$<$typename Char , typename... Args$>$ \\
+FMT\+\_\+\+INLINE \mbox{\hyperlink{classbasic__format__string}{basic\+\_\+format\+\_\+string}}$<$ Char, Args $>$\+::operator \mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3124 \{ \textcolor{keywordflow}{return} str\_; \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/core.\+h\end{DoxyCompactItemize}

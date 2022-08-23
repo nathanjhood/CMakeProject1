@@ -1,0 +1,37 @@
+\hypertarget{_select_dll_loader_8h_source}{}\doxysection{Select\+Dll\+Loader.\+h}
+\label{_select_dll_loader_8h_source}\index{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/config/SelectDllLoader.h@{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/config/SelectDllLoader.h}}
+\mbox{\hyperlink{_select_dll_loader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CPPUNIT\_CONFIG\_SELECTDLLLOADER\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CPPUNIT\_CONFIG\_SELECTDLLLOADER\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#if !defined(CPPUNIT\_NO\_TESTPLUGIN)}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{comment}{// Is WIN32 platform ?}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#if defined(WIN32)}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define CPPUNIT\_HAVE\_WIN32\_DLL\_LOADER 1}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#undef CPPUNIT\_PLUGIN\_EXPORT}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define CPPUNIT\_PLUGIN\_EXPORT extern "{}C"{}} \_\_declspec(dllexport)}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{comment}{// Is Unix platform and have shl\_load() (hp-\/ux)}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#elif defined(CPPUNIT\_HAVE\_SHL\_LOAD)}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define CPPUNIT\_HAVE\_UNIX\_SHL\_LOADER 1}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{comment}{// Is Unix platform and have include <dlfcn.h>}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#elif defined(CPPUNIT\_HAVE\_LIBDL)}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define CPPUNIT\_HAVE\_UNIX\_DLL\_LOADER 1}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{comment}{// Otherwise, disable support for DllLoader}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define CPPUNIT\_NO\_TESTPLUGIN 1}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#if !defined(CPPUNIT\_PLUGIN\_EXPORT)}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define CPPUNIT\_PLUGIN\_EXPORT extern "{}C"{}}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !defined(CPPUNIT\_PLUGIN\_EXPORT)}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !defined(CPPUNIT\_NO\_TESTPLUGIN)}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// CPPUNIT\_CONFIG\_SELECTDLLLOADER\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,20 @@
+\hypertarget{_source_prefix_8h_source}{}\doxysection{Source\+Prefix.\+h}
+\label{_source_prefix_8h_source}\index{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/config/SourcePrefix.h@{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/config/SourcePrefix.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CPPUNIT\_CONFIG\_H\_INCLUDED}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CPPUNIT\_CONFIG\_H\_INCLUDED}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cppunit/Portability.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifdef \_MSC\_VER}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#pragma warning(disable: 4018 4284 4146)}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#if \_MSC\_VER >= 1400}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#pragma warning(disable: 4996)      }\textcolor{comment}{// sprintf is deprecated}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// CPPUNIT\_CONFIG\_H\_INCLUDED}}
+
+\end{DoxyCode}

@@ -1,0 +1,42 @@
+\hypertarget{_select_dll_loader_8h}{}\doxysection{out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/config/\+Select\+Dll\+Loader.h File Reference}
+\label{_select_dll_loader_8h}\index{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/config/SelectDllLoader.h@{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/config/SelectDllLoader.h}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_select_dll_loader_8h_a55b6e7232bf4c15eca3cd64753c17272}\label{_select_dll_loader_8h_a55b6e7232bf4c15eca3cd64753c17272}} 
+\#define {\bfseries CPPUNIT\+\_\+\+NO\+\_\+\+TESTPLUGIN}~1
+\begin{DoxyCompactList}\small\item\em If defined, then plug-\/in related classes and functions will not be compiled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_select_dll_loader_8h_a477408f06c41af1d46b8f17f21b3b5d6}{CPPUNIT\+\_\+\+PLUGIN\+\_\+\+EXPORT}}~extern \char`\"{}C\char`\"{}
+\begin{DoxyCompactList}\small\item\em A macro to export a function from a dynamic library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Selects \mbox{\hyperlink{class_dynamic_library_manager}{Dynamic\+Library\+Manager}} implementation.
+
+Don\textquotesingle{}t include this file directly. Include \mbox{\hyperlink{_portability_8h_source}{Portability.\+h}} instead. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_select_dll_loader_8h_a477408f06c41af1d46b8f17f21b3b5d6}\label{_select_dll_loader_8h_a477408f06c41af1d46b8f17f21b3b5d6}} 
+\index{SelectDllLoader.h@{SelectDllLoader.h}!CPPUNIT\_PLUGIN\_EXPORT@{CPPUNIT\_PLUGIN\_EXPORT}}
+\index{CPPUNIT\_PLUGIN\_EXPORT@{CPPUNIT\_PLUGIN\_EXPORT}!SelectDllLoader.h@{SelectDllLoader.h}}
+\doxysubsubsection{\texorpdfstring{CPPUNIT\_PLUGIN\_EXPORT}{CPPUNIT\_PLUGIN\_EXPORT}}
+{\footnotesize\ttfamily \#define CPPUNIT\+\_\+\+PLUGIN\+\_\+\+EXPORT~extern \char`\"{}C\char`\"{}}
+
+
+
+A macro to export a function from a dynamic library. 
+
+This macro export the C function following it from a dynamic library. Exporting the function makes it accessible to the \mbox{\hyperlink{class_dynamic_library_manager}{Dynamic\+Library\+Manager}}.
+
+Example of usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <cppunit/include/plugin/TestPlugIn.h>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{_select_dll_loader_8h_a477408f06c41af1d46b8f17f21b3b5d6}{CPPUNIT\_PLUGIN\_EXPORT}} \mbox{\hyperlink{struct_cpp_unit_test_plug_in}{CppUnitTestPlugIn}} *\mbox{\hyperlink{_test_plug_in_8h_ae7a1d474c7762e1bed3972b3d8fc11d6}{CPPUNIT\_PLUGIN\_EXPORTED\_NAME}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  ...}
+\DoxyCodeLine{  \textcolor{keywordflow}{return} \&myPlugInInterface;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

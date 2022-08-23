@@ -1,0 +1,73 @@
+\hypertarget{structgen__digits__handler}{}\doxysection{gen\+\_\+digits\+\_\+handler Struct Reference}
+\label{structgen__digits__handler}\index{gen\_digits\_handler@{gen\_digits\_handler}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+FMT\+\_\+\+CONSTEXPR digits\+::result \mbox{\hyperlink{structgen__digits__handler_a05402165008cae4d1b634a8fa5656021}{on\+\_\+digit}} (char digit, uint64\+\_\+t divisor, uint64\+\_\+t remainder, uint64\+\_\+t error, bool integral)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structgen__digits__handler_af469624c3a97aa3464519a45fa0caa02}\label{structgen__digits__handler_af469624c3a97aa3464519a45fa0caa02}} 
+char $\ast$ {\bfseries buf}
+\item 
+\mbox{\Hypertarget{structgen__digits__handler_a3067ff34fb78cd63d056f2df1cee1ba0}\label{structgen__digits__handler_a3067ff34fb78cd63d056f2df1cee1ba0}} 
+int {\bfseries size}
+\item 
+\mbox{\Hypertarget{structgen__digits__handler_a5ec8280c91bf53da11819c8f404a0db9}\label{structgen__digits__handler_a5ec8280c91bf53da11819c8f404a0db9}} 
+int {\bfseries precision}
+\item 
+\mbox{\Hypertarget{structgen__digits__handler_a1b3e7a3f8c58a9c8e05217a30522c1a2}\label{structgen__digits__handler_a1b3e7a3f8c58a9c8e05217a30522c1a2}} 
+int {\bfseries exp10}
+\item 
+\mbox{\Hypertarget{structgen__digits__handler_a03f7617a7fd1631de98fef76fe70608e}\label{structgen__digits__handler_a03f7617a7fd1631de98fef76fe70608e}} 
+bool {\bfseries fixed}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structgen__digits__handler_a05402165008cae4d1b634a8fa5656021}\label{structgen__digits__handler_a05402165008cae4d1b634a8fa5656021}} 
+\index{gen\_digits\_handler@{gen\_digits\_handler}!on\_digit@{on\_digit}}
+\index{on\_digit@{on\_digit}!gen\_digits\_handler@{gen\_digits\_handler}}
+\doxysubsubsection{\texorpdfstring{on\_digit()}{on\_digit()}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR digits\+::result gen\+\_\+digits\+\_\+handler\+::on\+\_\+digit (\begin{DoxyParamCaption}\item[{char}]{digit,  }\item[{uint64\+\_\+t}]{divisor,  }\item[{uint64\+\_\+t}]{remainder,  }\item[{uint64\+\_\+t}]{error,  }\item[{bool}]{integral }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2547                                                        \{}
+\DoxyCodeLine{2548     FMT\_ASSERT(remainder < divisor, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{2549     buf[size++] = digit;}
+\DoxyCodeLine{2550     \textcolor{keywordflow}{if} (!integral \&\& error >= remainder) \textcolor{keywordflow}{return} digits::error;}
+\DoxyCodeLine{2551     \textcolor{keywordflow}{if} (size < precision) \textcolor{keywordflow}{return} digits::more;}
+\DoxyCodeLine{2552     \textcolor{keywordflow}{if} (!integral) \{}
+\DoxyCodeLine{2553       \textcolor{comment}{// Check if error * 2 < divisor with overflow prevention.}}
+\DoxyCodeLine{2554       \textcolor{comment}{// The check is not needed for the integral part because error = 1}}
+\DoxyCodeLine{2555       \textcolor{comment}{// and divisor > (1 << 32) there.}}
+\DoxyCodeLine{2556       \textcolor{keywordflow}{if} (error >= divisor || error >= divisor -\/ error) \textcolor{keywordflow}{return} digits::error;}
+\DoxyCodeLine{2557     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{2558       FMT\_ASSERT(error == 1 \&\& divisor > 2, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{2559     \}}
+\DoxyCodeLine{2560     \textcolor{keyword}{auto} dir = get\_round\_direction(divisor, remainder, error);}
+\DoxyCodeLine{2561     \textcolor{keywordflow}{if} (dir != round\_direction::up)}
+\DoxyCodeLine{2562       \textcolor{keywordflow}{return} dir == round\_direction::down ? digits::done : digits::error;}
+\DoxyCodeLine{2563     ++buf[size -\/ 1];}
+\DoxyCodeLine{2564     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = size -\/ 1; i > 0 \&\& buf[i] > \textcolor{charliteral}{'9'}; -\/-\/i) \{}
+\DoxyCodeLine{2565       buf[i] = \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{2566       ++buf[i -\/ 1];}
+\DoxyCodeLine{2567     \}}
+\DoxyCodeLine{2568     \textcolor{keywordflow}{if} (buf[0] > \textcolor{charliteral}{'9'}) \{}
+\DoxyCodeLine{2569       buf[0] = \textcolor{charliteral}{'1'};}
+\DoxyCodeLine{2570       \textcolor{keywordflow}{if} (fixed)}
+\DoxyCodeLine{2571         buf[size++] = \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{2572       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2573         ++exp10;}
+\DoxyCodeLine{2574     \}}
+\DoxyCodeLine{2575     \textcolor{keywordflow}{return} digits::done;}
+\DoxyCodeLine{2576   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/format.\+h\end{DoxyCompactItemize}

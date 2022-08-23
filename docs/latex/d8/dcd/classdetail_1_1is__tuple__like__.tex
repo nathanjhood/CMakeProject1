@@ -1,0 +1,37 @@
+\hypertarget{classdetail_1_1is__tuple__like__}{}\doxysection{detail\+::is\+\_\+tuple\+\_\+like\+\_\+\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classdetail_1_1is__tuple__like__}\index{detail::is\_tuple\_like\_$<$ T $>$@{detail::is\_tuple\_like\_$<$ T $>$}}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr const bool \mbox{\hyperlink{classdetail_1_1is__tuple__like___a59d651d0c9bbf174f882ac44a70f1986}{value}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classdetail_1_1is__tuple__like___aec24d8339180ca200e198ec087868e7b}\label{classdetail_1_1is__tuple__like___aec24d8339180ca200e198ec087868e7b}} 
+{\footnotesize template$<$typename U $>$ }\\static auto {\bfseries check} (U $\ast$p) -\/$>$ decltype(std\+::tuple\+\_\+size$<$ U $>$\mbox{\hyperlink{classvalue}{\+::value}}, int())
+\item 
+\mbox{\Hypertarget{classdetail_1_1is__tuple__like___a835fc90f6bdd75922842a13102e4a01d}\label{classdetail_1_1is__tuple__like___a835fc90f6bdd75922842a13102e4a01d}} 
+{\footnotesize template$<$typename $>$ }\\static void {\bfseries check} (...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classdetail_1_1is__tuple__like___a59d651d0c9bbf174f882ac44a70f1986}\label{classdetail_1_1is__tuple__like___a59d651d0c9bbf174f882ac44a70f1986}} 
+\index{detail::is\_tuple\_like\_$<$ T $>$@{detail::is\_tuple\_like\_$<$ T $>$}!value@{value}}
+\index{value@{value}!detail::is\_tuple\_like\_$<$ T $>$@{detail::is\_tuple\_like\_$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr const bool \mbox{\hyperlink{classdetail_1_1is__tuple__like__}{detail\+::is\+\_\+tuple\+\_\+like\+\_\+}}$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{      !std::is\_void<decltype(check<T>(\textcolor{keyword}{nullptr}))>\mbox{\hyperlink{classvalue}{::value}}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/ranges.\+h\end{DoxyCompactItemize}

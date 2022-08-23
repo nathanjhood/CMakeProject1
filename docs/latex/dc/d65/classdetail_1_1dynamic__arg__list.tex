@@ -1,0 +1,46 @@
+\hypertarget{classdetail_1_1dynamic__arg__list}{}\doxysection{detail\+::dynamic\+\_\+arg\+\_\+list Class Reference}
+\label{classdetail_1_1dynamic__arg__list}\index{detail::dynamic\_arg\_list@{detail::dynamic\_arg\_list}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdetail_1_1dynamic__arg__list_1_1node}{node}}
+\item 
+struct \mbox{\hyperlink{structdetail_1_1dynamic__arg__list_1_1typed__node}{typed\+\_\+node}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename Arg $>$ }\\const T \& \mbox{\hyperlink{classdetail_1_1dynamic__arg__list_a00244eee3cf42de6998df3e2f95c77bc}{push}} (const Arg \&arg)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classdetail_1_1dynamic__arg__list_a46d467de3b89f026974354e830e12ef0}\label{classdetail_1_1dynamic__arg__list_a46d467de3b89f026974354e830e12ef0}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structdetail_1_1dynamic__arg__list_1_1node}{node}}$<$$>$ $>$ {\bfseries head\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdetail_1_1dynamic__arg__list_a00244eee3cf42de6998df3e2f95c77bc}\label{classdetail_1_1dynamic__arg__list_a00244eee3cf42de6998df3e2f95c77bc}} 
+\index{detail::dynamic\_arg\_list@{detail::dynamic\_arg\_list}!push@{push}}
+\index{push@{push}!detail::dynamic\_arg\_list@{detail::dynamic\_arg\_list}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily template$<$typename T , typename Arg $>$ \\
+const T \& detail\+::dynamic\+\_\+arg\+\_\+list\+::push (\begin{DoxyParamCaption}\item[{const Arg \&}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53                                                                     \{}
+\DoxyCodeLine{54     \textcolor{keyword}{auto} new\_node = std::unique\_ptr<typed\_node<T>>(\textcolor{keyword}{new} typed\_node<T>(arg));}
+\DoxyCodeLine{55     \textcolor{keyword}{auto}\& \mbox{\hyperlink{classvalue}{value}} = new\_node-\/>value;}
+\DoxyCodeLine{56     new\_node-\/>next = std::move(head\_);}
+\DoxyCodeLine{57     head\_ = std::move(new\_node);}
+\DoxyCodeLine{58     \textcolor{keywordflow}{return} \mbox{\hyperlink{classvalue}{value}};}
+\DoxyCodeLine{59   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/args.\+h\end{DoxyCompactItemize}

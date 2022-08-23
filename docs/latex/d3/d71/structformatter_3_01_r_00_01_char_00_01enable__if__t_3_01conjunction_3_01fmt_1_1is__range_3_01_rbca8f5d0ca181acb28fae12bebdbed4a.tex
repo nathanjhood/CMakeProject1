@@ -1,0 +1,94 @@
+\hypertarget{structformatter_3_01_r_00_01_char_00_01enable__if__t_3_01conjunction_3_01fmt_1_1is__range_3_01_rbca8f5d0ca181acb28fae12bebdbed4a}{}\doxysection{formatter\texorpdfstring{$<$}{<} R, Char, enable\+\_\+if\+\_\+t\texorpdfstring{$<$}{<} conjunction\texorpdfstring{$<$}{<} fmt\+::is\+\_\+range\texorpdfstring{$<$}{<} R, Char \texorpdfstring{$>$}{>}, disjunction\texorpdfstring{$<$}{<} is\+\_\+formattable\texorpdfstring{$<$}{<} detail\+::uncvref\+\_\+type\texorpdfstring{$<$}{<} detail\+::maybe\+\_\+const\+\_\+range\texorpdfstring{$<$}{<} R \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>}, Char \texorpdfstring{$>$}{>}, detail\+::has\+\_\+fallback\+\_\+formatter\texorpdfstring{$<$}{<} detail\+::uncvref\+\_\+type\texorpdfstring{$<$}{<} detail\+::maybe\+\_\+const\+\_\+range\texorpdfstring{$<$}{<} R \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>}, Char \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>}\+::value \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structformatter_3_01_r_00_01_char_00_01enable__if__t_3_01conjunction_3_01fmt_1_1is__range_3_01_rbca8f5d0ca181acb28fae12bebdbed4a}\index{formatter$<$ R, Char, enable\_if\_t$<$ conjunction$<$ fmt::is\_range$<$ R, Char $>$, disjunction$<$ is\_formattable$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$, detail::has\_fallback\_formatter$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$ $>$ $>$::value $>$ $>$@{formatter$<$ R, Char, enable\_if\_t$<$ conjunction$<$ fmt::is\_range$<$ R, Char $>$, disjunction$<$ is\_formattable$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$, detail::has\_fallback\_formatter$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$ $>$ $>$::value $>$ $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structformatter_3_01_r_00_01_char_00_01enable__if__t_3_01conjunction_3_01fmt_1_1is__range_3_01_rbca8f5d0ca181acb28fae12bebdbed4a_a9efe0a8d590c71a38611bf1a911fc3ec}\label{structformatter_3_01_r_00_01_char_00_01enable__if__t_3_01conjunction_3_01fmt_1_1is__range_3_01_rbca8f5d0ca181acb28fae12bebdbed4a_a9efe0a8d590c71a38611bf1a911fc3ec}} 
+using {\bfseries range\+\_\+type} = detail\+::maybe\+\_\+const\+\_\+range$<$ R $>$
+\item 
+\mbox{\Hypertarget{structformatter_3_01_r_00_01_char_00_01enable__if__t_3_01conjunction_3_01fmt_1_1is__range_3_01_rbca8f5d0ca181acb28fae12bebdbed4a_a4d8a1e4183d671dc9670e7afb10bdc61}\label{structformatter_3_01_r_00_01_char_00_01enable__if__t_3_01conjunction_3_01fmt_1_1is__range_3_01_rbca8f5d0ca181acb28fae12bebdbed4a_a4d8a1e4183d671dc9670e7afb10bdc61}} 
+using {\bfseries formatter\+\_\+type} = detail\+::range\+\_\+formatter\+\_\+type$<$ Char, detail\+::uncvref\+\_\+type$<$ range\+\_\+type $>$ $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Parse\+Context $>$ }\\FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structformatter_3_01_r_00_01_char_00_01enable__if__t_3_01conjunction_3_01fmt_1_1is__range_3_01_rbca8f5d0ca181acb28fae12bebdbed4a_a649ff708e7053fa97af4774b09963f5e}{parse}} (Parse\+Context \&ctx) -\/$>$ decltype(ctx.\+begin())
+\item 
+{\footnotesize template$<$typename Format\+Context $>$ }\\auto \mbox{\hyperlink{structformatter_3_01_r_00_01_char_00_01enable__if__t_3_01conjunction_3_01fmt_1_1is__range_3_01_rbca8f5d0ca181acb28fae12bebdbed4a_affe3d493ceb718b9080f990fcfc1aa13}{format}} (range\+\_\+type \&range, Format\+Context \&ctx) const -\/$>$ decltype(ctx.\+out())
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structformatter_3_01_r_00_01_char_00_01enable__if__t_3_01conjunction_3_01fmt_1_1is__range_3_01_rbca8f5d0ca181acb28fae12bebdbed4a_a142535357057dbaeb1cf5d4a9b853866}\label{structformatter_3_01_r_00_01_char_00_01enable__if__t_3_01conjunction_3_01fmt_1_1is__range_3_01_rbca8f5d0ca181acb28fae12bebdbed4a_a142535357057dbaeb1cf5d4a9b853866}} 
+formatter\+\_\+type {\bfseries underlying\+\_\+}
+\item 
+\mbox{\Hypertarget{structformatter_3_01_r_00_01_char_00_01enable__if__t_3_01conjunction_3_01fmt_1_1is__range_3_01_rbca8f5d0ca181acb28fae12bebdbed4a_a74070f3e3c4aee24bc227a632ab36b28}\label{structformatter_3_01_r_00_01_char_00_01enable__if__t_3_01conjunction_3_01fmt_1_1is__range_3_01_rbca8f5d0ca181acb28fae12bebdbed4a_a74070f3e3c4aee24bc227a632ab36b28}} 
+bool {\bfseries custom\+\_\+specs\+\_\+} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structformatter_3_01_r_00_01_char_00_01enable__if__t_3_01conjunction_3_01fmt_1_1is__range_3_01_rbca8f5d0ca181acb28fae12bebdbed4a_affe3d493ceb718b9080f990fcfc1aa13}\label{structformatter_3_01_r_00_01_char_00_01enable__if__t_3_01conjunction_3_01fmt_1_1is__range_3_01_rbca8f5d0ca181acb28fae12bebdbed4a_affe3d493ceb718b9080f990fcfc1aa13}} 
+\index{formatter$<$ R, Char, enable\_if\_t$<$ conjunction$<$ fmt::is\_range$<$ R, Char $>$, disjunction$<$ is\_formattable$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$, detail::has\_fallback\_formatter$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$ $>$ $>$::value $>$ $>$@{formatter$<$ R, Char, enable\_if\_t$<$ conjunction$<$ fmt::is\_range$<$ R, Char $>$, disjunction$<$ is\_formattable$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$, detail::has\_fallback\_formatter$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$ $>$ $>$::value $>$ $>$}!format@{format}}
+\index{format@{format}!formatter$<$ R, Char, enable\_if\_t$<$ conjunction$<$ fmt::is\_range$<$ R, Char $>$, disjunction$<$ is\_formattable$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$, detail::has\_fallback\_formatter$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$ $>$ $>$::value $>$ $>$@{formatter$<$ R, Char, enable\_if\_t$<$ conjunction$<$ fmt::is\_range$<$ R, Char $>$, disjunction$<$ is\_formattable$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$, detail::has\_fallback\_formatter$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$ $>$ $>$::value $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{format()}{format()}}
+{\footnotesize\ttfamily template$<$typename R , typename Char $>$ \\
+template$<$typename Format\+Context $>$ \\
+auto \mbox{\hyperlink{structformatter}{formatter}}$<$ R, Char, enable\+\_\+if\+\_\+t$<$ \mbox{\hyperlink{structconjunction}{conjunction}}$<$ fmt\+::is\+\_\+range$<$ R, Char $>$, \mbox{\hyperlink{structdisjunction}{disjunction}}$<$ is\+\_\+formattable$<$ detail\+::uncvref\+\_\+type$<$ detail\+::maybe\+\_\+const\+\_\+range$<$ R $>$ $>$, Char $>$, detail\+::has\+\_\+fallback\+\_\+formatter$<$ detail\+::uncvref\+\_\+type$<$ detail\+::maybe\+\_\+const\+\_\+range$<$ R $>$ $>$, Char $>$ $>$ $>$\mbox{\hyperlink{classvalue}{\+::value}} $>$ $>$\+::format (\begin{DoxyParamCaption}\item[{range\+\_\+type \&}]{range,  }\item[{Format\+Context \&}]{ctx }\end{DoxyParamCaption}) const -\/$>$ decltype(ctx.\+out()) \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{436                              \{}
+\DoxyCodeLine{437     Char prefix = \mbox{\hyperlink{classdetail_1_1is__set}{detail::is\_set<R>::value}} ? \textcolor{charliteral}{'\{'} : \textcolor{charliteral}{'['};}
+\DoxyCodeLine{438     Char postfix = \mbox{\hyperlink{classdetail_1_1is__set}{detail::is\_set<R>::value}} ? \textcolor{charliteral}{'\}'} : \textcolor{charliteral}{']'};}
+\DoxyCodeLine{439     \mbox{\hyperlink{structdetail_1_1range__mapper}{detail::range\_mapper<buffer\_context<Char>}}> mapper;}
+\DoxyCodeLine{440     \textcolor{keyword}{auto} out = ctx.out();}
+\DoxyCodeLine{441     *out++ = prefix;}
+\DoxyCodeLine{442     \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{443     \textcolor{keyword}{auto} it = detail::range\_begin(range);}
+\DoxyCodeLine{444     \textcolor{keyword}{auto} end = detail::range\_end(range);}
+\DoxyCodeLine{445     \textcolor{keywordflow}{for} (; it != end; ++it) \{}
+\DoxyCodeLine{446       \textcolor{keywordflow}{if} (i > 0) out = detail::write\_delimiter(out);}
+\DoxyCodeLine{447       \textcolor{keywordflow}{if} (custom\_specs\_) \{}
+\DoxyCodeLine{448         ctx.advance\_to(out);}
+\DoxyCodeLine{449         out = underlying\_.format(mapper.map(*it), ctx);}
+\DoxyCodeLine{450       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{451         out = detail::write\_range\_entry<Char>(out, *it);}
+\DoxyCodeLine{452       \}}
+\DoxyCodeLine{453       ++i;}
+\DoxyCodeLine{454     \}}
+\DoxyCodeLine{455     *out++ = postfix;}
+\DoxyCodeLine{456     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{457   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structformatter_3_01_r_00_01_char_00_01enable__if__t_3_01conjunction_3_01fmt_1_1is__range_3_01_rbca8f5d0ca181acb28fae12bebdbed4a_a649ff708e7053fa97af4774b09963f5e}\label{structformatter_3_01_r_00_01_char_00_01enable__if__t_3_01conjunction_3_01fmt_1_1is__range_3_01_rbca8f5d0ca181acb28fae12bebdbed4a_a649ff708e7053fa97af4774b09963f5e}} 
+\index{formatter$<$ R, Char, enable\_if\_t$<$ conjunction$<$ fmt::is\_range$<$ R, Char $>$, disjunction$<$ is\_formattable$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$, detail::has\_fallback\_formatter$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$ $>$ $>$::value $>$ $>$@{formatter$<$ R, Char, enable\_if\_t$<$ conjunction$<$ fmt::is\_range$<$ R, Char $>$, disjunction$<$ is\_formattable$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$, detail::has\_fallback\_formatter$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$ $>$ $>$::value $>$ $>$}!parse@{parse}}
+\index{parse@{parse}!formatter$<$ R, Char, enable\_if\_t$<$ conjunction$<$ fmt::is\_range$<$ R, Char $>$, disjunction$<$ is\_formattable$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$, detail::has\_fallback\_formatter$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$ $>$ $>$::value $>$ $>$@{formatter$<$ R, Char, enable\_if\_t$<$ conjunction$<$ fmt::is\_range$<$ R, Char $>$, disjunction$<$ is\_formattable$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$, detail::has\_fallback\_formatter$<$ detail::uncvref\_type$<$ detail::maybe\_const\_range$<$ R $>$ $>$, Char $>$ $>$ $>$::value $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily template$<$typename R , typename Char $>$ \\
+template$<$typename Parse\+Context $>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structformatter}{formatter}}$<$ R, Char, enable\+\_\+if\+\_\+t$<$ \mbox{\hyperlink{structconjunction}{conjunction}}$<$ fmt\+::is\+\_\+range$<$ R, Char $>$, \mbox{\hyperlink{structdisjunction}{disjunction}}$<$ is\+\_\+formattable$<$ detail\+::uncvref\+\_\+type$<$ detail\+::maybe\+\_\+const\+\_\+range$<$ R $>$ $>$, Char $>$, detail\+::has\+\_\+fallback\+\_\+formatter$<$ detail\+::uncvref\+\_\+type$<$ detail\+::maybe\+\_\+const\+\_\+range$<$ R $>$ $>$, Char $>$ $>$ $>$\mbox{\hyperlink{classvalue}{\+::value}} $>$ $>$\+::parse (\begin{DoxyParamCaption}\item[{Parse\+Context \&}]{ctx }\end{DoxyParamCaption}) -\/$>$ decltype(ctx.\+begin()) \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{420                                                                        \{}
+\DoxyCodeLine{421     \textcolor{keyword}{auto} it = ctx.begin();}
+\DoxyCodeLine{422     \textcolor{keyword}{auto} end = ctx.end();}
+\DoxyCodeLine{423     \textcolor{keywordflow}{if} (it == end || *it == \textcolor{charliteral}{'\}'}) \textcolor{keywordflow}{return} it;}
+\DoxyCodeLine{424 }
+\DoxyCodeLine{425     \textcolor{keywordflow}{if} (*it != \textcolor{charliteral}{':'})}
+\DoxyCodeLine{426       FMT\_THROW(\mbox{\hyperlink{classformat__error}{format\_error}}(\textcolor{stringliteral}{"{}no top-\/level range formatters supported"{}}));}
+\DoxyCodeLine{427 }
+\DoxyCodeLine{428     custom\_specs\_ = \textcolor{keyword}{true};}
+\DoxyCodeLine{429     ++it;}
+\DoxyCodeLine{430     ctx.advance\_to(it);}
+\DoxyCodeLine{431     \textcolor{keywordflow}{return} underlying\_.parse(ctx);}
+\DoxyCodeLine{432   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/ranges.\+h\end{DoxyCompactItemize}

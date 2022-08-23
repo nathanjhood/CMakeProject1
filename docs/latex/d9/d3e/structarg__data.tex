@@ -1,0 +1,71 @@
+\hypertarget{structarg__data}{}\doxysection{arg\+\_\+data\texorpdfstring{$<$}{<} T, Char, NUM\+\_\+\+ARGS, NUM\+\_\+\+NAMED\+\_\+\+ARGS \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structarg__data}\index{arg\_data$<$ T, Char, NUM\_ARGS, NUM\_NAMED\_ARGS $>$@{arg\_data$<$ T, Char, NUM\_ARGS, NUM\_NAMED\_ARGS $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... U$>$ }\\\mbox{\hyperlink{structarg__data_aa303c84b2eddc86a77e4cfed1af280e1}{arg\+\_\+data}} (const U \&... init)
+\item 
+\mbox{\Hypertarget{structarg__data_a1c1f92742fd40957dd9eaeba38226854}\label{structarg__data_a1c1f92742fd40957dd9eaeba38226854}} 
+{\bfseries arg\+\_\+data} (const \mbox{\hyperlink{structarg__data}{arg\+\_\+data}} \&other)=delete
+\item 
+auto \mbox{\hyperlink{structarg__data_a345dd2a7772f9573bacb312a27401eb4}{args}} () const -\/$>$ const T $\ast$
+\item 
+auto \mbox{\hyperlink{structarg__data_a7a2618d0038b7b2e6bd73ba169a6e153}{named\+\_\+args}} () -\/$>$ \mbox{\hyperlink{structnamed__arg__info}{named\+\_\+arg\+\_\+info}}$<$ Char $>$ $\ast$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structarg__data_a066861f784ce8301389e9d1672e25142}\label{structarg__data_a066861f784ce8301389e9d1672e25142}} 
+T {\bfseries args\+\_\+} \mbox{[}1+(NUM\+\_\+\+ARGS !=0 ? NUM\+\_\+\+ARGS \+:+1)\mbox{]}
+\item 
+\mbox{\Hypertarget{structarg__data_a89a96a0e2da76a3f20b3cc583426f778}\label{structarg__data_a89a96a0e2da76a3f20b3cc583426f778}} 
+\mbox{\hyperlink{structnamed__arg__info}{named\+\_\+arg\+\_\+info}}$<$ Char $>$ {\bfseries named\+\_\+args\+\_\+} \mbox{[}NUM\+\_\+\+NAMED\+\_\+\+ARGS\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structarg__data_aa303c84b2eddc86a77e4cfed1af280e1}\label{structarg__data_aa303c84b2eddc86a77e4cfed1af280e1}} 
+\index{arg\_data$<$ T, Char, NUM\_ARGS, NUM\_NAMED\_ARGS $>$@{arg\_data$<$ T, Char, NUM\_ARGS, NUM\_NAMED\_ARGS $>$}!arg\_data@{arg\_data}}
+\index{arg\_data@{arg\_data}!arg\_data$<$ T, Char, NUM\_ARGS, NUM\_NAMED\_ARGS $>$@{arg\_data$<$ T, Char, NUM\_ARGS, NUM\_NAMED\_ARGS $>$}}
+\doxysubsubsection{\texorpdfstring{arg\_data()}{arg\_data()}}
+{\footnotesize\ttfamily template$<$typename T , typename Char , size\+\_\+t NUM\+\_\+\+ARGS, size\+\_\+t NUM\+\_\+\+NAMED\+\_\+\+ARGS$>$ \\
+template$<$typename... U$>$ \\
+\mbox{\hyperlink{structarg__data}{arg\+\_\+data}}$<$ T, Char, NUM\+\_\+\+ARGS, NUM\+\_\+\+NAMED\+\_\+\+ARGS $>$\mbox{\hyperlink{structarg__data}{\+::arg\+\_\+data}} (\begin{DoxyParamCaption}\item[{const U \&...}]{init }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1138 : args\_\{T(named\_args\_, NUM\_NAMED\_ARGS), init...\} \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structarg__data_a345dd2a7772f9573bacb312a27401eb4}\label{structarg__data_a345dd2a7772f9573bacb312a27401eb4}} 
+\index{arg\_data$<$ T, Char, NUM\_ARGS, NUM\_NAMED\_ARGS $>$@{arg\_data$<$ T, Char, NUM\_ARGS, NUM\_NAMED\_ARGS $>$}!args@{args}}
+\index{args@{args}!arg\_data$<$ T, Char, NUM\_ARGS, NUM\_NAMED\_ARGS $>$@{arg\_data$<$ T, Char, NUM\_ARGS, NUM\_NAMED\_ARGS $>$}}
+\doxysubsubsection{\texorpdfstring{args()}{args()}}
+{\footnotesize\ttfamily template$<$typename T , typename Char , size\+\_\+t NUM\+\_\+\+ARGS, size\+\_\+t NUM\+\_\+\+NAMED\+\_\+\+ARGS$>$ \\
+auto \mbox{\hyperlink{structarg__data}{arg\+\_\+data}}$<$ T, Char, NUM\+\_\+\+ARGS, NUM\+\_\+\+NAMED\+\_\+\+ARGS $>$\+::args (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ const T$\ast$ \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1140 \{ \textcolor{keywordflow}{return} args\_ + 1; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structarg__data_a7a2618d0038b7b2e6bd73ba169a6e153}\label{structarg__data_a7a2618d0038b7b2e6bd73ba169a6e153}} 
+\index{arg\_data$<$ T, Char, NUM\_ARGS, NUM\_NAMED\_ARGS $>$@{arg\_data$<$ T, Char, NUM\_ARGS, NUM\_NAMED\_ARGS $>$}!named\_args@{named\_args}}
+\index{named\_args@{named\_args}!arg\_data$<$ T, Char, NUM\_ARGS, NUM\_NAMED\_ARGS $>$@{arg\_data$<$ T, Char, NUM\_ARGS, NUM\_NAMED\_ARGS $>$}}
+\doxysubsubsection{\texorpdfstring{named\_args()}{named\_args()}}
+{\footnotesize\ttfamily template$<$typename T , typename Char , size\+\_\+t NUM\+\_\+\+ARGS, size\+\_\+t NUM\+\_\+\+NAMED\+\_\+\+ARGS$>$ \\
+auto \mbox{\hyperlink{structarg__data}{arg\+\_\+data}}$<$ T, Char, NUM\+\_\+\+ARGS, NUM\+\_\+\+NAMED\+\_\+\+ARGS $>$\+::named\+\_\+args (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{structnamed__arg__info}{named\+\_\+arg\+\_\+info}}$<$Char$>$$\ast$ \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1141 \{ \textcolor{keywordflow}{return} named\_args\_; \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/core.\+h\end{DoxyCompactItemize}

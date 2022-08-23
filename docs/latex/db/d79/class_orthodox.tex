@@ -1,0 +1,98 @@
+\hypertarget{class_orthodox}{}\doxysection{Orthodox\texorpdfstring{$<$}{<} Class\+Under\+Test \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_orthodox}\index{Orthodox$<$ ClassUnderTest $>$@{Orthodox$<$ ClassUnderTest $>$}}
+Inheritance diagram for Orthodox\texorpdfstring{$<$}{<} Class\+Under\+Test \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{db/d79/class_orthodox}
+\end{center}
+\end{figure}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Class\+Under\+Test \mbox{\hyperlink{class_orthodox_a08e9feb769578cb7a8b92c7c2c5d1874}{call}} (Class\+Under\+Test object)
+\item 
+void \mbox{\hyperlink{class_orthodox_aaeaafea272fdce3b5b2f33882cb33d8c}{run\+Test}} ()
+\begin{DoxyCompactList}\small\item\em FIXME\+: this should probably be pure virtual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_orthodox_a20da7daf1b5b00530d36ed910f7dd1fa}\label{class_orthodox_a20da7daf1b5b00530d36ed910f7dd1fa}} 
+\index{Orthodox$<$ ClassUnderTest $>$@{Orthodox$<$ ClassUnderTest $>$}!Orthodox@{Orthodox}}
+\index{Orthodox@{Orthodox}!Orthodox$<$ ClassUnderTest $>$@{Orthodox$<$ ClassUnderTest $>$}}
+\doxysubsubsection{\texorpdfstring{Orthodox()}{Orthodox()}}
+{\footnotesize\ttfamily template$<$class Class\+Under\+Test $>$ \\
+\mbox{\hyperlink{class_orthodox}{Orthodox}}$<$ Class\+Under\+Test $>$\mbox{\hyperlink{class_orthodox}{\+::\+Orthodox}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45 : \mbox{\hyperlink{class_test_case}{TestCase}} (\textcolor{stringliteral}{"{}Orthodox"{}}) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_orthodox_a08e9feb769578cb7a8b92c7c2c5d1874}\label{class_orthodox_a08e9feb769578cb7a8b92c7c2c5d1874}} 
+\index{Orthodox$<$ ClassUnderTest $>$@{Orthodox$<$ ClassUnderTest $>$}!call@{call}}
+\index{call@{call}!Orthodox$<$ ClassUnderTest $>$@{Orthodox$<$ ClassUnderTest $>$}}
+\doxysubsubsection{\texorpdfstring{call()}{call()}}
+{\footnotesize\ttfamily template$<$class Class\+Under\+Test $>$ \\
+Class\+Under\+Test \mbox{\hyperlink{class_orthodox}{Orthodox}}$<$ Class\+Under\+Test $>$\+::call (\begin{DoxyParamCaption}\item[{Class\+Under\+Test}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{88 \{}
+\DoxyCodeLine{89     \textcolor{keywordflow}{return} object;}
+\DoxyCodeLine{90 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_orthodox_aaeaafea272fdce3b5b2f33882cb33d8c}\label{class_orthodox_aaeaafea272fdce3b5b2f33882cb33d8c}} 
+\index{Orthodox$<$ ClassUnderTest $>$@{Orthodox$<$ ClassUnderTest $>$}!runTest@{runTest}}
+\index{runTest@{runTest}!Orthodox$<$ ClassUnderTest $>$@{Orthodox$<$ ClassUnderTest $>$}}
+\doxysubsubsection{\texorpdfstring{runTest()}{runTest()}}
+{\footnotesize\ttfamily template$<$class Class\+Under\+Test $>$ \\
+void \mbox{\hyperlink{class_orthodox}{Orthodox}}$<$ Class\+Under\+Test $>$\+::run\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+FIXME\+: this should probably be pure virtual. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_test_case_a6b55957ac1dfef01e5d9fa2475676f34}{Test\+Case}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57 \{}
+\DoxyCodeLine{58     \textcolor{comment}{// make sure we have a default constructor}}
+\DoxyCodeLine{59     ClassUnderTest   a, b, c;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{comment}{// make sure we have an equality operator}}
+\DoxyCodeLine{62     CPPUNIT\_ASSERT (a == b);}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{comment}{// check the inverse}}
+\DoxyCodeLine{65     b.operator= (a.operator! ());}
+\DoxyCodeLine{66     CPPUNIT\_ASSERT (a != b);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{comment}{// double inversion}}
+\DoxyCodeLine{69     b = !!a;}
+\DoxyCodeLine{70     CPPUNIT\_ASSERT (a == b);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{comment}{// invert again}}
+\DoxyCodeLine{73     b = !a;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{comment}{// check calls}}
+\DoxyCodeLine{76     c = a;}
+\DoxyCodeLine{77     CPPUNIT\_ASSERT (c == call (a));}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     c = b;}
+\DoxyCodeLine{80     CPPUNIT\_ASSERT (c == call (b));}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/extensions/Orthodox.\+h\end{DoxyCompactItemize}

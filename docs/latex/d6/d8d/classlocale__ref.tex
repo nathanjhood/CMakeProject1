@@ -1,0 +1,83 @@
+\hypertarget{classlocale__ref}{}\doxysection{locale\+\_\+ref Class Reference}
+\label{classlocale__ref}\index{locale\_ref@{locale\_ref}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Locale $>$ }\\\mbox{\hyperlink{classlocale__ref_a986c112e25347abf106ad4a6d29b6fda}{locale\+\_\+ref}} (const Locale \&loc)
+\item 
+\mbox{\hyperlink{classlocale__ref_a72000312a34df3808c0a4c151c15e4c9}{operator bool}} () const noexcept
+\item 
+\mbox{\Hypertarget{classlocale__ref_a9e8901f320b201e831a07a87ddc04302}\label{classlocale__ref_a9e8901f320b201e831a07a87ddc04302}} 
+{\footnotesize template$<$typename Locale $>$ }\\auto {\bfseries get} () const -\/$>$ Locale
+\item 
+{\footnotesize template$<$typename Locale $>$ }\\Locale \mbox{\hyperlink{classlocale__ref_ae0611bbed48909cbfdbf73c26204bbef}{get}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlocale__ref_a317c8fb53b04f54f735159d345196ee4}\label{classlocale__ref_a317c8fb53b04f54f735159d345196ee4}} 
+const void $\ast$ {\bfseries locale\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlocale__ref_a87fbf5d1da66aad68d906cff8a02a030}\label{classlocale__ref_a87fbf5d1da66aad68d906cff8a02a030}} 
+\index{locale\_ref@{locale\_ref}!locale\_ref@{locale\_ref}}
+\index{locale\_ref@{locale\_ref}!locale\_ref@{locale\_ref}}
+\doxysubsubsection{\texorpdfstring{locale\_ref()}{locale\_ref()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily constexpr locale\+\_\+ref\+::locale\+\_\+ref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1691 : locale\_(\textcolor{keyword}{nullptr}) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classlocale__ref_a986c112e25347abf106ad4a6d29b6fda}\label{classlocale__ref_a986c112e25347abf106ad4a6d29b6fda}} 
+\index{locale\_ref@{locale\_ref}!locale\_ref@{locale\_ref}}
+\index{locale\_ref@{locale\_ref}!locale\_ref@{locale\_ref}}
+\doxysubsubsection{\texorpdfstring{locale\_ref()}{locale\_ref()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Locale $>$ \\
+locale\+\_\+ref\+::locale\+\_\+ref (\begin{DoxyParamCaption}\item[{const Locale \&}]{loc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{89                                         : locale\_(\&loc) \{}
+\DoxyCodeLine{90   \textcolor{keyword}{static\_assert}(std::is\_same<Locale, std::locale>::value, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{91 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlocale__ref_ae0611bbed48909cbfdbf73c26204bbef}\label{classlocale__ref_ae0611bbed48909cbfdbf73c26204bbef}} 
+\index{locale\_ref@{locale\_ref}!get@{get}}
+\index{get@{get}!locale\_ref@{locale\_ref}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename Locale $>$ \\
+Locale locale\+\_\+ref\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{93                                                         \{}
+\DoxyCodeLine{94   \textcolor{keyword}{static\_assert}(std::is\_same<Locale, std::locale>::value, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{95   \textcolor{keywordflow}{return} locale\_ ? *\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }std::locale*\textcolor{keyword}{>}(locale\_) : std::locale();}
+\DoxyCodeLine{96 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classlocale__ref_a72000312a34df3808c0a4c151c15e4c9}\label{classlocale__ref_a72000312a34df3808c0a4c151c15e4c9}} 
+\index{locale\_ref@{locale\_ref}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!locale\_ref@{locale\_ref}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily locale\+\_\+ref\+::operator bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1694 \{ \textcolor{keywordflow}{return} locale\_ != \textcolor{keyword}{nullptr}; \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/core.\+h\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/format-\/inl.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,147 @@
+\hypertarget{classbuffered__file}{}\doxysection{buffered\+\_\+file Class Reference}
+\label{classbuffered__file}\index{buffered\_file@{buffered\_file}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbuffered__file_ac1b22b9f97483be7d80bdbd2004071a2}\label{classbuffered__file_ac1b22b9f97483be7d80bdbd2004071a2}} 
+{\bfseries buffered\+\_\+file} (const \mbox{\hyperlink{classbuffered__file}{buffered\+\_\+file}} \&)=delete
+\item 
+\mbox{\Hypertarget{classbuffered__file_a218b92e404c0d1261c0bce0eff5e1c80}\label{classbuffered__file_a218b92e404c0d1261c0bce0eff5e1c80}} 
+void {\bfseries operator=} (const \mbox{\hyperlink{classbuffered__file}{buffered\+\_\+file}} \&)=delete
+\item 
+\mbox{\hyperlink{classbuffered__file_a0da0bafb645c7c84540b1539c0ea740a}{buffered\+\_\+file}} (\mbox{\hyperlink{classbuffered__file}{buffered\+\_\+file}} \&\&other) noexcept
+\item 
+\mbox{\hyperlink{classbuffered__file}{buffered\+\_\+file}} \& \mbox{\hyperlink{classbuffered__file_af2838e13a04794462fc84baaf93a1b58}{operator=}} (\mbox{\hyperlink{classbuffered__file}{buffered\+\_\+file}} \&\&other)
+\item 
+\mbox{\Hypertarget{classbuffered__file_a880e91bb129936d5e35f00fde66349e5}\label{classbuffered__file_a880e91bb129936d5e35f00fde66349e5}} 
+FMT\+\_\+\+API {\bfseries buffered\+\_\+file} (\mbox{\hyperlink{classbasic__cstring__view}{cstring\+\_\+view}} filename, \mbox{\hyperlink{classbasic__cstring__view}{cstring\+\_\+view}} mode)
+\item 
+\mbox{\Hypertarget{classbuffered__file_a2756c39b06594666c5a8712873d7c878}\label{classbuffered__file_a2756c39b06594666c5a8712873d7c878}} 
+FMT\+\_\+\+API void {\bfseries close} ()
+\item 
+FILE $\ast$ \mbox{\hyperlink{classbuffered__file_a75d904e53e21497d25481778fa735e62}{get}} () const noexcept
+\item 
+\mbox{\Hypertarget{classbuffered__file_a3e536ce8df63a391e453b19f03a4151b}\label{classbuffered__file_a3e536ce8df63a391e453b19f03a4151b}} 
+FMT\+\_\+\+API int {\bfseries descriptor} () const
+\item 
+void \mbox{\hyperlink{classbuffered__file_a0a34fceffc31cc126a6b731461c88d8d}{vprint}} (\mbox{\hyperlink{classbasic__string__view}{string\+\_\+view}} format\+\_\+str, \mbox{\hyperlink{classbasic__format__args}{format\+\_\+args}} args)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classbuffered__file_ad97c4521f94be51a5b30064803e2bef1}{print}} (\mbox{\hyperlink{classbasic__string__view}{string\+\_\+view}} format\+\_\+str, const Args \&... args)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbuffered__file_a7b22b0c86770bc7ddddbeb8b73cd2e91}{buffered\+\_\+file}} (FILE $\ast$f)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbuffered__file_a892dc6c92fc92fa76a6d462454d60c14}\label{classbuffered__file_a892dc6c92fc92fa76a6d462454d60c14}} 
+FILE $\ast$ {\bfseries file\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbuffered__file_a686a90482e62dd1618201a3c79f9aae6}\label{classbuffered__file_a686a90482e62dd1618201a3c79f9aae6}} 
+class {\bfseries file}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbuffered__file_a7b22b0c86770bc7ddddbeb8b73cd2e91}\label{classbuffered__file_a7b22b0c86770bc7ddddbeb8b73cd2e91}} 
+\index{buffered\_file@{buffered\_file}!buffered\_file@{buffered\_file}}
+\index{buffered\_file@{buffered\_file}!buffered\_file@{buffered\_file}}
+\doxysubsubsection{\texorpdfstring{buffered\_file()}{buffered\_file()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily buffered\+\_\+file\+::buffered\+\_\+file (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{230 : file\_(f) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbuffered__file_a8059859b738bd114d3be4dca5412613a}\label{classbuffered__file_a8059859b738bd114d3be4dca5412613a}} 
+\index{buffered\_file@{buffered\_file}!buffered\_file@{buffered\_file}}
+\index{buffered\_file@{buffered\_file}!buffered\_file@{buffered\_file}}
+\doxysubsubsection{\texorpdfstring{buffered\_file()}{buffered\_file()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily buffered\+\_\+file\+::buffered\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{237 : file\_(\textcolor{keyword}{nullptr}) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbuffered__file_a0da0bafb645c7c84540b1539c0ea740a}\label{classbuffered__file_a0da0bafb645c7c84540b1539c0ea740a}} 
+\index{buffered\_file@{buffered\_file}!buffered\_file@{buffered\_file}}
+\index{buffered\_file@{buffered\_file}!buffered\_file@{buffered\_file}}
+\doxysubsubsection{\texorpdfstring{buffered\_file()}{buffered\_file()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily buffered\+\_\+file\+::buffered\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbuffered__file}{buffered\+\_\+file}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{243                                                 : file\_(other.file\_) \{}
+\DoxyCodeLine{244     other.file\_ = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{245   \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbuffered__file_a75d904e53e21497d25481778fa735e62}\label{classbuffered__file_a75d904e53e21497d25481778fa735e62}} 
+\index{buffered\_file@{buffered\_file}!get@{get}}
+\index{get@{get}!buffered\_file@{buffered\_file}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily FILE $\ast$ buffered\+\_\+file\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{261 \{ \textcolor{keywordflow}{return} file\_; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbuffered__file_af2838e13a04794462fc84baaf93a1b58}\label{classbuffered__file_af2838e13a04794462fc84baaf93a1b58}} 
+\index{buffered\_file@{buffered\_file}!operator=@{operator=}}
+\index{operator=@{operator=}!buffered\_file@{buffered\_file}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classbuffered__file}{buffered\+\_\+file}} \& buffered\+\_\+file\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbuffered__file}{buffered\+\_\+file}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{247                                                   \{}
+\DoxyCodeLine{248     close();}
+\DoxyCodeLine{249     file\_ = other.file\_;}
+\DoxyCodeLine{250     other.file\_ = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{251     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{252   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbuffered__file_ad97c4521f94be51a5b30064803e2bef1}\label{classbuffered__file_ad97c4521f94be51a5b30064803e2bef1}} 
+\index{buffered\_file@{buffered\_file}!print@{print}}
+\index{print@{print}!buffered\_file@{buffered\_file}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void buffered\+\_\+file\+::print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbasic__string__view}{string\+\_\+view}}}]{format\+\_\+str,  }\item[{const Args \&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{270                                                                  \{}
+\DoxyCodeLine{271     vprint(format\_str, fmt::make\_format\_args(args...));}
+\DoxyCodeLine{272   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbuffered__file_a0a34fceffc31cc126a6b731461c88d8d}\label{classbuffered__file_a0a34fceffc31cc126a6b731461c88d8d}} 
+\index{buffered\_file@{buffered\_file}!vprint@{vprint}}
+\index{vprint@{vprint}!buffered\_file@{buffered\_file}}
+\doxysubsubsection{\texorpdfstring{vprint()}{vprint()}}
+{\footnotesize\ttfamily void buffered\+\_\+file\+::vprint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbasic__string__view}{string\+\_\+view}}}]{format\+\_\+str,  }\item[{\mbox{\hyperlink{classbasic__format__args}{format\+\_\+args}}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{265                                                         \{}
+\DoxyCodeLine{266     fmt::vprint(file\_, format\_str, args);}
+\DoxyCodeLine{267   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/os.\+h\end{DoxyCompactItemize}

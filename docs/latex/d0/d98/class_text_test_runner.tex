@@ -1,0 +1,118 @@
+\hypertarget{class_text_test_runner}{}\doxysection{Text\+Test\+Runner Class Reference}
+\label{class_text_test_runner}\index{TextTestRunner@{TextTestRunner}}
+
+
+A text mode test runner.  
+
+
+
+
+{\ttfamily \#include $<$Text\+Test\+Runner.\+h$>$}
+
+Inheritance diagram for Text\+Test\+Runner\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d0/d98/class_text_test_runner}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_text_test_runner_ac7b6cba645a3a5e76382fcd40e4f7eb6}\label{class_text_test_runner_ac7b6cba645a3a5e76382fcd40e4f7eb6}} 
+{\bfseries Text\+Test\+Runner} (\mbox{\hyperlink{class_outputter}{Outputter}} $\ast$outputter=NULL)
+\item 
+\mbox{\Hypertarget{class_text_test_runner_ad9c38c263202c2bd453b927ba53dcf48}\label{class_text_test_runner_ad9c38c263202c2bd453b927ba53dcf48}} 
+bool {\bfseries run} (std\+::string test\+Path=\char`\"{}\char`\"{}, bool do\+Wait=false, bool do\+Print\+Result=true, bool do\+Print\+Progress=true)
+\item 
+\mbox{\Hypertarget{class_text_test_runner_a9d62d11f3acba355e47d21cb99106117}\label{class_text_test_runner_a9d62d11f3acba355e47d21cb99106117}} 
+void {\bfseries set\+Outputter} (\mbox{\hyperlink{class_outputter}{Outputter}} $\ast$outputter)
+\item 
+\mbox{\Hypertarget{class_text_test_runner_a615b29b5065d92c600bb4db9af48312c}\label{class_text_test_runner_a615b29b5065d92c600bb4db9af48312c}} 
+\mbox{\hyperlink{class_test_result_collector}{Test\+Result\+Collector}} \& {\bfseries result} () const
+\item 
+\mbox{\Hypertarget{class_text_test_runner_a035e94271a1eaee85ac079d741d61996}\label{class_text_test_runner_a035e94271a1eaee85ac079d741d61996}} 
+\mbox{\hyperlink{class_test_result}{Test\+Result}} \& {\bfseries event\+Manager} () const
+\item 
+\mbox{\Hypertarget{class_text_test_runner_a361eaa340138edf3659a9fcb813c3b5d}\label{class_text_test_runner_a361eaa340138edf3659a9fcb813c3b5d}} 
+virtual void {\bfseries run} (\mbox{\hyperlink{class_test_result}{Test\+Result}} \&controller, const std\+::string \&test\+Path=\char`\"{}\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_text_test_runner_a5b192f9419f5d1e6ebe9abd4755da140}\label{class_text_test_runner_a5b192f9419f5d1e6ebe9abd4755da140}} 
+virtual void {\bfseries wait} (bool do\+Wait)
+\item 
+\mbox{\Hypertarget{class_text_test_runner_aa01e5dee4cdad860ee7154329918f9ac}\label{class_text_test_runner_aa01e5dee4cdad860ee7154329918f9ac}} 
+virtual void {\bfseries print\+Result} (bool do\+Print\+Result)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_text_test_runner_a19326bff771b7e4ae425d77735d2a432}\label{class_text_test_runner_a19326bff771b7e4ae425d77735d2a432}} 
+{\bfseries Text\+Test\+Runner} (const \mbox{\hyperlink{class_text_test_runner}{Text\+Test\+Runner}} \&)
+\item 
+\mbox{\Hypertarget{class_text_test_runner_a3ca40d81ff60170e1361e30287c3d4f8}\label{class_text_test_runner_a3ca40d81ff60170e1361e30287c3d4f8}} 
+\mbox{\hyperlink{class_text_test_runner}{Text\+Test\+Runner}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_text_test_runner}{Text\+Test\+Runner}} \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_text_test_runner_a61cf52af4ee1c64e0e8d07fe86b91ea7}\label{class_text_test_runner_a61cf52af4ee1c64e0e8d07fe86b91ea7}} 
+\mbox{\hyperlink{class_test_result_collector}{Test\+Result\+Collector}} $\ast$ {\bfseries m\+\_\+result}
+\item 
+\mbox{\Hypertarget{class_text_test_runner_acfe13b2f69c0113670e3ba72704c0cf5}\label{class_text_test_runner_acfe13b2f69c0113670e3ba72704c0cf5}} 
+\mbox{\hyperlink{class_test_result}{Test\+Result}} $\ast$ {\bfseries m\+\_\+event\+Manager}
+\item 
+\mbox{\Hypertarget{class_text_test_runner_a01e4b671a1e8a32781ef6bcb91e4e95e}\label{class_text_test_runner_a01e4b671a1e8a32781ef6bcb91e4e95e}} 
+\mbox{\hyperlink{class_outputter}{Outputter}} $\ast$ {\bfseries m\+\_\+outputter}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A text mode test runner. 
+
+The test runner manage the life cycle of the added tests.
+
+The test runner can run only one of the added tests or all the tests.
+
+\mbox{\hyperlink{class_test_runner}{Test\+Runner}} prints out a trace as the tests are executed followed by a summary at the end. The trace and summary print are optional.
+
+Here is an example of use\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CppUnit::TextTestRunner runner;}
+\DoxyCodeLine{runner.addTest( ExampleTestCase::suite() );}
+\DoxyCodeLine{runner.run( \textcolor{stringliteral}{"{}"{}}, \textcolor{keyword}{true} );    \textcolor{comment}{// Run all tests and wait}}
+
+\end{DoxyCode}
+
+
+The trace is printed using a \mbox{\hyperlink{class_text_test_progress_listener}{Text\+Test\+Progress\+Listener}}. The summary is printed using a \mbox{\hyperlink{class_text_outputter}{Text\+Outputter}}.
+
+You can specify an alternate \mbox{\hyperlink{class_outputter}{Outputter}} at construction or later with set\+Outputter().
+
+After construction, you can register additional \mbox{\hyperlink{class_test_listener}{Test\+Listener}} to event\+Manager(), for a custom progress trace, for example.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CppUnit::TextTestRunner runner;}
+\DoxyCodeLine{runner.addTest( ExampleTestCase::suite() );}
+\DoxyCodeLine{runner.setOutputter( CppUnit::CompilerOutputter::defaultOutputter( }
+\DoxyCodeLine{                         \&runner.result(),}
+\DoxyCodeLine{                         std::cerr ) );}
+\DoxyCodeLine{MyCustomProgressTestListener progress;}
+\DoxyCodeLine{runner.eventManager().addListener( \&progress );}
+\DoxyCodeLine{runner.run( \textcolor{stringliteral}{"{}"{}}, \textcolor{keyword}{true} );    \textcolor{comment}{// Run all tests and wait}}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_compiler_outputter}{Compiler\+Outputter}}, \mbox{\hyperlink{class_xml_outputter}{Xml\+Outputter}}, \mbox{\hyperlink{class_text_outputter}{Text\+Outputter}}. 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/ui/text/Text\+Test\+Runner.\+h\end{DoxyCompactItemize}

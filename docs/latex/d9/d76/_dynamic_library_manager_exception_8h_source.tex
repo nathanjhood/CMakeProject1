@@ -1,0 +1,51 @@
+\hypertarget{_dynamic_library_manager_exception_8h_source}{}\doxysection{Dynamic\+Library\+Manager\+Exception.\+h}
+\label{_dynamic_library_manager_exception_8h_source}\index{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/plugin/DynamicLibraryManagerException.h@{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/plugin/DynamicLibraryManagerException.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CPPUNIT\_PLUGIN\_DYNAMICLIBRARYMANAGEREXCEPTION\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CPPUNIT\_PLUGIN\_DYNAMICLIBRARYMANAGEREXCEPTION\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cppunit/Portability.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#if !defined(CPPUNIT\_NO\_TESTPLUGIN)}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 CPPUNIT\_NS\_BEGIN}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_dynamic_library_manager_exception}{DynamicLibraryManagerException}} : \textcolor{keyword}{public} std::runtime\_error}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22   \textcolor{keyword}{enum} \mbox{\hyperlink{class_dynamic_library_manager_exception_a73b4694c152e0693fbc19fb04987a0b9}{Cause}}}
+\DoxyCodeLine{23   \{}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_dynamic_library_manager_exception_a73b4694c152e0693fbc19fb04987a0b9a778b42fb996bf018bdc26934649cad63}{loadingFailed}} =0,}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_dynamic_library_manager_exception_a73b4694c152e0693fbc19fb04987a0b9a193fc58bb852e09790da269e2b613045}{symbolNotFound}}}
+\DoxyCodeLine{28   \};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31   \mbox{\hyperlink{class_dynamic_library_manager_exception_a15629092a054849f1cb73f8f468f8125}{DynamicLibraryManagerException}}( \textcolor{keyword}{const} std::string \&libraryName,}
+\DoxyCodeLine{32                                   \textcolor{keyword}{const} std::string \&errorDetail,}
+\DoxyCodeLine{33                                   \mbox{\hyperlink{class_dynamic_library_manager_exception_a73b4694c152e0693fbc19fb04987a0b9}{Cause}} cause );}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   \mbox{\hyperlink{class_dynamic_library_manager_exception}{\string~DynamicLibraryManagerException}}() throw()}
+\DoxyCodeLine{36   \{}
+\DoxyCodeLine{37   \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39   \mbox{\hyperlink{class_dynamic_library_manager_exception_a73b4694c152e0693fbc19fb04987a0b9}{Cause}} getCause() \textcolor{keyword}{const};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keyword}{const} \textcolor{keywordtype}{char} *what() \textcolor{keyword}{const} throw();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 private:}
+\DoxyCodeLine{44   std::\textcolor{keywordtype}{string} m\_message;}
+\DoxyCodeLine{45   \mbox{\hyperlink{class_dynamic_library_manager_exception_a73b4694c152e0693fbc19fb04987a0b9}{Cause}} m\_cause;}
+\DoxyCodeLine{46 \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 CPPUNIT\_NS\_END}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !defined(CPPUNIT\_NO\_TESTPLUGIN)}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// CPPUNIT\_PLUGIN\_DYNAMICLIBRARYMANAGEREXCEPTION\_H}}
+
+\end{DoxyCode}

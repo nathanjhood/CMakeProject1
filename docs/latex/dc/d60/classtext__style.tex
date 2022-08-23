@@ -1,0 +1,270 @@
+\hypertarget{classtext__style}{}\doxysection{text\+\_\+style Class Reference}
+\label{classtext__style}\index{text\_style@{text\_style}}
+
+
+A text style consisting of foreground and background colors and emphasis.  
+
+
+
+
+{\ttfamily \#include $<$color.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classtext__style_a5600bdfe6916b735a206cb8477b1a7ac}{text\+\_\+style}} (emphasis em=emphasis()) noexcept
+\item 
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classtext__style}{text\+\_\+style}} \& \mbox{\hyperlink{classtext__style_a681c9600702dbf1d8ccf29153f14f5a3}{operator$\vert$=}} (const \mbox{\hyperlink{classtext__style}{text\+\_\+style}} \&rhs)
+\item 
+FMT\+\_\+\+CONSTEXPR bool \mbox{\hyperlink{classtext__style_ae0d248cb46f4d505154bbc05c074f37f}{has\+\_\+foreground}} () const noexcept
+\item 
+FMT\+\_\+\+CONSTEXPR bool \mbox{\hyperlink{classtext__style_afc8a0308e50f4deeeaa8ca3b9b698630}{has\+\_\+background}} () const noexcept
+\item 
+FMT\+\_\+\+CONSTEXPR bool \mbox{\hyperlink{classtext__style_a226815799bd44c60e1e809aef397bfad}{has\+\_\+emphasis}} () const noexcept
+\item 
+FMT\+\_\+\+CONSTEXPR detail\+::color\+\_\+type \mbox{\hyperlink{classtext__style_a9a8fe805147ea09f9da71692121722e4}{get\+\_\+foreground}} () const noexcept
+\item 
+FMT\+\_\+\+CONSTEXPR detail\+::color\+\_\+type \mbox{\hyperlink{classtext__style_af577959635a1a1abf259b3b433cc0a2f}{get\+\_\+background}} () const noexcept
+\item 
+FMT\+\_\+\+CONSTEXPR emphasis \mbox{\hyperlink{classtext__style_a3a32291eb583312889f390f31aeea85a}{get\+\_\+emphasis}} () const noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classtext__style_ac37251d70d8018c60c70cfb89bd2a109}{text\+\_\+style}} (bool is\+\_\+foreground, detail\+::color\+\_\+type text\+\_\+color) noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtext__style_aed872ccf31f3811b48f212f51e119e9e}\label{classtext__style_aed872ccf31f3811b48f212f51e119e9e}} 
+detail\+::color\+\_\+type {\bfseries foreground\+\_\+color}
+\item 
+\mbox{\Hypertarget{classtext__style_adf49236162cca8919ddf6519904c2736}\label{classtext__style_adf49236162cca8919ddf6519904c2736}} 
+detail\+::color\+\_\+type {\bfseries background\+\_\+color}
+\item 
+\mbox{\Hypertarget{classtext__style_a8a699b39d3c16dd851f656cf7bfe89a2}\label{classtext__style_a8a699b39d3c16dd851f656cf7bfe89a2}} 
+bool {\bfseries set\+\_\+foreground\+\_\+color}
+\item 
+\mbox{\Hypertarget{classtext__style_af93a2fa0477f44e01bb07663ab0db82c}\label{classtext__style_af93a2fa0477f44e01bb07663ab0db82c}} 
+bool {\bfseries set\+\_\+background\+\_\+color}
+\item 
+\mbox{\Hypertarget{classtext__style_a522bbb24b8ad2587512a5c9aafa6b15f}\label{classtext__style_a522bbb24b8ad2587512a5c9aafa6b15f}} 
+emphasis {\bfseries ems}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classtext__style}{text\+\_\+style}} \mbox{\hyperlink{classtext__style_a35023459e415ef79bccff971618bfc1f}{operator$\vert$}} (\mbox{\hyperlink{classtext__style}{text\+\_\+style}} lhs, const \mbox{\hyperlink{classtext__style}{text\+\_\+style}} \&rhs)
+\item 
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classtext__style}{text\+\_\+style}} \mbox{\hyperlink{classtext__style_a30839219f297246ebc1babfb45f96f2a}{fg}} (detail\+::color\+\_\+type foreground) noexcept
+\begin{DoxyCompactList}\small\item\em Creates a text style from the foreground (text) color. \end{DoxyCompactList}\item 
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classtext__style}{text\+\_\+style}} \mbox{\hyperlink{classtext__style_ae1af0d62808a99dac446d1de67d36505}{bg}} (detail\+::color\+\_\+type background) noexcept
+\begin{DoxyCompactList}\small\item\em Creates a text style from the background color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A text style consisting of foreground and background colors and emphasis. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtext__style_a5600bdfe6916b735a206cb8477b1a7ac}\label{classtext__style_a5600bdfe6916b735a206cb8477b1a7ac}} 
+\index{text\_style@{text\_style}!text\_style@{text\_style}}
+\index{text\_style@{text\_style}!text\_style@{text\_style}}
+\doxysubsubsection{\texorpdfstring{text\_style()}{text\_style()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR text\+\_\+style\+::text\+\_\+style (\begin{DoxyParamCaption}\item[{emphasis}]{em = {\ttfamily emphasis()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{235       : set\_foreground\_color(), set\_background\_color(), ems(em) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classtext__style_ac37251d70d8018c60c70cfb89bd2a109}\label{classtext__style_ac37251d70d8018c60c70cfb89bd2a109}} 
+\index{text\_style@{text\_style}!text\_style@{text\_style}}
+\index{text\_style@{text\_style}!text\_style@{text\_style}}
+\doxysubsubsection{\texorpdfstring{text\_style()}{text\_style()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR text\+\_\+style\+::text\+\_\+style (\begin{DoxyParamCaption}\item[{bool}]{is\+\_\+foreground,  }\item[{detail\+::color\+\_\+type}]{text\+\_\+color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{291       : set\_foreground\_color(), set\_background\_color(), ems() \{}
+\DoxyCodeLine{292     \textcolor{keywordflow}{if} (is\_foreground) \{}
+\DoxyCodeLine{293       foreground\_color = text\_color;}
+\DoxyCodeLine{294       set\_foreground\_color = \textcolor{keyword}{true};}
+\DoxyCodeLine{295     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{296       background\_color = text\_color;}
+\DoxyCodeLine{297       set\_background\_color = \textcolor{keyword}{true};}
+\DoxyCodeLine{298     \}}
+\DoxyCodeLine{299   \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtext__style_af577959635a1a1abf259b3b433cc0a2f}\label{classtext__style_af577959635a1a1abf259b3b433cc0a2f}} 
+\index{text\_style@{text\_style}!get\_background@{get\_background}}
+\index{get\_background@{get\_background}!text\_style@{text\_style}}
+\doxysubsubsection{\texorpdfstring{get\_background()}{get\_background()}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR detail\+::color\+\_\+type text\+\_\+style\+::get\+\_\+background (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{279                                                                  \{}
+\DoxyCodeLine{280     FMT\_ASSERT(has\_background(), \textcolor{stringliteral}{"{}no background specified for this style"{}});}
+\DoxyCodeLine{281     \textcolor{keywordflow}{return} background\_color;}
+\DoxyCodeLine{282   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classtext__style_a3a32291eb583312889f390f31aeea85a}\label{classtext__style_a3a32291eb583312889f390f31aeea85a}} 
+\index{text\_style@{text\_style}!get\_emphasis@{get\_emphasis}}
+\index{get\_emphasis@{get\_emphasis}!text\_style@{text\_style}}
+\doxysubsubsection{\texorpdfstring{get\_emphasis()}{get\_emphasis()}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR emphasis text\+\_\+style\+::get\+\_\+emphasis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{283                                                        \{}
+\DoxyCodeLine{284     FMT\_ASSERT(has\_emphasis(), \textcolor{stringliteral}{"{}no emphasis specified for this style"{}});}
+\DoxyCodeLine{285     \textcolor{keywordflow}{return} ems;}
+\DoxyCodeLine{286   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classtext__style_a9a8fe805147ea09f9da71692121722e4}\label{classtext__style_a9a8fe805147ea09f9da71692121722e4}} 
+\index{text\_style@{text\_style}!get\_foreground@{get\_foreground}}
+\index{get\_foreground@{get\_foreground}!text\_style@{text\_style}}
+\doxysubsubsection{\texorpdfstring{get\_foreground()}{get\_foreground()}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR detail\+::color\+\_\+type text\+\_\+style\+::get\+\_\+foreground (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{275                                                                  \{}
+\DoxyCodeLine{276     FMT\_ASSERT(has\_foreground(), \textcolor{stringliteral}{"{}no foreground specified for this style"{}});}
+\DoxyCodeLine{277     \textcolor{keywordflow}{return} foreground\_color;}
+\DoxyCodeLine{278   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classtext__style_afc8a0308e50f4deeeaa8ca3b9b698630}\label{classtext__style_afc8a0308e50f4deeeaa8ca3b9b698630}} 
+\index{text\_style@{text\_style}!has\_background@{has\_background}}
+\index{has\_background@{has\_background}!text\_style@{text\_style}}
+\doxysubsubsection{\texorpdfstring{has\_background()}{has\_background()}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR bool text\+\_\+style\+::has\+\_\+background (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{269                                                      \{}
+\DoxyCodeLine{270     \textcolor{keywordflow}{return} set\_background\_color;}
+\DoxyCodeLine{271   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classtext__style_a226815799bd44c60e1e809aef397bfad}\label{classtext__style_a226815799bd44c60e1e809aef397bfad}} 
+\index{text\_style@{text\_style}!has\_emphasis@{has\_emphasis}}
+\index{has\_emphasis@{has\_emphasis}!text\_style@{text\_style}}
+\doxysubsubsection{\texorpdfstring{has\_emphasis()}{has\_emphasis()}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR bool text\+\_\+style\+::has\+\_\+emphasis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{272                                                    \{}
+\DoxyCodeLine{273     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(ems) != 0;}
+\DoxyCodeLine{274   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classtext__style_ae0d248cb46f4d505154bbc05c074f37f}\label{classtext__style_ae0d248cb46f4d505154bbc05c074f37f}} 
+\index{text\_style@{text\_style}!has\_foreground@{has\_foreground}}
+\index{has\_foreground@{has\_foreground}!text\_style@{text\_style}}
+\doxysubsubsection{\texorpdfstring{has\_foreground()}{has\_foreground()}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR bool text\+\_\+style\+::has\+\_\+foreground (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{266                                                      \{}
+\DoxyCodeLine{267     \textcolor{keywordflow}{return} set\_foreground\_color;}
+\DoxyCodeLine{268   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classtext__style_a681c9600702dbf1d8ccf29153f14f5a3}\label{classtext__style_a681c9600702dbf1d8ccf29153f14f5a3}} 
+\index{text\_style@{text\_style}!operator\texttt{"|}=@{operator\texttt{"|}=}}
+\index{operator\texttt{"|}=@{operator\texttt{"|}=}!text\_style@{text\_style}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}=()}{operator|=()}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classtext__style}{text\+\_\+style}} \& text\+\_\+style\+::operator$\vert$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtext__style}{text\+\_\+style}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{237                                                               \{}
+\DoxyCodeLine{238     \textcolor{keywordflow}{if} (!set\_foreground\_color) \{}
+\DoxyCodeLine{239       set\_foreground\_color = rhs.set\_foreground\_color;}
+\DoxyCodeLine{240       foreground\_color = rhs.foreground\_color;}
+\DoxyCodeLine{241     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (rhs.set\_foreground\_color) \{}
+\DoxyCodeLine{242       \textcolor{keywordflow}{if} (!foreground\_color.is\_rgb || !rhs.foreground\_color.is\_rgb)}
+\DoxyCodeLine{243         FMT\_THROW(\mbox{\hyperlink{classformat__error}{format\_error}}(\textcolor{stringliteral}{"{}can't OR a terminal color"{}}));}
+\DoxyCodeLine{244       foreground\_color.value.rgb\_color |= rhs.foreground\_color.value.rgb\_color;}
+\DoxyCodeLine{245     \}}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247     \textcolor{keywordflow}{if} (!set\_background\_color) \{}
+\DoxyCodeLine{248       set\_background\_color = rhs.set\_background\_color;}
+\DoxyCodeLine{249       background\_color = rhs.background\_color;}
+\DoxyCodeLine{250     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (rhs.set\_background\_color) \{}
+\DoxyCodeLine{251       \textcolor{keywordflow}{if} (!background\_color.is\_rgb || !rhs.background\_color.is\_rgb)}
+\DoxyCodeLine{252         FMT\_THROW(\mbox{\hyperlink{classformat__error}{format\_error}}(\textcolor{stringliteral}{"{}can't OR a terminal color"{}}));}
+\DoxyCodeLine{253       background\_color.value.rgb\_color |= rhs.background\_color.value.rgb\_color;}
+\DoxyCodeLine{254     \}}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256     ems = \textcolor{keyword}{static\_cast<}emphasis\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(ems) |}
+\DoxyCodeLine{257                                 \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(rhs.ems));}
+\DoxyCodeLine{258     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{259   \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classtext__style_ae1af0d62808a99dac446d1de67d36505}\label{classtext__style_ae1af0d62808a99dac446d1de67d36505}} 
+\index{text\_style@{text\_style}!bg@{bg}}
+\index{bg@{bg}!text\_style@{text\_style}}
+\doxysubsubsection{\texorpdfstring{bg}{bg}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classtext__style}{text\+\_\+style}} bg (\begin{DoxyParamCaption}\item[{detail\+::color\+\_\+type}]{background }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Creates a text style from the background color. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{318                                                                          \{}
+\DoxyCodeLine{319   \textcolor{keywordflow}{return} \mbox{\hyperlink{classtext__style}{text\_style}}(\textcolor{keyword}{false}, background);}
+\DoxyCodeLine{320 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classtext__style_a30839219f297246ebc1babfb45f96f2a}\label{classtext__style_a30839219f297246ebc1babfb45f96f2a}} 
+\index{text\_style@{text\_style}!fg@{fg}}
+\index{fg@{fg}!text\_style@{text\_style}}
+\doxysubsubsection{\texorpdfstring{fg}{fg}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classtext__style}{text\+\_\+style}} fg (\begin{DoxyParamCaption}\item[{detail\+::color\+\_\+type}]{foreground }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Creates a text style from the foreground (text) color. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{313                                                                          \{}
+\DoxyCodeLine{314   \textcolor{keywordflow}{return} \mbox{\hyperlink{classtext__style}{text\_style}}(\textcolor{keyword}{true}, foreground);}
+\DoxyCodeLine{315 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classtext__style_a35023459e415ef79bccff971618bfc1f}\label{classtext__style_a35023459e415ef79bccff971618bfc1f}} 
+\index{text\_style@{text\_style}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!text\_style@{text\_style}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}}{operator|}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classtext__style}{text\+\_\+style}} operator$\vert$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtext__style}{text\+\_\+style}}}]{lhs,  }\item[{const \mbox{\hyperlink{classtext__style}{text\+\_\+style}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{262                                                                    \{}
+\DoxyCodeLine{263     \textcolor{keywordflow}{return} lhs |= rhs;}
+\DoxyCodeLine{264   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/color.\+h\end{DoxyCompactItemize}

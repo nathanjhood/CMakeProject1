@@ -1,0 +1,100 @@
+\hypertarget{structformatter_3_01_t_00_01_char_00_01enable__if__t_3_01detail_1_1type__constant_3_01_t_00_01_ce66aa95d8f86570b04dc47971fbb1e4b}{}\doxysection{formatter\texorpdfstring{$<$}{<} T, Char, enable\+\_\+if\+\_\+t\texorpdfstring{$<$}{<} detail\+::type\+\_\+constant\texorpdfstring{$<$}{<} T, Char \texorpdfstring{$>$}{>}\+::value !=detail\+::type\+::custom\+\_\+type \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structformatter_3_01_t_00_01_char_00_01enable__if__t_3_01detail_1_1type__constant_3_01_t_00_01_ce66aa95d8f86570b04dc47971fbb1e4b}\index{formatter$<$ T, Char, enable\_if\_t$<$ detail::type\_constant$<$ T, Char $>$::value "!=detail::type::custom\_type $>$ $>$@{formatter$<$ T, Char, enable\_if\_t$<$ detail::type\_constant$<$ T, Char $>$::value "!=detail::type::custom\_type $>$ $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Parse\+Context $>$ }\\FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structformatter_3_01_t_00_01_char_00_01enable__if__t_3_01detail_1_1type__constant_3_01_t_00_01_ce66aa95d8f86570b04dc47971fbb1e4b_a49c65b46118f50ca8574c535cdc74b6f}{parse}} (Parse\+Context \&ctx) -\/$>$ decltype(ctx.\+begin())
+\item 
+\mbox{\Hypertarget{structformatter_3_01_t_00_01_char_00_01enable__if__t_3_01detail_1_1type__constant_3_01_t_00_01_ce66aa95d8f86570b04dc47971fbb1e4b_aa1888b26564d7e2161fb64af1cccda11}\label{structformatter_3_01_t_00_01_char_00_01enable__if__t_3_01detail_1_1type__constant_3_01_t_00_01_ce66aa95d8f86570b04dc47971fbb1e4b_aa1888b26564d7e2161fb64af1cccda11}} 
+{\footnotesize template$<$typename Format\+Context $>$ }\\FMT\+\_\+\+CONSTEXPR auto {\bfseries format} (const T \&val, Format\+Context \&ctx) const -\/$>$ decltype(ctx.\+out())
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structformatter_3_01_t_00_01_char_00_01enable__if__t_3_01detail_1_1type__constant_3_01_t_00_01_ce66aa95d8f86570b04dc47971fbb1e4b_a8d322c4f48a97e3cb43cba3a3a2deefa}\label{structformatter_3_01_t_00_01_char_00_01enable__if__t_3_01detail_1_1type__constant_3_01_t_00_01_ce66aa95d8f86570b04dc47971fbb1e4b_a8d322c4f48a97e3cb43cba3a3a2deefa}} 
+detail\+::dynamic\+\_\+format\+\_\+specs$<$ Char $>$ {\bfseries specs\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structformatter_3_01_t_00_01_char_00_01enable__if__t_3_01detail_1_1type__constant_3_01_t_00_01_ce66aa95d8f86570b04dc47971fbb1e4b_a49c65b46118f50ca8574c535cdc74b6f}\label{structformatter_3_01_t_00_01_char_00_01enable__if__t_3_01detail_1_1type__constant_3_01_t_00_01_ce66aa95d8f86570b04dc47971fbb1e4b_a49c65b46118f50ca8574c535cdc74b6f}} 
+\index{formatter$<$ T, Char, enable\_if\_t$<$ detail::type\_constant$<$ T, Char $>$::value "!=detail::type::custom\_type $>$ $>$@{formatter$<$ T, Char, enable\_if\_t$<$ detail::type\_constant$<$ T, Char $>$::value "!=detail::type::custom\_type $>$ $>$}!parse@{parse}}
+\index{parse@{parse}!formatter$<$ T, Char, enable\_if\_t$<$ detail::type\_constant$<$ T, Char $>$::value "!=detail::type::custom\_type $>$ $>$@{formatter$<$ T, Char, enable\_if\_t$<$ detail::type\_constant$<$ T, Char $>$::value "!=detail::type::custom\_type $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily template$<$typename T , typename Char $>$ \\
+template$<$typename Parse\+Context $>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structformatter}{formatter}}$<$ T, Char, enable\+\_\+if\+\_\+t$<$ detail\+::type\+\_\+constant$<$ T, Char $>$\mbox{\hyperlink{classvalue}{\+::value}} !=detail\+::type\+::custom\+\_\+type $>$ $>$\+::parse (\begin{DoxyParamCaption}\item[{Parse\+Context \&}]{ctx }\end{DoxyParamCaption}) -\/$>$ decltype(ctx.\+begin()) \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3003                                                                        \{}
+\DoxyCodeLine{3004     \textcolor{keyword}{auto} begin = ctx.begin(), end = ctx.end();}
+\DoxyCodeLine{3005     \textcolor{keywordflow}{if} (begin == end) \textcolor{keywordflow}{return} begin;}
+\DoxyCodeLine{3006     \textcolor{keyword}{using }handler\_type = detail::dynamic\_specs\_handler<ParseContext>;}
+\DoxyCodeLine{3007     \textcolor{keyword}{auto} type = detail::type\_constant<T, Char>::value;}
+\DoxyCodeLine{3008     \textcolor{keyword}{auto} checker =}
+\DoxyCodeLine{3009         detail::specs\_checker<handler\_type>(handler\_type(specs\_, ctx), type);}
+\DoxyCodeLine{3010     \textcolor{keyword}{auto} it = detail::parse\_format\_specs(begin, end, checker);}
+\DoxyCodeLine{3011     \textcolor{keyword}{auto} eh = ctx.error\_handler();}
+\DoxyCodeLine{3012     \textcolor{keywordflow}{switch} (type) \{}
+\DoxyCodeLine{3013     \textcolor{keywordflow}{case} detail::type::none\_type:}
+\DoxyCodeLine{3014       FMT\_ASSERT(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}invalid argument type"{}});}
+\DoxyCodeLine{3015       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{3016     \textcolor{keywordflow}{case} detail::type::bool\_type:}
+\DoxyCodeLine{3017       \textcolor{keywordflow}{if} (specs\_.type == presentation\_type::none ||}
+\DoxyCodeLine{3018           specs\_.type == presentation\_type::string) \{}
+\DoxyCodeLine{3019         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{3020       \}}
+\DoxyCodeLine{3021       FMT\_FALLTHROUGH;}
+\DoxyCodeLine{3022     \textcolor{keywordflow}{case} detail::type::int\_type:}
+\DoxyCodeLine{3023     \textcolor{keywordflow}{case} detail::type::uint\_type:}
+\DoxyCodeLine{3024     \textcolor{keywordflow}{case} detail::type::long\_long\_type:}
+\DoxyCodeLine{3025     \textcolor{keywordflow}{case} detail::type::ulong\_long\_type:}
+\DoxyCodeLine{3026     \textcolor{keywordflow}{case} detail::type::int128\_type:}
+\DoxyCodeLine{3027     \textcolor{keywordflow}{case} detail::type::uint128\_type:}
+\DoxyCodeLine{3028       detail::check\_int\_type\_spec(specs\_.type, eh);}
+\DoxyCodeLine{3029       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{3030     \textcolor{keywordflow}{case} detail::type::char\_type:}
+\DoxyCodeLine{3031       detail::check\_char\_specs(specs\_, eh);}
+\DoxyCodeLine{3032       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{3033     \textcolor{keywordflow}{case} detail::type::float\_type:}
+\DoxyCodeLine{3034       \textcolor{keywordflow}{if} (detail::const\_check(FMT\_USE\_FLOAT))}
+\DoxyCodeLine{3035         detail::parse\_float\_type\_spec(specs\_, eh);}
+\DoxyCodeLine{3036       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{3037         FMT\_ASSERT(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}float support disabled"{}});}
+\DoxyCodeLine{3038       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{3039     \textcolor{keywordflow}{case} detail::type::double\_type:}
+\DoxyCodeLine{3040       \textcolor{keywordflow}{if} (detail::const\_check(FMT\_USE\_DOUBLE))}
+\DoxyCodeLine{3041         detail::parse\_float\_type\_spec(specs\_, eh);}
+\DoxyCodeLine{3042       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{3043         FMT\_ASSERT(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}double support disabled"{}});}
+\DoxyCodeLine{3044       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{3045     \textcolor{keywordflow}{case} detail::type::long\_double\_type:}
+\DoxyCodeLine{3046       \textcolor{keywordflow}{if} (detail::const\_check(FMT\_USE\_LONG\_DOUBLE))}
+\DoxyCodeLine{3047         detail::parse\_float\_type\_spec(specs\_, eh);}
+\DoxyCodeLine{3048       \textcolor{keywordflow}{else}}
+\DoxyCodeLine{3049         FMT\_ASSERT(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}long double support disabled"{}});}
+\DoxyCodeLine{3050       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{3051     \textcolor{keywordflow}{case} detail::type::cstring\_type:}
+\DoxyCodeLine{3052       detail::check\_cstring\_type\_spec(specs\_.type, eh);}
+\DoxyCodeLine{3053       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{3054     \textcolor{keywordflow}{case} detail::type::string\_type:}
+\DoxyCodeLine{3055       detail::check\_string\_type\_spec(specs\_.type, eh);}
+\DoxyCodeLine{3056       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{3057     \textcolor{keywordflow}{case} detail::type::pointer\_type:}
+\DoxyCodeLine{3058       detail::check\_pointer\_type\_spec(specs\_.type, eh);}
+\DoxyCodeLine{3059       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{3060     \textcolor{keywordflow}{case} detail::type::custom\_type:}
+\DoxyCodeLine{3061       \textcolor{comment}{// Custom format specifiers are checked in parse functions of}}
+\DoxyCodeLine{3062       \textcolor{comment}{// formatter specializations.}}
+\DoxyCodeLine{3063       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{3064     \}}
+\DoxyCodeLine{3065     \textcolor{keywordflow}{return} it;}
+\DoxyCodeLine{3066   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/core.\+h\end{DoxyCompactItemize}

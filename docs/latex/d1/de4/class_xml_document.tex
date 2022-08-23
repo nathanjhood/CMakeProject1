@@ -1,0 +1,121 @@
+\hypertarget{class_xml_document}{}\doxysection{Xml\+Document Class Reference}
+\label{class_xml_document}\index{XmlDocument@{XmlDocument}}
+
+
+A XML Document.  
+
+
+
+
+{\ttfamily \#include $<$Xml\+Document.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_xml_document_a3bc4c5ea5f22b4ff8776422125b31d42}{Xml\+Document}} (const std\+::string \&encoding=\char`\"{}\char`\"{}, const std\+::string \&style\+Sheet=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{class_xml_document}{Xml\+Document}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_xml_document_a5c95c959091f1ae826b8698ba0c3416c}\label{class_xml_document_a5c95c959091f1ae826b8698ba0c3416c}} 
+virtual {\bfseries $\sim$\+Xml\+Document} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_xml_document_a47d3bae77c305d413b4129959b37b5e8}\label{class_xml_document_a47d3bae77c305d413b4129959b37b5e8}} 
+std\+::string {\bfseries encoding} () const
+\item 
+\mbox{\Hypertarget{class_xml_document_afb4401e77f67626533ba7409a011c508}\label{class_xml_document_afb4401e77f67626533ba7409a011c508}} 
+void {\bfseries set\+Encoding} (const std\+::string \&encoding=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{class_xml_document_a84bb99ab0b122c98a2ebb1fca5af1276}\label{class_xml_document_a84bb99ab0b122c98a2ebb1fca5af1276}} 
+std\+::string {\bfseries style\+Sheet} () const
+\item 
+\mbox{\Hypertarget{class_xml_document_a63cfdd276a9812900cd7739758effd78}\label{class_xml_document_a63cfdd276a9812900cd7739758effd78}} 
+void {\bfseries set\+Style\+Sheet} (const std\+::string \&style\+Sheet=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{class_xml_document_a1ee3b9a6f6ecd595df13cf3c8abfe102}\label{class_xml_document_a1ee3b9a6f6ecd595df13cf3c8abfe102}} 
+bool {\bfseries standalone} () const
+\item 
+void \mbox{\hyperlink{class_xml_document_a3cc9d3452daba0bda758ee7add075827}{set\+Standalone}} (bool standalone)
+\begin{DoxyCompactList}\small\item\em set the output document as standalone or not. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_xml_document_a2b419770905e48914ed6dba3990061cd}\label{class_xml_document_a2b419770905e48914ed6dba3990061cd}} 
+void {\bfseries set\+Root\+Element} (\mbox{\hyperlink{class_xml_element}{Xml\+Element}} $\ast$root\+Element)
+\item 
+\mbox{\Hypertarget{class_xml_document_a22b01422feef075ae4cbc6c68b962c8a}\label{class_xml_document_a22b01422feef075ae4cbc6c68b962c8a}} 
+\mbox{\hyperlink{class_xml_element}{Xml\+Element}} \& {\bfseries root\+Element} () const
+\item 
+\mbox{\Hypertarget{class_xml_document_a5ff7d4eae6c0a0bfbaf11c4903d67cbf}\label{class_xml_document_a5ff7d4eae6c0a0bfbaf11c4903d67cbf}} 
+std\+::string {\bfseries to\+String} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_xml_document_a3a5338a6b02b176a3d50e6665ce1b41d}\label{class_xml_document_a3a5338a6b02b176a3d50e6665ce1b41d}} 
+std\+::string {\bfseries m\+\_\+encoding}
+\item 
+\mbox{\Hypertarget{class_xml_document_a8564bf7c7d4856e6aecc2d7b7be6782b}\label{class_xml_document_a8564bf7c7d4856e6aecc2d7b7be6782b}} 
+std\+::string {\bfseries m\+\_\+style\+Sheet}
+\item 
+\mbox{\Hypertarget{class_xml_document_a83e49d668c247017d1681a9989958280}\label{class_xml_document_a83e49d668c247017d1681a9989958280}} 
+\mbox{\hyperlink{class_xml_element}{Xml\+Element}} $\ast$ {\bfseries m\+\_\+root\+Element}
+\item 
+\mbox{\Hypertarget{class_xml_document_a0c2dd2a48772ad62209a268156af3baa}\label{class_xml_document_a0c2dd2a48772ad62209a268156af3baa}} 
+bool {\bfseries m\+\_\+standalone}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_xml_document_a5e344194c740ec037c4303c343b64c50}\label{class_xml_document_a5e344194c740ec037c4303c343b64c50}} 
+{\bfseries Xml\+Document} (const \mbox{\hyperlink{class_xml_document}{Xml\+Document}} \&copy)
+\begin{DoxyCompactList}\small\item\em Prevents the use of the copy constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_xml_document_a99b0dc28a8a405a8b85aa94d00f198a7}\label{class_xml_document_a99b0dc28a8a405a8b85aa94d00f198a7}} 
+void {\bfseries operator=} (const \mbox{\hyperlink{class_xml_document}{Xml\+Document}} \&copy)
+\begin{DoxyCompactList}\small\item\em Prevents the use of the copy operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A XML Document. 
+
+A \mbox{\hyperlink{class_xml_document}{Xml\+Document}} represents a XML file. It holds a pointer on the root \mbox{\hyperlink{class_xml_element}{Xml\+Element}} of the document. It also holds the encoding and style sheet used.
+
+By default, the XML document is stand-\/alone and tagged with enconding \char`\"{}\+ISO-\/8859-\/1\char`\"{}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_xml_document_a3bc4c5ea5f22b4ff8776422125b31d42}\label{class_xml_document_a3bc4c5ea5f22b4ff8776422125b31d42}} 
+\index{XmlDocument@{XmlDocument}!XmlDocument@{XmlDocument}}
+\index{XmlDocument@{XmlDocument}!XmlDocument@{XmlDocument}}
+\doxysubsubsection{\texorpdfstring{XmlDocument()}{XmlDocument()}}
+{\footnotesize\ttfamily Xml\+Document\+::\+Xml\+Document (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{encoding = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{style\+Sheet = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{class_xml_document}{Xml\+Document}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoding} & Encoding used in the XML file (default is Latin-\/1, ISO-\/8859-\/1 ). \\
+\hline
+{\em style\+Sheet} & Name of the XSL style sheet file used. If empty then no style sheet will be specified in the output. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_xml_document_a3cc9d3452daba0bda758ee7add075827}\label{class_xml_document_a3cc9d3452daba0bda758ee7add075827}} 
+\index{XmlDocument@{XmlDocument}!setStandalone@{setStandalone}}
+\index{setStandalone@{setStandalone}!XmlDocument@{XmlDocument}}
+\doxysubsubsection{\texorpdfstring{setStandalone()}{setStandalone()}}
+{\footnotesize\ttfamily void Xml\+Document\+::set\+Standalone (\begin{DoxyParamCaption}\item[{bool}]{standalone }\end{DoxyParamCaption})}
+
+
+
+set the output document as standalone or not. 
+
+For the output document, specify wether it\textquotesingle{}s a standalone XML document, or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em standalone} & if true, the output will be specified as standalone. if false, it will be not. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/tools/Xml\+Document.\+h\end{DoxyCompactItemize}

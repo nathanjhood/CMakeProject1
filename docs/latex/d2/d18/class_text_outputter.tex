@@ -1,0 +1,97 @@
+\hypertarget{class_text_outputter}{}\doxysection{Text\+Outputter Class Reference}
+\label{class_text_outputter}\index{TextOutputter@{TextOutputter}}
+
+
+Prints a \mbox{\hyperlink{class_test_result_collector}{Test\+Result\+Collector}} to a text stream.  
+
+
+
+
+{\ttfamily \#include $<$Text\+Outputter.\+h$>$}
+
+Inheritance diagram for Text\+Outputter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d2/d18/class_text_outputter}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_text_outputter_aa513788ccc271901964847902fe3fe8e}\label{class_text_outputter_aa513788ccc271901964847902fe3fe8e}} 
+{\bfseries Text\+Outputter} (\mbox{\hyperlink{class_test_result_collector}{Test\+Result\+Collector}} $\ast$result, OStream \&stream)
+\item 
+\mbox{\Hypertarget{class_text_outputter_a4198a0eaa07f3ff43fcbcab74d080b6b}\label{class_text_outputter_a4198a0eaa07f3ff43fcbcab74d080b6b}} 
+virtual {\bfseries $\sim$\+Text\+Outputter} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_text_outputter_a6b52425e9d17a04f04fc42a88b564176}{write}} ()
+\item 
+\mbox{\Hypertarget{class_text_outputter_a4c1413e4ce39317c18e3eed577dd208b}\label{class_text_outputter_a4c1413e4ce39317c18e3eed577dd208b}} 
+virtual void {\bfseries print\+Failures} ()
+\item 
+\mbox{\Hypertarget{class_text_outputter_a3d80efeb41c0401372536b362358dc45}\label{class_text_outputter_a3d80efeb41c0401372536b362358dc45}} 
+virtual void {\bfseries print\+Header} ()
+\item 
+\mbox{\Hypertarget{class_text_outputter_af2f2271d5795c6be4f7a47e255554a69}\label{class_text_outputter_af2f2271d5795c6be4f7a47e255554a69}} 
+virtual void {\bfseries print\+Failure} (\mbox{\hyperlink{class_test_failure}{Test\+Failure}} $\ast$failure, int failure\+Number)
+\item 
+\mbox{\Hypertarget{class_text_outputter_a029d1e203df4e3f426eb9685062683bc}\label{class_text_outputter_a029d1e203df4e3f426eb9685062683bc}} 
+virtual void {\bfseries print\+Failure\+List\+Mark} (int failure\+Number)
+\item 
+\mbox{\Hypertarget{class_text_outputter_a200849dff27b10844d117029576b17ac}\label{class_text_outputter_a200849dff27b10844d117029576b17ac}} 
+virtual void {\bfseries print\+Failure\+Test\+Name} (\mbox{\hyperlink{class_test_failure}{Test\+Failure}} $\ast$failure)
+\item 
+\mbox{\Hypertarget{class_text_outputter_a95c601c6a903700450d95e13db502247}\label{class_text_outputter_a95c601c6a903700450d95e13db502247}} 
+virtual void {\bfseries print\+Failure\+Type} (\mbox{\hyperlink{class_test_failure}{Test\+Failure}} $\ast$failure)
+\item 
+\mbox{\Hypertarget{class_text_outputter_a5ba7ad1968b180ce9593373718632af9}\label{class_text_outputter_a5ba7ad1968b180ce9593373718632af9}} 
+virtual void {\bfseries print\+Failure\+Location} (\mbox{\hyperlink{class_source_line}{Source\+Line}} source\+Line)
+\item 
+\mbox{\Hypertarget{class_text_outputter_ae1a2ad2deebf4b12f803c59d867980f7}\label{class_text_outputter_ae1a2ad2deebf4b12f803c59d867980f7}} 
+virtual void {\bfseries print\+Failure\+Detail} (\mbox{\hyperlink{class_exception}{Exception}} $\ast$thrown\+Exception)
+\item 
+\mbox{\Hypertarget{class_text_outputter_a254f58361b8f5c59b60df1c007d9a438}\label{class_text_outputter_a254f58361b8f5c59b60df1c007d9a438}} 
+virtual void {\bfseries print\+Failure\+Warning} ()
+\item 
+\mbox{\Hypertarget{class_text_outputter_aeabfe5420c137b0a935c5b0acb45a6d8}\label{class_text_outputter_aeabfe5420c137b0a935c5b0acb45a6d8}} 
+virtual void {\bfseries print\+Statistics} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_text_outputter_a465e8c580e6f2db9ed021e1c44b95eb2}\label{class_text_outputter_a465e8c580e6f2db9ed021e1c44b95eb2}} 
+\mbox{\hyperlink{class_test_result_collector}{Test\+Result\+Collector}} $\ast$ {\bfseries m\+\_\+result}
+\item 
+\mbox{\Hypertarget{class_text_outputter_a947e16694e57297974e0f651d6298b80}\label{class_text_outputter_a947e16694e57297974e0f651d6298b80}} 
+OStream \& {\bfseries m\+\_\+stream}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_text_outputter_a714bc90785e3626f7f7b6fd8aa99fb8e}\label{class_text_outputter_a714bc90785e3626f7f7b6fd8aa99fb8e}} 
+{\bfseries Text\+Outputter} (const \mbox{\hyperlink{class_text_outputter}{Text\+Outputter}} \&copy)
+\begin{DoxyCompactList}\small\item\em Prevents the use of the copy constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_text_outputter_af10e29800e5e2aee45697bab6ca52f66}\label{class_text_outputter_af10e29800e5e2aee45697bab6ca52f66}} 
+void {\bfseries operator=} (const \mbox{\hyperlink{class_text_outputter}{Text\+Outputter}} \&copy)
+\begin{DoxyCompactList}\small\item\em Prevents the use of the copy operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Prints a \mbox{\hyperlink{class_test_result_collector}{Test\+Result\+Collector}} to a text stream. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_text_outputter_a6b52425e9d17a04f04fc42a88b564176}\label{class_text_outputter_a6b52425e9d17a04f04fc42a88b564176}} 
+\index{TextOutputter@{TextOutputter}!write@{write}}
+\index{write@{write}!TextOutputter@{TextOutputter}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Text\+Outputter\+::write (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_outputter}{Outputter}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/Text\+Outputter.\+h\end{DoxyCompactItemize}

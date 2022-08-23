@@ -1,0 +1,69 @@
+\hypertarget{class_synchronized_object_1_1_exclusive_zone}{}\doxysection{Synchronized\+Object\+::Exclusive\+Zone Class Reference}
+\label{class_synchronized_object_1_1_exclusive_zone}\index{SynchronizedObject::ExclusiveZone@{SynchronizedObject::ExclusiveZone}}
+
+
+Locks a synchronization object in the current scope.  
+
+
+
+
+{\ttfamily \#include $<$Synchronized\+Object.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_synchronized_object_1_1_exclusive_zone_ae4393b508828328c2f4816ff9b7b090c}{Exclusive\+Zone}} (\mbox{\hyperlink{class_synchronized_object_1_1_synchronization_object}{Synchronization\+Object}} $\ast$sync\+Object)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_synchronized_object_1_1_exclusive_zone_a0b5c3c37379d190086cc71f9539454de}\label{class_synchronized_object_1_1_exclusive_zone_a0b5c3c37379d190086cc71f9539454de}} 
+{\bfseries Exclusive\+Zone} (const \mbox{\hyperlink{class_synchronized_object_1_1_exclusive_zone}{Exclusive\+Zone}} \&)
+\begin{DoxyCompactList}\small\item\em Prevents the use of the copy constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_synchronized_object_1_1_exclusive_zone_a61deda9b67383477de258282e35ab9b9}\label{class_synchronized_object_1_1_exclusive_zone_a61deda9b67383477de258282e35ab9b9}} 
+\mbox{\hyperlink{class_synchronized_object_1_1_exclusive_zone}{Exclusive\+Zone}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_synchronized_object_1_1_exclusive_zone}{Exclusive\+Zone}} \&)
+\begin{DoxyCompactList}\small\item\em Prevents the use of the copy operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_synchronized_object_1_1_exclusive_zone_a50c450a141c25753ca1b8e46aa3850c5}\label{class_synchronized_object_1_1_exclusive_zone_a50c450a141c25753ca1b8e46aa3850c5}} 
+\mbox{\hyperlink{class_synchronized_object_1_1_synchronization_object}{Synchronization\+Object}} $\ast$ {\bfseries m\+\_\+sync\+Object}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Locks a synchronization object in the current scope. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_synchronized_object_1_1_exclusive_zone_ae4393b508828328c2f4816ff9b7b090c}\label{class_synchronized_object_1_1_exclusive_zone_ae4393b508828328c2f4816ff9b7b090c}} 
+\index{SynchronizedObject::ExclusiveZone@{SynchronizedObject::ExclusiveZone}!ExclusiveZone@{ExclusiveZone}}
+\index{ExclusiveZone@{ExclusiveZone}!SynchronizedObject::ExclusiveZone@{SynchronizedObject::ExclusiveZone}}
+\doxysubsubsection{\texorpdfstring{ExclusiveZone()}{ExclusiveZone()}}
+{\footnotesize\ttfamily Synchronized\+Object\+::\+Exclusive\+Zone\+::\+Exclusive\+Zone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_synchronized_object_1_1_synchronization_object}{Synchronization\+Object}} $\ast$}]{sync\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53         : m\_syncObject( syncObject )}
+\DoxyCodeLine{54     \{ }
+\DoxyCodeLine{55       m\_syncObject-\/>lock();}
+\DoxyCodeLine{56     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_synchronized_object_1_1_exclusive_zone_a501678d50abfd678ff0ce0fc164c63d4}\label{class_synchronized_object_1_1_exclusive_zone_a501678d50abfd678ff0ce0fc164c63d4}} 
+\index{SynchronizedObject::ExclusiveZone@{SynchronizedObject::ExclusiveZone}!````~ExclusiveZone@{$\sim$ExclusiveZone}}
+\index{````~ExclusiveZone@{$\sim$ExclusiveZone}!SynchronizedObject::ExclusiveZone@{SynchronizedObject::ExclusiveZone}}
+\doxysubsubsection{\texorpdfstring{$\sim$ExclusiveZone()}{~ExclusiveZone()}}
+{\footnotesize\ttfamily Synchronized\+Object\+::\+Exclusive\+Zone\+::$\sim$\+Exclusive\+Zone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{59     \{ }
+\DoxyCodeLine{60       m\_syncObject-\/>unlock ();}
+\DoxyCodeLine{61     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/Synchronized\+Object.\+h\end{DoxyCompactItemize}

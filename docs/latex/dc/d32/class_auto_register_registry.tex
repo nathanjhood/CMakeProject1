@@ -1,0 +1,57 @@
+\hypertarget{class_auto_register_registry}{}\doxysection{Auto\+Register\+Registry Class Reference}
+\label{class_auto_register_registry}\index{AutoRegisterRegistry@{AutoRegisterRegistry}}
+
+
+(Implementation) Automatically adds a registry into another registry.  
+
+
+
+
+{\ttfamily \#include $<$Auto\+Register\+Suite.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_auto_register_registry_aeb3c0171549420bc18714d4117d9c2b5}{Auto\+Register\+Registry}} (const std\+::string \&which, const std\+::string \&to)
+\item 
+\mbox{\hyperlink{class_auto_register_registry_a3efb50c6218f5d0e5969eb6fc8bccb23}{Auto\+Register\+Registry}} (const std\+::string \&which)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+(Implementation) Automatically adds a registry into another registry. 
+
+Don\textquotesingle{}t use this class. Use the macros \mbox{\hyperlink{_helper_macros_8h_a0785e2e8a821f70c69a8127c35c0a667}{CPPUNIT\+\_\+\+REGISTRY\+\_\+\+ADD()}} and \mbox{\hyperlink{_helper_macros_8h_a9c3be3389213e1dc823ed580cc60878f}{CPPUNIT\+\_\+\+REGISTRY\+\_\+\+ADD\+\_\+\+TO\+\_\+\+DEFAULT()}} instead. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_auto_register_registry_aeb3c0171549420bc18714d4117d9c2b5}\label{class_auto_register_registry_aeb3c0171549420bc18714d4117d9c2b5}} 
+\index{AutoRegisterRegistry@{AutoRegisterRegistry}!AutoRegisterRegistry@{AutoRegisterRegistry}}
+\index{AutoRegisterRegistry@{AutoRegisterRegistry}!AutoRegisterRegistry@{AutoRegisterRegistry}}
+\doxysubsubsection{\texorpdfstring{AutoRegisterRegistry()}{AutoRegisterRegistry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Auto\+Register\+Registry\+::\+Auto\+Register\+Registry (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{which,  }\item[{const std\+::string \&}]{to }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{70   \{}
+\DoxyCodeLine{71     \mbox{\hyperlink{class_test_factory_registry_ade673d8465371d581c7a704a7baa4620}{TestFactoryRegistry::getRegistry}}( to ).\mbox{\hyperlink{class_test_factory_registry_abb68b347450c97ff0dfc9ea3dfe03f4c}{addRegistry}}( which );}
+\DoxyCodeLine{72   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_auto_register_registry_a3efb50c6218f5d0e5969eb6fc8bccb23}\label{class_auto_register_registry_a3efb50c6218f5d0e5969eb6fc8bccb23}} 
+\index{AutoRegisterRegistry@{AutoRegisterRegistry}!AutoRegisterRegistry@{AutoRegisterRegistry}}
+\index{AutoRegisterRegistry@{AutoRegisterRegistry}!AutoRegisterRegistry@{AutoRegisterRegistry}}
+\doxysubsubsection{\texorpdfstring{AutoRegisterRegistry()}{AutoRegisterRegistry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Auto\+Register\+Registry\+::\+Auto\+Register\+Registry (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{which }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{75   \{}
+\DoxyCodeLine{76     \mbox{\hyperlink{class_test_factory_registry_ade673d8465371d581c7a704a7baa4620}{TestFactoryRegistry::getRegistry}}().\mbox{\hyperlink{class_test_factory_registry_abb68b347450c97ff0dfc9ea3dfe03f4c}{addRegistry}}( which );}
+\DoxyCodeLine{77   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/extensions/Auto\+Register\+Suite.\+h\end{DoxyCompactItemize}

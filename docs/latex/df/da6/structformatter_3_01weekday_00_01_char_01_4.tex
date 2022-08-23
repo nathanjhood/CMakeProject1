@@ -1,0 +1,62 @@
+\hypertarget{structformatter_3_01weekday_00_01_char_01_4}{}\doxysection{formatter\texorpdfstring{$<$}{<} weekday, Char \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structformatter_3_01weekday_00_01_char_01_4}\index{formatter$<$ weekday, Char $>$@{formatter$<$ weekday, Char $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structformatter_3_01weekday_00_01_char_01_4_a417dfc29121b956fa54c273edbac8ff9}{parse}} (\mbox{\hyperlink{classbasic__format__parse__context}{basic\+\_\+format\+\_\+parse\+\_\+context}}$<$ Char $>$ \&ctx) -\/$>$ decltype(ctx.\+begin())
+\item 
+{\footnotesize template$<$typename Format\+Context $>$ }\\auto \mbox{\hyperlink{structformatter_3_01weekday_00_01_char_01_4_acbaef9cf81c0318bc604deb3e15acf82}{format}} (\mbox{\hyperlink{classweekday}{weekday}} wd, Format\+Context \&ctx) const -\/$>$ decltype(ctx.\+out())
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structformatter_3_01weekday_00_01_char_01_4_a91f1962986b4c31df0a842728f1e6f4e}\label{structformatter_3_01weekday_00_01_char_01_4_a91f1962986b4c31df0a842728f1e6f4e}} 
+bool {\bfseries localized} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structformatter_3_01weekday_00_01_char_01_4_acbaef9cf81c0318bc604deb3e15acf82}\label{structformatter_3_01weekday_00_01_char_01_4_acbaef9cf81c0318bc604deb3e15acf82}} 
+\index{formatter$<$ weekday, Char $>$@{formatter$<$ weekday, Char $>$}!format@{format}}
+\index{format@{format}!formatter$<$ weekday, Char $>$@{formatter$<$ weekday, Char $>$}}
+\doxysubsubsection{\texorpdfstring{format()}{format()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+template$<$typename Format\+Context $>$ \\
+auto \mbox{\hyperlink{structformatter}{formatter}}$<$ \mbox{\hyperlink{classweekday}{weekday}}, Char $>$\+::format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classweekday}{weekday}}}]{wd,  }\item[{Format\+Context \&}]{ctx }\end{DoxyParamCaption}) const -\/$>$ decltype(ctx.\+out()) \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1872                                                                            \{}
+\DoxyCodeLine{1873     \textcolor{keyword}{auto} time = std::tm();}
+\DoxyCodeLine{1874     time.tm\_wday = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(wd.c\_encoding());}
+\DoxyCodeLine{1875     detail::get\_locale loc(localized, ctx.locale());}
+\DoxyCodeLine{1876     \textcolor{keyword}{auto} w = detail::tm\_writer<\textcolor{keyword}{decltype}(ctx.out()), Char>(loc, ctx.out(), time);}
+\DoxyCodeLine{1877     w.on\_abbr\_weekday();}
+\DoxyCodeLine{1878     \textcolor{keywordflow}{return} w.out();}
+\DoxyCodeLine{1879   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structformatter_3_01weekday_00_01_char_01_4_a417dfc29121b956fa54c273edbac8ff9}\label{structformatter_3_01weekday_00_01_char_01_4_a417dfc29121b956fa54c273edbac8ff9}} 
+\index{formatter$<$ weekday, Char $>$@{formatter$<$ weekday, Char $>$}!parse@{parse}}
+\index{parse@{parse}!formatter$<$ weekday, Char $>$@{formatter$<$ weekday, Char $>$}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structformatter}{formatter}}$<$ \mbox{\hyperlink{classweekday}{weekday}}, Char $>$\+::parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbasic__format__parse__context}{basic\+\_\+format\+\_\+parse\+\_\+context}}$<$ Char $>$ \&}]{ctx }\end{DoxyParamCaption}) -\/$>$ decltype(ctx.\+begin()) \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1862                                \{}
+\DoxyCodeLine{1863     \textcolor{keyword}{auto} begin = ctx.\mbox{\hyperlink{classbasic__format__parse__context_acacc81561f6136973796f6b1ec4bdd5d}{begin}}(), end = ctx.\mbox{\hyperlink{classbasic__format__parse__context_a624461a9a7da10bd63bb596fb988fc0f}{end}}();}
+\DoxyCodeLine{1864     \textcolor{keywordflow}{if} (begin != end \&\& *begin == \textcolor{charliteral}{'L'}) \{}
+\DoxyCodeLine{1865       ++begin;}
+\DoxyCodeLine{1866       localized = \textcolor{keyword}{true};}
+\DoxyCodeLine{1867     \}}
+\DoxyCodeLine{1868     \textcolor{keywordflow}{return} begin;}
+\DoxyCodeLine{1869   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/chrono.\+h\end{DoxyCompactItemize}

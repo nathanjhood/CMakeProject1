@@ -1,0 +1,31 @@
+\hypertarget{structerror__handler}{}\doxysection{error\+\_\+handler Struct Reference}
+\label{structerror__handler}\index{error\_handler@{error\_handler}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structerror__handler_ad555986b16db2f0f3beca030ef687d06}\label{structerror__handler_ad555986b16db2f0f3beca030ef687d06}} 
+constexpr {\bfseries error\+\_\+handler} (const \mbox{\hyperlink{structerror__handler}{error\+\_\+handler}} \&)=default
+\item 
+FMT\+\_\+\+NORETURN void \mbox{\hyperlink{structerror__handler_a3e09f69bfe8ed9d0309de1215be625c7}{on\+\_\+error}} (const char $\ast$message)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structerror__handler_a3e09f69bfe8ed9d0309de1215be625c7}\label{structerror__handler_a3e09f69bfe8ed9d0309de1215be625c7}} 
+\index{error\_handler@{error\_handler}!on\_error@{on\_error}}
+\index{on\_error@{on\_error}!error\_handler@{error\_handler}}
+\doxysubsubsection{\texorpdfstring{on\_error()}{on\_error()}}
+{\footnotesize\ttfamily FMT\+\_\+\+NORETURN void error\+\_\+handler\+::on\+\_\+error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{633                                                   \{}
+\DoxyCodeLine{634     throw\_format\_error(message);}
+\DoxyCodeLine{635   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/core.\+h\end{DoxyCompactItemize}

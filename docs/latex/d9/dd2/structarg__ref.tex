@@ -1,0 +1,88 @@
+\hypertarget{structarg__ref}{}\doxysection{arg\+\_\+ref\texorpdfstring{$<$}{<} Char \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structarg__ref}\index{arg\_ref$<$ Char $>$@{arg\_ref$<$ Char $>$}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{unionarg__ref_1_1value}{value}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{structarg__ref_ac5984acdcc122eb27048155077801d7f}{arg\+\_\+ref}} (int index)
+\item 
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{structarg__ref_a0e72409c45db9ee32d02bbbba429460e}{arg\+\_\+ref}} (\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$ name)
+\item 
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structarg__ref_a7d4a7a7dd81788e4908c151ab750d978}{operator=}} (int idx) -\/$>$ \mbox{\hyperlink{structarg__ref}{arg\+\_\+ref}} \&
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structarg__ref_a7fe62f6cc8698d8ac5af955ebfb4c155}\label{structarg__ref_a7fe62f6cc8698d8ac5af955ebfb4c155}} 
+arg\+\_\+id\+\_\+kind {\bfseries kind}
+\item 
+\mbox{\Hypertarget{structarg__ref_a60a67f3b141684f57b8f17b2a9761fb0}\label{structarg__ref_a60a67f3b141684f57b8f17b2a9761fb0}} 
+union \mbox{\hyperlink{unionarg__ref_1_1value}{arg\+\_\+ref\+::value}} {\bfseries val}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structarg__ref_a32de917114fc98e7b79e776064efe2bc}\label{structarg__ref_a32de917114fc98e7b79e776064efe2bc}} 
+\index{arg\_ref$<$ Char $>$@{arg\_ref$<$ Char $>$}!arg\_ref@{arg\_ref}}
+\index{arg\_ref@{arg\_ref}!arg\_ref$<$ Char $>$@{arg\_ref$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{arg\_ref()}{arg\_ref()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{structarg__ref}{arg\+\_\+ref}}$<$ Char $>$\mbox{\hyperlink{structarg__ref}{\+::arg\+\_\+ref}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2138 : kind(arg\_id\_kind::none), val() \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structarg__ref_ac5984acdcc122eb27048155077801d7f}\label{structarg__ref_ac5984acdcc122eb27048155077801d7f}} 
+\index{arg\_ref$<$ Char $>$@{arg\_ref$<$ Char $>$}!arg\_ref@{arg\_ref}}
+\index{arg\_ref@{arg\_ref}!arg\_ref$<$ Char $>$@{arg\_ref$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{arg\_ref()}{arg\_ref()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{structarg__ref}{arg\+\_\+ref}}$<$ Char $>$\mbox{\hyperlink{structarg__ref}{\+::arg\+\_\+ref}} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2141       : kind(arg\_id\_kind::index), val(index) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structarg__ref_a0e72409c45db9ee32d02bbbba429460e}\label{structarg__ref_a0e72409c45db9ee32d02bbbba429460e}} 
+\index{arg\_ref$<$ Char $>$@{arg\_ref$<$ Char $>$}!arg\_ref@{arg\_ref}}
+\index{arg\_ref@{arg\_ref}!arg\_ref$<$ Char $>$@{arg\_ref$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{arg\_ref()}{arg\_ref()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{structarg__ref}{arg\+\_\+ref}}$<$ Char $>$\mbox{\hyperlink{structarg__ref}{\+::arg\+\_\+ref}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2143       : kind(arg\_id\_kind::name), val(name) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structarg__ref_a7d4a7a7dd81788e4908c151ab750d978}\label{structarg__ref_a7d4a7a7dd81788e4908c151ab750d978}} 
+\index{arg\_ref$<$ Char $>$@{arg\_ref$<$ Char $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!arg\_ref$<$ Char $>$@{arg\_ref$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structarg__ref}{arg\+\_\+ref}}$<$ Char $>$\+::operator= (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{structarg__ref}{arg\+\_\+ref}}\& \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2145                                                     \{}
+\DoxyCodeLine{2146     kind = arg\_id\_kind::index;}
+\DoxyCodeLine{2147     val.index = idx;}
+\DoxyCodeLine{2148     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{2149   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/core.\+h\end{DoxyCompactItemize}

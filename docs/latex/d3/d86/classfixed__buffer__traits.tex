@@ -1,0 +1,74 @@
+\hypertarget{classfixed__buffer__traits}{}\doxysection{fixed\+\_\+buffer\+\_\+traits Class Reference}
+\label{classfixed__buffer__traits}\index{fixed\_buffer\_traits@{fixed\_buffer\_traits}}
+Inheritance diagram for fixed\+\_\+buffer\+\_\+traits\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d3/d86/classfixed__buffer__traits}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfixed__buffer__traits_ab698b6022e95ad5bb37894026c5c35c2}{fixed\+\_\+buffer\+\_\+traits}} (size\+\_\+t limit)
+\item 
+auto \mbox{\hyperlink{classfixed__buffer__traits_af046ca12a717f896e1cfd05ffbc547cc}{count}} () const -\/$>$ size\+\_\+t
+\item 
+auto \mbox{\hyperlink{classfixed__buffer__traits_ae2c26decc1ebe05e23bc9b892e0ea91d}{limit}} (size\+\_\+t size) -\/$>$ size\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classfixed__buffer__traits_a4b61f1fdc1c07ff02379f2d4adcbc0f0}\label{classfixed__buffer__traits_a4b61f1fdc1c07ff02379f2d4adcbc0f0}} 
+size\+\_\+t {\bfseries count\+\_\+} = 0
+\item 
+\mbox{\Hypertarget{classfixed__buffer__traits_aa052ac6ff0aa3e608f61f551bceea23b}\label{classfixed__buffer__traits_aa052ac6ff0aa3e608f61f551bceea23b}} 
+size\+\_\+t {\bfseries limit\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfixed__buffer__traits_ab698b6022e95ad5bb37894026c5c35c2}\label{classfixed__buffer__traits_ab698b6022e95ad5bb37894026c5c35c2}} 
+\index{fixed\_buffer\_traits@{fixed\_buffer\_traits}!fixed\_buffer\_traits@{fixed\_buffer\_traits}}
+\index{fixed\_buffer\_traits@{fixed\_buffer\_traits}!fixed\_buffer\_traits@{fixed\_buffer\_traits}}
+\doxysubsubsection{\texorpdfstring{fixed\_buffer\_traits()}{fixed\_buffer\_traits()}}
+{\footnotesize\ttfamily fixed\+\_\+buffer\+\_\+traits\+::fixed\+\_\+buffer\+\_\+traits (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{limit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{941 : limit\_(limit) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfixed__buffer__traits_af046ca12a717f896e1cfd05ffbc547cc}\label{classfixed__buffer__traits_af046ca12a717f896e1cfd05ffbc547cc}} 
+\index{fixed\_buffer\_traits@{fixed\_buffer\_traits}!count@{count}}
+\index{count@{count}!fixed\_buffer\_traits@{fixed\_buffer\_traits}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily auto fixed\+\_\+buffer\+\_\+traits\+::count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ size\+\_\+t \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{942 \{ \textcolor{keywordflow}{return} count\_; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfixed__buffer__traits_ae2c26decc1ebe05e23bc9b892e0ea91d}\label{classfixed__buffer__traits_ae2c26decc1ebe05e23bc9b892e0ea91d}} 
+\index{fixed\_buffer\_traits@{fixed\_buffer\_traits}!limit@{limit}}
+\index{limit@{limit}!fixed\_buffer\_traits@{fixed\_buffer\_traits}}
+\doxysubsubsection{\texorpdfstring{limit()}{limit()}}
+{\footnotesize\ttfamily auto fixed\+\_\+buffer\+\_\+traits\+::limit (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption}) -\/$>$ size\+\_\+t \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{943                                     \{}
+\DoxyCodeLine{944     \textcolor{keywordtype}{size\_t} n = limit\_ > count\_ ? limit\_ -\/ count\_ : 0;}
+\DoxyCodeLine{945     count\_ += size;}
+\DoxyCodeLine{946     \textcolor{keywordflow}{return} size < n ? size : n;}
+\DoxyCodeLine{947   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/core.\+h\end{DoxyCompactItemize}

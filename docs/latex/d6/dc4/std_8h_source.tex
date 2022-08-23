@@ -1,0 +1,182 @@
+\hypertarget{std_8h_source}{}\doxysection{std.\+h}
+\label{std_8h_source}\index{out/build/x64/vcpkg\_installed/x86-\/windows/include/fmt/std.h@{out/build/x64/vcpkg\_installed/x86-\/windows/include/fmt/std.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// Formatting library for C++ -\/ formatters for standard library types}}
+\DoxyCodeLine{2 \textcolor{comment}{//}}
+\DoxyCodeLine{3 \textcolor{comment}{// Copyright (c) 2012 -\/ present, Victor Zverovich}}
+\DoxyCodeLine{4 \textcolor{comment}{// All rights reserved.}}
+\DoxyCodeLine{5 \textcolor{comment}{//}}
+\DoxyCodeLine{6 \textcolor{comment}{// For the license information refer to format.h.}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef FMT\_STD\_H\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define FMT\_STD\_H\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <thread>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <type\_traits>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <utility>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}ostream.h"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#if FMT\_HAS\_INCLUDE(<version>)}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#  include <version>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 \textcolor{comment}{// Checking FMT\_CPLUSPLUS for warning suppression in MSVC.}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#if FMT\_CPLUSPLUS >= 201703L}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#  if FMT\_HAS\_INCLUDE(<filesystem>)}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#    include <filesystem>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#  if FMT\_HAS\_INCLUDE(<variant>)}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#    include <variant>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#ifdef \_\_cpp\_lib\_filesystem}}
+\DoxyCodeLine{31 FMT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{namespace }detail \{}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{36 \textcolor{keywordtype}{void} write\_escaped\_path(\mbox{\hyperlink{classbasic__memory__buffer}{basic\_memory\_buffer<Char>}}\& quoted,}
+\DoxyCodeLine{37                         \textcolor{keyword}{const} std::filesystem::path\& p) \{}
+\DoxyCodeLine{38   write\_escaped\_string<Char>(std::back\_inserter(quoted), p.string<Char>());}
+\DoxyCodeLine{39 \}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#  ifdef \_WIN32}}
+\DoxyCodeLine{41 \textcolor{keyword}{template} <>}
+\DoxyCodeLine{42 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} write\_escaped\_path<char>(\mbox{\hyperlink{classbasic__memory__buffer}{basic\_memory\_buffer<char>}}\& quoted,}
+\DoxyCodeLine{43                                      \textcolor{keyword}{const} std::filesystem::path\& p) \{}
+\DoxyCodeLine{44   \textcolor{keyword}{auto} s = p.u8string();}
+\DoxyCodeLine{45   write\_escaped\_string<char>(}
+\DoxyCodeLine{46       std::back\_inserter(quoted),}
+\DoxyCodeLine{47       \mbox{\hyperlink{classbasic__string__view}{string\_view}}(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(s.c\_str()), s.size()));}
+\DoxyCodeLine{48 \}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#  endif}}
+\DoxyCodeLine{50 \textcolor{keyword}{template} <>}
+\DoxyCodeLine{51 \textcolor{keyword}{inline} \textcolor{keywordtype}{void} write\_escaped\_path<std::filesystem::path::value\_type>(}
+\DoxyCodeLine{52     \mbox{\hyperlink{classbasic__memory__buffer}{basic\_memory\_buffer<std::filesystem::path::value\_type>}}\& quoted,}
+\DoxyCodeLine{53     \textcolor{keyword}{const} std::filesystem::path\& p) \{}
+\DoxyCodeLine{54   write\_escaped\_string<std::filesystem::path::value\_type>(}
+\DoxyCodeLine{55       std::back\_inserter(quoted), p.native());}
+\DoxyCodeLine{56 \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \}  \textcolor{comment}{// namespace detail}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#if !FMT\_MSC\_VERSION || FMT\_MSC\_VERSION >= 1920}}
+\DoxyCodeLine{61 \textcolor{comment}{// For MSVC 2017 and earlier using the partial specialization}}
+\DoxyCodeLine{62 \textcolor{comment}{// would cause an ambiguity error, therefore we provide it only}}
+\DoxyCodeLine{63 \textcolor{comment}{// conditionally.}}
+\DoxyCodeLine{64 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{65 \textcolor{keyword}{struct }\mbox{\hyperlink{structformatter}{formatter}}<std::filesystem::path, Char>}
+\DoxyCodeLine{66     : \mbox{\hyperlink{structformatter}{formatter}}<basic\_string\_view<Char>> \{}
+\DoxyCodeLine{67   \textcolor{keyword}{template} <\textcolor{keyword}{typename} FormatContext>}
+\DoxyCodeLine{68   \textcolor{keyword}{auto} format(\textcolor{keyword}{const} std::filesystem::path\& p, FormatContext\& ctx) \textcolor{keyword}{const} -\/>}
+\DoxyCodeLine{69       \textcolor{keyword}{typename} FormatContext::iterator \{}
+\DoxyCodeLine{70     \mbox{\hyperlink{classbasic__memory__buffer}{basic\_memory\_buffer<Char>}} quoted;}
+\DoxyCodeLine{71     detail::write\_escaped\_path(quoted, p);}
+\DoxyCodeLine{72     \textcolor{keywordflow}{return} \mbox{\hyperlink{structformatter}{formatter<basic\_string\_view<Char>}}>::format(}
+\DoxyCodeLine{73         \mbox{\hyperlink{classbasic__string__view}{basic\_string\_view<Char>}}(quoted.data(), quoted.size()), ctx);}
+\DoxyCodeLine{74   \}}
+\DoxyCodeLine{75 \};}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{77 FMT\_END\_NAMESPACE}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 FMT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{81 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{82 \textcolor{keyword}{struct }\mbox{\hyperlink{structformatter}{formatter}}<std::thread::id, Char> : \mbox{\hyperlink{structbasic__ostream__formatter}{basic\_ostream\_formatter}}<Char> \{\};}
+\DoxyCodeLine{83 FMT\_END\_NAMESPACE}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#ifdef \_\_cpp\_lib\_variant}}
+\DoxyCodeLine{86 FMT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{87 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Char> \textcolor{keyword}{struct }\mbox{\hyperlink{structformatter}{formatter}}<std::\mbox{\hyperlink{structmonostate}{monostate}}, Char> \{}
+\DoxyCodeLine{88   \textcolor{keyword}{template} <\textcolor{keyword}{typename} ParseContext>}
+\DoxyCodeLine{89   FMT\_CONSTEXPR \textcolor{keyword}{auto} parse(ParseContext\& ctx) -\/> \textcolor{keyword}{decltype}(ctx.begin()) \{}
+\DoxyCodeLine{90     \textcolor{keywordflow}{return} ctx.begin();}
+\DoxyCodeLine{91   \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93   \textcolor{keyword}{template} <\textcolor{keyword}{typename} FormatContext>}
+\DoxyCodeLine{94   \textcolor{keyword}{auto} format(\textcolor{keyword}{const} std::monostate\&, FormatContext\& ctx) \textcolor{keyword}{const}}
+\DoxyCodeLine{95       -\/> \textcolor{keyword}{decltype}(ctx.out()) \{}
+\DoxyCodeLine{96     \textcolor{keyword}{auto} out = ctx.out();}
+\DoxyCodeLine{97     out = detail::write<Char>(out, \textcolor{stringliteral}{"{}monostate"{}});}
+\DoxyCodeLine{98     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{99   \}}
+\DoxyCodeLine{100 \};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{keyword}{namespace }detail \{}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{105 \textcolor{keyword}{using }variant\_index\_sequence =}
+\DoxyCodeLine{106     std::make\_index\_sequence<std::variant\_size<T>::value>;}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{comment}{// variant\_size and variant\_alternative check.}}
+\DoxyCodeLine{109 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} U = \textcolor{keywordtype}{void}>}
+\DoxyCodeLine{110 \textcolor{keyword}{struct }is\_variant\_like\_ : std::false\_type \{\};}
+\DoxyCodeLine{111 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{112 \textcolor{keyword}{struct }is\_variant\_like\_<T, std::void\_t<decltype(std::variant\_size<T>::value)>>}
+\DoxyCodeLine{113     : std::true\_type \{\};}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{comment}{// formattable element check}}
+\DoxyCodeLine{116 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} C> \textcolor{keyword}{class }is\_variant\_formattable\_ \{}
+\DoxyCodeLine{117   \textcolor{keyword}{template} <std::size\_t... I>}
+\DoxyCodeLine{118   \textcolor{keyword}{static} std::conjunction<}
+\DoxyCodeLine{119       is\_formattable<std::variant\_alternative\_t<I, T>, C>...>}
+\DoxyCodeLine{120       check(std::index\_sequence<I...>);}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122  \textcolor{keyword}{public}:}
+\DoxyCodeLine{123   \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classvalue}{value}} =}
+\DoxyCodeLine{124       \textcolor{keyword}{decltype}(check(variant\_index\_sequence<T>\{\}))\mbox{\hyperlink{classvalue}{::value}};}
+\DoxyCodeLine{125 \};}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Char, \textcolor{keyword}{typename} OutputIt, \textcolor{keyword}{typename} T>}
+\DoxyCodeLine{128 \textcolor{keyword}{auto} write\_variant\_alternative(OutputIt out, \textcolor{keyword}{const} T\& v) -\/> OutputIt \{}
+\DoxyCodeLine{129   \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (\mbox{\hyperlink{structis__string}{is\_string<T>::value}})}
+\DoxyCodeLine{130     \textcolor{keywordflow}{return} write\_escaped\_string<Char>(out, detail::to\_string\_view(v));}
+\DoxyCodeLine{131   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (std::is\_same\_v<T, Char>)}
+\DoxyCodeLine{132     \textcolor{keywordflow}{return} write\_escaped\_char(out, v);}
+\DoxyCodeLine{133   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{134     \textcolor{keywordflow}{return} write<Char>(out, v);}
+\DoxyCodeLine{135 \}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \}  \textcolor{comment}{// namespace detail}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> \textcolor{keyword}{struct }is\_variant\_like \{}
+\DoxyCodeLine{140   \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classvalue}{value}} = detail::is\_variant\_like\_<T>::value;}
+\DoxyCodeLine{141 \};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{typename} C> \textcolor{keyword}{struct }is\_variant\_formattable \{}
+\DoxyCodeLine{144   \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classvalue}{value}} =}
+\DoxyCodeLine{145       detail::is\_variant\_formattable\_<T, C>::value;}
+\DoxyCodeLine{146 \};}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{keyword}{template} <\textcolor{keyword}{typename} Variant, \textcolor{keyword}{typename} Char>}
+\DoxyCodeLine{149 \textcolor{keyword}{struct }\mbox{\hyperlink{structformatter}{formatter}}<}
+\DoxyCodeLine{150     Variant, Char,}
+\DoxyCodeLine{151     std::enable\_if\_t<std::conjunction\_v<}
+\DoxyCodeLine{152         is\_variant\_like<Variant>, is\_variant\_formattable<Variant, Char>>>> \{}
+\DoxyCodeLine{153   \textcolor{keyword}{template} <\textcolor{keyword}{typename} ParseContext>}
+\DoxyCodeLine{154   FMT\_CONSTEXPR \textcolor{keyword}{auto} parse(ParseContext\& ctx) -\/> \textcolor{keyword}{decltype}(ctx.begin()) \{}
+\DoxyCodeLine{155     \textcolor{keywordflow}{return} ctx.begin();}
+\DoxyCodeLine{156   \}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158   \textcolor{keyword}{template} <\textcolor{keyword}{typename} FormatContext>}
+\DoxyCodeLine{159   \textcolor{keyword}{auto} format(\textcolor{keyword}{const} Variant\& \mbox{\hyperlink{classvalue}{value}}, FormatContext\& ctx) \textcolor{keyword}{const}}
+\DoxyCodeLine{160       -\/> \textcolor{keyword}{decltype}(ctx.out()) \{}
+\DoxyCodeLine{161     \textcolor{keyword}{auto} out = ctx.out();}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163     out = detail::write<Char>(out, \textcolor{stringliteral}{"{}variant("{}});}
+\DoxyCodeLine{164     std::visit(}
+\DoxyCodeLine{165         [\&](\textcolor{keyword}{const} \textcolor{keyword}{auto}\& v) \{}
+\DoxyCodeLine{166           out = detail::write\_variant\_alternative<Char>(out, v);}
+\DoxyCodeLine{167         \},}
+\DoxyCodeLine{168         \mbox{\hyperlink{classvalue}{value}});}
+\DoxyCodeLine{169     *out++ = \textcolor{charliteral}{')'};}
+\DoxyCodeLine{170     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{171   \}}
+\DoxyCodeLine{172 \};}
+\DoxyCodeLine{173 FMT\_END\_NAMESPACE}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// FMT\_STD\_H\_}}
+
+\end{DoxyCode}

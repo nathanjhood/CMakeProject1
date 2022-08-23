@@ -1,0 +1,106 @@
+\hypertarget{classcounting__buffer}{}\doxysection{counting\+\_\+buffer\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classcounting__buffer}\index{counting\_buffer$<$ T $>$@{counting\_buffer$<$ T $>$}}
+Inheritance diagram for counting\+\_\+buffer\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d7/d94/classcounting__buffer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+auto \mbox{\hyperlink{classcounting__buffer_a5b88d0a4b5820c4bc5dbb63330435eec}{count}} () -\/$>$ size\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+FMT\+\_\+\+CONSTEXPR20 void \mbox{\hyperlink{classcounting__buffer_a52038490ed76389d50224146c86450dd}{grow}} (size\+\_\+t) override
+\begin{DoxyCompactList}\small\item\em Increases the buffer capacity to hold at least {\itshape capacity} elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries buffer\+\_\+size} = 256
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcounting__buffer_a66060cd765f687bf0e7c1fcdbfbb6cfc}\label{classcounting__buffer_a66060cd765f687bf0e7c1fcdbfbb6cfc}} 
+T {\bfseries data\+\_\+} \mbox{[}buffer\+\_\+size\mbox{]}
+\item 
+\mbox{\Hypertarget{classcounting__buffer_a9c90a9cabafc9a731cd881234cc680cc}\label{classcounting__buffer_a9c90a9cabafc9a731cd881234cc680cc}} 
+size\+\_\+t {\bfseries count\+\_\+} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classcounting__buffer_aaafc006580dcb77475257b236eb06395}\label{classcounting__buffer_aaafc006580dcb77475257b236eb06395}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily template$<$typename T  = char$>$ \\
+anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1068 \{ buffer\_size = 256 \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcounting__buffer_a9fcc7abf62e38322237ad824cf4f7029}\label{classcounting__buffer_a9fcc7abf62e38322237ad824cf4f7029}} 
+\index{counting\_buffer$<$ T $>$@{counting\_buffer$<$ T $>$}!counting\_buffer@{counting\_buffer}}
+\index{counting\_buffer@{counting\_buffer}!counting\_buffer$<$ T $>$@{counting\_buffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{counting\_buffer()}{counting\_buffer()}}
+{\footnotesize\ttfamily template$<$typename T  = char$>$ \\
+\mbox{\hyperlink{classcounting__buffer}{counting\+\_\+buffer}}$<$ T $>$\mbox{\hyperlink{classcounting__buffer}{\+::counting\+\_\+buffer}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1080 : \mbox{\hyperlink{classbuffer}{buffer<T>}}(data\_, 0, buffer\_size) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcounting__buffer_a5b88d0a4b5820c4bc5dbb63330435eec}\label{classcounting__buffer_a5b88d0a4b5820c4bc5dbb63330435eec}} 
+\index{counting\_buffer$<$ T $>$@{counting\_buffer$<$ T $>$}!count@{count}}
+\index{count@{count}!counting\_buffer$<$ T $>$@{counting\_buffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily template$<$typename T  = char$>$ \\
+auto \mbox{\hyperlink{classcounting__buffer}{counting\+\_\+buffer}}$<$ T $>$\+::count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$ size\+\_\+t \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1082 \{ \textcolor{keywordflow}{return} count\_ + this-\/>\mbox{\hyperlink{classbuffer_aebcfda1cf597e92fdd876bb1b9a1ba2a}{size}}(); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classcounting__buffer_a52038490ed76389d50224146c86450dd}\label{classcounting__buffer_a52038490ed76389d50224146c86450dd}} 
+\index{counting\_buffer$<$ T $>$@{counting\_buffer$<$ T $>$}!grow@{grow}}
+\index{grow@{grow}!counting\_buffer$<$ T $>$@{counting\_buffer$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{grow()}{grow()}}
+{\footnotesize\ttfamily template$<$typename T  = char$>$ \\
+FMT\+\_\+\+CONSTEXPR20 void \mbox{\hyperlink{classcounting__buffer}{counting\+\_\+buffer}}$<$ T $>$\+::grow (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Increases the buffer capacity to hold at least {\itshape capacity} elements. 
+
+
+
+Implements \mbox{\hyperlink{classbuffer_a98dcf71107dcb329422606c9ff0b3369}{buffer$<$ char $>$}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1073                                              \{}
+\DoxyCodeLine{1074     \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classbuffer_aebcfda1cf597e92fdd876bb1b9a1ba2a}{size}}() != buffer\_size) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{1075     count\_ += this-\/>\mbox{\hyperlink{classbuffer_aebcfda1cf597e92fdd876bb1b9a1ba2a}{size}}();}
+\DoxyCodeLine{1076     this-\/>\mbox{\hyperlink{classbuffer_a46672f0d8544fc2b27544928cd6408df}{clear}}();}
+\DoxyCodeLine{1077   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/core.\+h\end{DoxyCompactItemize}

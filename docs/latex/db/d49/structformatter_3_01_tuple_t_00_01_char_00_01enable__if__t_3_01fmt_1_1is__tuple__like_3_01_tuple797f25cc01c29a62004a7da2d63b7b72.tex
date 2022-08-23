@@ -1,0 +1,56 @@
+\hypertarget{structformatter_3_01_tuple_t_00_01_char_00_01enable__if__t_3_01fmt_1_1is__tuple__like_3_01_tuple797f25cc01c29a62004a7da2d63b7b72}{}\doxysection{formatter\texorpdfstring{$<$}{<} TupleT, Char, enable\+\_\+if\+\_\+t\texorpdfstring{$<$}{<} fmt\+::is\+\_\+tuple\+\_\+like\texorpdfstring{$<$}{<} TupleT \texorpdfstring{$>$}{>}\+::value \&\&fmt\+::is\+\_\+tuple\+\_\+formattable\texorpdfstring{$<$}{<} TupleT, Char \texorpdfstring{$>$}{>}\+::value \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structformatter_3_01_tuple_t_00_01_char_00_01enable__if__t_3_01fmt_1_1is__tuple__like_3_01_tuple797f25cc01c29a62004a7da2d63b7b72}\index{formatter$<$ TupleT, Char, enable\_if\_t$<$ fmt::is\_tuple\_like$<$ TupleT $>$::value \&\&fmt::is\_tuple\_formattable$<$ TupleT, Char $>$::value $>$ $>$@{formatter$<$ TupleT, Char, enable\_if\_t$<$ fmt::is\_tuple\_like$<$ TupleT $>$::value \&\&fmt::is\_tuple\_formattable$<$ TupleT, Char $>$::value $>$ $>$}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structformatter_3_01_tuple_t_00_01_char_00_01enable__if__t_3_01fmt_1_1is__tuple__like_3_01_tuplebd4158bf36d0260e47aa547d959946a5}{format\+\_\+each}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Parse\+Context $>$ }\\FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structformatter_3_01_tuple_t_00_01_char_00_01enable__if__t_3_01fmt_1_1is__tuple__like_3_01_tuple797f25cc01c29a62004a7da2d63b7b72_abf2bd767d1f57c52e09d9169504b2957}{parse}} (Parse\+Context \&ctx) -\/$>$ decltype(ctx.\+begin())
+\item 
+{\footnotesize template$<$typename Format\+Context  = format\+\_\+context$>$ }\\auto \mbox{\hyperlink{structformatter_3_01_tuple_t_00_01_char_00_01enable__if__t_3_01fmt_1_1is__tuple__like_3_01_tuple797f25cc01c29a62004a7da2d63b7b72_ac3e4a8f706f7f3e93f49dad15d9a6204}{format}} (const TupleT \&values, Format\+Context \&ctx) const -\/$>$ decltype(ctx.\+out())
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structformatter_3_01_tuple_t_00_01_char_00_01enable__if__t_3_01fmt_1_1is__tuple__like_3_01_tuple797f25cc01c29a62004a7da2d63b7b72_ac3e4a8f706f7f3e93f49dad15d9a6204}\label{structformatter_3_01_tuple_t_00_01_char_00_01enable__if__t_3_01fmt_1_1is__tuple__like_3_01_tuple797f25cc01c29a62004a7da2d63b7b72_ac3e4a8f706f7f3e93f49dad15d9a6204}} 
+\index{formatter$<$ TupleT, Char, enable\_if\_t$<$ fmt::is\_tuple\_like$<$ TupleT $>$::value \&\&fmt::is\_tuple\_formattable$<$ TupleT, Char $>$::value $>$ $>$@{formatter$<$ TupleT, Char, enable\_if\_t$<$ fmt::is\_tuple\_like$<$ TupleT $>$::value \&\&fmt::is\_tuple\_formattable$<$ TupleT, Char $>$::value $>$ $>$}!format@{format}}
+\index{format@{format}!formatter$<$ TupleT, Char, enable\_if\_t$<$ fmt::is\_tuple\_like$<$ TupleT $>$::value \&\&fmt::is\_tuple\_formattable$<$ TupleT, Char $>$::value $>$ $>$@{formatter$<$ TupleT, Char, enable\_if\_t$<$ fmt::is\_tuple\_like$<$ TupleT $>$::value \&\&fmt::is\_tuple\_formattable$<$ TupleT, Char $>$::value $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{format()}{format()}}
+{\footnotesize\ttfamily template$<$typename TupleT , typename Char $>$ \\
+template$<$typename Format\+Context  = format\+\_\+context$>$ \\
+auto \mbox{\hyperlink{structformatter}{formatter}}$<$ TupleT, Char, enable\+\_\+if\+\_\+t$<$ fmt\+::is\+\_\+tuple\+\_\+like$<$ TupleT $>$\mbox{\hyperlink{classvalue}{\+::value}} \&\&fmt\+::is\+\_\+tuple\+\_\+formattable$<$ TupleT, Char $>$\mbox{\hyperlink{classvalue}{\+::value}} $>$ $>$\+::format (\begin{DoxyParamCaption}\item[{const TupleT \&}]{values,  }\item[{Format\+Context \&}]{ctx }\end{DoxyParamCaption}) const -\/$>$ decltype(ctx.\+out()) \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{348                              \{}
+\DoxyCodeLine{349     \textcolor{keyword}{auto} out = ctx.out();}
+\DoxyCodeLine{350     *out++ = \textcolor{charliteral}{'('};}
+\DoxyCodeLine{351     detail::for\_each(values, format\_each<FormatContext>\{0, out\});}
+\DoxyCodeLine{352     *out++ = \textcolor{charliteral}{')'};}
+\DoxyCodeLine{353     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{354   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structformatter_3_01_tuple_t_00_01_char_00_01enable__if__t_3_01fmt_1_1is__tuple__like_3_01_tuple797f25cc01c29a62004a7da2d63b7b72_abf2bd767d1f57c52e09d9169504b2957}\label{structformatter_3_01_tuple_t_00_01_char_00_01enable__if__t_3_01fmt_1_1is__tuple__like_3_01_tuple797f25cc01c29a62004a7da2d63b7b72_abf2bd767d1f57c52e09d9169504b2957}} 
+\index{formatter$<$ TupleT, Char, enable\_if\_t$<$ fmt::is\_tuple\_like$<$ TupleT $>$::value \&\&fmt::is\_tuple\_formattable$<$ TupleT, Char $>$::value $>$ $>$@{formatter$<$ TupleT, Char, enable\_if\_t$<$ fmt::is\_tuple\_like$<$ TupleT $>$::value \&\&fmt::is\_tuple\_formattable$<$ TupleT, Char $>$::value $>$ $>$}!parse@{parse}}
+\index{parse@{parse}!formatter$<$ TupleT, Char, enable\_if\_t$<$ fmt::is\_tuple\_like$<$ TupleT $>$::value \&\&fmt::is\_tuple\_formattable$<$ TupleT, Char $>$::value $>$ $>$@{formatter$<$ TupleT, Char, enable\_if\_t$<$ fmt::is\_tuple\_like$<$ TupleT $>$::value \&\&fmt::is\_tuple\_formattable$<$ TupleT, Char $>$::value $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily template$<$typename TupleT , typename Char $>$ \\
+template$<$typename Parse\+Context $>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structformatter}{formatter}}$<$ TupleT, Char, enable\+\_\+if\+\_\+t$<$ fmt\+::is\+\_\+tuple\+\_\+like$<$ TupleT $>$\mbox{\hyperlink{classvalue}{\+::value}} \&\&fmt\+::is\+\_\+tuple\+\_\+formattable$<$ TupleT, Char $>$\mbox{\hyperlink{classvalue}{\+::value}} $>$ $>$\+::parse (\begin{DoxyParamCaption}\item[{Parse\+Context \&}]{ctx }\end{DoxyParamCaption}) -\/$>$ decltype(ctx.\+begin()) \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{342                                                                        \{}
+\DoxyCodeLine{343     \textcolor{keywordflow}{return} ctx.begin();}
+\DoxyCodeLine{344   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/ranges.\+h\end{DoxyCompactItemize}

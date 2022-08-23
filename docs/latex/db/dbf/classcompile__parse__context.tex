@@ -1,0 +1,102 @@
+\hypertarget{classcompile__parse__context}{}\doxysection{compile\+\_\+parse\+\_\+context\texorpdfstring{$<$}{<} Char, Error\+Handler \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classcompile__parse__context}\index{compile\_parse\_context$<$ Char, ErrorHandler $>$@{compile\_parse\_context$<$ Char, ErrorHandler $>$}}
+Inheritance diagram for compile\+\_\+parse\+\_\+context\texorpdfstring{$<$}{<} Char, Error\+Handler \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{db/dbf/classcompile__parse__context}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classcompile__parse__context_a824d7e26aa5895a6b5a9952b6355d050}{compile\+\_\+parse\+\_\+context}} (\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$ format\+\_\+str, int num\+\_\+args, const type $\ast$types, Error\+Handler eh=\{\}, int next\+\_\+arg\+\_\+id=0)
+\item 
+constexpr int \mbox{\hyperlink{classcompile__parse__context_a091756d49221d4e17102f26b233bc00f}{num\+\_\+args}} () const
+\item 
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classcompile__parse__context_acd2eb387604467c43febd43e3821a3dd}{next\+\_\+arg\+\_\+id}} () -\/$>$ int
+\item 
+FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classcompile__parse__context_a7c0bad5a2b808bff01abf976814d7ab7}{check\+\_\+arg\+\_\+id}} (int id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcompile__parse__context_ab2f29216aa8115c0228304b3c0711b3a}\label{classcompile__parse__context_ab2f29216aa8115c0228304b3c0711b3a}} 
+using {\bfseries base} = \mbox{\hyperlink{classbasic__format__parse__context}{basic\+\_\+format\+\_\+parse\+\_\+context}}$<$ Char, Error\+Handler $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcompile__parse__context_ad622dac0b30b4d31f11d73e92826cb1b}\label{classcompile__parse__context_ad622dac0b30b4d31f11d73e92826cb1b}} 
+int {\bfseries num\+\_\+args\+\_\+}
+\item 
+\mbox{\Hypertarget{classcompile__parse__context_a43de9da377a90a72f3a63422fe373676}\label{classcompile__parse__context_a43de9da377a90a72f3a63422fe373676}} 
+const type $\ast$ {\bfseries types\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcompile__parse__context_a824d7e26aa5895a6b5a9952b6355d050}\label{classcompile__parse__context_a824d7e26aa5895a6b5a9952b6355d050}} 
+\index{compile\_parse\_context$<$ Char, ErrorHandler $>$@{compile\_parse\_context$<$ Char, ErrorHandler $>$}!compile\_parse\_context@{compile\_parse\_context}}
+\index{compile\_parse\_context@{compile\_parse\_context}!compile\_parse\_context$<$ Char, ErrorHandler $>$@{compile\_parse\_context$<$ Char, ErrorHandler $>$}}
+\doxysubsubsection{\texorpdfstring{compile\_parse\_context()}{compile\_parse\_context()}}
+{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler  = detail\+::error\+\_\+handler$>$ \\
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classcompile__parse__context}{compile\+\_\+parse\+\_\+context}}$<$ Char, Error\+Handler $>$\mbox{\hyperlink{classcompile__parse__context}{\+::compile\+\_\+parse\+\_\+context}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$}]{format\+\_\+str,  }\item[{int}]{num\+\_\+args,  }\item[{const type $\ast$}]{types,  }\item[{Error\+Handler}]{eh = {\ttfamily \{\}},  }\item[{int}]{next\+\_\+arg\+\_\+id = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{735                         \{\}, \textcolor{keywordtype}{int} next\_arg\_id = 0)}
+\DoxyCodeLine{736       : base(format\_str, eh, next\_arg\_id), num\_args\_(num\_args), types\_(types) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcompile__parse__context_a7c0bad5a2b808bff01abf976814d7ab7}\label{classcompile__parse__context_a7c0bad5a2b808bff01abf976814d7ab7}} 
+\index{compile\_parse\_context$<$ Char, ErrorHandler $>$@{compile\_parse\_context$<$ Char, ErrorHandler $>$}!check\_arg\_id@{check\_arg\_id}}
+\index{check\_arg\_id@{check\_arg\_id}!compile\_parse\_context$<$ Char, ErrorHandler $>$@{compile\_parse\_context$<$ Char, ErrorHandler $>$}}
+\doxysubsubsection{\texorpdfstring{check\_arg\_id()}{check\_arg\_id()}}
+{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler  = detail\+::error\+\_\+handler$>$ \\
+FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classcompile__parse__context}{compile\+\_\+parse\+\_\+context}}$<$ Char, Error\+Handler $>$\+::check\+\_\+arg\+\_\+id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{746                                           \{}
+\DoxyCodeLine{747     \mbox{\hyperlink{classbasic__format__parse__context_a5dc605ebf44606770789dc6059235130}{base::check\_arg\_id}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{748     \textcolor{keywordflow}{if} (\textcolor{keywordtype}{id} >= num\_args\_) this-\/>on\_error(\textcolor{stringliteral}{"{}argument not found"{}});}
+\DoxyCodeLine{749   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classcompile__parse__context_acd2eb387604467c43febd43e3821a3dd}\label{classcompile__parse__context_acd2eb387604467c43febd43e3821a3dd}} 
+\index{compile\_parse\_context$<$ Char, ErrorHandler $>$@{compile\_parse\_context$<$ Char, ErrorHandler $>$}!next\_arg\_id@{next\_arg\_id}}
+\index{next\_arg\_id@{next\_arg\_id}!compile\_parse\_context$<$ Char, ErrorHandler $>$@{compile\_parse\_context$<$ Char, ErrorHandler $>$}}
+\doxysubsubsection{\texorpdfstring{next\_arg\_id()}{next\_arg\_id()}}
+{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler  = detail\+::error\+\_\+handler$>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classcompile__parse__context}{compile\+\_\+parse\+\_\+context}}$<$ Char, Error\+Handler $>$\+::next\+\_\+arg\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$ int \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{740                                           \{}
+\DoxyCodeLine{741     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = \mbox{\hyperlink{classbasic__format__parse__context_a9eb66391da04f3f435cb4664fc9d9170}{base::next\_arg\_id}}();}
+\DoxyCodeLine{742     \textcolor{keywordflow}{if} (\textcolor{keywordtype}{id} >= num\_args\_) this-\/>on\_error(\textcolor{stringliteral}{"{}argument not found"{}});}
+\DoxyCodeLine{743     \textcolor{keywordflow}{return} id;}
+\DoxyCodeLine{744   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classcompile__parse__context_a091756d49221d4e17102f26b233bc00f}\label{classcompile__parse__context_a091756d49221d4e17102f26b233bc00f}} 
+\index{compile\_parse\_context$<$ Char, ErrorHandler $>$@{compile\_parse\_context$<$ Char, ErrorHandler $>$}!num\_args@{num\_args}}
+\index{num\_args@{num\_args}!compile\_parse\_context$<$ Char, ErrorHandler $>$@{compile\_parse\_context$<$ Char, ErrorHandler $>$}}
+\doxysubsubsection{\texorpdfstring{num\_args()}{num\_args()}}
+{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler  = detail\+::error\+\_\+handler$>$ \\
+constexpr int \mbox{\hyperlink{classcompile__parse__context}{compile\+\_\+parse\+\_\+context}}$<$ Char, Error\+Handler $>$\+::num\+\_\+args (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{738 \{ \textcolor{keywordflow}{return} num\_args\_; \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/core.\+h\end{DoxyCompactItemize}

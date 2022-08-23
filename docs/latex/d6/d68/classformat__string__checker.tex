@@ -1,0 +1,175 @@
+\hypertarget{classformat__string__checker}{}\doxysection{format\+\_\+string\+\_\+checker\texorpdfstring{$<$}{<} Char, Error\+Handler, Args \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classformat__string__checker}\index{format\_string\_checker$<$ Char, ErrorHandler, Args $>$@{format\_string\_checker$<$ Char, ErrorHandler, Args $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classformat__string__checker_a4a891a65c1481f8773dbfa4c6e5f787e}{format\+\_\+string\+\_\+checker}} (\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$ format\+\_\+str, Error\+Handler eh)
+\item 
+FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classformat__string__checker_a4ed60f0c8233ac6fb5b4120d0f5afab6}{on\+\_\+text}} (const Char $\ast$, const Char $\ast$)
+\item 
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classformat__string__checker_ad65f078a066dd2edbfd08af0edc42fa8}{on\+\_\+arg\+\_\+id}} () -\/$>$ int
+\item 
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classformat__string__checker_a96b70b4e2d86843a82b194927bb2183a}{on\+\_\+arg\+\_\+id}} (int id) -\/$>$ int
+\item 
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classformat__string__checker_aaff06598d63a4a12a3b12317f7de32f7}{on\+\_\+arg\+\_\+id}} (\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$ id) -\/$>$ int
+\item 
+FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classformat__string__checker_aa43eb2a0e8fe808481e35bfc2cbcf03e}{on\+\_\+replacement\+\_\+field}} (int, const Char $\ast$)
+\item 
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classformat__string__checker_a7e022455a7966eb8f2c232b40daf3d89}{on\+\_\+format\+\_\+specs}} (int id, const Char $\ast$begin, const Char $\ast$) -\/$>$ const Char $\ast$
+\item 
+FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classformat__string__checker_a3fb3f60390074eddbea11d45898c402c}{on\+\_\+error}} (const char $\ast$message)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classformat__string__checker_aabfdfb9d0a4a6dcfc8d209fa1b5e56e0}\label{classformat__string__checker_aabfdfb9d0a4a6dcfc8d209fa1b5e56e0}} 
+using {\bfseries parse\+\_\+context\+\_\+type} = \mbox{\hyperlink{classcompile__parse__context}{compile\+\_\+parse\+\_\+context}}$<$ Char, Error\+Handler $>$
+\item 
+\mbox{\Hypertarget{classformat__string__checker_a71a3b4e931846b2677a023b052ad6720}\label{classformat__string__checker_a71a3b4e931846b2677a023b052ad6720}} 
+using {\bfseries parse\+\_\+func} = const Char $\ast$($\ast$)(\mbox{\hyperlink{classcompile__parse__context}{parse\+\_\+context\+\_\+type}} \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classformat__string__checker_a961a553b8876ff18db726bef73f341e4}\label{classformat__string__checker_a961a553b8876ff18db726bef73f341e4}} 
+\mbox{\hyperlink{classcompile__parse__context}{parse\+\_\+context\+\_\+type}} {\bfseries context\+\_\+}
+\item 
+\mbox{\Hypertarget{classformat__string__checker_a9a883f8ea03e4d81b3b2f88ce0e144d7}\label{classformat__string__checker_a9a883f8ea03e4d81b3b2f88ce0e144d7}} 
+parse\+\_\+func {\bfseries parse\+\_\+funcs\+\_\+} \mbox{[}num\+\_\+args $>$ 0 ? static\+\_\+cast$<$ size\+\_\+t $>$(num\+\_\+args) \+:1\mbox{]}
+\item 
+\mbox{\Hypertarget{classformat__string__checker_a217ccd830d68a2781a447abf74341666}\label{classformat__string__checker_a217ccd830d68a2781a447abf74341666}} 
+type {\bfseries types\+\_\+} \mbox{[}num\+\_\+args $>$ 0 ? static\+\_\+cast$<$ size\+\_\+t $>$(num\+\_\+args) \+:1\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classformat__string__checker_a25ce5721515487334456a5bb1f531353}\label{classformat__string__checker_a25ce5721515487334456a5bb1f531353}} 
+static constexpr int {\bfseries num\+\_\+args} = sizeof...(Args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classformat__string__checker_a4a891a65c1481f8773dbfa4c6e5f787e}\label{classformat__string__checker_a4a891a65c1481f8773dbfa4c6e5f787e}} 
+\index{format\_string\_checker$<$ Char, ErrorHandler, Args $>$@{format\_string\_checker$<$ Char, ErrorHandler, Args $>$}!format\_string\_checker@{format\_string\_checker}}
+\index{format\_string\_checker@{format\_string\_checker}!format\_string\_checker$<$ Char, ErrorHandler, Args $>$@{format\_string\_checker$<$ Char, ErrorHandler, Args $>$}}
+\doxysubsubsection{\texorpdfstring{format\_string\_checker()}{format\_string\_checker()}}
+{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler , typename... Args$>$ \\
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classformat__string__checker}{format\+\_\+string\+\_\+checker}}$<$ Char, Error\+Handler, Args $>$\mbox{\hyperlink{classformat__string__checker}{\+::format\+\_\+string\+\_\+checker}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$}]{format\+\_\+str,  }\item[{Error\+Handler}]{eh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2922       : context\_(format\_str, num\_args, types\_, eh),}
+\DoxyCodeLine{2923         parse\_funcs\_\{\&parse\_format\_specs<Args, parse\_context\_type>...\},}
+\DoxyCodeLine{2924         types\_\{\mbox{\hyperlink{structtype__constant}{type\_constant<Args, char>::value}}...\} \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classformat__string__checker_ad65f078a066dd2edbfd08af0edc42fa8}\label{classformat__string__checker_ad65f078a066dd2edbfd08af0edc42fa8}} 
+\index{format\_string\_checker$<$ Char, ErrorHandler, Args $>$@{format\_string\_checker$<$ Char, ErrorHandler, Args $>$}!on\_arg\_id@{on\_arg\_id}}
+\index{on\_arg\_id@{on\_arg\_id}!format\_string\_checker$<$ Char, ErrorHandler, Args $>$@{format\_string\_checker$<$ Char, ErrorHandler, Args $>$}}
+\doxysubsubsection{\texorpdfstring{on\_arg\_id()}{on\_arg\_id()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler , typename... Args$>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classformat__string__checker}{format\+\_\+string\+\_\+checker}}$<$ Char, Error\+Handler, Args $>$\+::on\+\_\+arg\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$ int \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2928 \{ \textcolor{keywordflow}{return} context\_.next\_arg\_id(); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classformat__string__checker_aaff06598d63a4a12a3b12317f7de32f7}\label{classformat__string__checker_aaff06598d63a4a12a3b12317f7de32f7}} 
+\index{format\_string\_checker$<$ Char, ErrorHandler, Args $>$@{format\_string\_checker$<$ Char, ErrorHandler, Args $>$}!on\_arg\_id@{on\_arg\_id}}
+\index{on\_arg\_id@{on\_arg\_id}!format\_string\_checker$<$ Char, ErrorHandler, Args $>$@{format\_string\_checker$<$ Char, ErrorHandler, Args $>$}}
+\doxysubsubsection{\texorpdfstring{on\_arg\_id()}{on\_arg\_id()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler , typename... Args$>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classformat__string__checker}{format\+\_\+string\+\_\+checker}}$<$ Char, Error\+Handler, Args $>$\+::on\+\_\+arg\+\_\+id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$}]{id }\end{DoxyParamCaption}) -\/$>$ int \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2932                                                                   \{}
+\DoxyCodeLine{2933 \textcolor{preprocessor}{\#if FMT\_USE\_NONTYPE\_TEMPLATE\_ARGS}}
+\DoxyCodeLine{2934     \textcolor{keyword}{auto} index = get\_arg\_index\_by\_name<Args...>(id);}
+\DoxyCodeLine{2935     \textcolor{keywordflow}{if} (index == invalid\_arg\_index) on\_error(\textcolor{stringliteral}{"{}named argument is not found"{}});}
+\DoxyCodeLine{2936     \textcolor{keywordflow}{return} context\_.check\_arg\_id(index), index;}
+\DoxyCodeLine{2937 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{2938     (void)\textcolor{keywordtype}{id};}
+\DoxyCodeLine{2939     on\_error(\textcolor{stringliteral}{"{}compile-\/time checks for named arguments require C++20 support"{}});}
+\DoxyCodeLine{2940     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{2941 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{2942   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classformat__string__checker_a96b70b4e2d86843a82b194927bb2183a}\label{classformat__string__checker_a96b70b4e2d86843a82b194927bb2183a}} 
+\index{format\_string\_checker$<$ Char, ErrorHandler, Args $>$@{format\_string\_checker$<$ Char, ErrorHandler, Args $>$}!on\_arg\_id@{on\_arg\_id}}
+\index{on\_arg\_id@{on\_arg\_id}!format\_string\_checker$<$ Char, ErrorHandler, Args $>$@{format\_string\_checker$<$ Char, ErrorHandler, Args $>$}}
+\doxysubsubsection{\texorpdfstring{on\_arg\_id()}{on\_arg\_id()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler , typename... Args$>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classformat__string__checker}{format\+\_\+string\+\_\+checker}}$<$ Char, Error\+Handler, Args $>$\+::on\+\_\+arg\+\_\+id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) -\/$>$ int \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2929                                               \{}
+\DoxyCodeLine{2930     \textcolor{keywordflow}{return} context\_.check\_arg\_id(\textcolor{keywordtype}{id}), id;}
+\DoxyCodeLine{2931   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classformat__string__checker_a3fb3f60390074eddbea11d45898c402c}\label{classformat__string__checker_a3fb3f60390074eddbea11d45898c402c}} 
+\index{format\_string\_checker$<$ Char, ErrorHandler, Args $>$@{format\_string\_checker$<$ Char, ErrorHandler, Args $>$}!on\_error@{on\_error}}
+\index{on\_error@{on\_error}!format\_string\_checker$<$ Char, ErrorHandler, Args $>$@{format\_string\_checker$<$ Char, ErrorHandler, Args $>$}}
+\doxysubsubsection{\texorpdfstring{on\_error()}{on\_error()}}
+{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler , typename... Args$>$ \\
+FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classformat__string__checker}{format\+\_\+string\+\_\+checker}}$<$ Char, Error\+Handler, Args $>$\+::on\+\_\+error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2953                                                    \{}
+\DoxyCodeLine{2954     context\_.on\_error(message);}
+\DoxyCodeLine{2955   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classformat__string__checker_a7e022455a7966eb8f2c232b40daf3d89}\label{classformat__string__checker_a7e022455a7966eb8f2c232b40daf3d89}} 
+\index{format\_string\_checker$<$ Char, ErrorHandler, Args $>$@{format\_string\_checker$<$ Char, ErrorHandler, Args $>$}!on\_format\_specs@{on\_format\_specs}}
+\index{on\_format\_specs@{on\_format\_specs}!format\_string\_checker$<$ Char, ErrorHandler, Args $>$@{format\_string\_checker$<$ Char, ErrorHandler, Args $>$}}
+\doxysubsubsection{\texorpdfstring{on\_format\_specs()}{on\_format\_specs()}}
+{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler , typename... Args$>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classformat__string__checker}{format\+\_\+string\+\_\+checker}}$<$ Char, Error\+Handler, Args $>$\+::on\+\_\+format\+\_\+specs (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{const Char $\ast$}]{begin,  }\item[{const Char $\ast$}]{ }\end{DoxyParamCaption}) -\/$>$ const Char$\ast$ \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2947                      \{}
+\DoxyCodeLine{2948     context\_.\mbox{\hyperlink{classbasic__format__parse__context_ac123ab6c1c6e58db3ab0a917def4add8}{advance\_to}}(context\_.\mbox{\hyperlink{classbasic__format__parse__context_acacc81561f6136973796f6b1ec4bdd5d}{begin}}() + (begin -\/ \&*context\_.\mbox{\hyperlink{classbasic__format__parse__context_acacc81561f6136973796f6b1ec4bdd5d}{begin}}()));}
+\DoxyCodeLine{2949     \textcolor{comment}{// id >= 0 check is a workaround for gcc 10 bug (\#2065).}}
+\DoxyCodeLine{2950     \textcolor{keywordflow}{return} \textcolor{keywordtype}{id} >= 0 \&\& \textcolor{keywordtype}{id} < num\_args ? parse\_funcs\_[id](context\_) : begin;}
+\DoxyCodeLine{2951   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classformat__string__checker_aa43eb2a0e8fe808481e35bfc2cbcf03e}\label{classformat__string__checker_aa43eb2a0e8fe808481e35bfc2cbcf03e}} 
+\index{format\_string\_checker$<$ Char, ErrorHandler, Args $>$@{format\_string\_checker$<$ Char, ErrorHandler, Args $>$}!on\_replacement\_field@{on\_replacement\_field}}
+\index{on\_replacement\_field@{on\_replacement\_field}!format\_string\_checker$<$ Char, ErrorHandler, Args $>$@{format\_string\_checker$<$ Char, ErrorHandler, Args $>$}}
+\doxysubsubsection{\texorpdfstring{on\_replacement\_field()}{on\_replacement\_field()}}
+{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler , typename... Args$>$ \\
+FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classformat__string__checker}{format\+\_\+string\+\_\+checker}}$<$ Char, Error\+Handler, Args $>$\+::on\+\_\+replacement\+\_\+field (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{const Char $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2944 \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classformat__string__checker_a4ed60f0c8233ac6fb5b4120d0f5afab6}\label{classformat__string__checker_a4ed60f0c8233ac6fb5b4120d0f5afab6}} 
+\index{format\_string\_checker$<$ Char, ErrorHandler, Args $>$@{format\_string\_checker$<$ Char, ErrorHandler, Args $>$}!on\_text@{on\_text}}
+\index{on\_text@{on\_text}!format\_string\_checker$<$ Char, ErrorHandler, Args $>$@{format\_string\_checker$<$ Char, ErrorHandler, Args $>$}}
+\doxysubsubsection{\texorpdfstring{on\_text()}{on\_text()}}
+{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler , typename... Args$>$ \\
+FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classformat__string__checker}{format\+\_\+string\+\_\+checker}}$<$ Char, Error\+Handler, Args $>$\+::on\+\_\+text (\begin{DoxyParamCaption}\item[{const Char $\ast$}]{,  }\item[{const Char $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2926 \{\}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/core.\+h\end{DoxyCompactItemize}

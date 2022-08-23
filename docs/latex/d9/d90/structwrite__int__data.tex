@@ -1,0 +1,47 @@
+\hypertarget{structwrite__int__data}{}\doxysection{write\+\_\+int\+\_\+data\texorpdfstring{$<$}{<} Char \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structwrite__int__data}\index{write\_int\_data$<$ Char $>$@{write\_int\_data$<$ Char $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{structwrite__int__data_a4a9d0885fc2a3e7fc67111ec7b8a7586}{write\+\_\+int\+\_\+data}} (int num\+\_\+digits, unsigned prefix, const \mbox{\hyperlink{structbasic__format__specs}{basic\+\_\+format\+\_\+specs}}$<$ Char $>$ \&specs)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structwrite__int__data_aa9a71d393e04cda4aa16f1388e778032}\label{structwrite__int__data_aa9a71d393e04cda4aa16f1388e778032}} 
+size\+\_\+t {\bfseries size}
+\item 
+\mbox{\Hypertarget{structwrite__int__data_a9c767936e7dd8dcc8352f47b2688849c}\label{structwrite__int__data_a9c767936e7dd8dcc8352f47b2688849c}} 
+size\+\_\+t {\bfseries padding}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structwrite__int__data_a4a9d0885fc2a3e7fc67111ec7b8a7586}\label{structwrite__int__data_a4a9d0885fc2a3e7fc67111ec7b8a7586}} 
+\index{write\_int\_data$<$ Char $>$@{write\_int\_data$<$ Char $>$}!write\_int\_data@{write\_int\_data}}
+\index{write\_int\_data@{write\_int\_data}!write\_int\_data$<$ Char $>$@{write\_int\_data$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{write\_int\_data()}{write\_int\_data()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{structwrite__int__data}{write\+\_\+int\+\_\+data}}$<$ Char $>$\mbox{\hyperlink{structwrite__int__data}{\+::write\+\_\+int\+\_\+data}} (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+digits,  }\item[{unsigned}]{prefix,  }\item[{const \mbox{\hyperlink{structbasic__format__specs}{basic\+\_\+format\+\_\+specs}}$<$ Char $>$ \&}]{specs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1868       : size((prefix >> 24) + to\_unsigned(num\_digits)), padding(0) \{}
+\DoxyCodeLine{1869     \textcolor{keywordflow}{if} (specs.align == align::numeric) \{}
+\DoxyCodeLine{1870       \textcolor{keyword}{auto} width = to\_unsigned(specs.width);}
+\DoxyCodeLine{1871       \textcolor{keywordflow}{if} (width > size) \{}
+\DoxyCodeLine{1872         padding = width -\/ size;}
+\DoxyCodeLine{1873         size = width;}
+\DoxyCodeLine{1874       \}}
+\DoxyCodeLine{1875     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (specs.precision > num\_digits) \{}
+\DoxyCodeLine{1876       size = (prefix >> 24) + to\_unsigned(specs.precision);}
+\DoxyCodeLine{1877       padding = to\_unsigned(specs.precision -\/ num\_digits);}
+\DoxyCodeLine{1878     \}}
+\DoxyCodeLine{1879   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/format.\+h\end{DoxyCompactItemize}

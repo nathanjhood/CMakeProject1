@@ -1,0 +1,48 @@
+\hypertarget{classweekday}{}\doxysection{weekday Class Reference}
+\label{classweekday}\index{weekday@{weekday}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{classweekday_a8984aa58bf28e7955439ec67b742af8a}{weekday}} (unsigned wd) noexcept
+\item 
+constexpr unsigned \mbox{\hyperlink{classweekday_abc92ed6b1ab0a8ff6aae9df37ea3598a}{c\+\_\+encoding}} () const noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classweekday_a49a173628c70379aebdd676ff00310ab}\label{classweekday_a49a173628c70379aebdd676ff00310ab}} 
+unsigned char {\bfseries value}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classweekday_a8984aa58bf28e7955439ec67b742af8a}\label{classweekday_a8984aa58bf28e7955439ec67b742af8a}} 
+\index{weekday@{weekday}!weekday@{weekday}}
+\index{weekday@{weekday}!weekday@{weekday}}
+\doxysubsubsection{\texorpdfstring{weekday()}{weekday()}}
+{\footnotesize\ttfamily constexpr weekday\+::weekday (\begin{DoxyParamCaption}\item[{unsigned}]{wd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1848       : \mbox{\hyperlink{classvalue}{value}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}\textcolor{keyword}{>}(wd != 7 ? wd : 0)) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classweekday_abc92ed6b1ab0a8ff6aae9df37ea3598a}\label{classweekday_abc92ed6b1ab0a8ff6aae9df37ea3598a}} 
+\index{weekday@{weekday}!c\_encoding@{c\_encoding}}
+\index{c\_encoding@{c\_encoding}!weekday@{weekday}}
+\doxysubsubsection{\texorpdfstring{c\_encoding()}{c\_encoding()}}
+{\footnotesize\ttfamily constexpr unsigned weekday\+::c\+\_\+encoding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1849 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classvalue}{value}}; \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/chrono.\+h\end{DoxyCompactItemize}

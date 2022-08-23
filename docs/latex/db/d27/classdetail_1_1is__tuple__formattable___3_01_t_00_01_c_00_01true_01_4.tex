@@ -1,0 +1,40 @@
+\hypertarget{classdetail_1_1is__tuple__formattable___3_01_t_00_01_c_00_01true_01_4}{}\doxysection{detail\+::is\+\_\+tuple\+\_\+formattable\+\_\+\texorpdfstring{$<$}{<} T, C, true \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classdetail_1_1is__tuple__formattable___3_01_t_00_01_c_00_01true_01_4}\index{detail::is\_tuple\_formattable\_$<$ T, C, true $>$@{detail::is\_tuple\_formattable\_$<$ T, C, true $>$}}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr const bool \mbox{\hyperlink{classdetail_1_1is__tuple__formattable___3_01_t_00_01_c_00_01true_01_4_abb147657145b6a4f790cb39ae83e29b4}{value}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classdetail_1_1is__tuple__formattable___3_01_t_00_01_c_00_01true_01_4_a4736e2ada17bf097857e434918c09135}\label{classdetail_1_1is__tuple__formattable___3_01_t_00_01_c_00_01true_01_4_a4736e2ada17bf097857e434918c09135}} 
+{\footnotesize template$<$std\+::size\+\_\+t... I$>$ }\\static std\+::true\+\_\+type {\bfseries check2} (\mbox{\hyperlink{structdetail_1_1integer__sequence}{index\+\_\+sequence}}$<$ I... $>$, \mbox{\hyperlink{structdetail_1_1integer__sequence}{integer\+\_\+sequence}}$<$ bool,(I==I)... $>$)
+\item 
+\mbox{\Hypertarget{classdetail_1_1is__tuple__formattable___3_01_t_00_01_c_00_01true_01_4_a911d457730e27a967beac754b434627b}\label{classdetail_1_1is__tuple__formattable___3_01_t_00_01_c_00_01true_01_4_a911d457730e27a967beac754b434627b}} 
+static std\+::false\+\_\+type {\bfseries check2} (...)
+\item 
+\mbox{\Hypertarget{classdetail_1_1is__tuple__formattable___3_01_t_00_01_c_00_01true_01_4_acfa06d14b64395be16362ac6583d2618}\label{classdetail_1_1is__tuple__formattable___3_01_t_00_01_c_00_01true_01_4_acfa06d14b64395be16362ac6583d2618}} 
+{\footnotesize template$<$std\+::size\+\_\+t... I$>$ }\\static decltype(check2(\mbox{\hyperlink{structdetail_1_1integer__sequence}{index\+\_\+sequence}}$<$ I... $>$\{\}, \mbox{\hyperlink{structdetail_1_1integer__sequence}{integer\+\_\+sequence}}$<$ bool,(is\+\_\+formattable$<$ typename std\+::tuple\+\_\+element$<$ I, T $>$\+::type, C $>$\mbox{\hyperlink{classvalue}{\+::value}})... $>$\{\})) {\bfseries check} (\mbox{\hyperlink{structdetail_1_1integer__sequence}{index\+\_\+sequence}}$<$ I... $>$)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classdetail_1_1is__tuple__formattable___3_01_t_00_01_c_00_01true_01_4_abb147657145b6a4f790cb39ae83e29b4}\label{classdetail_1_1is__tuple__formattable___3_01_t_00_01_c_00_01true_01_4_abb147657145b6a4f790cb39ae83e29b4}} 
+\index{detail::is\_tuple\_formattable\_$<$ T, C, true $>$@{detail::is\_tuple\_formattable\_$<$ T, C, true $>$}!value@{value}}
+\index{value@{value}!detail::is\_tuple\_formattable\_$<$ T, C, true $>$@{detail::is\_tuple\_formattable\_$<$ T, C, true $>$}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily template$<$typename T , typename C $>$ \\
+constexpr const bool \mbox{\hyperlink{classdetail_1_1is__tuple__formattable__}{detail\+::is\+\_\+tuple\+\_\+formattable\+\_\+}}$<$ T, C, true $>$\mbox{\hyperlink{classvalue}{\+::value}}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{      \textcolor{keyword}{decltype}(check(tuple\_index\_sequence<T>\{\}))\mbox{\hyperlink{classvalue}{::value}}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/ranges.\+h\end{DoxyCompactItemize}

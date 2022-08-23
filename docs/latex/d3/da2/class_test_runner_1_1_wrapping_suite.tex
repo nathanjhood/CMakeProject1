@@ -1,0 +1,115 @@
+\hypertarget{class_test_runner_1_1_wrapping_suite}{}\doxysection{Test\+Runner\+::Wrapping\+Suite Class Reference}
+\label{class_test_runner_1_1_wrapping_suite}\index{TestRunner::WrappingSuite@{TestRunner::WrappingSuite}}
+
+
+(INTERNAL) Mutating test suite.  
+
+
+
+
+{\ttfamily \#include $<$Test\+Runner.\+h$>$}
+
+Inheritance diagram for Test\+Runner\+::Wrapping\+Suite\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{d3/da2/class_test_runner_1_1_wrapping_suite}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_test_runner_1_1_wrapping_suite_a3edce0cce0e3fdc996994d3dfe8f35fb}\label{class_test_runner_1_1_wrapping_suite_a3edce0cce0e3fdc996994d3dfe8f35fb}} 
+{\bfseries Wrapping\+Suite} (const std\+::string \&name=\char`\"{}All Tests\char`\"{})
+\item 
+int \mbox{\hyperlink{class_test_runner_1_1_wrapping_suite_a5ffc3769e32dcde719bcf61191fb3c53}{get\+Child\+Test\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of direct child of the test. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_test_runner_1_1_wrapping_suite_a0015e42bd741cbf8ca64e754cd93e7c6}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Returns the test name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_test_runner_1_1_wrapping_suite_aa486bfea64b60206ac1d8fbb006f2f64}{run}} (\mbox{\hyperlink{class_test_result}{Test\+Result}} $\ast$result)
+\begin{DoxyCompactList}\small\item\em Run the test, collecting results. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test}{Test}} $\ast$ \mbox{\hyperlink{class_test_runner_1_1_wrapping_suite_a389459f7401497bcb5bfd2d44faa77ec}{do\+Get\+Child\+Test\+At}} (int index) const
+\begin{DoxyCompactList}\small\item\em Returns the child test of the specified valid index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_test_runner_1_1_wrapping_suite_ae25829c384e39b6ebb11bb7369058971}\label{class_test_runner_1_1_wrapping_suite_ae25829c384e39b6ebb11bb7369058971}} 
+bool {\bfseries has\+Only\+One\+Test} () const
+\item 
+\mbox{\Hypertarget{class_test_runner_1_1_wrapping_suite_a9bad7647f9aa6f1b230aae305a06e44b}\label{class_test_runner_1_1_wrapping_suite_a9bad7647f9aa6f1b230aae305a06e44b}} 
+\mbox{\hyperlink{class_test}{Test}} $\ast$ {\bfseries get\+Unique\+Child\+Test} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+(INTERNAL) Mutating test suite. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_test_runner_1_1_wrapping_suite_a389459f7401497bcb5bfd2d44faa77ec}\label{class_test_runner_1_1_wrapping_suite_a389459f7401497bcb5bfd2d44faa77ec}} 
+\index{TestRunner::WrappingSuite@{TestRunner::WrappingSuite}!doGetChildTestAt@{doGetChildTestAt}}
+\index{doGetChildTestAt@{doGetChildTestAt}!TestRunner::WrappingSuite@{TestRunner::WrappingSuite}}
+\doxysubsubsection{\texorpdfstring{doGetChildTestAt()}{doGetChildTestAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_test}{Test}} $\ast$ Test\+Runner\+::\+Wrapping\+Suite\+::do\+Get\+Child\+Test\+At (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Returns the child test of the specified valid index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Zero based valid index of the child test to return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer on the test. Never {\ttfamily NULL}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_test_aeec4ad92723c978238d933cbde475393}{Test}}.
+
+\mbox{\Hypertarget{class_test_runner_1_1_wrapping_suite_a5ffc3769e32dcde719bcf61191fb3c53}\label{class_test_runner_1_1_wrapping_suite_a5ffc3769e32dcde719bcf61191fb3c53}} 
+\index{TestRunner::WrappingSuite@{TestRunner::WrappingSuite}!getChildTestCount@{getChildTestCount}}
+\index{getChildTestCount@{getChildTestCount}!TestRunner::WrappingSuite@{TestRunner::WrappingSuite}}
+\doxysubsubsection{\texorpdfstring{getChildTestCount()}{getChildTestCount()}}
+{\footnotesize\ttfamily int Test\+Runner\+::\+Wrapping\+Suite\+::get\+Child\+Test\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the number of direct child of the test. 
+
+
+
+Implements \mbox{\hyperlink{class_test_a7aaab95037b7222573471074c56df85b}{Test}}.
+
+\mbox{\Hypertarget{class_test_runner_1_1_wrapping_suite_a0015e42bd741cbf8ca64e754cd93e7c6}\label{class_test_runner_1_1_wrapping_suite_a0015e42bd741cbf8ca64e754cd93e7c6}} 
+\index{TestRunner::WrappingSuite@{TestRunner::WrappingSuite}!getName@{getName}}
+\index{getName@{getName}!TestRunner::WrappingSuite@{TestRunner::WrappingSuite}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Test\+Runner\+::\+Wrapping\+Suite\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the test name. 
+
+Each test has a name. This name may be used to find the test in a suite or registry of tests. 
+
+Reimplemented from \mbox{\hyperlink{class_test_composite_a744c14d2610bd223e853600417a4cadb}{Test\+Composite}}.
+
+\mbox{\Hypertarget{class_test_runner_1_1_wrapping_suite_aa486bfea64b60206ac1d8fbb006f2f64}\label{class_test_runner_1_1_wrapping_suite_aa486bfea64b60206ac1d8fbb006f2f64}} 
+\index{TestRunner::WrappingSuite@{TestRunner::WrappingSuite}!run@{run}}
+\index{run@{run}!TestRunner::WrappingSuite@{TestRunner::WrappingSuite}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Test\+Runner\+::\+Wrapping\+Suite\+::run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_test_result}{Test\+Result}} $\ast$}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Run the test, collecting results. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_test_composite_a2ba14045b1a1e83963dd4db746b04dfd}{Test\+Composite}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/Test\+Runner.\+h\end{DoxyCompactItemize}

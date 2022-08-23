@@ -1,0 +1,45 @@
+\hypertarget{classis__zero__int}{}\doxysection{is\+\_\+zero\+\_\+int Class Reference}
+\label{classis__zero__int}\index{is\_zero\_int@{is\_zero\_int}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\bool \mbox{\hyperlink{classis__zero__int_ac92e4e91619e4934647030b866fa66f6}{operator()}} (T \mbox{\hyperlink{classvalue}{value}})
+\item 
+{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(!std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\bool \mbox{\hyperlink{classis__zero__int_acf09f3796b1109e0a32e323ccd93e952}{operator()}} (T)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classis__zero__int_ac92e4e91619e4934647030b866fa66f6}\label{classis__zero__int_ac92e4e91619e4934647030b866fa66f6}} 
+\index{is\_zero\_int@{is\_zero\_int}!operator()@{operator()}}
+\index{operator()@{operator()}!is\_zero\_int@{is\_zero\_int}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
+bool is\+\_\+zero\+\_\+int\+::operator() (\begin{DoxyParamCaption}\item[{T}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{99                            \{}
+\DoxyCodeLine{100     \textcolor{keywordflow}{return} \mbox{\hyperlink{classvalue}{value}} == 0;}
+\DoxyCodeLine{101   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classis__zero__int_acf09f3796b1109e0a32e323ccd93e952}\label{classis__zero__int_acf09f3796b1109e0a32e323ccd93e952}} 
+\index{is\_zero\_int@{is\_zero\_int}!operator()@{operator()}}
+\index{operator()@{operator()}!is\_zero\_int@{is\_zero\_int}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(!std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
+bool is\+\_\+zero\+\_\+int\+::operator() (\begin{DoxyParamCaption}\item[{T}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{104                      \{}
+\DoxyCodeLine{105     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{106   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/printf.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,301 @@
+\hypertarget{class_test_factory_registry}{}\doxysection{Test\+Factory\+Registry Class Reference}
+\label{class_test_factory_registry}\index{TestFactoryRegistry@{TestFactoryRegistry}}
+
+
+Registry for \mbox{\hyperlink{class_test_factory}{Test\+Factory}}.  
+
+
+
+
+{\ttfamily \#include $<$Test\+Factory\+Registry.\+h$>$}
+
+Inheritance diagram for Test\+Factory\+Registry\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d1/da9/class_test_factory_registry}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_factory_registry_a704548465fea8b52fa449845b8b42caf}{Test\+Factory\+Registry}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Constructs the registry with the specified name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_test_factory_registry_a1c0c5589eb993ad6a5b1a17d439db457}\label{class_test_factory_registry_a1c0c5589eb993ad6a5b1a17d439db457}} 
+virtual {\bfseries $\sim$\+Test\+Factory\+Registry} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_test}{Test}} $\ast$ \mbox{\hyperlink{class_test_factory_registry_a32337a90fd885e55dbba1d26e4d9c2e2}{make\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Returns a new \mbox{\hyperlink{class_test_suite}{Test\+Suite}} that contains the registered test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_test_factory_registry_a39180636ddd11a499d15614a335b17d5}{add\+Test\+To\+Suite}} (\mbox{\hyperlink{class_test_suite}{Test\+Suite}} $\ast$suite)
+\begin{DoxyCompactList}\small\item\em Adds the registered tests to the specified suite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_test_factory_registry_a632c38375727ca735e2c1897bd625b99}{register\+Factory}} (\mbox{\hyperlink{class_test_factory}{Test\+Factory}} $\ast$factory)
+\begin{DoxyCompactList}\small\item\em Adds the specified \mbox{\hyperlink{class_test_factory}{Test\+Factory}} to the registry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_test_factory_registry_afa3fb925b07eb34e9ccfab84812afc18}{unregister\+Factory}} (\mbox{\hyperlink{class_test_factory}{Test\+Factory}} $\ast$factory)
+\item 
+void \mbox{\hyperlink{class_test_factory_registry_abb68b347450c97ff0dfc9ea3dfe03f4c}{add\+Registry}} (const std\+::string \&name)
+\item 
+void \mbox{\hyperlink{class_test_factory_registry_aff8d8215ec83fbb77d46706264e2f161}{register\+Factory}} (const std\+::string \&name, \mbox{\hyperlink{class_test_factory}{Test\+Factory}} $\ast$factory)
+\begin{DoxyCompactList}\small\item\em Adds the specified \mbox{\hyperlink{class_test_factory}{Test\+Factory}} with a specific name (DEPRECATED). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_test_factory_registry}{Test\+Factory\+Registry}} \& \mbox{\hyperlink{class_test_factory_registry_ade673d8465371d581c7a704a7baa4620}{get\+Registry}} (const std\+::string \&name=\char`\"{}All Tests\char`\"{})
+\begin{DoxyCompactList}\small\item\em Returns a named registry. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_test_factory_registry_a8638d92944309341c68089aa098800cb}{is\+Valid}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_test_factory_registry_a83dbd2cd5e82a6304746ab99104c06b2}\label{class_test_factory_registry_a83dbd2cd5e82a6304746ab99104c06b2}} 
+typedef std\+::set$<$ \mbox{\hyperlink{class_test_factory}{Test\+Factory}} $\ast$, std\+::less$<$ \mbox{\hyperlink{class_test_factory}{Test\+Factory}} $\ast$ $>$ $>$ {\bfseries Factories}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_test_factory_registry_a1bf1ca8d85834c3537f167b95e1f38c8}\label{class_test_factory_registry_a1bf1ca8d85834c3537f167b95e1f38c8}} 
+{\bfseries Test\+Factory\+Registry} (const \mbox{\hyperlink{class_test_factory_registry}{Test\+Factory\+Registry}} \&copy)
+\item 
+\mbox{\Hypertarget{class_test_factory_registry_a51390b80712c27e087f10864e14ccabb}\label{class_test_factory_registry_a51390b80712c27e087f10864e14ccabb}} 
+void {\bfseries operator=} (const \mbox{\hyperlink{class_test_factory_registry}{Test\+Factory\+Registry}} \&copy)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_test_factory_registry_a78a9514f26a1ee0471ee1a3a766427e8}\label{class_test_factory_registry_a78a9514f26a1ee0471ee1a3a766427e8}} 
+Factories {\bfseries m\+\_\+factories}
+\item 
+\mbox{\Hypertarget{class_test_factory_registry_ad98008a2479e935de211ea6f2f5b6d6d}\label{class_test_factory_registry_ad98008a2479e935de211ea6f2f5b6d6d}} 
+std\+::string {\bfseries m\+\_\+name}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Registry for \mbox{\hyperlink{class_test_factory}{Test\+Factory}}. 
+
+Notes that the registry {\bfseries{DON\textquotesingle{}T}} assumes lifetime control for any registered tests anymore.
+
+The {\itshape default} registry is the registry returned by \mbox{\hyperlink{class_test_factory_registry_ade673d8465371d581c7a704a7baa4620}{get\+Registry()}} with the default name parameter value.
+
+To register tests, use the macros\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{_helper_macros_8h_a2f4071eec88d1e306665ada0f2dd80e4}{CPPUNIT\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+REGISTRATION()}}\+: to add tests in the default registry.
+\item \mbox{\hyperlink{_helper_macros_8h_a028a5855a40ad3836e2a26aa48cd4c91}{CPPUNIT\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+NAMED\+\_\+\+REGISTRATION()}}\+: to add tests in a named registry.
+\end{DoxyItemize}
+
+Example 1\+: retreiving a suite that contains all the test registered with \mbox{\hyperlink{_helper_macros_8h_a2f4071eec88d1e306665ada0f2dd80e4}{CPPUNIT\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+REGISTRATION()}}. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CppUnit::TestFactoryRegistry \&registry = CppUnit::TestFactoryRegistry::getRegistry();}
+\DoxyCodeLine{CppUnit::TestSuite *suite = registry.makeTest();}
+
+\end{DoxyCode}
+
+
+Example 2\+: retreiving a suite that contains all the test registered with \mbox{\hyperlink{_helper_macros_8h_a028a5855a40ad3836e2a26aa48cd4c91}{CPPUNIT\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+NAMED\+\_\+\+REGISTRATION( ..., \char`\"{}\+Math\char`\"{} )}}. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CppUnit::TestFactoryRegistry \&mathRegistry = CppUnit::TestFactoryRegistry::getRegistry( \textcolor{stringliteral}{"{}Math"{}} );}
+\DoxyCodeLine{CppUnit::TestSuite *mathSuite = mathRegistry.makeTest();}
+
+\end{DoxyCode}
+
+
+Example 3\+: creating a test suite hierarchy composed of unnamed registration and named registration\+:
+\begin{DoxyItemize}
+\item All Tests
+\begin{DoxyItemize}
+\item tests registered with CPPUNIT\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+NAMED\+\_\+\+REGISTRATION( ..., \char`\"{}\+Graph\char`\"{} )
+\item tests registered with CPPUNIT\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+NAMED\+\_\+\+REGISTRATION( ..., \char`\"{}\+Math\char`\"{} )
+\item tests registered with CPPUNIT\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+REGISTRATION
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CppUnit::TestSuite *rootSuite = \textcolor{keyword}{new} CppUnit::TestSuite( \textcolor{stringliteral}{"{}All tests"{}} );}
+\DoxyCodeLine{rootSuite-\/>addTest( CppUnit::TestFactoryRegistry::getRegistry( \textcolor{stringliteral}{"{}Graph"{}} ).\mbox{\hyperlink{class_test_factory_registry_a32337a90fd885e55dbba1d26e4d9c2e2}{makeTest}}() );}
+\DoxyCodeLine{rootSuite-\/>addTest( CppUnit::TestFactoryRegistry::getRegistry( \textcolor{stringliteral}{"{}Math"{}} ).\mbox{\hyperlink{class_test_factory_registry_a32337a90fd885e55dbba1d26e4d9c2e2}{makeTest}}() );}
+\DoxyCodeLine{CppUnit::TestFactoryRegistry::getRegistry().addTestToSuite( rootSuite );}
+
+\end{DoxyCode}
+
+
+The same result can be obtained with\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CppUnit::TestFactoryRegistry \&registry = CppUnit::TestFactoryRegistry::getRegistry();}
+\DoxyCodeLine{registry.addRegistry( \textcolor{stringliteral}{"{}Graph"{}} );}
+\DoxyCodeLine{registry.addRegistry( \textcolor{stringliteral}{"{}Math"{}} );}
+\DoxyCodeLine{CppUnit::TestSuite *suite = registry.makeTest();}
+
+\end{DoxyCode}
+
+
+Since a \mbox{\hyperlink{class_test_factory_registry}{Test\+Factory\+Registry}} is a \mbox{\hyperlink{class_test_factory}{Test\+Factory}}, the named registries can be registered in the unnamed registry, creating the hierarchy links.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_test_suite_factory}{Test\+Suite\+Factory}}, \mbox{\hyperlink{class_auto_register_suite}{Auto\+Register\+Suite}} 
+
+\mbox{\hyperlink{_helper_macros_8h_a2f4071eec88d1e306665ada0f2dd80e4}{CPPUNIT\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+REGISTRATION}}, \mbox{\hyperlink{_helper_macros_8h_a028a5855a40ad3836e2a26aa48cd4c91}{CPPUNIT\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+NAMED\+\_\+\+REGISTRATION}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_test_factory_registry_a704548465fea8b52fa449845b8b42caf}\label{class_test_factory_registry_a704548465fea8b52fa449845b8b42caf}} 
+\index{TestFactoryRegistry@{TestFactoryRegistry}!TestFactoryRegistry@{TestFactoryRegistry}}
+\index{TestFactoryRegistry@{TestFactoryRegistry}!TestFactoryRegistry@{TestFactoryRegistry}}
+\doxysubsubsection{\texorpdfstring{TestFactoryRegistry()}{TestFactoryRegistry()}}
+{\footnotesize\ttfamily Test\+Factory\+Registry\+::\+Test\+Factory\+Registry (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Constructs the registry with the specified name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the registry. It is the name of \mbox{\hyperlink{class_test_suite}{Test\+Suite}} returned by \mbox{\hyperlink{class_test_factory_registry_a32337a90fd885e55dbba1d26e4d9c2e2}{make\+Test()}}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_test_factory_registry_abb68b347450c97ff0dfc9ea3dfe03f4c}\label{class_test_factory_registry_abb68b347450c97ff0dfc9ea3dfe03f4c}} 
+\index{TestFactoryRegistry@{TestFactoryRegistry}!addRegistry@{addRegistry}}
+\index{addRegistry@{addRegistry}!TestFactoryRegistry@{TestFactoryRegistry}}
+\doxysubsubsection{\texorpdfstring{addRegistry()}{addRegistry()}}
+{\footnotesize\ttfamily void Test\+Factory\+Registry\+::add\+Registry (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+Adds a registry to the registry.
+
+Convenience method to help create test hierarchy. See \mbox{\hyperlink{class_test_factory_registry}{Test\+Factory\+Registry}} detail for examples of use. Calling this method is equivalent to\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{this-\/>\mbox{\hyperlink{class_test_factory_registry_a632c38375727ca735e2c1897bd625b99}{registerFactory}}( \mbox{\hyperlink{class_test_factory_registry_ade673d8465371d581c7a704a7baa4620}{TestFactoryRegistry::getRegistry}}( name ) );}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the registry to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_test_factory_registry_a39180636ddd11a499d15614a335b17d5}\label{class_test_factory_registry_a39180636ddd11a499d15614a335b17d5}} 
+\index{TestFactoryRegistry@{TestFactoryRegistry}!addTestToSuite@{addTestToSuite}}
+\index{addTestToSuite@{addTestToSuite}!TestFactoryRegistry@{TestFactoryRegistry}}
+\doxysubsubsection{\texorpdfstring{addTestToSuite()}{addTestToSuite()}}
+{\footnotesize\ttfamily void Test\+Factory\+Registry\+::add\+Test\+To\+Suite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_test_suite}{Test\+Suite}} $\ast$}]{suite }\end{DoxyParamCaption})}
+
+
+
+Adds the registered tests to the specified suite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em suite} & Suite the tests are added to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_test_factory_registry_ade673d8465371d581c7a704a7baa4620}\label{class_test_factory_registry_ade673d8465371d581c7a704a7baa4620}} 
+\index{TestFactoryRegistry@{TestFactoryRegistry}!getRegistry@{getRegistry}}
+\index{getRegistry@{getRegistry}!TestFactoryRegistry@{TestFactoryRegistry}}
+\doxysubsubsection{\texorpdfstring{getRegistry()}{getRegistry()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_test_factory_registry}{Test\+Factory\+Registry}} \& Test\+Factory\+Registry\+::get\+Registry (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name = {\ttfamily \char`\"{}All~Tests\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns a named registry. 
+
+If the {\itshape name} is left to its default value, then the registry that is returned is the one used by \mbox{\hyperlink{_helper_macros_8h_a2f4071eec88d1e306665ada0f2dd80e4}{CPPUNIT\+\_\+\+TEST\+\_\+\+SUITE\+\_\+\+REGISTRATION()}}\+: the \textquotesingle{}top\textquotesingle{} level registry.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the registry to return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Registry. If the registry does not exist, it is created with the specified name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_test_factory_registry_a8638d92944309341c68089aa098800cb}\label{class_test_factory_registry_a8638d92944309341c68089aa098800cb}} 
+\index{TestFactoryRegistry@{TestFactoryRegistry}!isValid@{isValid}}
+\index{isValid@{isValid}!TestFactoryRegistry@{TestFactoryRegistry}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily static bool Test\+Factory\+Registry\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Tests if the registry is valid.
+
+This method should be used when unregistering test factory on static variable destruction to ensure that the registry has not been already destroyed (in that case there is no need to unregister the test factory).
+
+You should not concern yourself with this method unless you are writing a class like \mbox{\hyperlink{class_auto_register_suite}{Auto\+Register\+Suite}}.
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the specified registry has not been destroyed, otherwise returns {\ttfamily false}. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_auto_register_suite}{Auto\+Register\+Suite}}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_test_factory_registry_a32337a90fd885e55dbba1d26e4d9c2e2}\label{class_test_factory_registry_a32337a90fd885e55dbba1d26e4d9c2e2}} 
+\index{TestFactoryRegistry@{TestFactoryRegistry}!makeTest@{makeTest}}
+\index{makeTest@{makeTest}!TestFactoryRegistry@{TestFactoryRegistry}}
+\doxysubsubsection{\texorpdfstring{makeTest()}{makeTest()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_test}{Test}} $\ast$ Test\+Factory\+Registry\+::make\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a new \mbox{\hyperlink{class_test_suite}{Test\+Suite}} that contains the registered test. 
+
+\begin{DoxyReturn}{Returns}
+A new \mbox{\hyperlink{class_test_suite}{Test\+Suite}} which contains all the test added using \mbox{\hyperlink{class_test_factory_registry_a632c38375727ca735e2c1897bd625b99}{register\+Factory(\+Test\+Factory $\ast$)}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_test_factory_a0536f60b1157e65c44a115820aba17ee}{Test\+Factory}}.
+
+\mbox{\Hypertarget{class_test_factory_registry_aff8d8215ec83fbb77d46706264e2f161}\label{class_test_factory_registry_aff8d8215ec83fbb77d46706264e2f161}} 
+\index{TestFactoryRegistry@{TestFactoryRegistry}!registerFactory@{registerFactory}}
+\index{registerFactory@{registerFactory}!TestFactoryRegistry@{TestFactoryRegistry}}
+\doxysubsubsection{\texorpdfstring{registerFactory()}{registerFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Test\+Factory\+Registry\+::register\+Factory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{\mbox{\hyperlink{class_test_factory}{Test\+Factory}} $\ast$}]{factory }\end{DoxyParamCaption})}
+
+
+
+Adds the specified \mbox{\hyperlink{class_test_factory}{Test\+Factory}} with a specific name (DEPRECATED). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name associated to the factory. \\
+\hline
+{\em factory} & Factory to register. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000008}{Deprecated}}]Use \mbox{\hyperlink{class_test_factory_registry_a632c38375727ca735e2c1897bd625b99}{register\+Factory( Test\+Factory $\ast$)}} instead. \end{DoxyRefDesc}
+\mbox{\Hypertarget{class_test_factory_registry_a632c38375727ca735e2c1897bd625b99}\label{class_test_factory_registry_a632c38375727ca735e2c1897bd625b99}} 
+\index{TestFactoryRegistry@{TestFactoryRegistry}!registerFactory@{registerFactory}}
+\index{registerFactory@{registerFactory}!TestFactoryRegistry@{TestFactoryRegistry}}
+\doxysubsubsection{\texorpdfstring{registerFactory()}{registerFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Test\+Factory\+Registry\+::register\+Factory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_test_factory}{Test\+Factory}} $\ast$}]{factory }\end{DoxyParamCaption})}
+
+
+
+Adds the specified \mbox{\hyperlink{class_test_factory}{Test\+Factory}} to the registry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory} & Factory to register. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_test_factory_registry_afa3fb925b07eb34e9ccfab84812afc18}\label{class_test_factory_registry_afa3fb925b07eb34e9ccfab84812afc18}} 
+\index{TestFactoryRegistry@{TestFactoryRegistry}!unregisterFactory@{unregisterFactory}}
+\index{unregisterFactory@{unregisterFactory}!TestFactoryRegistry@{TestFactoryRegistry}}
+\doxysubsubsection{\texorpdfstring{unregisterFactory()}{unregisterFactory()}}
+{\footnotesize\ttfamily void Test\+Factory\+Registry\+::unregister\+Factory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_test_factory}{Test\+Factory}} $\ast$}]{factory }\end{DoxyParamCaption})}
+
+Removes the specified \mbox{\hyperlink{class_test_factory}{Test\+Factory}} from the registry.
+
+The specified factory is not destroyed. 
+\begin{DoxyParams}{Parameters}
+{\em factory} & Factory to remove from the registry. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]Address case when trying to remove a Test\+Registry\+Factory. \end{DoxyRefDesc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/extensions/Test\+Factory\+Registry.\+h\end{DoxyCompactItemize}

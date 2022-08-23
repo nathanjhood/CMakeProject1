@@ -1,0 +1,142 @@
+\hypertarget{structbasic__fp}{}\doxysection{basic\+\_\+fp\texorpdfstring{$<$}{<} F \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structbasic__fp}\index{basic\_fp$<$ F $>$@{basic\_fp$<$ F $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{structbasic__fp_afb4c96ca240a8194e836868d1e9fa031}{basic\+\_\+fp}} (uint64\+\_\+t f\+\_\+val, int e\+\_\+val)
+\item 
+{\footnotesize template$<$typename Float $>$ }\\FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{structbasic__fp_ab2b136890921712188259457c5a558c6}{basic\+\_\+fp}} (Float n)
+\item 
+{\footnotesize template$<$typename Float , FMT\+\_\+\+ENABLE\+\_\+\+IF(!is\+\_\+double\+\_\+double$<$ Float $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structbasic__fp_a33b2c6d71562fa7c52325e7a0d4a1c28}{assign}} (Float n) -\/$>$ bool
+\item 
+{\footnotesize template$<$typename Float , FMT\+\_\+\+ENABLE\+\_\+\+IF(is\+\_\+double\+\_\+double$<$ Float $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structbasic__fp_a33b2c6d71562fa7c52325e7a0d4a1c28}{assign}} (Float n) -\/$>$ bool
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structbasic__fp_a8decde1b15c75c275b9c9576474d0d57}\label{structbasic__fp_a8decde1b15c75c275b9c9576474d0d57}} 
+F {\bfseries f}
+\item 
+\mbox{\Hypertarget{structbasic__fp_a1e4a14ea86e324547aa69f30d426d0c6}\label{structbasic__fp_a1e4a14ea86e324547aa69f30d426d0c6}} 
+int {\bfseries e}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr const int \mbox{\hyperlink{structbasic__fp_ad4a62e53317a99891b59183850569b2e}{num\+\_\+significand\+\_\+bits}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structbasic__fp_a8dcf335c81c0630b9612b57a629584fa}\label{structbasic__fp_a8dcf335c81c0630b9612b57a629584fa}} 
+\index{basic\_fp$<$ F $>$@{basic\_fp$<$ F $>$}!basic\_fp@{basic\_fp}}
+\index{basic\_fp@{basic\_fp}!basic\_fp$<$ F $>$@{basic\_fp$<$ F $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_fp()}{basic\_fp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename F $>$ \\
+constexpr \mbox{\hyperlink{structbasic__fp}{basic\+\_\+fp}}$<$ F $>$\mbox{\hyperlink{structbasic__fp}{\+::basic\+\_\+fp}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1379 : f(0), e(0) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structbasic__fp_afb4c96ca240a8194e836868d1e9fa031}\label{structbasic__fp_afb4c96ca240a8194e836868d1e9fa031}} 
+\index{basic\_fp$<$ F $>$@{basic\_fp$<$ F $>$}!basic\_fp@{basic\_fp}}
+\index{basic\_fp@{basic\_fp}!basic\_fp$<$ F $>$@{basic\_fp$<$ F $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_fp()}{basic\_fp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename F $>$ \\
+constexpr \mbox{\hyperlink{structbasic__fp}{basic\+\_\+fp}}$<$ F $>$\mbox{\hyperlink{structbasic__fp}{\+::basic\+\_\+fp}} (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{f\+\_\+val,  }\item[{int}]{e\+\_\+val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1380 : f(f\_val), e(e\_val) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structbasic__fp_ab2b136890921712188259457c5a558c6}\label{structbasic__fp_ab2b136890921712188259457c5a558c6}} 
+\index{basic\_fp$<$ F $>$@{basic\_fp$<$ F $>$}!basic\_fp@{basic\_fp}}
+\index{basic\_fp@{basic\_fp}!basic\_fp$<$ F $>$@{basic\_fp$<$ F $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_fp()}{basic\_fp()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename F $>$ \\
+template$<$typename Float $>$ \\
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{structbasic__fp}{basic\+\_\+fp}}$<$ F $>$\mbox{\hyperlink{structbasic__fp}{\+::basic\+\_\+fp}} (\begin{DoxyParamCaption}\item[{Float}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1383 \{ assign(n); \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structbasic__fp_a33b2c6d71562fa7c52325e7a0d4a1c28}\label{structbasic__fp_a33b2c6d71562fa7c52325e7a0d4a1c28}} 
+\index{basic\_fp$<$ F $>$@{basic\_fp$<$ F $>$}!assign@{assign}}
+\index{assign@{assign}!basic\_fp$<$ F $>$@{basic\_fp$<$ F $>$}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename F $>$ \\
+template$<$typename Float , FMT\+\_\+\+ENABLE\+\_\+\+IF(!is\+\_\+double\+\_\+double$<$ Float $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structbasic__fp}{basic\+\_\+fp}}$<$ F $>$\+::assign (\begin{DoxyParamCaption}\item[{Float}]{n }\end{DoxyParamCaption}) -\/$>$ bool \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1387                                              \{}
+\DoxyCodeLine{1388     \textcolor{keyword}{static\_assert}(std::numeric\_limits<Float>::digits <= 113, \textcolor{stringliteral}{"{}unsupported FP"{}});}
+\DoxyCodeLine{1389     \textcolor{comment}{// Assume Float is in the format [sign][exponent][significand].}}
+\DoxyCodeLine{1390     \textcolor{keyword}{using }carrier\_uint = \textcolor{keyword}{typename} \mbox{\hyperlink{structdragonbox_1_1float__info}{dragonbox::float\_info<Float>::carrier\_uint}};}
+\DoxyCodeLine{1391     \textcolor{keyword}{const} \textcolor{keyword}{auto} num\_float\_significand\_bits =}
+\DoxyCodeLine{1392         detail::num\_significand\_bits<Float>();}
+\DoxyCodeLine{1393     \textcolor{keyword}{const} \textcolor{keyword}{auto} implicit\_bit = carrier\_uint(1) << num\_float\_significand\_bits;}
+\DoxyCodeLine{1394     \textcolor{keyword}{const} \textcolor{keyword}{auto} significand\_mask = implicit\_bit -\/ 1;}
+\DoxyCodeLine{1395     \textcolor{keyword}{auto} u = bit\_cast<carrier\_uint>(n);}
+\DoxyCodeLine{1396     f = \textcolor{keyword}{static\_cast<}F\textcolor{keyword}{>}(u \& significand\_mask);}
+\DoxyCodeLine{1397     \textcolor{keyword}{auto} biased\_e = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}((u \& exponent\_mask<Float>()) >>}
+\DoxyCodeLine{1398                                      num\_float\_significand\_bits);}
+\DoxyCodeLine{1399     \textcolor{comment}{// The predecessor is closer if n is a normalized power of 2 (f == 0)}}
+\DoxyCodeLine{1400     \textcolor{comment}{// other than the smallest normalized number (biased\_e > 1).}}
+\DoxyCodeLine{1401     \textcolor{keyword}{auto} is\_predecessor\_closer = f == 0 \&\& biased\_e > 1;}
+\DoxyCodeLine{1402     \textcolor{keywordflow}{if} (biased\_e == 0)}
+\DoxyCodeLine{1403       biased\_e = 1;  \textcolor{comment}{// Subnormals use biased exponent 1 (min exponent).}}
+\DoxyCodeLine{1404     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (has\_implicit\_bit<Float>())}
+\DoxyCodeLine{1405       f += \textcolor{keyword}{static\_cast<}F\textcolor{keyword}{>}(implicit\_bit);}
+\DoxyCodeLine{1406     e = biased\_e -\/ exponent\_bias<Float>() -\/ num\_float\_significand\_bits;}
+\DoxyCodeLine{1407     \textcolor{keywordflow}{if} (!has\_implicit\_bit<Float>()) ++e;}
+\DoxyCodeLine{1408     \textcolor{keywordflow}{return} is\_predecessor\_closer;}
+\DoxyCodeLine{1409   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structbasic__fp_a33b2c6d71562fa7c52325e7a0d4a1c28}\label{structbasic__fp_a33b2c6d71562fa7c52325e7a0d4a1c28}} 
+\index{basic\_fp$<$ F $>$@{basic\_fp$<$ F $>$}!assign@{assign}}
+\index{assign@{assign}!basic\_fp$<$ F $>$@{basic\_fp$<$ F $>$}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename F $>$ \\
+template$<$typename Float , FMT\+\_\+\+ENABLE\+\_\+\+IF(is\+\_\+double\+\_\+double$<$ Float $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structbasic__fp}{basic\+\_\+fp}}$<$ F $>$\+::assign (\begin{DoxyParamCaption}\item[{Float}]{n }\end{DoxyParamCaption}) -\/$>$ bool \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1412                                              \{}
+\DoxyCodeLine{1413     \textcolor{keyword}{static\_assert}(std::numeric\_limits<double>::is\_iec559, \textcolor{stringliteral}{"{}unsupported FP"{}});}
+\DoxyCodeLine{1414     \textcolor{keywordflow}{return} assign(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(n));}
+\DoxyCodeLine{1415   \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structbasic__fp_ad4a62e53317a99891b59183850569b2e}\label{structbasic__fp_ad4a62e53317a99891b59183850569b2e}} 
+\index{basic\_fp$<$ F $>$@{basic\_fp$<$ F $>$}!num\_significand\_bits@{num\_significand\_bits}}
+\index{num\_significand\_bits@{num\_significand\_bits}!basic\_fp$<$ F $>$@{basic\_fp$<$ F $>$}}
+\doxysubsubsection{\texorpdfstring{num\_significand\_bits}{num\_significand\_bits}}
+{\footnotesize\ttfamily template$<$typename F $>$ \\
+constexpr const int \mbox{\hyperlink{structbasic__fp}{basic\+\_\+fp}}$<$ F $>$\+::num\+\_\+significand\+\_\+bits\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{      \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\textcolor{keyword}{sizeof}(F) * num\_bits<unsigned char>())}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/format.\+h\end{DoxyCompactItemize}

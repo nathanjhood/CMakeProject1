@@ -1,0 +1,296 @@
+\hypertarget{classbasic__format__args}{}\doxysection{basic\+\_\+format\+\_\+args\texorpdfstring{$<$}{<} Context \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classbasic__format__args}\index{basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}}
+
+
+\textbackslash{}rst A view of a collection of formatting arguments.  
+
+
+
+
+{\ttfamily \#include $<$core.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbasic__format__args_a7569a8c7f913b1f906619701ab3150e6}\label{classbasic__format__args_a7569a8c7f913b1f906619701ab3150e6}} 
+using {\bfseries size\+\_\+type} = int
+\item 
+\mbox{\Hypertarget{classbasic__format__args_af22c7ecd69cc9c3dc2a9a113b5ff5088}\label{classbasic__format__args_af22c7ecd69cc9c3dc2a9a113b5ff5088}} 
+using {\bfseries format\+\_\+arg} = \mbox{\hyperlink{classbasic__format__arg}{basic\+\_\+format\+\_\+arg}}$<$ Context $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\constexpr FMT\+\_\+\+INLINE \mbox{\hyperlink{classbasic__format__args_ac40bdd2deb4a1000df76553387588775}{basic\+\_\+format\+\_\+args}} (const \mbox{\hyperlink{classformat__arg__store}{format\+\_\+arg\+\_\+store}}$<$ Context, Args... $>$ \&store)
+\begin{DoxyCompactList}\small\item\em \textbackslash{}rst Constructs a {\ttfamily \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}} object from {\ttfamily $\sim$fmt\mbox{\hyperlink{classformat__arg__store}{format\+\_\+arg\+\_\+store}}}. \end{DoxyCompactList}\item 
+constexpr FMT\+\_\+\+INLINE \mbox{\hyperlink{classbasic__format__args_a69dd0f6fb0e95f42f57cc3bfb095a397}{basic\+\_\+format\+\_\+args}} (const \mbox{\hyperlink{classdynamic__format__arg__store}{dynamic\+\_\+format\+\_\+arg\+\_\+store}}$<$ Context $>$ \&store)
+\begin{DoxyCompactList}\small\item\em \textbackslash{}rst Constructs a {\ttfamily \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}} object from {\ttfamily $\sim$fmt\mbox{\hyperlink{classdynamic__format__arg__store}{dynamic\+\_\+format\+\_\+arg\+\_\+store}}}. \end{DoxyCompactList}\item 
+constexpr \mbox{\hyperlink{classbasic__format__args_a1b6a098d11577f454964b51c2d7f9027}{basic\+\_\+format\+\_\+args}} (const \mbox{\hyperlink{classbasic__format__arg}{format\+\_\+arg}} $\ast$args, int count)
+\begin{DoxyCompactList}\small\item\em \textbackslash{}rst Constructs a {\ttfamily \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}} object from a dynamic set of arguments. \end{DoxyCompactList}\item 
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classbasic__format__args_a3339d3a4e4daaf7bb0de1a8084e7f086}{get}} (int id) const -\/$>$ \mbox{\hyperlink{classbasic__format__arg}{format\+\_\+arg}}
+\begin{DoxyCompactList}\small\item\em Returns the argument with the specified id. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Char $>$ }\\auto \mbox{\hyperlink{classbasic__format__args_abb2e1c3f297bf50f1bd260133495a024}{get}} (\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$ name) const -\/$>$ \mbox{\hyperlink{classbasic__format__arg}{format\+\_\+arg}}
+\item 
+{\footnotesize template$<$typename Char $>$ }\\auto \mbox{\hyperlink{classbasic__format__args_af905444f26ff942a669662b0ae34b136}{get\+\_\+id}} (\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$ name) const -\/$>$ int
+\item 
+auto \mbox{\hyperlink{classbasic__format__args_a7747894fe7c14fb78260b53ca7702782}{max\+\_\+size}} () const -\/$>$ int
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr auto \mbox{\hyperlink{classbasic__format__args_a812f954be08646744a14d71f20b97830}{is\+\_\+packed}} () const -\/$>$ bool
+\item 
+auto \mbox{\hyperlink{classbasic__format__args_a80f0313b5bd51b8dcc36a731037baafa}{has\+\_\+named\+\_\+args}} () const -\/$>$ bool
+\item 
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classbasic__format__args_a4d5e597c31ce51609d7fa770c83dad39}{type}} (int index) const -\/$>$ detail\+::type
+\item 
+constexpr FMT\+\_\+\+INLINE \mbox{\hyperlink{classbasic__format__args_a4240610061ba96ca3ec4ff8eec8fba66}{basic\+\_\+format\+\_\+args}} (unsigned long long desc, const detail\+::value$<$ Context $>$ $\ast$values)
+\item 
+constexpr \mbox{\hyperlink{classbasic__format__args_a115ed48d198a5d2264d72b15d21ca282}{basic\+\_\+format\+\_\+args}} (unsigned long long desc, const \mbox{\hyperlink{classbasic__format__arg}{format\+\_\+arg}} $\ast$args)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbasic__format__args_adec0b23c6fe57883ccb17d99b1498753}\label{classbasic__format__args_adec0b23c6fe57883ccb17d99b1498753}} 
+unsigned long long {\bfseries desc\+\_\+}
+\item 
+\mbox{\Hypertarget{classbasic__format__args_abec17ff0986d81f4f46f119171456a7b}\label{classbasic__format__args_abec17ff0986d81f4f46f119171456a7b}} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>const detail::value$<$ Context $>$ $\ast$ {\bfseries values\_}\\
+\>const \mbox{\hyperlink{classbasic__format__arg}{format\_arg}} $\ast$ {\bfseries args\_}\\
+\}; \\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Context$>$\newline
+class basic\+\_\+format\+\_\+args$<$ Context $>$}
+\textbackslash{}rst A view of a collection of formatting arguments. 
+
+To avoid lifetime issues it should only be used as a parameter type in type-\/erased functions such as {\ttfamily vformat}\+::
+
+void vlog(string\+\_\+view format\+\_\+str, format\+\_\+args args); // OK format\+\_\+args args = make\+\_\+format\+\_\+args(42); // Error\+: dangling reference \textbackslash{}endrst 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbasic__format__args_a4240610061ba96ca3ec4ff8eec8fba66}\label{classbasic__format__args_a4240610061ba96ca3ec4ff8eec8fba66}} 
+\index{basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}!basic\_format\_args@{basic\_format\_args}}
+\index{basic\_format\_args@{basic\_format\_args}!basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_format\_args()}{basic\_format\_args()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename Context $>$ \\
+constexpr FMT\+\_\+\+INLINE \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}$<$ Context $>$\mbox{\hyperlink{classbasic__format__args}{\+::basic\+\_\+format\+\_\+args}} (\begin{DoxyParamCaption}\item[{unsigned long long}]{desc,  }\item[{const detail\+::value$<$ Context $>$ $\ast$}]{values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1960       : desc\_(desc), values\_(values) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbasic__format__args_a115ed48d198a5d2264d72b15d21ca282}\label{classbasic__format__args_a115ed48d198a5d2264d72b15d21ca282}} 
+\index{basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}!basic\_format\_args@{basic\_format\_args}}
+\index{basic\_format\_args@{basic\_format\_args}!basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_format\_args()}{basic\_format\_args()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename Context $>$ \\
+constexpr \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}$<$ Context $>$\mbox{\hyperlink{classbasic__format__args}{\+::basic\+\_\+format\+\_\+args}} (\begin{DoxyParamCaption}\item[{unsigned long long}]{desc,  }\item[{const \mbox{\hyperlink{classbasic__format__arg}{format\+\_\+arg}} $\ast$}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1962       : desc\_(desc), args\_(args) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbasic__format__args_a0d421f3602fe0b494d10da851850b697}\label{classbasic__format__args_a0d421f3602fe0b494d10da851850b697}} 
+\index{basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}!basic\_format\_args@{basic\_format\_args}}
+\index{basic\_format\_args@{basic\_format\_args}!basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_format\_args()}{basic\_format\_args()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename Context $>$ \\
+constexpr \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}$<$ Context $>$\mbox{\hyperlink{classbasic__format__args}{\+::basic\+\_\+format\+\_\+args}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1965 : desc\_(0), args\_(\textcolor{keyword}{nullptr}) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbasic__format__args_ac40bdd2deb4a1000df76553387588775}\label{classbasic__format__args_ac40bdd2deb4a1000df76553387588775}} 
+\index{basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}!basic\_format\_args@{basic\_format\_args}}
+\index{basic\_format\_args@{basic\_format\_args}!basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_format\_args()}{basic\_format\_args()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename Context $>$ \\
+template$<$typename... Args$>$ \\
+constexpr FMT\+\_\+\+INLINE \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}$<$ Context $>$\mbox{\hyperlink{classbasic__format__args}{\+::basic\+\_\+format\+\_\+args}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classformat__arg__store}{format\+\_\+arg\+\_\+store}}$<$ Context, Args... $>$ \&}]{store }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+\textbackslash{}rst Constructs a {\ttfamily \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}} object from {\ttfamily $\sim$fmt\mbox{\hyperlink{classformat__arg__store}{format\+\_\+arg\+\_\+store}}}. 
+
+\textbackslash{}endrst 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1975       : \mbox{\hyperlink{classbasic__format__args}{basic\_format\_args}}(\mbox{\hyperlink{classformat__arg__store}{format\_arg\_store<Context, Args...>::desc}},}
+\DoxyCodeLine{1976                           store.data\_.args()) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbasic__format__args_a69dd0f6fb0e95f42f57cc3bfb095a397}\label{classbasic__format__args_a69dd0f6fb0e95f42f57cc3bfb095a397}} 
+\index{basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}!basic\_format\_args@{basic\_format\_args}}
+\index{basic\_format\_args@{basic\_format\_args}!basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_format\_args()}{basic\_format\_args()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename Context $>$ \\
+constexpr FMT\+\_\+\+INLINE \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}$<$ Context $>$\mbox{\hyperlink{classbasic__format__args}{\+::basic\+\_\+format\+\_\+args}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classdynamic__format__arg__store}{dynamic\+\_\+format\+\_\+arg\+\_\+store}}$<$ Context $>$ \&}]{store }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+\textbackslash{}rst Constructs a {\ttfamily \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}} object from {\ttfamily $\sim$fmt\mbox{\hyperlink{classdynamic__format__arg__store}{dynamic\+\_\+format\+\_\+arg\+\_\+store}}}. 
+
+\textbackslash{}endrst 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1986       : \mbox{\hyperlink{classbasic__format__args}{basic\_format\_args}}(store.get\_types(), store.data()) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbasic__format__args_a1b6a098d11577f454964b51c2d7f9027}\label{classbasic__format__args_a1b6a098d11577f454964b51c2d7f9027}} 
+\index{basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}!basic\_format\_args@{basic\_format\_args}}
+\index{basic\_format\_args@{basic\_format\_args}!basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}}
+\doxysubsubsection{\texorpdfstring{basic\_format\_args()}{basic\_format\_args()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename Context $>$ \\
+constexpr \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}$<$ Context $>$\mbox{\hyperlink{classbasic__format__args}{\+::basic\+\_\+format\+\_\+args}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classbasic__format__arg}{format\+\_\+arg}} $\ast$}]{args,  }\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+\textbackslash{}rst Constructs a {\ttfamily \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}} object from a dynamic set of arguments. 
+
+\textbackslash{}endrst 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1994       : \mbox{\hyperlink{classbasic__format__args}{basic\_format\_args}}(detail::is\_unpacked\_bit | detail::to\_unsigned(count),}
+\DoxyCodeLine{1995                           args) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbasic__format__args_abb2e1c3f297bf50f1bd260133495a024}\label{classbasic__format__args_abb2e1c3f297bf50f1bd260133495a024}} 
+\index{basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}!get@{get}}
+\index{get@{get}!basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Context $>$ \\
+template$<$typename Char $>$ \\
+auto \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}$<$ Context $>$\+::get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$}]{name }\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classbasic__format__arg}{format\+\_\+arg}} \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2012                                                              \{}
+\DoxyCodeLine{2013     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = get\_id(name);}
+\DoxyCodeLine{2014     \textcolor{keywordflow}{return} \textcolor{keywordtype}{id} >= 0 ? \mbox{\hyperlink{classbasic__format__args_a3339d3a4e4daaf7bb0de1a8084e7f086}{get}}(\textcolor{keywordtype}{id}) : format\_arg();}
+\DoxyCodeLine{2015   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbasic__format__args_a3339d3a4e4daaf7bb0de1a8084e7f086}\label{classbasic__format__args_a3339d3a4e4daaf7bb0de1a8084e7f086}} 
+\index{basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}!get@{get}}
+\index{get@{get}!basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Context $>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}$<$ Context $>$\+::get (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{classbasic__format__arg}{format\+\_\+arg}} \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the argument with the specified id. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1998                                                      \{}
+\DoxyCodeLine{1999     format\_arg arg;}
+\DoxyCodeLine{2000     \textcolor{keywordflow}{if} (!is\_packed()) \{}
+\DoxyCodeLine{2001       \textcolor{keywordflow}{if} (\textcolor{keywordtype}{id} < max\_size()) arg = args\_[id];}
+\DoxyCodeLine{2002       \textcolor{keywordflow}{return} arg;}
+\DoxyCodeLine{2003     \}}
+\DoxyCodeLine{2004     \textcolor{keywordflow}{if} (\textcolor{keywordtype}{id} >= detail::max\_packed\_args) \textcolor{keywordflow}{return} arg;}
+\DoxyCodeLine{2005     arg.type\_ = type(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{2006     \textcolor{keywordflow}{if} (arg.type\_ == detail::type::none\_type) \textcolor{keywordflow}{return} arg;}
+\DoxyCodeLine{2007     arg.value\_ = values\_[id];}
+\DoxyCodeLine{2008     \textcolor{keywordflow}{return} arg;}
+\DoxyCodeLine{2009   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbasic__format__args_af905444f26ff942a669662b0ae34b136}\label{classbasic__format__args_af905444f26ff942a669662b0ae34b136}} 
+\index{basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}!get\_id@{get\_id}}
+\index{get\_id@{get\_id}!basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}}
+\doxysubsubsection{\texorpdfstring{get\_id()}{get\_id()}}
+{\footnotesize\ttfamily template$<$typename Context $>$ \\
+template$<$typename Char $>$ \\
+auto \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}$<$ Context $>$\+::get\+\_\+id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$}]{name }\end{DoxyParamCaption}) const -\/$>$ int \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2018                                                          \{}
+\DoxyCodeLine{2019     \textcolor{keywordflow}{if} (!has\_named\_args()) \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{2020     \textcolor{keyword}{const} \textcolor{keyword}{auto}\& named\_args =}
+\DoxyCodeLine{2021         (is\_packed() ? values\_[-\/1] : args\_[-\/1].value\_).named\_args;}
+\DoxyCodeLine{2022     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < named\_args.size; ++i) \{}
+\DoxyCodeLine{2023       \textcolor{keywordflow}{if} (named\_args.data[i].name == name) \textcolor{keywordflow}{return} named\_args.data[i].id;}
+\DoxyCodeLine{2024     \}}
+\DoxyCodeLine{2025     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{2026   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbasic__format__args_a80f0313b5bd51b8dcc36a731037baafa}\label{classbasic__format__args_a80f0313b5bd51b8dcc36a731037baafa}} 
+\index{basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}!has\_named\_args@{has\_named\_args}}
+\index{has\_named\_args@{has\_named\_args}!basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}}
+\doxysubsubsection{\texorpdfstring{has\_named\_args()}{has\_named\_args()}}
+{\footnotesize\ttfamily template$<$typename Context $>$ \\
+auto \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}$<$ Context $>$\+::has\+\_\+named\+\_\+args (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ bool \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1948                                       \{}
+\DoxyCodeLine{1949     \textcolor{keywordflow}{return} (desc\_ \& detail::has\_named\_args\_bit) != 0;}
+\DoxyCodeLine{1950   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbasic__format__args_a812f954be08646744a14d71f20b97830}\label{classbasic__format__args_a812f954be08646744a14d71f20b97830}} 
+\index{basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}!is\_packed@{is\_packed}}
+\index{is\_packed@{is\_packed}!basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}}
+\doxysubsubsection{\texorpdfstring{is\_packed()}{is\_packed()}}
+{\footnotesize\ttfamily template$<$typename Context $>$ \\
+constexpr auto \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}$<$ Context $>$\+::is\+\_\+packed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ bool \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1945                                            \{}
+\DoxyCodeLine{1946     \textcolor{keywordflow}{return} (desc\_ \& detail::is\_unpacked\_bit) == 0;}
+\DoxyCodeLine{1947   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbasic__format__args_a7747894fe7c14fb78260b53ca7702782}\label{classbasic__format__args_a7747894fe7c14fb78260b53ca7702782}} 
+\index{basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}!max\_size@{max\_size}}
+\index{max\_size@{max\_size}!basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}}
+\doxysubsubsection{\texorpdfstring{max\_size()}{max\_size()}}
+{\footnotesize\ttfamily template$<$typename Context $>$ \\
+auto \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}$<$ Context $>$\+::max\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ int \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2028                                \{}
+\DoxyCodeLine{2029     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} max\_packed = detail::max\_packed\_args;}
+\DoxyCodeLine{2030     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(is\_packed() ? max\_packed}
+\DoxyCodeLine{2031                                         : desc\_ \& \string~detail::is\_unpacked\_bit);}
+\DoxyCodeLine{2032   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbasic__format__args_a4d5e597c31ce51609d7fa770c83dad39}\label{classbasic__format__args_a4d5e597c31ce51609d7fa770c83dad39}} 
+\index{basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}!type@{type}}
+\index{type@{type}!basic\_format\_args$<$ Context $>$@{basic\_format\_args$<$ Context $>$}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily template$<$typename Context $>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}$<$ Context $>$\+::type (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const -\/$>$ detail\+::type \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1952                                                          \{}
+\DoxyCodeLine{1953     \textcolor{keywordtype}{int} shift = index * detail::packed\_arg\_bits;}
+\DoxyCodeLine{1954     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mask = (1 << detail::packed\_arg\_bits) -\/ 1;}
+\DoxyCodeLine{1955     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}detail::type\textcolor{keyword}{>}((desc\_ >> shift) \& mask);}
+\DoxyCodeLine{1956   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/core.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,74 @@
+\hypertarget{classget__locale}{}\doxysection{get\+\_\+locale Class Reference}
+\label{classget__locale}\index{get\_locale@{get\_locale}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classget__locale_a1923441e90f9a83f1aff5c8819119af4}{get\+\_\+locale}} (bool localized, \mbox{\hyperlink{classlocale__ref}{locale\+\_\+ref}} loc)
+\item 
+\mbox{\hyperlink{classget__locale_ae9274e0bb78907b1faebfcc5f85a5b2d}{operator const std\+::locale \&}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classget__locale_ac484baaafaa8da31b5560c7a445cdc53}\label{classget__locale_ac484baaafaa8da31b5560c7a445cdc53}} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>std::locale {\bfseries locale\_}\\
+\}; \\
+
+\end{tabbing}\item 
+\mbox{\Hypertarget{classget__locale_a3b54a656c2d9e75895aeaa57d1094ec8}\label{classget__locale_a3b54a656c2d9e75895aeaa57d1094ec8}} 
+bool {\bfseries has\+\_\+locale\+\_\+} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classget__locale_a1923441e90f9a83f1aff5c8819119af4}\label{classget__locale_a1923441e90f9a83f1aff5c8819119af4}} 
+\index{get\_locale@{get\_locale}!get\_locale@{get\_locale}}
+\index{get\_locale@{get\_locale}!get\_locale@{get\_locale}}
+\doxysubsubsection{\texorpdfstring{get\_locale()}{get\_locale()}}
+{\footnotesize\ttfamily get\+\_\+locale\+::get\+\_\+locale (\begin{DoxyParamCaption}\item[{bool}]{localized,  }\item[{\mbox{\hyperlink{classlocale__ref}{locale\+\_\+ref}}}]{loc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1558                                              : has\_locale\_(localized) \{}
+\DoxyCodeLine{1559     \textcolor{keywordflow}{if} (localized)}
+\DoxyCodeLine{1560       ::new (\&locale\_) std::locale(loc.template get<std::locale>());}
+\DoxyCodeLine{1561   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classget__locale_a8a9a82bf0929588964e79da5d3a45655}\label{classget__locale_a8a9a82bf0929588964e79da5d3a45655}} 
+\index{get\_locale@{get\_locale}!````~get\_locale@{$\sim$get\_locale}}
+\index{````~get\_locale@{$\sim$get\_locale}!get\_locale@{get\_locale}}
+\doxysubsubsection{\texorpdfstring{$\sim$get\_locale()}{~get\_locale()}}
+{\footnotesize\ttfamily get\+\_\+locale\+::$\sim$get\+\_\+locale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1562                 \{}
+\DoxyCodeLine{1563     \textcolor{keywordflow}{if} (has\_locale\_) locale\_.\string~locale();}
+\DoxyCodeLine{1564   \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classget__locale_ae9274e0bb78907b1faebfcc5f85a5b2d}\label{classget__locale_ae9274e0bb78907b1faebfcc5f85a5b2d}} 
+\index{get\_locale@{get\_locale}!operator const std::locale \&@{operator const std::locale \&}}
+\index{operator const std::locale \&@{operator const std::locale \&}!get\_locale@{get\_locale}}
+\doxysubsubsection{\texorpdfstring{operator const std::locale \&()}{operator const std::locale \&()}}
+{\footnotesize\ttfamily get\+\_\+locale\+::operator const std\+::locale \& (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1565                                     \{}
+\DoxyCodeLine{1566     \textcolor{keywordflow}{return} has\_locale\_ ? locale\_ : get\_classic\_locale();}
+\DoxyCodeLine{1567   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/chrono.\+h\end{DoxyCompactItemize}

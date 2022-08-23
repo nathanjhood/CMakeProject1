@@ -1,0 +1,530 @@
+\hypertarget{classbigint}{}\doxysection{bigint Class Reference}
+\label{classbigint}\index{bigint@{bigint}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbigint_ac3dfb5a99c656311d77d97d0d19a0706}{bigint}} (uint64\+\_\+t n)
+\item 
+\mbox{\Hypertarget{classbigint_a1ffe715fea5a1a5bb125637d8f702a51}\label{classbigint_a1ffe715fea5a1a5bb125637d8f702a51}} 
+{\bfseries bigint} (const \mbox{\hyperlink{classbigint}{bigint}} \&)=delete
+\item 
+\mbox{\Hypertarget{classbigint_ada85cc34328c613e70fc25ab3e826d66}\label{classbigint_ada85cc34328c613e70fc25ab3e826d66}} 
+void {\bfseries operator=} (const \mbox{\hyperlink{classbigint}{bigint}} \&)=delete
+\item 
+FMT\+\_\+\+CONSTEXPR20 void \mbox{\hyperlink{classbigint_a35f5ca61fb17d84186171aa6e8e7b43e}{assign}} (const \mbox{\hyperlink{classbigint}{bigint}} \&other)
+\item 
+{\footnotesize template$<$typename Int $>$ }\\FMT\+\_\+\+CONSTEXPR20 void \mbox{\hyperlink{classbigint_af99465f0d6631b1a07b53cf12677dce4}{operator=}} (Int n)
+\item 
+FMT\+\_\+\+CONSTEXPR20 int \mbox{\hyperlink{classbigint_ad06afa93122c6b2573e941e75b7d89a9}{num\+\_\+bigits}} () const
+\item 
+FMT\+\_\+\+NOINLINE FMT\+\_\+\+CONSTEXPR20 \mbox{\hyperlink{classbigint}{bigint}} \& \mbox{\hyperlink{classbigint_a823b76a02ac496de7f16bcc80c2735a7}{operator$<$$<$=}} (int shift)
+\item 
+{\footnotesize template$<$typename Int $>$ }\\FMT\+\_\+\+CONSTEXPR20 \mbox{\hyperlink{classbigint}{bigint}} \& \mbox{\hyperlink{classbigint_acd60251b9ac7803e9a4edb6ee6cbac24}{operator$\ast$=}} (Int \mbox{\hyperlink{classvalue}{value}})
+\item 
+FMT\+\_\+\+CONSTEXPR20 void \mbox{\hyperlink{classbigint_a187649caa67871109bcc6ab9d872ebde}{assign\+\_\+pow10}} (int exp)
+\item 
+FMT\+\_\+\+CONSTEXPR20 void \mbox{\hyperlink{classbigint_a74e226d60e9f787a2e03c82b7df169b9}{square}} ()
+\item 
+FMT\+\_\+\+CONSTEXPR20 void \mbox{\hyperlink{classbigint_ae432d352bb69a37e29899c0590e001ba}{align}} (const \mbox{\hyperlink{classbigint}{bigint}} \&other)
+\item 
+FMT\+\_\+\+CONSTEXPR20 int \mbox{\hyperlink{classbigint_aa5031fe6de896cd0b82d5db1d339ec22}{divmod\+\_\+assign}} (const \mbox{\hyperlink{classbigint}{bigint}} \&divisor)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries bigits\+\_\+capacity} = 32
+ \}
+\item 
+\mbox{\Hypertarget{classbigint_af7d3ca60c83911e723d15a50aef5d4dd}\label{classbigint_af7d3ca60c83911e723d15a50aef5d4dd}} 
+using {\bfseries bigit} = uint32\+\_\+t
+\item 
+\mbox{\Hypertarget{classbigint_a1ba39977489549c7c01e9fbc5b0fd05a}\label{classbigint_a1ba39977489549c7c01e9fbc5b0fd05a}} 
+using {\bfseries double\+\_\+bigit} = uint64\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+FMT\+\_\+\+CONSTEXPR20 bigit \mbox{\hyperlink{classbigint_ade0c080ff4c3d4591986d22921d73d83}{operator\mbox{[}$\,$\mbox{]}}} (int index) const
+\item 
+FMT\+\_\+\+CONSTEXPR20 bigit \& \mbox{\hyperlink{classbigint_a05477954e207a3faa7e02e3e7e1234c3}{operator\mbox{[}$\,$\mbox{]}}} (int index)
+\item 
+FMT\+\_\+\+CONSTEXPR20 void \mbox{\hyperlink{classbigint_a114157632df44b4500a9d49a8223cc3a}{subtract\+\_\+bigits}} (int index, bigit other, bigit \&borrow)
+\item 
+FMT\+\_\+\+CONSTEXPR20 void \mbox{\hyperlink{classbigint_ad51adcdf0f25d47d563e3981ec5d9cec}{remove\+\_\+leading\+\_\+zeros}} ()
+\item 
+FMT\+\_\+\+CONSTEXPR20 void \mbox{\hyperlink{classbigint_ab2d83277e1456453556e7a950d17ef02}{subtract\+\_\+aligned}} (const \mbox{\hyperlink{classbigint}{bigint}} \&other)
+\item 
+FMT\+\_\+\+CONSTEXPR20 void \mbox{\hyperlink{classbigint_a92d3f4de1dbfedbbd733abec8e0730c0}{multiply}} (uint32\+\_\+t \mbox{\hyperlink{classvalue}{value}})
+\item 
+{\footnotesize template$<$typename UInt , FMT\+\_\+\+ENABLE\+\_\+\+IF(std\+::is\+\_\+same$<$ UInt, uint64\+\_\+t $>$\mbox{\hyperlink{classvalue}{\+::value}}$\vert$$\vert$ std\+::is\+\_\+same$<$ UInt, uint128\+\_\+t $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\FMT\+\_\+\+CONSTEXPR20 void \mbox{\hyperlink{classbigint_ac2de7b104997c8be407ce9be930ed880}{multiply}} (UInt \mbox{\hyperlink{classvalue}{value}})
+\item 
+{\footnotesize template$<$typename UInt , FMT\+\_\+\+ENABLE\+\_\+\+IF(std\+::is\+\_\+same$<$ UInt, uint64\+\_\+t $>$\mbox{\hyperlink{classvalue}{\+::value}}$\vert$$\vert$ std\+::is\+\_\+same$<$ UInt, uint128\+\_\+t $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\FMT\+\_\+\+CONSTEXPR20 void \mbox{\hyperlink{classbigint_a4cabbd62ecf2c951fd3181b81091a66d}{assign}} (UInt n)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbigint_a14d1f2d8ed9130d6fcbe5c2ec149dfee}\label{classbigint_a14d1f2d8ed9130d6fcbe5c2ec149dfee}} 
+\mbox{\hyperlink{classbasic__memory__buffer}{basic\+\_\+memory\+\_\+buffer}}$<$ bigit, bigits\+\_\+capacity $>$ {\bfseries bigits\+\_\+}
+\item 
+\mbox{\Hypertarget{classbigint_a3f9dbdbde0c3502630ed638424ea5e88}\label{classbigint_a3f9dbdbde0c3502630ed638424ea5e88}} 
+int {\bfseries exp\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbigint_abe74c2c4903fed9e8840ff58b4c39443}\label{classbigint_abe74c2c4903fed9e8840ff58b4c39443}} 
+static constexpr const int {\bfseries bigit\+\_\+bits} = num\+\_\+bits$<$bigit$>$()
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbigint_a2cd69505524105acb7ee0daf64b55996}\label{classbigint_a2cd69505524105acb7ee0daf64b55996}} 
+struct {\bfseries formatter$<$ bigint $>$}
+\item 
+FMT\+\_\+\+CONSTEXPR20 int \mbox{\hyperlink{classbigint_a13d78570d65d5e24201e795cea3549f4}{compare}} (const \mbox{\hyperlink{classbigint}{bigint}} \&lhs, const \mbox{\hyperlink{classbigint}{bigint}} \&rhs)
+\item 
+FMT\+\_\+\+CONSTEXPR20 int \mbox{\hyperlink{classbigint_a7bd684152457f6d907eb639ca0f6de78}{add\+\_\+compare}} (const \mbox{\hyperlink{classbigint}{bigint}} \&lhs1, const \mbox{\hyperlink{classbigint}{bigint}} \&lhs2, const \mbox{\hyperlink{classbigint}{bigint}} \&rhs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classbigint_a6bd3c5c1f14568d4c43ceb68f3f4e6e7}\label{classbigint_a6bd3c5c1f14568d4c43ceb68f3f4e6e7}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2688 \{ bigits\_capacity = 32 \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbigint_a1edd081bca923021a625c8e901685c78}\label{classbigint_a1edd081bca923021a625c8e901685c78}} 
+\index{bigint@{bigint}!bigint@{bigint}}
+\index{bigint@{bigint}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{bigint()}{bigint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR20 bigint\+::bigint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2772 : exp\_(0) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbigint_ac3dfb5a99c656311d77d97d0d19a0706}\label{classbigint_ac3dfb5a99c656311d77d97d0d19a0706}} 
+\index{bigint@{bigint}!bigint@{bigint}}
+\index{bigint@{bigint}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{bigint()}{bigint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bigint\+::bigint (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2773 \{ assign(n); \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbigint_ae432d352bb69a37e29899c0590e001ba}\label{classbigint_ae432d352bb69a37e29899c0590e001ba}} 
+\index{bigint@{bigint}!align@{align}}
+\index{align@{align}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{align()}{align()}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR20 void bigint\+::align (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classbigint}{bigint}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2908                                                   \{}
+\DoxyCodeLine{2909     \textcolor{keywordtype}{int} exp\_difference = exp\_ -\/ other.exp\_;}
+\DoxyCodeLine{2910     \textcolor{keywordflow}{if} (exp\_difference <= 0) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{2911     \textcolor{keywordtype}{int} num\_bigits = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(bigits\_.size());}
+\DoxyCodeLine{2912     bigits\_.\mbox{\hyperlink{classbasic__memory__buffer_a153c47788d6d1a76ec97780748755ea1}{resize}}(to\_unsigned(num\_bigits + exp\_difference));}
+\DoxyCodeLine{2913     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = num\_bigits -\/ 1, j = i + exp\_difference; i >= 0; -\/-\/i, -\/-\/j)}
+\DoxyCodeLine{2914       bigits\_[j] = bigits\_[i];}
+\DoxyCodeLine{2915     std::uninitialized\_fill\_n(bigits\_.data(), exp\_difference, 0);}
+\DoxyCodeLine{2916     exp\_ -\/= exp\_difference;}
+\DoxyCodeLine{2917   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbigint_a35f5ca61fb17d84186171aa6e8e7b43e}\label{classbigint_a35f5ca61fb17d84186171aa6e8e7b43e}} 
+\index{bigint@{bigint}!assign@{assign}}
+\index{assign@{assign}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR20 void bigint\+::assign (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classbigint}{bigint}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2778                                                    \{}
+\DoxyCodeLine{2779     \textcolor{keyword}{auto} size = other.bigits\_.size();}
+\DoxyCodeLine{2780     bigits\_.\mbox{\hyperlink{classbasic__memory__buffer_a153c47788d6d1a76ec97780748755ea1}{resize}}(size);}
+\DoxyCodeLine{2781     \textcolor{keyword}{auto} \mbox{\hyperlink{structdata}{data}} = other.bigits\_.data();}
+\DoxyCodeLine{2782     std::copy(\mbox{\hyperlink{structdata}{data}}, \mbox{\hyperlink{structdata}{data}} + size, make\_checked(bigits\_.data(), size));}
+\DoxyCodeLine{2783     exp\_ = other.exp\_;}
+\DoxyCodeLine{2784   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbigint_a4cabbd62ecf2c951fd3181b81091a66d}\label{classbigint_a4cabbd62ecf2c951fd3181b81091a66d}} 
+\index{bigint@{bigint}!assign@{assign}}
+\index{assign@{assign}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename UInt , FMT\+\_\+\+ENABLE\+\_\+\+IF(std\+::is\+\_\+same$<$ UInt, uint64\+\_\+t $>$\mbox{\hyperlink{classvalue}{\+::value}}$\vert$$\vert$ std\+::is\+\_\+same$<$ UInt, uint128\+\_\+t $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
+FMT\+\_\+\+CONSTEXPR20 void bigint\+::assign (\begin{DoxyParamCaption}\item[{UInt}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2761                                       \{}
+\DoxyCodeLine{2762     \textcolor{keywordtype}{size\_t} num\_bigits = 0;}
+\DoxyCodeLine{2763     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{2764       bigits\_[num\_bigits++] = \textcolor{keyword}{static\_cast<}bigit\textcolor{keyword}{>}(n);}
+\DoxyCodeLine{2765       n >>= bigit\_bits;}
+\DoxyCodeLine{2766     \} \textcolor{keywordflow}{while} (n != 0);}
+\DoxyCodeLine{2767     bigits\_.\mbox{\hyperlink{classbasic__memory__buffer_a153c47788d6d1a76ec97780748755ea1}{resize}}(num\_bigits);}
+\DoxyCodeLine{2768     exp\_ = 0;}
+\DoxyCodeLine{2769   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbigint_a187649caa67871109bcc6ab9d872ebde}\label{classbigint_a187649caa67871109bcc6ab9d872ebde}} 
+\index{bigint@{bigint}!assign\_pow10@{assign\_pow10}}
+\index{assign\_pow10@{assign\_pow10}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{assign\_pow10()}{assign\_pow10()}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR20 void bigint\+::assign\+\_\+pow10 (\begin{DoxyParamCaption}\item[{int}]{exp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2859                                              \{}
+\DoxyCodeLine{2860     FMT\_ASSERT(exp >= 0, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{2861     \textcolor{keywordflow}{if} (exp == 0) \textcolor{keywordflow}{return} *\textcolor{keyword}{this} = 1;}
+\DoxyCodeLine{2862     \textcolor{comment}{// Find the top bit.}}
+\DoxyCodeLine{2863     \textcolor{keywordtype}{int} bitmask = 1;}
+\DoxyCodeLine{2864     \textcolor{keywordflow}{while} (exp >= bitmask) bitmask <<= 1;}
+\DoxyCodeLine{2865     bitmask >>= 1;}
+\DoxyCodeLine{2866     \textcolor{comment}{// pow(10, exp) = pow(5, exp) * pow(2, exp). First compute pow(5, exp) by}}
+\DoxyCodeLine{2867     \textcolor{comment}{// repeated squaring and multiplication.}}
+\DoxyCodeLine{2868     *\textcolor{keyword}{this} = 5;}
+\DoxyCodeLine{2869     bitmask >>= 1;}
+\DoxyCodeLine{2870     \textcolor{keywordflow}{while} (bitmask != 0) \{}
+\DoxyCodeLine{2871       square();}
+\DoxyCodeLine{2872       \textcolor{keywordflow}{if} ((exp \& bitmask) != 0) *\textcolor{keyword}{this} *= 5;}
+\DoxyCodeLine{2873       bitmask >>= 1;}
+\DoxyCodeLine{2874     \}}
+\DoxyCodeLine{2875     *\textcolor{keyword}{this} <<= exp;  \textcolor{comment}{// Multiply by pow(2, exp) by shifting.}}
+\DoxyCodeLine{2876   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbigint_aa5031fe6de896cd0b82d5db1d339ec22}\label{classbigint_aa5031fe6de896cd0b82d5db1d339ec22}} 
+\index{bigint@{bigint}!divmod\_assign@{divmod\_assign}}
+\index{divmod\_assign@{divmod\_assign}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{divmod\_assign()}{divmod\_assign()}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR20 int bigint\+::divmod\+\_\+assign (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classbigint}{bigint}} \&}]{divisor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2921                                                            \{}
+\DoxyCodeLine{2922     FMT\_ASSERT(\textcolor{keyword}{this} != \&divisor, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{2923     \textcolor{keywordflow}{if} (compare(*\textcolor{keyword}{this}, divisor) < 0) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{2924     FMT\_ASSERT(divisor.bigits\_[divisor.bigits\_.size() -\/ 1u] != 0, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{2925     align(divisor);}
+\DoxyCodeLine{2926     \textcolor{keywordtype}{int} quotient = 0;}
+\DoxyCodeLine{2927     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{2928       subtract\_aligned(divisor);}
+\DoxyCodeLine{2929       ++quotient;}
+\DoxyCodeLine{2930     \} \textcolor{keywordflow}{while} (compare(*\textcolor{keyword}{this}, divisor) >= 0);}
+\DoxyCodeLine{2931     \textcolor{keywordflow}{return} quotient;}
+\DoxyCodeLine{2932   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbigint_ac2de7b104997c8be407ce9be930ed880}\label{classbigint_ac2de7b104997c8be407ce9be930ed880}} 
+\index{bigint@{bigint}!multiply@{multiply}}
+\index{multiply@{multiply}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename UInt , FMT\+\_\+\+ENABLE\+\_\+\+IF(std\+::is\+\_\+same$<$ UInt, uint64\+\_\+t $>$\mbox{\hyperlink{classvalue}{\+::value}}$\vert$$\vert$ std\+::is\+\_\+same$<$ UInt, uint128\+\_\+t $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
+FMT\+\_\+\+CONSTEXPR20 void bigint\+::multiply (\begin{DoxyParamCaption}\item[{UInt}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2740                                             \{}
+\DoxyCodeLine{2741     \textcolor{keyword}{using }half\_uint =}
+\DoxyCodeLine{2742         conditional\_t<std::is\_same<UInt, uint128\_t>::value, uint64\_t, uint32\_t>;}
+\DoxyCodeLine{2743     \textcolor{keyword}{const} \textcolor{keywordtype}{int} shift = num\_bits<half\_uint>() -\/ bigit\_bits;}
+\DoxyCodeLine{2744     \textcolor{keyword}{const} UInt lower = \textcolor{keyword}{static\_cast<}half\_uint\textcolor{keyword}{>}(\mbox{\hyperlink{classvalue}{value}});}
+\DoxyCodeLine{2745     \textcolor{keyword}{const} UInt upper = \mbox{\hyperlink{classvalue}{value}} >> num\_bits<half\_uint>();}
+\DoxyCodeLine{2746     UInt carry = 0;}
+\DoxyCodeLine{2747     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0, n = bigits\_.size(); i < n; ++i) \{}
+\DoxyCodeLine{2748       UInt result = lower * bigits\_[i] + \textcolor{keyword}{static\_cast<}bigit\textcolor{keyword}{>}(carry);}
+\DoxyCodeLine{2749       carry = (upper * bigits\_[i] << shift) + (result >> bigit\_bits) +}
+\DoxyCodeLine{2750               (carry >> bigit\_bits);}
+\DoxyCodeLine{2751       bigits\_[i] = \textcolor{keyword}{static\_cast<}bigit\textcolor{keyword}{>}(result);}
+\DoxyCodeLine{2752     \}}
+\DoxyCodeLine{2753     \textcolor{keywordflow}{while} (carry != 0) \{}
+\DoxyCodeLine{2754       bigits\_.push\_back(\textcolor{keyword}{static\_cast<}bigit\textcolor{keyword}{>}(carry));}
+\DoxyCodeLine{2755       carry >>= bigit\_bits;}
+\DoxyCodeLine{2756     \}}
+\DoxyCodeLine{2757   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbigint_a92d3f4de1dbfedbbd733abec8e0730c0}\label{classbigint_a92d3f4de1dbfedbbd733abec8e0730c0}} 
+\index{bigint@{bigint}!multiply@{multiply}}
+\index{multiply@{multiply}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR20 void bigint\+::multiply (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2727                                                 \{}
+\DoxyCodeLine{2728     \textcolor{keyword}{const} double\_bigit wide\_value = \mbox{\hyperlink{classvalue}{value}};}
+\DoxyCodeLine{2729     bigit carry = 0;}
+\DoxyCodeLine{2730     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0, n = bigits\_.size(); i < n; ++i) \{}
+\DoxyCodeLine{2731       double\_bigit result = bigits\_[i] * wide\_value + carry;}
+\DoxyCodeLine{2732       bigits\_[i] = \textcolor{keyword}{static\_cast<}bigit\textcolor{keyword}{>}(result);}
+\DoxyCodeLine{2733       carry = \textcolor{keyword}{static\_cast<}bigit\textcolor{keyword}{>}(result >> bigit\_bits);}
+\DoxyCodeLine{2734     \}}
+\DoxyCodeLine{2735     \textcolor{keywordflow}{if} (carry != 0) bigits\_.push\_back(carry);}
+\DoxyCodeLine{2736   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbigint_ad06afa93122c6b2573e941e75b7d89a9}\label{classbigint_ad06afa93122c6b2573e941e75b7d89a9}} 
+\index{bigint@{bigint}!num\_bigits@{num\_bigits}}
+\index{num\_bigits@{num\_bigits}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{num\_bigits()}{num\_bigits()}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR20 int bigint\+::num\+\_\+bigits (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2791                                          \{}
+\DoxyCodeLine{2792     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(bigits\_.size()) + exp\_;}
+\DoxyCodeLine{2793   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbigint_acd60251b9ac7803e9a4edb6ee6cbac24}\label{classbigint_acd60251b9ac7803e9a4edb6ee6cbac24}} 
+\index{bigint@{bigint}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily template$<$typename Int $>$ \\
+FMT\+\_\+\+CONSTEXPR20 \mbox{\hyperlink{classbigint}{bigint}} \& bigint\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{Int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2810                                                                         \{}
+\DoxyCodeLine{2811     FMT\_ASSERT(\mbox{\hyperlink{classvalue}{value}} > 0, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{2812     multiply(uint32\_or\_64\_or\_128\_t<Int>(\mbox{\hyperlink{classvalue}{value}}));}
+\DoxyCodeLine{2813     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{2814   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbigint_a823b76a02ac496de7f16bcc80c2735a7}\label{classbigint_a823b76a02ac496de7f16bcc80c2735a7}} 
+\index{bigint@{bigint}!operator$<$$<$=@{operator$<$$<$=}}
+\index{operator$<$$<$=@{operator$<$$<$=}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$=()}{operator<<=()}}
+{\footnotesize\ttfamily FMT\+\_\+\+NOINLINE FMT\+\_\+\+CONSTEXPR20 \mbox{\hyperlink{classbigint}{bigint}} \& bigint\+::operator$<$$<$= (\begin{DoxyParamCaption}\item[{int}]{shift }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2795                                                               \{}
+\DoxyCodeLine{2796     FMT\_ASSERT(shift >= 0, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{2797     exp\_ += shift / bigit\_bits;}
+\DoxyCodeLine{2798     shift \%= bigit\_bits;}
+\DoxyCodeLine{2799     \textcolor{keywordflow}{if} (shift == 0) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{2800     bigit carry = 0;}
+\DoxyCodeLine{2801     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0, n = bigits\_.size(); i < n; ++i) \{}
+\DoxyCodeLine{2802       bigit c = bigits\_[i] >> (bigit\_bits -\/ shift);}
+\DoxyCodeLine{2803       bigits\_[i] = (bigits\_[i] << shift) + carry;}
+\DoxyCodeLine{2804       carry = c;}
+\DoxyCodeLine{2805     \}}
+\DoxyCodeLine{2806     \textcolor{keywordflow}{if} (carry != 0) bigits\_.push\_back(carry);}
+\DoxyCodeLine{2807     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{2808   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbigint_af99465f0d6631b1a07b53cf12677dce4}\label{classbigint_af99465f0d6631b1a07b53cf12677dce4}} 
+\index{bigint@{bigint}!operator=@{operator=}}
+\index{operator=@{operator=}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename Int $>$ \\
+FMT\+\_\+\+CONSTEXPR20 void bigint\+::operator= (\begin{DoxyParamCaption}\item[{Int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2786                                                                 \{}
+\DoxyCodeLine{2787     FMT\_ASSERT(n > 0, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{2788     assign(uint64\_or\_128\_t<Int>(n));}
+\DoxyCodeLine{2789   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbigint_a05477954e207a3faa7e02e3e7e1234c3}\label{classbigint_a05477954e207a3faa7e02e3e7e1234c3}} 
+\index{bigint@{bigint}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR20 bigit \& bigint\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2695                                                \{}
+\DoxyCodeLine{2696     \textcolor{keywordflow}{return} bigits\_[to\_unsigned(index)];}
+\DoxyCodeLine{2697   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbigint_ade0c080ff4c3d4591986d22921d73d83}\label{classbigint_ade0c080ff4c3d4591986d22921d73d83}} 
+\index{bigint@{bigint}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR20 bigit bigint\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2692                                                     \{}
+\DoxyCodeLine{2693     \textcolor{keywordflow}{return} bigits\_[to\_unsigned(index)];}
+\DoxyCodeLine{2694   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbigint_ad51adcdf0f25d47d563e3981ec5d9cec}\label{classbigint_ad51adcdf0f25d47d563e3981ec5d9cec}} 
+\index{bigint@{bigint}!remove\_leading\_zeros@{remove\_leading\_zeros}}
+\index{remove\_leading\_zeros@{remove\_leading\_zeros}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{remove\_leading\_zeros()}{remove\_leading\_zeros()}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR20 void bigint\+::remove\+\_\+leading\+\_\+zeros (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2709                                               \{}
+\DoxyCodeLine{2710     \textcolor{keywordtype}{int} num\_bigits = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(bigits\_.size()) -\/ 1;}
+\DoxyCodeLine{2711     \textcolor{keywordflow}{while} (num\_bigits > 0 \&\& (*\textcolor{keyword}{this})[num\_bigits] == 0) -\/-\/num\_bigits;}
+\DoxyCodeLine{2712     bigits\_.\mbox{\hyperlink{classbasic__memory__buffer_a153c47788d6d1a76ec97780748755ea1}{resize}}(to\_unsigned(num\_bigits + 1));}
+\DoxyCodeLine{2713   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbigint_a74e226d60e9f787a2e03c82b7df169b9}\label{classbigint_a74e226d60e9f787a2e03c82b7df169b9}} 
+\index{bigint@{bigint}!square@{square}}
+\index{square@{square}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{square()}{square()}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR20 void bigint\+::square (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2878                                 \{}
+\DoxyCodeLine{2879     \textcolor{keywordtype}{int} num\_bigits = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(bigits\_.size());}
+\DoxyCodeLine{2880     \textcolor{keywordtype}{int} num\_result\_bigits = 2 * num\_bigits;}
+\DoxyCodeLine{2881     \mbox{\hyperlink{classbasic__memory__buffer}{basic\_memory\_buffer<bigit, bigits\_capacity>}} n(std::move(bigits\_));}
+\DoxyCodeLine{2882     bigits\_.\mbox{\hyperlink{classbasic__memory__buffer_a153c47788d6d1a76ec97780748755ea1}{resize}}(to\_unsigned(num\_result\_bigits));}
+\DoxyCodeLine{2883     \textcolor{keyword}{auto} sum = uint128\_t();}
+\DoxyCodeLine{2884     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bigit\_index = 0; bigit\_index < num\_bigits; ++bigit\_index) \{}
+\DoxyCodeLine{2885       \textcolor{comment}{// Compute bigit at position bigit\_index of the result by adding}}
+\DoxyCodeLine{2886       \textcolor{comment}{// cross-\/product terms n[i] * n[j] such that i + j == bigit\_index.}}
+\DoxyCodeLine{2887       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0, j = bigit\_index; j >= 0; ++i, -\/-\/j) \{}
+\DoxyCodeLine{2888         \textcolor{comment}{// Most terms are multiplied twice which can be optimized in the future.}}
+\DoxyCodeLine{2889         sum += \textcolor{keyword}{static\_cast<}double\_bigit\textcolor{keyword}{>}(n[i]) * n[j];}
+\DoxyCodeLine{2890       \}}
+\DoxyCodeLine{2891       (*this)[bigit\_index] = \textcolor{keyword}{static\_cast<}bigit\textcolor{keyword}{>}(sum);}
+\DoxyCodeLine{2892       sum >>= num\_bits<bigit>();  \textcolor{comment}{// Compute the carry.}}
+\DoxyCodeLine{2893     \}}
+\DoxyCodeLine{2894     \textcolor{comment}{// Do the same for the top half.}}
+\DoxyCodeLine{2895     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bigit\_index = num\_bigits; bigit\_index < num\_result\_bigits;}
+\DoxyCodeLine{2896          ++bigit\_index) \{}
+\DoxyCodeLine{2897       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = num\_bigits -\/ 1, i = bigit\_index -\/ j; i < num\_bigits;)}
+\DoxyCodeLine{2898         sum += \textcolor{keyword}{static\_cast<}double\_bigit\textcolor{keyword}{>}(n[i++]) * n[j-\/-\/];}
+\DoxyCodeLine{2899       (*this)[bigit\_index] = \textcolor{keyword}{static\_cast<}bigit\textcolor{keyword}{>}(sum);}
+\DoxyCodeLine{2900       sum >>= num\_bits<bigit>();}
+\DoxyCodeLine{2901     \}}
+\DoxyCodeLine{2902     remove\_leading\_zeros();}
+\DoxyCodeLine{2903     exp\_ *= 2;}
+\DoxyCodeLine{2904   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbigint_ab2d83277e1456453556e7a950d17ef02}\label{classbigint_ab2d83277e1456453556e7a950d17ef02}} 
+\index{bigint@{bigint}!subtract\_aligned@{subtract\_aligned}}
+\index{subtract\_aligned@{subtract\_aligned}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{subtract\_aligned()}{subtract\_aligned()}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR20 void bigint\+::subtract\+\_\+aligned (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classbigint}{bigint}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2716                                                              \{}
+\DoxyCodeLine{2717     FMT\_ASSERT(other.exp\_ >= exp\_, \textcolor{stringliteral}{"{}unaligned bigints"{}});}
+\DoxyCodeLine{2718     FMT\_ASSERT(compare(*\textcolor{keyword}{this}, other) >= 0, \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{2719     bigit borrow = 0;}
+\DoxyCodeLine{2720     \textcolor{keywordtype}{int} i = other.exp\_ -\/ exp\_;}
+\DoxyCodeLine{2721     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} j = 0, n = other.bigits\_.size(); j != n; ++i, ++j)}
+\DoxyCodeLine{2722       subtract\_bigits(i, other.bigits\_[j], borrow);}
+\DoxyCodeLine{2723     \textcolor{keywordflow}{while} (borrow > 0) subtract\_bigits(i, 0, borrow);}
+\DoxyCodeLine{2724     remove\_leading\_zeros();}
+\DoxyCodeLine{2725   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbigint_a114157632df44b4500a9d49a8223cc3a}\label{classbigint_a114157632df44b4500a9d49a8223cc3a}} 
+\index{bigint@{bigint}!subtract\_bigits@{subtract\_bigits}}
+\index{subtract\_bigits@{subtract\_bigits}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{subtract\_bigits()}{subtract\_bigits()}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR20 void bigint\+::subtract\+\_\+bigits (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{bigit}]{other,  }\item[{bigit \&}]{borrow }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2703                                                                               \{}
+\DoxyCodeLine{2704     \textcolor{keyword}{auto} result = \textcolor{keyword}{static\_cast<}double\_bigit\textcolor{keyword}{>}((*this)[index]) -\/ other -\/ borrow;}
+\DoxyCodeLine{2705     (*this)[index] = \textcolor{keyword}{static\_cast<}bigit\textcolor{keyword}{>}(result);}
+\DoxyCodeLine{2706     borrow = \textcolor{keyword}{static\_cast<}bigit\textcolor{keyword}{>}(result >> (bigit\_bits * 2 -\/ 1));}
+\DoxyCodeLine{2707   \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classbigint_a7bd684152457f6d907eb639ca0f6de78}\label{classbigint_a7bd684152457f6d907eb639ca0f6de78}} 
+\index{bigint@{bigint}!add\_compare@{add\_compare}}
+\index{add\_compare@{add\_compare}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{add\_compare}{add\_compare}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR20 int add\+\_\+compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classbigint}{bigint}} \&}]{lhs1,  }\item[{const \mbox{\hyperlink{classbigint}{bigint}} \&}]{lhs2,  }\item[{const \mbox{\hyperlink{classbigint}{bigint}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2834                                                             \{}
+\DoxyCodeLine{2835     \textcolor{keyword}{auto} minimum = [](\textcolor{keywordtype}{int} a, \textcolor{keywordtype}{int} b) \{ \textcolor{keywordflow}{return} a < b ? a : b; \};}
+\DoxyCodeLine{2836     \textcolor{keyword}{auto} maximum = [](\textcolor{keywordtype}{int} a, \textcolor{keywordtype}{int} b) \{ \textcolor{keywordflow}{return} a > b ? a : b; \};}
+\DoxyCodeLine{2837     \textcolor{keywordtype}{int} max\_lhs\_bigits = maximum(lhs1.num\_bigits(), lhs2.num\_bigits());}
+\DoxyCodeLine{2838     \textcolor{keywordtype}{int} num\_rhs\_bigits = rhs.num\_bigits();}
+\DoxyCodeLine{2839     \textcolor{keywordflow}{if} (max\_lhs\_bigits + 1 < num\_rhs\_bigits) \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{2840     \textcolor{keywordflow}{if} (max\_lhs\_bigits > num\_rhs\_bigits) \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{2841     \textcolor{keyword}{auto} get\_bigit = [](\textcolor{keyword}{const} \mbox{\hyperlink{classbigint}{bigint}}\& n, \textcolor{keywordtype}{int} i) -\/> bigit \{}
+\DoxyCodeLine{2842       \textcolor{keywordflow}{return} i >= n.exp\_ \&\& i < n.num\_bigits() ? n[i -\/ n.exp\_] : 0;}
+\DoxyCodeLine{2843     \};}
+\DoxyCodeLine{2844     double\_bigit borrow = 0;}
+\DoxyCodeLine{2845     \textcolor{keywordtype}{int} min\_exp = minimum(minimum(lhs1.exp\_, lhs2.exp\_), rhs.exp\_);}
+\DoxyCodeLine{2846     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = num\_rhs\_bigits -\/ 1; i >= min\_exp; -\/-\/i) \{}
+\DoxyCodeLine{2847       double\_bigit sum =}
+\DoxyCodeLine{2848           \textcolor{keyword}{static\_cast<}double\_bigit\textcolor{keyword}{>}(get\_bigit(lhs1, i)) + get\_bigit(lhs2, i);}
+\DoxyCodeLine{2849       bigit rhs\_bigit = get\_bigit(rhs, i);}
+\DoxyCodeLine{2850       \textcolor{keywordflow}{if} (sum > rhs\_bigit + borrow) \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{2851       borrow = rhs\_bigit + borrow -\/ sum;}
+\DoxyCodeLine{2852       \textcolor{keywordflow}{if} (borrow > 1) \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{2853       borrow <<= bigit\_bits;}
+\DoxyCodeLine{2854     \}}
+\DoxyCodeLine{2855     \textcolor{keywordflow}{return} borrow != 0 ? -\/1 : 0;}
+\DoxyCodeLine{2856   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classbigint_a13d78570d65d5e24201e795cea3549f4}\label{classbigint_a13d78570d65d5e24201e795cea3549f4}} 
+\index{bigint@{bigint}!compare@{compare}}
+\index{compare@{compare}!bigint@{bigint}}
+\doxysubsubsection{\texorpdfstring{compare}{compare}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR20 int compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classbigint}{bigint}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{classbigint}{bigint}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2816                                                                            \{}
+\DoxyCodeLine{2817     \textcolor{keywordtype}{int} num\_lhs\_bigits = lhs.num\_bigits(), num\_rhs\_bigits = rhs.num\_bigits();}
+\DoxyCodeLine{2818     \textcolor{keywordflow}{if} (num\_lhs\_bigits != num\_rhs\_bigits)}
+\DoxyCodeLine{2819       \textcolor{keywordflow}{return} num\_lhs\_bigits > num\_rhs\_bigits ? 1 : -\/1;}
+\DoxyCodeLine{2820     \textcolor{keywordtype}{int} i = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(lhs.bigits\_.size()) -\/ 1;}
+\DoxyCodeLine{2821     \textcolor{keywordtype}{int} j = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(rhs.bigits\_.size()) -\/ 1;}
+\DoxyCodeLine{2822     \textcolor{keywordtype}{int} end = i -\/ j;}
+\DoxyCodeLine{2823     \textcolor{keywordflow}{if} (end < 0) end = 0;}
+\DoxyCodeLine{2824     \textcolor{keywordflow}{for} (; i >= end; -\/-\/i, -\/-\/j) \{}
+\DoxyCodeLine{2825       bigit lhs\_bigit = lhs[i], rhs\_bigit = rhs[j];}
+\DoxyCodeLine{2826       \textcolor{keywordflow}{if} (lhs\_bigit != rhs\_bigit) \textcolor{keywordflow}{return} lhs\_bigit > rhs\_bigit ? 1 : -\/1;}
+\DoxyCodeLine{2827     \}}
+\DoxyCodeLine{2828     \textcolor{keywordflow}{if} (i != j) \textcolor{keywordflow}{return} i > j ? 1 : -\/1;}
+\DoxyCodeLine{2829     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{2830   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/format.\+h\end{DoxyCompactItemize}

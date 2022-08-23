@@ -1,0 +1,88 @@
+\hypertarget{class_test_suite_builder_context}{}\doxysection{Test\+Suite\+Builder\+Context\texorpdfstring{$<$}{<} Fixture \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_test_suite_builder_context}\index{TestSuiteBuilderContext$<$ Fixture $>$@{TestSuiteBuilderContext$<$ Fixture $>$}}
+
+
+Type-\/sage context used when creating test suite in Helper\+Macros.  
+
+
+
+
+{\ttfamily \#include $<$Test\+Suite\+Builder\+Context.\+h$>$}
+
+Inheritance diagram for Test\+Suite\+Builder\+Context\texorpdfstring{$<$}{<} Fixture \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{df/db3/class_test_suite_builder_context}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_test_suite_builder_context_a994528427c211ca187b39a9345ea53ee}\label{class_test_suite_builder_context_a994528427c211ca187b39a9345ea53ee}} 
+typedef Fixture {\bfseries Fixture\+Type}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_suite_builder_context_a51c0c0c846df2790ea1866c61e9b3e39}{Test\+Suite\+Builder\+Context}} (\mbox{\hyperlink{class_test_suite_builder_context_base}{Test\+Suite\+Builder\+Context\+Base}} \&context\+Base)
+\item 
+Fixture\+Type $\ast$ \mbox{\hyperlink{class_test_suite_builder_context_abb9f6e661689e236b8b451170cf0440a}{make\+Fixture}} () const
+\begin{DoxyCompactList}\small\item\em Returns a new \mbox{\hyperlink{class_test_fixture}{Test\+Fixture}} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Fixture$>$\newline
+class Test\+Suite\+Builder\+Context$<$ Fixture $>$}
+Type-\/sage context used when creating test suite in Helper\+Macros. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_test_suite_builder_context_base}{Test\+Suite\+Builder\+Context\+Base}}. 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_test_suite_builder_context_a51c0c0c846df2790ea1866c61e9b3e39}\label{class_test_suite_builder_context_a51c0c0c846df2790ea1866c61e9b3e39}} 
+\index{TestSuiteBuilderContext$<$ Fixture $>$@{TestSuiteBuilderContext$<$ Fixture $>$}!TestSuiteBuilderContext@{TestSuiteBuilderContext}}
+\index{TestSuiteBuilderContext@{TestSuiteBuilderContext}!TestSuiteBuilderContext$<$ Fixture $>$@{TestSuiteBuilderContext$<$ Fixture $>$}}
+\doxysubsubsection{\texorpdfstring{TestSuiteBuilderContext()}{TestSuiteBuilderContext()}}
+{\footnotesize\ttfamily template$<$class Fixture $>$ \\
+\mbox{\hyperlink{class_test_suite_builder_context}{Test\+Suite\+Builder\+Context}}$<$ Fixture $>$\mbox{\hyperlink{class_test_suite_builder_context}{\+::\+Test\+Suite\+Builder\+Context}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_test_suite_builder_context_base}{Test\+Suite\+Builder\+Context\+Base}} \&}]{context\+Base }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{126       : \mbox{\hyperlink{class_test_suite_builder_context_base_a434b04354f7e326c7f88d015921d5e6d}{TestSuiteBuilderContextBase}}( contextBase )}
+\DoxyCodeLine{127   \{}
+\DoxyCodeLine{128   \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_test_suite_builder_context_abb9f6e661689e236b8b451170cf0440a}\label{class_test_suite_builder_context_abb9f6e661689e236b8b451170cf0440a}} 
+\index{TestSuiteBuilderContext$<$ Fixture $>$@{TestSuiteBuilderContext$<$ Fixture $>$}!makeFixture@{makeFixture}}
+\index{makeFixture@{makeFixture}!TestSuiteBuilderContext$<$ Fixture $>$@{TestSuiteBuilderContext$<$ Fixture $>$}}
+\doxysubsubsection{\texorpdfstring{makeFixture()}{makeFixture()}}
+{\footnotesize\ttfamily template$<$class Fixture $>$ \\
+Fixture\+Type $\ast$ \mbox{\hyperlink{class_test_suite_builder_context}{Test\+Suite\+Builder\+Context}}$<$ Fixture $>$\+::make\+Fixture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a new \mbox{\hyperlink{class_test_fixture}{Test\+Fixture}} instance. 
+
+\begin{DoxyReturn}{Returns}
+A new fixture instance. The fixture instance is returned by the \mbox{\hyperlink{class_test_fixture_factory}{Test\+Fixture\+Factory}} passed on construction. The actual type is that of the fixture on which the static method suite() was called. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{137   \{}
+\DoxyCodeLine{138     \textcolor{keywordflow}{return} CPPUNIT\_STATIC\_CAST( FixtureType *, }
+\DoxyCodeLine{139                                 TestSuiteBuilderContextBase::makeTestFixture() );}
+\DoxyCodeLine{140   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/extensions/Test\+Suite\+Builder\+Context.\+h\end{DoxyCompactItemize}

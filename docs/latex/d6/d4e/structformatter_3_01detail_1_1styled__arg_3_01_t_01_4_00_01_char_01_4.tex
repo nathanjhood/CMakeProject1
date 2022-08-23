@@ -1,0 +1,63 @@
+\hypertarget{structformatter_3_01detail_1_1styled__arg_3_01_t_01_4_00_01_char_01_4}{}\doxysection{formatter\texorpdfstring{$<$}{<} detail\+::styled\+\_\+arg\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}, Char \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structformatter_3_01detail_1_1styled__arg_3_01_t_01_4_00_01_char_01_4}\index{formatter$<$ detail::styled\_arg$<$ T $>$, Char $>$@{formatter$<$ detail::styled\_arg$<$ T $>$, Char $>$}}
+Inheritance diagram for formatter\texorpdfstring{$<$}{<} detail\+::styled\+\_\+arg\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}, Char \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d6/d4e/structformatter_3_01detail_1_1styled__arg_3_01_t_01_4_00_01_char_01_4}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Format\+Context $>$ }\\auto \mbox{\hyperlink{structformatter_3_01detail_1_1styled__arg_3_01_t_01_4_00_01_char_01_4_a66c75e987c7cdbb492a5ebe0f493c671}{format}} (const detail\+::styled\+\_\+arg$<$ T $>$ \&arg, Format\+Context \&ctx) const -\/$>$ decltype(ctx.\+out())
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structformatter_3_01detail_1_1styled__arg_3_01_t_01_4_00_01_char_01_4_a66c75e987c7cdbb492a5ebe0f493c671}\label{structformatter_3_01detail_1_1styled__arg_3_01_t_01_4_00_01_char_01_4_a66c75e987c7cdbb492a5ebe0f493c671}} 
+\index{formatter$<$ detail::styled\_arg$<$ T $>$, Char $>$@{formatter$<$ detail::styled\_arg$<$ T $>$, Char $>$}!format@{format}}
+\index{format@{format}!formatter$<$ detail::styled\_arg$<$ T $>$, Char $>$@{formatter$<$ detail::styled\_arg$<$ T $>$, Char $>$}}
+\doxysubsubsection{\texorpdfstring{format()}{format()}}
+{\footnotesize\ttfamily template$<$typename T , typename Char $>$ \\
+template$<$typename Format\+Context $>$ \\
+auto \mbox{\hyperlink{structformatter}{formatter}}$<$ detail\+::styled\+\_\+arg$<$ T $>$, Char $>$\+::format (\begin{DoxyParamCaption}\item[{const detail\+::styled\+\_\+arg$<$ T $>$ \&}]{arg,  }\item[{Format\+Context \&}]{ctx }\end{DoxyParamCaption}) const -\/$>$ decltype(ctx.\+out()) \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{598                              \{}
+\DoxyCodeLine{599     \textcolor{keyword}{const} \textcolor{keyword}{auto}\& ts = arg.style;}
+\DoxyCodeLine{600     \textcolor{keyword}{const} \textcolor{keyword}{auto}\& \mbox{\hyperlink{classvalue}{value}} = arg.value;}
+\DoxyCodeLine{601     \textcolor{keyword}{auto} out = ctx.out();}
+\DoxyCodeLine{602 }
+\DoxyCodeLine{603     \textcolor{keywordtype}{bool} has\_style = \textcolor{keyword}{false};}
+\DoxyCodeLine{604     \textcolor{keywordflow}{if} (ts.has\_emphasis()) \{}
+\DoxyCodeLine{605       has\_style = \textcolor{keyword}{true};}
+\DoxyCodeLine{606       \textcolor{keyword}{auto} emphasis = detail::make\_emphasis<Char>(ts.get\_emphasis());}
+\DoxyCodeLine{607       out = std::copy(emphasis.begin(), emphasis.end(), out);}
+\DoxyCodeLine{608     \}}
+\DoxyCodeLine{609     \textcolor{keywordflow}{if} (ts.has\_foreground()) \{}
+\DoxyCodeLine{610       has\_style = \textcolor{keyword}{true};}
+\DoxyCodeLine{611       \textcolor{keyword}{auto} foreground =}
+\DoxyCodeLine{612           detail::make\_foreground\_color<Char>(ts.get\_foreground());}
+\DoxyCodeLine{613       out = std::copy(foreground.begin(), foreground.end(), out);}
+\DoxyCodeLine{614     \}}
+\DoxyCodeLine{615     \textcolor{keywordflow}{if} (ts.has\_background()) \{}
+\DoxyCodeLine{616       has\_style = \textcolor{keyword}{true};}
+\DoxyCodeLine{617       \textcolor{keyword}{auto} background =}
+\DoxyCodeLine{618           detail::make\_background\_color<Char>(ts.get\_background());}
+\DoxyCodeLine{619       out = std::copy(background.begin(), background.end(), out);}
+\DoxyCodeLine{620     \}}
+\DoxyCodeLine{621     out = \mbox{\hyperlink{structformatter}{formatter<T, Char>::format}}(\mbox{\hyperlink{classvalue}{value}}, ctx);}
+\DoxyCodeLine{622     \textcolor{keywordflow}{if} (has\_style) \{}
+\DoxyCodeLine{623       \textcolor{keyword}{auto} reset\_color = \mbox{\hyperlink{classbasic__string__view}{string\_view}}(\textcolor{stringliteral}{"{}\(\backslash\)x1b[0m"{}});}
+\DoxyCodeLine{624       out = std::copy(reset\_color.begin(), reset\_color.end(), out);}
+\DoxyCodeLine{625     \}}
+\DoxyCodeLine{626     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{627   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/color.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,39 @@
+\hypertarget{structbasic__ostream__formatter}{}\doxysection{basic\+\_\+ostream\+\_\+formatter\texorpdfstring{$<$}{<} Char \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structbasic__ostream__formatter}\index{basic\_ostream\_formatter$<$ Char $>$@{basic\_ostream\_formatter$<$ Char $>$}}
+Inheritance diagram for basic\+\_\+ostream\+\_\+formatter\texorpdfstring{$<$}{<} Char \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.115538cm]{d1/dbb/structbasic__ostream__formatter}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename Output\+It $>$ }\\auto \mbox{\hyperlink{structbasic__ostream__formatter_af872c16879484726a6c999dff479ee20}{format}} (const T \&\mbox{\hyperlink{classvalue}{value}}, \mbox{\hyperlink{classbasic__format__context}{basic\+\_\+format\+\_\+context}}$<$ Output\+It, Char $>$ \&ctx) const -\/$>$ Output\+It
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structbasic__ostream__formatter_af872c16879484726a6c999dff479ee20}\label{structbasic__ostream__formatter_af872c16879484726a6c999dff479ee20}} 
+\index{basic\_ostream\_formatter$<$ Char $>$@{basic\_ostream\_formatter$<$ Char $>$}!format@{format}}
+\index{format@{format}!basic\_ostream\_formatter$<$ Char $>$@{basic\_ostream\_formatter$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{format()}{format()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+template$<$typename T , typename Output\+It $>$ \\
+auto \mbox{\hyperlink{structbasic__ostream__formatter}{basic\+\_\+ostream\+\_\+formatter}}$<$ Char $>$\+::format (\begin{DoxyParamCaption}\item[{const T \&}]{value,  }\item[{\mbox{\hyperlink{classbasic__format__context}{basic\+\_\+format\+\_\+context}}$<$ Output\+It, Char $>$ \&}]{ctx }\end{DoxyParamCaption}) const -\/$>$ Output\+It \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{135                   \{}
+\DoxyCodeLine{136     \textcolor{keyword}{auto} \mbox{\hyperlink{classbuffer}{buffer}} = \mbox{\hyperlink{classbasic__memory__buffer}{basic\_memory\_buffer<Char>}}();}
+\DoxyCodeLine{137     format\_value(\mbox{\hyperlink{classbuffer}{buffer}}, \mbox{\hyperlink{classvalue}{value}}, ctx.locale());}
+\DoxyCodeLine{138     \textcolor{keywordflow}{return} \mbox{\hyperlink{structformatter}{formatter<basic\_string\_view<Char>}}, Char>::format(}
+\DoxyCodeLine{139         \{\mbox{\hyperlink{classbuffer}{buffer}}.\mbox{\hyperlink{classbuffer_a5fe8b50555561bfb4d77a2adcd5f79b2}{data}}(), \mbox{\hyperlink{classbuffer}{buffer}}.\mbox{\hyperlink{classbuffer_aebcfda1cf597e92fdd876bb1b9a1ba2a}{size}}()\}, ctx);}
+\DoxyCodeLine{140   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/ostream.\+h\end{DoxyCompactItemize}

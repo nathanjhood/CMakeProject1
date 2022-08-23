@@ -1,0 +1,155 @@
+\hypertarget{classspecs__handler}{}\doxysection{specs\+\_\+handler\texorpdfstring{$<$}{<} Char \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classspecs__handler}\index{specs\_handler$<$ Char $>$@{specs\_handler$<$ Char $>$}}
+Inheritance diagram for specs\+\_\+handler\texorpdfstring{$<$}{<} Char \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d1/d53/classspecs__handler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classspecs__handler_ad241da2bb6039182faabaa7dc446ad13}{specs\+\_\+handler}} (\mbox{\hyperlink{structbasic__format__specs}{basic\+\_\+format\+\_\+specs}}$<$ Char $>$ \&specs, \mbox{\hyperlink{classbasic__format__parse__context}{basic\+\_\+format\+\_\+parse\+\_\+context}}$<$ Char $>$ \&parse\+\_\+ctx, \mbox{\hyperlink{classbasic__format__context}{buffer\+\_\+context}}$<$ Char $>$ \&ctx)
+\item 
+{\footnotesize template$<$typename Id $>$ }\\FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classspecs__handler_aa6edffe4ef6493718f02bd2284488fe2}{on\+\_\+dynamic\+\_\+width}} (Id arg\+\_\+id)
+\item 
+{\footnotesize template$<$typename Id $>$ }\\FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classspecs__handler_ae79062502fab5f4bdf6e213c29e36f18}{on\+\_\+dynamic\+\_\+precision}} (Id arg\+\_\+id)
+\item 
+void \mbox{\hyperlink{classspecs__handler_acdeed31393832b594d77378dba9683af}{on\+\_\+error}} (const char $\ast$message)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspecs__handler_a925dc80f8102b30cb5d883ba90bfbcde}\label{classspecs__handler_a925dc80f8102b30cb5d883ba90bfbcde}} 
+using {\bfseries format\+\_\+arg} = \mbox{\hyperlink{classbasic__format__arg}{basic\+\_\+format\+\_\+arg}}$<$ \mbox{\hyperlink{classbasic__format__context}{buffer\+\_\+context}}$<$ Char $>$ $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classspecs__handler_afbd6f40b97b296c9d2a38053a48482cc}{get\+\_\+arg}} (\mbox{\hyperlink{structauto__id}{auto\+\_\+id}}) -\/$>$ \mbox{\hyperlink{classbasic__format__arg}{format\+\_\+arg}}
+\item 
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classspecs__handler_af5437dad69e84edaa767aa4bb94866ca}{get\+\_\+arg}} (int arg\+\_\+id) -\/$>$ \mbox{\hyperlink{classbasic__format__arg}{format\+\_\+arg}}
+\item 
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classspecs__handler_a912ae5c98b4d2c7c747bf892abc082d5}{get\+\_\+arg}} (\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$ arg\+\_\+id) -\/$>$ \mbox{\hyperlink{classbasic__format__arg}{format\+\_\+arg}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classspecs__handler_a8fc441530cdd33b73a155411c2172740}\label{classspecs__handler_a8fc441530cdd33b73a155411c2172740}} 
+\mbox{\hyperlink{classbasic__format__parse__context}{basic\+\_\+format\+\_\+parse\+\_\+context}}$<$ Char $>$ \& {\bfseries parse\+\_\+context\+\_\+}
+\item 
+\mbox{\Hypertarget{classspecs__handler_a0fb44eefd9a8f14212c46b1ce5ef202a}\label{classspecs__handler_a0fb44eefd9a8f14212c46b1ce5ef202a}} 
+\mbox{\hyperlink{classbasic__format__context}{buffer\+\_\+context}}$<$ Char $>$ \& {\bfseries context\+\_\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classspecs__handler_ad241da2bb6039182faabaa7dc446ad13}\label{classspecs__handler_ad241da2bb6039182faabaa7dc446ad13}} 
+\index{specs\_handler$<$ Char $>$@{specs\_handler$<$ Char $>$}!specs\_handler@{specs\_handler}}
+\index{specs\_handler@{specs\_handler}!specs\_handler$<$ Char $>$@{specs\_handler$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{specs\_handler()}{specs\_handler()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classspecs__handler}{specs\+\_\+handler}}$<$ Char $>$\mbox{\hyperlink{classspecs__handler}{\+::specs\+\_\+handler}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbasic__format__specs}{basic\+\_\+format\+\_\+specs}}$<$ Char $>$ \&}]{specs,  }\item[{\mbox{\hyperlink{classbasic__format__parse__context}{basic\+\_\+format\+\_\+parse\+\_\+context}}$<$ Char $>$ \&}]{parse\+\_\+ctx,  }\item[{\mbox{\hyperlink{classbasic__format__context}{buffer\+\_\+context}}$<$ Char $>$ \&}]{ctx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3478       : \mbox{\hyperlink{classspecs__setter}{specs\_setter<Char>}}(specs), parse\_context\_(parse\_ctx), context\_(ctx) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classspecs__handler_afbd6f40b97b296c9d2a38053a48482cc}\label{classspecs__handler_afbd6f40b97b296c9d2a38053a48482cc}} 
+\index{specs\_handler$<$ Char $>$@{specs\_handler$<$ Char $>$}!get\_arg@{get\_arg}}
+\index{get\_arg@{get\_arg}!specs\_handler$<$ Char $>$@{specs\_handler$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{get\_arg()}{get\_arg()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classspecs__handler}{specs\+\_\+handler}}$<$ Char $>$\+::get\+\_\+arg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structauto__id}{auto\+\_\+id}}}]{ }\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classbasic__format__arg}{format\+\_\+arg}} \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3460                                                     \{}
+\DoxyCodeLine{3461     \textcolor{keywordflow}{return} detail::get\_arg(context\_, parse\_context\_.next\_arg\_id());}
+\DoxyCodeLine{3462   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classspecs__handler_a912ae5c98b4d2c7c747bf892abc082d5}\label{classspecs__handler_a912ae5c98b4d2c7c747bf892abc082d5}} 
+\index{specs\_handler$<$ Char $>$@{specs\_handler$<$ Char $>$}!get\_arg@{get\_arg}}
+\index{get\_arg@{get\_arg}!specs\_handler$<$ Char $>$@{specs\_handler$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{get\_arg()}{get\_arg()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classspecs__handler}{specs\+\_\+handler}}$<$ Char $>$\+::get\+\_\+arg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$}]{arg\+\_\+id }\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classbasic__format__arg}{format\+\_\+arg}} \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3469                                                                            \{}
+\DoxyCodeLine{3470     parse\_context\_.check\_arg\_id(arg\_id);}
+\DoxyCodeLine{3471     \textcolor{keywordflow}{return} detail::get\_arg(context\_, arg\_id);}
+\DoxyCodeLine{3472   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classspecs__handler_af5437dad69e84edaa767aa4bb94866ca}\label{classspecs__handler_af5437dad69e84edaa767aa4bb94866ca}} 
+\index{specs\_handler$<$ Char $>$@{specs\_handler$<$ Char $>$}!get\_arg@{get\_arg}}
+\index{get\_arg@{get\_arg}!specs\_handler$<$ Char $>$@{specs\_handler$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{get\_arg()}{get\_arg()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classspecs__handler}{specs\+\_\+handler}}$<$ Char $>$\+::get\+\_\+arg (\begin{DoxyParamCaption}\item[{int}]{arg\+\_\+id }\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classbasic__format__arg}{format\+\_\+arg}} \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3464                                                        \{}
+\DoxyCodeLine{3465     parse\_context\_.check\_arg\_id(arg\_id);}
+\DoxyCodeLine{3466     \textcolor{keywordflow}{return} detail::get\_arg(context\_, arg\_id);}
+\DoxyCodeLine{3467   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classspecs__handler_ae79062502fab5f4bdf6e213c29e36f18}\label{classspecs__handler_ae79062502fab5f4bdf6e213c29e36f18}} 
+\index{specs\_handler$<$ Char $>$@{specs\_handler$<$ Char $>$}!on\_dynamic\_precision@{on\_dynamic\_precision}}
+\index{on\_dynamic\_precision@{on\_dynamic\_precision}!specs\_handler$<$ Char $>$@{specs\_handler$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{on\_dynamic\_precision()}{on\_dynamic\_precision()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+template$<$typename Id $>$ \\
+FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classspecs__handler}{specs\+\_\+handler}}$<$ Char $>$\+::on\+\_\+dynamic\+\_\+precision (\begin{DoxyParamCaption}\item[{Id}]{arg\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3485                                                                             \{}
+\DoxyCodeLine{3486     this-\/>specs\_.precision = get\_dynamic\_spec<precision\_checker>(}
+\DoxyCodeLine{3487         get\_arg(arg\_id), context\_.error\_handler());}
+\DoxyCodeLine{3488   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classspecs__handler_aa6edffe4ef6493718f02bd2284488fe2}\label{classspecs__handler_aa6edffe4ef6493718f02bd2284488fe2}} 
+\index{specs\_handler$<$ Char $>$@{specs\_handler$<$ Char $>$}!on\_dynamic\_width@{on\_dynamic\_width}}
+\index{on\_dynamic\_width@{on\_dynamic\_width}!specs\_handler$<$ Char $>$@{specs\_handler$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{on\_dynamic\_width()}{on\_dynamic\_width()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+template$<$typename Id $>$ \\
+FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classspecs__handler}{specs\+\_\+handler}}$<$ Char $>$\+::on\+\_\+dynamic\+\_\+width (\begin{DoxyParamCaption}\item[{Id}]{arg\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3480                                                                         \{}
+\DoxyCodeLine{3481     this-\/>specs\_.width = get\_dynamic\_spec<width\_checker>(}
+\DoxyCodeLine{3482         get\_arg(arg\_id), context\_.error\_handler());}
+\DoxyCodeLine{3483   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classspecs__handler_acdeed31393832b594d77378dba9683af}\label{classspecs__handler_acdeed31393832b594d77378dba9683af}} 
+\index{specs\_handler$<$ Char $>$@{specs\_handler$<$ Char $>$}!on\_error@{on\_error}}
+\index{on\_error@{on\_error}!specs\_handler$<$ Char $>$@{specs\_handler$<$ Char $>$}}
+\doxysubsubsection{\texorpdfstring{on\_error()}{on\_error()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+void \mbox{\hyperlink{classspecs__handler}{specs\+\_\+handler}}$<$ Char $>$\+::on\+\_\+error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3490 \{ context\_.on\_error(message); \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/format.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,77 @@
+\hypertarget{structrgb}{}\doxysection{rgb Struct Reference}
+\label{structrgb}\index{rgb@{rgb}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{structrgb_a4e50eebe5398980d400786152794c1c1}{rgb}} (uint8\+\_\+t r\+\_\+, uint8\+\_\+t g\+\_\+, uint8\+\_\+t b\+\_\+)
+\item 
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{structrgb_a0608250c02d5a66aa54f5c8d6fe44796}{rgb}} (uint32\+\_\+t hex)
+\item 
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{structrgb_a59530c7b82ac138e28d921b44e77656e}{rgb}} (color hex)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structrgb_afd9a3feaf22de2f96ba25d19494235a6}\label{structrgb_afd9a3feaf22de2f96ba25d19494235a6}} 
+uint8\+\_\+t {\bfseries r}
+\item 
+\mbox{\Hypertarget{structrgb_a644713f43fbcf5e9f070fa1843aee55f}\label{structrgb_a644713f43fbcf5e9f070fa1843aee55f}} 
+uint8\+\_\+t {\bfseries g}
+\item 
+\mbox{\Hypertarget{structrgb_a5ff4e0f515919a82c3f401afa8555da4}\label{structrgb_a5ff4e0f515919a82c3f401afa8555da4}} 
+uint8\+\_\+t {\bfseries b}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structrgb_a3e83cca66fefb376700bc9171ebafe17}\label{structrgb_a3e83cca66fefb376700bc9171ebafe17}} 
+\index{rgb@{rgb}!rgb@{rgb}}
+\index{rgb@{rgb}!rgb@{rgb}}
+\doxysubsubsection{\texorpdfstring{rgb()}{rgb()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR rgb\+::rgb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{193 : r(0), g(0), b(0) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structrgb_a4e50eebe5398980d400786152794c1c1}\label{structrgb_a4e50eebe5398980d400786152794c1c1}} 
+\index{rgb@{rgb}!rgb@{rgb}}
+\index{rgb@{rgb}!rgb@{rgb}}
+\doxysubsubsection{\texorpdfstring{rgb()}{rgb()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR rgb\+::rgb (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{r\+\_\+,  }\item[{uint8\+\_\+t}]{g\+\_\+,  }\item[{uint8\+\_\+t}]{b\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{194 : r(r\_), g(g\_), b(b\_) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structrgb_a0608250c02d5a66aa54f5c8d6fe44796}\label{structrgb_a0608250c02d5a66aa54f5c8d6fe44796}} 
+\index{rgb@{rgb}!rgb@{rgb}}
+\index{rgb@{rgb}!rgb@{rgb}}
+\doxysubsubsection{\texorpdfstring{rgb()}{rgb()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR rgb\+::rgb (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{hex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{196       : r((hex >> 16) \& 0xFF), g((hex >> 8) \& 0xFF), b(hex \& 0xFF) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structrgb_a59530c7b82ac138e28d921b44e77656e}\label{structrgb_a59530c7b82ac138e28d921b44e77656e}} 
+\index{rgb@{rgb}!rgb@{rgb}}
+\index{rgb@{rgb}!rgb@{rgb}}
+\doxysubsubsection{\texorpdfstring{rgb()}{rgb()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR rgb\+::rgb (\begin{DoxyParamCaption}\item[{color}]{hex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{198       : r((uint32\_t(hex) >> 16) \& 0xFF),}
+\DoxyCodeLine{199         g((uint32\_t(hex) >> 8) \& 0xFF),}
+\DoxyCodeLine{200         b(uint32\_t(hex) \& 0xFF) \{\}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/color.\+h\end{DoxyCompactItemize}

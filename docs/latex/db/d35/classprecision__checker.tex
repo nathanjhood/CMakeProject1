@@ -1,0 +1,72 @@
+\hypertarget{classprecision__checker}{}\doxysection{precision\+\_\+checker\texorpdfstring{$<$}{<} Error\+Handler \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classprecision__checker}\index{precision\_checker$<$ ErrorHandler $>$@{precision\_checker$<$ ErrorHandler $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classprecision__checker_a958b58398c6e46b50af8e44294ffc6a9}{precision\+\_\+checker}} (Error\+Handler \&eh)
+\item 
+{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(is\+\_\+integer$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classprecision__checker_ad9b7375b79558b6f510f0d8c45e03eb8}{operator()}} (T \mbox{\hyperlink{classvalue}{value}}) -\/$>$ unsigned long long
+\item 
+{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(!is\+\_\+integer$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classprecision__checker_a86a60f46953ef469cf6a932570cedf32}{operator()}} (T) -\/$>$ unsigned long long
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classprecision__checker_a25807b1c5901f655f72e5dc3ce8e4433}\label{classprecision__checker_a25807b1c5901f655f72e5dc3ce8e4433}} 
+Error\+Handler \& {\bfseries handler\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classprecision__checker_a958b58398c6e46b50af8e44294ffc6a9}\label{classprecision__checker_a958b58398c6e46b50af8e44294ffc6a9}} 
+\index{precision\_checker$<$ ErrorHandler $>$@{precision\_checker$<$ ErrorHandler $>$}!precision\_checker@{precision\_checker}}
+\index{precision\_checker@{precision\_checker}!precision\_checker$<$ ErrorHandler $>$@{precision\_checker$<$ ErrorHandler $>$}}
+\doxysubsubsection{\texorpdfstring{precision\_checker()}{precision\_checker()}}
+{\footnotesize\ttfamily template$<$typename Error\+Handler $>$ \\
+FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classprecision__checker}{precision\+\_\+checker}}$<$ Error\+Handler $>$\mbox{\hyperlink{classprecision__checker}{\+::precision\+\_\+checker}} (\begin{DoxyParamCaption}\item[{Error\+Handler \&}]{eh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3417 : handler\_(eh) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classprecision__checker_ad9b7375b79558b6f510f0d8c45e03eb8}\label{classprecision__checker_ad9b7375b79558b6f510f0d8c45e03eb8}} 
+\index{precision\_checker$<$ ErrorHandler $>$@{precision\_checker$<$ ErrorHandler $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!precision\_checker$<$ ErrorHandler $>$@{precision\_checker$<$ ErrorHandler $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Error\+Handler $>$ \\
+template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(is\+\_\+integer$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classprecision__checker}{precision\+\_\+checker}}$<$ Error\+Handler $>$\+::operator() (\begin{DoxyParamCaption}\item[{T}]{value }\end{DoxyParamCaption}) -\/$>$ unsigned long long \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3420                                                                \{}
+\DoxyCodeLine{3421     \textcolor{keywordflow}{if} (is\_negative(\mbox{\hyperlink{classvalue}{value}})) handler\_.on\_error(\textcolor{stringliteral}{"{}negative precision"{}});}
+\DoxyCodeLine{3422     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long}\textcolor{keyword}{>}(\mbox{\hyperlink{classvalue}{value}});}
+\DoxyCodeLine{3423   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classprecision__checker_a86a60f46953ef469cf6a932570cedf32}\label{classprecision__checker_a86a60f46953ef469cf6a932570cedf32}} 
+\index{precision\_checker$<$ ErrorHandler $>$@{precision\_checker$<$ ErrorHandler $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!precision\_checker$<$ ErrorHandler $>$@{precision\_checker$<$ ErrorHandler $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Error\+Handler $>$ \\
+template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(!is\+\_\+integer$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classprecision__checker}{precision\+\_\+checker}}$<$ Error\+Handler $>$\+::operator() (\begin{DoxyParamCaption}\item[{T}]{ }\end{DoxyParamCaption}) -\/$>$ unsigned long long \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3426                                                          \{}
+\DoxyCodeLine{3427     handler\_.on\_error(\textcolor{stringliteral}{"{}precision is not integer"{}});}
+\DoxyCodeLine{3428     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{3429   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/format.\+h\end{DoxyCompactItemize}

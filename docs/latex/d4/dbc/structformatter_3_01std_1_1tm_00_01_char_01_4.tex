@@ -1,0 +1,129 @@
+\hypertarget{structformatter_3_01std_1_1tm_00_01_char_01_4}{}\doxysection{formatter\texorpdfstring{$<$}{<} std\+::tm, Char \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structformatter_3_01std_1_1tm_00_01_char_01_4}\index{formatter$<$ std::tm, Char $>$@{formatter$<$ std::tm, Char $>$}}
+Inheritance diagram for formatter\texorpdfstring{$<$}{<} std\+::tm, Char \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d4/dbc/structformatter_3_01std_1_1tm_00_01_char_01_4}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Parse\+Context $>$ }\\FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structformatter_3_01std_1_1tm_00_01_char_01_4_a9c8caf13b1795ab3974768dc5f98a0e9}{parse}} (Parse\+Context \&ctx) -\/$>$ decltype(ctx.\+begin())
+\item 
+{\footnotesize template$<$typename Format\+Context $>$ }\\auto \mbox{\hyperlink{structformatter_3_01std_1_1tm_00_01_char_01_4_a0222d68c5e1ca97550eecb6cf60abed0}{format}} (const std\+::tm \&tm, Format\+Context \&ctx) const -\/$>$ decltype(ctx.\+out())
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename It $>$ }\\FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structformatter_3_01std_1_1tm_00_01_char_01_4_af60061db23592a957a3b7ce4be308b46}{do\+\_\+parse}} (It begin, It end, bool with\+\_\+default=false) -\/$>$ It
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class {\bfseries spec} \{ {\bfseries unknown}
+, {\bfseries year\+\_\+month\+\_\+day}
+, {\bfseries hh\+\_\+mm\+\_\+ss}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structformatter_3_01std_1_1tm_00_01_char_01_4_a2132d709acb19d33259d69e89398fd5a}\label{structformatter_3_01std_1_1tm_00_01_char_01_4_a2132d709acb19d33259d69e89398fd5a}} 
+spec {\bfseries spec\+\_\+} = spec\+::unknown
+\item 
+\mbox{\Hypertarget{structformatter_3_01std_1_1tm_00_01_char_01_4_a57c0d36c7943de87688eeae9c3bd0b28}\label{structformatter_3_01std_1_1tm_00_01_char_01_4_a57c0d36c7943de87688eeae9c3bd0b28}} 
+\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$ {\bfseries specs}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{structformatter_3_01std_1_1tm_00_01_char_01_4_a0ad1ab9a88cc0ff963eb10c17d3dafe8}\label{structformatter_3_01std_1_1tm_00_01_char_01_4_a0ad1ab9a88cc0ff963eb10c17d3dafe8}} 
+\index{formatter$<$ std::tm, Char $>$@{formatter$<$ std::tm, Char $>$}!spec@{spec}}
+\index{spec@{spec}!formatter$<$ std::tm, Char $>$@{formatter$<$ std::tm, Char $>$}}
+\doxysubsubsection{\texorpdfstring{spec}{spec}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+enum class \mbox{\hyperlink{structformatter}{formatter}}$<$ std\+::tm, Char $>$\+::spec\hspace{0.3cm}{\ttfamily [strong]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2029                   \{}
+\DoxyCodeLine{2030     unknown,}
+\DoxyCodeLine{2031     \mbox{\hyperlink{classyear__month__day}{year\_month\_day}},}
+\DoxyCodeLine{2032     hh\_mm\_ss,}
+\DoxyCodeLine{2033   \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structformatter_3_01std_1_1tm_00_01_char_01_4_af60061db23592a957a3b7ce4be308b46}\label{structformatter_3_01std_1_1tm_00_01_char_01_4_af60061db23592a957a3b7ce4be308b46}} 
+\index{formatter$<$ std::tm, Char $>$@{formatter$<$ std::tm, Char $>$}!do\_parse@{do\_parse}}
+\index{do\_parse@{do\_parse}!formatter$<$ std::tm, Char $>$@{formatter$<$ std::tm, Char $>$}}
+\doxysubsubsection{\texorpdfstring{do\_parse()}{do\_parse()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+template$<$typename It $>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structformatter}{formatter}}$<$ std\+::tm, Char $>$\+::do\+\_\+parse (\begin{DoxyParamCaption}\item[{It}]{begin,  }\item[{It}]{end,  }\item[{bool}]{with\+\_\+default = {\ttfamily false} }\end{DoxyParamCaption}) -\/$>$ It \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2040             \{}
+\DoxyCodeLine{2041     \textcolor{keywordflow}{if} (begin != end \&\& *begin == \textcolor{charliteral}{':'}) ++begin;}
+\DoxyCodeLine{2042     end = detail::parse\_chrono\_format(begin, end, detail::tm\_format\_checker());}
+\DoxyCodeLine{2043     \textcolor{keywordflow}{if} (!with\_default || end != begin)}
+\DoxyCodeLine{2044       specs = \{begin, detail::to\_unsigned(end -\/ begin)\};}
+\DoxyCodeLine{2045     \textcolor{comment}{// basic\_string\_view<>::compare isn't constexpr before C++17.}}
+\DoxyCodeLine{2046     \textcolor{keywordflow}{if} (specs.size() == 2 \&\& specs[0] == Char(\textcolor{charliteral}{'\%'})) \{}
+\DoxyCodeLine{2047       \textcolor{keywordflow}{if} (specs[1] == Char(\textcolor{charliteral}{'F'}))}
+\DoxyCodeLine{2048         spec\_ = spec::year\_month\_day;}
+\DoxyCodeLine{2049       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (specs[1] == Char(\textcolor{charliteral}{'T'}))}
+\DoxyCodeLine{2050         spec\_ = spec::hh\_mm\_ss;}
+\DoxyCodeLine{2051     \}}
+\DoxyCodeLine{2052     \textcolor{keywordflow}{return} end;}
+\DoxyCodeLine{2053   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structformatter_3_01std_1_1tm_00_01_char_01_4_a0222d68c5e1ca97550eecb6cf60abed0}\label{structformatter_3_01std_1_1tm_00_01_char_01_4_a0222d68c5e1ca97550eecb6cf60abed0}} 
+\index{formatter$<$ std::tm, Char $>$@{formatter$<$ std::tm, Char $>$}!format@{format}}
+\index{format@{format}!formatter$<$ std::tm, Char $>$@{formatter$<$ std::tm, Char $>$}}
+\doxysubsubsection{\texorpdfstring{format()}{format()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+template$<$typename Format\+Context $>$ \\
+auto \mbox{\hyperlink{structformatter}{formatter}}$<$ std\+::tm, Char $>$\+::format (\begin{DoxyParamCaption}\item[{const std\+::tm \&}]{tm,  }\item[{Format\+Context \&}]{ctx }\end{DoxyParamCaption}) const -\/$>$ decltype(ctx.\+out()) \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2063                              \{}
+\DoxyCodeLine{2064     \textcolor{keyword}{const} \textcolor{keyword}{auto} loc\_ref = ctx.locale();}
+\DoxyCodeLine{2065     detail::get\_locale loc(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{bool}\textcolor{keyword}{>}(loc\_ref), loc\_ref);}
+\DoxyCodeLine{2066     \textcolor{keyword}{auto} w = detail::tm\_writer<\textcolor{keyword}{decltype}(ctx.out()), Char>(loc, ctx.out(), tm);}
+\DoxyCodeLine{2067     \textcolor{keywordflow}{if} (spec\_ == spec::year\_month\_day)}
+\DoxyCodeLine{2068       w.on\_iso\_date();}
+\DoxyCodeLine{2069     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (spec\_ == spec::hh\_mm\_ss)}
+\DoxyCodeLine{2070       w.on\_iso\_time();}
+\DoxyCodeLine{2071     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{2072       detail::parse\_chrono\_format(specs.begin(), specs.end(), w);}
+\DoxyCodeLine{2073     \textcolor{keywordflow}{return} w.out();}
+\DoxyCodeLine{2074   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structformatter_3_01std_1_1tm_00_01_char_01_4_a9c8caf13b1795ab3974768dc5f98a0e9}\label{structformatter_3_01std_1_1tm_00_01_char_01_4_a9c8caf13b1795ab3974768dc5f98a0e9}} 
+\index{formatter$<$ std::tm, Char $>$@{formatter$<$ std::tm, Char $>$}!parse@{parse}}
+\index{parse@{parse}!formatter$<$ std::tm, Char $>$@{formatter$<$ std::tm, Char $>$}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily template$<$typename Char $>$ \\
+template$<$typename Parse\+Context $>$ \\
+FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structformatter}{formatter}}$<$ std\+::tm, Char $>$\+::parse (\begin{DoxyParamCaption}\item[{Parse\+Context \&}]{ctx }\end{DoxyParamCaption}) -\/$>$ decltype(ctx.\+begin()) \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2057                                                                        \{}
+\DoxyCodeLine{2058     \textcolor{keywordflow}{return} this-\/>do\_parse(ctx.begin(), ctx.end());}
+\DoxyCodeLine{2059   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/chrono.\+h\end{DoxyCompactItemize}

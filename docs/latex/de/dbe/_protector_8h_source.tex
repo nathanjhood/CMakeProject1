@@ -1,0 +1,71 @@
+\hypertarget{_protector_8h_source}{}\doxysection{Protector.\+h}
+\label{_protector_8h_source}\index{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/Protector.h@{out/build/x64/vcpkg\_installed/x86-\/windows/include/cppunit/Protector.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CPPUNIT\_PROTECTOR\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CPPUNIT\_PROTECTOR\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cppunit/SourceLine.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 CPPUNIT\_NS\_BEGIN}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_exception}{Exception}};}
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_message}{Message}};}
+\DoxyCodeLine{10 \textcolor{keyword}{class }ProtectorContext;}
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_test_result}{TestResult}};}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }CPPUNIT\_API \mbox{\hyperlink{class_functor}{Functor}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17   \textcolor{keyword}{virtual} \mbox{\hyperlink{class_functor}{\string~Functor}}();}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} operator()() \textcolor{keyword}{const} =0;}
+\DoxyCodeLine{20 \};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{47 \textcolor{keyword}{class }CPPUNIT\_API \mbox{\hyperlink{class_protector}{Protector}}}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{49 \textcolor{keyword}{public}:}
+\DoxyCodeLine{50   \textcolor{keyword}{virtual} \mbox{\hyperlink{class_protector}{\string~Protector}}();}
+\DoxyCodeLine{51   }
+\DoxyCodeLine{52   \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} protect( \textcolor{keyword}{const} \mbox{\hyperlink{class_functor}{Functor}} \&functor,}
+\DoxyCodeLine{53                         \textcolor{keyword}{const} ProtectorContext \&context ) =0;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{56   \textcolor{keywordtype}{void} reportError( \textcolor{keyword}{const} ProtectorContext \&context,}
+\DoxyCodeLine{57                     \textcolor{keyword}{const} \mbox{\hyperlink{class_exception}{Exception}} \&error ) \textcolor{keyword}{const};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59   \textcolor{keywordtype}{void} reportError( \textcolor{keyword}{const} ProtectorContext \&context,}
+\DoxyCodeLine{60                     \textcolor{keyword}{const} \mbox{\hyperlink{class_message}{Message}} \&message,}
+\DoxyCodeLine{61                     \textcolor{keyword}{const} \mbox{\hyperlink{class_source_line}{SourceLine}} \&sourceLine = \mbox{\hyperlink{class_source_line}{SourceLine}}() ) \textcolor{keyword}{const};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63   \textcolor{keywordtype}{void} reportFailure( \textcolor{keyword}{const} ProtectorContext \&context,}
+\DoxyCodeLine{64                       \textcolor{keyword}{const} \mbox{\hyperlink{class_exception}{Exception}} \&failure ) \textcolor{keyword}{const};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66   \mbox{\hyperlink{class_message}{Message}} actualMessage( \textcolor{keyword}{const} \mbox{\hyperlink{class_message}{Message}} \&message,}
+\DoxyCodeLine{67                          \textcolor{keyword}{const} ProtectorContext \&context ) \textcolor{keyword}{const};}
+\DoxyCodeLine{68 \};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{76 \textcolor{keyword}{class }CPPUNIT\_API \mbox{\hyperlink{class_protector_guard}{ProtectorGuard}}}
+\DoxyCodeLine{77 \{}
+\DoxyCodeLine{78 \textcolor{keyword}{public}:}
+\DoxyCodeLine{80   \mbox{\hyperlink{class_protector_guard_abc4a3b2b51b6d93fb3dd9fed1bbc85db}{ProtectorGuard}}( \mbox{\hyperlink{class_test_result}{TestResult}} *result,}
+\DoxyCodeLine{81                   \mbox{\hyperlink{class_protector}{Protector}} *protector );}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{84   \mbox{\hyperlink{class_protector_guard_af80b574cc5999746e77ec13d2d0093f5}{\string~ProtectorGuard}}();}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{keyword}{private}:}
+\DoxyCodeLine{87   \mbox{\hyperlink{class_protector_guard}{ProtectorGuard}}( \textcolor{keyword}{const} \mbox{\hyperlink{class_protector_guard}{ProtectorGuard}}\& ); \textcolor{comment}{/* not copyable */}}
+\DoxyCodeLine{88   \mbox{\hyperlink{class_protector_guard}{ProtectorGuard}}\& operator=( \textcolor{keyword}{const} \mbox{\hyperlink{class_protector_guard}{ProtectorGuard}}\& ); \textcolor{comment}{/* not assignable */}}
+\DoxyCodeLine{89   \mbox{\hyperlink{class_test_result}{TestResult}} *m\_result;}
+\DoxyCodeLine{90 \};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 CPPUNIT\_NS\_END}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// CPPUNIT\_PROTECTOR\_H}}
+\DoxyCodeLine{96 }
+
+\end{DoxyCode}

@@ -1,0 +1,204 @@
+\hypertarget{class_dynamic_library_manager}{}\doxysection{Dynamic\+Library\+Manager Class Reference}
+\label{class_dynamic_library_manager}\index{DynamicLibraryManager@{DynamicLibraryManager}}
+
+
+Manages dynamic libraries.  
+
+
+
+
+{\ttfamily \#include $<$Dynamic\+Library\+Manager.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_dynamic_library_manager_abb1022f448f94bf40c890d38ea41c52b}\label{class_dynamic_library_manager_abb1022f448f94bf40c890d38ea41c52b}} 
+typedef void $\ast$ {\bfseries Symbol}
+\item 
+\mbox{\Hypertarget{class_dynamic_library_manager_aa47563bb349a44ec41af6464300e0688}\label{class_dynamic_library_manager_aa47563bb349a44ec41af6464300e0688}} 
+typedef void $\ast$ {\bfseries Library\+Handle}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dynamic_library_manager_a26d6592077763d9eb31d66d02d17b8d4}{Dynamic\+Library\+Manager}} (const std\+::string \&library\+File\+Name)
+\begin{DoxyCompactList}\small\item\em Loads the specified library. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_dynamic_library_manager_a1c6a30a61161a8ddb96279bfb44c44c7}\label{class_dynamic_library_manager_a1c6a30a61161a8ddb96279bfb44c44c7}} 
+{\bfseries $\sim$\+Dynamic\+Library\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Releases the loaded library.. \end{DoxyCompactList}\item 
+Symbol \mbox{\hyperlink{class_dynamic_library_manager_a2bd337473432b0f470f5bb987da77239}{find\+Symbol}} (const std\+::string \&symbol)
+\begin{DoxyCompactList}\small\item\em Returns a pointer on the specified symbol exported by the library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_dynamic_library_manager_a3e2819996f45c124253810a2dc624709}{load\+Library}} (const std\+::string \&library\+Name)
+\item 
+void \mbox{\hyperlink{class_dynamic_library_manager_a3bb952ae43103fe9ea0b83c693210ebf}{release\+Library}} ()
+\item 
+Library\+Handle \mbox{\hyperlink{class_dynamic_library_manager_adf9585fc8f3284df5471d1c5e04a105d}{do\+Load\+Library}} (const std\+::string \&library\+Name)
+\item 
+void \mbox{\hyperlink{class_dynamic_library_manager_a99b554dad3fe8b84de3e8b443d5a7ca0}{do\+Release\+Library}} ()
+\item 
+Symbol \mbox{\hyperlink{class_dynamic_library_manager_ac3079091cf970cc285216a27e13cff44}{do\+Find\+Symbol}} (const std\+::string \&symbol)
+\item 
+std\+::string \mbox{\hyperlink{class_dynamic_library_manager_affedbd04f14681b5d8ada663aa763a97}{get\+Last\+Error\+Detail}} () const
+\item 
+\mbox{\Hypertarget{class_dynamic_library_manager_ac313ca179746d416e2b634501e2c294b}\label{class_dynamic_library_manager_ac313ca179746d416e2b634501e2c294b}} 
+{\bfseries Dynamic\+Library\+Manager} (const \mbox{\hyperlink{class_dynamic_library_manager}{Dynamic\+Library\+Manager}} \&copy)
+\begin{DoxyCompactList}\small\item\em Prevents the use of the copy constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_dynamic_library_manager_ab9877291e4fa30145c10b1d328797c31}\label{class_dynamic_library_manager_ab9877291e4fa30145c10b1d328797c31}} 
+void {\bfseries operator=} (const \mbox{\hyperlink{class_dynamic_library_manager}{Dynamic\+Library\+Manager}} \&copy)
+\begin{DoxyCompactList}\small\item\em Prevents the use of the copy operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_dynamic_library_manager_a88a0a3c97a944bdd331e345ff44bb131}\label{class_dynamic_library_manager_a88a0a3c97a944bdd331e345ff44bb131}} 
+Library\+Handle {\bfseries m\+\_\+library\+Handle}
+\item 
+\mbox{\Hypertarget{class_dynamic_library_manager_a413e6530f3de6564d195082d0a5a52d8}\label{class_dynamic_library_manager_a413e6530f3de6564d195082d0a5a52d8}} 
+std\+::string {\bfseries m\+\_\+library\+Name}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages dynamic libraries. 
+
+The Dynamic Library Manager provides a platform independent way to work with dynamic library. It load a specific dynamic library, and can returns specific symbol exported by the dynamic library.
+
+If an error occurs, a \mbox{\hyperlink{class_dynamic_library_manager_exception}{Dynamic\+Library\+Manager\+Exception}} is thrown. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_dynamic_library_manager_a26d6592077763d9eb31d66d02d17b8d4}\label{class_dynamic_library_manager_a26d6592077763d9eb31d66d02d17b8d4}} 
+\index{DynamicLibraryManager@{DynamicLibraryManager}!DynamicLibraryManager@{DynamicLibraryManager}}
+\index{DynamicLibraryManager@{DynamicLibraryManager}!DynamicLibraryManager@{DynamicLibraryManager}}
+\doxysubsubsection{\texorpdfstring{DynamicLibraryManager()}{DynamicLibraryManager()}}
+{\footnotesize\ttfamily Dynamic\+Library\+Manager\+::\+Dynamic\+Library\+Manager (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{library\+File\+Name }\end{DoxyParamCaption})}
+
+
+
+Loads the specified library. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em library\+File\+Name} & Name of the library to load. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_dynamic_library_manager_exception}{Dynamic\+Library\+Manager\+Exception}}} & if a failure occurs while loading the library (fail to found or load the library). \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dynamic_library_manager_ac3079091cf970cc285216a27e13cff44}\label{class_dynamic_library_manager_ac3079091cf970cc285216a27e13cff44}} 
+\index{DynamicLibraryManager@{DynamicLibraryManager}!doFindSymbol@{doFindSymbol}}
+\index{doFindSymbol@{doFindSymbol}!DynamicLibraryManager@{DynamicLibraryManager}}
+\doxysubsubsection{\texorpdfstring{doFindSymbol()}{doFindSymbol()}}
+{\footnotesize\ttfamily Symbol Dynamic\+Library\+Manager\+::do\+Find\+Symbol (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Returns a pointer on the specified symbol exported by the library.
+
+May throw any exceptions (indicates failure). 
+\begin{DoxyParams}{Parameters}
+{\em symbol} & Name of the symbol exported by the library. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer on the symbol. {\ttfamily NULL} indicates failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dynamic_library_manager_adf9585fc8f3284df5471d1c5e04a105d}\label{class_dynamic_library_manager_adf9585fc8f3284df5471d1c5e04a105d}} 
+\index{DynamicLibraryManager@{DynamicLibraryManager}!doLoadLibrary@{doLoadLibrary}}
+\index{doLoadLibrary@{doLoadLibrary}!DynamicLibraryManager@{DynamicLibraryManager}}
+\doxysubsubsection{\texorpdfstring{doLoadLibrary()}{doLoadLibrary()}}
+{\footnotesize\ttfamily Library\+Handle Dynamic\+Library\+Manager\+::do\+Load\+Library (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{library\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Loads the specified library.
+
+May throw any exceptions (indicates failure). 
+\begin{DoxyParams}{Parameters}
+{\em library\+Name} & Name of the library to load. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Handle of the loaded library. {\ttfamily NULL} indicates failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dynamic_library_manager_a99b554dad3fe8b84de3e8b443d5a7ca0}\label{class_dynamic_library_manager_a99b554dad3fe8b84de3e8b443d5a7ca0}} 
+\index{DynamicLibraryManager@{DynamicLibraryManager}!doReleaseLibrary@{doReleaseLibrary}}
+\index{doReleaseLibrary@{doReleaseLibrary}!DynamicLibraryManager@{DynamicLibraryManager}}
+\doxysubsubsection{\texorpdfstring{doReleaseLibrary()}{doReleaseLibrary()}}
+{\footnotesize\ttfamily void Dynamic\+Library\+Manager\+::do\+Release\+Library (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Releases the loaded library.
+
+The handle of the library to free is in {\ttfamily m\+\_\+library\+Handle}. It is never {\ttfamily NULL}. \begin{DoxyWarning}{Warning}
+Must NOT throw any exceptions (called from destructor). 
+\end{DoxyWarning}
+\mbox{\Hypertarget{class_dynamic_library_manager_a2bd337473432b0f470f5bb987da77239}\label{class_dynamic_library_manager_a2bd337473432b0f470f5bb987da77239}} 
+\index{DynamicLibraryManager@{DynamicLibraryManager}!findSymbol@{findSymbol}}
+\index{findSymbol@{findSymbol}!DynamicLibraryManager@{DynamicLibraryManager}}
+\doxysubsubsection{\texorpdfstring{findSymbol()}{findSymbol()}}
+{\footnotesize\ttfamily Symbol Dynamic\+Library\+Manager\+::find\+Symbol (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{symbol }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer on the specified symbol exported by the library. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & Name of the symbol exported by the library. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer on the symbol. Should be casted to the actual type. Never {\ttfamily NULL}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_dynamic_library_manager_exception}{Dynamic\+Library\+Manager\+Exception}}} & if the symbol is not found. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_dynamic_library_manager_affedbd04f14681b5d8ada663aa763a97}\label{class_dynamic_library_manager_affedbd04f14681b5d8ada663aa763a97}} 
+\index{DynamicLibraryManager@{DynamicLibraryManager}!getLastErrorDetail@{getLastErrorDetail}}
+\index{getLastErrorDetail@{getLastErrorDetail}!DynamicLibraryManager@{DynamicLibraryManager}}
+\doxysubsubsection{\texorpdfstring{getLastErrorDetail()}{getLastErrorDetail()}}
+{\footnotesize\ttfamily std\+::string Dynamic\+Library\+Manager\+::get\+Last\+Error\+Detail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+Returns detailed information about \mbox{\hyperlink{class_dynamic_library_manager_adf9585fc8f3284df5471d1c5e04a105d}{do\+Load\+Library()}} failure.
+
+Called just after a failed call to \mbox{\hyperlink{class_dynamic_library_manager_adf9585fc8f3284df5471d1c5e04a105d}{do\+Load\+Library()}} to get extra error information.
+
+\begin{DoxyReturn}{Returns}
+Detailed information about the failure of the call to \mbox{\hyperlink{class_dynamic_library_manager_adf9585fc8f3284df5471d1c5e04a105d}{do\+Load\+Library()}} that just failed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dynamic_library_manager_a3e2819996f45c124253810a2dc624709}\label{class_dynamic_library_manager_a3e2819996f45c124253810a2dc624709}} 
+\index{DynamicLibraryManager@{DynamicLibraryManager}!loadLibrary@{loadLibrary}}
+\index{loadLibrary@{loadLibrary}!DynamicLibraryManager@{DynamicLibraryManager}}
+\doxysubsubsection{\texorpdfstring{loadLibrary()}{loadLibrary()}}
+{\footnotesize\ttfamily void Dynamic\+Library\+Manager\+::load\+Library (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{library\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Loads the specified library. 
+\begin{DoxyParams}{Parameters}
+{\em library\+Name} & Name of the library to load. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_dynamic_library_manager_exception}{Dynamic\+Library\+Manager\+Exception}}} & if a failure occurs while loading the library (fail to found or load the library). \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_dynamic_library_manager_a3bb952ae43103fe9ea0b83c693210ebf}\label{class_dynamic_library_manager_a3bb952ae43103fe9ea0b83c693210ebf}} 
+\index{DynamicLibraryManager@{DynamicLibraryManager}!releaseLibrary@{releaseLibrary}}
+\index{releaseLibrary@{releaseLibrary}!DynamicLibraryManager@{DynamicLibraryManager}}
+\doxysubsubsection{\texorpdfstring{releaseLibrary()}{releaseLibrary()}}
+{\footnotesize\ttfamily void Dynamic\+Library\+Manager\+::release\+Library (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Releases the loaded library.
+
+\begin{DoxyWarning}{Warning}
+Must NOT throw any exceptions (called from destructor). 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/plugin/Dynamic\+Library\+Manager.\+h\end{DoxyCompactItemize}

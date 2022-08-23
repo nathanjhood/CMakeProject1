@@ -1,0 +1,98 @@
+\hypertarget{structassertion__traits_3_01double_01_4}{}\doxysection{assertion\+\_\+traits\texorpdfstring{$<$}{<} double \texorpdfstring{$>$}{>} Struct Reference}
+\label{structassertion__traits_3_01double_01_4}\index{assertion\_traits$<$ double $>$@{assertion\_traits$<$ double $>$}}
+
+
+Traits used by CPPUNIT\+\_\+\+ASSERT\+\_\+\+DOUBLES\+\_\+\+EQUAL().  
+
+
+
+
+{\ttfamily \#include $<$Test\+Assert.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{structassertion__traits_3_01double_01_4_ac0d9d71ec0f239664b88188e481c0598}{equal}} (double x, double y)
+\item 
+static bool \mbox{\hyperlink{structassertion__traits_3_01double_01_4_ad4aef1842c439c2750e88841d404a8bf}{less}} (double x, double y)
+\item 
+static bool \mbox{\hyperlink{structassertion__traits_3_01double_01_4_ac563d6afe831328bd28c85227ecb4869}{less\+Equal}} (double x, double y)
+\item 
+static std\+::string \mbox{\hyperlink{structassertion__traits_3_01double_01_4_a6bc37874eb60d30e0b50d4c127ab34df}{to\+String}} (double x)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Traits used by CPPUNIT\+\_\+\+ASSERT\+\_\+\+DOUBLES\+\_\+\+EQUAL(). 
+
+This specialisation from {\ttfamily struct} {\ttfamily assertion\+\_\+traits$<$$>$} ensures that doubles are converted in full, instead of being rounded to the default 6 digits of precision. Use the system defined ISO C99 macro DBL\+\_\+\+DIG within float.\+h is available to define the maximum precision, otherwise use the hard-\/coded maximum precision of 15. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structassertion__traits_3_01double_01_4_ac0d9d71ec0f239664b88188e481c0598}\label{structassertion__traits_3_01double_01_4_ac0d9d71ec0f239664b88188e481c0598}} 
+\index{assertion\_traits$<$ double $>$@{assertion\_traits$<$ double $>$}!equal@{equal}}
+\index{equal@{equal}!assertion\_traits$<$ double $>$@{assertion\_traits$<$ double $>$}}
+\doxysubsubsection{\texorpdfstring{equal()}{equal()}}
+{\footnotesize\ttfamily static bool \mbox{\hyperlink{structassertion__traits}{assertion\+\_\+traits}}$<$ double $>$\+::equal (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{90     \{}
+\DoxyCodeLine{91         \textcolor{keywordflow}{return} x == y;}
+\DoxyCodeLine{92     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structassertion__traits_3_01double_01_4_ad4aef1842c439c2750e88841d404a8bf}\label{structassertion__traits_3_01double_01_4_ad4aef1842c439c2750e88841d404a8bf}} 
+\index{assertion\_traits$<$ double $>$@{assertion\_traits$<$ double $>$}!less@{less}}
+\index{less@{less}!assertion\_traits$<$ double $>$@{assertion\_traits$<$ double $>$}}
+\doxysubsubsection{\texorpdfstring{less()}{less()}}
+{\footnotesize\ttfamily static bool \mbox{\hyperlink{structassertion__traits}{assertion\+\_\+traits}}$<$ double $>$\+::less (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{95     \{}
+\DoxyCodeLine{96         \textcolor{keywordflow}{return} x < y;}
+\DoxyCodeLine{97     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structassertion__traits_3_01double_01_4_ac563d6afe831328bd28c85227ecb4869}\label{structassertion__traits_3_01double_01_4_ac563d6afe831328bd28c85227ecb4869}} 
+\index{assertion\_traits$<$ double $>$@{assertion\_traits$<$ double $>$}!lessEqual@{lessEqual}}
+\index{lessEqual@{lessEqual}!assertion\_traits$<$ double $>$@{assertion\_traits$<$ double $>$}}
+\doxysubsubsection{\texorpdfstring{lessEqual()}{lessEqual()}}
+{\footnotesize\ttfamily static bool \mbox{\hyperlink{structassertion__traits}{assertion\+\_\+traits}}$<$ double $>$\+::less\+Equal (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{100     \{}
+\DoxyCodeLine{101         \textcolor{keywordflow}{return} x <= y;}
+\DoxyCodeLine{102     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structassertion__traits_3_01double_01_4_a6bc37874eb60d30e0b50d4c127ab34df}\label{structassertion__traits_3_01double_01_4_a6bc37874eb60d30e0b50d4c127ab34df}} 
+\index{assertion\_traits$<$ double $>$@{assertion\_traits$<$ double $>$}!toString@{toString}}
+\index{toString@{toString}!assertion\_traits$<$ double $>$@{assertion\_traits$<$ double $>$}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily static std\+::string \mbox{\hyperlink{structassertion__traits}{assertion\+\_\+traits}}$<$ double $>$\+::to\+String (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{105     \{}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#ifdef DBL\_DIG}}
+\DoxyCodeLine{107        \textcolor{keyword}{const} \textcolor{keywordtype}{int} precision = DBL\_DIG;}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{109        \textcolor{keyword}{const} \textcolor{keywordtype}{int} precision = 15;}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// \#ifdef DBL\_DIG}}
+\DoxyCodeLine{111        \textcolor{keywordtype}{char} \mbox{\hyperlink{classbuffer}{buffer}}[128];}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#ifdef \_\_STDC\_SECURE\_LIB\_\_ }\textcolor{comment}{// Use secure version with visual studio 2005 to avoid warning.}}
+\DoxyCodeLine{113        sprintf\_s(\mbox{\hyperlink{classbuffer}{buffer}}, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{classbuffer}{buffer}}), \textcolor{stringliteral}{"{}\%.*g"{}}, precision, x); }
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#else   }}
+\DoxyCodeLine{115        sprintf(\mbox{\hyperlink{classbuffer}{buffer}}, \textcolor{stringliteral}{"{}\%.*g"{}}, precision, x); }
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{117        \textcolor{keywordflow}{return} \mbox{\hyperlink{classbuffer}{buffer}};}
+\DoxyCodeLine{118     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/Test\+Assert.\+h\end{DoxyCompactItemize}
