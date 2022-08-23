@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "CMake: build and run x64",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/out/build/x64/CMakeProject1.exe",
+            "args":[],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "console": "externalTerminal",
+            "preLaunchTask": "CMake: build"
+        }
+    ],
+    "version": "2.0.0"
+}
