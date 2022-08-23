@@ -22,8 +22,8 @@ tbc...
 
 # How to use it?
 tbc...
-<a href= "https://stoneydsp.github.io/CMakeProject1/index.html">
-Please see the Doxygen files for now :)
+
+<a href= "https://stoneydsp.github.io/CMakeProject1/index.html">Please see the Doxygen files for now :)</a>
 
 # Before you go...
 
