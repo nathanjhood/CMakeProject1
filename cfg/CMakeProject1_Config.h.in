@@ -1,0 +1,25 @@
+/*******************************************************************************
+ *
+ * @file Config.h
+ *
+ * @author Nathan J. Hood (nathanjhood@googlemail.com)
+ * @version 1.0.0.1
+ * @date 2022-08-13
+ *
+ * @copyright Copyright (c) 2022 @StoneyDSP
+ *
+ *******************************************************************************
+*/
+
+#pragma once
+
+#ifndef CONFIG_H_INCLUDED
+#define CONFIG_H_INCLUDED
+
+#define companyName "${COMPANY_NAME}"
+#define projectName "${CMAKE_PROJECT_NAME}"
+#define projectDescription "${CMAKE_PROJECT_DESCRIPTION}"
+#define projectVersion "v${CMAKE_PROJECT_VERSION}"
+#define projectWebsite "${CMAKE_PROJECT_HOMEPAGE_URL}"
+
+#endif // CONFIG_H_INCLUDED
