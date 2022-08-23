@@ -1,5 +1,5 @@
 # CMakeProject1
-Generic CMake Project with in-built package manager
+Generic CMake Project template with in-built package dependancy manager and doxygen integration
 
 *Please note; if this app/code is any interest to you in it's presently very unfinished state, then you may want to clone now and keep an eye on it over time (why not hit "follow") as this codebase and it's functions is likely to change and expand, possibly quite a bit, as I progress with it. Especially if any cool feedback or collaborative opportunities arise!*
 
