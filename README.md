@@ -102,7 +102,7 @@ Step 4: Create a new Environment variable called VCPKG_ROOT pointing to the root
 
 Once complete, vcpkg should now be cloned into your chosen directory, with an environment variable pointing to that directory. The "bootstrap" and "integrate" commands in steps 2 and 3 have set up the host machine for vcpkg dependency management. A couple of special files in our build take care of all the rest (keep reading for more).
 
-You now have everything you need to begin your CMake project.
+You now have everything you need to begin your CMake project. You may go ahead and open the cloned repo's root folder (containing the upper-most "CMakeLists.txt" file) in your IDE of choice (i.e., Visual Studio 2022 or VSCode!), where the project will begin configuring several Cache files (and downloading/resolving package dependencies via vcpkg), generating the binary build files in the process.
 
 *Tip: To see a full list of available packages in vcpkg with a short description and version number, run the following command from the PowerShell (where "\path\to\" should be your local directory):
 
