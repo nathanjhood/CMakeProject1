@@ -3,6 +3,10 @@ Generic CMake Project template with in-built package dependancy manager and doxy
 
 *Please note; if this app/code is any interest to you in it's presently very unfinished state, then you may want to clone now and keep an eye on it over time (why not hit "follow") as this codebase and it's functions is likely to change and expand, possibly quite a bit, as I progress with it. Especially if any cool feedback or collaborative opportunities arise!*
 
+<p align="center">
+ <img src="https://github.com/StoneyDSP/CMakeProject1/blob/main/CMakeProject1_Logo.gif"/></a>
+</p>
+
 # Before we begin...
 
 Coffee! That's how I get things done!! If you'd like to see me get more things done, please kindly consider <a href="https://www.patreon.com/bePatron?u=8549187" data-patreon-widget-type="become-patron-button">buying me a coffee</a> or two ;)
