@@ -1,4 +1,3 @@
-*.editorconfig
 
 # Common build directories
 build*/
