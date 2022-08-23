@@ -77,7 +77,7 @@ $(function() {
 <p>Generate a test case from a fixture method.  
  <a href="../../da/dbe/class_test_caller.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../da/d33/_test_caller_8h_source.html">TestCaller.h</a>&gt;</code></p>
+<p><code>#include &lt;TestCaller.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TestCaller&lt; Fixture &gt;:</div>
 <div class="dyncontent">
@@ -99,28 +99,25 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a21479de59b7c38a6d8bed9e66025ebb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5977f4de9736929451f30b039a42487d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dbe/class_test_caller.html#a5977f4de9736929451f30b039a42487d">TestCaller</a> (std::string name, TestMethod test, Fixture *fixture)</td></tr>
 <tr class="separator:a5977f4de9736929451f30b039a42487d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06eb15631e021ac03e3c5067f4938c1e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dbe/class_test_caller.html#a06eb15631e021ac03e3c5067f4938c1e">TestCaller</a> (std::string name, std::function&lt; void()&gt; test_function, Fixture *fixture)</td></tr>
+<tr class="memitem:a06eb15631e021ac03e3c5067f4938c1e"><td class="memItemLeft" align="right" valign="top"><a id="a06eb15631e021ac03e3c5067f4938c1e" name="a06eb15631e021ac03e3c5067f4938c1e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TestCaller</b> (std::string name, std::function&lt; void()&gt; test_function, Fixture *fixture)</td></tr>
 <tr class="separator:a06eb15631e021ac03e3c5067f4938c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad0c877a47b75d056a4f8f323d3169ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dbe/class_test_caller.html#aad0c877a47b75d056a4f8f323d3169ab">runTest</a> ()</td></tr>
-<tr class="memdesc:aad0c877a47b75d056a4f8f323d3169ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">FIXME: this should probably be pure virtual.  <a href="../../da/dbe/class_test_caller.html#aad0c877a47b75d056a4f8f323d3169ab">More...</a><br /></td></tr>
 <tr class="separator:aad0c877a47b75d056a4f8f323d3169ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6880afc711d24ae0b8846759064ceea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dbe/class_test_caller.html#ae6880afc711d24ae0b8846759064ceea">setUp</a> ()</td></tr>
-<tr class="memdesc:ae6880afc711d24ae0b8846759064ceea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up context before running a test.  <a href="../../da/dbe/class_test_caller.html#ae6880afc711d24ae0b8846759064ceea">More...</a><br /></td></tr>
 <tr class="separator:ae6880afc711d24ae0b8846759064ceea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e463b88bf0ceacbd8875e0450ed2649"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dbe/class_test_caller.html#a0e463b88bf0ceacbd8875e0450ed2649">tearDown</a> ()</td></tr>
-<tr class="memdesc:a0e463b88bf0ceacbd8875e0450ed2649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clean up after the test run.  <a href="../../da/dbe/class_test_caller.html#a0e463b88bf0ceacbd8875e0450ed2649">More...</a><br /></td></tr>
 <tr class="separator:a0e463b88bf0ceacbd8875e0450ed2649"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a414be7e81399ae2d89cfa15b27134486"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dbe/class_test_caller.html#a414be7e81399ae2d89cfa15b27134486">toString</a> () const</td></tr>
+<tr class="memitem:a414be7e81399ae2d89cfa15b27134486"><td class="memItemLeft" align="right" valign="top"><a id="a414be7e81399ae2d89cfa15b27134486" name="a414be7e81399ae2d89cfa15b27134486"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> () const</td></tr>
 <tr class="separator:a414be7e81399ae2d89cfa15b27134486"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_test_case"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_test_case')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d9/d1c/class_test_case.html">TestCase</a></td></tr>
 <tr class="memitem:af81ee40f823e03175e2f2b965ff3661a inherit pub_methods_class_test_case"><td class="memItemLeft" align="right" valign="top"><a id="af81ee40f823e03175e2f2b965ff3661a" name="af81ee40f823e03175e2f2b965ff3661a"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>TestCase</b> (const std::string &amp;name)</td></tr>
 <tr class="separator:af81ee40f823e03175e2f2b965ff3661a inherit pub_methods_class_test_case"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bc50d62de5b2d0addf9b0167e34b134 inherit pub_methods_class_test_case"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1c/class_test_case.html#a6bc50d62de5b2d0addf9b0167e34b134">run</a> (<a class="el" href="../../dd/dd3/class_test_result.html">TestResult</a> *result)</td></tr>
-<tr class="memdesc:a6bc50d62de5b2d0addf9b0167e34b134 inherit pub_methods_class_test_case"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the test, collecting results.  <a href="../../d9/d1c/class_test_case.html#a6bc50d62de5b2d0addf9b0167e34b134">More...</a><br /></td></tr>
 <tr class="separator:a6bc50d62de5b2d0addf9b0167e34b134 inherit pub_methods_class_test_case"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f3532470cf17ba70b37caa3c8cdd8ce inherit pub_methods_class_test_case"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1c/class_test_case.html#a2f3532470cf17ba70b37caa3c8cdd8ce">getName</a> () const</td></tr>
-<tr class="memdesc:a2f3532470cf17ba70b37caa3c8cdd8ce inherit pub_methods_class_test_case"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the test name.  <a href="../../d9/d1c/class_test_case.html#a2f3532470cf17ba70b37caa3c8cdd8ce">More...</a><br /></td></tr>
 <tr class="separator:a2f3532470cf17ba70b37caa3c8cdd8ce inherit pub_methods_class_test_case"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b55957ac1dfef01e5d9fa2475676f34 inherit pub_methods_class_test_case"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1c/class_test_case.html#a6b55957ac1dfef01e5d9fa2475676f34">runTest</a> ()</td></tr>
 <tr class="memdesc:a6b55957ac1dfef01e5d9fa2475676f34 inherit pub_methods_class_test_case"><td class="mdescLeft">&#160;</td><td class="mdescRight">FIXME: this should probably be pure virtual.  <a href="../../d9/d1c/class_test_case.html#a6b55957ac1dfef01e5d9fa2475676f34">More...</a><br /></td></tr>
@@ -133,8 +130,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0d23068d8b9cc4319a7759938fc47409 inherit pub_methods_class_test_leaf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d9b/class_test.html">Test</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d69/class_test_leaf.html#a0d23068d8b9cc4319a7759938fc47409">doGetChildTestAt</a> (int index) const</td></tr>
 <tr class="separator:a0d23068d8b9cc4319a7759938fc47409 inherit pub_methods_class_test_leaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_test"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_test')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d1/d9b/class_test.html">Test</a></td></tr>
-<tr class="memitem:a7beeb95dc0d058bd3bfea1a75463cb03 inherit pub_methods_class_test"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d9b/class_test.html#a7beeb95dc0d058bd3bfea1a75463cb03">run</a> (<a class="el" href="../../dd/dd3/class_test_result.html">TestResult</a> *result)=0</td></tr>
-<tr class="memdesc:a7beeb95dc0d058bd3bfea1a75463cb03 inherit pub_methods_class_test"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the test, collecting results.  <a href="../../d1/d9b/class_test.html#a7beeb95dc0d058bd3bfea1a75463cb03">More...</a><br /></td></tr>
+<tr class="memitem:a7beeb95dc0d058bd3bfea1a75463cb03 inherit pub_methods_class_test"><td class="memItemLeft" align="right" valign="top"><a id="a7beeb95dc0d058bd3bfea1a75463cb03" name="a7beeb95dc0d058bd3bfea1a75463cb03"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> (<a class="el" href="../../dd/dd3/class_test_result.html">TestResult</a> *result)=0</td></tr>
+<tr class="memdesc:a7beeb95dc0d058bd3bfea1a75463cb03 inherit pub_methods_class_test"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the test, collecting results. <br /></td></tr>
 <tr class="separator:a7beeb95dc0d058bd3bfea1a75463cb03 inherit pub_methods_class_test"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad2b7244c7cec3f3aa9f81d12b15c8cf inherit pub_methods_class_test"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d9b/class_test.html#aad2b7244c7cec3f3aa9f81d12b15c8cf">countTestCases</a> () const =0</td></tr>
 <tr class="memdesc:aad2b7244c7cec3f3aa9f81d12b15c8cf inherit pub_methods_class_test"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of test cases invoked by <a class="el" href="../../d1/d9b/class_test.html#a7beeb95dc0d058bd3bfea1a75463cb03" title="Run the test, collecting results.">run()</a>.  <a href="../../d1/d9b/class_test.html#aad2b7244c7cec3f3aa9f81d12b15c8cf">More...</a><br /></td></tr>
@@ -160,11 +158,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a753686ebe945115dcf480019ca814c94 inherit pub_methods_class_test"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d9/d05/class_test_path.html">TestPath</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d9b/class_test.html#a753686ebe945115dcf480019ca814c94">resolveTestPath</a> (const std::string &amp;testPath) const</td></tr>
 <tr class="memdesc:a753686ebe945115dcf480019ca814c94 inherit pub_methods_class_test"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolved the specified test path with this test acting as 'root'.  <a href="../../d1/d9b/class_test.html#a753686ebe945115dcf480019ca814c94">More...</a><br /></td></tr>
 <tr class="separator:a753686ebe945115dcf480019ca814c94 inherit pub_methods_class_test"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e77590b14a3ec7f93fe02e5b89a242f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d78/class_test_fixture.html#a0e77590b14a3ec7f93fe02e5b89a242f">setUp</a> ()</td></tr>
-<tr class="memdesc:a0e77590b14a3ec7f93fe02e5b89a242f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up context before running a test.  <a href="../../d3/d78/class_test_fixture.html#a0e77590b14a3ec7f93fe02e5b89a242f">More...</a><br /></td></tr>
+<tr class="memitem:a0e77590b14a3ec7f93fe02e5b89a242f"><td class="memItemLeft" align="right" valign="top"><a id="a0e77590b14a3ec7f93fe02e5b89a242f" name="a0e77590b14a3ec7f93fe02e5b89a242f"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setUp</b> ()</td></tr>
+<tr class="memdesc:a0e77590b14a3ec7f93fe02e5b89a242f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up context before running a test. <br /></td></tr>
 <tr class="separator:a0e77590b14a3ec7f93fe02e5b89a242f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a707dd4d7d0910af916343d79c0feffc9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d78/class_test_fixture.html#a707dd4d7d0910af916343d79c0feffc9">tearDown</a> ()</td></tr>
-<tr class="memdesc:a707dd4d7d0910af916343d79c0feffc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clean up after the test run.  <a href="../../d3/d78/class_test_fixture.html#a707dd4d7d0910af916343d79c0feffc9">More...</a><br /></td></tr>
+<tr class="memitem:a707dd4d7d0910af916343d79c0feffc9"><td class="memItemLeft" align="right" valign="top"><a id="a707dd4d7d0910af916343d79c0feffc9" name="a707dd4d7d0910af916343d79c0feffc9"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>tearDown</b> ()</td></tr>
+<tr class="memdesc:a707dd4d7d0910af916343d79c0feffc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clean up after the test run. <br /></td></tr>
 <tr class="separator:a707dd4d7d0910af916343d79c0feffc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
@@ -210,8 +210,8 @@ class TestCaller&lt; Fixture &gt;</div><p >Generate a test case from a fixture m
 <p >Here is an example: </p><div class="fragment"><div class="line"><span class="keyword">class </span>MathTest : <span class="keyword">public</span> CppUnit::TestFixture {</div>
 <div class="line">        ...</div>
 <div class="line">    <span class="keyword">public</span>:</div>
-<div class="line">        <span class="keywordtype">void</span>         <a class="code hl_function" href="../../da/dbe/class_test_caller.html#ae6880afc711d24ae0b8846759064ceea">setUp</a>();</div>
-<div class="line">        <span class="keywordtype">void</span>         <a class="code hl_function" href="../../da/dbe/class_test_caller.html#a0e463b88bf0ceacbd8875e0450ed2649">tearDown</a>();</div>
+<div class="line">        <span class="keywordtype">void</span>         setUp();</div>
+<div class="line">        <span class="keywordtype">void</span>         tearDown();</div>
 <div class="line"> </div>
 <div class="line">        <span class="keywordtype">void</span>         testAdd();</div>
 <div class="line">        <span class="keywordtype">void</span>         testSubtract();</div>
@@ -223,13 +223,11 @@ class TestCaller&lt; Fixture &gt;</div><p >Generate a test case from a fixture m
 <div class="line">    suite-&gt;addTest( <span class="keyword">new</span> CppUnit::TestCaller&lt;MathTest&gt;( <span class="stringliteral">&quot;testAdd&quot;</span>, testAdd ) );</div>
 <div class="line">    <span class="keywordflow">return</span> suite;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclass_test_caller_html_a0e463b88bf0ceacbd8875e0450ed2649"><div class="ttname"><a href="../../da/dbe/class_test_caller.html#a0e463b88bf0ceacbd8875e0450ed2649">TestCaller::tearDown</a></div><div class="ttdeci">void tearDown()</div><div class="ttdoc">Clean up after the test run.</div><div class="ttdef"><b>Definition:</b> TestCaller.h:183</div></div>
-<div class="ttc" id="aclass_test_caller_html_ae6880afc711d24ae0b8846759064ceea"><div class="ttname"><a href="../../da/dbe/class_test_caller.html#ae6880afc711d24ae0b8846759064ceea">TestCaller::setUp</a></div><div class="ttdeci">void setUp()</div><div class="ttdoc">Set up context before running a test.</div><div class="ttdef"><b>Definition:</b> TestCaller.h:178</div></div>
 </div><!-- fragment --><p >You can use a <a class="el" href="../../da/dbe/class_test_caller.html" title="Generate a test case from a fixture method.">TestCaller</a> to bind any test method on a <a class="el" href="../../d3/d78/class_test_fixture.html" title="Wraps a test case with setUp and tearDown methods.">TestFixture</a> class, as long as it accepts void and returns void.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d9/d1c/class_test_case.html" title="A single test object.">TestCase</a> </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a84cb35144455c4245c45d755b84c6093" name="a84cb35144455c4245c45d755b84c6093"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84cb35144455c4245c45d755b84c6093">&#9670;&nbsp;</a></span>TestCaller() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a84cb35144455c4245c45d755b84c6093">&#9670;&nbsp;</a></span>TestCaller() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -266,23 +264,15 @@ template&lt;class Fixture &gt; </div>
 <p >Constructor for <a class="el" href="../../da/dbe/class_test_caller.html" title="Generate a test case from a fixture method.">TestCaller</a>. This constructor builds a new Fixture instance owned by the <a class="el" href="../../da/dbe/class_test_caller.html" title="Generate a test case from a fixture method.">TestCaller</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>name of this <a class="el" href="../../da/dbe/class_test_caller.html" title="Generate a test case from a fixture method.">TestCaller</a> </td></tr>
-    <tr><td class="paramname">test</td><td>the method this <a class="el" href="../../da/dbe/class_test_caller.html" title="Generate a test case from a fixture method.">TestCaller</a> calls in <a class="el" href="../../da/dbe/class_test_caller.html#aad0c877a47b75d056a4f8f323d3169ab" title="FIXME: this should probably be pure virtual.">runTest()</a> </td></tr>
+    <tr><td class="paramname">test</td><td>the method this <a class="el" href="../../da/dbe/class_test_caller.html" title="Generate a test case from a fixture method.">TestCaller</a> calls in runTest() </td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">  117</span>                                                :</div>
-<div class="line"><span class="lineno">  118</span>        <a class="code hl_class" href="../../d9/d1c/class_test_case.html">TestCase</a>( name ), </div>
-<div class="line"><span class="lineno">  119</span>        m_ownFixture( <span class="keyword">true</span> ),</div>
-<div class="line"><span class="lineno">  120</span>        m_fixture( <span class="keyword">new</span> Fixture() ),</div>
-<div class="line"><span class="lineno">  121</span>        m_test_function( std::bind(test, m_fixture) )</div>
-<div class="line"><span class="lineno">  122</span>  {</div>
-<div class="line"><span class="lineno">  123</span>  }</div>
-<div class="ttc" id="aclass_test_case_html"><div class="ttname"><a href="../../d9/d1c/class_test_case.html">TestCase</a></div><div class="ttdoc">A single test object.</div><div class="ttdef"><b>Definition:</b> TestCase.h:29</div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a21479de59b7c38a6d8bed9e66025ebb0" name="a21479de59b7c38a6d8bed9e66025ebb0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21479de59b7c38a6d8bed9e66025ebb0">&#9670;&nbsp;</a></span>TestCaller() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a21479de59b7c38a6d8bed9e66025ebb0">&#9670;&nbsp;</a></span>TestCaller() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -325,23 +315,16 @@ template&lt;class Fixture &gt; </div>
 <p >Constructor for <a class="el" href="../../da/dbe/class_test_caller.html" title="Generate a test case from a fixture method.">TestCaller</a>. This constructor does not create a new Fixture instance but accepts an existing one as parameter. The <a class="el" href="../../da/dbe/class_test_caller.html" title="Generate a test case from a fixture method.">TestCaller</a> will not own the Fixture object. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>name of this <a class="el" href="../../da/dbe/class_test_caller.html" title="Generate a test case from a fixture method.">TestCaller</a> </td></tr>
-    <tr><td class="paramname">test</td><td>the method this <a class="el" href="../../da/dbe/class_test_caller.html" title="Generate a test case from a fixture method.">TestCaller</a> calls in <a class="el" href="../../da/dbe/class_test_caller.html#aad0c877a47b75d056a4f8f323d3169ab" title="FIXME: this should probably be pure virtual.">runTest()</a> </td></tr>
+    <tr><td class="paramname">test</td><td>the method this <a class="el" href="../../da/dbe/class_test_caller.html" title="Generate a test case from a fixture method.">TestCaller</a> calls in runTest() </td></tr>
     <tr><td class="paramname">fixture</td><td>the Fixture to invoke the test method on. </td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">  134</span>                                                                :</div>
-<div class="line"><span class="lineno">  135</span>        <a class="code hl_class" href="../../d9/d1c/class_test_case.html">TestCase</a>( name ), </div>
-<div class="line"><span class="lineno">  136</span>        m_ownFixture( <span class="keyword">false</span> ),</div>
-<div class="line"><span class="lineno">  137</span>        m_fixture( &amp;fixture ),</div>
-<div class="line"><span class="lineno">  138</span>        m_test_function( std::bind(test, &amp;fixture) )</div>
-<div class="line"><span class="lineno">  139</span>  {</div>
-<div class="line"><span class="lineno">  140</span>  }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a5977f4de9736929451f30b039a42487d" name="a5977f4de9736929451f30b039a42487d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5977f4de9736929451f30b039a42487d">&#9670;&nbsp;</a></span>TestCaller() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5977f4de9736929451f30b039a42487d">&#9670;&nbsp;</a></span>TestCaller() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -384,101 +367,12 @@ template&lt;class Fixture &gt; </div>
 <p >Constructor for <a class="el" href="../../da/dbe/class_test_caller.html" title="Generate a test case from a fixture method.">TestCaller</a>. This constructor does not create a new Fixture instance but accepts an existing one as parameter. The <a class="el" href="../../da/dbe/class_test_caller.html" title="Generate a test case from a fixture method.">TestCaller</a> will own the Fixture object and delete it in its destructor. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>name of this <a class="el" href="../../da/dbe/class_test_caller.html" title="Generate a test case from a fixture method.">TestCaller</a> </td></tr>
-    <tr><td class="paramname">test</td><td>the method this <a class="el" href="../../da/dbe/class_test_caller.html" title="Generate a test case from a fixture method.">TestCaller</a> calls in <a class="el" href="../../da/dbe/class_test_caller.html#aad0c877a47b75d056a4f8f323d3169ab" title="FIXME: this should probably be pure virtual.">runTest()</a> </td></tr>
+    <tr><td class="paramname">test</td><td>the method this <a class="el" href="../../da/dbe/class_test_caller.html" title="Generate a test case from a fixture method.">TestCaller</a> calls in runTest() </td></tr>
     <tr><td class="paramname">fixture</td><td>the Fixture to invoke the test method on. </td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">  151</span>                                                                :</div>
-<div class="line"><span class="lineno">  152</span>        <a class="code hl_class" href="../../d9/d1c/class_test_case.html">TestCase</a>( name ), </div>
-<div class="line"><span class="lineno">  153</span>        m_ownFixture( <span class="keyword">true</span> ),</div>
-<div class="line"><span class="lineno">  154</span>        m_fixture( fixture ),</div>
-<div class="line"><span class="lineno">  155</span>        m_test_function( std::bind(test, fixture) )</div>
-<div class="line"><span class="lineno">  156</span>  {</div>
-<div class="line"><span class="lineno">  157</span>  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a06eb15631e021ac03e3c5067f4938c1e" name="a06eb15631e021ac03e3c5067f4938c1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06eb15631e021ac03e3c5067f4938c1e">&#9670;&nbsp;</a></span>TestCaller() <span class="overload">[4/4]</span></h2>
 
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Fixture &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../da/dbe/class_test_caller.html">TestCaller</a>&lt; Fixture &gt;<a class="el" href="../../da/dbe/class_test_caller.html">::TestCaller</a> </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
-          <td class="paramname"><em>test_function</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Fixture *&#160;</td>
-          <td class="paramname"><em>fixture</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  159</span>                                                                                 :</div>
-<div class="line"><span class="lineno">  160</span>      <a class="code hl_class" href="../../d9/d1c/class_test_case.html">TestCase</a>(name),</div>
-<div class="line"><span class="lineno">  161</span>      m_ownFixture(<span class="keyword">true</span>),</div>
-<div class="line"><span class="lineno">  162</span>      m_fixture(fixture),</div>
-<div class="line"><span class="lineno">  163</span>      m_test_function(test_function)</div>
-<div class="line"><span class="lineno">  164</span>    {</div>
-<div class="line"><span class="lineno">  165</span>    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a7d8e2103e62a924d784b7a812681424a" name="a7d8e2103e62a924d784b7a812681424a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d8e2103e62a924d784b7a812681424a">&#9670;&nbsp;</a></span>~TestCaller()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Fixture &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../da/dbe/class_test_caller.html">TestCaller</a>&lt; Fixture &gt;::~<a class="el" href="../../da/dbe/class_test_caller.html">TestCaller</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  168</span>  {</div>
-<div class="line"><span class="lineno">  169</span>    <span class="keywordflow">if</span> (m_ownFixture)</div>
-<div class="line"><span class="lineno">  170</span>      <span class="keyword">delete</span> m_fixture;</div>
-<div class="line"><span class="lineno">  171</span>  }</div>
-</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -507,13 +401,8 @@ template&lt;class Fixture &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>FIXME: this should probably be pure virtual. </p>
-
 <p>Reimplemented from <a class="el" href="../../d9/d1c/class_test_case.html#a6b55957ac1dfef01e5d9fa2475676f34">TestCase</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  174</span>  { </div>
-<div class="line"><span class="lineno">  175</span>      m_test_function();</div>
-<div class="line"><span class="lineno">  176</span>  }  </div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="ae6880afc711d24ae0b8846759064ceea" name="ae6880afc711d24ae0b8846759064ceea"></a>
@@ -541,13 +430,8 @@ template&lt;class Fixture &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Set up context before running a test. </p>
-
 <p>Reimplemented from <a class="el" href="../../d3/d78/class_test_fixture.html#a0e77590b14a3ec7f93fe02e5b89a242f">TestFixture</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  179</span>  { </div>
-<div class="line"><span class="lineno">  180</span>    m_fixture-&gt;setUp (); </div>
-<div class="line"><span class="lineno">  181</span>  }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a0e463b88bf0ceacbd8875e0450ed2649" name="a0e463b88bf0ceacbd8875e0450ed2649"></a>
@@ -575,48 +459,12 @@ template&lt;class Fixture &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Clean up after the test run. </p>
-
 <p>Reimplemented from <a class="el" href="../../d3/d78/class_test_fixture.html#a707dd4d7d0910af916343d79c0feffc9">TestFixture</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  184</span>  { </div>
-<div class="line"><span class="lineno">  185</span>      m_fixture-&gt;tearDown (); </div>
-<div class="line"><span class="lineno">  186</span>  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a414be7e81399ae2d89cfa15b27134486" name="a414be7e81399ae2d89cfa15b27134486"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a414be7e81399ae2d89cfa15b27134486">&#9670;&nbsp;</a></span>toString()</h2>
 
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Fixture &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string <a class="el" href="../../da/dbe/class_test_caller.html">TestCaller</a>&lt; Fixture &gt;::toString </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  189</span>  { </div>
-<div class="line"><span class="lineno">  190</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;TestCaller &quot;</span> + <a class="code hl_function" href="../../d9/d1c/class_test_case.html#a2f3532470cf17ba70b37caa3c8cdd8ce">getName</a>(); </div>
-<div class="line"><span class="lineno">  191</span>  }</div>
-<div class="ttc" id="aclass_test_case_html_a2f3532470cf17ba70b37caa3c8cdd8ce"><div class="ttname"><a href="../../d9/d1c/class_test_case.html#a2f3532470cf17ba70b37caa3c8cdd8ce">TestCase::getName</a></div><div class="ttdeci">std::string getName() const</div><div class="ttdoc">Returns the test name.</div></div>
-</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>out/build/x64/vcpkg_installed/x86-windows/include/cppunit/<a class="el" href="../../da/d33/_test_caller_8h_source.html">TestCaller.h</a></li>
+<li>TestCaller.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

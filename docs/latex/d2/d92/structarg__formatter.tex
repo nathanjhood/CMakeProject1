@@ -18,9 +18,11 @@ using {\bfseries context} = \mbox{\hyperlink{classbasic__format__context}{buffer
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T $>$ }\\FMT\+\_\+\+CONSTEXPR FMT\+\_\+\+INLINE auto \mbox{\hyperlink{structarg__formatter_a2760e4ef8eff76fd158743e830a15da3}{operator()}} (T \mbox{\hyperlink{classvalue}{value}}) -\/$>$ iterator
+\mbox{\Hypertarget{structarg__formatter_a2760e4ef8eff76fd158743e830a15da3}\label{structarg__formatter_a2760e4ef8eff76fd158743e830a15da3}} 
+{\footnotesize template$<$typename T $>$ }\\FMT\+\_\+\+CONSTEXPR FMT\+\_\+\+INLINE auto {\bfseries operator()} (T \mbox{\hyperlink{classvalue}{value}}) -\/$>$ iterator
 \item 
-auto \mbox{\hyperlink{structarg__formatter_a672a78bc78c31cac247dda3ee49645d6}{operator()}} (typename \mbox{\hyperlink{classbasic__format__arg}{basic\+\_\+format\+\_\+arg}}$<$ \mbox{\hyperlink{classbasic__format__context}{context}} $>$\+::handle) -\/$>$ iterator
+\mbox{\Hypertarget{structarg__formatter_a672a78bc78c31cac247dda3ee49645d6}\label{structarg__formatter_a672a78bc78c31cac247dda3ee49645d6}} 
+auto {\bfseries operator()} (typename \mbox{\hyperlink{classbasic__format__arg}{basic\+\_\+format\+\_\+arg}}$<$ \mbox{\hyperlink{classbasic__format__context}{context}} $>$\+::handle) -\/$>$ iterator
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -36,40 +38,6 @@ const \mbox{\hyperlink{structbasic__format__specs}{basic\+\_\+format\+\_\+specs}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{structarg__formatter_a2760e4ef8eff76fd158743e830a15da3}\label{structarg__formatter_a2760e4ef8eff76fd158743e830a15da3}} 
-\index{arg\_formatter$<$ Char $>$@{arg\_formatter$<$ Char $>$}!operator()@{operator()}}
-\index{operator()@{operator()}!arg\_formatter$<$ Char $>$@{arg\_formatter$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-template$<$typename T $>$ \\
-FMT\+\_\+\+CONSTEXPR FMT\+\_\+\+INLINE auto \mbox{\hyperlink{structarg__formatter}{arg\+\_\+formatter}}$<$ Char $>$\+::operator() (\begin{DoxyParamCaption}\item[{T}]{value }\end{DoxyParamCaption}) -\/$>$ iterator \hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{3368                                                                 \{}
-\DoxyCodeLine{3369     \textcolor{keywordflow}{return} detail::write(out, \mbox{\hyperlink{classvalue}{value}}, specs, locale);}
-\DoxyCodeLine{3370   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{structarg__formatter_a672a78bc78c31cac247dda3ee49645d6}\label{structarg__formatter_a672a78bc78c31cac247dda3ee49645d6}} 
-\index{arg\_formatter$<$ Char $>$@{arg\_formatter$<$ Char $>$}!operator()@{operator()}}
-\index{operator()@{operator()}!arg\_formatter$<$ Char $>$@{arg\_formatter$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-auto \mbox{\hyperlink{structarg__formatter}{arg\+\_\+formatter}}$<$ Char $>$\+::operator() (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classbasic__format__arg}{basic\+\_\+format\+\_\+arg}}$<$ \mbox{\hyperlink{classbasic__format__context}{context}} $>$\+::handle}]{ }\end{DoxyParamCaption}) -\/$>$ iterator \hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{3371                                                                         \{}
-\DoxyCodeLine{3372     \textcolor{comment}{// User-\/defined types are handled separately because they require access}}
-\DoxyCodeLine{3373     \textcolor{comment}{// to the parse context.}}
-\DoxyCodeLine{3374     \textcolor{keywordflow}{return} out;}
-\DoxyCodeLine{3375   \}}
-
-\end{DoxyCode}
-
-
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/format.\+h\end{DoxyCompactItemize}
+format.\+h\end{DoxyCompactItemize}

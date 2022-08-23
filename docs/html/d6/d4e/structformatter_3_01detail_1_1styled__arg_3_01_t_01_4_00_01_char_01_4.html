@@ -82,86 +82,13 @@ Inheritance diagram for formatter&lt; detail::styled_arg&lt; T &gt;, Char &gt;:<
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a66c75e987c7cdbb492a5ebe0f493c671"><td class="memTemplParams" colspan="2">template&lt;typename FormatContext &gt; </td></tr>
-<tr class="memitem:a66c75e987c7cdbb492a5ebe0f493c671"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d6/d4e/structformatter_3_01detail_1_1styled__arg_3_01_t_01_4_00_01_char_01_4.html#a66c75e987c7cdbb492a5ebe0f493c671">format</a> (const detail::styled_arg&lt; T &gt; &amp;arg, FormatContext &amp;ctx) const -&gt; decltype(ctx.out())</td></tr>
+<tr class="memitem:a66c75e987c7cdbb492a5ebe0f493c671"><td class="memTemplParams" colspan="2"><a id="a66c75e987c7cdbb492a5ebe0f493c671" name="a66c75e987c7cdbb492a5ebe0f493c671"></a>
+template&lt;typename FormatContext &gt; </td></tr>
+<tr class="memitem:a66c75e987c7cdbb492a5ebe0f493c671"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>format</b> (const detail::styled_arg&lt; T &gt; &amp;arg, FormatContext &amp;ctx) const -&gt; decltype(ctx.out())</td></tr>
 <tr class="separator:a66c75e987c7cdbb492a5ebe0f493c671"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a66c75e987c7cdbb492a5ebe0f493c671" name="a66c75e987c7cdbb492a5ebe0f493c671"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66c75e987c7cdbb492a5ebe0f493c671">&#9670;&nbsp;</a></span>format()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , typename Char &gt; </div>
-<div class="memtemplate">
-template&lt;typename FormatContext &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto <a class="el" href="../../d8/db3/structformatter.html">formatter</a>&lt; detail::styled_arg&lt; T &gt;, Char &gt;::format </td>
-          <td>(</td>
-          <td class="paramtype">const detail::styled_arg&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>arg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">FormatContext &amp;&#160;</td>
-          <td class="paramname"><em>ctx</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const -&gt; decltype(ctx.out()) </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  598</span>                             {</div>
-<div class="line"><span class="lineno">  599</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ts = arg.style;</div>
-<div class="line"><span class="lineno">  600</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_class" href="../../d7/d71/classvalue.html">value</a> = arg.value;</div>
-<div class="line"><span class="lineno">  601</span>    <span class="keyword">auto</span> out = ctx.out();</div>
-<div class="line"><span class="lineno">  602</span> </div>
-<div class="line"><span class="lineno">  603</span>    <span class="keywordtype">bool</span> has_style = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  604</span>    <span class="keywordflow">if</span> (ts.has_emphasis()) {</div>
-<div class="line"><span class="lineno">  605</span>      has_style = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  606</span>      <span class="keyword">auto</span> emphasis = detail::make_emphasis&lt;Char&gt;(ts.get_emphasis());</div>
-<div class="line"><span class="lineno">  607</span>      out = std::copy(emphasis.begin(), emphasis.end(), out);</div>
-<div class="line"><span class="lineno">  608</span>    }</div>
-<div class="line"><span class="lineno">  609</span>    <span class="keywordflow">if</span> (ts.has_foreground()) {</div>
-<div class="line"><span class="lineno">  610</span>      has_style = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  611</span>      <span class="keyword">auto</span> foreground =</div>
-<div class="line"><span class="lineno">  612</span>          detail::make_foreground_color&lt;Char&gt;(ts.get_foreground());</div>
-<div class="line"><span class="lineno">  613</span>      out = std::copy(foreground.begin(), foreground.end(), out);</div>
-<div class="line"><span class="lineno">  614</span>    }</div>
-<div class="line"><span class="lineno">  615</span>    <span class="keywordflow">if</span> (ts.has_background()) {</div>
-<div class="line"><span class="lineno">  616</span>      has_style = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  617</span>      <span class="keyword">auto</span> background =</div>
-<div class="line"><span class="lineno">  618</span>          detail::make_background_color&lt;Char&gt;(ts.get_background());</div>
-<div class="line"><span class="lineno">  619</span>      out = std::copy(background.begin(), background.end(), out);</div>
-<div class="line"><span class="lineno">  620</span>    }</div>
-<div class="line"><span class="lineno">  621</span>    out = <a class="code hl_struct" href="../../d8/db3/structformatter.html">formatter&lt;T, Char&gt;::format</a>(<a class="code hl_class" href="../../d7/d71/classvalue.html">value</a>, ctx);</div>
-<div class="line"><span class="lineno">  622</span>    <span class="keywordflow">if</span> (has_style) {</div>
-<div class="line"><span class="lineno">  623</span>      <span class="keyword">auto</span> reset_color = <a class="code hl_class" href="../../d6/d63/classbasic__string__view.html">string_view</a>(<span class="stringliteral">&quot;\x1b[0m&quot;</span>);</div>
-<div class="line"><span class="lineno">  624</span>      out = std::copy(reset_color.begin(), reset_color.end(), out);</div>
-<div class="line"><span class="lineno">  625</span>    }</div>
-<div class="line"><span class="lineno">  626</span>    <span class="keywordflow">return</span> out;</div>
-<div class="line"><span class="lineno">  627</span>  }</div>
-<div class="ttc" id="aclassbasic__string__view_html"><div class="ttname"><a href="../../d6/d63/classbasic__string__view.html">basic_string_view&lt; char &gt;</a></div></div>
-<div class="ttc" id="aclassvalue_html"><div class="ttname"><a href="../../d7/d71/classvalue.html">value</a></div><div class="ttdef"><b>Definition:</b> core.h:1221</div></div>
-<div class="ttc" id="astructformatter_html"><div class="ttname"><a href="../../d8/db3/structformatter.html">formatter</a></div><div class="ttdef"><b>Definition:</b> core.h:772</div></div>
-</div><!-- fragment -->
-</div>
-</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>out/build/x64/vcpkg_installed/x86-windows/include/fmt/<a class="el" href="../../da/dec/color_8h_source.html">color.h</a></li>
+<li>color.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -3,9 +3,11 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename Parse\+Context $>$ }\\FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structformatter_3_01bytes_01_4_adddf00fb9136d97ffdc2345482a342a6}{parse}} (Parse\+Context \&ctx) -\/$>$ decltype(ctx.\+begin())
+\mbox{\Hypertarget{structformatter_3_01bytes_01_4_adddf00fb9136d97ffdc2345482a342a6}\label{structformatter_3_01bytes_01_4_adddf00fb9136d97ffdc2345482a342a6}} 
+{\footnotesize template$<$typename Parse\+Context $>$ }\\FMT\+\_\+\+CONSTEXPR auto {\bfseries parse} (Parse\+Context \&ctx) -\/$>$ decltype(ctx.\+begin())
 \item 
-{\footnotesize template$<$typename Format\+Context $>$ }\\auto \mbox{\hyperlink{structformatter_3_01bytes_01_4_a83564f7339fc600390b0520f0eafcc8d}{format}} (\mbox{\hyperlink{classbytes}{bytes}} b, Format\+Context \&ctx) -\/$>$ decltype(ctx.\+out())
+\mbox{\Hypertarget{structformatter_3_01bytes_01_4_a83564f7339fc600390b0520f0eafcc8d}\label{structformatter_3_01bytes_01_4_a83564f7339fc600390b0520f0eafcc8d}} 
+{\footnotesize template$<$typename Format\+Context $>$ }\\auto {\bfseries format} (\mbox{\hyperlink{classbytes}{bytes}} b, Format\+Context \&ctx) -\/$>$ decltype(ctx.\+out())
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -15,46 +17,6 @@ detail\+::dynamic\+\_\+format\+\_\+specs$<$ char $>$ {\bfseries specs\+\_\+}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{structformatter_3_01bytes_01_4_a83564f7339fc600390b0520f0eafcc8d}\label{structformatter_3_01bytes_01_4_a83564f7339fc600390b0520f0eafcc8d}} 
-\index{formatter$<$ bytes $>$@{formatter$<$ bytes $>$}!format@{format}}
-\index{format@{format}!formatter$<$ bytes $>$@{formatter$<$ bytes $>$}}
-\doxysubsubsection{\texorpdfstring{format()}{format()}}
-{\footnotesize\ttfamily template$<$typename Format\+Context $>$ \\
-auto \mbox{\hyperlink{structformatter}{formatter}}$<$ \mbox{\hyperlink{classbytes}{bytes}} $>$\+::format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbytes}{bytes}}}]{b,  }\item[{Format\+Context \&}]{ctx }\end{DoxyParamCaption}) -\/$>$ decltype(ctx.\+out()) \hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{3841                                                                   \{}
-\DoxyCodeLine{3842     detail::handle\_dynamic\_spec<detail::width\_checker>(specs\_.width,}
-\DoxyCodeLine{3843                                                        specs\_.width\_ref, ctx);}
-\DoxyCodeLine{3844     detail::handle\_dynamic\_spec<detail::precision\_checker>(}
-\DoxyCodeLine{3845         specs\_.precision, specs\_.precision\_ref, ctx);}
-\DoxyCodeLine{3846     \textcolor{keywordflow}{return} detail::write\_bytes(ctx.out(), b.data\_, specs\_);}
-\DoxyCodeLine{3847   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{structformatter_3_01bytes_01_4_adddf00fb9136d97ffdc2345482a342a6}\label{structformatter_3_01bytes_01_4_adddf00fb9136d97ffdc2345482a342a6}} 
-\index{formatter$<$ bytes $>$@{formatter$<$ bytes $>$}!parse@{parse}}
-\index{parse@{parse}!formatter$<$ bytes $>$@{formatter$<$ bytes $>$}}
-\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
-{\footnotesize\ttfamily template$<$typename Parse\+Context $>$ \\
-FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structformatter}{formatter}}$<$ \mbox{\hyperlink{classbytes}{bytes}} $>$\+::parse (\begin{DoxyParamCaption}\item[{Parse\+Context \&}]{ctx }\end{DoxyParamCaption}) -\/$>$ decltype(ctx.\+begin()) \hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{3831                                                                        \{}
-\DoxyCodeLine{3832     \textcolor{keyword}{using }handler\_type = detail::dynamic\_specs\_handler<ParseContext>;}
-\DoxyCodeLine{3833     detail::specs\_checker<handler\_type> handler(handler\_type(specs\_, ctx),}
-\DoxyCodeLine{3834                                                 detail::type::string\_type);}
-\DoxyCodeLine{3835     \textcolor{keyword}{auto} it = parse\_format\_specs(ctx.begin(), ctx.end(), handler);}
-\DoxyCodeLine{3836     detail::check\_string\_type\_spec(specs\_.type, ctx.error\_handler());}
-\DoxyCodeLine{3837     \textcolor{keywordflow}{return} it;}
-\DoxyCodeLine{3838   \}}
-
-\end{DoxyCode}
-
-
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/format.\+h\end{DoxyCompactItemize}
+format.\+h\end{DoxyCompactItemize}

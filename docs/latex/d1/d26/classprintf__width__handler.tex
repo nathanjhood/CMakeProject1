@@ -3,11 +3,14 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classprintf__width__handler_a78aa69d8571fc2244d90459bc0167897}{printf\+\_\+width\+\_\+handler}} (\mbox{\hyperlink{structbasic__format__specs}{format\+\_\+specs}} \&specs)
+\mbox{\Hypertarget{classprintf__width__handler_a78aa69d8571fc2244d90459bc0167897}\label{classprintf__width__handler_a78aa69d8571fc2244d90459bc0167897}} 
+{\bfseries printf\+\_\+width\+\_\+handler} (\mbox{\hyperlink{structbasic__format__specs}{format\+\_\+specs}} \&specs)
 \item 
-{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\unsigned \mbox{\hyperlink{classprintf__width__handler_a972be14cf5b57d133018b854fb93a8ed}{operator()}} (T \mbox{\hyperlink{classvalue}{value}})
+\mbox{\Hypertarget{classprintf__width__handler_a972be14cf5b57d133018b854fb93a8ed}\label{classprintf__width__handler_a972be14cf5b57d133018b854fb93a8ed}} 
+{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\unsigned {\bfseries operator()} (T \mbox{\hyperlink{classvalue}{value}})
 \item 
-{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(!std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\unsigned \mbox{\hyperlink{classprintf__width__handler_a111a1bb6650f0f646b2888b8acecbcde}{operator()}} (T)
+\mbox{\Hypertarget{classprintf__width__handler_a111a1bb6650f0f646b2888b8acecbcde}\label{classprintf__width__handler_a111a1bb6650f0f646b2888b8acecbcde}} 
+{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(!std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\unsigned {\bfseries operator()} (T)
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Types}
 \begin{DoxyCompactItemize}
@@ -23,62 +26,6 @@ using {\bfseries format\+\_\+specs} = \mbox{\hyperlink{structbasic__format__spec
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classprintf__width__handler_a78aa69d8571fc2244d90459bc0167897}\label{classprintf__width__handler_a78aa69d8571fc2244d90459bc0167897}} 
-\index{printf\_width\_handler$<$ Char $>$@{printf\_width\_handler$<$ Char $>$}!printf\_width\_handler@{printf\_width\_handler}}
-\index{printf\_width\_handler@{printf\_width\_handler}!printf\_width\_handler$<$ Char $>$@{printf\_width\_handler$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{printf\_width\_handler()}{printf\_width\_handler()}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-\mbox{\hyperlink{classprintf__width__handler}{printf\+\_\+width\+\_\+handler}}$<$ Char $>$\mbox{\hyperlink{classprintf__width__handler}{\+::printf\+\_\+width\+\_\+handler}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbasic__format__specs}{format\+\_\+specs}} \&}]{specs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{202 : specs\_(specs) \{\}}
-
-\end{DoxyCode}
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classprintf__width__handler_a972be14cf5b57d133018b854fb93a8ed}\label{classprintf__width__handler_a972be14cf5b57d133018b854fb93a8ed}} 
-\index{printf\_width\_handler$<$ Char $>$@{printf\_width\_handler$<$ Char $>$}!operator()@{operator()}}
-\index{operator()@{operator()}!printf\_width\_handler$<$ Char $>$@{printf\_width\_handler$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
-unsigned \mbox{\hyperlink{classprintf__width__handler}{printf\+\_\+width\+\_\+handler}}$<$ Char $>$\+::operator() (\begin{DoxyParamCaption}\item[{T}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{205                                \{}
-\DoxyCodeLine{206     \textcolor{keyword}{auto} width = \textcolor{keyword}{static\_cast<}uint32\_or\_64\_or\_128\_t<T>\textcolor{keyword}{>}(\mbox{\hyperlink{classvalue}{value}});}
-\DoxyCodeLine{207     \textcolor{keywordflow}{if} (detail::is\_negative(\mbox{\hyperlink{classvalue}{value}})) \{}
-\DoxyCodeLine{208       specs\_.align = align::left;}
-\DoxyCodeLine{209       width = 0 -\/ width;}
-\DoxyCodeLine{210     \}}
-\DoxyCodeLine{211     \textcolor{keywordtype}{unsigned} int\_max = max\_value<int>();}
-\DoxyCodeLine{212     \textcolor{keywordflow}{if} (width > int\_max) FMT\_THROW(\mbox{\hyperlink{classformat__error}{format\_error}}(\textcolor{stringliteral}{"{}number is too big"{}}));}
-\DoxyCodeLine{213     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\textcolor{keyword}{>}(width);}
-\DoxyCodeLine{214   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classprintf__width__handler_a111a1bb6650f0f646b2888b8acecbcde}\label{classprintf__width__handler_a111a1bb6650f0f646b2888b8acecbcde}} 
-\index{printf\_width\_handler$<$ Char $>$@{printf\_width\_handler$<$ Char $>$}!operator()@{operator()}}
-\index{operator()@{operator()}!printf\_width\_handler$<$ Char $>$@{printf\_width\_handler$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(!std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
-unsigned \mbox{\hyperlink{classprintf__width__handler}{printf\+\_\+width\+\_\+handler}}$<$ Char $>$\+::operator() (\begin{DoxyParamCaption}\item[{T}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{217                          \{}
-\DoxyCodeLine{218     FMT\_THROW(\mbox{\hyperlink{classformat__error}{format\_error}}(\textcolor{stringliteral}{"{}width is not integer"{}}));}
-\DoxyCodeLine{219     \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{220   \}}
-
-\end{DoxyCode}
-
-
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/printf.\+h\end{DoxyCompactItemize}
+printf.\+h\end{DoxyCompactItemize}

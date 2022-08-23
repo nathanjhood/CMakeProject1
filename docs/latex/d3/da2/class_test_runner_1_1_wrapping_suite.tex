@@ -22,16 +22,16 @@ Inheritance diagram for Test\+Runner\+::Wrapping\+Suite\+:\begin{figure}[H]
 {\bfseries Wrapping\+Suite} (const std\+::string \&name=\char`\"{}All Tests\char`\"{})
 \item 
 int \mbox{\hyperlink{class_test_runner_1_1_wrapping_suite_a5ffc3769e32dcde719bcf61191fb3c53}{get\+Child\+Test\+Count}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of direct child of the test. \end{DoxyCompactList}\item 
+\item 
 std\+::string \mbox{\hyperlink{class_test_runner_1_1_wrapping_suite_a0015e42bd741cbf8ca64e754cd93e7c6}{get\+Name}} () const
-\begin{DoxyCompactList}\small\item\em Returns the test name. \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{class_test_runner_1_1_wrapping_suite_aa486bfea64b60206ac1d8fbb006f2f64}{run}} (\mbox{\hyperlink{class_test_result}{Test\+Result}} $\ast$result)
-\begin{DoxyCompactList}\small\item\em Run the test, collecting results. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_test}{Test}} $\ast$ \mbox{\hyperlink{class_test_runner_1_1_wrapping_suite_a389459f7401497bcb5bfd2d44faa77ec}{do\+Get\+Child\+Test\+At}} (int index) const
-\begin{DoxyCompactList}\small\item\em Returns the child test of the specified valid index. \end{DoxyCompactList}\item 
+\item 
 \mbox{\Hypertarget{class_test_runner_1_1_wrapping_suite_ae25829c384e39b6ebb11bb7369058971}\label{class_test_runner_1_1_wrapping_suite_ae25829c384e39b6ebb11bb7369058971}} 
 bool {\bfseries has\+Only\+One\+Test} () const
 \item 
@@ -52,18 +52,6 @@ bool {\bfseries has\+Only\+One\+Test} () const
 
 
 
-Returns the child test of the specified valid index. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em index} & Zero based valid index of the child test to return. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Pointer on the test. Never {\ttfamily NULL}. 
-\end{DoxyReturn}
-
-
 Implements \mbox{\hyperlink{class_test_aeec4ad92723c978238d933cbde475393}{Test}}.
 
 \mbox{\Hypertarget{class_test_runner_1_1_wrapping_suite_a5ffc3769e32dcde719bcf61191fb3c53}\label{class_test_runner_1_1_wrapping_suite_a5ffc3769e32dcde719bcf61191fb3c53}} 
@@ -71,10 +59,6 @@ Implements \mbox{\hyperlink{class_test_aeec4ad92723c978238d933cbde475393}{Test}}
 \index{getChildTestCount@{getChildTestCount}!TestRunner::WrappingSuite@{TestRunner::WrappingSuite}}
 \doxysubsubsection{\texorpdfstring{getChildTestCount()}{getChildTestCount()}}
 {\footnotesize\ttfamily int Test\+Runner\+::\+Wrapping\+Suite\+::get\+Child\+Test\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Returns the number of direct child of the test. 
 
 
 
@@ -88,11 +72,7 @@ Implements \mbox{\hyperlink{class_test_a7aaab95037b7222573471074c56df85b}{Test}}
 
 
 
-Returns the test name. 
-
-Each test has a name. This name may be used to find the test in a suite or registry of tests. 
-
-Reimplemented from \mbox{\hyperlink{class_test_composite_a744c14d2610bd223e853600417a4cadb}{Test\+Composite}}.
+Reimplemented from \mbox{\hyperlink{class_test_composite}{Test\+Composite}}.
 
 \mbox{\Hypertarget{class_test_runner_1_1_wrapping_suite_aa486bfea64b60206ac1d8fbb006f2f64}\label{class_test_runner_1_1_wrapping_suite_aa486bfea64b60206ac1d8fbb006f2f64}} 
 \index{TestRunner::WrappingSuite@{TestRunner::WrappingSuite}!run@{run}}
@@ -102,14 +82,10 @@ Reimplemented from \mbox{\hyperlink{class_test_composite_a744c14d2610bd223e85360
 
 
 
-Run the test, collecting results. 
-
-
-
-Reimplemented from \mbox{\hyperlink{class_test_composite_a2ba14045b1a1e83963dd4db746b04dfd}{Test\+Composite}}.
+Reimplemented from \mbox{\hyperlink{class_test_composite}{Test\+Composite}}.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/Test\+Runner.\+h\end{DoxyCompactItemize}
+Test\+Runner.\+h\end{DoxyCompactItemize}

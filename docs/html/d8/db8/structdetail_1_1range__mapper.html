@@ -84,83 +84,17 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>mapper</b> = <a clas
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:acc5a2507629489abbe19a7a6739cfe86"><td class="memTemplParams" colspan="2">template&lt;typename T , FMT_ENABLE_IF(has_formatter&lt; remove_cvref_t&lt; T &gt;, Context &gt;<a class="el" href="../../d7/d71/classvalue.html">::value</a>) &gt; </td></tr>
-<tr class="memitem:acc5a2507629489abbe19a7a6739cfe86"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/db8/structdetail_1_1range__mapper.html#acc5a2507629489abbe19a7a6739cfe86">map</a> (T &amp;&amp;<a class="el" href="../../d7/d71/classvalue.html">value</a>) -&gt; T &amp;&amp;</td></tr>
+<tr class="memitem:acc5a2507629489abbe19a7a6739cfe86"><td class="memTemplParams" colspan="2"><a id="acc5a2507629489abbe19a7a6739cfe86" name="acc5a2507629489abbe19a7a6739cfe86"></a>
+template&lt;typename T , FMT_ENABLE_IF(has_formatter&lt; remove_cvref_t&lt; T &gt;, Context &gt;<a class="el" href="../../d7/d71/classvalue.html">::value</a>) &gt; </td></tr>
+<tr class="memitem:acc5a2507629489abbe19a7a6739cfe86"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>map</b> (T &amp;&amp;<a class="el" href="../../d7/d71/classvalue.html">value</a>) -&gt; T &amp;&amp;</td></tr>
 <tr class="separator:acc5a2507629489abbe19a7a6739cfe86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85b15893de2acb32e4b6294451f093fb"><td class="memTemplParams" colspan="2">template&lt;typename T , FMT_ENABLE_IF(!has_formatter&lt; remove_cvref_t&lt; T &gt;, Context &gt;<a class="el" href="../../d7/d71/classvalue.html">::value</a>) &gt; </td></tr>
-<tr class="memitem:a85b15893de2acb32e4b6294451f093fb"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/db8/structdetail_1_1range__mapper.html#a85b15893de2acb32e4b6294451f093fb">map</a> (T &amp;&amp;<a class="el" href="../../d7/d71/classvalue.html">value</a>) -&gt; decltype(<a class="el" href="../../d3/d6d/structarg__mapper.html">mapper</a>().map(static_cast&lt; T &amp;&amp; &gt;(<a class="el" href="../../d7/d71/classvalue.html">value</a>)))</td></tr>
+<tr class="memitem:a85b15893de2acb32e4b6294451f093fb"><td class="memTemplParams" colspan="2"><a id="a85b15893de2acb32e4b6294451f093fb" name="a85b15893de2acb32e4b6294451f093fb"></a>
+template&lt;typename T , FMT_ENABLE_IF(!has_formatter&lt; remove_cvref_t&lt; T &gt;, Context &gt;<a class="el" href="../../d7/d71/classvalue.html">::value</a>) &gt; </td></tr>
+<tr class="memitem:a85b15893de2acb32e4b6294451f093fb"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>map</b> (T &amp;&amp;<a class="el" href="../../d7/d71/classvalue.html">value</a>) -&gt; decltype(<a class="el" href="../../d3/d6d/structarg__mapper.html">mapper</a>().map(static_cast&lt; T &amp;&amp; &gt;(<a class="el" href="../../d7/d71/classvalue.html">value</a>)))</td></tr>
 <tr class="separator:a85b15893de2acb32e4b6294451f093fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a85b15893de2acb32e4b6294451f093fb" name="a85b15893de2acb32e4b6294451f093fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85b15893de2acb32e4b6294451f093fb">&#9670;&nbsp;</a></span>map() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Context &gt; </div>
-<div class="memtemplate">
-template&lt;typename T , FMT_ENABLE_IF(!has_formatter&lt; remove_cvref_t&lt; T &gt;, Context &gt;<a class="el" href="../../d7/d71/classvalue.html">::value</a>) &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static auto <a class="el" href="../../d8/db8/structdetail_1_1range__mapper.html">detail::range_mapper</a>&lt; Context &gt;::map </td>
-          <td>(</td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td> -&gt; decltype(<a class="el" href="../../d3/d6d/structarg__mapper.html">mapper</a>().map(static_cast&lt;T&amp;&amp;&gt;(<a class="el" href="../../d7/d71/classvalue.html">value</a>))) </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  377</span>                                                         {</div>
-<div class="line"><span class="lineno">  378</span>    <span class="keywordflow">return</span> mapper().map(<span class="keyword">static_cast&lt;</span>T&amp;&amp;<span class="keyword">&gt;</span>(<a class="code hl_class" href="../../d7/d71/classvalue.html">value</a>));</div>
-<div class="line"><span class="lineno">  379</span>  }</div>
-<div class="ttc" id="aclassvalue_html"><div class="ttname"><a href="../../d7/d71/classvalue.html">value</a></div><div class="ttdef"><b>Definition:</b> core.h:1221</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="acc5a2507629489abbe19a7a6739cfe86" name="acc5a2507629489abbe19a7a6739cfe86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc5a2507629489abbe19a7a6739cfe86">&#9670;&nbsp;</a></span>map() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Context &gt; </div>
-<div class="memtemplate">
-template&lt;typename T , FMT_ENABLE_IF(has_formatter&lt; remove_cvref_t&lt; T &gt;, Context &gt;<a class="el" href="../../d7/d71/classvalue.html">::value</a>) &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static auto <a class="el" href="../../d8/db8/structdetail_1_1range__mapper.html">detail::range_mapper</a>&lt; Context &gt;::map </td>
-          <td>(</td>
-          <td class="paramtype">T &amp;&amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td> -&gt; T&amp;&amp; </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  371</span>                                    {</div>
-<div class="line"><span class="lineno">  372</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T&amp;&amp;<span class="keyword">&gt;</span>(<a class="code hl_class" href="../../d7/d71/classvalue.html">value</a>);</div>
-<div class="line"><span class="lineno">  373</span>  }</div>
-</div><!-- fragment -->
-</div>
-</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>out/build/x64/vcpkg_installed/x86-windows/include/fmt/<a class="el" href="../../dd/d53/ranges_8h_source.html">ranges.h</a></li>
+<li>ranges.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

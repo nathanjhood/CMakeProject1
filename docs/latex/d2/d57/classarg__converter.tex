@@ -3,13 +3,17 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classarg__converter_a2efa84e846af53bd07ef607cdad09a4f}{arg\+\_\+converter}} (\mbox{\hyperlink{classbasic__format__arg}{basic\+\_\+format\+\_\+arg}}$<$ Context $>$ \&arg, char\+\_\+type type)
+\mbox{\Hypertarget{classarg__converter_a2efa84e846af53bd07ef607cdad09a4f}\label{classarg__converter_a2efa84e846af53bd07ef607cdad09a4f}} 
+{\bfseries arg\+\_\+converter} (\mbox{\hyperlink{classbasic__format__arg}{basic\+\_\+format\+\_\+arg}}$<$ Context $>$ \&arg, char\+\_\+type type)
 \item 
-void \mbox{\hyperlink{classarg__converter_af422cfdaedc8faa5e4eb941766cda90e}{operator()}} (bool \mbox{\hyperlink{classvalue}{value}})
+\mbox{\Hypertarget{classarg__converter_af422cfdaedc8faa5e4eb941766cda90e}\label{classarg__converter_af422cfdaedc8faa5e4eb941766cda90e}} 
+void {\bfseries operator()} (bool \mbox{\hyperlink{classvalue}{value}})
 \item 
-{\footnotesize template$<$typename U , FMT\+\_\+\+ENABLE\+\_\+\+IF(std\+::is\+\_\+integral$<$ U $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\void \mbox{\hyperlink{classarg__converter_ae6ffe670fbd3133f4ab869dbad908504}{operator()}} (U \mbox{\hyperlink{classvalue}{value}})
+\mbox{\Hypertarget{classarg__converter_ae6ffe670fbd3133f4ab869dbad908504}\label{classarg__converter_ae6ffe670fbd3133f4ab869dbad908504}} 
+{\footnotesize template$<$typename U , FMT\+\_\+\+ENABLE\+\_\+\+IF(std\+::is\+\_\+integral$<$ U $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\void {\bfseries operator()} (U \mbox{\hyperlink{classvalue}{value}})
 \item 
-{\footnotesize template$<$typename U , FMT\+\_\+\+ENABLE\+\_\+\+IF(!std\+::is\+\_\+integral$<$ U $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\void \mbox{\hyperlink{classarg__converter_a7e3e90ad1df3d120f6170e7ad6261f74}{operator()}} (U)
+\mbox{\Hypertarget{classarg__converter_a7e3e90ad1df3d120f6170e7ad6261f74}\label{classarg__converter_a7e3e90ad1df3d120f6170e7ad6261f74}} 
+{\footnotesize template$<$typename U , FMT\+\_\+\+ENABLE\+\_\+\+IF(!std\+::is\+\_\+integral$<$ U $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\void {\bfseries operator()} (U)
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Types}
 \begin{DoxyCompactItemize}
@@ -28,88 +32,6 @@ char\+\_\+type {\bfseries type\+\_\+}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classarg__converter_a2efa84e846af53bd07ef607cdad09a4f}\label{classarg__converter_a2efa84e846af53bd07ef607cdad09a4f}} 
-\index{arg\_converter$<$ T, Context $>$@{arg\_converter$<$ T, Context $>$}!arg\_converter@{arg\_converter}}
-\index{arg\_converter@{arg\_converter}!arg\_converter$<$ T, Context $>$@{arg\_converter$<$ T, Context $>$}}
-\doxysubsubsection{\texorpdfstring{arg\_converter()}{arg\_converter()}}
-{\footnotesize\ttfamily template$<$typename T , typename Context $>$ \\
-\mbox{\hyperlink{classarg__converter}{arg\+\_\+converter}}$<$ T, Context $>$\mbox{\hyperlink{classarg__converter}{\+::arg\+\_\+converter}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbasic__format__arg}{basic\+\_\+format\+\_\+arg}}$<$ Context $>$ \&}]{arg,  }\item[{char\+\_\+type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{122       : arg\_(arg), type\_(type) \{\}}
-
-\end{DoxyCode}
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classarg__converter_af422cfdaedc8faa5e4eb941766cda90e}\label{classarg__converter_af422cfdaedc8faa5e4eb941766cda90e}} 
-\index{arg\_converter$<$ T, Context $>$@{arg\_converter$<$ T, Context $>$}!operator()@{operator()}}
-\index{operator()@{operator()}!arg\_converter$<$ T, Context $>$@{arg\_converter$<$ T, Context $>$}}
-\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily template$<$typename T , typename Context $>$ \\
-void \mbox{\hyperlink{classarg__converter}{arg\+\_\+converter}}$<$ T, Context $>$\+::operator() (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{124                               \{}
-\DoxyCodeLine{125     \textcolor{keywordflow}{if} (type\_ != \textcolor{charliteral}{'s'}) operator()<\textcolor{keywordtype}{bool}>(\mbox{\hyperlink{classvalue}{value}});}
-\DoxyCodeLine{126   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classarg__converter_ae6ffe670fbd3133f4ab869dbad908504}\label{classarg__converter_ae6ffe670fbd3133f4ab869dbad908504}} 
-\index{arg\_converter$<$ T, Context $>$@{arg\_converter$<$ T, Context $>$}!operator()@{operator()}}
-\index{operator()@{operator()}!arg\_converter$<$ T, Context $>$@{arg\_converter$<$ T, Context $>$}}
-\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily template$<$typename T , typename Context $>$ \\
-template$<$typename U , FMT\+\_\+\+ENABLE\+\_\+\+IF(std\+::is\+\_\+integral$<$ U $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
-void \mbox{\hyperlink{classarg__converter}{arg\+\_\+converter}}$<$ T, Context $>$\+::operator() (\begin{DoxyParamCaption}\item[{U}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{129                            \{}
-\DoxyCodeLine{130     \textcolor{keywordtype}{bool} is\_signed = type\_ == \textcolor{charliteral}{'d'} || type\_ == \textcolor{charliteral}{'i'};}
-\DoxyCodeLine{131     \textcolor{keyword}{using }target\_type = conditional\_t<std::is\_same<T, void>::value, U, T>;}
-\DoxyCodeLine{132     \textcolor{keywordflow}{if} (const\_check(\textcolor{keyword}{sizeof}(target\_type) <= \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}))) \{}
-\DoxyCodeLine{133       \textcolor{comment}{// Extra casts are used to silence warnings.}}
-\DoxyCodeLine{134       \textcolor{keywordflow}{if} (is\_signed) \{}
-\DoxyCodeLine{135         arg\_ = detail::make\_arg<Context>(}
-\DoxyCodeLine{136             \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}target\_type\textcolor{keyword}{>}(\mbox{\hyperlink{classvalue}{value}})));}
-\DoxyCodeLine{137       \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{138         \textcolor{keyword}{using }unsigned\_type = \textcolor{keyword}{typename} \mbox{\hyperlink{structmake__unsigned__or__bool}{make\_unsigned\_or\_bool<target\_type>::type}};}
-\DoxyCodeLine{139         arg\_ = detail::make\_arg<Context>(}
-\DoxyCodeLine{140             \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}unsigned\_type\textcolor{keyword}{>}(\mbox{\hyperlink{classvalue}{value}})));}
-\DoxyCodeLine{141       \}}
-\DoxyCodeLine{142     \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{143       \textcolor{keywordflow}{if} (is\_signed) \{}
-\DoxyCodeLine{144         \textcolor{comment}{// glibc's printf doesn't sign extend arguments of smaller types:}}
-\DoxyCodeLine{145         \textcolor{comment}{//   std::printf("{}\%lld"{}, -\/42);  // prints "{}4294967254"{}}}
-\DoxyCodeLine{146         \textcolor{comment}{// but we don't have to do the same because it's a UB.}}
-\DoxyCodeLine{147         arg\_ = detail::make\_arg<Context>(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{long} \textcolor{keywordtype}{long}\textcolor{keyword}{>}(\mbox{\hyperlink{classvalue}{value}}));}
-\DoxyCodeLine{148       \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{149         arg\_ = detail::make\_arg<Context>(}
-\DoxyCodeLine{150             \textcolor{keyword}{static\_cast<}typename \mbox{\hyperlink{structmake__unsigned__or__bool}{make\_unsigned\_or\_bool<U>::type}}\textcolor{keyword}{>}(\mbox{\hyperlink{classvalue}{value}}));}
-\DoxyCodeLine{151       \}}
-\DoxyCodeLine{152     \}}
-\DoxyCodeLine{153   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classarg__converter_a7e3e90ad1df3d120f6170e7ad6261f74}\label{classarg__converter_a7e3e90ad1df3d120f6170e7ad6261f74}} 
-\index{arg\_converter$<$ T, Context $>$@{arg\_converter$<$ T, Context $>$}!operator()@{operator()}}
-\index{operator()@{operator()}!arg\_converter$<$ T, Context $>$@{arg\_converter$<$ T, Context $>$}}
-\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily template$<$typename T , typename Context $>$ \\
-template$<$typename U , FMT\+\_\+\+ENABLE\+\_\+\+IF(!std\+::is\+\_\+integral$<$ U $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
-void \mbox{\hyperlink{classarg__converter}{arg\+\_\+converter}}$<$ T, Context $>$\+::operator() (\begin{DoxyParamCaption}\item[{U}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{156 \{\}  \textcolor{comment}{// No conversion needed for non-\/integral types.}}
-
-\end{DoxyCode}
-
-
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/printf.\+h\end{DoxyCompactItemize}
+printf.\+h\end{DoxyCompactItemize}

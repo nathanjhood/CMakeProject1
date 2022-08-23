@@ -74,91 +74,22 @@ $(function() {
 <p>(Implementation) Automatically adds a registry into another registry.  
  <a href="../../dc/d32/class_auto_register_registry.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d8/dc2/_auto_register_suite_8h_source.html">AutoRegisterSuite.h</a>&gt;</code></p>
+<p><code>#include &lt;AutoRegisterSuite.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aeb3c0171549420bc18714d4117d9c2b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d32/class_auto_register_registry.html#aeb3c0171549420bc18714d4117d9c2b5">AutoRegisterRegistry</a> (const std::string &amp;which, const std::string &amp;to)</td></tr>
+<tr class="memitem:aeb3c0171549420bc18714d4117d9c2b5"><td class="memItemLeft" align="right" valign="top"><a id="aeb3c0171549420bc18714d4117d9c2b5" name="aeb3c0171549420bc18714d4117d9c2b5"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>AutoRegisterRegistry</b> (const std::string &amp;which, const std::string &amp;to)</td></tr>
 <tr class="separator:aeb3c0171549420bc18714d4117d9c2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3efb50c6218f5d0e5969eb6fc8bccb23"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d32/class_auto_register_registry.html#a3efb50c6218f5d0e5969eb6fc8bccb23">AutoRegisterRegistry</a> (const std::string &amp;which)</td></tr>
+<tr class="memitem:a3efb50c6218f5d0e5969eb6fc8bccb23"><td class="memItemLeft" align="right" valign="top"><a id="a3efb50c6218f5d0e5969eb6fc8bccb23" name="a3efb50c6218f5d0e5969eb6fc8bccb23"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>AutoRegisterRegistry</b> (const std::string &amp;which)</td></tr>
 <tr class="separator:a3efb50c6218f5d0e5969eb6fc8bccb23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >(Implementation) Automatically adds a registry into another registry. </p>
 <p >Don't use this class. Use the macros <a class="el" href="../../da/dd8/_helper_macros_8h.html#a0785e2e8a821f70c69a8127c35c0a667">CPPUNIT_REGISTRY_ADD()</a> and <a class="el" href="../../da/dd8/_helper_macros_8h.html#a9c3be3389213e1dc823ed580cc60878f">CPPUNIT_REGISTRY_ADD_TO_DEFAULT()</a> instead. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aeb3c0171549420bc18714d4117d9c2b5" name="aeb3c0171549420bc18714d4117d9c2b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb3c0171549420bc18714d4117d9c2b5">&#9670;&nbsp;</a></span>AutoRegisterRegistry() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">AutoRegisterRegistry::AutoRegisterRegistry </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>which</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>to</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   70</span>  {</div>
-<div class="line"><span class="lineno">   71</span>    <a class="code hl_function" href="../../d1/da9/class_test_factory_registry.html#ade673d8465371d581c7a704a7baa4620">TestFactoryRegistry::getRegistry</a>( to ).<a class="code hl_function" href="../../d1/da9/class_test_factory_registry.html#abb68b347450c97ff0dfc9ea3dfe03f4c">addRegistry</a>( which );</div>
-<div class="line"><span class="lineno">   72</span>  }</div>
-<div class="ttc" id="aclass_test_factory_registry_html_abb68b347450c97ff0dfc9ea3dfe03f4c"><div class="ttname"><a href="../../d1/da9/class_test_factory_registry.html#abb68b347450c97ff0dfc9ea3dfe03f4c">TestFactoryRegistry::addRegistry</a></div><div class="ttdeci">void addRegistry(const std::string &amp;name)</div></div>
-<div class="ttc" id="aclass_test_factory_registry_html_ade673d8465371d581c7a704a7baa4620"><div class="ttname"><a href="../../d1/da9/class_test_factory_registry.html#ade673d8465371d581c7a704a7baa4620">TestFactoryRegistry::getRegistry</a></div><div class="ttdeci">static TestFactoryRegistry &amp; getRegistry(const std::string &amp;name=&quot;All Tests&quot;)</div><div class="ttdoc">Returns a named registry.</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a3efb50c6218f5d0e5969eb6fc8bccb23" name="a3efb50c6218f5d0e5969eb6fc8bccb23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3efb50c6218f5d0e5969eb6fc8bccb23">&#9670;&nbsp;</a></span>AutoRegisterRegistry() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">AutoRegisterRegistry::AutoRegisterRegistry </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>which</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   75</span>  {</div>
-<div class="line"><span class="lineno">   76</span>    <a class="code hl_function" href="../../d1/da9/class_test_factory_registry.html#ade673d8465371d581c7a704a7baa4620">TestFactoryRegistry::getRegistry</a>().<a class="code hl_function" href="../../d1/da9/class_test_factory_registry.html#abb68b347450c97ff0dfc9ea3dfe03f4c">addRegistry</a>( which );</div>
-<div class="line"><span class="lineno">   77</span>  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>out/build/x64/vcpkg_installed/x86-windows/include/cppunit/extensions/<a class="el" href="../../d8/dc2/_auto_register_suite_8h_source.html">AutoRegisterSuite.h</a></li>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
+<li>AutoRegisterSuite.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

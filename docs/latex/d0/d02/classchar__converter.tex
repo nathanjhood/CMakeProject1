@@ -3,11 +3,14 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classchar__converter_adda97b0aee94bc5b75df07da8bdf176b}{char\+\_\+converter}} (\mbox{\hyperlink{classbasic__format__arg}{basic\+\_\+format\+\_\+arg}}$<$ Context $>$ \&arg)
+\mbox{\Hypertarget{classchar__converter_adda97b0aee94bc5b75df07da8bdf176b}\label{classchar__converter_adda97b0aee94bc5b75df07da8bdf176b}} 
+{\bfseries char\+\_\+converter} (\mbox{\hyperlink{classbasic__format__arg}{basic\+\_\+format\+\_\+arg}}$<$ Context $>$ \&arg)
 \item 
-{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\void \mbox{\hyperlink{classchar__converter_a5a08888aa9d61222e591177a8f0d375c}{operator()}} (T \mbox{\hyperlink{classvalue}{value}})
+\mbox{\Hypertarget{classchar__converter_a5a08888aa9d61222e591177a8f0d375c}\label{classchar__converter_a5a08888aa9d61222e591177a8f0d375c}} 
+{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\void {\bfseries operator()} (T \mbox{\hyperlink{classvalue}{value}})
 \item 
-{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(!std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\void \mbox{\hyperlink{classchar__converter_a5e6e60b4d6cf8cf95b43ad9a98e2ea61}{operator()}} (T)
+\mbox{\Hypertarget{classchar__converter_a5e6e60b4d6cf8cf95b43ad9a98e2ea61}\label{classchar__converter_a5e6e60b4d6cf8cf95b43ad9a98e2ea61}} 
+{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(!std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\void {\bfseries operator()} (T)
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -17,53 +20,6 @@
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classchar__converter_adda97b0aee94bc5b75df07da8bdf176b}\label{classchar__converter_adda97b0aee94bc5b75df07da8bdf176b}} 
-\index{char\_converter$<$ Context $>$@{char\_converter$<$ Context $>$}!char\_converter@{char\_converter}}
-\index{char\_converter@{char\_converter}!char\_converter$<$ Context $>$@{char\_converter$<$ Context $>$}}
-\doxysubsubsection{\texorpdfstring{char\_converter()}{char\_converter()}}
-{\footnotesize\ttfamily template$<$typename Context $>$ \\
-\mbox{\hyperlink{classchar__converter}{char\+\_\+converter}}$<$ Context $>$\mbox{\hyperlink{classchar__converter}{\+::char\+\_\+converter}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbasic__format__arg}{basic\+\_\+format\+\_\+arg}}$<$ Context $>$ \&}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{174 : arg\_(arg) \{\}}
-
-\end{DoxyCode}
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classchar__converter_a5a08888aa9d61222e591177a8f0d375c}\label{classchar__converter_a5a08888aa9d61222e591177a8f0d375c}} 
-\index{char\_converter$<$ Context $>$@{char\_converter$<$ Context $>$}!operator()@{operator()}}
-\index{operator()@{operator()}!char\_converter$<$ Context $>$@{char\_converter$<$ Context $>$}}
-\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename Context $>$ \\
-template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
-void \mbox{\hyperlink{classchar__converter}{char\+\_\+converter}}$<$ Context $>$\+::operator() (\begin{DoxyParamCaption}\item[{T}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{177                            \{}
-\DoxyCodeLine{178     arg\_ = detail::make\_arg<Context>(}
-\DoxyCodeLine{179         \textcolor{keyword}{static\_cast<}typename Context::char\_type\textcolor{keyword}{>}(\mbox{\hyperlink{classvalue}{value}}));}
-\DoxyCodeLine{180   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classchar__converter_a5e6e60b4d6cf8cf95b43ad9a98e2ea61}\label{classchar__converter_a5e6e60b4d6cf8cf95b43ad9a98e2ea61}} 
-\index{char\_converter$<$ Context $>$@{char\_converter$<$ Context $>$}!operator()@{operator()}}
-\index{operator()@{operator()}!char\_converter$<$ Context $>$@{char\_converter$<$ Context $>$}}
-\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename Context $>$ \\
-template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(!std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
-void \mbox{\hyperlink{classchar__converter}{char\+\_\+converter}}$<$ Context $>$\+::operator() (\begin{DoxyParamCaption}\item[{T}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{183 \{\}  \textcolor{comment}{// No conversion needed for non-\/integral types.}}
-
-\end{DoxyCode}
-
-
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/printf.\+h\end{DoxyCompactItemize}
+printf.\+h\end{DoxyCompactItemize}

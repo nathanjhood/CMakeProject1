@@ -8,14 +8,17 @@ struct \mbox{\hyperlink{structdynamic__formatter_1_1null__handler}{null\+\_\+han
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename Parse\+Context $>$ }\\FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classdynamic__formatter_adf32845b6375589627b734ac02519faf}{parse}} (Parse\+Context \&ctx) -\/$>$ decltype(ctx.\+begin())
+\mbox{\Hypertarget{classdynamic__formatter_adf32845b6375589627b734ac02519faf}\label{classdynamic__formatter_adf32845b6375589627b734ac02519faf}} 
+{\footnotesize template$<$typename Parse\+Context $>$ }\\FMT\+\_\+\+CONSTEXPR auto {\bfseries parse} (Parse\+Context \&ctx) -\/$>$ decltype(ctx.\+begin())
 \item 
-{\footnotesize template$<$typename T , typename Format\+Context $>$ }\\auto \mbox{\hyperlink{classdynamic__formatter_ad409c112b5d8058d65e3b96d20c4a524}{format}} (const T \&val, Format\+Context \&ctx) -\/$>$ decltype(ctx.\+out())
+\mbox{\Hypertarget{classdynamic__formatter_ad409c112b5d8058d65e3b96d20c4a524}\label{classdynamic__formatter_ad409c112b5d8058d65e3b96d20c4a524}} 
+{\footnotesize template$<$typename T , typename Format\+Context $>$ }\\auto {\bfseries format} (const T \&val, Format\+Context \&ctx) -\/$>$ decltype(ctx.\+out())
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename Context $>$ }\\void \mbox{\hyperlink{classdynamic__formatter_a3473a0919f70f4b9d3e34ee98ba58dc9}{handle\+\_\+specs}} (Context \&ctx)
+\mbox{\Hypertarget{classdynamic__formatter_a3473a0919f70f4b9d3e34ee98ba58dc9}\label{classdynamic__formatter_a3473a0919f70f4b9d3e34ee98ba58dc9}} 
+{\footnotesize template$<$typename Context $>$ }\\void {\bfseries handle\+\_\+specs} (Context \&ctx)
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -28,67 +31,6 @@ const Char $\ast$ {\bfseries format\+\_\+str\+\_\+}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classdynamic__formatter_ad409c112b5d8058d65e3b96d20c4a524}\label{classdynamic__formatter_ad409c112b5d8058d65e3b96d20c4a524}} 
-\index{dynamic\_formatter$<$ Char $>$@{dynamic\_formatter$<$ Char $>$}!format@{format}}
-\index{format@{format}!dynamic\_formatter$<$ Char $>$@{dynamic\_formatter$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{format()}{format()}}
-{\footnotesize\ttfamily template$<$typename Char  = char$>$ \\
-template$<$typename T , typename Format\+Context $>$ \\
-auto \mbox{\hyperlink{classdynamic__formatter}{dynamic\+\_\+formatter}}$<$ Char $>$\+::format (\begin{DoxyParamCaption}\item[{const T \&}]{val,  }\item[{Format\+Context \&}]{ctx }\end{DoxyParamCaption}) -\/$>$ decltype(ctx.\+out()) \hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{3762                                                                        \{}
-\DoxyCodeLine{3763     handle\_specs(ctx);}
-\DoxyCodeLine{3764     detail::specs\_checker<null\_handler> checker(}
-\DoxyCodeLine{3765         null\_handler(), detail::mapped\_type\_constant<T, FormatContext>::value);}
-\DoxyCodeLine{3766     checker.on\_align(specs\_.align);}
-\DoxyCodeLine{3767     \textcolor{keywordflow}{if} (specs\_.sign != sign::none) checker.on\_sign(specs\_.sign);}
-\DoxyCodeLine{3768     \textcolor{keywordflow}{if} (specs\_.alt) checker.on\_hash();}
-\DoxyCodeLine{3769     \textcolor{keywordflow}{if} (specs\_.precision >= 0) checker.end\_precision();}
-\DoxyCodeLine{3770     \textcolor{keywordflow}{return} detail::write<Char>(ctx.out(), val, specs\_, ctx.locale());}
-\DoxyCodeLine{3771   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classdynamic__formatter_a3473a0919f70f4b9d3e34ee98ba58dc9}\label{classdynamic__formatter_a3473a0919f70f4b9d3e34ee98ba58dc9}} 
-\index{dynamic\_formatter$<$ Char $>$@{dynamic\_formatter$<$ Char $>$}!handle\_specs@{handle\_specs}}
-\index{handle\_specs@{handle\_specs}!dynamic\_formatter$<$ Char $>$@{dynamic\_formatter$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{handle\_specs()}{handle\_specs()}}
-{\footnotesize\ttfamily template$<$typename Char  = char$>$ \\
-template$<$typename Context $>$ \\
-void \mbox{\hyperlink{classdynamic__formatter}{dynamic\+\_\+formatter}}$<$ Char $>$\+::handle\+\_\+specs (\begin{DoxyParamCaption}\item[{Context \&}]{ctx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{3745                                                               \{}
-\DoxyCodeLine{3746     detail::handle\_dynamic\_spec<detail::width\_checker>(specs\_.width,}
-\DoxyCodeLine{3747                                                        specs\_.width\_ref, ctx);}
-\DoxyCodeLine{3748     detail::handle\_dynamic\_spec<detail::precision\_checker>(}
-\DoxyCodeLine{3749         specs\_.precision, specs\_.precision\_ref, ctx);}
-\DoxyCodeLine{3750   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classdynamic__formatter_adf32845b6375589627b734ac02519faf}\label{classdynamic__formatter_adf32845b6375589627b734ac02519faf}} 
-\index{dynamic\_formatter$<$ Char $>$@{dynamic\_formatter$<$ Char $>$}!parse@{parse}}
-\index{parse@{parse}!dynamic\_formatter$<$ Char $>$@{dynamic\_formatter$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
-{\footnotesize\ttfamily template$<$typename Char  = char$>$ \\
-template$<$typename Parse\+Context $>$ \\
-FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classdynamic__formatter}{dynamic\+\_\+formatter}}$<$ Char $>$\+::parse (\begin{DoxyParamCaption}\item[{Parse\+Context \&}]{ctx }\end{DoxyParamCaption}) -\/$>$ decltype(ctx.\+begin()) \hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{3754                                                                        \{}
-\DoxyCodeLine{3755     format\_str\_ = ctx.begin();}
-\DoxyCodeLine{3756     \textcolor{comment}{// Checks are deferred to formatting time when the argument type is known.}}
-\DoxyCodeLine{3757     detail::dynamic\_specs\_handler<ParseContext> handler(specs\_, ctx);}
-\DoxyCodeLine{3758     \textcolor{keywordflow}{return} detail::parse\_format\_specs(ctx.begin(), ctx.end(), handler);}
-\DoxyCodeLine{3759   \}}
-
-\end{DoxyCode}
-
-
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/format.\+h\end{DoxyCompactItemize}
+format.\+h\end{DoxyCompactItemize}

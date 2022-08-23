@@ -12,13 +12,17 @@ Traits used by CPPUNIT\+\_\+\+ASSERT$\ast$ macros.
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static bool \mbox{\hyperlink{structassertion__traits_a287c07a4e171256a0128201c7e4c4228}{equal}} (const T \&x, const T \&y)
+\mbox{\Hypertarget{structassertion__traits_a287c07a4e171256a0128201c7e4c4228}\label{structassertion__traits_a287c07a4e171256a0128201c7e4c4228}} 
+static bool {\bfseries equal} (const T \&x, const T \&y)
 \item 
-static bool \mbox{\hyperlink{structassertion__traits_af55b36f2bd275ee1514c3ab7434eb57c}{less}} (const T \&x, const T \&y)
+\mbox{\Hypertarget{structassertion__traits_af55b36f2bd275ee1514c3ab7434eb57c}\label{structassertion__traits_af55b36f2bd275ee1514c3ab7434eb57c}} 
+static bool {\bfseries less} (const T \&x, const T \&y)
 \item 
-static bool \mbox{\hyperlink{structassertion__traits_a416c391ff961ec36da2ae8c02804233e}{less\+Equal}} (const T \&x, const T \&y)
+\mbox{\Hypertarget{structassertion__traits_a416c391ff961ec36da2ae8c02804233e}\label{structassertion__traits_a416c391ff961ec36da2ae8c02804233e}} 
+static bool {\bfseries less\+Equal} (const T \&x, const T \&y)
 \item 
-static std\+::string \mbox{\hyperlink{structassertion__traits_a1c96296fb44902b4f22d99b9c3cc7749}{to\+String}} (const T \&x)
+\mbox{\Hypertarget{structassertion__traits_a1c96296fb44902b4f22d99b9c3cc7749}\label{structassertion__traits_a1c96296fb44902b4f22d99b9c3cc7749}} 
+static std\+::string {\bfseries to\+String} (const T \&x)
 \end{DoxyCompactItemize}
 
 
@@ -61,65 +65,6 @@ Here is an example of specialising these traits\+:
 \end{DoxyCode}
  
 
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{structassertion__traits_a287c07a4e171256a0128201c7e4c4228}\label{structassertion__traits_a287c07a4e171256a0128201c7e4c4228}} 
-\index{assertion\_traits$<$ T $>$@{assertion\_traits$<$ T $>$}!equal@{equal}}
-\index{equal@{equal}!assertion\_traits$<$ T $>$@{assertion\_traits$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{equal()}{equal()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-static bool \mbox{\hyperlink{structassertion__traits}{assertion\+\_\+traits}}$<$ T $>$\+::equal (\begin{DoxyParamCaption}\item[{const T \&}]{x,  }\item[{const T \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{58     \{}
-\DoxyCodeLine{59         \textcolor{keywordflow}{return} x == y;}
-\DoxyCodeLine{60     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{structassertion__traits_af55b36f2bd275ee1514c3ab7434eb57c}\label{structassertion__traits_af55b36f2bd275ee1514c3ab7434eb57c}} 
-\index{assertion\_traits$<$ T $>$@{assertion\_traits$<$ T $>$}!less@{less}}
-\index{less@{less}!assertion\_traits$<$ T $>$@{assertion\_traits$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{less()}{less()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-static bool \mbox{\hyperlink{structassertion__traits}{assertion\+\_\+traits}}$<$ T $>$\+::less (\begin{DoxyParamCaption}\item[{const T \&}]{x,  }\item[{const T \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{63     \{}
-\DoxyCodeLine{64         \textcolor{keywordflow}{return} x < y;}
-\DoxyCodeLine{65     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{structassertion__traits_a416c391ff961ec36da2ae8c02804233e}\label{structassertion__traits_a416c391ff961ec36da2ae8c02804233e}} 
-\index{assertion\_traits$<$ T $>$@{assertion\_traits$<$ T $>$}!lessEqual@{lessEqual}}
-\index{lessEqual@{lessEqual}!assertion\_traits$<$ T $>$@{assertion\_traits$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{lessEqual()}{lessEqual()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-static bool \mbox{\hyperlink{structassertion__traits}{assertion\+\_\+traits}}$<$ T $>$\+::less\+Equal (\begin{DoxyParamCaption}\item[{const T \&}]{x,  }\item[{const T \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{68     \{}
-\DoxyCodeLine{69         \textcolor{keywordflow}{return} x <= y;}
-\DoxyCodeLine{70     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{structassertion__traits_a1c96296fb44902b4f22d99b9c3cc7749}\label{structassertion__traits_a1c96296fb44902b4f22d99b9c3cc7749}} 
-\index{assertion\_traits$<$ T $>$@{assertion\_traits$<$ T $>$}!toString@{toString}}
-\index{toString@{toString}!assertion\_traits$<$ T $>$@{assertion\_traits$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-static std\+::string \mbox{\hyperlink{structassertion__traits}{assertion\+\_\+traits}}$<$ T $>$\+::to\+String (\begin{DoxyParamCaption}\item[{const T \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{73     \{}
-\DoxyCodeLine{74         \textcolor{keywordflow}{return} CPPUNIT\_NS::StringHelper::toString(x);}
-\DoxyCodeLine{75     \}}
-
-\end{DoxyCode}
-
-
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/Test\+Assert.\+h\end{DoxyCompactItemize}
+Test\+Assert.\+h\end{DoxyCompactItemize}

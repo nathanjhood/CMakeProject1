@@ -24,11 +24,11 @@ Inheritance diagram for Brief\+Test\+Progress\+Listener\+:\begin{figure}[H]
 virtual {\bfseries $\sim$\+Brief\+Test\+Progress\+Listener} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_brief_test_progress_listener_ab4196e15752bb2be443e72418500e20e}{start\+Test}} (\mbox{\hyperlink{class_test}{Test}} $\ast$test)
-\begin{DoxyCompactList}\small\item\em Called when just before a \mbox{\hyperlink{class_test_case}{Test\+Case}} is run. \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{class_brief_test_progress_listener_a21f8658a9c19c67220241656cfad30ce}{add\+Failure}} (const \mbox{\hyperlink{class_test_failure}{Test\+Failure}} \&failure)
-\begin{DoxyCompactList}\small\item\em Called when a failure occurs while running a test. \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{class_brief_test_progress_listener_a49cbd9152ea35a21f6525773660ee119}{end\+Test}} (\mbox{\hyperlink{class_test}{Test}} $\ast$test)
-\begin{DoxyCompactList}\small\item\em Called just after a \mbox{\hyperlink{class_test_case}{Test\+Case}} was run (even if a failure occured). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -63,18 +63,8 @@ Constructs a \mbox{\hyperlink{class_brief_test_progress_listener}{Brief\+Test\+P
 \index{BriefTestProgressListener@{BriefTestProgressListener}!addFailure@{addFailure}}
 \index{addFailure@{addFailure}!BriefTestProgressListener@{BriefTestProgressListener}}
 \doxysubsubsection{\texorpdfstring{addFailure()}{addFailure()}}
-{\footnotesize\ttfamily void Brief\+Test\+Progress\+Listener\+::add\+Failure (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_test_failure}{Test\+Failure}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Brief\+Test\+Progress\+Listener\+::add\+Failure (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_test_failure}{Test\+Failure}} \&}]{failure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-
-
-Called when a failure occurs while running a test. 
-
-\begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_test_failure}{Test\+Failure}}. 
-\end{DoxySeeAlso}
-\begin{DoxyWarning}{Warning}
-{\itshape failure} is a temporary object that is destroyed after the method call. Use Test\+Failure\+::clone() to create a duplicate. 
-\end{DoxyWarning}
 
 
 Reimplemented from \mbox{\hyperlink{class_test_listener_a103216a5814c907f7b752b969477e765}{Test\+Listener}}.
@@ -83,11 +73,7 @@ Reimplemented from \mbox{\hyperlink{class_test_listener_a103216a5814c907f7b752b9
 \index{BriefTestProgressListener@{BriefTestProgressListener}!endTest@{endTest}}
 \index{endTest@{endTest}!BriefTestProgressListener@{BriefTestProgressListener}}
 \doxysubsubsection{\texorpdfstring{endTest()}{endTest()}}
-{\footnotesize\ttfamily void Brief\+Test\+Progress\+Listener\+::end\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_test}{Test}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Called just after a \mbox{\hyperlink{class_test_case}{Test\+Case}} was run (even if a failure occured). 
+{\footnotesize\ttfamily void Brief\+Test\+Progress\+Listener\+::end\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_test}{Test}} $\ast$}]{test }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -97,11 +83,7 @@ Reimplemented from \mbox{\hyperlink{class_test_listener_ae8ccd0f55dd9aa7eafded05
 \index{BriefTestProgressListener@{BriefTestProgressListener}!startTest@{startTest}}
 \index{startTest@{startTest}!BriefTestProgressListener@{BriefTestProgressListener}}
 \doxysubsubsection{\texorpdfstring{startTest()}{startTest()}}
-{\footnotesize\ttfamily void Brief\+Test\+Progress\+Listener\+::start\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_test}{Test}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Called when just before a \mbox{\hyperlink{class_test_case}{Test\+Case}} is run. 
+{\footnotesize\ttfamily void Brief\+Test\+Progress\+Listener\+::start\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_test}{Test}} $\ast$}]{test }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -111,4 +93,4 @@ Reimplemented from \mbox{\hyperlink{class_test_listener_a5546d4420e7412234915113
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/Brief\+Test\+Progress\+Listener.\+h\end{DoxyCompactItemize}
+Brief\+Test\+Progress\+Listener.\+h\end{DoxyCompactItemize}

@@ -27,9 +27,9 @@ const std\+::vector$<$ \mbox{\hyperlink{class_test}{Test}} $\ast$ $>$ \& \mbox{\
 virtual void \mbox{\hyperlink{class_test_suite_ac968917f934d102227abd8b2130e67f9}{delete\+Contents}} ()
 \item 
 int \mbox{\hyperlink{class_test_suite_a43d23da8ce3225af676ac259452098b0}{get\+Child\+Test\+Count}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of direct child of the test. \end{DoxyCompactList}\item 
+\item 
 \mbox{\hyperlink{class_test}{Test}} $\ast$ \mbox{\hyperlink{class_test_suite_a0c2bcd1a62452e29f4c17f30cdf01369}{do\+Get\+Child\+Test\+At}} (int index) const
-\begin{DoxyCompactList}\small\item\em Returns the child test of the specified valid index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -95,18 +95,6 @@ Destroys all the tests of the suite. \mbox{\Hypertarget{class_test_suite_a0c2bcd
 
 
 
-Returns the child test of the specified valid index. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em index} & Zero based valid index of the child test to return. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Pointer on the test. Never {\ttfamily NULL}. 
-\end{DoxyReturn}
-
-
 Implements \mbox{\hyperlink{class_test_aeec4ad92723c978238d933cbde475393}{Test}}.
 
 \mbox{\Hypertarget{class_test_suite_a43d23da8ce3225af676ac259452098b0}\label{class_test_suite_a43d23da8ce3225af676ac259452098b0}} 
@@ -114,10 +102,6 @@ Implements \mbox{\hyperlink{class_test_aeec4ad92723c978238d933cbde475393}{Test}}
 \index{getChildTestCount@{getChildTestCount}!TestSuite@{TestSuite}}
 \doxysubsubsection{\texorpdfstring{getChildTestCount()}{getChildTestCount()}}
 {\footnotesize\ttfamily int Test\+Suite\+::get\+Child\+Test\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Returns the number of direct child of the test. 
 
 
 
@@ -130,7 +114,7 @@ Implements \mbox{\hyperlink{class_test_a7aaab95037b7222573471074c56df85b}{Test}}
 {\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{class_test}{Test}} $\ast$ $>$ \& Test\+Suite\+::get\+Tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 Returns the list of the tests (DEPRECATED). \begin{DoxyRefDesc}{Deprecated}
-\item[\mbox{\hyperlink{deprecated__deprecated000009}{Deprecated}}]Use \mbox{\hyperlink{class_test_suite_a43d23da8ce3225af676ac259452098b0}{get\+Child\+Test\+Count()}} \& \mbox{\hyperlink{class_test_a9c4acb4752919c160a79e77b2beaa7f5}{get\+Child\+Test\+At()}} of the \mbox{\hyperlink{class_test_composite}{Test\+Composite}} interface instead. \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{deprecated__deprecated000009}{Deprecated}}]Use get\+Child\+Test\+Count() \& \mbox{\hyperlink{class_test_a9c4acb4752919c160a79e77b2beaa7f5}{get\+Child\+Test\+At()}} of the \mbox{\hyperlink{class_test_composite}{Test\+Composite}} interface instead. \end{DoxyRefDesc}
 \begin{DoxyReturn}{Returns}
 Reference on a vector that contains the tests of the suite. 
 \end{DoxyReturn}
@@ -138,4 +122,4 @@ Reference on a vector that contains the tests of the suite.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/Test\+Suite.\+h\end{DoxyCompactItemize}
+Test\+Suite.\+h\end{DoxyCompactItemize}

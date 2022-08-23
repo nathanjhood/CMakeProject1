@@ -3,11 +3,14 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classwidth__checker_aabc2da3b3a4709864148529df72b3be1}{width\+\_\+checker}} (Error\+Handler \&eh)
+\mbox{\Hypertarget{classwidth__checker_aabc2da3b3a4709864148529df72b3be1}\label{classwidth__checker_aabc2da3b3a4709864148529df72b3be1}} 
+FMT\+\_\+\+CONSTEXPR {\bfseries width\+\_\+checker} (Error\+Handler \&eh)
 \item 
-{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(is\+\_\+integer$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classwidth__checker_a95d1af099ebb6a254a611156d0feb55d}{operator()}} (T \mbox{\hyperlink{classvalue}{value}}) -\/$>$ unsigned long long
+\mbox{\Hypertarget{classwidth__checker_a95d1af099ebb6a254a611156d0feb55d}\label{classwidth__checker_a95d1af099ebb6a254a611156d0feb55d}} 
+{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(is\+\_\+integer$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\FMT\+\_\+\+CONSTEXPR auto {\bfseries operator()} (T \mbox{\hyperlink{classvalue}{value}}) -\/$>$ unsigned long long
 \item 
-{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(!is\+\_\+integer$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classwidth__checker_a3df32b269acceaf22a937b338dcf1004}{operator()}} (T) -\/$>$ unsigned long long
+\mbox{\Hypertarget{classwidth__checker_a3df32b269acceaf22a937b338dcf1004}\label{classwidth__checker_a3df32b269acceaf22a937b338dcf1004}} 
+{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(!is\+\_\+integer$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\FMT\+\_\+\+CONSTEXPR auto {\bfseries operator()} (T) -\/$>$ unsigned long long
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -17,56 +20,6 @@ Error\+Handler \& {\bfseries handler\+\_\+}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classwidth__checker_aabc2da3b3a4709864148529df72b3be1}\label{classwidth__checker_aabc2da3b3a4709864148529df72b3be1}} 
-\index{width\_checker$<$ ErrorHandler $>$@{width\_checker$<$ ErrorHandler $>$}!width\_checker@{width\_checker}}
-\index{width\_checker@{width\_checker}!width\_checker$<$ ErrorHandler $>$@{width\_checker$<$ ErrorHandler $>$}}
-\doxysubsubsection{\texorpdfstring{width\_checker()}{width\_checker()}}
-{\footnotesize\ttfamily template$<$typename Error\+Handler $>$ \\
-FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{classwidth__checker}{width\+\_\+checker}}$<$ Error\+Handler $>$\mbox{\hyperlink{classwidth__checker}{\+::width\+\_\+checker}} (\begin{DoxyParamCaption}\item[{Error\+Handler \&}]{eh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{3397 : handler\_(eh) \{\}}
-
-\end{DoxyCode}
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classwidth__checker_a95d1af099ebb6a254a611156d0feb55d}\label{classwidth__checker_a95d1af099ebb6a254a611156d0feb55d}} 
-\index{width\_checker$<$ ErrorHandler $>$@{width\_checker$<$ ErrorHandler $>$}!operator()@{operator()}}
-\index{operator()@{operator()}!width\_checker$<$ ErrorHandler $>$@{width\_checker$<$ ErrorHandler $>$}}
-\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename Error\+Handler $>$ \\
-template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(is\+\_\+integer$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
-FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classwidth__checker}{width\+\_\+checker}}$<$ Error\+Handler $>$\+::operator() (\begin{DoxyParamCaption}\item[{T}]{value }\end{DoxyParamCaption}) -\/$>$ unsigned long long \hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{3400                                                                \{}
-\DoxyCodeLine{3401     \textcolor{keywordflow}{if} (is\_negative(\mbox{\hyperlink{classvalue}{value}})) handler\_.on\_error(\textcolor{stringliteral}{"{}negative width"{}});}
-\DoxyCodeLine{3402     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long}\textcolor{keyword}{>}(\mbox{\hyperlink{classvalue}{value}});}
-\DoxyCodeLine{3403   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classwidth__checker_a3df32b269acceaf22a937b338dcf1004}\label{classwidth__checker_a3df32b269acceaf22a937b338dcf1004}} 
-\index{width\_checker$<$ ErrorHandler $>$@{width\_checker$<$ ErrorHandler $>$}!operator()@{operator()}}
-\index{operator()@{operator()}!width\_checker$<$ ErrorHandler $>$@{width\_checker$<$ ErrorHandler $>$}}
-\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename Error\+Handler $>$ \\
-template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(!is\+\_\+integer$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
-FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classwidth__checker}{width\+\_\+checker}}$<$ Error\+Handler $>$\+::operator() (\begin{DoxyParamCaption}\item[{T}]{ }\end{DoxyParamCaption}) -\/$>$ unsigned long long \hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{3406                                                          \{}
-\DoxyCodeLine{3407     handler\_.on\_error(\textcolor{stringliteral}{"{}width is not integer"{}});}
-\DoxyCodeLine{3408     \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{3409   \}}
-
-\end{DoxyCode}
-
-
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/format.\+h\end{DoxyCompactItemize}
+format.\+h\end{DoxyCompactItemize}

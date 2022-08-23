@@ -74,11 +74,13 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adddf00fb9136d97ffdc2345482a342a6"><td class="memTemplParams" colspan="2">template&lt;typename ParseContext &gt; </td></tr>
-<tr class="memitem:adddf00fb9136d97ffdc2345482a342a6"><td class="memTemplItemLeft" align="right" valign="top">FMT_CONSTEXPR auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/dfa/structformatter_3_01bytes_01_4.html#adddf00fb9136d97ffdc2345482a342a6">parse</a> (ParseContext &amp;ctx) -&gt; decltype(ctx.begin())</td></tr>
+<tr class="memitem:adddf00fb9136d97ffdc2345482a342a6"><td class="memTemplParams" colspan="2"><a id="adddf00fb9136d97ffdc2345482a342a6" name="adddf00fb9136d97ffdc2345482a342a6"></a>
+template&lt;typename ParseContext &gt; </td></tr>
+<tr class="memitem:adddf00fb9136d97ffdc2345482a342a6"><td class="memTemplItemLeft" align="right" valign="top">FMT_CONSTEXPR auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>parse</b> (ParseContext &amp;ctx) -&gt; decltype(ctx.begin())</td></tr>
 <tr class="separator:adddf00fb9136d97ffdc2345482a342a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83564f7339fc600390b0520f0eafcc8d"><td class="memTemplParams" colspan="2">template&lt;typename FormatContext &gt; </td></tr>
-<tr class="memitem:a83564f7339fc600390b0520f0eafcc8d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/dfa/structformatter_3_01bytes_01_4.html#a83564f7339fc600390b0520f0eafcc8d">format</a> (<a class="el" href="../../de/dd1/classbytes.html">bytes</a> b, FormatContext &amp;ctx) -&gt; decltype(ctx.out())</td></tr>
+<tr class="memitem:a83564f7339fc600390b0520f0eafcc8d"><td class="memTemplParams" colspan="2"><a id="a83564f7339fc600390b0520f0eafcc8d" name="a83564f7339fc600390b0520f0eafcc8d"></a>
+template&lt;typename FormatContext &gt; </td></tr>
+<tr class="memitem:a83564f7339fc600390b0520f0eafcc8d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>format</b> (<a class="el" href="../../de/dd1/classbytes.html">bytes</a> b, FormatContext &amp;ctx) -&gt; decltype(ctx.out())</td></tr>
 <tr class="separator:a83564f7339fc600390b0520f0eafcc8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -87,90 +89,8 @@ Private Attributes</h2></td></tr>
 detail::dynamic_format_specs&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>specs_</b></td></tr>
 <tr class="separator:ad1267986f857e68064e3db9d12cc6675"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a83564f7339fc600390b0520f0eafcc8d" name="a83564f7339fc600390b0520f0eafcc8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83564f7339fc600390b0520f0eafcc8d">&#9670;&nbsp;</a></span>format()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename FormatContext &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto <a class="el" href="../../d8/db3/structformatter.html">formatter</a>&lt; <a class="el" href="../../de/dd1/classbytes.html">bytes</a> &gt;::format </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../de/dd1/classbytes.html">bytes</a>&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">FormatContext &amp;&#160;</td>
-          <td class="paramname"><em>ctx</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> -&gt; decltype(ctx.out()) </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno"> 3841</span>                                                                  {</div>
-<div class="line"><span class="lineno"> 3842</span>    detail::handle_dynamic_spec&lt;detail::width_checker&gt;(specs_.width,</div>
-<div class="line"><span class="lineno"> 3843</span>                                                       specs_.width_ref, ctx);</div>
-<div class="line"><span class="lineno"> 3844</span>    detail::handle_dynamic_spec&lt;detail::precision_checker&gt;(</div>
-<div class="line"><span class="lineno"> 3845</span>        specs_.precision, specs_.precision_ref, ctx);</div>
-<div class="line"><span class="lineno"> 3846</span>    <span class="keywordflow">return</span> detail::write_bytes(ctx.out(), b.data_, specs_);</div>
-<div class="line"><span class="lineno"> 3847</span>  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="adddf00fb9136d97ffdc2345482a342a6" name="adddf00fb9136d97ffdc2345482a342a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adddf00fb9136d97ffdc2345482a342a6">&#9670;&nbsp;</a></span>parse()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ParseContext &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">FMT_CONSTEXPR auto <a class="el" href="../../d8/db3/structformatter.html">formatter</a>&lt; <a class="el" href="../../de/dd1/classbytes.html">bytes</a> &gt;::parse </td>
-          <td>(</td>
-          <td class="paramtype">ParseContext &amp;&#160;</td>
-          <td class="paramname"><em>ctx</em></td><td>)</td>
-          <td> -&gt; decltype(ctx.begin()) </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno"> 3831</span>                                                                       {</div>
-<div class="line"><span class="lineno"> 3832</span>    <span class="keyword">using </span>handler_type = detail::dynamic_specs_handler&lt;ParseContext&gt;;</div>
-<div class="line"><span class="lineno"> 3833</span>    detail::specs_checker&lt;handler_type&gt; handler(handler_type(specs_, ctx),</div>
-<div class="line"><span class="lineno"> 3834</span>                                                detail::type::string_type);</div>
-<div class="line"><span class="lineno"> 3835</span>    <span class="keyword">auto</span> it = parse_format_specs(ctx.begin(), ctx.end(), handler);</div>
-<div class="line"><span class="lineno"> 3836</span>    detail::check_string_type_spec(specs_.type, ctx.error_handler());</div>
-<div class="line"><span class="lineno"> 3837</span>    <span class="keywordflow">return</span> it;</div>
-<div class="line"><span class="lineno"> 3838</span>  }</div>
-</div><!-- fragment -->
-</div>
-</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>out/build/x64/vcpkg_installed/x86-windows/include/fmt/<a class="el" href="../../d0/d0a/format_8h_source.html">format.h</a></li>
+<li>format.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

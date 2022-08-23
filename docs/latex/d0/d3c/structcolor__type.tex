@@ -8,11 +8,14 @@ union \mbox{\hyperlink{unioncolor__type_1_1color__union}{color\+\_\+union}}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{structcolor__type_a454b34beb03b1c53926f3ee641252155}{color\+\_\+type}} (color rgb\+\_\+color) noexcept
+\mbox{\Hypertarget{structcolor__type_a454b34beb03b1c53926f3ee641252155}\label{structcolor__type_a454b34beb03b1c53926f3ee641252155}} 
+FMT\+\_\+\+CONSTEXPR {\bfseries color\+\_\+type} (color rgb\+\_\+color) noexcept
 \item 
-FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{structcolor__type_abb6687f492714855d13b81bbbb02f90e}{color\+\_\+type}} (\mbox{\hyperlink{structrgb}{rgb}} rgb\+\_\+color) noexcept
+\mbox{\Hypertarget{structcolor__type_abb6687f492714855d13b81bbbb02f90e}\label{structcolor__type_abb6687f492714855d13b81bbbb02f90e}} 
+FMT\+\_\+\+CONSTEXPR {\bfseries color\+\_\+type} (\mbox{\hyperlink{structrgb}{rgb}} rgb\+\_\+color) noexcept
 \item 
-FMT\+\_\+\+CONSTEXPR \mbox{\hyperlink{structcolor__type_ac2c4044f073676bdf91f61cd49dbd0d0}{color\+\_\+type}} (terminal\+\_\+color term\+\_\+color) noexcept
+\mbox{\Hypertarget{structcolor__type_ac2c4044f073676bdf91f61cd49dbd0d0}\label{structcolor__type_ac2c4044f073676bdf91f61cd49dbd0d0}} 
+FMT\+\_\+\+CONSTEXPR {\bfseries color\+\_\+type} (terminal\+\_\+color term\+\_\+color) noexcept
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -25,60 +28,6 @@ union \mbox{\hyperlink{unioncolor__type_1_1color__union}{color\+\_\+type\+::colo
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{structcolor__type_ad926fff33f1db0ec0e619d81538baae9}\label{structcolor__type_ad926fff33f1db0ec0e619d81538baae9}} 
-\index{color\_type@{color\_type}!color\_type@{color\_type}}
-\index{color\_type@{color\_type}!color\_type@{color\_type}}
-\doxysubsubsection{\texorpdfstring{color\_type()}{color\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR color\+\_\+type\+::color\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{210 : is\_rgb(), \mbox{\hyperlink{classvalue}{value}}\{\} \{\}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{structcolor__type_a454b34beb03b1c53926f3ee641252155}\label{structcolor__type_a454b34beb03b1c53926f3ee641252155}} 
-\index{color\_type@{color\_type}!color\_type@{color\_type}}
-\index{color\_type@{color\_type}!color\_type@{color\_type}}
-\doxysubsubsection{\texorpdfstring{color\_type()}{color\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR color\+\_\+type\+::color\+\_\+type (\begin{DoxyParamCaption}\item[{color}]{rgb\+\_\+color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{211                                                      : is\_rgb(\textcolor{keyword}{true}), \mbox{\hyperlink{classvalue}{value}}\{\} \{}
-\DoxyCodeLine{212     \mbox{\hyperlink{classvalue}{value}}.rgb\_color = \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(rgb\_color);}
-\DoxyCodeLine{213   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{structcolor__type_abb6687f492714855d13b81bbbb02f90e}\label{structcolor__type_abb6687f492714855d13b81bbbb02f90e}} 
-\index{color\_type@{color\_type}!color\_type@{color\_type}}
-\index{color\_type@{color\_type}!color\_type@{color\_type}}
-\doxysubsubsection{\texorpdfstring{color\_type()}{color\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR color\+\_\+type\+::color\+\_\+type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrgb}{rgb}}}]{rgb\+\_\+color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{214                                                    : is\_rgb(\textcolor{keyword}{true}), \mbox{\hyperlink{classvalue}{value}}\{\} \{}
-\DoxyCodeLine{215     \mbox{\hyperlink{classvalue}{value}}.rgb\_color = (\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(rgb\_color.r) << 16) |}
-\DoxyCodeLine{216                       (\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(rgb\_color.g) << 8) | rgb\_color.b;}
-\DoxyCodeLine{217   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{structcolor__type_ac2c4044f073676bdf91f61cd49dbd0d0}\label{structcolor__type_ac2c4044f073676bdf91f61cd49dbd0d0}} 
-\index{color\_type@{color\_type}!color\_type@{color\_type}}
-\index{color\_type@{color\_type}!color\_type@{color\_type}}
-\doxysubsubsection{\texorpdfstring{color\_type()}{color\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR color\+\_\+type\+::color\+\_\+type (\begin{DoxyParamCaption}\item[{terminal\+\_\+color}]{term\+\_\+color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{219       : is\_rgb(), \mbox{\hyperlink{classvalue}{value}}\{\} \{}
-\DoxyCodeLine{220     \mbox{\hyperlink{classvalue}{value}}.term\_color = \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(term\_color);}
-\DoxyCodeLine{221   \}}
-
-\end{DoxyCode}
-
-
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/color.\+h\end{DoxyCompactItemize}
+color.\+h\end{DoxyCompactItemize}

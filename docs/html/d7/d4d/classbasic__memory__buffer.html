@@ -78,7 +78,7 @@ $(function() {
 <p>\rst A dynamically growing memory buffer for trivially copyable/constructible types with the first <code>SIZE</code> elements stored in the object itself.  
  <a href="../../d7/d4d/classbasic__memory__buffer.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d0/d0a/format_8h_source.html">format.h</a>&gt;</code></p>
+<p><code>#include &lt;format.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for basic_memory_buffer&lt; T, SIZE, Allocator &gt;:</div>
 <div class="dyncontent">
@@ -97,7 +97,8 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>const_reference</b> 
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8d5800ead9bc50aa8f014fa861b33216"><td class="memItemLeft" align="right" valign="top">FMT_CONSTEXPR20&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classbasic__memory__buffer.html#a8d5800ead9bc50aa8f014fa861b33216">basic_memory_buffer</a> (const Allocator &amp;alloc=Allocator())</td></tr>
+<tr class="memitem:a8d5800ead9bc50aa8f014fa861b33216"><td class="memItemLeft" align="right" valign="top"><a id="a8d5800ead9bc50aa8f014fa861b33216" name="a8d5800ead9bc50aa8f014fa861b33216"></a>
+FMT_CONSTEXPR20&#160;</td><td class="memItemRight" valign="bottom"><b>basic_memory_buffer</b> (const Allocator &amp;alloc=Allocator())</td></tr>
 <tr class="separator:a8d5800ead9bc50aa8f014fa861b33216"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade18cff12fc914085665a07af2e8fb7b"><td class="memItemLeft" align="right" valign="top">FMT_CONSTEXPR20&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classbasic__memory__buffer.html#ade18cff12fc914085665a07af2e8fb7b">basic_memory_buffer</a> (<a class="el" href="../../d7/d4d/classbasic__memory__buffer.html">basic_memory_buffer</a> &amp;&amp;other) noexcept</td></tr>
 <tr class="memdesc:ade18cff12fc914085665a07af2e8fb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">\rst Constructs a :class:<code>fmt::basic_memory_buffer</code> object moving the content of the other object to it.  <a href="../../d7/d4d/classbasic__memory__buffer.html#ade18cff12fc914085665a07af2e8fb7b">More...</a><br /></td></tr>
@@ -105,28 +106,34 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a20c8cea076154a579ab0a04afb6c1f84"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classbasic__memory__buffer.html#a20c8cea076154a579ab0a04afb6c1f84">operator=</a> (<a class="el" href="../../d7/d4d/classbasic__memory__buffer.html">basic_memory_buffer</a> &amp;&amp;other) noexcept -&gt; <a class="el" href="../../d7/d4d/classbasic__memory__buffer.html">basic_memory_buffer</a> &amp;</td></tr>
 <tr class="memdesc:a20c8cea076154a579ab0a04afb6c1f84"><td class="mdescLeft">&#160;</td><td class="mdescRight">\rst Moves the content of the other <code><a class="el" href="../../d7/d4d/classbasic__memory__buffer.html" title="\rst A dynamically growing memory buffer for trivially copyable/constructible types with the first SI...">basic_memory_buffer</a></code> object to this one.  <a href="../../d7/d4d/classbasic__memory__buffer.html#a20c8cea076154a579ab0a04afb6c1f84">More...</a><br /></td></tr>
 <tr class="separator:a20c8cea076154a579ab0a04afb6c1f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53ee4a2efbf408c0c6f813d50ea8151a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classbasic__memory__buffer.html#a53ee4a2efbf408c0c6f813d50ea8151a">get_allocator</a> () const -&gt; Allocator</td></tr>
+<tr class="memitem:a53ee4a2efbf408c0c6f813d50ea8151a"><td class="memItemLeft" align="right" valign="top"><a id="a53ee4a2efbf408c0c6f813d50ea8151a" name="a53ee4a2efbf408c0c6f813d50ea8151a"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><b>get_allocator</b> () const -&gt; Allocator</td></tr>
 <tr class="separator:a53ee4a2efbf408c0c6f813d50ea8151a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a153c47788d6d1a76ec97780748755ea1"><td class="memItemLeft" align="right" valign="top">FMT_CONSTEXPR20 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classbasic__memory__buffer.html#a153c47788d6d1a76ec97780748755ea1">resize</a> (size_t count)</td></tr>
 <tr class="memdesc:a153c47788d6d1a76ec97780748755ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the buffer to contain <em>count</em> elements.  <a href="../../d7/d4d/classbasic__memory__buffer.html#a153c47788d6d1a76ec97780748755ea1">More...</a><br /></td></tr>
 <tr class="separator:a153c47788d6d1a76ec97780748755ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27f096451ed4e6738d3a33161fda3e90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classbasic__memory__buffer.html#a27f096451ed4e6738d3a33161fda3e90">reserve</a> (size_t new_capacity)</td></tr>
-<tr class="memdesc:a27f096451ed4e6738d3a33161fda3e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increases the buffer capacity to <em>new_capacity</em>.  <a href="../../d7/d4d/classbasic__memory__buffer.html#a27f096451ed4e6738d3a33161fda3e90">More...</a><br /></td></tr>
+<tr class="memitem:a27f096451ed4e6738d3a33161fda3e90"><td class="memItemLeft" align="right" valign="top"><a id="a27f096451ed4e6738d3a33161fda3e90" name="a27f096451ed4e6738d3a33161fda3e90"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>reserve</b> (size_t new_capacity)</td></tr>
+<tr class="memdesc:a27f096451ed4e6738d3a33161fda3e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increases the buffer capacity to <em>new_capacity</em>. <br /></td></tr>
 <tr class="separator:a27f096451ed4e6738d3a33161fda3e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad970f5ca7eda29893fc352b3d3486fc"><td class="memTemplParams" colspan="2">template&lt;typename ContiguousRange &gt; </td></tr>
-<tr class="memitem:aad970f5ca7eda29893fc352b3d3486fc"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classbasic__memory__buffer.html#aad970f5ca7eda29893fc352b3d3486fc">append</a> (const ContiguousRange &amp;range)</td></tr>
+<tr class="memitem:aad970f5ca7eda29893fc352b3d3486fc"><td class="memTemplParams" colspan="2"><a id="aad970f5ca7eda29893fc352b3d3486fc" name="aad970f5ca7eda29893fc352b3d3486fc"></a>
+template&lt;typename ContiguousRange &gt; </td></tr>
+<tr class="memitem:aad970f5ca7eda29893fc352b3d3486fc"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>append</b> (const ContiguousRange &amp;range)</td></tr>
 <tr class="separator:aad970f5ca7eda29893fc352b3d3486fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:aabb68acfbb17a538c83ebdf1b916334c"><td class="memItemLeft" align="right" valign="top">FMT_CONSTEXPR20 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classbasic__memory__buffer.html#aabb68acfbb17a538c83ebdf1b916334c">grow</a> (size_t size) override</td></tr>
+<tr class="memitem:aabb68acfbb17a538c83ebdf1b916334c"><td class="memItemLeft" align="right" valign="top"><a id="aabb68acfbb17a538c83ebdf1b916334c" name="aabb68acfbb17a538c83ebdf1b916334c"></a>
+FMT_CONSTEXPR20 void&#160;</td><td class="memItemRight" valign="bottom"><b>grow</b> (size_t size) override</td></tr>
 <tr class="separator:aabb68acfbb17a538c83ebdf1b916334c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:aaf9516729f7645a618035942df5c1ceb"><td class="memItemLeft" align="right" valign="top">FMT_CONSTEXPR20 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classbasic__memory__buffer.html#aaf9516729f7645a618035942df5c1ceb">deallocate</a> ()</td></tr>
+<tr class="memitem:aaf9516729f7645a618035942df5c1ceb"><td class="memItemLeft" align="right" valign="top"><a id="aaf9516729f7645a618035942df5c1ceb" name="aaf9516729f7645a618035942df5c1ceb"></a>
+FMT_CONSTEXPR20 void&#160;</td><td class="memItemRight" valign="bottom"><b>deallocate</b> ()</td></tr>
 <tr class="separator:aaf9516729f7645a618035942df5c1ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab453ecfd2d4b4b5cfdc4afa4e17c6a3a"><td class="memItemLeft" align="right" valign="top">FMT_CONSTEXPR20 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4d/classbasic__memory__buffer.html#ab453ecfd2d4b4b5cfdc4afa4e17c6a3a">move</a> (<a class="el" href="../../d7/d4d/classbasic__memory__buffer.html">basic_memory_buffer</a> &amp;other)</td></tr>
+<tr class="memitem:ab453ecfd2d4b4b5cfdc4afa4e17c6a3a"><td class="memItemLeft" align="right" valign="top"><a id="ab453ecfd2d4b4b5cfdc4afa4e17c6a3a" name="ab453ecfd2d4b4b5cfdc4afa4e17c6a3a"></a>
+FMT_CONSTEXPR20 void&#160;</td><td class="memItemRight" valign="bottom"><b>move</b> (<a class="el" href="../../d7/d4d/classbasic__memory__buffer.html">basic_memory_buffer</a> &amp;other)</td></tr>
 <tr class="separator:ab453ecfd2d4b4b5cfdc4afa4e17c6a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
@@ -149,68 +156,8 @@ class basic_memory_buffer&lt; T, SIZE, Allocator &gt;</div><p >\rst A dynamicall
 <p >The answer is 42.</p>
 <p >The output can be converted to an <code>std::string</code> with <code>to_string(out)</code>. \endrst </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8d5800ead9bc50aa8f014fa861b33216" name="a8d5800ead9bc50aa8f014fa861b33216"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d5800ead9bc50aa8f014fa861b33216">&#9670;&nbsp;</a></span>basic_memory_buffer() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , size_t SIZE = inline_buffer_size, typename Allocator  = std::allocator&lt;T&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">FMT_CONSTEXPR20 <a class="el" href="../../d7/d4d/classbasic__memory__buffer.html">basic_memory_buffer</a>&lt; T, SIZE, Allocator &gt;<a class="el" href="../../d7/d4d/classbasic__memory__buffer.html">::basic_memory_buffer</a> </td>
-          <td>(</td>
-          <td class="paramtype">const Allocator &amp;&#160;</td>
-          <td class="paramname"><em>alloc</em> = <code>Allocator()</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  822</span>      : alloc_(alloc) {</div>
-<div class="line"><span class="lineno">  823</span>    this-&gt;set(store_, SIZE);</div>
-<div class="line"><span class="lineno">  824</span>    <span class="keywordflow">if</span> (detail::is_constant_evaluated()) detail::fill_n(store_, SIZE, T());</div>
-<div class="line"><span class="lineno">  825</span>  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a15711905ce5efeb8e0c7b6c82acfbb8e" name="a15711905ce5efeb8e0c7b6c82acfbb8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15711905ce5efeb8e0c7b6c82acfbb8e">&#9670;&nbsp;</a></span>~basic_memory_buffer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , size_t SIZE = inline_buffer_size, typename Allocator  = std::allocator&lt;T&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">FMT_CONSTEXPR20 <a class="el" href="../../d7/d4d/classbasic__memory__buffer.html">basic_memory_buffer</a>&lt; T, SIZE, Allocator &gt;::~<a class="el" href="../../d7/d4d/classbasic__memory__buffer.html">basic_memory_buffer</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  826</span>{ deallocate(); }</div>
-</div><!-- fragment -->
-</div>
-</div>
 <a id="ade18cff12fc914085665a07af2e8fb7b" name="ade18cff12fc914085665a07af2e8fb7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade18cff12fc914085665a07af2e8fb7b">&#9670;&nbsp;</a></span>basic_memory_buffer() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ade18cff12fc914085665a07af2e8fb7b">&#9670;&nbsp;</a></span>basic_memory_buffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -237,201 +184,10 @@ template&lt;typename T , size_t SIZE = inline_buffer_size, typename Allocator  =
 
 <p>\rst Constructs a :class:<code>fmt::basic_memory_buffer</code> object moving the content of the other object to it. </p>
 <p >\endrst </p>
-<div class="fragment"><div class="line"><span class="lineno">  855</span>                                                                            {</div>
-<div class="line"><span class="lineno">  856</span>    move(other);</div>
-<div class="line"><span class="lineno">  857</span>  }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aad970f5ca7eda29893fc352b3d3486fc" name="aad970f5ca7eda29893fc352b3d3486fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad970f5ca7eda29893fc352b3d3486fc">&#9670;&nbsp;</a></span>append()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , size_t SIZE = inline_buffer_size, typename Allocator  = std::allocator&lt;T&gt;&gt; </div>
-<div class="memtemplate">
-template&lt;typename ContiguousRange &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="../../d7/d4d/classbasic__memory__buffer.html">basic_memory_buffer</a>&lt; T, SIZE, Allocator &gt;::append </td>
-          <td>(</td>
-          <td class="paramtype">const ContiguousRange &amp;&#160;</td>
-          <td class="paramname"><em>range</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  886</span>                                            {</div>
-<div class="line"><span class="lineno">  887</span>    append(range.data(), range.data() + range.size());</div>
-<div class="line"><span class="lineno">  888</span>  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="aaf9516729f7645a618035942df5c1ceb" name="aaf9516729f7645a618035942df5c1ceb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf9516729f7645a618035942df5c1ceb">&#9670;&nbsp;</a></span>deallocate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , size_t SIZE = inline_buffer_size, typename Allocator  = std::allocator&lt;T&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">FMT_CONSTEXPR20 void <a class="el" href="../../d7/d4d/classbasic__memory__buffer.html">basic_memory_buffer</a>&lt; T, SIZE, Allocator &gt;::deallocate </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  808</span>                                    {</div>
-<div class="line"><span class="lineno">  809</span>    T* <a class="code hl_struct" href="../../df/dea/structdata.html">data</a> = this-&gt;data();</div>
-<div class="line"><span class="lineno">  810</span>    <span class="keywordflow">if</span> (<a class="code hl_struct" href="../../df/dea/structdata.html">data</a> != store_) alloc_.deallocate(<a class="code hl_struct" href="../../df/dea/structdata.html">data</a>, this-&gt;capacity());</div>
-<div class="line"><span class="lineno">  811</span>  }</div>
-<div class="ttc" id="astructdata_html"><div class="ttname"><a href="../../df/dea/structdata.html">data</a></div><div class="ttdef"><b>Definition:</b> format.h:1526</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a53ee4a2efbf408c0c6f813d50ea8151a" name="a53ee4a2efbf408c0c6f813d50ea8151a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53ee4a2efbf408c0c6f813d50ea8151a">&#9670;&nbsp;</a></span>get_allocator()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , size_t SIZE = inline_buffer_size, typename Allocator  = std::allocator&lt;T&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto <a class="el" href="../../d7/d4d/classbasic__memory__buffer.html">basic_memory_buffer</a>&lt; T, SIZE, Allocator &gt;::get_allocator </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const -&gt; Allocator </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  872</span>{ <span class="keywordflow">return</span> alloc_; }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="aabb68acfbb17a538c83ebdf1b916334c" name="aabb68acfbb17a538c83ebdf1b916334c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aabb68acfbb17a538c83ebdf1b916334c">&#9670;&nbsp;</a></span>grow()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , size_t SIZE, typename Allocator &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">FMT_CONSTEXPR20 void <a class="el" href="../../d7/d4d/classbasic__memory__buffer.html">basic_memory_buffer</a>&lt; T, SIZE, Allocator &gt;::grow </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>size</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  893</span>                 {</div>
-<div class="line"><span class="lineno">  894</span>  detail::abort_fuzzing_if(size &gt; 5000);</div>
-<div class="line"><span class="lineno">  895</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> max_size = std::allocator_traits&lt;Allocator&gt;::max_size(alloc_);</div>
-<div class="line"><span class="lineno">  896</span>  <span class="keywordtype">size_t</span> old_capacity = this-&gt;capacity();</div>
-<div class="line"><span class="lineno">  897</span>  <span class="keywordtype">size_t</span> new_capacity = old_capacity + old_capacity / 2;</div>
-<div class="line"><span class="lineno">  898</span>  <span class="keywordflow">if</span> (size &gt; new_capacity)</div>
-<div class="line"><span class="lineno">  899</span>    new_capacity = size;</div>
-<div class="line"><span class="lineno">  900</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (new_capacity &gt; max_size)</div>
-<div class="line"><span class="lineno">  901</span>    new_capacity = size &gt; max_size ? size : max_size;</div>
-<div class="line"><span class="lineno">  902</span>  T* old_data = this-&gt;<a class="code hl_struct" href="../../df/dea/structdata.html">data</a>();</div>
-<div class="line"><span class="lineno">  903</span>  T* new_data =</div>
-<div class="line"><span class="lineno">  904</span>      std::allocator_traits&lt;Allocator&gt;::allocate(alloc_, new_capacity);</div>
-<div class="line"><span class="lineno">  905</span>  <span class="comment">// The following code doesn&#39;t throw, so the raw pointer above doesn&#39;t leak.</span></div>
-<div class="line"><span class="lineno">  906</span>  std::uninitialized_copy(old_data, old_data + this-&gt;size(),</div>
-<div class="line"><span class="lineno">  907</span>                          detail::make_checked(new_data, new_capacity));</div>
-<div class="line"><span class="lineno">  908</span>  this-&gt;set(new_data, new_capacity);</div>
-<div class="line"><span class="lineno">  909</span>  <span class="comment">// deallocate must not throw according to the standard, but even if it does,</span></div>
-<div class="line"><span class="lineno">  910</span>  <span class="comment">// the buffer already uses the new storage and will deallocate it in</span></div>
-<div class="line"><span class="lineno">  911</span>  <span class="comment">// destructor.</span></div>
-<div class="line"><span class="lineno">  912</span>  <span class="keywordflow">if</span> (old_data != store_) alloc_.deallocate(old_data, old_capacity);</div>
-<div class="line"><span class="lineno">  913</span>}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ab453ecfd2d4b4b5cfdc4afa4e17c6a3a" name="ab453ecfd2d4b4b5cfdc4afa4e17c6a3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab453ecfd2d4b4b5cfdc4afa4e17c6a3a">&#9670;&nbsp;</a></span>move()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , size_t SIZE = inline_buffer_size, typename Allocator  = std::allocator&lt;T&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">FMT_CONSTEXPR20 void <a class="el" href="../../d7/d4d/classbasic__memory__buffer.html">basic_memory_buffer</a>&lt; T, SIZE, Allocator &gt;::move </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d7/d4d/classbasic__memory__buffer.html">basic_memory_buffer</a>&lt; T, SIZE, Allocator &gt; &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  830</span>                                                        {</div>
-<div class="line"><span class="lineno">  831</span>    alloc_ = std::move(other.alloc_);</div>
-<div class="line"><span class="lineno">  832</span>    T* <a class="code hl_struct" href="../../df/dea/structdata.html">data</a> = other.data();</div>
-<div class="line"><span class="lineno">  833</span>    <span class="keywordtype">size_t</span> size = other.size(), capacity = other.capacity();</div>
-<div class="line"><span class="lineno">  834</span>    <span class="keywordflow">if</span> (<a class="code hl_struct" href="../../df/dea/structdata.html">data</a> == other.store_) {</div>
-<div class="line"><span class="lineno">  835</span>      this-&gt;set(store_, capacity);</div>
-<div class="line"><span class="lineno">  836</span>      detail::copy_str&lt;T&gt;(other.store_, other.store_ + size,</div>
-<div class="line"><span class="lineno">  837</span>                          detail::make_checked(store_, capacity));</div>
-<div class="line"><span class="lineno">  838</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  839</span>      this-&gt;set(<a class="code hl_struct" href="../../df/dea/structdata.html">data</a>, capacity);</div>
-<div class="line"><span class="lineno">  840</span>      <span class="comment">// Set pointer to the inline array so that delete is not called</span></div>
-<div class="line"><span class="lineno">  841</span>      <span class="comment">// when deallocating.</span></div>
-<div class="line"><span class="lineno">  842</span>      other.set(other.store_, 0);</div>
-<div class="line"><span class="lineno">  843</span>      other.clear();</div>
-<div class="line"><span class="lineno">  844</span>    }</div>
-<div class="line"><span class="lineno">  845</span>    this-&gt;<a class="code hl_function" href="../../d7/d4d/classbasic__memory__buffer.html#a153c47788d6d1a76ec97780748755ea1">resize</a>(size);</div>
-<div class="line"><span class="lineno">  846</span>  }</div>
-<div class="ttc" id="aclassbasic__memory__buffer_html_a153c47788d6d1a76ec97780748755ea1"><div class="ttname"><a href="../../d7/d4d/classbasic__memory__buffer.html#a153c47788d6d1a76ec97780748755ea1">basic_memory_buffer::resize</a></div><div class="ttdeci">FMT_CONSTEXPR20 void resize(size_t count)</div><div class="ttdoc">Resizes the buffer to contain count elements.</div><div class="ttdef"><b>Definition:</b> format.h:878</div></div>
-</div><!-- fragment -->
-</div>
-</div>
 <a id="a20c8cea076154a579ab0a04afb6c1f84" name="a20c8cea076154a579ab0a04afb6c1f84"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a20c8cea076154a579ab0a04afb6c1f84">&#9670;&nbsp;</a></span>operator=()</h2>
 
@@ -460,44 +216,7 @@ template&lt;typename T , size_t SIZE = inline_buffer_size, typename Allocator  =
 
 <p>\rst Moves the content of the other <code><a class="el" href="../../d7/d4d/classbasic__memory__buffer.html" title="\rst A dynamically growing memory buffer for trivially copyable/constructible types with the first SI...">basic_memory_buffer</a></code> object to this one. </p>
 <p >\endrst </p>
-<div class="fragment"><div class="line"><span class="lineno">  864</span>                                                                               {</div>
-<div class="line"><span class="lineno">  865</span>    FMT_ASSERT(<span class="keyword">this</span> != &amp;other, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><span class="lineno">  866</span>    deallocate();</div>
-<div class="line"><span class="lineno">  867</span>    move(other);</div>
-<div class="line"><span class="lineno">  868</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  869</span>  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a27f096451ed4e6738d3a33161fda3e90" name="a27f096451ed4e6738d3a33161fda3e90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27f096451ed4e6738d3a33161fda3e90">&#9670;&nbsp;</a></span>reserve()</h2>
 
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , size_t SIZE = inline_buffer_size, typename Allocator  = std::allocator&lt;T&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="../../d7/d4d/classbasic__memory__buffer.html">basic_memory_buffer</a>&lt; T, SIZE, Allocator &gt;::reserve </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>new_capacity</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Increases the buffer capacity to <em>new_capacity</em>. </p>
-<div class="fragment"><div class="line"><span class="lineno">  881</span>{ this-&gt;try_reserve(new_capacity); }</div>
-</div><!-- fragment -->
 </div>
 </div>
 <a id="a153c47788d6d1a76ec97780748755ea1" name="a153c47788d6d1a76ec97780748755ea1"></a>
@@ -528,12 +247,11 @@ template&lt;typename T , size_t SIZE = inline_buffer_size, typename Allocator  =
 
 <p>Resizes the buffer to contain <em>count</em> elements. </p>
 <p >If T is a POD type new elements may not be initialized. </p>
-<div class="fragment"><div class="line"><span class="lineno">  878</span>{ this-&gt;try_resize(count); }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>out/build/x64/vcpkg_installed/x86-windows/include/fmt/<a class="el" href="../../d0/d0a/format_8h_source.html">format.h</a></li>
+<li>format.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -74,7 +74,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a05402165008cae4d1b634a8fa5656021"><td class="memItemLeft" align="right" valign="top">FMT_CONSTEXPR digits::result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d23/structgen__digits__handler.html#a05402165008cae4d1b634a8fa5656021">on_digit</a> (char digit, uint64_t divisor, uint64_t remainder, uint64_t error, bool integral)</td></tr>
+<tr class="memitem:a05402165008cae4d1b634a8fa5656021"><td class="memItemLeft" align="right" valign="top"><a id="a05402165008cae4d1b634a8fa5656021" name="a05402165008cae4d1b634a8fa5656021"></a>
+FMT_CONSTEXPR digits::result&#160;</td><td class="memItemRight" valign="bottom"><b>on_digit</b> (char digit, uint64_t divisor, uint64_t remainder, uint64_t error, bool integral)</td></tr>
 <tr class="separator:a05402165008cae4d1b634a8fa5656021"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -95,93 +96,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>exp10</b></td></tr>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>fixed</b></td></tr>
 <tr class="separator:a03f7617a7fd1631de98fef76fe70608e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a05402165008cae4d1b634a8fa5656021" name="a05402165008cae4d1b634a8fa5656021"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05402165008cae4d1b634a8fa5656021">&#9670;&nbsp;</a></span>on_digit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">FMT_CONSTEXPR digits::result gen_digits_handler::on_digit </td>
-          <td>(</td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>digit</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint64_t&#160;</td>
-          <td class="paramname"><em>divisor</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint64_t&#160;</td>
-          <td class="paramname"><em>remainder</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint64_t&#160;</td>
-          <td class="paramname"><em>error</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>integral</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno"> 2547</span>                                                       {</div>
-<div class="line"><span class="lineno"> 2548</span>    FMT_ASSERT(remainder &lt; divisor, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><span class="lineno"> 2549</span>    buf[size++] = digit;</div>
-<div class="line"><span class="lineno"> 2550</span>    <span class="keywordflow">if</span> (!integral &amp;&amp; error &gt;= remainder) <span class="keywordflow">return</span> digits::error;</div>
-<div class="line"><span class="lineno"> 2551</span>    <span class="keywordflow">if</span> (size &lt; precision) <span class="keywordflow">return</span> digits::more;</div>
-<div class="line"><span class="lineno"> 2552</span>    <span class="keywordflow">if</span> (!integral) {</div>
-<div class="line"><span class="lineno"> 2553</span>      <span class="comment">// Check if error * 2 &lt; divisor with overflow prevention.</span></div>
-<div class="line"><span class="lineno"> 2554</span>      <span class="comment">// The check is not needed for the integral part because error = 1</span></div>
-<div class="line"><span class="lineno"> 2555</span>      <span class="comment">// and divisor &gt; (1 &lt;&lt; 32) there.</span></div>
-<div class="line"><span class="lineno"> 2556</span>      <span class="keywordflow">if</span> (error &gt;= divisor || error &gt;= divisor - error) <span class="keywordflow">return</span> digits::error;</div>
-<div class="line"><span class="lineno"> 2557</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno"> 2558</span>      FMT_ASSERT(error == 1 &amp;&amp; divisor &gt; 2, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><span class="lineno"> 2559</span>    }</div>
-<div class="line"><span class="lineno"> 2560</span>    <span class="keyword">auto</span> dir = get_round_direction(divisor, remainder, error);</div>
-<div class="line"><span class="lineno"> 2561</span>    <span class="keywordflow">if</span> (dir != round_direction::up)</div>
-<div class="line"><span class="lineno"> 2562</span>      <span class="keywordflow">return</span> dir == round_direction::down ? digits::done : digits::error;</div>
-<div class="line"><span class="lineno"> 2563</span>    ++buf[size - 1];</div>
-<div class="line"><span class="lineno"> 2564</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = size - 1; i &gt; 0 &amp;&amp; buf[i] &gt; <span class="charliteral">&#39;9&#39;</span>; --i) {</div>
-<div class="line"><span class="lineno"> 2565</span>      buf[i] = <span class="charliteral">&#39;0&#39;</span>;</div>
-<div class="line"><span class="lineno"> 2566</span>      ++buf[i - 1];</div>
-<div class="line"><span class="lineno"> 2567</span>    }</div>
-<div class="line"><span class="lineno"> 2568</span>    <span class="keywordflow">if</span> (buf[0] &gt; <span class="charliteral">&#39;9&#39;</span>) {</div>
-<div class="line"><span class="lineno"> 2569</span>      buf[0] = <span class="charliteral">&#39;1&#39;</span>;</div>
-<div class="line"><span class="lineno"> 2570</span>      <span class="keywordflow">if</span> (fixed)</div>
-<div class="line"><span class="lineno"> 2571</span>        buf[size++] = <span class="charliteral">&#39;0&#39;</span>;</div>
-<div class="line"><span class="lineno"> 2572</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno"> 2573</span>        ++exp10;</div>
-<div class="line"><span class="lineno"> 2574</span>    }</div>
-<div class="line"><span class="lineno"> 2575</span>    <span class="keywordflow">return</span> digits::done;</div>
-<div class="line"><span class="lineno"> 2576</span>  }</div>
-</div><!-- fragment -->
-</div>
-</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>out/build/x64/vcpkg_installed/x86-windows/include/fmt/<a class="el" href="../../d0/d0a/format_8h_source.html">format.h</a></li>
+<li>format.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

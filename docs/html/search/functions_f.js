@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['teardown_0',['tearDown',['../da/d59/class_test_case_decorator.html#adc3ee82fb758f39b5781624090af449d',1,'TestCaseDecorator::tearDown()'],['../da/dbe/class_test_caller.html#a0e463b88bf0ceacbd8875e0450ed2649',1,'TestCaller::tearDown()'],['../d3/d78/class_test_fixture.html#a707dd4d7d0910af916343d79c0feffc9',1,'TestFixture::tearDown()']]],
+  ['teardown_0',['tearDown',['../d3/d78/class_test_fixture.html#a707dd4d7d0910af916343d79c0feffc9',1,'TestFixture']]],
   ['testcaller_1',['TestCaller',['../da/dbe/class_test_caller.html#a84cb35144455c4245c45d755b84c6093',1,'TestCaller::TestCaller(std::string name, TestMethod test)'],['../da/dbe/class_test_caller.html#a21479de59b7c38a6d8bed9e66025ebb0',1,'TestCaller::TestCaller(std::string name, TestMethod test, Fixture &amp;fixture)'],['../da/dbe/class_test_caller.html#a5977f4de9736929451f30b039a42487d',1,'TestCaller::TestCaller(std::string name, TestMethod test, Fixture *fixture)']]],
   ['testfactoryregistry_2',['TestFactoryRegistry',['../d1/da9/class_test_factory_registry.html#a704548465fea8b52fa449845b8b42caf',1,'TestFactoryRegistry']]],
   ['testnamer_3',['TestNamer',['../d9/d98/class_test_namer.html#ae555400e15c2142f75dc7a4c44ed4c34',1,'TestNamer::TestNamer(const std::type_info &amp;typeInfo)'],['../d9/d98/class_test_namer.html#ae2c7e349fae02b71dae8e898946bca9e',1,'TestNamer::TestNamer(const std::string &amp;fixtureName)']]],

@@ -20,7 +20,8 @@ virtual std\+::string \mbox{\hyperlink{class_test_namer_a0e4ded47c6f11bb0bfd3f6f
 \begin{DoxyCompactList}\small\item\em Returns the name of the fixture. \end{DoxyCompactList}\item 
 virtual std\+::string \mbox{\hyperlink{class_test_namer_a7ef850fe8d086f84ac8a0b3f11be95fe}{get\+Test\+Name\+For}} (const std\+::string \&test\+Method\+Name) const
 \begin{DoxyCompactList}\small\item\em Returns the name of the test for the specified method. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename E $>$ }\\std\+::string \mbox{\hyperlink{class_test_namer_a38e5a8b0163166b96599f6bb54bee6e9}{get\+Test\+Name\+For}} (const std\+::string \&test\+Method\+Name, const E \&val) const
+\mbox{\Hypertarget{class_test_namer_a38e5a8b0163166b96599f6bb54bee6e9}\label{class_test_namer_a38e5a8b0163166b96599f6bb54bee6e9}} 
+{\footnotesize template$<$typename E $>$ }\\std\+::string {\bfseries get\+Test\+Name\+For} (const std\+::string \&test\+Method\+Name, const E \&val) const
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -85,7 +86,7 @@ Name of the fixture.
 \mbox{\Hypertarget{class_test_namer_a7ef850fe8d086f84ac8a0b3f11be95fe}\label{class_test_namer_a7ef850fe8d086f84ac8a0b3f11be95fe}} 
 \index{TestNamer@{TestNamer}!getTestNameFor@{getTestNameFor}}
 \index{getTestNameFor@{getTestNameFor}!TestNamer@{TestNamer}}
-\doxysubsubsection{\texorpdfstring{getTestNameFor()}{getTestNameFor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{getTestNameFor()}{getTestNameFor()}}
 {\footnotesize\ttfamily virtual std\+::string Test\+Namer\+::get\+Test\+Name\+For (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{test\+Method\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -100,22 +101,8 @@ Returns the name of the test for the specified method.
 \begin{DoxyReturn}{Returns}
 A string that is the concatenation of the test fixture name (returned by \mbox{\hyperlink{class_test_namer_a0e4ded47c6f11bb0bfd3f6ff570e54f7}{get\+Fixture\+Name()}}) and{\itshape test\+Method\+Name}, separated using \textquotesingle{}\+::\textquotesingle{}. This provides a fairly unique name for a given test. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_test_namer_a38e5a8b0163166b96599f6bb54bee6e9}\label{class_test_namer_a38e5a8b0163166b96599f6bb54bee6e9}} 
-\index{TestNamer@{TestNamer}!getTestNameFor@{getTestNameFor}}
-\index{getTestNameFor@{getTestNameFor}!TestNamer@{TestNamer}}
-\doxysubsubsection{\texorpdfstring{getTestNameFor()}{getTestNameFor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename E $>$ \\
-std\+::string Test\+Namer\+::get\+Test\+Name\+For (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{test\+Method\+Name,  }\item[{const E \&}]{val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{69   \{}
-\DoxyCodeLine{70       \textcolor{keywordflow}{return} \mbox{\hyperlink{class_test_namer_a7ef850fe8d086f84ac8a0b3f11be95fe}{getTestNameFor}}(testMethodName) + \textcolor{stringliteral}{"{} with parameter: "{}} + CPPUNIT\_NS::StringHelper::toString(val);}
-\DoxyCodeLine{71   \}}
-
-\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/extensions/Test\+Namer.\+h\end{DoxyCompactItemize}
+Test\+Namer.\+h\end{DoxyCompactItemize}

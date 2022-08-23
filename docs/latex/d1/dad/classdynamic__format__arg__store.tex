@@ -23,7 +23,8 @@ struct \mbox{\hyperlink{structdynamic__format__arg__store_1_1need__copy}{need\+\
 \item 
 {\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classdynamic__format__arg__store_a14baaad39c59b82fdf86dc4276f7d7cc}{push\+\_\+back}} (const detail\+::named\+\_\+arg$<$ char\+\_\+type, T $>$ \&arg)
 \begin{DoxyCompactList}\small\item\em Adds named argument into the dynamic store for later passing to a formatting function. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classdynamic__format__arg__store_a94763fc905f02222d575f7c03161c212}{clear}} ()
+\mbox{\Hypertarget{classdynamic__format__arg__store_a94763fc905f02222d575f7c03161c212}\label{classdynamic__format__arg__store_a94763fc905f02222d575f7c03161c212}} 
+void {\bfseries clear} ()
 \begin{DoxyCompactList}\small\item\em Erase all elements from the store. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classdynamic__format__arg__store_a9c6983c46b69775b5066f6ad748be584}{reserve}} (size\+\_\+t new\+\_\+cap, size\+\_\+t new\+\_\+cap\+\_\+named)
 \begin{DoxyCompactList}\small\item\em \textbackslash{}rst Reserves space to store at least {\itshape new\+\_\+cap} arguments including new\+\_\+cap\+\_\+named$\ast$ named arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -39,13 +40,17 @@ using {\bfseries char\+\_\+type} = typename Context\+::char\+\_\+type
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-unsigned long long \mbox{\hyperlink{classdynamic__format__arg__store_a40956aef27ef510f1a68f45f3e4e0710}{get\+\_\+types}} () const
+\mbox{\Hypertarget{classdynamic__format__arg__store_a40956aef27ef510f1a68f45f3e4e0710}\label{classdynamic__format__arg__store_a40956aef27ef510f1a68f45f3e4e0710}} 
+unsigned long long {\bfseries get\+\_\+types} () const
 \item 
-const \mbox{\hyperlink{classbasic__format__arg}{basic\+\_\+format\+\_\+arg}}$<$ Context $>$ $\ast$ \mbox{\hyperlink{classdynamic__format__arg__store_a89c857698fe40e877e0c3a3c1bdb1921}{data}} () const
+\mbox{\Hypertarget{classdynamic__format__arg__store_a89c857698fe40e877e0c3a3c1bdb1921}\label{classdynamic__format__arg__store_a89c857698fe40e877e0c3a3c1bdb1921}} 
+const \mbox{\hyperlink{classbasic__format__arg}{basic\+\_\+format\+\_\+arg}}$<$ Context $>$ $\ast$ {\bfseries data} () const
 \item 
-{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classdynamic__format__arg__store_a3e3f7af053771a3dff451014a5024c79}{emplace\+\_\+arg}} (const T \&arg)
+\mbox{\Hypertarget{classdynamic__format__arg__store_a3e3f7af053771a3dff451014a5024c79}\label{classdynamic__format__arg__store_a3e3f7af053771a3dff451014a5024c79}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries emplace\+\_\+arg} (const T \&arg)
 \item 
-{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classdynamic__format__arg__store_a013581c49dc10f6184fcc7de015957fc}{emplace\+\_\+arg}} (const detail\+::named\+\_\+arg$<$ char\+\_\+type, T $>$ \&arg)
+\mbox{\Hypertarget{classdynamic__format__arg__store_a013581c49dc10f6184fcc7de015957fc}\label{classdynamic__format__arg__store_a013581c49dc10f6184fcc7de015957fc}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries emplace\+\_\+arg} (const detail\+::named\+\_\+arg$<$ char\+\_\+type, T $>$ \&arg)
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -77,99 +82,6 @@ It\textquotesingle{}s equipped with a storage to potentially temporary objects w
 It can be implicitly converted into {\ttfamily $\sim$fmt\mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}} for passing into type-\/erased formatting functions such as {\ttfamily $\sim$fmt\+::vformat}. \textbackslash{}endrst 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classdynamic__format__arg__store_a94763fc905f02222d575f7c03161c212}\label{classdynamic__format__arg__store_a94763fc905f02222d575f7c03161c212}} 
-\index{dynamic\_format\_arg\_store$<$ Context $>$@{dynamic\_format\_arg\_store$<$ Context $>$}!clear@{clear}}
-\index{clear@{clear}!dynamic\_format\_arg\_store$<$ Context $>$@{dynamic\_format\_arg\_store$<$ Context $>$}}
-\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
-{\footnotesize\ttfamily template$<$typename Context $>$ \\
-void \mbox{\hyperlink{classdynamic__format__arg__store}{dynamic\+\_\+format\+\_\+arg\+\_\+store}}$<$ Context $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Erase all elements from the store. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{212                \{}
-\DoxyCodeLine{213     data\_.clear();}
-\DoxyCodeLine{214     named\_info\_.clear();}
-\DoxyCodeLine{215     dynamic\_args\_ = \mbox{\hyperlink{classdetail_1_1dynamic__arg__list}{detail::dynamic\_arg\_list}}();}
-\DoxyCodeLine{216   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classdynamic__format__arg__store_a89c857698fe40e877e0c3a3c1bdb1921}\label{classdynamic__format__arg__store_a89c857698fe40e877e0c3a3c1bdb1921}} 
-\index{dynamic\_format\_arg\_store$<$ Context $>$@{dynamic\_format\_arg\_store$<$ Context $>$}!data@{data}}
-\index{data@{data}!dynamic\_format\_arg\_store$<$ Context $>$@{dynamic\_format\_arg\_store$<$ Context $>$}}
-\doxysubsubsection{\texorpdfstring{data()}{data()}}
-{\footnotesize\ttfamily template$<$typename Context $>$ \\
-const \mbox{\hyperlink{classbasic__format__arg}{basic\+\_\+format\+\_\+arg}}$<$ Context $>$ $\ast$ \mbox{\hyperlink{classdynamic__format__arg__store}{dynamic\+\_\+format\+\_\+arg\+\_\+store}}$<$ Context $>$\mbox{\hyperlink{structdata}{\+::data}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{120                                                 \{}
-\DoxyCodeLine{121     \textcolor{keywordflow}{return} named\_info\_.empty() ? data\_.data() : data\_.data() + 1;}
-\DoxyCodeLine{122   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classdynamic__format__arg__store_a013581c49dc10f6184fcc7de015957fc}\label{classdynamic__format__arg__store_a013581c49dc10f6184fcc7de015957fc}} 
-\index{dynamic\_format\_arg\_store$<$ Context $>$@{dynamic\_format\_arg\_store$<$ Context $>$}!emplace\_arg@{emplace\_arg}}
-\index{emplace\_arg@{emplace\_arg}!dynamic\_format\_arg\_store$<$ Context $>$@{dynamic\_format\_arg\_store$<$ Context $>$}}
-\doxysubsubsection{\texorpdfstring{emplace\_arg()}{emplace\_arg()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename Context $>$ \\
-template$<$typename T $>$ \\
-void \mbox{\hyperlink{classdynamic__format__arg__store}{dynamic\+\_\+format\+\_\+arg\+\_\+store}}$<$ Context $>$\+::emplace\+\_\+arg (\begin{DoxyParamCaption}\item[{const detail\+::named\+\_\+arg$<$ char\+\_\+type, T $>$ \&}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{129                                                              \{}
-\DoxyCodeLine{130     \textcolor{keywordflow}{if} (named\_info\_.empty()) \{}
-\DoxyCodeLine{131       \textcolor{keyword}{constexpr} \textcolor{keyword}{const} detail::named\_arg\_info<char\_type>* zero\_ptr\{\textcolor{keyword}{nullptr}\};}
-\DoxyCodeLine{132       data\_.insert(data\_.begin(), \{zero\_ptr, 0\});}
-\DoxyCodeLine{133     \}}
-\DoxyCodeLine{134     data\_.emplace\_back(detail::make\_arg<Context>(detail::unwrap(arg.value)));}
-\DoxyCodeLine{135     \textcolor{keyword}{auto} pop\_one = [](std::vector<basic\_format\_arg<Context>>* \mbox{\hyperlink{structdata}{data}}) \{}
-\DoxyCodeLine{136       \mbox{\hyperlink{structdata}{data}}-\/>pop\_back();}
-\DoxyCodeLine{137     \};}
-\DoxyCodeLine{138     std::unique\_ptr<std::vector<basic\_format\_arg<Context>>, \textcolor{keyword}{decltype}(pop\_one)>}
-\DoxyCodeLine{139         guard\{\&data\_, pop\_one\};}
-\DoxyCodeLine{140     named\_info\_.push\_back(\{arg.name, \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(data\_.size() -\/ 2u)\});}
-\DoxyCodeLine{141     data\_[0].value\_.named\_args = \{named\_info\_.data(), named\_info\_.size()\};}
-\DoxyCodeLine{142     guard.release();}
-\DoxyCodeLine{143   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classdynamic__format__arg__store_a3e3f7af053771a3dff451014a5024c79}\label{classdynamic__format__arg__store_a3e3f7af053771a3dff451014a5024c79}} 
-\index{dynamic\_format\_arg\_store$<$ Context $>$@{dynamic\_format\_arg\_store$<$ Context $>$}!emplace\_arg@{emplace\_arg}}
-\index{emplace\_arg@{emplace\_arg}!dynamic\_format\_arg\_store$<$ Context $>$@{dynamic\_format\_arg\_store$<$ Context $>$}}
-\doxysubsubsection{\texorpdfstring{emplace\_arg()}{emplace\_arg()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename Context $>$ \\
-template$<$typename T $>$ \\
-void \mbox{\hyperlink{classdynamic__format__arg__store}{dynamic\+\_\+format\+\_\+arg\+\_\+store}}$<$ Context $>$\+::emplace\+\_\+arg (\begin{DoxyParamCaption}\item[{const T \&}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{124                                                        \{}
-\DoxyCodeLine{125     data\_.emplace\_back(detail::make\_arg<Context>(arg));}
-\DoxyCodeLine{126   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classdynamic__format__arg__store_a40956aef27ef510f1a68f45f3e4e0710}\label{classdynamic__format__arg__store_a40956aef27ef510f1a68f45f3e4e0710}} 
-\index{dynamic\_format\_arg\_store$<$ Context $>$@{dynamic\_format\_arg\_store$<$ Context $>$}!get\_types@{get\_types}}
-\index{get\_types@{get\_types}!dynamic\_format\_arg\_store$<$ Context $>$@{dynamic\_format\_arg\_store$<$ Context $>$}}
-\doxysubsubsection{\texorpdfstring{get\_types()}{get\_types()}}
-{\footnotesize\ttfamily template$<$typename Context $>$ \\
-unsigned long long \mbox{\hyperlink{classdynamic__format__arg__store}{dynamic\+\_\+format\+\_\+arg\+\_\+store}}$<$ Context $>$\+::get\+\_\+types (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{113                                        \{}
-\DoxyCodeLine{114     \textcolor{keywordflow}{return} detail::is\_unpacked\_bit | data\_.size() |}
-\DoxyCodeLine{115            (named\_info\_.empty()}
-\DoxyCodeLine{116                 ? 0ULL}
-\DoxyCodeLine{117                 : \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long}\textcolor{keyword}{>}(detail::has\_named\_args\_bit));}
-\DoxyCodeLine{118   \}}
-
-\end{DoxyCode}
 \mbox{\Hypertarget{classdynamic__format__arg__store_a14baaad39c59b82fdf86dc4276f7d7cc}\label{classdynamic__format__arg__store_a14baaad39c59b82fdf86dc4276f7d7cc}} 
 \index{dynamic\_format\_arg\_store$<$ Context $>$@{dynamic\_format\_arg\_store$<$ Context $>$}!push\_back@{push\_back}}
 \index{push\_back@{push\_back}!dynamic\_format\_arg\_store$<$ Context $>$@{dynamic\_format\_arg\_store$<$ Context $>$}}
@@ -182,21 +94,7 @@ void \mbox{\hyperlink{classdynamic__format__arg__store}{dynamic\+\_\+format\+\_\
 
 Adds named argument into the dynamic store for later passing to a formatting function. 
 
-{\ttfamily std\+::reference\+\_\+wrapper} is supported to avoid copying of the argument. The name is always copied into the store. 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{200                                                            \{}
-\DoxyCodeLine{201     \textcolor{keyword}{const} char\_type* arg\_name =}
-\DoxyCodeLine{202         dynamic\_args\_.push<std::basic\_string<char\_type>>(arg.name).c\_str();}
-\DoxyCodeLine{203     \textcolor{keywordflow}{if} (detail::const\_check(need\_copy<T>::value)) \{}
-\DoxyCodeLine{204       emplace\_arg(}
-\DoxyCodeLine{205           fmt::arg(arg\_name, dynamic\_args\_.push<stored\_type<T>>(arg.value)));}
-\DoxyCodeLine{206     \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{207       emplace\_arg(fmt::arg(arg\_name, arg.value));}
-\DoxyCodeLine{208     \}}
-\DoxyCodeLine{209   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classdynamic__format__arg__store_a710e994685e69fd1cd4f56d29efc0d95}\label{classdynamic__format__arg__store_a710e994685e69fd1cd4f56d29efc0d95}} 
+{\ttfamily std\+::reference\+\_\+wrapper} is supported to avoid copying of the argument. The name is always copied into the store. \mbox{\Hypertarget{classdynamic__format__arg__store_a710e994685e69fd1cd4f56d29efc0d95}\label{classdynamic__format__arg__store_a710e994685e69fd1cd4f56d29efc0d95}} 
 \index{dynamic\_format\_arg\_store$<$ Context $>$@{dynamic\_format\_arg\_store$<$ Context $>$}!push\_back@{push\_back}}
 \index{push\_back@{push\_back}!dynamic\_format\_arg\_store$<$ Context $>$@{dynamic\_format\_arg\_store$<$ Context $>$}}
 \doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
@@ -212,17 +110,7 @@ Note that custom types and string types (but not string views) are copied into t
 
 Example$\ast$$\ast$\+::
 
-fmt\+::dynamic\+\_\+format\+\_\+arg\+\_\+store$<$fmt\+::format\+\_\+context$>$ store; store.\+push\+\_\+back(42); store.\+push\+\_\+back(\char`\"{}abc\char`\"{}); store.\+push\+\_\+back(1.\+5f); std\+::string result = fmt\+::vformat(\char`\"{}\{\} and \{\} and \{\}\char`\"{}, store); \textbackslash{}endrst 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{165                                                      \{}
-\DoxyCodeLine{166     \textcolor{keywordflow}{if} (detail::const\_check(need\_copy<T>::value))}
-\DoxyCodeLine{167       emplace\_arg(dynamic\_args\_.push<stored\_type<T>>(arg));}
-\DoxyCodeLine{168     \textcolor{keywordflow}{else}}
-\DoxyCodeLine{169       emplace\_arg(detail::unwrap(arg));}
-\DoxyCodeLine{170   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classdynamic__format__arg__store_ac58637a7965cbfeab47c2f50e923dc07}\label{classdynamic__format__arg__store_ac58637a7965cbfeab47c2f50e923dc07}} 
+fmt\+::dynamic\+\_\+format\+\_\+arg\+\_\+store$<$fmt\+::format\+\_\+context$>$ store; store.\+push\+\_\+back(42); store.\+push\+\_\+back(\char`\"{}abc\char`\"{}); store.\+push\+\_\+back(1.\+5f); std\+::string result = fmt\+::vformat(\char`\"{}\{\} and \{\} and \{\}\char`\"{}, store); \textbackslash{}endrst \mbox{\Hypertarget{classdynamic__format__arg__store_ac58637a7965cbfeab47c2f50e923dc07}\label{classdynamic__format__arg__store_ac58637a7965cbfeab47c2f50e923dc07}} 
 \index{dynamic\_format\_arg\_store$<$ Context $>$@{dynamic\_format\_arg\_store$<$ Context $>$}!push\_back@{push\_back}}
 \index{push\_back@{push\_back}!dynamic\_format\_arg\_store$<$ Context $>$@{dynamic\_format\_arg\_store$<$ Context $>$}}
 \doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -242,17 +130,7 @@ a formatting function.
   band[9] = 'c'; // Changing str affects the output.
   std::string result = fmt::vformat("{}", store);
 \end{DoxyVerb}
- result == \char`\"{}\+Rolling Scones\char`\"{} \textbackslash{}endrst 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{187                                                                     \{}
-\DoxyCodeLine{188     \textcolor{keyword}{static\_assert}(}
-\DoxyCodeLine{189         need\_copy<T>::value,}
-\DoxyCodeLine{190         \textcolor{stringliteral}{"{}objects of built-\/in types and string views are always copied"{}});}
-\DoxyCodeLine{191     emplace\_arg(arg.get());}
-\DoxyCodeLine{192   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classdynamic__format__arg__store_a9c6983c46b69775b5066f6ad748be584}\label{classdynamic__format__arg__store_a9c6983c46b69775b5066f6ad748be584}} 
+ result == \char`\"{}\+Rolling Scones\char`\"{} \textbackslash{}endrst \mbox{\Hypertarget{classdynamic__format__arg__store_a9c6983c46b69775b5066f6ad748be584}\label{classdynamic__format__arg__store_a9c6983c46b69775b5066f6ad748be584}} 
 \index{dynamic\_format\_arg\_store$<$ Context $>$@{dynamic\_format\_arg\_store$<$ Context $>$}!reserve@{reserve}}
 \index{reserve@{reserve}!dynamic\_format\_arg\_store$<$ Context $>$@{dynamic\_format\_arg\_store$<$ Context $>$}}
 \doxysubsubsection{\texorpdfstring{reserve()}{reserve()}}
@@ -264,17 +142,7 @@ void \mbox{\hyperlink{classdynamic__format__arg__store}{dynamic\+\_\+format\+\_\
 \textbackslash{}rst Reserves space to store at least {\itshape new\+\_\+cap} arguments including new\+\_\+cap\+\_\+named$\ast$ named arguments. 
 
 \textbackslash{}endrst 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{224                                                      \{}
-\DoxyCodeLine{225     FMT\_ASSERT(new\_cap >= new\_cap\_named,}
-\DoxyCodeLine{226                \textcolor{stringliteral}{"{}Set of arguments includes set of named arguments"{}});}
-\DoxyCodeLine{227     data\_.reserve(new\_cap);}
-\DoxyCodeLine{228     named\_info\_.reserve(new\_cap\_named);}
-\DoxyCodeLine{229   \}}
-
-\end{DoxyCode}
-
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/args.\+h\end{DoxyCompactItemize}
+args.\+h\end{DoxyCompactItemize}

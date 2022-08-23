@@ -8,79 +8,19 @@ Methods for converting values to strings. Replaces CPPUNIT\+\_\+\+NS\+::\+String
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$!std\+::is\+\_\+enum$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}, std\+::string $>$\+::type \mbox{\hyperlink{namespace_string_helper_adcbdbb235cc0edd6d304d4c1ffa87646}{to\+String}} (const T \&x)
+\mbox{\Hypertarget{namespace_string_helper_adcbdbb235cc0edd6d304d4c1ffa87646}\label{namespace_string_helper_adcbdbb235cc0edd6d304d4c1ffa87646}} 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$!std\+::is\+\_\+enum$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}, std\+::string $>$\+::type {\bfseries to\+String} (const T \&x)
 \item 
-{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+enum$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}, std\+::string $>$\+::type \mbox{\hyperlink{namespace_string_helper_a3eff86b6246eca3ee45ec8b080dd0a7f}{to\+String}} (const T \&x)
+\mbox{\Hypertarget{namespace_string_helper_a3eff86b6246eca3ee45ec8b080dd0a7f}\label{namespace_string_helper_a3eff86b6246eca3ee45ec8b080dd0a7f}} 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if$<$ std\+::is\+\_\+enum$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}, std\+::string $>$\+::type {\bfseries to\+String} (const T \&x)
 \item 
-template$<$$>$ std\+::string \mbox{\hyperlink{namespace_string_helper_af48156322ebb229ab953fe0d5efcab37}{to\+String}} (const signed char \&x)
+\mbox{\Hypertarget{namespace_string_helper_af48156322ebb229ab953fe0d5efcab37}\label{namespace_string_helper_af48156322ebb229ab953fe0d5efcab37}} 
+template$<$$>$ std\+::string {\bfseries to\+String} (const signed char \&x)
 \item 
-template$<$$>$ std\+::string \mbox{\hyperlink{namespace_string_helper_aa24908b07c694b22dfd80c0f2c2b5eee}{to\+String}} (const unsigned char \&x)
+\mbox{\Hypertarget{namespace_string_helper_aa24908b07c694b22dfd80c0f2c2b5eee}\label{namespace_string_helper_aa24908b07c694b22dfd80c0f2c2b5eee}} 
+template$<$$>$ std\+::string {\bfseries to\+String} (const unsigned char \&x)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Methods for converting values to strings. Replaces CPPUNIT\+\_\+\+NS\+::\+String\+Tools\+::to\+String. 
-
-\doxysubsection{Function Documentation}
-\mbox{\Hypertarget{namespace_string_helper_af48156322ebb229ab953fe0d5efcab37}\label{namespace_string_helper_af48156322ebb229ab953fe0d5efcab37}} 
-\index{StringHelper@{StringHelper}!toString@{toString}}
-\index{toString@{toString}!StringHelper@{StringHelper}}
-\doxysubsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily template$<$$>$ \\
-std\+::string String\+Helper\+::to\+String (\begin{DoxyParamCaption}\item[{const signed char \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{40 \{}
-\DoxyCodeLine{41     \textcolor{keywordflow}{return} toString(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(x));}
-\DoxyCodeLine{42 \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{namespace_string_helper_adcbdbb235cc0edd6d304d4c1ffa87646}\label{namespace_string_helper_adcbdbb235cc0edd6d304d4c1ffa87646}} 
-\index{StringHelper@{StringHelper}!toString@{toString}}
-\index{toString@{toString}!StringHelper@{StringHelper}}
-\doxysubsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-std\+::enable\+\_\+if$<$!std\+::is\+\_\+enum$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}, std\+::string $>$\+::type String\+Helper\+::to\+String (\begin{DoxyParamCaption}\item[{const T \&}]{x }\end{DoxyParamCaption})}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{23 \{}
-\DoxyCodeLine{24     OStringStream ost;}
-\DoxyCodeLine{25     ost << x;}
-\DoxyCodeLine{26 }
-\DoxyCodeLine{27     \textcolor{keywordflow}{return} ost.str();}
-\DoxyCodeLine{28 \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{namespace_string_helper_a3eff86b6246eca3ee45ec8b080dd0a7f}\label{namespace_string_helper_a3eff86b6246eca3ee45ec8b080dd0a7f}} 
-\index{StringHelper@{StringHelper}!toString@{toString}}
-\index{toString@{toString}!StringHelper@{StringHelper}}
-\doxysubsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-std\+::enable\+\_\+if$<$ std\+::is\+\_\+enum$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}, std\+::string $>$\+::type String\+Helper\+::to\+String (\begin{DoxyParamCaption}\item[{const T \&}]{x }\end{DoxyParamCaption})}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{32 \{}
-\DoxyCodeLine{33     OStringStream ost;}
-\DoxyCodeLine{34     ost << static\_cast<typename std::underlying\_type<T>::type>(x);}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{36     \textcolor{keywordflow}{return} ost.str();}
-\DoxyCodeLine{37 \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{namespace_string_helper_aa24908b07c694b22dfd80c0f2c2b5eee}\label{namespace_string_helper_aa24908b07c694b22dfd80c0f2c2b5eee}} 
-\index{StringHelper@{StringHelper}!toString@{toString}}
-\index{toString@{toString}!StringHelper@{StringHelper}}
-\doxysubsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily template$<$$>$ \\
-std\+::string String\+Helper\+::to\+String (\begin{DoxyParamCaption}\item[{const unsigned char \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{45 \{}
-\DoxyCodeLine{46     \textcolor{keywordflow}{return} toString(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(x));}
-\DoxyCodeLine{47 \}}
-
-\end{DoxyCode}

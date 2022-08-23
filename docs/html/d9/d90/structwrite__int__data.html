@@ -74,7 +74,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4a9d0885fc2a3e7fc67111ec7b8a7586"><td class="memItemLeft" align="right" valign="top">FMT_CONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d90/structwrite__int__data.html#a4a9d0885fc2a3e7fc67111ec7b8a7586">write_int_data</a> (int num_digits, unsigned prefix, const <a class="el" href="../../dc/dd9/structbasic__format__specs.html">basic_format_specs</a>&lt; Char &gt; &amp;specs)</td></tr>
+<tr class="memitem:a4a9d0885fc2a3e7fc67111ec7b8a7586"><td class="memItemLeft" align="right" valign="top"><a id="a4a9d0885fc2a3e7fc67111ec7b8a7586" name="a4a9d0885fc2a3e7fc67111ec7b8a7586"></a>
+FMT_CONSTEXPR&#160;</td><td class="memItemRight" valign="bottom"><b>write_int_data</b> (int num_digits, unsigned prefix, const <a class="el" href="../../dc/dd9/structbasic__format__specs.html">basic_format_specs</a>&lt; Char &gt; &amp;specs)</td></tr>
 <tr class="separator:a4a9d0885fc2a3e7fc67111ec7b8a7586"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -86,65 +87,8 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b></td></tr>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>padding</b></td></tr>
 <tr class="separator:a9c767936e7dd8dcc8352f47b2688849c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4a9d0885fc2a3e7fc67111ec7b8a7586" name="a4a9d0885fc2a3e7fc67111ec7b8a7586"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a9d0885fc2a3e7fc67111ec7b8a7586">&#9670;&nbsp;</a></span>write_int_data()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Char &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">FMT_CONSTEXPR <a class="el" href="../../d9/d90/structwrite__int__data.html">write_int_data</a>&lt; Char &gt;<a class="el" href="../../d9/d90/structwrite__int__data.html">::write_int_data</a> </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>num_digits</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned&#160;</td>
-          <td class="paramname"><em>prefix</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../dc/dd9/structbasic__format__specs.html">basic_format_specs</a>&lt; Char &gt; &amp;&#160;</td>
-          <td class="paramname"><em>specs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno"> 1868</span>      : size((prefix &gt;&gt; 24) + to_unsigned(num_digits)), padding(0) {</div>
-<div class="line"><span class="lineno"> 1869</span>    <span class="keywordflow">if</span> (specs.align == align::numeric) {</div>
-<div class="line"><span class="lineno"> 1870</span>      <span class="keyword">auto</span> width = to_unsigned(specs.width);</div>
-<div class="line"><span class="lineno"> 1871</span>      <span class="keywordflow">if</span> (width &gt; size) {</div>
-<div class="line"><span class="lineno"> 1872</span>        padding = width - size;</div>
-<div class="line"><span class="lineno"> 1873</span>        size = width;</div>
-<div class="line"><span class="lineno"> 1874</span>      }</div>
-<div class="line"><span class="lineno"> 1875</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (specs.precision &gt; num_digits) {</div>
-<div class="line"><span class="lineno"> 1876</span>      size = (prefix &gt;&gt; 24) + to_unsigned(specs.precision);</div>
-<div class="line"><span class="lineno"> 1877</span>      padding = to_unsigned(specs.precision - num_digits);</div>
-<div class="line"><span class="lineno"> 1878</span>    }</div>
-<div class="line"><span class="lineno"> 1879</span>  }</div>
-</div><!-- fragment -->
-</div>
-</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>out/build/x64/vcpkg_installed/x86-windows/include/fmt/<a class="el" href="../../d0/d0a/format_8h_source.html">format.h</a></li>
+<li>format.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

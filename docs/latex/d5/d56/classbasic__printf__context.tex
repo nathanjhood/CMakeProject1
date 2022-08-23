@@ -20,15 +20,20 @@ using {\bfseries parse\+\_\+context\+\_\+type} = \mbox{\hyperlink{classbasic__pr
 \item 
 \mbox{\hyperlink{classbasic__printf__context_adfdcf4066bb737766d1d1905f7b3e320}{basic\+\_\+printf\+\_\+context}} (Output\+It out, \mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}$<$ \mbox{\hyperlink{classbasic__printf__context}{basic\+\_\+printf\+\_\+context}} $>$ args)
 \begin{DoxyCompactList}\small\item\em \textbackslash{}rst Constructs a {\ttfamily printf\+\_\+context} object. \end{DoxyCompactList}\item 
-Output\+It \mbox{\hyperlink{classbasic__printf__context_a32ce7421f1cc208df2ddc815ee3701f4}{out}} ()
+\mbox{\Hypertarget{classbasic__printf__context_a32ce7421f1cc208df2ddc815ee3701f4}\label{classbasic__printf__context_a32ce7421f1cc208df2ddc815ee3701f4}} 
+Output\+It {\bfseries out} ()
 \item 
-void \mbox{\hyperlink{classbasic__printf__context_af9b59dfcc9a9022bbd2e22eacbed7239}{advance\+\_\+to}} (Output\+It it)
+\mbox{\Hypertarget{classbasic__printf__context_af9b59dfcc9a9022bbd2e22eacbed7239}\label{classbasic__printf__context_af9b59dfcc9a9022bbd2e22eacbed7239}} 
+void {\bfseries advance\+\_\+to} (Output\+It it)
 \item 
-detail\+::locale\+\_\+ref \mbox{\hyperlink{classbasic__printf__context_abdf573051f8678653488f1a840db845b}{locale}} ()
+\mbox{\Hypertarget{classbasic__printf__context_abdf573051f8678653488f1a840db845b}\label{classbasic__printf__context_abdf573051f8678653488f1a840db845b}} 
+detail\+::locale\+\_\+ref {\bfseries locale} ()
 \item 
-\mbox{\hyperlink{classbasic__format__arg}{format\+\_\+arg}} \mbox{\hyperlink{classbasic__printf__context_a9d938bba34fe8dda4296a4942f0e5da4}{arg}} (int id) const
+\mbox{\Hypertarget{classbasic__printf__context_a9d938bba34fe8dda4296a4942f0e5da4}\label{classbasic__printf__context_a9d938bba34fe8dda4296a4942f0e5da4}} 
+\mbox{\hyperlink{classbasic__format__arg}{format\+\_\+arg}} {\bfseries arg} (int id) const
 \item 
-FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classbasic__printf__context_a738f65c97827f7d57534c87f5b71903d}{on\+\_\+error}} (const char $\ast$message)
+\mbox{\Hypertarget{classbasic__printf__context_a738f65c97827f7d57534c87f5b71903d}\label{classbasic__printf__context_a738f65c97827f7d57534c87f5b71903d}} 
+FMT\+\_\+\+CONSTEXPR void {\bfseries on\+\_\+error} (const char $\ast$message)
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -54,78 +59,8 @@ Output\+It {\bfseries out\+\_\+}
 \textbackslash{}rst Constructs a {\ttfamily printf\+\_\+context} object. 
 
 References to the arguments are stored in the context object so make sure they have appropriate lifetimes. \textbackslash{}endrst 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{45       : out\_(out), args\_(args) \{\}}
-
-\end{DoxyCode}
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classbasic__printf__context_af9b59dfcc9a9022bbd2e22eacbed7239}\label{classbasic__printf__context_af9b59dfcc9a9022bbd2e22eacbed7239}} 
-\index{basic\_printf\_context$<$ OutputIt, Char $>$@{basic\_printf\_context$<$ OutputIt, Char $>$}!advance\_to@{advance\_to}}
-\index{advance\_to@{advance\_to}!basic\_printf\_context$<$ OutputIt, Char $>$@{basic\_printf\_context$<$ OutputIt, Char $>$}}
-\doxysubsubsection{\texorpdfstring{advance\_to()}{advance\_to()}}
-{\footnotesize\ttfamily template$<$typename Output\+It , typename Char $>$ \\
-void \mbox{\hyperlink{classbasic__printf__context}{basic\+\_\+printf\+\_\+context}}$<$ Output\+It, Char $>$\+::advance\+\_\+to (\begin{DoxyParamCaption}\item[{Output\+It}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{48 \{ out\_ = it; \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classbasic__printf__context_a9d938bba34fe8dda4296a4942f0e5da4}\label{classbasic__printf__context_a9d938bba34fe8dda4296a4942f0e5da4}} 
-\index{basic\_printf\_context$<$ OutputIt, Char $>$@{basic\_printf\_context$<$ OutputIt, Char $>$}!arg@{arg}}
-\index{arg@{arg}!basic\_printf\_context$<$ OutputIt, Char $>$@{basic\_printf\_context$<$ OutputIt, Char $>$}}
-\doxysubsubsection{\texorpdfstring{arg()}{arg()}}
-{\footnotesize\ttfamily template$<$typename Output\+It , typename Char $>$ \\
-\mbox{\hyperlink{classbasic__format__arg}{format\+\_\+arg}} \mbox{\hyperlink{classbasic__printf__context}{basic\+\_\+printf\+\_\+context}}$<$ Output\+It, Char $>$\+::arg (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{52 \{ \textcolor{keywordflow}{return} args\_.\mbox{\hyperlink{classbasic__format__args_a3339d3a4e4daaf7bb0de1a8084e7f086}{get}}(\textcolor{keywordtype}{id}); \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classbasic__printf__context_abdf573051f8678653488f1a840db845b}\label{classbasic__printf__context_abdf573051f8678653488f1a840db845b}} 
-\index{basic\_printf\_context$<$ OutputIt, Char $>$@{basic\_printf\_context$<$ OutputIt, Char $>$}!locale@{locale}}
-\index{locale@{locale}!basic\_printf\_context$<$ OutputIt, Char $>$@{basic\_printf\_context$<$ OutputIt, Char $>$}}
-\doxysubsubsection{\texorpdfstring{locale()}{locale()}}
-{\footnotesize\ttfamily template$<$typename Output\+It , typename Char $>$ \\
-detail\+::locale\+\_\+ref \mbox{\hyperlink{classbasic__printf__context}{basic\+\_\+printf\+\_\+context}}$<$ Output\+It, Char $>$\+::locale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{50 \{ \textcolor{keywordflow}{return} \{\}; \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classbasic__printf__context_a738f65c97827f7d57534c87f5b71903d}\label{classbasic__printf__context_a738f65c97827f7d57534c87f5b71903d}} 
-\index{basic\_printf\_context$<$ OutputIt, Char $>$@{basic\_printf\_context$<$ OutputIt, Char $>$}!on\_error@{on\_error}}
-\index{on\_error@{on\_error}!basic\_printf\_context$<$ OutputIt, Char $>$@{basic\_printf\_context$<$ OutputIt, Char $>$}}
-\doxysubsubsection{\texorpdfstring{on\_error()}{on\_error()}}
-{\footnotesize\ttfamily template$<$typename Output\+It , typename Char $>$ \\
-FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classbasic__printf__context}{basic\+\_\+printf\+\_\+context}}$<$ Output\+It, Char $>$\+::on\+\_\+error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{54                                                    \{}
-\DoxyCodeLine{55     detail::error\_handler().on\_error(message);}
-\DoxyCodeLine{56   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classbasic__printf__context_a32ce7421f1cc208df2ddc815ee3701f4}\label{classbasic__printf__context_a32ce7421f1cc208df2ddc815ee3701f4}} 
-\index{basic\_printf\_context$<$ OutputIt, Char $>$@{basic\_printf\_context$<$ OutputIt, Char $>$}!out@{out}}
-\index{out@{out}!basic\_printf\_context$<$ OutputIt, Char $>$@{basic\_printf\_context$<$ OutputIt, Char $>$}}
-\doxysubsubsection{\texorpdfstring{out()}{out()}}
-{\footnotesize\ttfamily template$<$typename Output\+It , typename Char $>$ \\
-Output\+It \mbox{\hyperlink{classbasic__printf__context}{basic\+\_\+printf\+\_\+context}}$<$ Output\+It, Char $>$\+::out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{47 \{ \textcolor{keywordflow}{return} out\_; \}}
-
-\end{DoxyCode}
-
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/ostream.\+h\item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/printf.\+h\end{DoxyCompactItemize}
+ostream.\+h\item 
+printf.\+h\end{DoxyCompactItemize}

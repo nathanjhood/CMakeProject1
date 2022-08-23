@@ -3,19 +3,25 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{structfill__t_a205a72162ea2b2b2938d7ddccd35966f}{operator=}} (\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$ s)
+\mbox{\Hypertarget{structfill__t_a205a72162ea2b2b2938d7ddccd35966f}\label{structfill__t_a205a72162ea2b2b2938d7ddccd35966f}} 
+FMT\+\_\+\+CONSTEXPR void {\bfseries operator=} (\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$ s)
 \item 
-constexpr auto \mbox{\hyperlink{structfill__t_a89ac8b3e760b219368ce2b010ea654e8}{size}} () const -\/$>$ size\+\_\+t
+\mbox{\Hypertarget{structfill__t_a89ac8b3e760b219368ce2b010ea654e8}\label{structfill__t_a89ac8b3e760b219368ce2b010ea654e8}} 
+constexpr auto {\bfseries size} () const -\/$>$ size\+\_\+t
 \item 
-constexpr auto \mbox{\hyperlink{structfill__t_a96d2a7e6af20388e8523baef24d68fb9}{data}} () const -\/$>$ const Char $\ast$
+\mbox{\Hypertarget{structfill__t_a96d2a7e6af20388e8523baef24d68fb9}\label{structfill__t_a96d2a7e6af20388e8523baef24d68fb9}} 
+constexpr auto {\bfseries data} () const -\/$>$ const Char $\ast$
 \item 
-FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structfill__t_aab3ca37e25fc1a654337c796d0d8e1d9}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t index) -\/$>$ Char \&
+\mbox{\Hypertarget{structfill__t_aab3ca37e25fc1a654337c796d0d8e1d9}\label{structfill__t_aab3ca37e25fc1a654337c796d0d8e1d9}} 
+FMT\+\_\+\+CONSTEXPR auto {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t index) -\/$>$ Char \&
 \item 
-FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structfill__t_a2f9cfa8b68ae1ccc39745b534b7ea814}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t index) const -\/$>$ const Char \&
+\mbox{\Hypertarget{structfill__t_a2f9cfa8b68ae1ccc39745b534b7ea814}\label{structfill__t_a2f9cfa8b68ae1ccc39745b534b7ea814}} 
+FMT\+\_\+\+CONSTEXPR auto {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t index) const -\/$>$ const Char \&
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Types}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{structfill__t_af6ed27c918280cc651299d54141e58df}\label{structfill__t_af6ed27c918280cc651299d54141e58df}} 
 enum \{ {\bfseries max\+\_\+size} = 4
  \}
 \end{DoxyCompactItemize}
@@ -30,89 +36,6 @@ unsigned char {\bfseries size\+\_\+} = 1
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Member Enumeration Documentation}
-\mbox{\Hypertarget{structfill__t_af6ed27c918280cc651299d54141e58df}\label{structfill__t_af6ed27c918280cc651299d54141e58df}} 
-\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{2064 \{ max\_size = 4 \};}
-
-\end{DoxyCode}
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{structfill__t_a96d2a7e6af20388e8523baef24d68fb9}\label{structfill__t_a96d2a7e6af20388e8523baef24d68fb9}} 
-\index{fill\_t$<$ Char $>$@{fill\_t$<$ Char $>$}!data@{data}}
-\index{data@{data}!fill\_t$<$ Char $>$@{fill\_t$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{data()}{data()}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-constexpr auto \mbox{\hyperlink{structfill__t}{fill\+\_\+t}}$<$ Char $>$\mbox{\hyperlink{structdata}{\+::data}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ const Char$\ast$ \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{2077 \{ \textcolor{keywordflow}{return} data\_; \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{structfill__t_a205a72162ea2b2b2938d7ddccd35966f}\label{structfill__t_a205a72162ea2b2b2938d7ddccd35966f}} 
-\index{fill\_t$<$ Char $>$@{fill\_t$<$ Char $>$}!operator=@{operator=}}
-\index{operator=@{operator=}!fill\_t$<$ Char $>$@{fill\_t$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{structfill__t}{fill\+\_\+t}}$<$ Char $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{2069                                                           \{}
-\DoxyCodeLine{2070     \textcolor{keyword}{auto} size = s.\mbox{\hyperlink{classbasic__string__view_a216bbe1b012b590698d7bb4e96d1af3f}{size}}();}
-\DoxyCodeLine{2071     \textcolor{keywordflow}{if} (size > max\_size) \textcolor{keywordflow}{return} throw\_format\_error(\textcolor{stringliteral}{"{}invalid fill"{}});}
-\DoxyCodeLine{2072     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < size; ++i) data\_[i] = s[i];}
-\DoxyCodeLine{2073     size\_ = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}\textcolor{keyword}{>}(size);}
-\DoxyCodeLine{2074   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{structfill__t_aab3ca37e25fc1a654337c796d0d8e1d9}\label{structfill__t_aab3ca37e25fc1a654337c796d0d8e1d9}} 
-\index{fill\_t$<$ Char $>$@{fill\_t$<$ Char $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
-\index{operator\mbox{[}\mbox{]}@{operator[]}!fill\_t$<$ Char $>$@{fill\_t$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structfill__t}{fill\+\_\+t}}$<$ Char $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption}) -\/$>$ Char\& \hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{2079 \{ \textcolor{keywordflow}{return} data\_[index]; \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{structfill__t_a2f9cfa8b68ae1ccc39745b534b7ea814}\label{structfill__t_a2f9cfa8b68ae1ccc39745b534b7ea814}} 
-\index{fill\_t$<$ Char $>$@{fill\_t$<$ Char $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
-\index{operator\mbox{[}\mbox{]}@{operator[]}!fill\_t$<$ Char $>$@{fill\_t$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structfill__t}{fill\+\_\+t}}$<$ Char $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption}) const -\/$>$ const Char\& \hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{2080                                                                    \{}
-\DoxyCodeLine{2081     \textcolor{keywordflow}{return} data\_[index];}
-\DoxyCodeLine{2082   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{structfill__t_a89ac8b3e760b219368ce2b010ea654e8}\label{structfill__t_a89ac8b3e760b219368ce2b010ea654e8}} 
-\index{fill\_t$<$ Char $>$@{fill\_t$<$ Char $>$}!size@{size}}
-\index{size@{size}!fill\_t$<$ Char $>$@{fill\_t$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{size()}{size()}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-constexpr auto \mbox{\hyperlink{structfill__t}{fill\+\_\+t}}$<$ Char $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ size\+\_\+t \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{2076 \{ \textcolor{keywordflow}{return} size\_; \}}
-
-\end{DoxyCode}
-
-
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/core.\+h\end{DoxyCompactItemize}
+core.\+h\end{DoxyCompactItemize}

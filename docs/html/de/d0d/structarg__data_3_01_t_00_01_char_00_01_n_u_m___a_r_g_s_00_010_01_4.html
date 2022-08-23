@@ -74,12 +74,15 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ada261be8a267069cabe5c056e43caaf4"><td class="memTemplParams" colspan="2">template&lt;typename... U&gt; </td></tr>
-<tr class="memitem:ada261be8a267069cabe5c056e43caaf4"><td class="memTemplItemLeft" align="right" valign="top">FMT_CONSTEXPR FMT_INLINE&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d0d/structarg__data_3_01_t_00_01_char_00_01_n_u_m___a_r_g_s_00_010_01_4.html#ada261be8a267069cabe5c056e43caaf4">arg_data</a> (const U &amp;... init)</td></tr>
+<tr class="memitem:ada261be8a267069cabe5c056e43caaf4"><td class="memTemplParams" colspan="2"><a id="ada261be8a267069cabe5c056e43caaf4" name="ada261be8a267069cabe5c056e43caaf4"></a>
+template&lt;typename... U&gt; </td></tr>
+<tr class="memitem:ada261be8a267069cabe5c056e43caaf4"><td class="memTemplItemLeft" align="right" valign="top">FMT_CONSTEXPR FMT_INLINE&#160;</td><td class="memTemplItemRight" valign="bottom"><b>arg_data</b> (const U &amp;... init)</td></tr>
 <tr class="separator:ada261be8a267069cabe5c056e43caaf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6db93b990a99e7883708546c122dbb1d"><td class="memItemLeft" align="right" valign="top">FMT_CONSTEXPR FMT_INLINE auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0d/structarg__data_3_01_t_00_01_char_00_01_n_u_m___a_r_g_s_00_010_01_4.html#a6db93b990a99e7883708546c122dbb1d">args</a> () const -&gt; const T *</td></tr>
+<tr class="memitem:a6db93b990a99e7883708546c122dbb1d"><td class="memItemLeft" align="right" valign="top"><a id="a6db93b990a99e7883708546c122dbb1d" name="a6db93b990a99e7883708546c122dbb1d"></a>
+FMT_CONSTEXPR FMT_INLINE auto&#160;</td><td class="memItemRight" valign="bottom"><b>args</b> () const -&gt; const T *</td></tr>
 <tr class="separator:a6db93b990a99e7883708546c122dbb1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a315911f9a475b6b715be0917b70e5d8e"><td class="memItemLeft" align="right" valign="top">FMT_CONSTEXPR FMT_INLINE auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0d/structarg__data_3_01_t_00_01_char_00_01_n_u_m___a_r_g_s_00_010_01_4.html#a315911f9a475b6b715be0917b70e5d8e">named_args</a> () -&gt; std::nullptr_t</td></tr>
+<tr class="memitem:a315911f9a475b6b715be0917b70e5d8e"><td class="memItemLeft" align="right" valign="top"><a id="a315911f9a475b6b715be0917b70e5d8e" name="a315911f9a475b6b715be0917b70e5d8e"></a>
+FMT_CONSTEXPR FMT_INLINE auto&#160;</td><td class="memItemRight" valign="bottom"><b>named_args</b> () -&gt; std::nullptr_t</td></tr>
 <tr class="separator:a315911f9a475b6b715be0917b70e5d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -88,99 +91,8 @@ Public Attributes</h2></td></tr>
 T&#160;</td><td class="memItemRight" valign="bottom"><b>args_</b> [NUM_ARGS !=0 ? NUM_ARGS :+1]</td></tr>
 <tr class="separator:acff1969edf3d2a2bd25f7ffb99079ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ada261be8a267069cabe5c056e43caaf4" name="ada261be8a267069cabe5c056e43caaf4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada261be8a267069cabe5c056e43caaf4">&#9670;&nbsp;</a></span>arg_data()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , typename Char , size_t NUM_ARGS&gt; </div>
-<div class="memtemplate">
-template&lt;typename... U&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">FMT_CONSTEXPR FMT_INLINE <a class="el" href="../../d9/d3e/structarg__data.html">arg_data</a>&lt; T, Char, NUM_ARGS, 0 &gt;<a class="el" href="../../d9/d3e/structarg__data.html">::arg_data</a> </td>
-          <td>(</td>
-          <td class="paramtype">const U &amp;...&#160;</td>
-          <td class="paramname"><em>init</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno"> 1150</span>: args_{init...} {}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6db93b990a99e7883708546c122dbb1d" name="a6db93b990a99e7883708546c122dbb1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6db93b990a99e7883708546c122dbb1d">&#9670;&nbsp;</a></span>args()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , typename Char , size_t NUM_ARGS&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">FMT_CONSTEXPR FMT_INLINE auto <a class="el" href="../../d9/d3e/structarg__data.html">arg_data</a>&lt; T, Char, NUM_ARGS, 0 &gt;::args </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const -&gt; const T* </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno"> 1151</span>{ <span class="keywordflow">return</span> args_; }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a315911f9a475b6b715be0917b70e5d8e" name="a315911f9a475b6b715be0917b70e5d8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a315911f9a475b6b715be0917b70e5d8e">&#9670;&nbsp;</a></span>named_args()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , typename Char , size_t NUM_ARGS&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">FMT_CONSTEXPR FMT_INLINE auto <a class="el" href="../../d9/d3e/structarg__data.html">arg_data</a>&lt; T, Char, NUM_ARGS, 0 &gt;::named_args </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> -&gt; std::nullptr_t </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno"> 1152</span>                                                             {</div>
-<div class="line"><span class="lineno"> 1153</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno"> 1154</span>  }</div>
-</div><!-- fragment -->
-</div>
-</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>out/build/x64/vcpkg_installed/x86-windows/include/fmt/<a class="el" href="../../d5/dc4/core_8h_source.html">core.h</a></li>
+<li>core.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

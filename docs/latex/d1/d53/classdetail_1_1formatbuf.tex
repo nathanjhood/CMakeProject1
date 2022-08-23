@@ -9,14 +9,17 @@ Inheritance diagram for detail\+::formatbuf\texorpdfstring{$<$}{<} Streambuf \te
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classdetail_1_1formatbuf_ac0ef3aba2f08e3f32504d16457a3ea25}{formatbuf}} (\mbox{\hyperlink{classbuffer}{buffer}}$<$ char\+\_\+type $>$ \&buf)
+\mbox{\Hypertarget{classdetail_1_1formatbuf_ac0ef3aba2f08e3f32504d16457a3ea25}\label{classdetail_1_1formatbuf_ac0ef3aba2f08e3f32504d16457a3ea25}} 
+{\bfseries formatbuf} (\mbox{\hyperlink{classbuffer}{buffer}}$<$ char\+\_\+type $>$ \&buf)
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-auto \mbox{\hyperlink{classdetail_1_1formatbuf_a6a6c7e6320e944974f955d6737140292}{overflow}} (int\+\_\+type ch) -\/$>$ int\+\_\+type override
+\mbox{\Hypertarget{classdetail_1_1formatbuf_a6a6c7e6320e944974f955d6737140292}\label{classdetail_1_1formatbuf_a6a6c7e6320e944974f955d6737140292}} 
+auto {\bfseries overflow} (int\+\_\+type ch) -\/$>$ int\+\_\+type override
 \item 
-auto \mbox{\hyperlink{classdetail_1_1formatbuf_a1a2edcc4af6bc21378e4d3974356f1a1}{xsputn}} (const char\+\_\+type $\ast$s, streamsize count) -\/$>$ streamsize override
+\mbox{\Hypertarget{classdetail_1_1formatbuf_a1a2edcc4af6bc21378e4d3974356f1a1}\label{classdetail_1_1formatbuf_a1a2edcc4af6bc21378e4d3974356f1a1}} 
+auto {\bfseries xsputn} (const char\+\_\+type $\ast$s, streamsize count) -\/$>$ streamsize override
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Types}
 \begin{DoxyCompactItemize}
@@ -41,55 +44,6 @@ using {\bfseries traits\+\_\+type} = typename Streambuf\+::traits\+\_\+type
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classdetail_1_1formatbuf_ac0ef3aba2f08e3f32504d16457a3ea25}\label{classdetail_1_1formatbuf_ac0ef3aba2f08e3f32504d16457a3ea25}} 
-\index{detail::formatbuf$<$ Streambuf $>$@{detail::formatbuf$<$ Streambuf $>$}!formatbuf@{formatbuf}}
-\index{formatbuf@{formatbuf}!detail::formatbuf$<$ Streambuf $>$@{detail::formatbuf$<$ Streambuf $>$}}
-\doxysubsubsection{\texorpdfstring{formatbuf()}{formatbuf()}}
-{\footnotesize\ttfamily template$<$typename Streambuf $>$ \\
-\mbox{\hyperlink{classdetail_1_1formatbuf}{detail\+::formatbuf}}$<$ Streambuf $>$\+::formatbuf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbuffer}{buffer}}$<$ char\+\_\+type $>$ \&}]{buf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{262 : buffer\_(buf) \{\}}
-
-\end{DoxyCode}
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classdetail_1_1formatbuf_a6a6c7e6320e944974f955d6737140292}\label{classdetail_1_1formatbuf_a6a6c7e6320e944974f955d6737140292}} 
-\index{detail::formatbuf$<$ Streambuf $>$@{detail::formatbuf$<$ Streambuf $>$}!overflow@{overflow}}
-\index{overflow@{overflow}!detail::formatbuf$<$ Streambuf $>$@{detail::formatbuf$<$ Streambuf $>$}}
-\doxysubsubsection{\texorpdfstring{overflow()}{overflow()}}
-{\footnotesize\ttfamily template$<$typename Streambuf $>$ \\
-auto \mbox{\hyperlink{classdetail_1_1formatbuf}{detail\+::formatbuf}}$<$ Streambuf $>$\+::overflow (\begin{DoxyParamCaption}\item[{int\+\_\+type}]{ch }\end{DoxyParamCaption}) -\/$>$ int\+\_\+type\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{271                                                   \{}
-\DoxyCodeLine{272     \textcolor{keywordflow}{if} (!traits\_type::eq\_int\_type(ch, traits\_type::eof()))}
-\DoxyCodeLine{273       buffer\_.push\_back(\textcolor{keyword}{static\_cast<}char\_type\textcolor{keyword}{>}(ch));}
-\DoxyCodeLine{274     \textcolor{keywordflow}{return} ch;}
-\DoxyCodeLine{275   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classdetail_1_1formatbuf_a1a2edcc4af6bc21378e4d3974356f1a1}\label{classdetail_1_1formatbuf_a1a2edcc4af6bc21378e4d3974356f1a1}} 
-\index{detail::formatbuf$<$ Streambuf $>$@{detail::formatbuf$<$ Streambuf $>$}!xsputn@{xsputn}}
-\index{xsputn@{xsputn}!detail::formatbuf$<$ Streambuf $>$@{detail::formatbuf$<$ Streambuf $>$}}
-\doxysubsubsection{\texorpdfstring{xsputn()}{xsputn()}}
-{\footnotesize\ttfamily template$<$typename Streambuf $>$ \\
-auto \mbox{\hyperlink{classdetail_1_1formatbuf}{detail\+::formatbuf}}$<$ Streambuf $>$\+::xsputn (\begin{DoxyParamCaption}\item[{const char\+\_\+type $\ast$}]{s,  }\item[{streamsize}]{count }\end{DoxyParamCaption}) -\/$>$ streamsize\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{277                                                                            \{}
-\DoxyCodeLine{278     buffer\_.\mbox{\hyperlink{classbuffer_a144ad707b324a714fbe334896f90ba28}{append}}(s, s + count);}
-\DoxyCodeLine{279     \textcolor{keywordflow}{return} count;}
-\DoxyCodeLine{280   \}}
-
-\end{DoxyCode}
-
-
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/format.\+h\end{DoxyCompactItemize}
+format.\+h\end{DoxyCompactItemize}

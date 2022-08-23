@@ -27,7 +27,7 @@ virtual {\bfseries $\sim$\+Test\+Success\+Listener} ()
 virtual void {\bfseries reset} ()
 \item 
 void \mbox{\hyperlink{class_test_success_listener_a912bb5ea408b2be5b39cfb45e1bb402f}{add\+Failure}} (const \mbox{\hyperlink{class_test_failure}{Test\+Failure}} \&failure)
-\begin{DoxyCompactList}\small\item\em Called when a failure occurs while running a test. \end{DoxyCompactList}\item 
+\item 
 \mbox{\Hypertarget{class_test_success_listener_a251a5d4379772e342c050ca15fc3bf6c}\label{class_test_success_listener_a251a5d4379772e342c050ca15fc3bf6c}} 
 virtual bool {\bfseries was\+Successful} () const
 \begin{DoxyCompactList}\small\item\em Returns whether the entire test was successful or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -57,28 +57,18 @@ Constructs a \mbox{\hyperlink{class_test_success_listener}{Test\+Success\+Listen
 \index{TestSuccessListener@{TestSuccessListener}!addFailure@{addFailure}}
 \index{addFailure@{addFailure}!TestSuccessListener@{TestSuccessListener}}
 \doxysubsubsection{\texorpdfstring{addFailure()}{addFailure()}}
-{\footnotesize\ttfamily void Test\+Success\+Listener\+::add\+Failure (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_test_failure}{Test\+Failure}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Test\+Success\+Listener\+::add\+Failure (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_test_failure}{Test\+Failure}} \&}]{failure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-
-
-Called when a failure occurs while running a test. 
-
-\begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_test_failure}{Test\+Failure}}. 
-\end{DoxySeeAlso}
-\begin{DoxyWarning}{Warning}
-{\itshape failure} is a temporary object that is destroyed after the method call. Use Test\+Failure\+::clone() to create a duplicate. 
-\end{DoxyWarning}
 
 
 Reimplemented from \mbox{\hyperlink{class_test_listener_a103216a5814c907f7b752b969477e765}{Test\+Listener}}.
 
 
 
-Reimplemented in \mbox{\hyperlink{class_text_test_result_a05d3b0e8e51b3430092166bbc3d17708}{Text\+Test\+Result}}, and \mbox{\hyperlink{class_text_test_result_aa423474527cbc89141763ea41336a188}{Text\+Test\+Result}}.
+Reimplemented in \mbox{\hyperlink{class_text_test_result_aa423474527cbc89141763ea41336a188}{Text\+Test\+Result}}.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/Test\+Success\+Listener.\+h\end{DoxyCompactItemize}
+Test\+Success\+Listener.\+h\end{DoxyCompactItemize}
