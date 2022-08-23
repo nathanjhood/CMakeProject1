@@ -75,7 +75,7 @@ $(function() {
 <p><a class="el" href="../../d2/d5d/class_test_listener.html" title="Listener for test progress and result.">TestListener</a> that checks if any test case failed.  
  <a href="../../d9/dc2/class_test_success_listener.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d5/d05/_test_success_listener_8h_source.html">TestSuccessListener.h</a>&gt;</code></p>
+<p><code>#include &lt;TestSuccessListener.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TestSuccessListener:</div>
 <div class="dyncontent">
@@ -101,27 +101,30 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~TestSuccessListen
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()</td></tr>
 <tr class="separator:aa6172d9c318a9a0fdb789b7668550290"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a912bb5ea408b2be5b39cfb45e1bb402f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc2/class_test_success_listener.html#a912bb5ea408b2be5b39cfb45e1bb402f">addFailure</a> (const <a class="el" href="../../d8/dc4/class_test_failure.html">TestFailure</a> &amp;failure)</td></tr>
-<tr class="memdesc:a912bb5ea408b2be5b39cfb45e1bb402f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a failure occurs while running a test.  <a href="../../d9/dc2/class_test_success_listener.html#a912bb5ea408b2be5b39cfb45e1bb402f">More...</a><br /></td></tr>
 <tr class="separator:a912bb5ea408b2be5b39cfb45e1bb402f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a251a5d4379772e342c050ca15fc3bf6c"><td class="memItemLeft" align="right" valign="top"><a id="a251a5d4379772e342c050ca15fc3bf6c" name="a251a5d4379772e342c050ca15fc3bf6c"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>wasSuccessful</b> () const</td></tr>
 <tr class="memdesc:a251a5d4379772e342c050ca15fc3bf6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the entire test was successful or not. <br /></td></tr>
 <tr class="separator:a251a5d4379772e342c050ca15fc3bf6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_test_listener"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_test_listener')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d2/d5d/class_test_listener.html">TestListener</a></td></tr>
-<tr class="memitem:a5546d4420e7412234915113b1ea5ad77 inherit pub_methods_class_test_listener"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d5d/class_test_listener.html#a5546d4420e7412234915113b1ea5ad77">startTest</a> (<a class="el" href="../../d1/d9b/class_test.html">Test</a> *)</td></tr>
-<tr class="memdesc:a5546d4420e7412234915113b1ea5ad77 inherit pub_methods_class_test_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when just before a <a class="el" href="../../d9/d1c/class_test_case.html" title="A single test object.">TestCase</a> is run.  <a href="../../d2/d5d/class_test_listener.html#a5546d4420e7412234915113b1ea5ad77">More...</a><br /></td></tr>
+<tr class="memitem:a5546d4420e7412234915113b1ea5ad77 inherit pub_methods_class_test_listener"><td class="memItemLeft" align="right" valign="top"><a id="a5546d4420e7412234915113b1ea5ad77" name="a5546d4420e7412234915113b1ea5ad77"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>startTest</b> (<a class="el" href="../../d1/d9b/class_test.html">Test</a> *)</td></tr>
+<tr class="memdesc:a5546d4420e7412234915113b1ea5ad77 inherit pub_methods_class_test_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when just before a <a class="el" href="../../d9/d1c/class_test_case.html" title="A single test object.">TestCase</a> is run. <br /></td></tr>
 <tr class="separator:a5546d4420e7412234915113b1ea5ad77 inherit pub_methods_class_test_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a103216a5814c907f7b752b969477e765 inherit pub_methods_class_test_listener"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d5d/class_test_listener.html#a103216a5814c907f7b752b969477e765">addFailure</a> (const <a class="el" href="../../d8/dc4/class_test_failure.html">TestFailure</a> &amp;)</td></tr>
 <tr class="memdesc:a103216a5814c907f7b752b969477e765 inherit pub_methods_class_test_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a failure occurs while running a test.  <a href="../../d2/d5d/class_test_listener.html#a103216a5814c907f7b752b969477e765">More...</a><br /></td></tr>
 <tr class="separator:a103216a5814c907f7b752b969477e765 inherit pub_methods_class_test_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8ccd0f55dd9aa7eafded05ba14f9ac6 inherit pub_methods_class_test_listener"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d5d/class_test_listener.html#ae8ccd0f55dd9aa7eafded05ba14f9ac6">endTest</a> (<a class="el" href="../../d1/d9b/class_test.html">Test</a> *)</td></tr>
-<tr class="memdesc:ae8ccd0f55dd9aa7eafded05ba14f9ac6 inherit pub_methods_class_test_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called just after a <a class="el" href="../../d9/d1c/class_test_case.html" title="A single test object.">TestCase</a> was run (even if a failure occured).  <a href="../../d2/d5d/class_test_listener.html#ae8ccd0f55dd9aa7eafded05ba14f9ac6">More...</a><br /></td></tr>
+<tr class="memitem:ae8ccd0f55dd9aa7eafded05ba14f9ac6 inherit pub_methods_class_test_listener"><td class="memItemLeft" align="right" valign="top"><a id="ae8ccd0f55dd9aa7eafded05ba14f9ac6" name="ae8ccd0f55dd9aa7eafded05ba14f9ac6"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>endTest</b> (<a class="el" href="../../d1/d9b/class_test.html">Test</a> *)</td></tr>
+<tr class="memdesc:ae8ccd0f55dd9aa7eafded05ba14f9ac6 inherit pub_methods_class_test_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called just after a <a class="el" href="../../d9/d1c/class_test_case.html" title="A single test object.">TestCase</a> was run (even if a failure occured). <br /></td></tr>
 <tr class="separator:ae8ccd0f55dd9aa7eafded05ba14f9ac6 inherit pub_methods_class_test_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2360ebfccfa39f75bdc43948d5d1d2e7 inherit pub_methods_class_test_listener"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d5d/class_test_listener.html#a2360ebfccfa39f75bdc43948d5d1d2e7">startSuite</a> (<a class="el" href="../../d1/d9b/class_test.html">Test</a> *)</td></tr>
-<tr class="memdesc:a2360ebfccfa39f75bdc43948d5d1d2e7 inherit pub_methods_class_test_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by a <a class="el" href="../../d7/d2c/class_test_composite.html" title="A Composite of Tests.">TestComposite</a> just before running its child tests.  <a href="../../d2/d5d/class_test_listener.html#a2360ebfccfa39f75bdc43948d5d1d2e7">More...</a><br /></td></tr>
+<tr class="memitem:a2360ebfccfa39f75bdc43948d5d1d2e7 inherit pub_methods_class_test_listener"><td class="memItemLeft" align="right" valign="top"><a id="a2360ebfccfa39f75bdc43948d5d1d2e7" name="a2360ebfccfa39f75bdc43948d5d1d2e7"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>startSuite</b> (<a class="el" href="../../d1/d9b/class_test.html">Test</a> *)</td></tr>
+<tr class="memdesc:a2360ebfccfa39f75bdc43948d5d1d2e7 inherit pub_methods_class_test_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by a <a class="el" href="../../d7/d2c/class_test_composite.html" title="A Composite of Tests.">TestComposite</a> just before running its child tests. <br /></td></tr>
 <tr class="separator:a2360ebfccfa39f75bdc43948d5d1d2e7 inherit pub_methods_class_test_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad49e5589681732a1faff8fca5cbe61f5 inherit pub_methods_class_test_listener"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d5d/class_test_listener.html#ad49e5589681732a1faff8fca5cbe61f5">endSuite</a> (<a class="el" href="../../d1/d9b/class_test.html">Test</a> *)</td></tr>
-<tr class="memdesc:ad49e5589681732a1faff8fca5cbe61f5 inherit pub_methods_class_test_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by a <a class="el" href="../../d7/d2c/class_test_composite.html" title="A Composite of Tests.">TestComposite</a> after running its child tests.  <a href="../../d2/d5d/class_test_listener.html#ad49e5589681732a1faff8fca5cbe61f5">More...</a><br /></td></tr>
+<tr class="memitem:ad49e5589681732a1faff8fca5cbe61f5 inherit pub_methods_class_test_listener"><td class="memItemLeft" align="right" valign="top"><a id="ad49e5589681732a1faff8fca5cbe61f5" name="ad49e5589681732a1faff8fca5cbe61f5"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>endSuite</b> (<a class="el" href="../../d1/d9b/class_test.html">Test</a> *)</td></tr>
+<tr class="memdesc:ad49e5589681732a1faff8fca5cbe61f5 inherit pub_methods_class_test_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by a <a class="el" href="../../d7/d2c/class_test_composite.html" title="A Composite of Tests.">TestComposite</a> after running its child tests. <br /></td></tr>
 <tr class="separator:ad49e5589681732a1faff8fca5cbe61f5 inherit pub_methods_class_test_listener"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a263428abdf29b2a7123af4096771925e inherit pub_methods_class_test_listener"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d5d/class_test_listener.html#a263428abdf29b2a7123af4096771925e">startTestRun</a> (<a class="el" href="../../d1/d9b/class_test.html">Test</a> *, <a class="el" href="../../dd/dd3/class_test_result.html">TestResult</a> *)</td></tr>
 <tr class="memdesc:a263428abdf29b2a7123af4096771925e inherit pub_methods_class_test_listener"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by a <a class="el" href="../../d2/d2e/class_test_runner.html" title="Generic test runner.">TestRunner</a> before running the test.  <a href="../../d2/d5d/class_test_listener.html#a263428abdf29b2a7123af4096771925e">More...</a><br /></td></tr>
@@ -190,7 +193,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setSynchroniz
           <td class="memname">void TestSuccessListener::addFailure </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../d8/dc4/class_test_failure.html">TestFailure</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>failure</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -201,18 +204,14 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setSynchroniz
 </table>
 </div><div class="memdoc">
 
-<p>Called when a failure occurs while running a test. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d8/dc4/class_test_failure.html" title="Record of a failed Test execution.">TestFailure</a>. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd><em>failure</em> is a temporary object that is destroyed after the method call. Use TestFailure::clone() to create a duplicate. </dd></dl>
-
 <p>Reimplemented from <a class="el" href="../../d2/d5d/class_test_listener.html#a103216a5814c907f7b752b969477e765">TestListener</a>.</p>
 
-<p>Reimplemented in <a class="el" href="../../dc/d19/class_text_test_result.html#a05d3b0e8e51b3430092166bbc3d17708">TextTestResult</a>, and <a class="el" href="../../dc/d19/class_text_test_result.html#aa423474527cbc89141763ea41336a188">TextTestResult</a>.</p>
+<p>Reimplemented in <a class="el" href="../../dc/d19/class_text_test_result.html#aa423474527cbc89141763ea41336a188">TextTestResult</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>out/build/x64/vcpkg_installed/x86-windows/include/cppunit/<a class="el" href="../../d5/d05/_test_success_listener_8h_source.html">TestSuccessListener.h</a></li>
+<li>TestSuccessListener.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

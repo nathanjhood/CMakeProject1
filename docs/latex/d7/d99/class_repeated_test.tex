@@ -18,12 +18,13 @@ Inheritance diagram for Repeated\+Test\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_repeated_test_a73cf84a81085a1e93f21f2f4d2a14bc6}{Repeated\+Test}} (\mbox{\hyperlink{class_test}{Test}} $\ast$test, int times\+Repeat)
+\mbox{\Hypertarget{class_repeated_test_a73cf84a81085a1e93f21f2f4d2a14bc6}\label{class_repeated_test_a73cf84a81085a1e93f21f2f4d2a14bc6}} 
+{\bfseries Repeated\+Test} (\mbox{\hyperlink{class_test}{Test}} $\ast$test, int times\+Repeat)
 \item 
 void \mbox{\hyperlink{class_repeated_test_a6faffcd29b619305a75dd4c1995beaad}{run}} (\mbox{\hyperlink{class_test_result}{Test\+Result}} $\ast$result)
-\begin{DoxyCompactList}\small\item\em Run the test, collecting results. \end{DoxyCompactList}\item 
+\item 
 int \mbox{\hyperlink{class_repeated_test_af35b6e65a52d6bf79b7306cdd967b489}{count\+Test\+Cases}} () const
-\begin{DoxyCompactList}\small\item\em Return the number of test cases invoked by \mbox{\hyperlink{class_repeated_test_a6faffcd29b619305a75dd4c1995beaad}{run()}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -47,24 +48,6 @@ Decorator that runs a test repeatedly.
 
 Does not assume ownership of the test it decorates 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_repeated_test_a73cf84a81085a1e93f21f2f4d2a14bc6}\label{class_repeated_test_a73cf84a81085a1e93f21f2f4d2a14bc6}} 
-\index{RepeatedTest@{RepeatedTest}!RepeatedTest@{RepeatedTest}}
-\index{RepeatedTest@{RepeatedTest}!RepeatedTest@{RepeatedTest}}
-\doxysubsubsection{\texorpdfstring{RepeatedTest()}{RepeatedTest()}}
-{\footnotesize\ttfamily Repeated\+Test\+::\+Repeated\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_test}{Test}} $\ast$}]{test,  }\item[{int}]{times\+Repeat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{22                                   : }
-\DoxyCodeLine{23       \mbox{\hyperlink{class_test_decorator}{TestDecorator}}( test ), }
-\DoxyCodeLine{24       m\_timesRepeat(timesRepeat) }
-\DoxyCodeLine{25   \{}
-\DoxyCodeLine{26   \}}
-
-\end{DoxyCode}
-
-
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_repeated_test_af35b6e65a52d6bf79b7306cdd967b489}\label{class_repeated_test_af35b6e65a52d6bf79b7306cdd967b489}} 
 \index{RepeatedTest@{RepeatedTest}!countTestCases@{countTestCases}}
@@ -73,10 +56,6 @@ Does not assume ownership of the test it decorates
 {\footnotesize\ttfamily int Repeated\+Test\+::count\+Test\+Cases (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
-
-Return the number of test cases invoked by \mbox{\hyperlink{class_repeated_test_a6faffcd29b619305a75dd4c1995beaad}{run()}}. 
-
-The base unit of testing is the class \mbox{\hyperlink{class_test_case}{Test\+Case}}. This method returns the number of \mbox{\hyperlink{class_test_case}{Test\+Case}} objects invoked by the \mbox{\hyperlink{class_repeated_test_a6faffcd29b619305a75dd4c1995beaad}{run()}} method. 
 
 Implements \mbox{\hyperlink{class_test_aad2b7244c7cec3f3aa9f81d12b15c8cf}{Test}}.
 
@@ -88,14 +67,10 @@ Implements \mbox{\hyperlink{class_test_aad2b7244c7cec3f3aa9f81d12b15c8cf}{Test}}
 
 
 
-Run the test, collecting results. 
-
-
-
 Implements \mbox{\hyperlink{class_test_a7beeb95dc0d058bd3bfea1a75463cb03}{Test}}.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/extensions/Repeated\+Test.\+h\end{DoxyCompactItemize}
+Repeated\+Test.\+h\end{DoxyCompactItemize}

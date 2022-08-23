@@ -8,22 +8,29 @@ struct \mbox{\hyperlink{structdigit__grouping_1_1next__state}{next\+\_\+state}}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classdigit__grouping_ae48e64202e0a54806dd01a6ae8a6b9cd}{digit\+\_\+grouping}} (\mbox{\hyperlink{classlocale__ref}{locale\+\_\+ref}} loc, bool localized=true)
+\mbox{\Hypertarget{classdigit__grouping_ae48e64202e0a54806dd01a6ae8a6b9cd}\label{classdigit__grouping_ae48e64202e0a54806dd01a6ae8a6b9cd}} 
+{\bfseries digit\+\_\+grouping} (\mbox{\hyperlink{classlocale__ref}{locale\+\_\+ref}} loc, bool localized=true)
 \item 
-\mbox{\hyperlink{classdigit__grouping_a4e274763f5dd0e8a0e620965ed7c7a91}{digit\+\_\+grouping}} (\mbox{\hyperlink{structthousands__sep__result}{thousands\+\_\+sep\+\_\+result}}$<$ Char $>$ sep)
+\mbox{\Hypertarget{classdigit__grouping_a4e274763f5dd0e8a0e620965ed7c7a91}\label{classdigit__grouping_a4e274763f5dd0e8a0e620965ed7c7a91}} 
+{\bfseries digit\+\_\+grouping} (\mbox{\hyperlink{structthousands__sep__result}{thousands\+\_\+sep\+\_\+result}}$<$ Char $>$ sep)
 \item 
-Char \mbox{\hyperlink{classdigit__grouping_afcbb9af5351e652894f5d044469350e2}{separator}} () const
+\mbox{\Hypertarget{classdigit__grouping_afcbb9af5351e652894f5d044469350e2}\label{classdigit__grouping_afcbb9af5351e652894f5d044469350e2}} 
+Char {\bfseries separator} () const
 \item 
-int \mbox{\hyperlink{classdigit__grouping_ae73ed38dba65bc40b06d247984c1edfd}{count\+\_\+separators}} (int num\+\_\+digits) const
+\mbox{\Hypertarget{classdigit__grouping_ae73ed38dba65bc40b06d247984c1edfd}\label{classdigit__grouping_ae73ed38dba65bc40b06d247984c1edfd}} 
+int {\bfseries count\+\_\+separators} (int num\+\_\+digits) const
 \item 
-{\footnotesize template$<$typename Out , typename C $>$ }\\Out \mbox{\hyperlink{classdigit__grouping_a30023ace60c70d48954c73d00804900e}{apply}} (Out out, \mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ C $>$ digits) const
+\mbox{\Hypertarget{classdigit__grouping_a30023ace60c70d48954c73d00804900e}\label{classdigit__grouping_a30023ace60c70d48954c73d00804900e}} 
+{\footnotesize template$<$typename Out , typename C $>$ }\\Out {\bfseries apply} (Out out, \mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ C $>$ digits) const
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structdigit__grouping_1_1next__state}{next\+\_\+state}} \mbox{\hyperlink{classdigit__grouping_ad3c2422e4e1114bbbbb4917f63190e48}{initial\+\_\+state}} () const
+\mbox{\Hypertarget{classdigit__grouping_ad3c2422e4e1114bbbbb4917f63190e48}\label{classdigit__grouping_ad3c2422e4e1114bbbbb4917f63190e48}} 
+\mbox{\hyperlink{structdigit__grouping_1_1next__state}{next\+\_\+state}} {\bfseries initial\+\_\+state} () const
 \item 
-int \mbox{\hyperlink{classdigit__grouping_a83f91f46d4a35dd185f0de3f0ff4895d}{next}} (\mbox{\hyperlink{structdigit__grouping_1_1next__state}{next\+\_\+state}} \&state) const
+\mbox{\Hypertarget{classdigit__grouping_a83f91f46d4a35dd185f0de3f0ff4895d}\label{classdigit__grouping_a83f91f46d4a35dd185f0de3f0ff4895d}} 
+int {\bfseries next} (\mbox{\hyperlink{structdigit__grouping_1_1next__state}{next\+\_\+state}} \&state) const
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -33,133 +40,6 @@ int \mbox{\hyperlink{classdigit__grouping_a83f91f46d4a35dd185f0de3f0ff4895d}{nex
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classdigit__grouping_ae48e64202e0a54806dd01a6ae8a6b9cd}\label{classdigit__grouping_ae48e64202e0a54806dd01a6ae8a6b9cd}} 
-\index{digit\_grouping$<$ Char $>$@{digit\_grouping$<$ Char $>$}!digit\_grouping@{digit\_grouping}}
-\index{digit\_grouping@{digit\_grouping}!digit\_grouping$<$ Char $>$@{digit\_grouping$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{digit\_grouping()}{digit\_grouping()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-\mbox{\hyperlink{classdigit__grouping}{digit\+\_\+grouping}}$<$ Char $>$\mbox{\hyperlink{classdigit__grouping}{\+::digit\+\_\+grouping}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classlocale__ref}{locale\+\_\+ref}}}]{loc,  }\item[{bool}]{localized = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1932                                                                  \{}
-\DoxyCodeLine{1933     \textcolor{keywordflow}{if} (localized)}
-\DoxyCodeLine{1934       sep\_ = thousands\_sep<Char>(loc);}
-\DoxyCodeLine{1935     \textcolor{keywordflow}{else}}
-\DoxyCodeLine{1936       sep\_.thousands\_sep = Char();}
-\DoxyCodeLine{1937   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classdigit__grouping_a4e274763f5dd0e8a0e620965ed7c7a91}\label{classdigit__grouping_a4e274763f5dd0e8a0e620965ed7c7a91}} 
-\index{digit\_grouping$<$ Char $>$@{digit\_grouping$<$ Char $>$}!digit\_grouping@{digit\_grouping}}
-\index{digit\_grouping@{digit\_grouping}!digit\_grouping$<$ Char $>$@{digit\_grouping$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{digit\_grouping()}{digit\_grouping()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-\mbox{\hyperlink{classdigit__grouping}{digit\+\_\+grouping}}$<$ Char $>$\mbox{\hyperlink{classdigit__grouping}{\+::digit\+\_\+grouping}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structthousands__sep__result}{thousands\+\_\+sep\+\_\+result}}$<$ Char $>$}]{sep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1938 : sep\_(sep) \{\}}
-
-\end{DoxyCode}
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classdigit__grouping_a30023ace60c70d48954c73d00804900e}\label{classdigit__grouping_a30023ace60c70d48954c73d00804900e}} 
-\index{digit\_grouping$<$ Char $>$@{digit\_grouping$<$ Char $>$}!apply@{apply}}
-\index{apply@{apply}!digit\_grouping$<$ Char $>$@{digit\_grouping$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-template$<$typename Out , typename C $>$ \\
-Out \mbox{\hyperlink{classdigit__grouping}{digit\+\_\+grouping}}$<$ Char $>$\+::apply (\begin{DoxyParamCaption}\item[{Out}]{out,  }\item[{\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ C $>$}]{digits }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1951                                                         \{}
-\DoxyCodeLine{1952     \textcolor{keyword}{auto} num\_digits = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(digits.\mbox{\hyperlink{classbasic__string__view_a216bbe1b012b590698d7bb4e96d1af3f}{size}}());}
-\DoxyCodeLine{1953     \textcolor{keyword}{auto} separators = \mbox{\hyperlink{classbasic__memory__buffer}{basic\_memory\_buffer<int>}}();}
-\DoxyCodeLine{1954     separators.push\_back(0);}
-\DoxyCodeLine{1955     \textcolor{keyword}{auto} state = initial\_state();}
-\DoxyCodeLine{1956     \textcolor{keywordflow}{while} (\textcolor{keywordtype}{int} i = next(state)) \{}
-\DoxyCodeLine{1957       \textcolor{keywordflow}{if} (i >= num\_digits) \textcolor{keywordflow}{break};}
-\DoxyCodeLine{1958       separators.push\_back(i);}
-\DoxyCodeLine{1959     \}}
-\DoxyCodeLine{1960     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0, sep\_index = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(separators.size() -\/ 1);}
-\DoxyCodeLine{1961          i < num\_digits; ++i) \{}
-\DoxyCodeLine{1962       \textcolor{keywordflow}{if} (num\_digits -\/ i == separators[sep\_index]) \{}
-\DoxyCodeLine{1963         *out++ = separator();}
-\DoxyCodeLine{1964         -\/-\/sep\_index;}
-\DoxyCodeLine{1965       \}}
-\DoxyCodeLine{1966       *out++ = \textcolor{keyword}{static\_cast<}Char\textcolor{keyword}{>}(digits[to\_unsigned(i)]);}
-\DoxyCodeLine{1967     \}}
-\DoxyCodeLine{1968     \textcolor{keywordflow}{return} out;}
-\DoxyCodeLine{1969   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classdigit__grouping_ae73ed38dba65bc40b06d247984c1edfd}\label{classdigit__grouping_ae73ed38dba65bc40b06d247984c1edfd}} 
-\index{digit\_grouping$<$ Char $>$@{digit\_grouping$<$ Char $>$}!count\_separators@{count\_separators}}
-\index{count\_separators@{count\_separators}!digit\_grouping$<$ Char $>$@{digit\_grouping$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{count\_separators()}{count\_separators()}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-int \mbox{\hyperlink{classdigit__grouping}{digit\+\_\+grouping}}$<$ Char $>$\+::count\+\_\+separators (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+digits }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1942                                              \{}
-\DoxyCodeLine{1943     \textcolor{keywordtype}{int} count = 0;}
-\DoxyCodeLine{1944     \textcolor{keyword}{auto} state = initial\_state();}
-\DoxyCodeLine{1945     \textcolor{keywordflow}{while} (num\_digits > next(state)) ++count;}
-\DoxyCodeLine{1946     \textcolor{keywordflow}{return} count;}
-\DoxyCodeLine{1947   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classdigit__grouping_ad3c2422e4e1114bbbbb4917f63190e48}\label{classdigit__grouping_ad3c2422e4e1114bbbbb4917f63190e48}} 
-\index{digit\_grouping$<$ Char $>$@{digit\_grouping$<$ Char $>$}!initial\_state@{initial\_state}}
-\index{initial\_state@{initial\_state}!digit\_grouping$<$ Char $>$@{digit\_grouping$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{initial\_state()}{initial\_state()}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-\mbox{\hyperlink{structdigit__grouping_1_1next__state}{next\+\_\+state}} \mbox{\hyperlink{classdigit__grouping}{digit\+\_\+grouping}}$<$ Char $>$\+::initial\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1918 \{ \textcolor{keywordflow}{return} \{sep\_.grouping.begin(), 0\}; \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classdigit__grouping_a83f91f46d4a35dd185f0de3f0ff4895d}\label{classdigit__grouping_a83f91f46d4a35dd185f0de3f0ff4895d}} 
-\index{digit\_grouping$<$ Char $>$@{digit\_grouping$<$ Char $>$}!next@{next}}
-\index{next@{next}!digit\_grouping$<$ Char $>$@{digit\_grouping$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{next()}{next()}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-int \mbox{\hyperlink{classdigit__grouping}{digit\+\_\+grouping}}$<$ Char $>$\+::next (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdigit__grouping_1_1next__state}{next\+\_\+state}} \&}]{state }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1921                                     \{}
-\DoxyCodeLine{1922     \textcolor{keywordflow}{if} (!sep\_.thousands\_sep) \textcolor{keywordflow}{return} max\_value<int>();}
-\DoxyCodeLine{1923     \textcolor{keywordflow}{if} (state.group == sep\_.grouping.end())}
-\DoxyCodeLine{1924       \textcolor{keywordflow}{return} state.pos += sep\_.grouping.back();}
-\DoxyCodeLine{1925     \textcolor{keywordflow}{if} (*state.group <= 0 || *state.group == max\_value<char>())}
-\DoxyCodeLine{1926       \textcolor{keywordflow}{return} max\_value<int>();}
-\DoxyCodeLine{1927     state.pos += *state.group++;}
-\DoxyCodeLine{1928     \textcolor{keywordflow}{return} state.pos;}
-\DoxyCodeLine{1929   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classdigit__grouping_afcbb9af5351e652894f5d044469350e2}\label{classdigit__grouping_afcbb9af5351e652894f5d044469350e2}} 
-\index{digit\_grouping$<$ Char $>$@{digit\_grouping$<$ Char $>$}!separator@{separator}}
-\index{separator@{separator}!digit\_grouping$<$ Char $>$@{digit\_grouping$<$ Char $>$}}
-\doxysubsubsection{\texorpdfstring{separator()}{separator()}}
-{\footnotesize\ttfamily template$<$typename Char $>$ \\
-Char \mbox{\hyperlink{classdigit__grouping}{digit\+\_\+grouping}}$<$ Char $>$\+::separator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1940 \{ \textcolor{keywordflow}{return} sep\_.thousands\_sep; \}}
-
-\end{DoxyCode}
-
-
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/format.\+h\end{DoxyCompactItemize}
+format.\+h\end{DoxyCompactItemize}

@@ -75,12 +75,13 @@ $(function() {
 <p>(Implementation) Automatically register the test suite of the specified type.  
  <a href="../../d1/d6b/class_auto_register_suite.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d8/dc2/_auto_register_suite_8h_source.html">AutoRegisterSuite.h</a>&gt;</code></p>
+<p><code>#include &lt;AutoRegisterSuite.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4c02d0d6e3de726f67b875dc5615e22a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6b/class_auto_register_suite.html#a4c02d0d6e3de726f67b875dc5615e22a">AutoRegisterSuite</a> ()</td></tr>
-<tr class="memdesc:a4c02d0d6e3de726f67b875dc5615e22a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auto-register the suite factory in the global registry.  <a href="../../d1/d6b/class_auto_register_suite.html#a4c02d0d6e3de726f67b875dc5615e22a">More...</a><br /></td></tr>
+<tr class="memitem:a4c02d0d6e3de726f67b875dc5615e22a"><td class="memItemLeft" align="right" valign="top"><a id="a4c02d0d6e3de726f67b875dc5615e22a" name="a4c02d0d6e3de726f67b875dc5615e22a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>AutoRegisterSuite</b> ()</td></tr>
+<tr class="memdesc:a4c02d0d6e3de726f67b875dc5615e22a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auto-register the suite factory in the global registry. <br /></td></tr>
 <tr class="separator:a4c02d0d6e3de726f67b875dc5615e22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9350fa1995545aad03b61b7a6db690e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6b/class_auto_register_suite.html#a9350fa1995545aad03b61b7a6db690e4">AutoRegisterSuite</a> (const std::string &amp;name)</td></tr>
 <tr class="memdesc:a9350fa1995545aad03b61b7a6db690e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auto-register the suite factory in the specified registry.  <a href="../../d1/d6b/class_auto_register_suite.html#a9350fa1995545aad03b61b7a6db690e4">More...</a><br /></td></tr>
@@ -114,43 +115,8 @@ class AutoRegisterSuite&lt; TestCaseType &gt;</div><p >(Implementation) Automati
 <dd>
 CppUnit::TestFactoryRegistry. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4c02d0d6e3de726f67b875dc5615e22a" name="a4c02d0d6e3de726f67b875dc5615e22a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c02d0d6e3de726f67b875dc5615e22a">&#9670;&nbsp;</a></span>AutoRegisterSuite() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class TestCaseType &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d1/d6b/class_auto_register_suite.html">AutoRegisterSuite</a>&lt; TestCaseType &gt;<a class="el" href="../../d1/d6b/class_auto_register_suite.html">::AutoRegisterSuite</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Auto-register the suite factory in the global registry. </p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>      : m_registry( &amp;<a class="code hl_function" href="../../d1/da9/class_test_factory_registry.html#ade673d8465371d581c7a704a7baa4620">TestFactoryRegistry::getRegistry</a>() )</div>
-<div class="line"><span class="lineno">   35</span>  {</div>
-<div class="line"><span class="lineno">   36</span>    m_registry-&gt;<a class="code hl_function" href="../../d1/da9/class_test_factory_registry.html#a632c38375727ca735e2c1897bd625b99">registerFactory</a>( &amp;m_factory );</div>
-<div class="line"><span class="lineno">   37</span>  }</div>
-<div class="ttc" id="aclass_test_factory_registry_html_a632c38375727ca735e2c1897bd625b99"><div class="ttname"><a href="../../d1/da9/class_test_factory_registry.html#a632c38375727ca735e2c1897bd625b99">TestFactoryRegistry::registerFactory</a></div><div class="ttdeci">void registerFactory(TestFactory *factory)</div><div class="ttdoc">Adds the specified TestFactory to the registry.</div></div>
-<div class="ttc" id="aclass_test_factory_registry_html_ade673d8465371d581c7a704a7baa4620"><div class="ttname"><a href="../../d1/da9/class_test_factory_registry.html#ade673d8465371d581c7a704a7baa4620">TestFactoryRegistry::getRegistry</a></div><div class="ttdeci">static TestFactoryRegistry &amp; getRegistry(const std::string &amp;name=&quot;All Tests&quot;)</div><div class="ttdoc">Returns a named registry.</div></div>
-</div><!-- fragment -->
-</div>
-</div>
 <a id="a9350fa1995545aad03b61b7a6db690e4" name="a9350fa1995545aad03b61b7a6db690e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9350fa1995545aad03b61b7a6db690e4">&#9670;&nbsp;</a></span>AutoRegisterSuite() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9350fa1995545aad03b61b7a6db690e4">&#9670;&nbsp;</a></span>AutoRegisterSuite()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,48 +148,11 @@ template&lt;class TestCaseType &gt; </div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>      : m_registry( &amp;<a class="code hl_function" href="../../d1/da9/class_test_factory_registry.html#ade673d8465371d581c7a704a7baa4620">TestFactoryRegistry::getRegistry</a>( name ) )</div>
-<div class="line"><span class="lineno">   44</span>  {</div>
-<div class="line"><span class="lineno">   45</span>    m_registry-&gt;<a class="code hl_function" href="../../d1/da9/class_test_factory_registry.html#a632c38375727ca735e2c1897bd625b99">registerFactory</a>( &amp;m_factory );</div>
-<div class="line"><span class="lineno">   46</span>  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="af255683ee912f77fc9b7903c169c3324" name="af255683ee912f77fc9b7903c169c3324"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af255683ee912f77fc9b7903c169c3324">&#9670;&nbsp;</a></span>~AutoRegisterSuite()</h2>
 
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class TestCaseType &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d1/d6b/class_auto_register_suite.html">AutoRegisterSuite</a>&lt; TestCaseType &gt;::~<a class="el" href="../../d1/d6b/class_auto_register_suite.html">AutoRegisterSuite</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   49</span>  {</div>
-<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> ( <a class="code hl_function" href="../../d1/da9/class_test_factory_registry.html#a8638d92944309341c68089aa098800cb">TestFactoryRegistry::isValid</a>() )</div>
-<div class="line"><span class="lineno">   51</span>      m_registry-&gt;<a class="code hl_function" href="../../d1/da9/class_test_factory_registry.html#afa3fb925b07eb34e9ccfab84812afc18">unregisterFactory</a>( &amp;m_factory );</div>
-<div class="line"><span class="lineno">   52</span>  }</div>
-<div class="ttc" id="aclass_test_factory_registry_html_a8638d92944309341c68089aa098800cb"><div class="ttname"><a href="../../d1/da9/class_test_factory_registry.html#a8638d92944309341c68089aa098800cb">TestFactoryRegistry::isValid</a></div><div class="ttdeci">static bool isValid()</div></div>
-<div class="ttc" id="aclass_test_factory_registry_html_afa3fb925b07eb34e9ccfab84812afc18"><div class="ttname"><a href="../../d1/da9/class_test_factory_registry.html#afa3fb925b07eb34e9ccfab84812afc18">TestFactoryRegistry::unregisterFactory</a></div><div class="ttdeci">void unregisterFactory(TestFactory *factory)</div></div>
-</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>out/build/x64/vcpkg_installed/x86-windows/include/cppunit/extensions/<a class="el" href="../../d8/dc2/_auto_register_suite_8h_source.html">AutoRegisterSuite.h</a></li>
+<li>AutoRegisterSuite.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

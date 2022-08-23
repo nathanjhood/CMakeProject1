@@ -26,13 +26,17 @@ using {\bfseries reference} = void
 \mbox{\Hypertarget{classcounting__iterator_ab102107d8c5cb71407856b2c46f81e19}\label{classcounting__iterator_ab102107d8c5cb71407856b2c46f81e19}} 
 {\bfseries FMT\+\_\+\+UNCHECKED\+\_\+\+ITERATOR} (\mbox{\hyperlink{classcounting__iterator}{counting\+\_\+iterator}})
 \item 
-size\+\_\+t \mbox{\hyperlink{classcounting__iterator_a74649314499b1158b420d81ff73f558e}{count}} () const
+\mbox{\Hypertarget{classcounting__iterator_a74649314499b1158b420d81ff73f558e}\label{classcounting__iterator_a74649314499b1158b420d81ff73f558e}} 
+size\+\_\+t {\bfseries count} () const
 \item 
-\mbox{\hyperlink{classcounting__iterator}{counting\+\_\+iterator}} \& \mbox{\hyperlink{classcounting__iterator_aa83d6bfa7db11bea4a9a080f5a986504}{operator++}} ()
+\mbox{\Hypertarget{classcounting__iterator_aa83d6bfa7db11bea4a9a080f5a986504}\label{classcounting__iterator_aa83d6bfa7db11bea4a9a080f5a986504}} 
+\mbox{\hyperlink{classcounting__iterator}{counting\+\_\+iterator}} \& {\bfseries operator++} ()
 \item 
-\mbox{\hyperlink{classcounting__iterator}{counting\+\_\+iterator}} \mbox{\hyperlink{classcounting__iterator_a309bb7bae0c81ea0b1468b1d9dbf3f3d}{operator++}} (int)
+\mbox{\Hypertarget{classcounting__iterator_a309bb7bae0c81ea0b1468b1d9dbf3f3d}\label{classcounting__iterator_a309bb7bae0c81ea0b1468b1d9dbf3f3d}} 
+\mbox{\hyperlink{classcounting__iterator}{counting\+\_\+iterator}} {\bfseries operator++} (int)
 \item 
-\mbox{\hyperlink{structcounting__iterator_1_1value__type}{value\+\_\+type}} \mbox{\hyperlink{classcounting__iterator_a93030e2858c5b3490ab8955f08c024ef}{operator$\ast$}} () const
+\mbox{\Hypertarget{classcounting__iterator_a93030e2858c5b3490ab8955f08c024ef}\label{classcounting__iterator_a93030e2858c5b3490ab8955f08c024ef}} 
+\mbox{\hyperlink{structcounting__iterator_1_1value__type}{value\+\_\+type}} {\bfseries operator$\ast$} () const
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -43,95 +47,11 @@ size\+\_\+t {\bfseries count\+\_\+}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classcounting__iterator}{counting\+\_\+iterator}} \mbox{\hyperlink{classcounting__iterator_add841de31cc1e15c60bcd25cbca59ed7}{operator+}} (\mbox{\hyperlink{classcounting__iterator}{counting\+\_\+iterator}} it, difference\+\_\+type n)
-\end{DoxyCompactItemize}
-
-
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classcounting__iterator_ac50abdeda2d0e949f4f0cd9ce3241ff3}\label{classcounting__iterator_ac50abdeda2d0e949f4f0cd9ce3241ff3}} 
-\index{counting\_iterator@{counting\_iterator}!counting\_iterator@{counting\_iterator}}
-\index{counting\_iterator@{counting\_iterator}!counting\_iterator@{counting\_iterator}}
-\doxysubsubsection{\texorpdfstring{counting\_iterator()}{counting\_iterator()}}
-{\footnotesize\ttfamily counting\+\_\+iterator\+::counting\+\_\+iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{2129 : count\_(0) \{\}}
-
-\end{DoxyCode}
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classcounting__iterator_a74649314499b1158b420d81ff73f558e}\label{classcounting__iterator_a74649314499b1158b420d81ff73f558e}} 
-\index{counting\_iterator@{counting\_iterator}!count@{count}}
-\index{count@{count}!counting\_iterator@{counting\_iterator}}
-\doxysubsubsection{\texorpdfstring{count()}{count()}}
-{\footnotesize\ttfamily size\+\_\+t counting\+\_\+iterator\+::count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{2131 \{ \textcolor{keywordflow}{return} count\_; \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classcounting__iterator_a93030e2858c5b3490ab8955f08c024ef}\label{classcounting__iterator_a93030e2858c5b3490ab8955f08c024ef}} 
-\index{counting\_iterator@{counting\_iterator}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!counting\_iterator@{counting\_iterator}}
-\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structcounting__iterator_1_1value__type}{value\+\_\+type}} counting\+\_\+iterator\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{2148 \{ \textcolor{keywordflow}{return} \{\}; \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classcounting__iterator_aa83d6bfa7db11bea4a9a080f5a986504}\label{classcounting__iterator_aa83d6bfa7db11bea4a9a080f5a986504}} 
-\index{counting\_iterator@{counting\_iterator}!operator++@{operator++}}
-\index{operator++@{operator++}!counting\_iterator@{counting\_iterator}}
-\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classcounting__iterator}{counting\+\_\+iterator}} \& counting\+\_\+iterator\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{2133                                   \{}
-\DoxyCodeLine{2134     ++count\_;}
-\DoxyCodeLine{2135     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{2136   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classcounting__iterator_a309bb7bae0c81ea0b1468b1d9dbf3f3d}\label{classcounting__iterator_a309bb7bae0c81ea0b1468b1d9dbf3f3d}} 
-\index{counting\_iterator@{counting\_iterator}!operator++@{operator++}}
-\index{operator++@{operator++}!counting\_iterator@{counting\_iterator}}
-\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classcounting__iterator}{counting\+\_\+iterator}} counting\+\_\+iterator\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{2137                                     \{}
-\DoxyCodeLine{2138     \textcolor{keyword}{auto} it = *\textcolor{keyword}{this};}
-\DoxyCodeLine{2139     ++*\textcolor{keyword}{this};}
-\DoxyCodeLine{2140     \textcolor{keywordflow}{return} it;}
-\DoxyCodeLine{2141   \}}
-
-\end{DoxyCode}
-
-
-\doxysubsection{Friends And Related Function Documentation}
 \mbox{\Hypertarget{classcounting__iterator_add841de31cc1e15c60bcd25cbca59ed7}\label{classcounting__iterator_add841de31cc1e15c60bcd25cbca59ed7}} 
-\index{counting\_iterator@{counting\_iterator}!operator+@{operator+}}
-\index{operator+@{operator+}!counting\_iterator@{counting\_iterator}}
-\doxysubsubsection{\texorpdfstring{operator+}{operator+}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classcounting__iterator}{counting\+\_\+iterator}} operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcounting__iterator}{counting\+\_\+iterator}}}]{it,  }\item[{difference\+\_\+type}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{2143                                                                               \{}
-\DoxyCodeLine{2144     it.count\_ += \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(n);}
-\DoxyCodeLine{2145     \textcolor{keywordflow}{return} it;}
-\DoxyCodeLine{2146   \}}
-
-\end{DoxyCode}
+\mbox{\hyperlink{classcounting__iterator}{counting\+\_\+iterator}} {\bfseries operator+} (\mbox{\hyperlink{classcounting__iterator}{counting\+\_\+iterator}} it, difference\+\_\+type n)
+\end{DoxyCompactItemize}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/format.\+h\end{DoxyCompactItemize}
+format.\+h\end{DoxyCompactItemize}

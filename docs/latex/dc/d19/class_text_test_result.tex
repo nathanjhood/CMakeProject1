@@ -19,9 +19,9 @@ Inheritance diagram for Text\+Test\+Result\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 virtual void \mbox{\hyperlink{class_text_test_result_a05d3b0e8e51b3430092166bbc3d17708}{add\+Failure}} (const \mbox{\hyperlink{class_test_failure}{Test\+Failure}} \&failure)
-\begin{DoxyCompactList}\small\item\em Called when a failure occurs while running a test. \end{DoxyCompactList}\item 
+\item 
 virtual void \mbox{\hyperlink{class_text_test_result_a2191f5e916fca83151fb657b31dcd30d}{start\+Test}} (\mbox{\hyperlink{class_test}{Test}} $\ast$test)
-\begin{DoxyCompactList}\small\item\em Informs \mbox{\hyperlink{class_test_listener}{Test\+Listener}} that a test will be started. \end{DoxyCompactList}\item 
+\item 
 \mbox{\Hypertarget{class_text_test_result_a35fdfec0767de9f4c4fa0e319dfedb3b}\label{class_text_test_result_a35fdfec0767de9f4c4fa0e319dfedb3b}} 
 virtual void {\bfseries print} (OStream \&stream)
 \item 
@@ -42,21 +42,11 @@ deprecated Use class \mbox{\hyperlink{class_text_test_progress_listener}{Text\+T
 \index{TextTestResult@{TextTestResult}!addFailure@{addFailure}}
 \index{addFailure@{addFailure}!TextTestResult@{TextTestResult}}
 \doxysubsubsection{\texorpdfstring{addFailure()}{addFailure()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily virtual void Text\+Test\+Result\+::add\+Failure (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_test_failure}{Test\+Failure}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual void Text\+Test\+Result\+::add\+Failure (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_test_failure}{Test\+Failure}} \&}]{failure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-Called when a failure occurs while running a test. 
-
-\begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_test_failure}{Test\+Failure}}. 
-\end{DoxySeeAlso}
-\begin{DoxyWarning}{Warning}
-{\itshape failure} is a temporary object that is destroyed after the method call. Use Test\+Failure\+::clone() to create a duplicate. 
-\end{DoxyWarning}
-
-
-Reimplemented from \mbox{\hyperlink{class_test_result_collector_af53cbc55621f0eb0dc02d8b0203ea321}{Test\+Result\+Collector}}.
+Reimplemented from \mbox{\hyperlink{class_test_result_collector}{Test\+Result\+Collector}}.
 
 \mbox{\Hypertarget{class_text_test_result_aa423474527cbc89141763ea41336a188}\label{class_text_test_result_aa423474527cbc89141763ea41336a188}} 
 \index{TextTestResult@{TextTestResult}!addFailure@{addFailure}}
@@ -70,7 +60,7 @@ Called to add a failure to the list of failures.
 
 
 
-Reimplemented from \mbox{\hyperlink{class_test_result_collector_af53cbc55621f0eb0dc02d8b0203ea321}{Test\+Result\+Collector}}.
+Reimplemented from \mbox{\hyperlink{class_test_result_collector}{Test\+Result\+Collector}}.
 
 \mbox{\Hypertarget{class_text_test_result_a648e7986cd583f7687dfaa88b5b2c080}\label{class_text_test_result_a648e7986cd583f7687dfaa88b5b2c080}} 
 \index{TextTestResult@{TextTestResult}!addFailure@{addFailure}}
@@ -94,14 +84,10 @@ Reimplemented from \mbox{\hyperlink{class_test_result_a648e7986cd583f7687dfaa88b
 
 
 
-Informs \mbox{\hyperlink{class_test_listener}{Test\+Listener}} that a test will be started. 
-
-
-
 Reimplemented from \mbox{\hyperlink{class_test_result_a4acd959411284f57a26eefe4c79c30d3}{Test\+Result}}.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/Text\+Test\+Result.\+h\end{DoxyCompactItemize}
+Text\+Test\+Result.\+h\end{DoxyCompactItemize}

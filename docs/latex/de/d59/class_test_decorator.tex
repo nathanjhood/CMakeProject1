@@ -22,18 +22,18 @@ Inheritance diagram for Test\+Decorator\+:\begin{figure}[H]
 {\bfseries Test\+Decorator} (\mbox{\hyperlink{class_test}{Test}} $\ast$test)
 \item 
 int \mbox{\hyperlink{class_test_decorator_a7d4cffe147c9febf9e3b828392a2f5b4}{count\+Test\+Cases}} () const
-\begin{DoxyCompactList}\small\item\em Return the number of test cases invoked by \mbox{\hyperlink{class_test_decorator_a64dd70aae76f31f2e2f7b5ac84a8e829}{run()}}. \end{DoxyCompactList}\item 
+\item 
 std\+::string \mbox{\hyperlink{class_test_decorator_a45af5bfeed053b75bb604fc501064eb0}{get\+Name}} () const
-\begin{DoxyCompactList}\small\item\em Returns the test name. \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{class_test_decorator_a64dd70aae76f31f2e2f7b5ac84a8e829}{run}} (\mbox{\hyperlink{class_test_result}{Test\+Result}} $\ast$result)
-\begin{DoxyCompactList}\small\item\em Run the test, collecting results. \end{DoxyCompactList}\item 
+\item 
 int \mbox{\hyperlink{class_test_decorator_a8c3e4d2a31eb269a6acc0a8a464c4b4c}{get\+Child\+Test\+Count}} () const
-\begin{DoxyCompactList}\small\item\em Returns the number of direct child of the test. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_test}{Test}} $\ast$ \mbox{\hyperlink{class_test_decorator_a80dd742a04f00b442140171c3ecf85ef}{do\+Get\+Child\+Test\+At}} (int index) const
-\begin{DoxyCompactList}\small\item\em Returns the child test of the specified valid index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -67,10 +67,6 @@ Assumes ownership of the test it decorates
 
 
 
-Return the number of test cases invoked by \mbox{\hyperlink{class_test_decorator_a64dd70aae76f31f2e2f7b5ac84a8e829}{run()}}. 
-
-The base unit of testing is the class \mbox{\hyperlink{class_test_case}{Test\+Case}}. This method returns the number of \mbox{\hyperlink{class_test_case}{Test\+Case}} objects invoked by the \mbox{\hyperlink{class_test_decorator_a64dd70aae76f31f2e2f7b5ac84a8e829}{run()}} method. 
-
 Implements \mbox{\hyperlink{class_test_aad2b7244c7cec3f3aa9f81d12b15c8cf}{Test}}.
 
 \mbox{\Hypertarget{class_test_decorator_a80dd742a04f00b442140171c3ecf85ef}\label{class_test_decorator_a80dd742a04f00b442140171c3ecf85ef}} 
@@ -81,18 +77,6 @@ Implements \mbox{\hyperlink{class_test_aad2b7244c7cec3f3aa9f81d12b15c8cf}{Test}}
 
 
 
-Returns the child test of the specified valid index. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em index} & Zero based valid index of the child test to return. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Pointer on the test. Never {\ttfamily NULL}. 
-\end{DoxyReturn}
-
-
 Implements \mbox{\hyperlink{class_test_aeec4ad92723c978238d933cbde475393}{Test}}.
 
 \mbox{\Hypertarget{class_test_decorator_a8c3e4d2a31eb269a6acc0a8a464c4b4c}\label{class_test_decorator_a8c3e4d2a31eb269a6acc0a8a464c4b4c}} 
@@ -100,10 +84,6 @@ Implements \mbox{\hyperlink{class_test_aeec4ad92723c978238d933cbde475393}{Test}}
 \index{getChildTestCount@{getChildTestCount}!TestDecorator@{TestDecorator}}
 \doxysubsubsection{\texorpdfstring{getChildTestCount()}{getChildTestCount()}}
 {\footnotesize\ttfamily int Test\+Decorator\+::get\+Child\+Test\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Returns the number of direct child of the test. 
 
 
 
@@ -117,10 +97,6 @@ Implements \mbox{\hyperlink{class_test_a7aaab95037b7222573471074c56df85b}{Test}}
 
 
 
-Returns the test name. 
-
-Each test has a name. This name may be used to find the test in a suite or registry of tests. 
-
 Implements \mbox{\hyperlink{class_test_a5e024da199f811a33264e432c21dcc94}{Test}}.
 
 \mbox{\Hypertarget{class_test_decorator_a64dd70aae76f31f2e2f7b5ac84a8e829}\label{class_test_decorator_a64dd70aae76f31f2e2f7b5ac84a8e829}} 
@@ -131,18 +107,10 @@ Implements \mbox{\hyperlink{class_test_a5e024da199f811a33264e432c21dcc94}{Test}}
 
 
 
-Run the test, collecting results. 
-
-
-
 Implements \mbox{\hyperlink{class_test_a7beeb95dc0d058bd3bfea1a75463cb03}{Test}}.
-
-
-
-Reimplemented in \mbox{\hyperlink{class_test_set_up_aa3f79125254c288d6effee6df8e7d5fb}{Test\+Set\+Up}}.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/extensions/Test\+Decorator.\+h\end{DoxyCompactItemize}
+Test\+Decorator.\+h\end{DoxyCompactItemize}

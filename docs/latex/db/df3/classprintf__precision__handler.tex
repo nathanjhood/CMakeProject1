@@ -3,46 +3,14 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\int \mbox{\hyperlink{classprintf__precision__handler_a0e1a27c78d694a25ad86c78df5b8cc87}{operator()}} (T \mbox{\hyperlink{classvalue}{value}})
-\item 
-{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(!std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\int \mbox{\hyperlink{classprintf__precision__handler_ac51c0a7807a8286c95b9119f735d046a}{operator()}} (T)
-\end{DoxyCompactItemize}
-
-
-\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classprintf__precision__handler_a0e1a27c78d694a25ad86c78df5b8cc87}\label{classprintf__precision__handler_a0e1a27c78d694a25ad86c78df5b8cc87}} 
-\index{printf\_precision\_handler@{printf\_precision\_handler}!operator()@{operator()}}
-\index{operator()@{operator()}!printf\_precision\_handler@{printf\_precision\_handler}}
-\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
-int printf\+\_\+precision\+\_\+handler\+::operator() (\begin{DoxyParamCaption}\item[{T}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{82                           \{}
-\DoxyCodeLine{83     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{structint__checker}{int\_checker}}<std::numeric\_limits<T>::is\_signed>::fits\_in\_int(\mbox{\hyperlink{classvalue}{value}}))}
-\DoxyCodeLine{84       FMT\_THROW(\mbox{\hyperlink{classformat__error}{format\_error}}(\textcolor{stringliteral}{"{}number is too big"{}}));}
-\DoxyCodeLine{85     \textcolor{keywordflow}{return} (std::max)(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classvalue}{value}}), 0);}
-\DoxyCodeLine{86   \}}
-
-\end{DoxyCode}
+{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\int {\bfseries operator()} (T \mbox{\hyperlink{classvalue}{value}})
+\item 
 \mbox{\Hypertarget{classprintf__precision__handler_ac51c0a7807a8286c95b9119f735d046a}\label{classprintf__precision__handler_ac51c0a7807a8286c95b9119f735d046a}} 
-\index{printf\_precision\_handler@{printf\_precision\_handler}!operator()@{operator()}}
-\index{operator()@{operator()}!printf\_precision\_handler@{printf\_precision\_handler}}
-\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(!std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ \\
-int printf\+\_\+precision\+\_\+handler\+::operator() (\begin{DoxyParamCaption}\item[{T}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{89                     \{}
-\DoxyCodeLine{90     FMT\_THROW(\mbox{\hyperlink{classformat__error}{format\_error}}(\textcolor{stringliteral}{"{}precision is not integer"{}}));}
-\DoxyCodeLine{91     \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{92   \}}
-
-\end{DoxyCode}
+{\footnotesize template$<$typename T , FMT\+\_\+\+ENABLE\+\_\+\+IF(!std\+::is\+\_\+integral$<$ T $>$\mbox{\hyperlink{classvalue}{\+::value}}) $>$ }\\int {\bfseries operator()} (T)
+\end{DoxyCompactItemize}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/printf.\+h\end{DoxyCompactItemize}
+printf.\+h\end{DoxyCompactItemize}

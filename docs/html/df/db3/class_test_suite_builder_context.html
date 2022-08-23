@@ -75,7 +75,7 @@ $(function() {
 <p>Type-sage context used when creating test suite in HelperMacros.  
  <a href="../../df/db3/class_test_suite_builder_context.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../dc/d31/_test_suite_builder_context_8h_source.html">TestSuiteBuilderContext.h</a>&gt;</code></p>
+<p><code>#include &lt;TestSuiteBuilderContext.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TestSuiteBuilderContext&lt; Fixture &gt;:</div>
 <div class="dyncontent">
@@ -94,7 +94,8 @@ typedef Fixture&#160;</td><td class="memItemRight" valign="bottom"><b>FixtureTyp
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a51c0c0c846df2790ea1866c61e9b3e39"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/db3/class_test_suite_builder_context.html#a51c0c0c846df2790ea1866c61e9b3e39">TestSuiteBuilderContext</a> (<a class="el" href="../../df/da2/class_test_suite_builder_context_base.html">TestSuiteBuilderContextBase</a> &amp;contextBase)</td></tr>
+<tr class="memitem:a51c0c0c846df2790ea1866c61e9b3e39"><td class="memItemLeft" align="right" valign="top"><a id="a51c0c0c846df2790ea1866c61e9b3e39" name="a51c0c0c846df2790ea1866c61e9b3e39"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TestSuiteBuilderContext</b> (<a class="el" href="../../df/da2/class_test_suite_builder_context_base.html">TestSuiteBuilderContextBase</a> &amp;contextBase)</td></tr>
 <tr class="separator:a51c0c0c846df2790ea1866c61e9b3e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb9f6e661689e236b8b451170cf0440a"><td class="memItemLeft" align="right" valign="top">FixtureType *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/db3/class_test_suite_builder_context.html#abb9f6e661689e236b8b451170cf0440a">makeFixture</a> () const</td></tr>
 <tr class="memdesc:abb9f6e661689e236b8b451170cf0440a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="../../d3/d78/class_test_fixture.html" title="Wraps a test case with setUp and tearDown methods.">TestFixture</a> instance.  <a href="../../df/db3/class_test_suite_builder_context.html#abb9f6e661689e236b8b451170cf0440a">More...</a><br /></td></tr>
@@ -163,40 +164,7 @@ const <a class="el" href="../../d9/d98/class_test_namer.html">TestNamer</a> &amp
 <div class="textblock"><div class="compoundTemplParams">template&lt;class Fixture&gt;<br />
 class TestSuiteBuilderContext&lt; Fixture &gt;</div><p >Type-sage context used when creating test suite in HelperMacros. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../df/da2/class_test_suite_builder_context_base.html" title="Context used when creating test suite in HelperMacros.">TestSuiteBuilderContextBase</a>. </dd></dl>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a51c0c0c846df2790ea1866c61e9b3e39" name="a51c0c0c846df2790ea1866c61e9b3e39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51c0c0c846df2790ea1866c61e9b3e39">&#9670;&nbsp;</a></span>TestSuiteBuilderContext()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Fixture &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../df/db3/class_test_suite_builder_context.html">TestSuiteBuilderContext</a>&lt; Fixture &gt;<a class="el" href="../../df/db3/class_test_suite_builder_context.html">::TestSuiteBuilderContext</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../df/da2/class_test_suite_builder_context_base.html">TestSuiteBuilderContextBase</a> &amp;&#160;</td>
-          <td class="paramname"><em>contextBase</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  126</span>      : <a class="code hl_function" href="../../df/da2/class_test_suite_builder_context_base.html#a434b04354f7e326c7f88d015921d5e6d">TestSuiteBuilderContextBase</a>( contextBase )</div>
-<div class="line"><span class="lineno">  127</span>  {</div>
-<div class="line"><span class="lineno">  128</span>  }</div>
-<div class="ttc" id="aclass_test_suite_builder_context_base_html_a434b04354f7e326c7f88d015921d5e6d"><div class="ttname"><a href="../../df/da2/class_test_suite_builder_context_base.html#a434b04354f7e326c7f88d015921d5e6d">TestSuiteBuilderContextBase::TestSuiteBuilderContextBase</a></div><div class="ttdeci">TestSuiteBuilderContextBase(TestSuite &amp;suite, const TestNamer &amp;namer, TestFixtureFactory &amp;factory)</div><div class="ttdoc">Constructs a new context.</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="abb9f6e661689e236b8b451170cf0440a" name="abb9f6e661689e236b8b451170cf0440a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb9f6e661689e236b8b451170cf0440a">&#9670;&nbsp;</a></span>makeFixture()</h2>
 
@@ -224,15 +192,11 @@ template&lt;class Fixture &gt; </div>
 
 <p>Returns a new <a class="el" href="../../d3/d78/class_test_fixture.html" title="Wraps a test case with setUp and tearDown methods.">TestFixture</a> instance. </p>
 <dl class="section return"><dt>Returns</dt><dd>A new fixture instance. The fixture instance is returned by the <a class="el" href="../../da/dd4/class_test_fixture_factory.html" title="Abstract TestFixture factory (Implementation).">TestFixtureFactory</a> passed on construction. The actual type is that of the fixture on which the static method suite() was called. </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">  137</span>  {</div>
-<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">return</span> CPPUNIT_STATIC_CAST( FixtureType *, </div>
-<div class="line"><span class="lineno">  139</span>                                TestSuiteBuilderContextBase::makeTestFixture() );</div>
-<div class="line"><span class="lineno">  140</span>  }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>out/build/x64/vcpkg_installed/x86-windows/include/cppunit/extensions/<a class="el" href="../../dc/d31/_test_suite_builder_context_8h_source.html">TestSuiteBuilderContext.h</a></li>
+<li>TestSuiteBuilderContext.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -12,7 +12,8 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename... T$>$ }\\FMT\+\_\+\+CONSTEXPR FMT\+\_\+\+INLINE \mbox{\hyperlink{classformat__arg__store_a1136b4b260864c5ae7b22900b0ca7ee9}{format\+\_\+arg\+\_\+store}} (T \&\&... args)
+\mbox{\Hypertarget{classformat__arg__store_a1136b4b260864c5ae7b22900b0ca7ee9}\label{classformat__arg__store_a1136b4b260864c5ae7b22900b0ca7ee9}} 
+{\footnotesize template$<$typename... T$>$ }\\FMT\+\_\+\+CONSTEXPR FMT\+\_\+\+INLINE {\bfseries format\+\_\+arg\+\_\+store} (T \&\&... args)
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Types}
 \begin{DoxyCompactItemize}
@@ -55,31 +56,6 @@ class format\+\_\+arg\+\_\+store$<$ Context, Args $>$}
 
 It can be implicitly converted into {\ttfamily $\sim$fmt\mbox{\hyperlink{classbasic__format__args}{basic\+\_\+format\+\_\+args}}} for passing into type-\/erased formatting functions such as {\ttfamily $\sim$fmt\+::vformat}. \textbackslash{}endrst 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classformat__arg__store_a1136b4b260864c5ae7b22900b0ca7ee9}\label{classformat__arg__store_a1136b4b260864c5ae7b22900b0ca7ee9}} 
-\index{format\_arg\_store$<$ Context, Args $>$@{format\_arg\_store$<$ Context, Args $>$}!format\_arg\_store@{format\_arg\_store}}
-\index{format\_arg\_store@{format\_arg\_store}!format\_arg\_store$<$ Context, Args $>$@{format\_arg\_store$<$ Context, Args $>$}}
-\doxysubsubsection{\texorpdfstring{format\_arg\_store()}{format\_arg\_store()}}
-{\footnotesize\ttfamily template$<$typename Context , typename... Args$>$ \\
-template$<$typename... T$>$ \\
-FMT\+\_\+\+CONSTEXPR FMT\+\_\+\+INLINE \mbox{\hyperlink{classformat__arg__store}{format\+\_\+arg\+\_\+store}}$<$ Context, Args $>$\mbox{\hyperlink{classformat__arg__store}{\+::format\+\_\+arg\+\_\+store}} (\begin{DoxyParamCaption}\item[{T \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1871       :}
-\DoxyCodeLine{1872 \textcolor{preprocessor}{\#if FMT\_GCC\_VERSION \&\& FMT\_GCC\_VERSION < 409}}
-\DoxyCodeLine{1873         \mbox{\hyperlink{classbasic__format__args}{basic\_format\_args<Context>}}(*\textcolor{keyword}{this}),}
-\DoxyCodeLine{1874 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{1875         data\_\{detail::make\_arg<}
-\DoxyCodeLine{1876             is\_packed, Context,}
-\DoxyCodeLine{1877             detail::mapped\_type\_constant<remove\_cvref\_t<T>, Context>\mbox{\hyperlink{classvalue}{::value}}>(}
-\DoxyCodeLine{1878             std::forward<T>(args))...\} \{}
-\DoxyCodeLine{1879     detail::init\_named\_args(data\_.named\_args(), 0, 0, args...);}
-\DoxyCodeLine{1880   \}}
-
-\end{DoxyCode}
-
-
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classformat__arg__store_acd47df094f80be88aa89975b342523bc}\label{classformat__arg__store_acd47df094f80be88aa89975b342523bc}} 
 \index{format\_arg\_store$<$ Context, Args $>$@{format\_arg\_store$<$ Context, Args $>$}!desc@{desc}}
@@ -102,4 +78,4 @@ constexpr unsigned long long \mbox{\hyperlink{classformat__arg__store}{format\+\
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/core.\+h\end{DoxyCompactItemize}
+core.\+h\end{DoxyCompactItemize}

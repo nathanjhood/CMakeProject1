@@ -14,7 +14,7 @@ var searchData=
   ['disjunction_3c_20p_20_3e_11',['disjunction&lt; P &gt;',['../d1/d24/structdisjunction_3_01_p_01_4.html',1,'']]],
   ['disjunction_3c_20p1_2c_20pn_2e_2e_2e_20_3e_12',['disjunction&lt; P1, Pn... &gt;',['../df/d49/structdisjunction_3_01_p1_00_01_pn_8_8_8_01_4.html',1,'']]],
   ['dofindsymbol_13',['doFindSymbol',['../df/d48/class_dynamic_library_manager.html#ac3079091cf970cc285216a27e13cff44',1,'DynamicLibraryManager']]],
-  ['dogetchildtestat_14',['doGetChildTestAt',['../de/d59/class_test_decorator.html#a80dd742a04f00b442140171c3ecf85ef',1,'TestDecorator::doGetChildTestAt()'],['../d1/d9b/class_test.html#aeec4ad92723c978238d933cbde475393',1,'Test::doGetChildTestAt()'],['../d8/d69/class_test_leaf.html#a0d23068d8b9cc4319a7759938fc47409',1,'TestLeaf::doGetChildTestAt()'],['../d3/da2/class_test_runner_1_1_wrapping_suite.html#a389459f7401497bcb5bfd2d44faa77ec',1,'TestRunner::WrappingSuite::doGetChildTestAt()'],['../d4/d60/class_test_suite.html#a0c2bcd1a62452e29f4c17f30cdf01369',1,'TestSuite::doGetChildTestAt()']]],
+  ['dogetchildtestat_14',['doGetChildTestAt',['../d1/d9b/class_test.html#aeec4ad92723c978238d933cbde475393',1,'Test::doGetChildTestAt()'],['../d8/d69/class_test_leaf.html#a0d23068d8b9cc4319a7759938fc47409',1,'TestLeaf::doGetChildTestAt()']]],
   ['doloadlibrary_15',['doLoadLibrary',['../df/d48/class_dynamic_library_manager.html#adf9585fc8f3284df5471d1c5e04a105d',1,'DynamicLibraryManager']]],
   ['doreleaselibrary_16',['doReleaseLibrary',['../df/d48/class_dynamic_library_manager.html#a99b554dad3fe8b84de3e8b443d5a7ca0',1,'DynamicLibraryManager']]],
   ['dummy_5ffilebuf_17',['dummy_filebuf',['../d9/da2/structdetail_1_1dummy__filebuf.html',1,'detail']]],

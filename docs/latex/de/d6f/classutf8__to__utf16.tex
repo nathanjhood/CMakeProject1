@@ -3,15 +3,20 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-FMT\+\_\+\+API \mbox{\hyperlink{classutf8__to__utf16_a367402343df37c13839d717b1dc3e6a4}{utf8\+\_\+to\+\_\+utf16}} (\mbox{\hyperlink{classbasic__string__view}{string\+\_\+view}} s)
+\mbox{\Hypertarget{classutf8__to__utf16_a367402343df37c13839d717b1dc3e6a4}\label{classutf8__to__utf16_a367402343df37c13839d717b1dc3e6a4}} 
+FMT\+\_\+\+API {\bfseries utf8\+\_\+to\+\_\+utf16} (\mbox{\hyperlink{classbasic__string__view}{string\+\_\+view}} s)
 \item 
-\mbox{\hyperlink{classutf8__to__utf16_a74d62d3ab46f54af61fe36f701fc0af6}{operator basic\+\_\+string\+\_\+view$<$ wchar\+\_\+t $>$}} () const
+\mbox{\Hypertarget{classutf8__to__utf16_a74d62d3ab46f54af61fe36f701fc0af6}\label{classutf8__to__utf16_a74d62d3ab46f54af61fe36f701fc0af6}} 
+{\bfseries operator basic\+\_\+string\+\_\+view$<$ wchar\+\_\+t $>$} () const
 \item 
-auto \mbox{\hyperlink{classutf8__to__utf16_ab348f3f3350355721c8122eca907813a}{size}} () const -\/$>$ size\+\_\+t
+\mbox{\Hypertarget{classutf8__to__utf16_ab348f3f3350355721c8122eca907813a}\label{classutf8__to__utf16_ab348f3f3350355721c8122eca907813a}} 
+auto {\bfseries size} () const -\/$>$ size\+\_\+t
 \item 
-auto \mbox{\hyperlink{classutf8__to__utf16_adbf70576c890efa1430cb386b71d0823}{c\+\_\+str}} () const -\/$>$ const wchar\+\_\+t $\ast$
+\mbox{\Hypertarget{classutf8__to__utf16_adbf70576c890efa1430cb386b71d0823}\label{classutf8__to__utf16_adbf70576c890efa1430cb386b71d0823}} 
+auto {\bfseries c\+\_\+str} () const -\/$>$ const wchar\+\_\+t $\ast$
 \item 
-auto \mbox{\hyperlink{classutf8__to__utf16_a8957a54ce92f6db4a829153643cef0d4}{str}} () const -\/$>$ std\+::wstring
+\mbox{\Hypertarget{classutf8__to__utf16_a8957a54ce92f6db4a829153643cef0d4}\label{classutf8__to__utf16_a8957a54ce92f6db4a829153643cef0d4}} 
+auto {\bfseries str} () const -\/$>$ std\+::wstring
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -21,81 +26,7 @@ auto \mbox{\hyperlink{classutf8__to__utf16_a8957a54ce92f6db4a829153643cef0d4}{st
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classutf8__to__utf16_a367402343df37c13839d717b1dc3e6a4}\label{classutf8__to__utf16_a367402343df37c13839d717b1dc3e6a4}} 
-\index{utf8\_to\_utf16@{utf8\_to\_utf16}!utf8\_to\_utf16@{utf8\_to\_utf16}}
-\index{utf8\_to\_utf16@{utf8\_to\_utf16}!utf8\_to\_utf16@{utf8\_to\_utf16}}
-\doxysubsubsection{\texorpdfstring{utf8\_to\_utf16()}{utf8\_to\_utf16()}}
-{\footnotesize\ttfamily FMT\+\_\+\+FUNC utf8\+\_\+to\+\_\+utf16\+::utf8\+\_\+to\+\_\+utf16 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbasic__string__view}{string\+\_\+view}}}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1452                                                          \{}
-\DoxyCodeLine{1453   for\_each\_codepoint(s, [\textcolor{keyword}{this}](uint32\_t cp, \mbox{\hyperlink{classbasic__string__view}{string\_view}}) \{}
-\DoxyCodeLine{1454     \textcolor{keywordflow}{if} (cp == invalid\_code\_point) FMT\_THROW(std::runtime\_error(\textcolor{stringliteral}{"{}invalid utf8"{}}));}
-\DoxyCodeLine{1455     \textcolor{keywordflow}{if} (cp <= 0xFFFF) \{}
-\DoxyCodeLine{1456       buffer\_.push\_back(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{wchar\_t}\textcolor{keyword}{>}(cp));}
-\DoxyCodeLine{1457     \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{1458       cp -\/= 0x10000;}
-\DoxyCodeLine{1459       buffer\_.push\_back(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{wchar\_t}\textcolor{keyword}{>}(0xD800 + (cp >> 10)));}
-\DoxyCodeLine{1460       buffer\_.push\_back(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{wchar\_t}\textcolor{keyword}{>}(0xDC00 + (cp \& 0x3FF)));}
-\DoxyCodeLine{1461     \}}
-\DoxyCodeLine{1462     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{1463   \});}
-\DoxyCodeLine{1464   buffer\_.push\_back(0);}
-\DoxyCodeLine{1465 \}}
-
-\end{DoxyCode}
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classutf8__to__utf16_adbf70576c890efa1430cb386b71d0823}\label{classutf8__to__utf16_adbf70576c890efa1430cb386b71d0823}} 
-\index{utf8\_to\_utf16@{utf8\_to\_utf16}!c\_str@{c\_str}}
-\index{c\_str@{c\_str}!utf8\_to\_utf16@{utf8\_to\_utf16}}
-\doxysubsubsection{\texorpdfstring{c\_str()}{c\_str()}}
-{\footnotesize\ttfamily auto utf8\+\_\+to\+\_\+utf16\+::c\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ const wchar\+\_\+t$\ast$ \hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1260 \{ \textcolor{keywordflow}{return} \&buffer\_[0]; \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classutf8__to__utf16_a74d62d3ab46f54af61fe36f701fc0af6}\label{classutf8__to__utf16_a74d62d3ab46f54af61fe36f701fc0af6}} 
-\index{utf8\_to\_utf16@{utf8\_to\_utf16}!operator basic\_string\_view$<$ wchar\_t $>$@{operator basic\_string\_view$<$ wchar\_t $>$}}
-\index{operator basic\_string\_view$<$ wchar\_t $>$@{operator basic\_string\_view$<$ wchar\_t $>$}!utf8\_to\_utf16@{utf8\_to\_utf16}}
-\doxysubsubsection{\texorpdfstring{operator basic\_string\_view$<$ wchar\_t $>$()}{operator basic\_string\_view< wchar\_t >()}}
-{\footnotesize\ttfamily utf8\+\_\+to\+\_\+utf16\+::operator \mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ wchar\+\_\+t $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1258 \{ \textcolor{keywordflow}{return} \{\&buffer\_[0], size()\}; \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classutf8__to__utf16_ab348f3f3350355721c8122eca907813a}\label{classutf8__to__utf16_ab348f3f3350355721c8122eca907813a}} 
-\index{utf8\_to\_utf16@{utf8\_to\_utf16}!size@{size}}
-\index{size@{size}!utf8\_to\_utf16@{utf8\_to\_utf16}}
-\doxysubsubsection{\texorpdfstring{size()}{size()}}
-{\footnotesize\ttfamily auto utf8\+\_\+to\+\_\+utf16\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ size\+\_\+t \hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1259 \{ \textcolor{keywordflow}{return} buffer\_.size() -\/ 1; \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classutf8__to__utf16_a8957a54ce92f6db4a829153643cef0d4}\label{classutf8__to__utf16_a8957a54ce92f6db4a829153643cef0d4}} 
-\index{utf8\_to\_utf16@{utf8\_to\_utf16}!str@{str}}
-\index{str@{str}!utf8\_to\_utf16@{utf8\_to\_utf16}}
-\doxysubsubsection{\texorpdfstring{str()}{str()}}
-{\footnotesize\ttfamily auto utf8\+\_\+to\+\_\+utf16\+::str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ std\+::wstring \hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1261 \{ \textcolor{keywordflow}{return} \{\&buffer\_[0], size()\}; \}}
-
-\end{DoxyCode}
-
-
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/format.\+h\item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/format-\/inl.\+h\end{DoxyCompactItemize}
+format.\+h\item 
+format-\/inl.\+h\end{DoxyCompactItemize}

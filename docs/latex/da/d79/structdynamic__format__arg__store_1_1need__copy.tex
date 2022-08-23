@@ -3,6 +3,7 @@
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{structdynamic__format__arg__store_1_1need__copy_ace78ccc85b21f611fc41bf8eadd5d13d}\label{structdynamic__format__arg__store_1_1need__copy_ace78ccc85b21f611fc41bf8eadd5d13d}} 
 enum \{ {\bfseries value}
  \}
 \end{DoxyCompactItemize}
@@ -11,27 +12,6 @@ enum \{ {\bfseries value}
 \item 
 static constexpr detail\+::type \mbox{\hyperlink{structdynamic__format__arg__store_1_1need__copy_ad6534123e27b1c0d7f536b91d7726b3c}{mapped\+\_\+type}}
 \end{DoxyCompactItemize}
-
-
-\doxysubsection{Member Enumeration Documentation}
-\mbox{\Hypertarget{structdynamic__format__arg__store_1_1need__copy_ace78ccc85b21f611fc41bf8eadd5d13d}\label{structdynamic__format__arg__store_1_1need__copy_ace78ccc85b21f611fc41bf8eadd5d13d}} 
-\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
-{\footnotesize\ttfamily template$<$typename Context $>$ \\
-template$<$typename T $>$ \\
-anonymous enum}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{87          \{}
-\DoxyCodeLine{88       \mbox{\hyperlink{classvalue}{value}} = !(\mbox{\hyperlink{structdetail_1_1is__reference__wrapper}{detail::is\_reference\_wrapper<T>::value}} ||}
-\DoxyCodeLine{89                 std::is\_same<T, basic\_string\_view<char\_type>>\mbox{\hyperlink{classvalue}{::value}} ||}
-\DoxyCodeLine{90                 std::is\_same<T, detail::std\_string\_view<char\_type>>\mbox{\hyperlink{classvalue}{::value}} ||}
-\DoxyCodeLine{91                 (mapped\_type != detail::type::cstring\_type \&\&}
-\DoxyCodeLine{92                  mapped\_type != detail::type::string\_type \&\&}
-\DoxyCodeLine{93                  mapped\_type != detail::type::custom\_type))}
-\DoxyCodeLine{94     \};}
-
-\end{DoxyCode}
 
 
 \doxysubsection{Member Data Documentation}
@@ -53,4 +33,4 @@ constexpr detail\+::type \mbox{\hyperlink{classdynamic__format__arg__store}{dyna
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/args.\+h\end{DoxyCompactItemize}
+args.\+h\end{DoxyCompactItemize}

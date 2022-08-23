@@ -73,98 +73,17 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adcdb896ac03c1ed55422d788faa04edb"><td class="memTemplParams" colspan="2">template&lt;typename ParseContext &gt; </td></tr>
-<tr class="memitem:adcdb896ac03c1ed55422d788faa04edb"><td class="memTemplItemLeft" align="right" valign="top">FMT_CONSTEXPR auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d81/structformatter_3_01std_1_1error__code_00_01_char_01_4.html#adcdb896ac03c1ed55422d788faa04edb">parse</a> (ParseContext &amp;ctx) -&gt; decltype(ctx.begin())</td></tr>
+<tr class="memitem:adcdb896ac03c1ed55422d788faa04edb"><td class="memTemplParams" colspan="2"><a id="adcdb896ac03c1ed55422d788faa04edb" name="adcdb896ac03c1ed55422d788faa04edb"></a>
+template&lt;typename ParseContext &gt; </td></tr>
+<tr class="memitem:adcdb896ac03c1ed55422d788faa04edb"><td class="memTemplItemLeft" align="right" valign="top">FMT_CONSTEXPR auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>parse</b> (ParseContext &amp;ctx) -&gt; decltype(ctx.begin())</td></tr>
 <tr class="separator:adcdb896ac03c1ed55422d788faa04edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd7ed4fa01dc9e08f3cce7c4e6095837"><td class="memTemplParams" colspan="2">template&lt;typename FormatContext &gt; </td></tr>
-<tr class="memitem:abd7ed4fa01dc9e08f3cce7c4e6095837"><td class="memTemplItemLeft" align="right" valign="top">FMT_CONSTEXPR auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d81/structformatter_3_01std_1_1error__code_00_01_char_01_4.html#abd7ed4fa01dc9e08f3cce7c4e6095837">format</a> (const std::error_code &amp;ec, FormatContext &amp;ctx) const -&gt; decltype(ctx.out())</td></tr>
+<tr class="memitem:abd7ed4fa01dc9e08f3cce7c4e6095837"><td class="memTemplParams" colspan="2"><a id="abd7ed4fa01dc9e08f3cce7c4e6095837" name="abd7ed4fa01dc9e08f3cce7c4e6095837"></a>
+template&lt;typename FormatContext &gt; </td></tr>
+<tr class="memitem:abd7ed4fa01dc9e08f3cce7c4e6095837"><td class="memTemplItemLeft" align="right" valign="top">FMT_CONSTEXPR auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>format</b> (const std::error_code &amp;ec, FormatContext &amp;ctx) const -&gt; decltype(ctx.out())</td></tr>
 <tr class="separator:abd7ed4fa01dc9e08f3cce7c4e6095837"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="abd7ed4fa01dc9e08f3cce7c4e6095837" name="abd7ed4fa01dc9e08f3cce7c4e6095837"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd7ed4fa01dc9e08f3cce7c4e6095837">&#9670;&nbsp;</a></span>format()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Char &gt; </div>
-<div class="memtemplate">
-template&lt;typename FormatContext &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">FMT_CONSTEXPR auto <a class="el" href="../../d8/db3/structformatter.html">formatter</a>&lt; std::error_code, Char &gt;::format </td>
-          <td>(</td>
-          <td class="paramtype">const std::error_code &amp;&#160;</td>
-          <td class="paramname"><em>ec</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">FormatContext &amp;&#160;</td>
-          <td class="paramname"><em>ctx</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const -&gt; decltype(ctx.out()) </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  131</span>                             {</div>
-<div class="line"><span class="lineno">  132</span>    <span class="keyword">auto</span> out = ctx.out();</div>
-<div class="line"><span class="lineno">  133</span>    out = detail::write_bytes(out, ec.category().name(),</div>
-<div class="line"><span class="lineno">  134</span>                              <a class="code hl_struct" href="../../dc/dd9/structbasic__format__specs.html">basic_format_specs&lt;Char&gt;</a>());</div>
-<div class="line"><span class="lineno">  135</span>    out = detail::write&lt;Char&gt;(out, Char(<span class="charliteral">&#39;:&#39;</span>));</div>
-<div class="line"><span class="lineno">  136</span>    out = detail::write&lt;Char&gt;(out, ec.value());</div>
-<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">return</span> out;</div>
-<div class="line"><span class="lineno">  138</span>  }</div>
-<div class="ttc" id="astructbasic__format__specs_html"><div class="ttname"><a href="../../dc/dd9/structbasic__format__specs.html">basic_format_specs</a></div><div class="ttdef"><b>Definition:</b> core.h:2110</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="adcdb896ac03c1ed55422d788faa04edb" name="adcdb896ac03c1ed55422d788faa04edb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcdb896ac03c1ed55422d788faa04edb">&#9670;&nbsp;</a></span>parse()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Char &gt; </div>
-<div class="memtemplate">
-template&lt;typename ParseContext &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">FMT_CONSTEXPR auto <a class="el" href="../../d8/db3/structformatter.html">formatter</a>&lt; std::error_code, Char &gt;::parse </td>
-          <td>(</td>
-          <td class="paramtype">ParseContext &amp;&#160;</td>
-          <td class="paramname"><em>ctx</em></td><td>)</td>
-          <td> -&gt; decltype(ctx.begin()) </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  125</span>                                                                       {</div>
-<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">return</span> ctx.begin();</div>
-<div class="line"><span class="lineno">  127</span>  }</div>
-</div><!-- fragment -->
-</div>
-</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>out/build/x64/vcpkg_installed/x86-windows/include/fmt/<a class="el" href="../../d0/dff/os_8h_source.html">os.h</a></li>
+<li>os.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

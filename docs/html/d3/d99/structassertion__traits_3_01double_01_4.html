@@ -74,183 +74,28 @@ $(function() {
 <p>Traits used by CPPUNIT_ASSERT_DOUBLES_EQUAL().  
  <a href="../../d3/d99/structassertion__traits_3_01double_01_4.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d8/da0/_test_assert_8h_source.html">TestAssert.h</a>&gt;</code></p>
+<p><code>#include &lt;TestAssert.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ac0d9d71ec0f239664b88188e481c0598"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d99/structassertion__traits_3_01double_01_4.html#ac0d9d71ec0f239664b88188e481c0598">equal</a> (double x, double y)</td></tr>
+<tr class="memitem:ac0d9d71ec0f239664b88188e481c0598"><td class="memItemLeft" align="right" valign="top"><a id="ac0d9d71ec0f239664b88188e481c0598" name="ac0d9d71ec0f239664b88188e481c0598"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>equal</b> (double x, double y)</td></tr>
 <tr class="separator:ac0d9d71ec0f239664b88188e481c0598"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4aef1842c439c2750e88841d404a8bf"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d99/structassertion__traits_3_01double_01_4.html#ad4aef1842c439c2750e88841d404a8bf">less</a> (double x, double y)</td></tr>
+<tr class="memitem:ad4aef1842c439c2750e88841d404a8bf"><td class="memItemLeft" align="right" valign="top"><a id="ad4aef1842c439c2750e88841d404a8bf" name="ad4aef1842c439c2750e88841d404a8bf"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>less</b> (double x, double y)</td></tr>
 <tr class="separator:ad4aef1842c439c2750e88841d404a8bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac563d6afe831328bd28c85227ecb4869"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d99/structassertion__traits_3_01double_01_4.html#ac563d6afe831328bd28c85227ecb4869">lessEqual</a> (double x, double y)</td></tr>
+<tr class="memitem:ac563d6afe831328bd28c85227ecb4869"><td class="memItemLeft" align="right" valign="top"><a id="ac563d6afe831328bd28c85227ecb4869" name="ac563d6afe831328bd28c85227ecb4869"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>lessEqual</b> (double x, double y)</td></tr>
 <tr class="separator:ac563d6afe831328bd28c85227ecb4869"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bc37874eb60d30e0b50d4c127ab34df"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d99/structassertion__traits_3_01double_01_4.html#a6bc37874eb60d30e0b50d4c127ab34df">toString</a> (double x)</td></tr>
+<tr class="memitem:a6bc37874eb60d30e0b50d4c127ab34df"><td class="memItemLeft" align="right" valign="top"><a id="a6bc37874eb60d30e0b50d4c127ab34df" name="a6bc37874eb60d30e0b50d4c127ab34df"></a>
+static std::string&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> (double x)</td></tr>
 <tr class="separator:a6bc37874eb60d30e0b50d4c127ab34df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Traits used by CPPUNIT_ASSERT_DOUBLES_EQUAL(). </p>
 <p >This specialisation from <code>struct</code> <code>assertion_traits&lt;&gt;</code> ensures that doubles are converted in full, instead of being rounded to the default 6 digits of precision. Use the system defined ISO C99 macro DBL_DIG within float.h is available to define the maximum precision, otherwise use the hard-coded maximum precision of 15. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac0d9d71ec0f239664b88188e481c0598" name="ac0d9d71ec0f239664b88188e481c0598"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0d9d71ec0f239664b88188e481c0598">&#9670;&nbsp;</a></span>equal()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static bool <a class="el" href="../../d3/ded/structassertion__traits.html">assertion_traits</a>&lt; double &gt;::equal </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   90</span>    {</div>
-<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">return</span> x == y;</div>
-<div class="line"><span class="lineno">   92</span>    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ad4aef1842c439c2750e88841d404a8bf" name="ad4aef1842c439c2750e88841d404a8bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4aef1842c439c2750e88841d404a8bf">&#9670;&nbsp;</a></span>less()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static bool <a class="el" href="../../d3/ded/structassertion__traits.html">assertion_traits</a>&lt; double &gt;::less </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   95</span>    {</div>
-<div class="line"><span class="lineno">   96</span>        <span class="keywordflow">return</span> x &lt; y;</div>
-<div class="line"><span class="lineno">   97</span>    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ac563d6afe831328bd28c85227ecb4869" name="ac563d6afe831328bd28c85227ecb4869"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac563d6afe831328bd28c85227ecb4869">&#9670;&nbsp;</a></span>lessEqual()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static bool <a class="el" href="../../d3/ded/structassertion__traits.html">assertion_traits</a>&lt; double &gt;::lessEqual </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  100</span>    {</div>
-<div class="line"><span class="lineno">  101</span>        <span class="keywordflow">return</span> x &lt;= y;</div>
-<div class="line"><span class="lineno">  102</span>    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a6bc37874eb60d30e0b50d4c127ab34df" name="a6bc37874eb60d30e0b50d4c127ab34df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bc37874eb60d30e0b50d4c127ab34df">&#9670;&nbsp;</a></span>toString()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static std::string <a class="el" href="../../d3/ded/structassertion__traits.html">assertion_traits</a>&lt; double &gt;::toString </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>x</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  105</span>    {</div>
-<div class="line"><span class="lineno">  106</span><span class="preprocessor">#ifdef DBL_DIG</span></div>
-<div class="line"><span class="lineno">  107</span>       <span class="keyword">const</span> <span class="keywordtype">int</span> precision = DBL_DIG;</div>
-<div class="line"><span class="lineno">  108</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  109</span>       <span class="keyword">const</span> <span class="keywordtype">int</span> precision = 15;</div>
-<div class="line"><span class="lineno">  110</span><span class="preprocessor">#endif  </span><span class="comment">// #ifdef DBL_DIG</span></div>
-<div class="line"><span class="lineno">  111</span>       <span class="keywordtype">char</span> <a class="code hl_class" href="../../da/d40/classbuffer.html">buffer</a>[128];</div>
-<div class="line"><span class="lineno">  112</span><span class="preprocessor">#ifdef __STDC_SECURE_LIB__ </span><span class="comment">// Use secure version with visual studio 2005 to avoid warning.</span></div>
-<div class="line"><span class="lineno">  113</span>       sprintf_s(<a class="code hl_class" href="../../da/d40/classbuffer.html">buffer</a>, <span class="keyword">sizeof</span>(<a class="code hl_class" href="../../da/d40/classbuffer.html">buffer</a>), <span class="stringliteral">&quot;%.*g&quot;</span>, precision, x); </div>
-<div class="line"><span class="lineno">  114</span><span class="preprocessor">#else   </span></div>
-<div class="line"><span class="lineno">  115</span>       sprintf(<a class="code hl_class" href="../../da/d40/classbuffer.html">buffer</a>, <span class="stringliteral">&quot;%.*g&quot;</span>, precision, x); </div>
-<div class="line"><span class="lineno">  116</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  117</span>       <span class="keywordflow">return</span> <a class="code hl_class" href="../../da/d40/classbuffer.html">buffer</a>;</div>
-<div class="line"><span class="lineno">  118</span>    }</div>
-<div class="ttc" id="aclassbuffer_html"><div class="ttname"><a href="../../da/d40/classbuffer.html">buffer</a></div><div class="ttdoc">\rst A contiguous memory buffer with an optional growing ability.</div><div class="ttdef"><b>Definition:</b> core.h:843</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>out/build/x64/vcpkg_installed/x86-windows/include/cppunit/<a class="el" href="../../d8/da0/_test_assert_8h_source.html">TestAssert.h</a></li>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>TestAssert.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

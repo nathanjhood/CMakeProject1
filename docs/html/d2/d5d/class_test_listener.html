@@ -74,7 +74,7 @@ $(function() {
 <p>Listener for test progress and result.  
  <a href="../../d2/d5d/class_test_listener.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d7/d00/_test_listener_8h_source.html">TestListener.h</a>&gt;</code></p>
+<p><code>#include &lt;TestListener.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TestListener:</div>
 <div class="dyncontent">
@@ -91,20 +91,24 @@ Inheritance diagram for TestListener:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5546d4420e7412234915113b1ea5ad77"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d5d/class_test_listener.html#a5546d4420e7412234915113b1ea5ad77">startTest</a> (<a class="el" href="../../d1/d9b/class_test.html">Test</a> *)</td></tr>
-<tr class="memdesc:a5546d4420e7412234915113b1ea5ad77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when just before a <a class="el" href="../../d9/d1c/class_test_case.html" title="A single test object.">TestCase</a> is run.  <a href="../../d2/d5d/class_test_listener.html#a5546d4420e7412234915113b1ea5ad77">More...</a><br /></td></tr>
+<tr class="memitem:a5546d4420e7412234915113b1ea5ad77"><td class="memItemLeft" align="right" valign="top"><a id="a5546d4420e7412234915113b1ea5ad77" name="a5546d4420e7412234915113b1ea5ad77"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>startTest</b> (<a class="el" href="../../d1/d9b/class_test.html">Test</a> *)</td></tr>
+<tr class="memdesc:a5546d4420e7412234915113b1ea5ad77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when just before a <a class="el" href="../../d9/d1c/class_test_case.html" title="A single test object.">TestCase</a> is run. <br /></td></tr>
 <tr class="separator:a5546d4420e7412234915113b1ea5ad77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a103216a5814c907f7b752b969477e765"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d5d/class_test_listener.html#a103216a5814c907f7b752b969477e765">addFailure</a> (const <a class="el" href="../../d8/dc4/class_test_failure.html">TestFailure</a> &amp;)</td></tr>
 <tr class="memdesc:a103216a5814c907f7b752b969477e765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a failure occurs while running a test.  <a href="../../d2/d5d/class_test_listener.html#a103216a5814c907f7b752b969477e765">More...</a><br /></td></tr>
 <tr class="separator:a103216a5814c907f7b752b969477e765"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8ccd0f55dd9aa7eafded05ba14f9ac6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d5d/class_test_listener.html#ae8ccd0f55dd9aa7eafded05ba14f9ac6">endTest</a> (<a class="el" href="../../d1/d9b/class_test.html">Test</a> *)</td></tr>
-<tr class="memdesc:ae8ccd0f55dd9aa7eafded05ba14f9ac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called just after a <a class="el" href="../../d9/d1c/class_test_case.html" title="A single test object.">TestCase</a> was run (even if a failure occured).  <a href="../../d2/d5d/class_test_listener.html#ae8ccd0f55dd9aa7eafded05ba14f9ac6">More...</a><br /></td></tr>
+<tr class="memitem:ae8ccd0f55dd9aa7eafded05ba14f9ac6"><td class="memItemLeft" align="right" valign="top"><a id="ae8ccd0f55dd9aa7eafded05ba14f9ac6" name="ae8ccd0f55dd9aa7eafded05ba14f9ac6"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>endTest</b> (<a class="el" href="../../d1/d9b/class_test.html">Test</a> *)</td></tr>
+<tr class="memdesc:ae8ccd0f55dd9aa7eafded05ba14f9ac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called just after a <a class="el" href="../../d9/d1c/class_test_case.html" title="A single test object.">TestCase</a> was run (even if a failure occured). <br /></td></tr>
 <tr class="separator:ae8ccd0f55dd9aa7eafded05ba14f9ac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2360ebfccfa39f75bdc43948d5d1d2e7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d5d/class_test_listener.html#a2360ebfccfa39f75bdc43948d5d1d2e7">startSuite</a> (<a class="el" href="../../d1/d9b/class_test.html">Test</a> *)</td></tr>
-<tr class="memdesc:a2360ebfccfa39f75bdc43948d5d1d2e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by a <a class="el" href="../../d7/d2c/class_test_composite.html" title="A Composite of Tests.">TestComposite</a> just before running its child tests.  <a href="../../d2/d5d/class_test_listener.html#a2360ebfccfa39f75bdc43948d5d1d2e7">More...</a><br /></td></tr>
+<tr class="memitem:a2360ebfccfa39f75bdc43948d5d1d2e7"><td class="memItemLeft" align="right" valign="top"><a id="a2360ebfccfa39f75bdc43948d5d1d2e7" name="a2360ebfccfa39f75bdc43948d5d1d2e7"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>startSuite</b> (<a class="el" href="../../d1/d9b/class_test.html">Test</a> *)</td></tr>
+<tr class="memdesc:a2360ebfccfa39f75bdc43948d5d1d2e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by a <a class="el" href="../../d7/d2c/class_test_composite.html" title="A Composite of Tests.">TestComposite</a> just before running its child tests. <br /></td></tr>
 <tr class="separator:a2360ebfccfa39f75bdc43948d5d1d2e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad49e5589681732a1faff8fca5cbe61f5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d5d/class_test_listener.html#ad49e5589681732a1faff8fca5cbe61f5">endSuite</a> (<a class="el" href="../../d1/d9b/class_test.html">Test</a> *)</td></tr>
-<tr class="memdesc:ad49e5589681732a1faff8fca5cbe61f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by a <a class="el" href="../../d7/d2c/class_test_composite.html" title="A Composite of Tests.">TestComposite</a> after running its child tests.  <a href="../../d2/d5d/class_test_listener.html#ad49e5589681732a1faff8fca5cbe61f5">More...</a><br /></td></tr>
+<tr class="memitem:ad49e5589681732a1faff8fca5cbe61f5"><td class="memItemLeft" align="right" valign="top"><a id="ad49e5589681732a1faff8fca5cbe61f5" name="ad49e5589681732a1faff8fca5cbe61f5"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>endSuite</b> (<a class="el" href="../../d1/d9b/class_test.html">Test</a> *)</td></tr>
+<tr class="memdesc:ad49e5589681732a1faff8fca5cbe61f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by a <a class="el" href="../../d7/d2c/class_test_composite.html" title="A Composite of Tests.">TestComposite</a> after running its child tests. <br /></td></tr>
 <tr class="separator:ad49e5589681732a1faff8fca5cbe61f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a263428abdf29b2a7123af4096771925e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d5d/class_test_listener.html#a263428abdf29b2a7123af4096771925e">startTestRun</a> (<a class="el" href="../../d1/d9b/class_test.html">Test</a> *, <a class="el" href="../../dd/dd3/class_test_result.html">TestResult</a> *)</td></tr>
 <tr class="memdesc:a263428abdf29b2a7123af4096771925e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by a <a class="el" href="../../d2/d2e/class_test_runner.html" title="Generic test runner.">TestRunner</a> before running the test.  <a href="../../d2/d5d/class_test_listener.html#a263428abdf29b2a7123af4096771925e">More...</a><br /></td></tr>
@@ -176,34 +180,7 @@ Public Member Functions</h2></td></tr>
 <div class="ttc" id="aclass_test_listener_html_a2360ebfccfa39f75bdc43948d5d1d2e7"><div class="ttname"><a href="../../d2/d5d/class_test_listener.html#a2360ebfccfa39f75bdc43948d5d1d2e7">TestListener::startSuite</a></div><div class="ttdeci">virtual void startSuite(Test *)</div><div class="ttdoc">Called by a TestComposite just before running its child tests.</div><div class="ttdef"><b>Definition:</b> TestListener.h:114</div></div>
 <div class="ttc" id="aclass_test_listener_html_ad49e5589681732a1faff8fca5cbe61f5"><div class="ttname"><a href="../../d2/d5d/class_test_listener.html#ad49e5589681732a1faff8fca5cbe61f5">TestListener::endSuite</a></div><div class="ttdeci">virtual void endSuite(Test *)</div><div class="ttdoc">Called by a TestComposite after running its child tests.</div><div class="ttdef"><b>Definition:</b> TestListener.h:118</div></div>
 </div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="../../dd/dd3/class_test_result.html" title="Manages TestListener.">TestResult</a> </dd></dl>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae59dec3ae673618185eebf71881902e9" name="ae59dec3ae673618185eebf71881902e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae59dec3ae673618185eebf71881902e9">&#9670;&nbsp;</a></span>~TestListener()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual TestListener::~TestListener </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   97</span>{}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a103216a5814c907f7b752b969477e765" name="a103216a5814c907f7b752b969477e765"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a103216a5814c907f7b752b969477e765">&#9670;&nbsp;</a></span>addFailure()</h2>
 
@@ -232,69 +209,8 @@ Public Member Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d8/dc4/class_test_failure.html" title="Record of a failed Test execution.">TestFailure</a>. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd><em>failure</em> is a temporary object that is destroyed after the method call. Use TestFailure::clone() to create a duplicate. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="../../d2/da3/class_brief_test_progress_listener.html#a21f8658a9c19c67220241656cfad30ce">BriefTestProgressListener</a>, <a class="el" href="../../dd/d1a/class_test_result_collector.html#af53cbc55621f0eb0dc02d8b0203ea321">TestResultCollector</a>, <a class="el" href="../../d9/dc2/class_test_success_listener.html#a912bb5ea408b2be5b39cfb45e1bb402f">TestSuccessListener</a>, <a class="el" href="../../d2/dfa/class_text_test_progress_listener.html#a66f5a921e6e3ceecc8a286df7b60abcf">TextTestProgressListener</a>, <a class="el" href="../../dc/d19/class_text_test_result.html#a05d3b0e8e51b3430092166bbc3d17708">TextTestResult</a>, and <a class="el" href="../../dc/d19/class_text_test_result.html#aa423474527cbc89141763ea41336a188">TextTestResult</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  107</span>{}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ad49e5589681732a1faff8fca5cbe61f5" name="ad49e5589681732a1faff8fca5cbe61f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad49e5589681732a1faff8fca5cbe61f5">&#9670;&nbsp;</a></span>endSuite()</h2>
+<p>Reimplemented in <a class="el" href="../../dc/d19/class_text_test_result.html#aa423474527cbc89141763ea41336a188">TextTestResult</a>.</p>
 
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void TestListener::endSuite </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d1/d9b/class_test.html">Test</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Called by a <a class="el" href="../../d7/d2c/class_test_composite.html" title="A Composite of Tests.">TestComposite</a> after running its child tests. </p>
-<div class="fragment"><div class="line"><span class="lineno">  118</span>{}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ae8ccd0f55dd9aa7eafded05ba14f9ac6" name="ae8ccd0f55dd9aa7eafded05ba14f9ac6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8ccd0f55dd9aa7eafded05ba14f9ac6">&#9670;&nbsp;</a></span>endTest()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void TestListener::endTest </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d1/d9b/class_test.html">Test</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Called just after a <a class="el" href="../../d9/d1c/class_test_case.html" title="A single test object.">TestCase</a> was run (even if a failure occured). </p>
-
-<p>Reimplemented in <a class="el" href="../../d2/da3/class_brief_test_progress_listener.html#a49cbd9152ea35a21f6525773660ee119">BriefTestProgressListener</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  110</span>{}</div>
-</div><!-- fragment -->
 </div>
 </div>
 <a id="a0411708032f688f6ec234bcc5e089289" name="a0411708032f688f6ec234bcc5e089289"></a>
@@ -341,69 +257,6 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="../../d2/dfa/class_text_test_progress_listener.html#a12df92f16f1e2b9d571fd064fb7f30bd">TextTestProgressListener</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  140</span>                                            {}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a2360ebfccfa39f75bdc43948d5d1d2e7" name="a2360ebfccfa39f75bdc43948d5d1d2e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2360ebfccfa39f75bdc43948d5d1d2e7">&#9670;&nbsp;</a></span>startSuite()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void TestListener::startSuite </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d1/d9b/class_test.html">Test</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Called by a <a class="el" href="../../d7/d2c/class_test_composite.html" title="A Composite of Tests.">TestComposite</a> just before running its child tests. </p>
-<div class="fragment"><div class="line"><span class="lineno">  114</span>{}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a5546d4420e7412234915113b1ea5ad77" name="a5546d4420e7412234915113b1ea5ad77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5546d4420e7412234915113b1ea5ad77">&#9670;&nbsp;</a></span>startTest()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void TestListener::startTest </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d1/d9b/class_test.html">Test</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Called when just before a <a class="el" href="../../d9/d1c/class_test_case.html" title="A single test object.">TestCase</a> is run. </p>
-
-<p>Reimplemented in <a class="el" href="../../d2/da3/class_brief_test_progress_listener.html#ab4196e15752bb2be443e72418500e20e">BriefTestProgressListener</a>, <a class="el" href="../../dd/d1a/class_test_result_collector.html#a647d3e05ffc8fcf7023fea2f7c9f95cb">TestResultCollector</a>, <a class="el" href="../../d2/dfa/class_text_test_progress_listener.html#ae5089aa6b0bcae0128604691f23ed224">TextTestProgressListener</a>, and <a class="el" href="../../dc/d19/class_text_test_result.html#a2191f5e916fca83151fb657b31dcd30d">TextTestResult</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  100</span>{}</div>
-</div><!-- fragment -->
 </div>
 </div>
 <a id="a263428abdf29b2a7123af4096771925e" name="a263428abdf29b2a7123af4096771925e"></a>
@@ -449,12 +302,11 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="lineno">  129</span>                                              {}</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>out/build/x64/vcpkg_installed/x86-windows/include/cppunit/<a class="el" href="../../d7/d00/_test_listener_8h_source.html">TestListener.h</a></li>
+<li>TestListener.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

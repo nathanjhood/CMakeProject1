@@ -75,7 +75,7 @@ $(function() {
 <p>Base class for all test objects.  
  <a href="../../d1/d9b/class_test.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d6/dc0/_test_8h_source.html">Test.h</a>&gt;</code></p>
+<p><code>#include &lt;Test.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Test:</div>
 <div class="dyncontent">
@@ -99,8 +99,9 @@ Inheritance diagram for Test:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7beeb95dc0d058bd3bfea1a75463cb03"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d9b/class_test.html#a7beeb95dc0d058bd3bfea1a75463cb03">run</a> (<a class="el" href="../../dd/dd3/class_test_result.html">TestResult</a> *result)=0</td></tr>
-<tr class="memdesc:a7beeb95dc0d058bd3bfea1a75463cb03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the test, collecting results.  <a href="../../d1/d9b/class_test.html#a7beeb95dc0d058bd3bfea1a75463cb03">More...</a><br /></td></tr>
+<tr class="memitem:a7beeb95dc0d058bd3bfea1a75463cb03"><td class="memItemLeft" align="right" valign="top"><a id="a7beeb95dc0d058bd3bfea1a75463cb03" name="a7beeb95dc0d058bd3bfea1a75463cb03"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> (<a class="el" href="../../dd/dd3/class_test_result.html">TestResult</a> *result)=0</td></tr>
+<tr class="memdesc:a7beeb95dc0d058bd3bfea1a75463cb03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the test, collecting results. <br /></td></tr>
 <tr class="separator:a7beeb95dc0d058bd3bfea1a75463cb03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad2b7244c7cec3f3aa9f81d12b15c8cf"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d9b/class_test.html#aad2b7244c7cec3f3aa9f81d12b15c8cf">countTestCases</a> () const =0</td></tr>
 <tr class="memdesc:aad2b7244c7cec3f3aa9f81d12b15c8cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of test cases invoked by <a class="el" href="../../d1/d9b/class_test.html#a7beeb95dc0d058bd3bfea1a75463cb03" title="Run the test, collecting results.">run()</a>.  <a href="../../d1/d9b/class_test.html#aad2b7244c7cec3f3aa9f81d12b15c8cf">More...</a><br /></td></tr>
@@ -143,34 +144,7 @@ Protected Member Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d9/d1c/class_test_case.html" title="A single test object.">TestCase</a> </dd>
 <dd>
 <a class="el" href="../../d4/d60/class_test_suite.html" title="A Composite of Tests.">TestSuite</a> </dd></dl>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac9dcc51f46141d9ed1e8206ca0011b8c" name="ac9dcc51f46141d9ed1e8206ca0011b8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9dcc51f46141d9ed1e8206ca0011b8c">&#9670;&nbsp;</a></span>~Test()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual Test::~Test </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   28</span>{};</div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aeea3583828a939927533f794f7bf2264" name="aeea3583828a939927533f794f7bf2264"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeea3583828a939927533f794f7bf2264">&#9670;&nbsp;</a></span>checkIsValidIndex()</h2>
 
@@ -235,7 +209,7 @@ Protected Member Functions</h2></td></tr>
 <p>Return the number of test cases invoked by <a class="el" href="../../d1/d9b/class_test.html#a7beeb95dc0d058bd3bfea1a75463cb03" title="Run the test, collecting results.">run()</a>. </p>
 <p >The base unit of testing is the class <a class="el" href="../../d9/d1c/class_test_case.html" title="A single test object.">TestCase</a>. This method returns the number of <a class="el" href="../../d9/d1c/class_test_case.html" title="A single test object.">TestCase</a> objects invoked by the <a class="el" href="../../d1/d9b/class_test.html#a7beeb95dc0d058bd3bfea1a75463cb03" title="Run the test, collecting results.">run()</a> method. </p>
 
-<p>Implemented in <a class="el" href="../../d7/d99/class_repeated_test.html#af35b6e65a52d6bf79b7306cdd967b489">RepeatedTest</a>, <a class="el" href="../../de/d59/class_test_decorator.html#a7d4cffe147c9febf9e3b828392a2f5b4">TestDecorator</a>, <a class="el" href="../../d7/d2c/class_test_composite.html#a55fa91b2f8ef7078e0221d09656fadd4">TestComposite</a>, and <a class="el" href="../../d8/d69/class_test_leaf.html#ae2f4b6306e01cf73ff734cc69dba3d20">TestLeaf</a>.</p>
+<p>Implemented in <a class="el" href="../../d8/d69/class_test_leaf.html#ae2f4b6306e01cf73ff734cc69dba3d20">TestLeaf</a>.</p>
 
 </div>
 </div>
@@ -272,7 +246,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer on the test. Never <code>NULL</code>. </dd></dl>
 
-<p>Implemented in <a class="el" href="../../de/d59/class_test_decorator.html#a80dd742a04f00b442140171c3ecf85ef">TestDecorator</a>, <a class="el" href="../../d8/d69/class_test_leaf.html#a0d23068d8b9cc4319a7759938fc47409">TestLeaf</a>, <a class="el" href="../../d3/da2/class_test_runner_1_1_wrapping_suite.html#a389459f7401497bcb5bfd2d44faa77ec">TestRunner::WrappingSuite</a>, and <a class="el" href="../../d4/d60/class_test_suite.html#a0c2bcd1a62452e29f4c17f30cdf01369">TestSuite</a>.</p>
+<p>Implemented in <a class="el" href="../../d8/d69/class_test_leaf.html#a0d23068d8b9cc4319a7759938fc47409">TestLeaf</a>.</p>
 
 </div>
 </div>
@@ -477,7 +451,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Returns the number of direct child of the test. </p>
 
-<p>Implemented in <a class="el" href="../../de/d59/class_test_decorator.html#a8c3e4d2a31eb269a6acc0a8a464c4b4c">TestDecorator</a>, <a class="el" href="../../d8/d69/class_test_leaf.html#aca71777e873e8b5b9f7010d9c7fcc3b0">TestLeaf</a>, <a class="el" href="../../d3/da2/class_test_runner_1_1_wrapping_suite.html#a5ffc3769e32dcde719bcf61191fb3c53">TestRunner::WrappingSuite</a>, and <a class="el" href="../../d4/d60/class_test_suite.html#a43d23da8ce3225af676ac259452098b0">TestSuite</a>.</p>
+<p>Implemented in <a class="el" href="../../d8/d69/class_test_leaf.html#aca71777e873e8b5b9f7010d9c7fcc3b0">TestLeaf</a>.</p>
 
 </div>
 </div>
@@ -506,8 +480,6 @@ Protected Member Functions</h2></td></tr>
 
 <p>Returns the test name. </p>
 <p >Each test has a name. This name may be used to find the test in a suite or registry of tests. </p>
-
-<p>Implemented in <a class="el" href="../../da/d59/class_test_case_decorator.html#af8c039003a9e067ac97e94340eb5f60b">TestCaseDecorator</a>, <a class="el" href="../../de/d59/class_test_decorator.html#a45af5bfeed053b75bb604fc501064eb0">TestDecorator</a>, <a class="el" href="../../d9/d1c/class_test_case.html#a2f3532470cf17ba70b37caa3c8cdd8ce">TestCase</a>, <a class="el" href="../../d7/d2c/class_test_composite.html#a744c14d2610bd223e853600417a4cadb">TestComposite</a>, and <a class="el" href="../../d3/da2/class_test_runner_1_1_wrapping_suite.html#a0015e42bd741cbf8ca64e754cd93e7c6">TestRunner::WrappingSuite</a>.</p>
 
 </div>
 </div>
@@ -553,38 +525,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7beeb95dc0d058bd3bfea1a75463cb03" name="a7beeb95dc0d058bd3bfea1a75463cb03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7beeb95dc0d058bd3bfea1a75463cb03">&#9670;&nbsp;</a></span>run()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void Test::run </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../dd/dd3/class_test_result.html">TestResult</a> *&#160;</td>
-          <td class="paramname"><em>result</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Run the test, collecting results. </p>
-
-<p>Implemented in <a class="el" href="../../d7/d99/class_repeated_test.html#a6faffcd29b619305a75dd4c1995beaad">RepeatedTest</a>, <a class="el" href="../../de/d59/class_test_decorator.html#a64dd70aae76f31f2e2f7b5ac84a8e829">TestDecorator</a>, <a class="el" href="../../d3/df7/class_test_set_up.html#aa3f79125254c288d6effee6df8e7d5fb">TestSetUp</a>, <a class="el" href="../../d9/d1c/class_test_case.html#a6bc50d62de5b2d0addf9b0167e34b134">TestCase</a>, <a class="el" href="../../d7/d2c/class_test_composite.html#a2ba14045b1a1e83963dd4db746b04dfd">TestComposite</a>, and <a class="el" href="../../d3/da2/class_test_runner_1_1_wrapping_suite.html#aa486bfea64b60206ac1d8fbb006f2f64">TestRunner::WrappingSuite</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>out/build/x64/vcpkg_installed/x86-windows/include/cppunit/<a class="el" href="../../d6/dc0/_test_8h_source.html">Test.h</a></li>
+<li>Test.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

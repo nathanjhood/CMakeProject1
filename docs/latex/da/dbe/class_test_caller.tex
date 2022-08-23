@@ -24,15 +24,17 @@ Inheritance diagram for Test\+Caller\texorpdfstring{$<$}{<} Fixture \texorpdfstr
 \item 
 \mbox{\hyperlink{class_test_caller_a5977f4de9736929451f30b039a42487d}{Test\+Caller}} (std\+::string name, Test\+Method test, Fixture $\ast$fixture)
 \item 
-\mbox{\hyperlink{class_test_caller_a06eb15631e021ac03e3c5067f4938c1e}{Test\+Caller}} (std\+::string name, std\+::function$<$ void()$>$ test\+\_\+function, Fixture $\ast$fixture)
+\mbox{\Hypertarget{class_test_caller_a06eb15631e021ac03e3c5067f4938c1e}\label{class_test_caller_a06eb15631e021ac03e3c5067f4938c1e}} 
+{\bfseries Test\+Caller} (std\+::string name, std\+::function$<$ void()$>$ test\+\_\+function, Fixture $\ast$fixture)
 \item 
 void \mbox{\hyperlink{class_test_caller_aad0c877a47b75d056a4f8f323d3169ab}{run\+Test}} ()
-\begin{DoxyCompactList}\small\item\em FIXME\+: this should probably be pure virtual. \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{class_test_caller_ae6880afc711d24ae0b8846759064ceea}{set\+Up}} ()
-\begin{DoxyCompactList}\small\item\em Set up context before running a test. \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{class_test_caller_a0e463b88bf0ceacbd8875e0450ed2649}{tear\+Down}} ()
-\begin{DoxyCompactList}\small\item\em Clean up after the test run. \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{class_test_caller_a414be7e81399ae2d89cfa15b27134486}{to\+String}} () const
+\item 
+\mbox{\Hypertarget{class_test_caller_a414be7e81399ae2d89cfa15b27134486}\label{class_test_caller_a414be7e81399ae2d89cfa15b27134486}} 
+std\+::string {\bfseries to\+String} () const
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Types}
 \begin{DoxyCompactItemize}
@@ -76,8 +78,8 @@ Here is an example\+:
 \DoxyCodeLine{\textcolor{keyword}{class }MathTest : \textcolor{keyword}{public} CppUnit::TestFixture \{}
 \DoxyCodeLine{        ...}
 \DoxyCodeLine{    \textcolor{keyword}{public}:}
-\DoxyCodeLine{        \textcolor{keywordtype}{void}         \mbox{\hyperlink{class_test_caller_ae6880afc711d24ae0b8846759064ceea}{setUp}}();}
-\DoxyCodeLine{        \textcolor{keywordtype}{void}         \mbox{\hyperlink{class_test_caller_a0e463b88bf0ceacbd8875e0450ed2649}{tearDown}}();}
+\DoxyCodeLine{        \textcolor{keywordtype}{void}         setUp();}
+\DoxyCodeLine{        \textcolor{keywordtype}{void}         tearDown();}
 \DoxyCodeLine{}
 \DoxyCodeLine{        \textcolor{keywordtype}{void}         testAdd();}
 \DoxyCodeLine{        \textcolor{keywordtype}{void}         testSubtract();}
@@ -104,7 +106,7 @@ You can use a \mbox{\hyperlink{class_test_caller}{Test\+Caller}} to bind any tes
 \mbox{\Hypertarget{class_test_caller_a84cb35144455c4245c45d755b84c6093}\label{class_test_caller_a84cb35144455c4245c45d755b84c6093}} 
 \index{TestCaller$<$ Fixture $>$@{TestCaller$<$ Fixture $>$}!TestCaller@{TestCaller}}
 \index{TestCaller@{TestCaller}!TestCaller$<$ Fixture $>$@{TestCaller$<$ Fixture $>$}}
-\doxysubsubsection{\texorpdfstring{TestCaller()}{TestCaller()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+\doxysubsubsection{\texorpdfstring{TestCaller()}{TestCaller()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily template$<$class Fixture $>$ \\
 \mbox{\hyperlink{class_test_caller}{Test\+Caller}}$<$ Fixture $>$\mbox{\hyperlink{class_test_caller}{\+::\+Test\+Caller}} (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{Test\+Method}]{test }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
@@ -112,24 +114,13 @@ Constructor for \mbox{\hyperlink{class_test_caller}{Test\+Caller}}. This constru
 \begin{DoxyParams}{Parameters}
 {\em name} & name of this \mbox{\hyperlink{class_test_caller}{Test\+Caller}} \\
 \hline
-{\em test} & the method this \mbox{\hyperlink{class_test_caller}{Test\+Caller}} calls in \mbox{\hyperlink{class_test_caller_aad0c877a47b75d056a4f8f323d3169ab}{run\+Test()}} \\
+{\em test} & the method this \mbox{\hyperlink{class_test_caller}{Test\+Caller}} calls in run\+Test() \\
 \hline
 \end{DoxyParams}
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{117                                                 :}
-\DoxyCodeLine{118         \mbox{\hyperlink{class_test_case}{TestCase}}( name ), }
-\DoxyCodeLine{119         m\_ownFixture( \textcolor{keyword}{true} ),}
-\DoxyCodeLine{120         m\_fixture( \textcolor{keyword}{new} Fixture() ),}
-\DoxyCodeLine{121         m\_test\_function( std::bind(test, m\_fixture) )}
-\DoxyCodeLine{122   \{}
-\DoxyCodeLine{123   \}}
-
-\end{DoxyCode}
 \mbox{\Hypertarget{class_test_caller_a21479de59b7c38a6d8bed9e66025ebb0}\label{class_test_caller_a21479de59b7c38a6d8bed9e66025ebb0}} 
 \index{TestCaller$<$ Fixture $>$@{TestCaller$<$ Fixture $>$}!TestCaller@{TestCaller}}
 \index{TestCaller@{TestCaller}!TestCaller$<$ Fixture $>$@{TestCaller$<$ Fixture $>$}}
-\doxysubsubsection{\texorpdfstring{TestCaller()}{TestCaller()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+\doxysubsubsection{\texorpdfstring{TestCaller()}{TestCaller()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily template$<$class Fixture $>$ \\
 \mbox{\hyperlink{class_test_caller}{Test\+Caller}}$<$ Fixture $>$\mbox{\hyperlink{class_test_caller}{\+::\+Test\+Caller}} (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{Test\+Method}]{test,  }\item[{Fixture \&}]{fixture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
@@ -137,26 +128,15 @@ Constructor for \mbox{\hyperlink{class_test_caller}{Test\+Caller}}. This constru
 \begin{DoxyParams}{Parameters}
 {\em name} & name of this \mbox{\hyperlink{class_test_caller}{Test\+Caller}} \\
 \hline
-{\em test} & the method this \mbox{\hyperlink{class_test_caller}{Test\+Caller}} calls in \mbox{\hyperlink{class_test_caller_aad0c877a47b75d056a4f8f323d3169ab}{run\+Test()}} \\
+{\em test} & the method this \mbox{\hyperlink{class_test_caller}{Test\+Caller}} calls in run\+Test() \\
 \hline
 {\em fixture} & the Fixture to invoke the test method on. \\
 \hline
 \end{DoxyParams}
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{134                                                                 :}
-\DoxyCodeLine{135         \mbox{\hyperlink{class_test_case}{TestCase}}( name ), }
-\DoxyCodeLine{136         m\_ownFixture( \textcolor{keyword}{false} ),}
-\DoxyCodeLine{137         m\_fixture( \&fixture ),}
-\DoxyCodeLine{138         m\_test\_function( std::bind(test, \&fixture) )}
-\DoxyCodeLine{139   \{}
-\DoxyCodeLine{140   \}}
-
-\end{DoxyCode}
 \mbox{\Hypertarget{class_test_caller_a5977f4de9736929451f30b039a42487d}\label{class_test_caller_a5977f4de9736929451f30b039a42487d}} 
 \index{TestCaller$<$ Fixture $>$@{TestCaller$<$ Fixture $>$}!TestCaller@{TestCaller}}
 \index{TestCaller@{TestCaller}!TestCaller$<$ Fixture $>$@{TestCaller$<$ Fixture $>$}}
-\doxysubsubsection{\texorpdfstring{TestCaller()}{TestCaller()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+\doxysubsubsection{\texorpdfstring{TestCaller()}{TestCaller()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily template$<$class Fixture $>$ \\
 \mbox{\hyperlink{class_test_caller}{Test\+Caller}}$<$ Fixture $>$\mbox{\hyperlink{class_test_caller}{\+::\+Test\+Caller}} (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{Test\+Method}]{test,  }\item[{Fixture $\ast$}]{fixture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
@@ -164,55 +144,11 @@ Constructor for \mbox{\hyperlink{class_test_caller}{Test\+Caller}}. This constru
 \begin{DoxyParams}{Parameters}
 {\em name} & name of this \mbox{\hyperlink{class_test_caller}{Test\+Caller}} \\
 \hline
-{\em test} & the method this \mbox{\hyperlink{class_test_caller}{Test\+Caller}} calls in \mbox{\hyperlink{class_test_caller_aad0c877a47b75d056a4f8f323d3169ab}{run\+Test()}} \\
+{\em test} & the method this \mbox{\hyperlink{class_test_caller}{Test\+Caller}} calls in run\+Test() \\
 \hline
 {\em fixture} & the Fixture to invoke the test method on. \\
 \hline
 \end{DoxyParams}
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{151                                                                 :}
-\DoxyCodeLine{152         \mbox{\hyperlink{class_test_case}{TestCase}}( name ), }
-\DoxyCodeLine{153         m\_ownFixture( \textcolor{keyword}{true} ),}
-\DoxyCodeLine{154         m\_fixture( fixture ),}
-\DoxyCodeLine{155         m\_test\_function( std::bind(test, fixture) )}
-\DoxyCodeLine{156   \{}
-\DoxyCodeLine{157   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_test_caller_a06eb15631e021ac03e3c5067f4938c1e}\label{class_test_caller_a06eb15631e021ac03e3c5067f4938c1e}} 
-\index{TestCaller$<$ Fixture $>$@{TestCaller$<$ Fixture $>$}!TestCaller@{TestCaller}}
-\index{TestCaller@{TestCaller}!TestCaller$<$ Fixture $>$@{TestCaller$<$ Fixture $>$}}
-\doxysubsubsection{\texorpdfstring{TestCaller()}{TestCaller()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily template$<$class Fixture $>$ \\
-\mbox{\hyperlink{class_test_caller}{Test\+Caller}}$<$ Fixture $>$\mbox{\hyperlink{class_test_caller}{\+::\+Test\+Caller}} (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::function$<$ void()$>$}]{test\+\_\+function,  }\item[{Fixture $\ast$}]{fixture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{159                                                                                  :}
-\DoxyCodeLine{160       \mbox{\hyperlink{class_test_case}{TestCase}}(name),}
-\DoxyCodeLine{161       m\_ownFixture(\textcolor{keyword}{true}),}
-\DoxyCodeLine{162       m\_fixture(fixture),}
-\DoxyCodeLine{163       m\_test\_function(test\_function)}
-\DoxyCodeLine{164     \{}
-\DoxyCodeLine{165     \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_test_caller_a7d8e2103e62a924d784b7a812681424a}\label{class_test_caller_a7d8e2103e62a924d784b7a812681424a}} 
-\index{TestCaller$<$ Fixture $>$@{TestCaller$<$ Fixture $>$}!````~TestCaller@{$\sim$TestCaller}}
-\index{````~TestCaller@{$\sim$TestCaller}!TestCaller$<$ Fixture $>$@{TestCaller$<$ Fixture $>$}}
-\doxysubsubsection{\texorpdfstring{$\sim$TestCaller()}{~TestCaller()}}
-{\footnotesize\ttfamily template$<$class Fixture $>$ \\
-\mbox{\hyperlink{class_test_caller}{Test\+Caller}}$<$ Fixture $>$\+::$\sim$\mbox{\hyperlink{class_test_caller}{Test\+Caller}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{168   \{}
-\DoxyCodeLine{169     \textcolor{keywordflow}{if} (m\_ownFixture)}
-\DoxyCodeLine{170       \textcolor{keyword}{delete} m\_fixture;}
-\DoxyCodeLine{171   \}}
-
-\end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
@@ -225,19 +161,8 @@ void \mbox{\hyperlink{class_test_caller}{Test\+Caller}}$<$ Fixture $>$\+::run\+T
 
 
 
-FIXME\+: this should probably be pure virtual. 
-
-
-
 Reimplemented from \mbox{\hyperlink{class_test_case_a6b55957ac1dfef01e5d9fa2475676f34}{Test\+Case}}.
 
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{174   \{ }
-\DoxyCodeLine{175       m\_test\_function();}
-\DoxyCodeLine{176   \}  }
-
-\end{DoxyCode}
 \mbox{\Hypertarget{class_test_caller_ae6880afc711d24ae0b8846759064ceea}\label{class_test_caller_ae6880afc711d24ae0b8846759064ceea}} 
 \index{TestCaller$<$ Fixture $>$@{TestCaller$<$ Fixture $>$}!setUp@{setUp}}
 \index{setUp@{setUp}!TestCaller$<$ Fixture $>$@{TestCaller$<$ Fixture $>$}}
@@ -247,19 +172,8 @@ void \mbox{\hyperlink{class_test_caller}{Test\+Caller}}$<$ Fixture $>$\+::set\+U
 
 
 
-Set up context before running a test. 
-
-
-
 Reimplemented from \mbox{\hyperlink{class_test_fixture_a0e77590b14a3ec7f93fe02e5b89a242f}{Test\+Fixture}}.
 
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{179   \{ }
-\DoxyCodeLine{180     m\_fixture-\/>setUp (); }
-\DoxyCodeLine{181   \}}
-
-\end{DoxyCode}
 \mbox{\Hypertarget{class_test_caller_a0e463b88bf0ceacbd8875e0450ed2649}\label{class_test_caller_a0e463b88bf0ceacbd8875e0450ed2649}} 
 \index{TestCaller$<$ Fixture $>$@{TestCaller$<$ Fixture $>$}!tearDown@{tearDown}}
 \index{tearDown@{tearDown}!TestCaller$<$ Fixture $>$@{TestCaller$<$ Fixture $>$}}
@@ -269,35 +183,10 @@ void \mbox{\hyperlink{class_test_caller}{Test\+Caller}}$<$ Fixture $>$\+::tear\+
 
 
 
-Clean up after the test run. 
-
-
-
 Reimplemented from \mbox{\hyperlink{class_test_fixture_a707dd4d7d0910af916343d79c0feffc9}{Test\+Fixture}}.
 
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{184   \{ }
-\DoxyCodeLine{185       m\_fixture-\/>tearDown (); }
-\DoxyCodeLine{186   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{class_test_caller_a414be7e81399ae2d89cfa15b27134486}\label{class_test_caller_a414be7e81399ae2d89cfa15b27134486}} 
-\index{TestCaller$<$ Fixture $>$@{TestCaller$<$ Fixture $>$}!toString@{toString}}
-\index{toString@{toString}!TestCaller$<$ Fixture $>$@{TestCaller$<$ Fixture $>$}}
-\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
-{\footnotesize\ttfamily template$<$class Fixture $>$ \\
-std\+::string \mbox{\hyperlink{class_test_caller}{Test\+Caller}}$<$ Fixture $>$\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{189   \{ }
-\DoxyCodeLine{190     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}TestCaller "{}} + \mbox{\hyperlink{class_test_case_a2f3532470cf17ba70b37caa3c8cdd8ce}{getName}}(); }
-\DoxyCodeLine{191   \}}
-
-\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/cppunit/Test\+Caller.\+h\end{DoxyCompactItemize}
+Test\+Caller.\+h\end{DoxyCompactItemize}

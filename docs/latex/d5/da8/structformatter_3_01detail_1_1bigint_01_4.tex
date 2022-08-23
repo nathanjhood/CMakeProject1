@@ -3,56 +3,14 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structformatter_3_01detail_1_1bigint_01_4_ad88d4d5adf9e68739c8e97cf24b7a39f}{parse}} (\mbox{\hyperlink{classbasic__format__parse__context}{format\+\_\+parse\+\_\+context}} \&ctx) -\/$>$ format\+\_\+parse\+\_\+context\+::iterator
-\item 
-{\footnotesize template$<$typename Format\+Context $>$ }\\auto \mbox{\hyperlink{structformatter_3_01detail_1_1bigint_01_4_a73193ca269fdd8910c471cd4fb06d050}{format}} (const detail\+::bigint \&n, Format\+Context \&ctx) const -\/$>$ typename Format\+Context\+::iterator
-\end{DoxyCompactItemize}
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{structformatter_3_01detail_1_1bigint_01_4_a73193ca269fdd8910c471cd4fb06d050}\label{structformatter_3_01detail_1_1bigint_01_4_a73193ca269fdd8910c471cd4fb06d050}} 
-\index{formatter$<$ detail::bigint $>$@{formatter$<$ detail::bigint $>$}!format@{format}}
-\index{format@{format}!formatter$<$ detail::bigint $>$@{formatter$<$ detail::bigint $>$}}
-\doxysubsubsection{\texorpdfstring{format()}{format()}}
-{\footnotesize\ttfamily template$<$typename Format\+Context $>$ \\
-auto \mbox{\hyperlink{structformatter}{formatter}}$<$ detail\+::bigint $>$\+::format (\begin{DoxyParamCaption}\item[{const detail\+::bigint \&}]{n,  }\item[{Format\+Context \&}]{ctx }\end{DoxyParamCaption}) const -\/$>$ typename Format\+Context\+::iterator \hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1433                                      \{}
-\DoxyCodeLine{1434     \textcolor{keyword}{auto} out = ctx.out();}
-\DoxyCodeLine{1435     \textcolor{keywordtype}{bool} first = \textcolor{keyword}{true};}
-\DoxyCodeLine{1436     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} i = n.bigits\_.size(); i > 0; -\/-\/i) \{}
-\DoxyCodeLine{1437       \textcolor{keyword}{auto} \mbox{\hyperlink{classvalue}{value}} = n.bigits\_[i -\/ 1u];}
-\DoxyCodeLine{1438       \textcolor{keywordflow}{if} (first) \{}
-\DoxyCodeLine{1439         out = format\_to(out, FMT\_STRING(\textcolor{stringliteral}{"{}\{:x\}"{}}), \mbox{\hyperlink{classvalue}{value}});}
-\DoxyCodeLine{1440         first = \textcolor{keyword}{false};}
-\DoxyCodeLine{1441         \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{1442       \}}
-\DoxyCodeLine{1443       out = format\_to(out, FMT\_STRING(\textcolor{stringliteral}{"{}\{:08x\}"{}}), \mbox{\hyperlink{classvalue}{value}});}
-\DoxyCodeLine{1444     \}}
-\DoxyCodeLine{1445     \textcolor{keywordflow}{if} (n.exp\_ > 0)}
-\DoxyCodeLine{1446       out = format\_to(out, FMT\_STRING(\textcolor{stringliteral}{"{}p\{\}"{}}),}
-\DoxyCodeLine{1447                       n.exp\_ * detail::bigint::bigit\_bits);}
-\DoxyCodeLine{1448     \textcolor{keywordflow}{return} out;}
-\DoxyCodeLine{1449   \}}
-
-\end{DoxyCode}
 \mbox{\Hypertarget{structformatter_3_01detail_1_1bigint_01_4_ad88d4d5adf9e68739c8e97cf24b7a39f}\label{structformatter_3_01detail_1_1bigint_01_4_ad88d4d5adf9e68739c8e97cf24b7a39f}} 
-\index{formatter$<$ detail::bigint $>$@{formatter$<$ detail::bigint $>$}!parse@{parse}}
-\index{parse@{parse}!formatter$<$ detail::bigint $>$@{formatter$<$ detail::bigint $>$}}
-\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
-{\footnotesize\ttfamily FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{structformatter}{formatter}}$<$ detail\+::bigint $>$\+::parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbasic__format__parse__context}{format\+\_\+parse\+\_\+context}} \&}]{ctx }\end{DoxyParamCaption}) -\/$>$ format\+\_\+parse\+\_\+context\+::iterator \hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1427                                       \{}
-\DoxyCodeLine{1428     \textcolor{keywordflow}{return} ctx.\mbox{\hyperlink{classbasic__format__parse__context_acacc81561f6136973796f6b1ec4bdd5d}{begin}}();}
-\DoxyCodeLine{1429   \}}
-
-\end{DoxyCode}
+FMT\+\_\+\+CONSTEXPR auto {\bfseries parse} (\mbox{\hyperlink{classbasic__format__parse__context}{format\+\_\+parse\+\_\+context}} \&ctx) -\/$>$ format\+\_\+parse\+\_\+context\+::iterator
+\item 
+\mbox{\Hypertarget{structformatter_3_01detail_1_1bigint_01_4_a73193ca269fdd8910c471cd4fb06d050}\label{structformatter_3_01detail_1_1bigint_01_4_a73193ca269fdd8910c471cd4fb06d050}} 
+{\footnotesize template$<$typename Format\+Context $>$ }\\auto {\bfseries format} (const detail\+::bigint \&n, Format\+Context \&ctx) const -\/$>$ typename Format\+Context\+::iterator
+\end{DoxyCompactItemize}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/format-\/inl.\+h\end{DoxyCompactItemize}
+format-\/inl.\+h\end{DoxyCompactItemize}

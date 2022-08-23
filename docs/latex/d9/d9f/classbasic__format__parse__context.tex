@@ -27,23 +27,32 @@ using {\bfseries iterator} = typename \mbox{\hyperlink{classbasic__string__view}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-constexpr \mbox{\hyperlink{classbasic__format__parse__context_af01e97bdaf9b682303ee92d329c3d028}{basic\+\_\+format\+\_\+parse\+\_\+context}} (\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$ format\+\_\+str, Error\+Handler eh=\{\}, int \mbox{\hyperlink{classbasic__format__parse__context_a9eb66391da04f3f435cb4664fc9d9170}{next\+\_\+arg\+\_\+id}}=0)
+\mbox{\Hypertarget{classbasic__format__parse__context_af01e97bdaf9b682303ee92d329c3d028}\label{classbasic__format__parse__context_af01e97bdaf9b682303ee92d329c3d028}} 
+constexpr {\bfseries basic\+\_\+format\+\_\+parse\+\_\+context} (\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$ format\+\_\+str, Error\+Handler eh=\{\}, int \mbox{\hyperlink{classbasic__format__parse__context_a9eb66391da04f3f435cb4664fc9d9170}{next\+\_\+arg\+\_\+id}}=0)
 \item 
-constexpr auto \mbox{\hyperlink{classbasic__format__parse__context_acacc81561f6136973796f6b1ec4bdd5d}{begin}} () const noexcept -\/$>$ iterator
+\mbox{\Hypertarget{classbasic__format__parse__context_acacc81561f6136973796f6b1ec4bdd5d}\label{classbasic__format__parse__context_acacc81561f6136973796f6b1ec4bdd5d}} 
+constexpr auto {\bfseries begin} () const noexcept -\/$>$ iterator
 \begin{DoxyCompactList}\small\item\em Returns an iterator to the beginning of the format string range being parsed. \end{DoxyCompactList}\item 
-constexpr auto \mbox{\hyperlink{classbasic__format__parse__context_a624461a9a7da10bd63bb596fb988fc0f}{end}} () const noexcept -\/$>$ iterator
+\mbox{\Hypertarget{classbasic__format__parse__context_a624461a9a7da10bd63bb596fb988fc0f}\label{classbasic__format__parse__context_a624461a9a7da10bd63bb596fb988fc0f}} 
+constexpr auto {\bfseries end} () const noexcept -\/$>$ iterator
 \begin{DoxyCompactList}\small\item\em Returns an iterator past the end of the format string range being parsed. \end{DoxyCompactList}\item 
-FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classbasic__format__parse__context_ac123ab6c1c6e58db3ab0a917def4add8}{advance\+\_\+to}} (iterator it)
+\mbox{\Hypertarget{classbasic__format__parse__context_ac123ab6c1c6e58db3ab0a917def4add8}\label{classbasic__format__parse__context_ac123ab6c1c6e58db3ab0a917def4add8}} 
+FMT\+\_\+\+CONSTEXPR void {\bfseries advance\+\_\+to} (iterator it)
 \begin{DoxyCompactList}\small\item\em Advances the begin iterator to {\ttfamily it}. \end{DoxyCompactList}\item 
-FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classbasic__format__parse__context_a9eb66391da04f3f435cb4664fc9d9170}{next\+\_\+arg\+\_\+id}} () -\/$>$ int
+\mbox{\Hypertarget{classbasic__format__parse__context_a9eb66391da04f3f435cb4664fc9d9170}\label{classbasic__format__parse__context_a9eb66391da04f3f435cb4664fc9d9170}} 
+FMT\+\_\+\+CONSTEXPR auto {\bfseries next\+\_\+arg\+\_\+id} () -\/$>$ int
 \begin{DoxyCompactList}\small\item\em Reports an error if using the manual argument indexing; otherwise returns the next argument index and switches to the automatic indexing. \end{DoxyCompactList}\item 
-FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classbasic__format__parse__context_a5dc605ebf44606770789dc6059235130}{check\+\_\+arg\+\_\+id}} (int id)
+\mbox{\Hypertarget{classbasic__format__parse__context_a5dc605ebf44606770789dc6059235130}\label{classbasic__format__parse__context_a5dc605ebf44606770789dc6059235130}} 
+FMT\+\_\+\+CONSTEXPR void {\bfseries check\+\_\+arg\+\_\+id} (int id)
 \begin{DoxyCompactList}\small\item\em Reports an error if using the automatic argument indexing; otherwise switches to the manual indexing. \end{DoxyCompactList}\item 
-FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classbasic__format__parse__context_a2c5adaac8abfa6bac5e65faae644d415}{check\+\_\+arg\+\_\+id}} (\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$)
+\mbox{\Hypertarget{classbasic__format__parse__context_a2c5adaac8abfa6bac5e65faae644d415}\label{classbasic__format__parse__context_a2c5adaac8abfa6bac5e65faae644d415}} 
+FMT\+\_\+\+CONSTEXPR void {\bfseries check\+\_\+arg\+\_\+id} (\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$)
 \item 
-FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classbasic__format__parse__context_a57d1f70a909bca84e69ffb8961d91563}{on\+\_\+error}} (const char $\ast$message)
+\mbox{\Hypertarget{classbasic__format__parse__context_a57d1f70a909bca84e69ffb8961d91563}\label{classbasic__format__parse__context_a57d1f70a909bca84e69ffb8961d91563}} 
+FMT\+\_\+\+CONSTEXPR void {\bfseries on\+\_\+error} (const char $\ast$message)
 \item 
-constexpr auto \mbox{\hyperlink{classbasic__format__parse__context_a2fc3bd39152ec422f74a15e016d8c1cb}{error\+\_\+handler}} () const -\/$>$ Error\+Handler
+\mbox{\Hypertarget{classbasic__format__parse__context_a2fc3bd39152ec422f74a15e016d8c1cb}\label{classbasic__format__parse__context_a2fc3bd39152ec422f74a15e016d8c1cb}} 
+constexpr auto {\bfseries error\+\_\+handler} () const -\/$>$ Error\+Handler
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -69,163 +78,6 @@ class basic\+\_\+format\+\_\+parse\+\_\+context$<$ Char, Error\+Handler $>$}
 
 You can use the {\ttfamily format\+\_\+parse\+\_\+context} type alias for {\ttfamily char} instead. \textbackslash{}endrst 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classbasic__format__parse__context_af01e97bdaf9b682303ee92d329c3d028}\label{classbasic__format__parse__context_af01e97bdaf9b682303ee92d329c3d028}} 
-\index{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$@{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$}!basic\_format\_parse\_context@{basic\_format\_parse\_context}}
-\index{basic\_format\_parse\_context@{basic\_format\_parse\_context}!basic\_format\_parse\_context$<$ Char, ErrorHandler $>$@{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$}}
-\doxysubsubsection{\texorpdfstring{basic\_format\_parse\_context()}{basic\_format\_parse\_context()}}
-{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler  = detail\+::error\+\_\+handler$>$ \\
-constexpr \mbox{\hyperlink{classbasic__format__parse__context}{basic\+\_\+format\+\_\+parse\+\_\+context}}$<$ Char, Error\+Handler $>$\mbox{\hyperlink{classbasic__format__parse__context}{\+::basic\+\_\+format\+\_\+parse\+\_\+context}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$}]{format\+\_\+str,  }\item[{Error\+Handler}]{eh = {\ttfamily \{\}},  }\item[{int}]{next\+\_\+arg\+\_\+id = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [constexpr]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{662                                                             \{\},}
-\DoxyCodeLine{663       \textcolor{keywordtype}{int} \mbox{\hyperlink{classbasic__format__parse__context_a9eb66391da04f3f435cb4664fc9d9170}{next\_arg\_id}} = 0)}
-\DoxyCodeLine{664       : ErrorHandler(eh), format\_str\_(format\_str), next\_arg\_id\_(\mbox{\hyperlink{classbasic__format__parse__context_a9eb66391da04f3f435cb4664fc9d9170}{next\_arg\_id}}) \{\}}
-
-\end{DoxyCode}
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classbasic__format__parse__context_ac123ab6c1c6e58db3ab0a917def4add8}\label{classbasic__format__parse__context_ac123ab6c1c6e58db3ab0a917def4add8}} 
-\index{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$@{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$}!advance\_to@{advance\_to}}
-\index{advance\_to@{advance\_to}!basic\_format\_parse\_context$<$ Char, ErrorHandler $>$@{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$}}
-\doxysubsubsection{\texorpdfstring{advance\_to()}{advance\_to()}}
-{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler  = detail\+::error\+\_\+handler$>$ \\
-FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classbasic__format__parse__context}{basic\+\_\+format\+\_\+parse\+\_\+context}}$<$ Char, Error\+Handler $>$\+::advance\+\_\+to (\begin{DoxyParamCaption}\item[{iterator}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Advances the begin iterator to {\ttfamily it}. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{680                                              \{}
-\DoxyCodeLine{681     format\_str\_.remove\_prefix(detail::to\_unsigned(it -\/ \mbox{\hyperlink{classbasic__format__parse__context_acacc81561f6136973796f6b1ec4bdd5d}{begin}}()));}
-\DoxyCodeLine{682   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classbasic__format__parse__context_acacc81561f6136973796f6b1ec4bdd5d}\label{classbasic__format__parse__context_acacc81561f6136973796f6b1ec4bdd5d}} 
-\index{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$@{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$}!begin@{begin}}
-\index{begin@{begin}!basic\_format\_parse\_context$<$ Char, ErrorHandler $>$@{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$}}
-\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
-{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler  = detail\+::error\+\_\+handler$>$ \\
-constexpr auto \mbox{\hyperlink{classbasic__format__parse__context}{basic\+\_\+format\+\_\+parse\+\_\+context}}$<$ Char, Error\+Handler $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ iterator \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
-
-
-
-Returns an iterator to the beginning of the format string range being parsed. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{670                                                     \{}
-\DoxyCodeLine{671     \textcolor{keywordflow}{return} format\_str\_.begin();}
-\DoxyCodeLine{672   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classbasic__format__parse__context_a2c5adaac8abfa6bac5e65faae644d415}\label{classbasic__format__parse__context_a2c5adaac8abfa6bac5e65faae644d415}} 
-\index{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$@{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$}!check\_arg\_id@{check\_arg\_id}}
-\index{check\_arg\_id@{check\_arg\_id}!basic\_format\_parse\_context$<$ Char, ErrorHandler $>$@{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$}}
-\doxysubsubsection{\texorpdfstring{check\_arg\_id()}{check\_arg\_id()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler  = detail\+::error\+\_\+handler$>$ \\
-FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classbasic__format__parse__context}{basic\+\_\+format\+\_\+parse\+\_\+context}}$<$ Char, Error\+Handler $>$\+::check\+\_\+arg\+\_\+id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classbasic__string__view}{basic\+\_\+string\+\_\+view}}$<$ Char $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{711 \{\}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classbasic__format__parse__context_a5dc605ebf44606770789dc6059235130}\label{classbasic__format__parse__context_a5dc605ebf44606770789dc6059235130}} 
-\index{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$@{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$}!check\_arg\_id@{check\_arg\_id}}
-\index{check\_arg\_id@{check\_arg\_id}!basic\_format\_parse\_context$<$ Char, ErrorHandler $>$@{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$}}
-\doxysubsubsection{\texorpdfstring{check\_arg\_id()}{check\_arg\_id()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler  = detail\+::error\+\_\+handler$>$ \\
-FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classbasic__format__parse__context}{basic\+\_\+format\+\_\+parse\+\_\+context}}$<$ Char, Error\+Handler $>$\+::check\+\_\+arg\+\_\+id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Reports an error if using the automatic argument indexing; otherwise switches to the manual indexing. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{702                                           \{}
-\DoxyCodeLine{703     \textcolor{keywordflow}{if} (next\_arg\_id\_ > 0) \{}
-\DoxyCodeLine{704       on\_error(\textcolor{stringliteral}{"{}cannot switch from automatic to manual argument indexing"{}});}
-\DoxyCodeLine{705       \textcolor{keywordflow}{return};}
-\DoxyCodeLine{706     \}}
-\DoxyCodeLine{707     next\_arg\_id\_ = -\/1;}
-\DoxyCodeLine{708     do\_check\_arg\_id(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{709   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classbasic__format__parse__context_a624461a9a7da10bd63bb596fb988fc0f}\label{classbasic__format__parse__context_a624461a9a7da10bd63bb596fb988fc0f}} 
-\index{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$@{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$}!end@{end}}
-\index{end@{end}!basic\_format\_parse\_context$<$ Char, ErrorHandler $>$@{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$}}
-\doxysubsubsection{\texorpdfstring{end()}{end()}}
-{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler  = detail\+::error\+\_\+handler$>$ \\
-constexpr auto \mbox{\hyperlink{classbasic__format__parse__context}{basic\+\_\+format\+\_\+parse\+\_\+context}}$<$ Char, Error\+Handler $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ iterator \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
-
-
-
-Returns an iterator past the end of the format string range being parsed. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{677 \{ \textcolor{keywordflow}{return} format\_str\_.end(); \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classbasic__format__parse__context_a2fc3bd39152ec422f74a15e016d8c1cb}\label{classbasic__format__parse__context_a2fc3bd39152ec422f74a15e016d8c1cb}} 
-\index{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$@{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$}!error\_handler@{error\_handler}}
-\index{error\_handler@{error\_handler}!basic\_format\_parse\_context$<$ Char, ErrorHandler $>$@{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$}}
-\doxysubsubsection{\texorpdfstring{error\_handler()}{error\_handler()}}
-{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler  = detail\+::error\+\_\+handler$>$ \\
-constexpr auto \mbox{\hyperlink{classbasic__format__parse__context}{basic\+\_\+format\+\_\+parse\+\_\+context}}$<$ Char, Error\+Handler $>$\mbox{\hyperlink{structerror__handler}{\+::error\+\_\+handler}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ Error\+Handler \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{717 \{ \textcolor{keywordflow}{return} *\textcolor{keyword}{this}; \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classbasic__format__parse__context_a9eb66391da04f3f435cb4664fc9d9170}\label{classbasic__format__parse__context_a9eb66391da04f3f435cb4664fc9d9170}} 
-\index{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$@{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$}!next\_arg\_id@{next\_arg\_id}}
-\index{next\_arg\_id@{next\_arg\_id}!basic\_format\_parse\_context$<$ Char, ErrorHandler $>$@{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$}}
-\doxysubsubsection{\texorpdfstring{next\_arg\_id()}{next\_arg\_id()}}
-{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler  = detail\+::error\+\_\+handler$>$ \\
-FMT\+\_\+\+CONSTEXPR auto \mbox{\hyperlink{classbasic__format__parse__context}{basic\+\_\+format\+\_\+parse\+\_\+context}}$<$ Char, Error\+Handler $>$\+::next\+\_\+arg\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$ int \hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Reports an error if using the manual argument indexing; otherwise returns the next argument index and switches to the automatic indexing. 
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{688                                           \{}
-\DoxyCodeLine{689     \textcolor{keywordflow}{if} (next\_arg\_id\_ < 0) \{}
-\DoxyCodeLine{690       on\_error(\textcolor{stringliteral}{"{}cannot switch from manual to automatic argument indexing"{}});}
-\DoxyCodeLine{691       \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{692     \}}
-\DoxyCodeLine{693     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = next\_arg\_id\_++;}
-\DoxyCodeLine{694     do\_check\_arg\_id(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{695     \textcolor{keywordflow}{return} id;}
-\DoxyCodeLine{696   \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classbasic__format__parse__context_a57d1f70a909bca84e69ffb8961d91563}\label{classbasic__format__parse__context_a57d1f70a909bca84e69ffb8961d91563}} 
-\index{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$@{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$}!on\_error@{on\_error}}
-\index{on\_error@{on\_error}!basic\_format\_parse\_context$<$ Char, ErrorHandler $>$@{basic\_format\_parse\_context$<$ Char, ErrorHandler $>$}}
-\doxysubsubsection{\texorpdfstring{on\_error()}{on\_error()}}
-{\footnotesize\ttfamily template$<$typename Char , typename Error\+Handler  = detail\+::error\+\_\+handler$>$ \\
-FMT\+\_\+\+CONSTEXPR void \mbox{\hyperlink{classbasic__format__parse__context}{basic\+\_\+format\+\_\+parse\+\_\+context}}$<$ Char, Error\+Handler $>$\+::on\+\_\+error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{713                                                    \{}
-\DoxyCodeLine{714     ErrorHandler::on\_error(message);}
-\DoxyCodeLine{715   \}}
-
-\end{DoxyCode}
-
-
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/core.\+h\end{DoxyCompactItemize}
+core.\+h\end{DoxyCompactItemize}

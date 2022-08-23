@@ -78,7 +78,7 @@ $(function() {
 <p>Context used when creating test suite in HelperMacros.  
  <a href="../../df/da2/class_test_suite_builder_context_base.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../dc/d31/_test_suite_builder_context_8h_source.html">TestSuiteBuilderContext.h</a>&gt;</code></p>
+<p><code>#include &lt;TestSuiteBuilderContext.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TestSuiteBuilderContextBase:</div>
 <div class="dyncontent">
@@ -382,16 +382,11 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string that is the concatenation of the test fixture name (returned by <a class="el" href="../../df/da2/class_test_suite_builder_context_base.html#a715ebe9b929a416525e8d505ff5fef5c" title="Returns the fixture name.">getFixtureName()</a>), <em>testMethodName</em>, separated using '::' and the parameter. This provides a fairly unique name for a given test. The parameter must be convertable to std::string through operator&lt;&lt; or a specialization of CPPUNIT_NS::StringHelper::toString needs to exist. </dd></dl>
-<div class="fragment"><div class="line"><span class="lineno">   81</span>  {</div>
-<div class="line"><span class="lineno">   82</span>      <span class="keywordflow">return</span> m_namer.<a class="code hl_function" href="../../d9/d98/class_test_namer.html#a7ef850fe8d086f84ac8a0b3f11be95fe">getTestNameFor</a>(testMethodName, <a class="code hl_class" href="../../d7/d71/classvalue.html">value</a>);</div>
-<div class="line"><span class="lineno">   83</span>  }</div>
-<div class="ttc" id="aclass_test_namer_html_a7ef850fe8d086f84ac8a0b3f11be95fe"><div class="ttname"><a href="../../d9/d98/class_test_namer.html#a7ef850fe8d086f84ac8a0b3f11be95fe">TestNamer::getTestNameFor</a></div><div class="ttdeci">virtual std::string getTestNameFor(const std::string &amp;testMethodName) const</div><div class="ttdoc">Returns the name of the test for the specified method.</div></div>
-<div class="ttc" id="aclassvalue_html"><div class="ttname"><a href="../../d7/d71/classvalue.html">value</a></div><div class="ttdef"><b>Definition:</b> core.h:1221</div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>out/build/x64/vcpkg_installed/x86-windows/include/cppunit/extensions/<a class="el" href="../../dc/d31/_test_suite_builder_context_8h_source.html">TestSuiteBuilderContext.h</a></li>
+<li>TestSuiteBuilderContext.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

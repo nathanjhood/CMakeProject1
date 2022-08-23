@@ -80,11 +80,12 @@ $(function() {
 <p>Locks a synchronization object in the current scope.  
  <a href="../../db/ddb/class_synchronized_object_1_1_exclusive_zone.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d9/d09/_synchronized_object_8h_source.html">SynchronizedObject.h</a>&gt;</code></p>
+<p><code>#include &lt;SynchronizedObject.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae4393b508828328c2f4816ff9b7b090c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/ddb/class_synchronized_object_1_1_exclusive_zone.html#ae4393b508828328c2f4816ff9b7b090c">ExclusiveZone</a> (<a class="el" href="../../d8/dee/class_synchronized_object_1_1_synchronization_object.html">SynchronizationObject</a> *syncObject)</td></tr>
+<tr class="memitem:ae4393b508828328c2f4816ff9b7b090c"><td class="memItemLeft" align="right" valign="top"><a id="ae4393b508828328c2f4816ff9b7b090c" name="ae4393b508828328c2f4816ff9b7b090c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ExclusiveZone</b> (<a class="el" href="../../d8/dee/class_synchronized_object_1_1_synchronization_object.html">SynchronizationObject</a> *syncObject)</td></tr>
 <tr class="separator:ae4393b508828328c2f4816ff9b7b090c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
@@ -106,67 +107,8 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Locks a synchronization object in the current scope. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae4393b508828328c2f4816ff9b7b090c" name="ae4393b508828328c2f4816ff9b7b090c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4393b508828328c2f4816ff9b7b090c">&#9670;&nbsp;</a></span>ExclusiveZone()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">SynchronizedObject::ExclusiveZone::ExclusiveZone </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d8/dee/class_synchronized_object_1_1_synchronization_object.html">SynchronizationObject</a> *&#160;</td>
-          <td class="paramname"><em>syncObject</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   53</span>        : m_syncObject( syncObject )</div>
-<div class="line"><span class="lineno">   54</span>    { </div>
-<div class="line"><span class="lineno">   55</span>      m_syncObject-&gt;lock();</div>
-<div class="line"><span class="lineno">   56</span>    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a501678d50abfd678ff0ce0fc164c63d4" name="a501678d50abfd678ff0ce0fc164c63d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a501678d50abfd678ff0ce0fc164c63d4">&#9670;&nbsp;</a></span>~ExclusiveZone()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">SynchronizedObject::ExclusiveZone::~ExclusiveZone </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   59</span>    { </div>
-<div class="line"><span class="lineno">   60</span>      m_syncObject-&gt;unlock ();</div>
-<div class="line"><span class="lineno">   61</span>    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>out/build/x64/vcpkg_installed/x86-windows/include/cppunit/<a class="el" href="../../d9/d09/_synchronized_object_8h_source.html">SynchronizedObject.h</a></li>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
+<li>SynchronizedObject.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

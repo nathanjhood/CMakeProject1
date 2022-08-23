@@ -9,14 +9,17 @@ Inheritance diagram for appender\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classappender_a1acf7573b56e27b650610d8c545f597a}{appender}} (base it) noexcept
+\mbox{\Hypertarget{classappender_a1acf7573b56e27b650610d8c545f597a}\label{classappender_a1acf7573b56e27b650610d8c545f597a}} 
+{\bfseries appender} (base it) noexcept
 \item 
 \mbox{\Hypertarget{classappender_a93d117bfbb00019129ced24e619d055e}\label{classappender_a93d117bfbb00019129ced24e619d055e}} 
 {\bfseries FMT\+\_\+\+UNCHECKED\+\_\+\+ITERATOR} (\mbox{\hyperlink{classappender}{appender}})
 \item 
-auto \mbox{\hyperlink{classappender_a23d87e247e645407fe5cd806c232082d}{operator++}} () noexcept -\/$>$ \mbox{\hyperlink{classappender}{appender}} \&
+\mbox{\Hypertarget{classappender_a23d87e247e645407fe5cd806c232082d}\label{classappender_a23d87e247e645407fe5cd806c232082d}} 
+auto {\bfseries operator++} () noexcept -\/$>$ \mbox{\hyperlink{classappender}{appender}} \&
 \item 
-auto \mbox{\hyperlink{classappender_a6a330c6be6f61b95c7efcd06f209f656}{operator++}} (int) noexcept -\/$>$ \mbox{\hyperlink{classappender}{appender}}
+\mbox{\Hypertarget{classappender_a6a330c6be6f61b95c7efcd06f209f656}\label{classappender_a6a330c6be6f61b95c7efcd06f209f656}} 
+auto {\bfseries operator++} (int) noexcept -\/$>$ \mbox{\hyperlink{classappender}{appender}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Types}
 \begin{DoxyCompactItemize}
@@ -27,66 +30,11 @@ using {\bfseries base} = std\+::back\+\_\+insert\+\_\+iterator$<$ detail\+::buff
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T $>$ }\\auto \mbox{\hyperlink{classappender_aaf95c197690d6afcf71924ad22379be6}{get\+\_\+buffer}} (\mbox{\hyperlink{classappender}{appender}} out) -\/$>$ detail\+::buffer$<$ char $>$ \&
-\end{DoxyCompactItemize}
-
-
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classappender_a1acf7573b56e27b650610d8c545f597a}\label{classappender_a1acf7573b56e27b650610d8c545f597a}} 
-\index{appender@{appender}!appender@{appender}}
-\index{appender@{appender}!appender@{appender}}
-\doxysubsubsection{\texorpdfstring{appender()}{appender()}}
-{\footnotesize\ttfamily appender\+::appender (\begin{DoxyParamCaption}\item[{base}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1534 : base(it) \{\}}
-
-\end{DoxyCode}
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classappender_a23d87e247e645407fe5cd806c232082d}\label{classappender_a23d87e247e645407fe5cd806c232082d}} 
-\index{appender@{appender}!operator++@{operator++}}
-\index{operator++@{operator++}!appender@{appender}}
-\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily auto appender\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classappender}{appender}}\& \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1537 \{ \textcolor{keywordflow}{return} *\textcolor{keyword}{this}; \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{classappender_a6a330c6be6f61b95c7efcd06f209f656}\label{classappender_a6a330c6be6f61b95c7efcd06f209f656}} 
-\index{appender@{appender}!operator++@{operator++}}
-\index{operator++@{operator++}!appender@{appender}}
-\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily auto appender\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{classappender}{appender}} \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1538 \{ \textcolor{keywordflow}{return} *\textcolor{keyword}{this}; \}}
-
-\end{DoxyCode}
-
-
-\doxysubsection{Friends And Related Function Documentation}
 \mbox{\Hypertarget{classappender_aaf95c197690d6afcf71924ad22379be6}\label{classappender_aaf95c197690d6afcf71924ad22379be6}} 
-\index{appender@{appender}!get\_buffer@{get\_buffer}}
-\index{get\_buffer@{get\_buffer}!appender@{appender}}
-\doxysubsubsection{\texorpdfstring{get\_buffer}{get\_buffer}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-auto get\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classappender}{appender}}}]{out }\end{DoxyParamCaption}) -\/$>$ detail\+::buffer$<$char$>$\& \hspace{0.3cm}{\ttfamily [friend]}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{1528                                                               \{}
-\DoxyCodeLine{1529     \textcolor{keywordflow}{return} detail::get\_container(out);}
-\DoxyCodeLine{1530   \}}
-
-\end{DoxyCode}
+{\footnotesize template$<$typename T $>$ }\\auto {\bfseries get\+\_\+buffer} (\mbox{\hyperlink{classappender}{appender}} out) -\/$>$ detail\+::buffer$<$ char $>$ \&
+\end{DoxyCompactItemize}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-out/build/x64/vcpkg\+\_\+installed/x86-\/windows/include/fmt/core.\+h\end{DoxyCompactItemize}
+core.\+h\end{DoxyCompactItemize}
