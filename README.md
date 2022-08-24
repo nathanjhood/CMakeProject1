@@ -18,7 +18,7 @@ Generic CMake Project template for a full CI pipeline, with in-built package dep
 *or*
 - Visual Studio Code with MS CMake extension and MSBuild Tools 2022
 
-<a href= "https://stoneydsp.github.io/CMakeProject1/index.html">Manual - v0.0.0.1</a>
+<a href= "https://stoneydsp.github.io/CMakeProject1/html/index.html">Manual - v0.0.0.1</a>
 
 <p align="center">
  <img src="https://github.com/StoneyDSP/CMakeProject1/blob/main/CMakeProject1_Logo.gif?raw=true"/></a>
