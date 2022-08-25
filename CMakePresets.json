@@ -13,20 +13,12 @@
             "generator": "Ninja",
             "binaryDir": "${sourceDir}",
             "installDir": "${sourceDir}",
-            "architecture":{"value": ""},
-            "toolchainFile": "${env:VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
-            "vendor": {
-                "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "hostOS": "Windows",
-                    "cacheRoot": "${sourceDir}/out/build/${presetName}/CMakeCache.txt",
-                    "enableMicrosoftCodeAnalysis": true
+            "debug": {
+                "find": false,
+                "tryCompile": false,
+                "output": false
                 },
-                "microsoft.com/VisualStudioRemoteSettings/CMake/3.2": {
-                    "copySources": true,
-                    "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}",
-                    "copyBuildOutput": false
-                }
-            },
+            "toolchainFile": "${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
             "cacheVariables": {
                 "CMAKE_CXX_COMPILER": "cl.exe"
             },
@@ -55,9 +47,25 @@
                 "value": "x64",
                 "strategy": "external"
             },
+            "cacheVariables": {
+                "VCPKG_TARGET_TRIPLET": "x64-windows"
+            },
+            "toolset":{
+                "value": "x64",
+                "strategy": "external"
+            },
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "intelliSenseMode": "windows-msvc-x64"
+                    "hostOS": "Windows",
+                    "cacheRoot": "${sourceDir}",
+                    "enableMicrosoftCodeAnalysis": true,
+                    "intelliSenseMode": "windows-msvc-x64",
+                    "intelliSenseOptions": {}
+                },
+                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
+                    "copySources": true,
+                    "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}",
+                    "copyBuildOutput": false
                 }
             }
         },
