@@ -1,4 +1,4 @@
-{
+﻿{
     "version": 3,
     "cmakeMinimumRequired": {
         "major": 3,
@@ -17,7 +17,7 @@
                 "find": false,
                 "tryCompile": false,
                 "output": false
-                },
+            },
             "toolchainFile": "${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
             "cacheVariables": {
                 "CMAKE_CXX_COMPILER": "cl.exe"
@@ -77,9 +77,28 @@
                 "value": "x86",
                 "strategy": "external"
             },
+            "toolset":{
+                "value": "x86",
+                "strategy": "external"
+            },
+            "cacheVariables": {
+                "VCPKG_TARGET_TRIPLET": "x86-windows"
+            },
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "intelliSenseMode": "windows-msvc-x86"
+                    "hostOS": "Windows",
+                    "cacheRoot": "${sourceDir}/CMakeCache.txt",
+                    "enableMicrosoftCodeAnalysis": true,
+                    "intelliSenseMode": "windows-msvc-x86",
+                    "intelliSenseOptions": {
+                        "useCompilerDefaults": true,
+                        "additionalCompilerArgs": "empty"
+                    }
+                },
+                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
+                    "copySources": true,
+                    "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}",
+                    "copyBuildOutput": false
                 }
             }
         }
@@ -181,17 +200,5 @@
             "output": {"outputOnFailure": true},
             "execution": {"noTestsAction": "error", "stopOnFailure": true}
         }
-    ],
-    "vendor": {
-        "microsoft.com/VisualStudioSettings/CMake/1.0": {
-            "hostOS": "Windows",
-            "cacheRoot": "${sourceDir}/out/build/${presetName}/CMakeCache.txt",
-            "enableMicrosoftCodeAnalysis": true
-        },
-        "microsoft.com/VisualStudioRemoteSettings/CMake/3.2": {
-            "copySources": true,
-            "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}",
-            "copyBuildOutput": false
-        }
-    }
+    ]
 }
