@@ -16,7 +16,7 @@ project (
 	VERSION 0.0.0.1
 	DESCRIPTION "Generic CMake Project with in-built package manager"
 	HOMEPAGE_URL https://stoneydsp.github.io/CMakeProject1/html/index.html
-	LANGUAGES C CXX
+	LANGUAGES CXX
 )
 
 # Add source to this project's executable.
