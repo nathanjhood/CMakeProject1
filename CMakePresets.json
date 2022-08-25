@@ -1,4 +1,4 @@
-﻿{
+{
     "version": 3,
     "cmakeMinimumRequired": {
         "major": 3,
@@ -97,6 +97,24 @@
             "verbose": true
         },
         {
+            "name": "x64 RelWithDebInfo",
+            "displayName": "RelWithDebInfo",
+            "description": "x64 RelWithDebInfo",
+            "configurePreset": "x64",
+            "configuration": "RelWithDebInfo",
+            "inheritConfigureEnvironment": true,
+            "verbose": true
+        },
+        {
+            "name": "x64 MinSizeRel",
+            "displayName": "MinSizeRel",
+            "description": "x64 MinSizeRel",
+            "configurePreset": "x64",
+            "configuration": "MinSizeRel",
+            "inheritConfigureEnvironment": true,
+            "verbose": true
+        },
+        {
             "name": "x86 Debug",
             "displayName": "Debug",
             "description": "x86 Debug",
@@ -111,6 +129,24 @@
             "description": "x86 Release",
             "configurePreset": "x86",
             "configuration": "Release",
+            "inheritConfigureEnvironment": true,
+            "verbose": true
+        },
+        {
+            "name": "x86 RelWithDebInfo",
+            "displayName": "RelWithDebInfo",
+            "description": "x86 RelWithDebInfo",
+            "configurePreset": "x86",
+            "configuration": "RelWithDebInfo",
+            "inheritConfigureEnvironment": true,
+            "verbose": true
+        },
+        {
+            "name": "x86 MinSizeRel",
+            "displayName": "MinSizeRel",
+            "description": "x86 MinSizeRel",
+            "configurePreset": "x86",
+            "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
             "verbose": true
         }
