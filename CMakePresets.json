@@ -10,15 +10,25 @@
             "name": "windows-base",
             "description": "This build is only available on Windows",
             "hidden": true,
-            "environment": {"vcpkg root": "$penv{VCPKG_ROOT}"},
             "generator": "Ninja",
-            "binaryDir": "${sourceDir}/out/build/${presetName}",
-            "installDir": "${sourceDir}/out/install/${presetName}",
+            "binaryDir": "${sourceDir}",
+            "installDir": "${sourceDir}",
+            "architecture":{"value": ""},
+            "toolchainFile": "${env:VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "hostOS": "Windows",
+                    "cacheRoot": "${sourceDir}/out/build/${presetName}/CMakeCache.txt",
+                    "enableMicrosoftCodeAnalysis": true
+                },
+                "microsoft.com/VisualStudioRemoteSettings/CMake/3.2": {
+                    "copySources": true,
+                    "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}",
+                    "copyBuildOutput": false
+                }
+            },
             "cacheVariables": {
-                "CMAKE_C_COMPILER": "cl.exe",
-                "CMAKE_CXX_COMPILER": "cl.exe",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": true,
-                "CMAKE_TOOLCHAIN_FILE": "$env{vcpkg root}/scripts/buildsystems/vcpkg.cmake"
+                "CMAKE_CXX_COMPILER": "cl.exe"
             },
             "errors": {
                 "deprecated": true,
@@ -47,12 +57,7 @@
             },
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "hostOS": "Windows",
-                    "intelliSenseMode": "windows-msvc-x64",
-                    "enableMicrosoftCodeAnalysis": true
-                },
-                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
-                    "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}"
+                    "intelliSenseMode": "windows-msvc-x64"
                 }
             }
         },
@@ -66,13 +71,7 @@
             },
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "hostOS": "Windows",
-                    "intelliSenseMode": "windows-msvc-x86",
-                    "enableMicrosoftCodeAnalysis": true
-                },
-                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
-                    "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}"
-
+                    "intelliSenseMode": "windows-msvc-x86"
                 }
             }
         }
@@ -124,7 +123,9 @@
             "description": "x64 Test",
             "configurePreset": "x64",
             "configuration": "Debug",
-            "inheritConfigureEnvironment": true
+            "inheritConfigureEnvironment": true,
+            "output": {"outputOnFailure": true},
+            "execution": {"noTestsAction": "error", "stopOnFailure": true}
         },
         {
             "name": "x86 Test",
@@ -132,7 +133,21 @@
             "description": "x86 Test",
             "configurePreset": "x86",
             "configuration": "Debug",
-            "inheritConfigureEnvironment": true
+            "inheritConfigureEnvironment": true,
+            "output": {"outputOnFailure": true},
+            "execution": {"noTestsAction": "error", "stopOnFailure": true}
         }
-    ]
+    ],
+    "vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": {
+            "hostOS": "Windows",
+            "cacheRoot": "${sourceDir}/out/build/${presetName}/CMakeCache.txt",
+            "enableMicrosoftCodeAnalysis": true
+        },
+        "microsoft.com/VisualStudioRemoteSettings/CMake/3.2": {
+            "copySources": true,
+            "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}",
+            "copyBuildOutput": false
+        }
+    }
 }
