@@ -26,7 +26,10 @@ Generic CMake Project template for a full CI pipeline, with in-built package dep
 
 *Please note; this project template is provided as-is under the BSD3 clause, as required by CMake. The author shall not be held liable for any damages arising from misuse of this intellectual property.*
 
-
+<p align="center">
+<a href= "https://stoneydsp.github.io/html/index.html">
+ <img src="https://github.com/StoneyDSP/StoneyDSP.github.io/blob/main/Assets/StoneyDSP-logo2_25.png?raw=true"/></a>
+</p>
 
 ## Before we begin...
 
