@@ -1,7 +1,7 @@
 {
 	"folders": [
 		{
-			"path": ".",
+			"path": "."
 		}
 	],
 	"settings": {
@@ -20,8 +20,7 @@
 		"C_Cpp.default.compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.32.31326/bin/Hostx64/x64/cl.exe",
 		"C_Cpp.default.intelliSenseMode": "windows-msvc-x64",
 		"C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-		"C_Cpp.default.cppStandard": "c++17",
-		"C_Cpp.default.cStandard": "c17",
+		"C_Cpp.default.cppStandard": "c++20",
 		"C_Cpp.default.mergeConfigurations": true,
 		"C_Cpp.loggingLevel": "Debug",
 		"C_Cpp.dimInactiveRegions": true,
@@ -31,13 +30,11 @@
 			"${vcpkgRoot}/x86-windows/include"
 		],
 		"cmake.configureOnOpen":true,
+		"cmake.environment": {},
+		"cmake.saveBeforeBuild": true,
 		"cmake.clearOutputBeforeBuild": true,
-		"cmake.environment": {
-			"vcpkg root": "$penv{VCPKG_ROOT}"
-		},
-		"cmake.configureSettings": {
-			"CMAKE_TOOLCHAIN_FILE": "[vcpkg root]/scripts/buildsystems/vcpkg.cmake"
-		},
+		"cmake.useCMakePresets": "auto",
+		"cmake.showSystemKits": true,
 		"cmake.mingwSearchDirs": [
 			"${env:SystemDrive}/MinGW"
 		],
