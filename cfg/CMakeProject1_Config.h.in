@@ -24,5 +24,6 @@
 #define projectDescription "${CMAKE_PROJECT_DESCRIPTION}"
 #define projectVersion "v${CMAKE_PROJECT_VERSION}"
 #define projectWebsite "${CMAKE_PROJECT_HOMEPAGE_URL}"
+#define cppComiler "${CMAKE_CXX_COMPILER}"
 
 #endif // CONFIG_H_INCLUDED
