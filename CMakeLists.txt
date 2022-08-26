@@ -19,6 +19,25 @@ project (
 	LANGUAGES CXX
 )
 
+# Host handling
+if(WIN32)
+    add_compile_definitions(WINDOWS=1)
+endif ()
+
+if (UNIX AND NOT APPLE)
+    add_compile_definitions(LINUX=1)
+endif ()
+
+if (APPLE)
+    add_compile_definitions(APPLE=1)
+endif ()
+
+if(${CMAKE_BUILD_TYPE} MATCHES Debug)
+    add_compile_definitions(_DEBUG=1)
+else()
+    add_compile_definitions(NDEBUG=1)
+endif(${CMAKE_BUILD_TYPE} MATCHES Debug)
+
 # Add source to this project's executable.
 add_executable (CMakeProject1
 	"${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp"
@@ -26,6 +45,11 @@ add_executable (CMakeProject1
 	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/${CMAKE_PROJECT_NAME}_Config.h.in"
 	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/${CMAKE_PROJECT_NAME}_Config.h"
 )
+
+# Check language requirements.
+if (CMAKE_VERSION VERSION_GREATER 3.12)
+  set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY CXX_STANDARD 20)
+endif()
 
 # Add packages (including IntelliSense) to the project.
 find_package (fmt CONFIG REQUIRED)
@@ -40,18 +64,20 @@ configure_file (
 	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/${CMAKE_PROJECT_NAME}_Config.h"
 )
 
-# Check language requirements.
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY CXX_STANDARD 20)
-endif()
-
 # Include sub-folder/projects.
 add_subdirectory ("src")
 add_subdirectory ("cfg")
 
 # Add tests and install targets if needed. Comment out if not required.
+set(CPACK_PROJECT_NAME ${CMAKE_PROJECT_NAME})
+set(CPACK_PROJECT_VERSION ${CMAKE_PROJECT_VERSION})
 include(CPACK)
 include(CTest)
 
+
+
 # Enable testing. Comment out if not required.
 enable_testing()
+
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS on)
