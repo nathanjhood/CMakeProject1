@@ -74,10 +74,9 @@ set(CPACK_PROJECT_VERSION ${CMAKE_PROJECT_VERSION})
 include(CPACK)
 include(CTest)
 
-
-
 # Enable testing. Comment out if not required.
 enable_testing()
 
-
+# Export options
 set(CMAKE_EXPORT_COMPILE_COMMANDS on)
+set(CMAKE_ENABLE_EXPORTS on)
