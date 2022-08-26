@@ -12,10 +12,6 @@
 
 #include "main.h"
 
-#ifndef CPPUNIT_ASSERTER_H
-#else CPPUNIT_ASSERTER_H
-#endif CPPUNIT_ASSERTER_H
-
 /**
  * @brief Definition of the entry point for the application.
  *

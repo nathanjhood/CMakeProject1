@@ -1,5 +1,7 @@
 *.tcl
 *.dll
+compile_commands.json
+CMakeCache.txt
 
 ############################################################
 # CMake - Start
