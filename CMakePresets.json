@@ -1,8 +1,8 @@
 ﻿{
-    "version": 3,
+    "version": 4,
     "cmakeMinimumRequired": {
         "major": 3,
-        "minor": 20,
+        "minor": 23,
         "patch": 0
     },
     "configurePresets": [
@@ -18,7 +18,7 @@
                 "tryCompile": false,
                 "output": false
             },
-            "toolchainFile": "${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+            "toolchainFile": "${env:VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
             "cacheVariables": {
                 "CMAKE_CXX_COMPILER": "cl.exe"
             },
@@ -47,12 +47,13 @@
                 "value": "x64",
                 "strategy": "external"
             },
-            "cacheVariables": {
-                "VCPKG_TARGET_TRIPLET": "x64-windows"
-            },
             "toolset":{
                 "value": "x64",
                 "strategy": "external"
+            },
+            "cacheVariables": {
+                "VCPKG_TARGET_ARCHITECTURE": "x64",
+                "VCPKG_TARGET_TRIPLET": "x64-windows"
             },
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {
@@ -60,7 +61,10 @@
                     "cacheRoot": "${sourceDir}",
                     "enableMicrosoftCodeAnalysis": true,
                     "intelliSenseMode": "windows-msvc-x64",
-                    "intelliSenseOptions": {}
+                    "intelliSenseOptions": {
+                        "useCompilerDefaults": true,
+                        "additionalCompilerArgs": "empty"
+                    }
                 },
                 "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
                     "copySources": true,
@@ -82,6 +86,7 @@
                 "strategy": "external"
             },
             "cacheVariables": {
+                "VCPKG_TARGET_ARCHITECTURE": "x86",
                 "VCPKG_TARGET_TRIPLET": "x86-windows"
             },
             "vendor": {
@@ -101,10 +106,77 @@
                     "copyBuildOutput": false
                 }
             }
+        },
+        {
+            "name": "arm",
+            "displayName": "arm",
+            "inherits": "windows-base",
+            "architecture": {
+                "value": "arm",
+                "strategy": "external"
+            },
+            "toolset":{
+                "value": "arm",
+                "strategy": "external"
+            },
+            "cacheVariables": {
+                "VCPKG_TARGET_ARCHITECTURE": "arm",
+                "VCPKG_TARGET_TRIPLET": "arm-windows"
+            },
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "hostOS": "Windows",
+                    "cacheRoot": "${sourceDir}/CMakeCache.txt",
+                    "enableMicrosoftCodeAnalysis": true,
+                    "intelliSenseMode": "windows-msvc-arm",
+                    "intelliSenseOptions": {
+                        "useCompilerDefaults": true,
+                        "additionalCompilerArgs": "empty"
+                    }
+                },
+                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
+                    "copySources": true,
+                    "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}",
+                    "copyBuildOutput": false
+                }
+            }
+        },
+        {
+            "name": "arm64",
+            "displayName": "arm64",
+            "inherits": "windows-base",
+            "architecture": {
+                "value": "arm64",
+                "strategy": "external"
+            },
+            "toolset":{
+                "value": "arm64",
+                "strategy": "external"
+            },
+            "cacheVariables": {
+                "VCPKG_TARGET_ARCHITECTURE": "arm64",
+                "VCPKG_TARGET_TRIPLET": "arm64-windows"
+            },
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "hostOS": "Windows",
+                    "cacheRoot": "${sourceDir}/CMakeCache.txt",
+                    "enableMicrosoftCodeAnalysis": true,
+                    "intelliSenseMode": "windows-msvc-arm64",
+                    "intelliSenseOptions": {
+                        "useCompilerDefaults": true,
+                        "additionalCompilerArgs": "empty"
+                    }
+                },
+                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
+                    "copySources": true,
+                    "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}",
+                    "copyBuildOutput": false
+                }
+            }
         }
     ],
     "buildPresets": [
-
         {
             "name": "x64 Debug",
             "displayName": "Debug",
@@ -176,10 +248,81 @@
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
             "verbose": true
+        },
+        {
+            "name": "arm Debug",
+            "displayName": "Debug",
+            "description": "arm Debug",
+            "configurePreset": "arm",
+            "configuration": "Debug",
+            "inheritConfigureEnvironment": true,
+            "verbose": true
+        },
+        {
+            "name": "arm Release",
+            "displayName": "Release",
+            "description": "arm Release",
+            "configurePreset": "arm",
+            "configuration": "Release",
+            "inheritConfigureEnvironment": true,
+            "verbose": true
+        },
+        {
+            "name": "arm RelWithDebInfo",
+            "displayName": "RelWithDebInfo",
+            "description": "arm RelWithDebInfo",
+            "configurePreset": "arm",
+            "configuration": "RelWithDebInfo",
+            "inheritConfigureEnvironment": true,
+            "verbose": true
+        },
+        {
+            "name": "arm MinSizeRel",
+            "displayName": "MinSizeRel",
+            "description": "arm MinSizeRel",
+            "configurePreset": "arm",
+            "configuration": "MinSizeRel",
+            "inheritConfigureEnvironment": true,
+            "verbose": true
+        },
+        {
+            "name": "arm64 Debug",
+            "displayName": "Debug",
+            "description": "arm64 Debug",
+            "configurePreset": "arm64",
+            "configuration": "Debug",
+            "inheritConfigureEnvironment": true,
+            "verbose": true
+        },
+        {
+            "name": "arm64 Release",
+            "displayName": "Release",
+            "description": "arm64 Release",
+            "configurePreset": "arm64",
+            "configuration": "Release",
+            "inheritConfigureEnvironment": true,
+            "verbose": true
+        },
+        {
+            "name": "arm64 RelWithDebInfo",
+            "displayName": "RelWithDebInfo",
+            "description": "arm64 RelWithDebInfo",
+            "configurePreset": "arm64",
+            "configuration": "RelWithDebInfo",
+            "inheritConfigureEnvironment": true,
+            "verbose": true
+        },
+        {
+            "name": "arm64 MinSizeRel",
+            "displayName": "MinSizeRel",
+            "description": "arm64 MinSizeRel",
+            "configurePreset": "arm64",
+            "configuration": "MinSizeRel",
+            "inheritConfigureEnvironment": true,
+            "verbose": true
         }
     ],
     "testPresets": [
-
         {
             "name": "x64 Test",
             "displayName": "Test",
@@ -195,6 +338,26 @@
             "displayName": "Test",
             "description": "x86 Test",
             "configurePreset": "x86",
+            "configuration": "Debug",
+            "inheritConfigureEnvironment": true,
+            "output": {"outputOnFailure": true},
+            "execution": {"noTestsAction": "error", "stopOnFailure": true}
+        },
+        {
+            "name": "arm Test",
+            "displayName": "Test",
+            "description": "arm Test",
+            "configurePreset": "arm",
+            "configuration": "Debug",
+            "inheritConfigureEnvironment": true,
+            "output": {"outputOnFailure": true},
+            "execution": {"noTestsAction": "error", "stopOnFailure": true}
+        },
+        {
+            "name": "arm64 Test",
+            "displayName": "Test",
+            "description": "arm64 Test",
+            "configurePreset": "arm64",
             "configuration": "Debug",
             "inheritConfigureEnvironment": true,
             "output": {"outputOnFailure": true},
