@@ -1,3 +1,5 @@
+*_Config.h
+
 *.tcl
 *.dll
 compile_commands.json
