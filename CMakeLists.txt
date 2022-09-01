@@ -2,7 +2,7 @@
 # and include sub-projects here.
 
 # CMake requirements.
-cmake_minimum_required (VERSION 3.8)
+cmake_minimum_required (VERSION 3.15)
 
 # Toolchain location. Stores result in the CMakeCache.
 set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Toolchain file")
