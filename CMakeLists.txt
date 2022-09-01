@@ -42,26 +42,25 @@ endif(${CMAKE_BUILD_TYPE} MATCHES Debug)
 add_executable (CMakeProject1
 	"${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/src/main.h"
-	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/${CMAKE_PROJECT_NAME}_Config.h.in"
-	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/${CMAKE_PROJECT_NAME}_Config.h"
+	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/CMakeProject1_Config.h.in"
+	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/CMakeProject1_Config.h"
 )
 
 # Check language requirements.
 if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY CXX_STANDARD 20)
+  set_property(TARGET CMakeProject1 PROPERTY CXX_STANDARD 20)
 endif()
 
-# Add packages (including IntelliSense) to the project.
-find_package (fmt CONFIG REQUIRED)
-target_link_libraries (${CMAKE_PROJECT_NAME} PRIVATE fmt::fmt)
-
-find_package (CppUnit CONFIG REQUIRED)
-target_link_libraries (${CMAKE_PROJECT_NAME} PRIVATE CppUnit)
+target_link_libraries (CMakeProject1
+	PRIVATE
+	fmt::fmt
+	CppUnit
+)
 
 # Add configuration file.
 configure_file (
-	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/${CMAKE_PROJECT_NAME}_Config.h.in"
-	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/${CMAKE_PROJECT_NAME}_Config.h"
+	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/CMakeProject1_Config.h.in"
+	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/CMakeProject1_Config.h"
 )
 
 # Include sub-folder/projects.
@@ -69,14 +68,8 @@ add_subdirectory ("src")
 add_subdirectory ("cfg")
 
 # Add tests and install targets if needed. Comment out if not required.
-set(CPACK_PROJECT_NAME ${CMAKE_PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${CMAKE_PROJECT_VERSION})
 include(CPACK)
 include(CTest)
 
 # Enable testing. Comment out if not required.
 enable_testing()
-
-# Export options
-set(CMAKE_EXPORT_COMPILE_COMMANDS on)
-set(CMAKE_ENABLE_EXPORTS on)
