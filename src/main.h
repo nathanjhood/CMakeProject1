@@ -25,7 +25,6 @@
 
 // Third-Party packages.
 #include <fmt/format.h>
-#include <cppunit/Asserter.h>
 
 /**
  * @brief Declaration the entry point of the application.
