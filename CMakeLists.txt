@@ -21,10 +21,10 @@ project (
 
 # Add source to this project's executable.
 add_executable (CMakeProject1
-	"${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp"
-	"${CMAKE_CURRENT_SOURCE_DIR}/src/main.h"
-	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/CMakeProject1_Config.h.in"
-	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/CMakeProject1_Config.h"
+	"src/main.cpp"
+	"src/main.h"
+	"cfg/CMakeProject1_Config.h.in"
+	"cfg/CMakeProject1_Config.h"
 )
 
 # Check language requirements.
@@ -34,8 +34,8 @@ endif()
 
 # Add configuration file.
 configure_file (
-	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/CMakeProject1_Config.h.in"
-	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/CMakeProject1_Config.h"
+	"cfg/CMakeProject1_Config.h.in"
+	"cfg/CMakeProject1_Config.h"
 )
 
 # `target_sources` adds source files to a target. We pass the target that needs the sources as the
@@ -44,10 +44,10 @@ configure_file (
 # This is a standard CMake command.
 target_sources(CMakeProject1
     PRIVATE
-	"${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp"
-	"${CMAKE_CURRENT_SOURCE_DIR}/src/main.h"
-	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/CMakeProject1_Config.h.in"
-	"${CMAKE_CURRENT_SOURCE_DIR}/cfg/CMakeProject1_Config.h"
+	"src/main.cpp"
+	"src/main.h"
+	"cfg/CMakeProject1_Config.h.in"
+	"cfg/CMakeProject1_Config.h"
 )
 
 # If the target needs extra binary assets, they can be added here. The first argument is the name of
@@ -66,7 +66,6 @@ target_link_libraries (CMakeProject1
 	PRIVATE
 	# CMakeProject1_Data           # If we'd created a binary data target above, we'd link to it here
 	fmt::fmt
-	CppUnit
 	juce::juce_core
 	PUBLIC
 	juce::juce_recommended_config_flags
