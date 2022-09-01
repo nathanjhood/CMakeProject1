@@ -1,26 +1,24 @@
-﻿{
-    "version": 4,
+{
+    "version": 5,
     "cmakeMinimumRequired": {
         "major": 3,
-        "minor": 23,
+        "minor": 24,
         "patch": 0
     },
     "configurePresets": [
         {
-            "name": "windows-base",
-            "description": "This build is only available on Windows",
+            "name": "default",
+            "displayName": "Default Config",
+            "description": "Default build using Ninja generator",
             "hidden": true,
             "generator": "Ninja",
-            "binaryDir": "${sourceDir}",
-            "installDir": "${sourceDir}",
+            "binaryDir": "${workspaceRoot}",
+            "installDir": "${workspaceRoot}",
+            "toolchainFile": "${workspaceRoot}/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "debug": {
                 "find": false,
-                "tryCompile": false,
-                "output": false
-            },
-            "toolchainFile": "${env:VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
-            "cacheVariables": {
-                "CMAKE_CXX_COMPILER": "cl.exe"
+                "output": false,
+                "tryCompile": false
             },
             "errors": {
                 "deprecated": true,
@@ -33,145 +31,123 @@
                 "unusedCli": true,
                 "uninitialized": false
             },
+            "cacheVariables": {},
+            "environment": {
+                "VCPKG_ROOT": "${workspaceRoot}/vcpkg/"
+            },
+            "vendor": {}
+        },
+        {
+            "name": "ninja-multi",
+            "inherits": "default",
+            "displayName": "Ninja Multi-Config",
+            "description": "Default build using Ninja Multi-Config generator",
+            "generator": "Ninja Multi-Config",
+            "hidden": true
+        },
+        {
+            "name": "windows-base",
+            "inherits": "default",
+            "description": "Target Windows with the Visual Studio development environment.",
+            "hidden": true,
+            "environment": {},
+            "cacheVariables": {},
             "condition": {
                 "type": "equals",
                 "lhs": "${hostSystemName}",
                 "rhs": "Windows"
+            },
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "hostOS":"Windows",
+                    "intelliSenseMode": "windows-msvc-x64",
+                    "intelliSenseOptions": {
+                        "useCompilerDefaults": true
+                    },
+                    "enableMicrosoftCodeAnalysis": true,
+                    "enableClangTidyCodeAnalysis": false
+                },
+                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
+                    "sourceDir": "$env{HOME}/.vs/${sourceDirName}",
+                    "copySources": true,
+                    "copyBuildOutput": false,
+                    "copyAdditionalIncludeDirectoriesList": [],
+                    "copyExcludeDirectoriesList": [],
+                    "copySourcesOptions": {
+                        "method": "rsync",
+                        "outputVerbosity": "Normal",
+                        "concurrentCopies": 5,
+                        "exclusionList": [
+                            ".vs",
+                            "out"
+                        ]
+                    },
+                    "copyOptimizations": {
+                        "useOptimizations": "RsyncAndSftp",
+                        "maxSmallChange": 10,
+                        "rsyncSingleDirectoryCommandArgs": [
+                            "-t",
+                            "-d"
+                        ]
+                    },
+                    "rsyncCommandArgs": [
+                        "-t",
+                        "--delete",
+                        "--delete-excluded"
+                    ],
+                    "forceWSL1Toolset": false
+                }
             }
         },
         {
             "name": "x64",
             "displayName": "x64",
+            "description": "Target Windows (64-bit) with the Visual Studio development environment.",
             "inherits": "windows-base",
+            "toolset": {
+                "value": "host=x64",
+                "strategy": "external"
+            },
             "architecture": {
                 "value": "x64",
                 "strategy": "external"
             },
-            "toolset":{
-                "value": "x64",
-                "strategy": "external"
+            "environment": {
+                "VCPKG_DEFAULT_TRIPLET": "x64-windows"
             },
             "cacheVariables": {
-                "VCPKG_TARGET_ARCHITECTURE": "x64",
-                "VCPKG_TARGET_TRIPLET": "x64-windows"
+                "CMAKE_CXX_COMPILER": "cl.exe",
+                "CMAKE_C_COMPILER": "cl.exe"
             },
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "hostOS": "Windows",
-                    "cacheRoot": "${sourceDir}",
-                    "enableMicrosoftCodeAnalysis": true,
-                    "intelliSenseMode": "windows-msvc-x64",
-                    "intelliSenseOptions": {
-                        "useCompilerDefaults": true,
-                        "additionalCompilerArgs": "empty"
-                    }
-                },
-                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
-                    "copySources": true,
-                    "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}",
-                    "copyBuildOutput": false
+                    "intelliSenseMode": "windows-msvc-x64"
                 }
             }
         },
         {
             "name": "x86",
             "displayName": "x86",
+            "description": "Target Windows (32-bit) with the Visual Studio development environment.",
             "inherits": "windows-base",
+            "toolset": {
+                "value": "host=86",
+                "strategy": "external"
+            },
             "architecture": {
                 "value": "x86",
                 "strategy": "external"
             },
-            "toolset":{
-                "value": "x86",
-                "strategy": "external"
+            "environment": {
+                "VCPKG_DEFAULT_TRIPLET": "x86-windows"
             },
             "cacheVariables": {
-                "VCPKG_TARGET_ARCHITECTURE": "x86",
-                "VCPKG_TARGET_TRIPLET": "x86-windows"
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe"
             },
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "hostOS": "Windows",
-                    "cacheRoot": "${sourceDir}/CMakeCache.txt",
-                    "enableMicrosoftCodeAnalysis": true,
-                    "intelliSenseMode": "windows-msvc-x86",
-                    "intelliSenseOptions": {
-                        "useCompilerDefaults": true,
-                        "additionalCompilerArgs": "empty"
-                    }
-                },
-                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
-                    "copySources": true,
-                    "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}",
-                    "copyBuildOutput": false
-                }
-            }
-        },
-        {
-            "name": "arm",
-            "displayName": "arm",
-            "inherits": "windows-base",
-            "architecture": {
-                "value": "arm",
-                "strategy": "external"
-            },
-            "toolset":{
-                "value": "arm",
-                "strategy": "external"
-            },
-            "cacheVariables": {
-                "VCPKG_TARGET_ARCHITECTURE": "arm",
-                "VCPKG_TARGET_TRIPLET": "arm-windows"
-            },
-            "vendor": {
-                "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "hostOS": "Windows",
-                    "cacheRoot": "${sourceDir}/CMakeCache.txt",
-                    "enableMicrosoftCodeAnalysis": true,
-                    "intelliSenseMode": "windows-msvc-arm",
-                    "intelliSenseOptions": {
-                        "useCompilerDefaults": true,
-                        "additionalCompilerArgs": "empty"
-                    }
-                },
-                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
-                    "copySources": true,
-                    "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}",
-                    "copyBuildOutput": false
-                }
-            }
-        },
-        {
-            "name": "arm64",
-            "displayName": "arm64",
-            "inherits": "windows-base",
-            "architecture": {
-                "value": "arm64",
-                "strategy": "external"
-            },
-            "toolset":{
-                "value": "arm64",
-                "strategy": "external"
-            },
-            "cacheVariables": {
-                "VCPKG_TARGET_ARCHITECTURE": "arm64",
-                "VCPKG_TARGET_TRIPLET": "arm64-windows"
-            },
-            "vendor": {
-                "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "hostOS": "Windows",
-                    "cacheRoot": "${sourceDir}/CMakeCache.txt",
-                    "enableMicrosoftCodeAnalysis": true,
-                    "intelliSenseMode": "windows-msvc-arm64",
-                    "intelliSenseOptions": {
-                        "useCompilerDefaults": true,
-                        "additionalCompilerArgs": "empty"
-                    }
-                },
-                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
-                    "copySources": true,
-                    "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}",
-                    "copyBuildOutput": false
+                    "intelliSenseMode": "windows-msvc-x86"
                 }
             }
         }
@@ -180,7 +156,7 @@
         {
             "name": "x64 Debug",
             "displayName": "Debug",
-            "description": "x64 Debug",
+            "description": "Target Windows (64-bit) with the Visual Studio development environment. (Debug)",
             "configurePreset": "x64",
             "configuration": "Debug",
             "inheritConfigureEnvironment": true,
@@ -189,34 +165,37 @@
         {
             "name": "x64 Release",
             "displayName": "Release",
-            "description": "x64 Release",
+            "description": "Target Windows (64-bit) with the Visual Studio development environment. (Release)",
             "configurePreset": "x64",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": true,
+            "inherits": [ "x64 Debug" ]
         },
         {
             "name": "x64 RelWithDebInfo",
             "displayName": "RelWithDebInfo",
-            "description": "x64 RelWithDebInfo",
+            "description": "Target Windows (64-bit) with the Visual Studio development environment. (RelWithDebInfo)",
             "configurePreset": "x64",
             "configuration": "RelWithDebInfo",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": true,
+            "inherits": [ "x64 Debug" ]
         },
         {
             "name": "x64 MinSizeRel",
             "displayName": "MinSizeRel",
-            "description": "x64 MinSizeRel",
+            "description": "Target Windows (64-bit) with the Visual Studio development environment. (MinSizeRel)",
             "configurePreset": "x64",
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": true,
+            "inherits": [ "x64 Debug" ]
         },
         {
             "name": "x86 Debug",
             "displayName": "Debug",
-            "description": "x86 Debug",
+            "description": "Target Windows (32-bit) with the Visual Studio development environment. (Debug)",
             "configurePreset": "x86",
             "configuration": "Debug",
             "inheritConfigureEnvironment": true,
@@ -225,101 +204,32 @@
         {
             "name": "x86 Release",
             "displayName": "Release",
-            "description": "x86 Release",
+            "description": "Target Windows (32-bit) with the Visual Studio development environment. (Release)",
             "configurePreset": "x86",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": true,
+            "inherits": [ "x86 Debug" ]
         },
         {
             "name": "x86 RelWithDebInfo",
             "displayName": "RelWithDebInfo",
-            "description": "x86 RelWithDebInfo",
+            "description": "Target Windows (32-bit) with the Visual Studio development environment. (RelWithDebInfo)",
             "configurePreset": "x86",
             "configuration": "RelWithDebInfo",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": true,
+            "inherits": [ "x86 Debug" ]
         },
         {
             "name": "x86 MinSizeRel",
             "displayName": "MinSizeRel",
-            "description": "x86 MinSizeRel",
+            "description": "Target Windows (32-bit) with the Visual Studio development environment. (MinSizeRel)",
             "configurePreset": "x86",
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
-            "verbose": true
-        },
-        {
-            "name": "arm Debug",
-            "displayName": "Debug",
-            "description": "arm Debug",
-            "configurePreset": "arm",
-            "configuration": "Debug",
-            "inheritConfigureEnvironment": true,
-            "verbose": true
-        },
-        {
-            "name": "arm Release",
-            "displayName": "Release",
-            "description": "arm Release",
-            "configurePreset": "arm",
-            "configuration": "Release",
-            "inheritConfigureEnvironment": true,
-            "verbose": true
-        },
-        {
-            "name": "arm RelWithDebInfo",
-            "displayName": "RelWithDebInfo",
-            "description": "arm RelWithDebInfo",
-            "configurePreset": "arm",
-            "configuration": "RelWithDebInfo",
-            "inheritConfigureEnvironment": true,
-            "verbose": true
-        },
-        {
-            "name": "arm MinSizeRel",
-            "displayName": "MinSizeRel",
-            "description": "arm MinSizeRel",
-            "configurePreset": "arm",
-            "configuration": "MinSizeRel",
-            "inheritConfigureEnvironment": true,
-            "verbose": true
-        },
-        {
-            "name": "arm64 Debug",
-            "displayName": "Debug",
-            "description": "arm64 Debug",
-            "configurePreset": "arm64",
-            "configuration": "Debug",
-            "inheritConfigureEnvironment": true,
-            "verbose": true
-        },
-        {
-            "name": "arm64 Release",
-            "displayName": "Release",
-            "description": "arm64 Release",
-            "configurePreset": "arm64",
-            "configuration": "Release",
-            "inheritConfigureEnvironment": true,
-            "verbose": true
-        },
-        {
-            "name": "arm64 RelWithDebInfo",
-            "displayName": "RelWithDebInfo",
-            "description": "arm64 RelWithDebInfo",
-            "configurePreset": "arm64",
-            "configuration": "RelWithDebInfo",
-            "inheritConfigureEnvironment": true,
-            "verbose": true
-        },
-        {
-            "name": "arm64 MinSizeRel",
-            "displayName": "MinSizeRel",
-            "description": "arm64 MinSizeRel",
-            "configurePreset": "arm64",
-            "configuration": "MinSizeRel",
-            "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": true,
+            "inherits": [ "x86 Debug" ]
         }
     ],
     "testPresets": [
@@ -330,8 +240,11 @@
             "configurePreset": "x64",
             "configuration": "Debug",
             "inheritConfigureEnvironment": true,
-            "output": {"outputOnFailure": true},
-            "execution": {"noTestsAction": "error", "stopOnFailure": true}
+            "output": { "outputOnFailure": true },
+            "execution": {
+                "noTestsAction": "error",
+                "stopOnFailure": true
+            }
         },
         {
             "name": "x86 Test",
@@ -340,28 +253,11 @@
             "configurePreset": "x86",
             "configuration": "Debug",
             "inheritConfigureEnvironment": true,
-            "output": {"outputOnFailure": true},
-            "execution": {"noTestsAction": "error", "stopOnFailure": true}
-        },
-        {
-            "name": "arm Test",
-            "displayName": "Test",
-            "description": "arm Test",
-            "configurePreset": "arm",
-            "configuration": "Debug",
-            "inheritConfigureEnvironment": true,
-            "output": {"outputOnFailure": true},
-            "execution": {"noTestsAction": "error", "stopOnFailure": true}
-        },
-        {
-            "name": "arm64 Test",
-            "displayName": "Test",
-            "description": "arm64 Test",
-            "configurePreset": "arm64",
-            "configuration": "Debug",
-            "inheritConfigureEnvironment": true,
-            "output": {"outputOnFailure": true},
-            "execution": {"noTestsAction": "error", "stopOnFailure": true}
+            "output": { "outputOnFailure": true },
+            "execution": {
+                "noTestsAction": "error",
+                "stopOnFailure": true
+            }
         }
     ]
 }
