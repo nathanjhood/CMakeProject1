@@ -44,7 +44,7 @@ target_sources(CMakeProject1
 	"cfg/CMakeProject1_Config.h"
 )
 
-find_package (JUCE CONFIG REQUIRED)
+#find_package (JUCE CONFIG REQUIRED)
 find_package (fmt CONFIG REQUIRED)
 
 # If the target needs extra binary assets, they can be added here. The first argument is the name of
@@ -106,8 +106,8 @@ else()
 endif(${CMAKE_BUILD_TYPE} MATCHES Debug)
 
 # Export options
-set(CMAKE_EXPORT_COMPILE_COMMANDS on)
-set(CMAKE_ENABLE_EXPORTS on)
+#set(CMAKE_EXPORT_COMPILE_COMMANDS on)
+#set(CMAKE_ENABLE_EXPORTS on)
 
 # Add tests and install targets if needed. Comment out if not required.
 #include(CPACK)
