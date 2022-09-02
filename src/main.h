@@ -26,11 +26,13 @@
 // Third-Party packages.
 #include <fmt/format.h>
 
-/**
- * @brief Declaration the entry point of the application.
+/** Main.
+ * @brief Entry point for program execution.
  *
+ * @param argc int
+ * @param argv char**
  * @return int
  */
-int main();
+int main(int argc, char** argv);
 
 #endif // MAIN_H_INCLUDED

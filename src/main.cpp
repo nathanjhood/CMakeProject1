@@ -12,12 +12,14 @@
 
 #include "main.h"
 
-/**
- * @brief Definition of the entry point for the application.
+/** Main.
+ * @brief Entry point for program execution.
  *
+ * @param argc int
+ * @param argv char**
  * @return int
  */
-int main()
+int main(int argc, char** argv)
 {
 	fmt::print("Hello, from {}!", projectName); std::cout << std::endl;
 	fmt::print("Version {}!", projectVersion); std::cout << std::endl;
