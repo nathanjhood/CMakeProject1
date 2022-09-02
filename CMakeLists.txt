@@ -32,12 +32,6 @@ if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET CMakeProject1 PROPERTY CXX_STANDARD 20)
 endif()
 
-# Add configuration file.
-configure_file (
-	"cfg/CMakeProject1_Config.h.in"
-	"cfg/CMakeProject1_Config.h"
-)
-
 # `target_sources` adds source files to a target. We pass the target that needs the sources as the
 # first argument, then a visibility parameter for the sources which should normally be PRIVATE.
 # Finally, we supply a list of source files that will be built into the target.
@@ -49,6 +43,9 @@ target_sources(CMakeProject1
 	"cfg/CMakeProject1_Config.h.in"
 	"cfg/CMakeProject1_Config.h"
 )
+
+find_package (JUCE CONFIG REQUIRED)
+find_package (fmt CONFIG REQUIRED)
 
 # If the target needs extra binary assets, they can be added here. The first argument is the name of
 # a new static library target that will include all the binary resources. There is an optional
@@ -65,8 +62,8 @@ target_sources(CMakeProject1
 target_link_libraries (CMakeProject1
 	PRIVATE
 	# CMakeProject1_Data           # If we'd created a binary data target above, we'd link to it here
-	fmt::fmt
 	juce::juce_core
+	fmt::fmt
 	PUBLIC
 	juce::juce_recommended_config_flags
 	juce::juce_recommended_warning_flags
