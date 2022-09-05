@@ -19,11 +19,10 @@
  * @brief Defined project configuration information.
  *
  */
-#define companyName "yourCompany"
+#define companyName "StoneyDSP"
 #define projectName "StoneyDSP"
 #define projectDescription ""
 #define projectVersion "v0.0.0.1"
 #define projectWebsite "https://stoneydsp.github.io/html/index.html"
-#define cppComiler "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.33.31629/bin/Hostx64/x64/cl.exe"
 
 #endif // CONFIG_H_INCLUDED
