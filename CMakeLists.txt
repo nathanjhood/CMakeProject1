@@ -7,10 +7,11 @@ cmake_minimum_required (VERSION 3.15)
 # Toolchain location. Stores result in the CMakeCache.
 set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Toolchain file")
 
-# Replace the "yourCompany" string with the name of the author/company of this project. Stores result in the CMakeCache.
-set(COMPANY_NAME "yourCompany" CACHE STRING "Name of author/company")
+# Company/author name
+set(CMAKE_COMPANY_NAME "StoneyDSP" CACHE STRING "Company Name")
 
 # Create a CMake project here.
+# This is a standard CMake command.
 project (
 	"CMakeProject1"
 	VERSION 0.0.0.1
