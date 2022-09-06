@@ -363,7 +363,7 @@ __pycache__/
 ############################################################
 
 .vscode/
-*.code-workspace
+#*.code-workspace
 /buildtrees/
 /build*/
 /downloads/
