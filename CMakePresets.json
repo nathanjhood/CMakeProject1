@@ -13,7 +13,7 @@
             "generator": "Visual Studio 17 2022",
             "binaryDir": ".",
             "installDir": ".",
-            "toolchainFile": "${env:VCPKG_ROOT}/vcpkg/scripts/buildsystems/vcpkg.cmake",
+            "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "environment": {
                 "VCPKG_DEFAULT_TRIPLET": "x64-windows"
             },

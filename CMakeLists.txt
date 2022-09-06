@@ -98,8 +98,8 @@ target_sources(CMakeProject1
 	"cfg/CMakeProject1_Config.h"
 )
 
-find_package (JUCE CONFIG REQUIRED)
-find_package (fmt CONFIG REQUIRED)
+# find_package (JUCE CONFIG REQUIRED)
+# find_package (fmt CONFIG REQUIRED)
 
 # If the target needs extra binary assets, they can be added here. The first argument is the name of
 # a new static library target that will include all the binary resources. There is an optional
