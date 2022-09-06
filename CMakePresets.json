@@ -17,10 +17,69 @@
             "environment": {
                 "VCPKG_DEFAULT_TRIPLET": "x64-windows"
             },
+            "debug": {
+                "find": false,
+                "output": false,
+                "tryCompile": false
+            },
+            "errors": {
+                "deprecated": true,
+                "dev": true
+            },
+            "warnings": {
+                "deprecated": true,
+                "dev": true,
+                "systemVars": true,
+                "uninitialized": false,
+                "unusedCli": true
+            },
             "condition": {
                 "type": "equals",
                 "lhs": "${hostSystemName}",
                 "rhs": "Windows"
+            },
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "hostOS": "Windows",
+                    "enableMicrosoftCodeAnalysis": true,
+                    "enableClangTidyCodeAnalysis": false,
+                    "cacheRoot": "${sourceDir}",
+                    "intelliSenseOptions": {
+                        "useCompilerDefaults": true
+                    },
+                    "intelliSenseMode": "windows-msvc-x64"
+                },
+                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
+                    "sourceDir": "$env{HOME}/.vs/${sourceDirName}",
+                    "copyBuildOutput": false,
+                    "copySources": true,
+                    "forceWSL1Toolset": false,
+                    "rsyncCommandArgs": [
+                        "-t",
+                        "--delete",
+                        "--delete-excluded"
+                    ],
+                    "copyOptimizations": {
+                        "useOptimizations": "RsyncAndSftp",
+                        "maxSmallChange": 10,
+                        "rsyncSingleDirectoryCommandArgs": [
+                            "-t",
+                            "-d"
+                        ]
+                    },
+                    "copyExcludeDirectoriesList": [],
+                    "copyAdditionalIncludeDirectoriesList": [],
+                    "copySourcesOptions": {
+                        "method": "rsync",
+                        "concurrentCopies": 5,
+                        "outputVerbosity": "Diagnostic",
+                        "exclusionList": [
+                            ".vs",
+                            ".git",
+                            "out"
+                        ]
+                    }
+                }
             }
         },
         {
@@ -35,9 +94,6 @@
             "architecture": {
                 "value": "x64",
                 "strategy": "external"
-            },
-            "environment": {
-                "VCPKG_DEFAULT_TRIPLET": "x64-windows"
             },
             "cacheVariables": {
                 "CMAKE_C_COMPILER": "cl.exe",
@@ -57,12 +113,14 @@
                 "value": "x86",
                 "strategy": "external"
             },
-            "environment": {
-                "VCPKG_DEFAULT_TRIPLET": "x86-windows"
-            },
             "cacheVariables": {
                 "CMAKE_C_COMPILER": "cl.exe",
                 "CMAKE_CXX_COMPILER": "cl.exe"
+            },
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "intelliSenseMode": "windows-msvc-x86"
+                }
             }
         }
     ],
@@ -83,8 +141,7 @@
             "configurePreset": "x64",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
-            "verbose": true,
-            "inherits":["x64 Debug"]
+            "verbose": true
         },
         {
             "name": "x64 RelWithDebInfo",
@@ -93,8 +150,7 @@
             "configurePreset": "x64",
             "configuration": "RelWithDebInfo",
             "inheritConfigureEnvironment": true,
-            "verbose": true,
-            "inherits":["x64 Debug"]
+            "verbose": true
         },
         {
             "name": "x64 MinSizeRel",
@@ -103,8 +159,7 @@
             "configurePreset": "x64",
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
-            "verbose": true,
-            "inherits":["x64 Debug"]
+            "verbose": true
         },
         {
             "name": "x86 Debug",
@@ -122,8 +177,7 @@
             "configurePreset": "x86",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
-            "verbose": true,
-            "inherits":["x86 Debug"]
+            "verbose": true
         },
         {
             "name": "x86 RelWithDebInfo",
@@ -132,8 +186,7 @@
             "configurePreset": "x86",
             "configuration": "RelWithDebInfo",
             "inheritConfigureEnvironment": true,
-            "verbose": true,
-            "inherits":["x86 Debug"]
+            "verbose": true
         },
         {
             "name": "x86 MinSizeRel",
@@ -142,8 +195,7 @@
             "configurePreset": "x86",
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
-            "verbose": true,
-            "inherits":["x86 Debug"]
+            "verbose": true
         }
     ],
     "testPresets": [
