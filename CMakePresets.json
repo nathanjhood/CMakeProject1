@@ -1,22 +1,25 @@
 {
-    "version": 3,
+    "version": 5,
     "cmakeMinimumRequired": {
         "major": 3,
-        "minor": 15,
-        "patch": 0
+        "minor": 24,
+        "patch": 1
     },
+    "include": [
+        "vcpkg.json",
+        "Directory.Build.props",
+        "Directory.Build.targets"
+    ],
     "configurePresets": [
         {
             "name": "windows-base",
             "description": "Target Windows with the Visual Studio development environment.",
             "hidden": true,
             "generator": "Visual Studio 17 2022",
-            "binaryDir": ".",
-            "installDir": ".",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "installDir": "${sourceDir}/out/install/${presetName}",
             "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
-            "environment": {
-                "VCPKG_DEFAULT_TRIPLET": "x64-windows"
-            },
+            "environment": {},
             "debug": {
                 "find": false,
                 "output": false,
@@ -37,49 +40,6 @@
                 "type": "equals",
                 "lhs": "${hostSystemName}",
                 "rhs": "Windows"
-            },
-            "vendor": {
-                "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "hostOS": "Windows",
-                    "enableMicrosoftCodeAnalysis": true,
-                    "enableClangTidyCodeAnalysis": false,
-                    "cacheRoot": "${sourceDir}",
-                    "intelliSenseOptions": {
-                        "useCompilerDefaults": true
-                    },
-                    "intelliSenseMode": "windows-msvc-x64"
-                },
-                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
-                    "sourceDir": "$env{HOME}/.vs/${sourceDirName}",
-                    "copyBuildOutput": false,
-                    "copySources": true,
-                    "forceWSL1Toolset": false,
-                    "rsyncCommandArgs": [
-                        "-t",
-                        "--delete",
-                        "--delete-excluded"
-                    ],
-                    "copyOptimizations": {
-                        "useOptimizations": "RsyncAndSftp",
-                        "maxSmallChange": 10,
-                        "rsyncSingleDirectoryCommandArgs": [
-                            "-t",
-                            "-d"
-                        ]
-                    },
-                    "copyExcludeDirectoriesList": [],
-                    "copyAdditionalIncludeDirectoriesList": [],
-                    "copySourcesOptions": {
-                        "method": "rsync",
-                        "concurrentCopies": 5,
-                        "outputVerbosity": "Diagnostic",
-                        "exclusionList": [
-                            ".vs",
-                            ".git",
-                            "out"
-                        ]
-                    }
-                }
             }
         },
         {
@@ -225,5 +185,48 @@
                 "stopOnFailure": true
             }
         }
-    ]
+    ],
+    "vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": {
+            "hostOS": "Windows",
+            "enableMicrosoftCodeAnalysis": true,
+            "enableClangTidyCodeAnalysis": false,
+            "cacheRoot": "${sourceDir}",
+            "intelliSenseOptions": {
+                "useCompilerDefaults": true
+            },
+            "intelliSenseMode": "windows-msvc-x64"
+        },
+        "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
+            "sourceDir": "$env{HOME}/.vs/${sourceDirName}",
+            "copyBuildOutput": false,
+            "copySources": true,
+            "forceWSL1Toolset": false,
+            "rsyncCommandArgs": [
+                "-t",
+                "--delete",
+                "--delete-excluded"
+            ],
+            "copyOptimizations": {
+                "useOptimizations": "RsyncAndSftp",
+                "maxSmallChange": 10,
+                "rsyncSingleDirectoryCommandArgs": [
+                    "-t",
+                    "-d"
+                ]
+            },
+            "copyExcludeDirectoriesList": [],
+            "copyAdditionalIncludeDirectoriesList": [],
+            "copySourcesOptions": {
+                "method": "rsync",
+                "concurrentCopies": 5,
+                "outputVerbosity": "Diagnostic",
+                "exclusionList": [
+                    ".vs",
+                    ".git",
+                    "out"
+                ]
+            }
+        }
+    }
 }
