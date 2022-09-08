@@ -26,6 +26,11 @@ project (
 	LANGUAGES CXX
 )
 
+configure_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/cmake/CMakeProject1Config.h.in
+  ${CMAKE_CURRENT_BINARY_DIR}/cmake/CMakeProject1Config.h
+)
+
 # Add source to this project's executable.
 add_executable (CMakeProject1
 	"src/main.cpp"
@@ -155,4 +160,4 @@ target_compile_definitions(CMakeProject1
 #include(CTest)
 
 # Enable testing. Comment out if not required.
-enable_testing()
+# enable_testing()
