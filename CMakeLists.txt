@@ -32,12 +32,7 @@ configure_file(
 )
 
 # Add source to this project's executable.
-add_executable (CMakeProject1
-	"src/main.cpp"
-	"src/main.h"
-	"cfg/CMakeProject1_Config.h.in"
-	"cfg/CMakeProject1_Config.h"
-)
+add_executable (CMakeProject1 "src/main.cpp")
 
 # Check language requirements.
 if (CMAKE_VERSION VERSION_GREATER 3.12)
@@ -105,8 +100,7 @@ target_sources(CMakeProject1
     PRIVATE
 	"src/main.cpp"
 	"src/main.h"
-	"cfg/CMakeProject1_Config.h.in"
-	"cfg/CMakeProject1_Config.h"
+	"cmake/CMakeProject1Config.h"
 )
 
 # find_package (JUCE CONFIG REQUIRED)
@@ -135,8 +129,8 @@ target_link_libraries (CMakeProject1
 )
 
 # Include sub-folder/projects.
-add_subdirectory ("src")
-add_subdirectory ("cfg")
+add_subdirectory (src)
+add_subdirectory (cmake)
 
 # `target_compile_definitions` adds some preprocessor definitions to our target. In a Projucer
 # project, these might be passed in the 'Preprocessor Definitions' field. JUCE modules also make use
