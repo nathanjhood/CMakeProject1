@@ -19,10 +19,6 @@
  * @brief Defined project configuration information.
  *
  */
-/**
- * @brief Defined project configuration information.
- *
- */
 struct ProjectInfo
 {
 	int a;
