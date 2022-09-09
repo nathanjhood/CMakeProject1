@@ -2,7 +2,7 @@
 # StoneyDSP - Start
 ############################################################
 
-*_Config.h
+#*_Config.h
 *.vcxproj*
 CMakeUserPresets.json
 MinSizeRel
