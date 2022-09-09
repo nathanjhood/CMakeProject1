@@ -16,8 +16,10 @@
 #define MAIN_H_INCLUDED
 
 // Global app config header.
-#ifdef CONSOLE_APPLICATION_CONFIG_H_INCLUDED
+#ifdef CMAKEPROJECT1_CONFIG_H_INCLUDED
     #include "../cmake/CMakeProject1Config.h"
+#else
+    #include "../cmake/CMakeProject1Config.h.in"
 #endif
 
 // Standard C++ Library.
