@@ -90,12 +90,24 @@ install(
     ${CMAKE_INSTALL_LIBDIR}/cmake/CMakeProject1
 )
 
+# install header file
+install(FILES
+        src/main.h
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+)
+
+
 #find_package(JUCE CONFIG REQUIRED)
-#find_package(StoneyDSP CONFIG REQUIRED)
+find_package(fmt CONFIG REQUIRED)
+find_package(StoneyDSP CONFIG REQUIRED)
 
 # Include sub-folder/projects to the build tree.
+add_subdirectory (bin)
+add_subdirectory (extern)
+add_subdirectory (docs)
 add_subdirectory (src)
 add_subdirectory (cmake)
+add_subdirectory (scripts)
 
 # link libraries and modules to other libraries or executables.
 target_link_libraries(CMakeProject1
@@ -110,7 +122,6 @@ target_link_libraries(CMakeProject1
   PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.h
-    ${CMAKE_CURRENT_BINARY_DIR}/cmake/CMakeProject1Config.h
 )
 
 # adds some preprocessor definitions to our target.

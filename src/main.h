@@ -26,6 +26,8 @@
 // Third-Party packages.
 #include <fmt/format.h>
 
+#include "stoneydsp_core/stoneydsp_core.h"
+
 /** main.
  * @brief Entry point for program execution.
  *

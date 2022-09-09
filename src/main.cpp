@@ -27,6 +27,8 @@ int main(int argc, char** argv)
 	fmt::print("Bought to you by {}!", companyName); std::cout << std::endl;
 	fmt::print("Find out more at {}!", projectWebsite); std::cout << std::endl;
 
+	stoneydsp::Double dbl {10.2};
+
 	std::cout << std::endl;
 
 	return 0;
