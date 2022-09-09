@@ -20,11 +20,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 project (CMakeProject1 LANGUAGES CXX)
 
 # Add source to this project's executable.
-add_executable (CMakeProject1
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.h
-    ${CMAKE_CURRENT_BINARY_DIR}/cmake/CMakeProject1Config.h
-)
+add_executable (CMakeProject1 ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
 # make cache variables for install destinations
 include(GNUInstallDirs)
@@ -75,9 +71,9 @@ configure_file(
 # add source files to a target.
 target_sources(CMakeProject1
   PRIVATE
-    src/main.cpp
-    src/main.h
-    cmake/CMakeProject1Config.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.h
+    ${CMAKE_CURRENT_BINARY_DIR}/cmake/CMakeProject1Config.h
 )
 
 # find_package (JUCE CONFIG REQUIRED)
