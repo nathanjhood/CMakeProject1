@@ -47,6 +47,9 @@ set_property(TARGET CMakeProject1 PROPERTY HOMEPAGE_URL ${homepage})
 set (author "StoneyDSP" CACHE STRING "Company Name")
 set_property(TARGET CMakeProject1 PROPERTY AUTHOR ${author})
 
+# set CMake module path
+set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
+
 # specify the C++ standard
 #set(CMAKE_CXX_STANDARD 17)
 #set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -93,21 +96,20 @@ install(
     ${CMAKE_INSTALL_LIBDIR}/cmake/CMakeProject1
 )
 
-find_package (JUCE CONFIG REQUIRED)
 find_package (fmt CONFIG REQUIRED)
 
 # Include sub-folder/projects.
+#add_subdirectory (cmake)
+#add_subdirectory (include)
+add_subdirectory (docs)
 add_subdirectory (src)
-add_subdirectory (cmake)
+add_subdirectory (tests)
 
 # link libraries and modules to other libraries or executables.
 target_link_libraries (CMakeProject1
 	PRIVATE
-    juce::juce_core
     fmt::fmt
 	PUBLIC
-    juce::juce_recommended_config_flags
-    juce::juce_recommended_warning_flags
 )
 
 # add source files to a target.
@@ -121,6 +123,4 @@ target_sources(CMakeProject1
 # Add some preprocessor definitions to our target.
 target_compile_definitions(CMakeProject1
     PRIVATE
-        JUCE_WEB_BROWSER=0  # If you remove this, add `NEEDS_WEB_BROWSER TRUE` to the `juce_add_console_app` call
-        JUCE_USE_CURL=0    # If you remove this, add `NEEDS_CURL TRUE` to the `juce_add_console_app` call
 )
