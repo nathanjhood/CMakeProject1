@@ -63,21 +63,42 @@ endif()
 #find_package(JUCE CONFIG REQUIRED)
 #find_package(StoneyDSP CONFIG REQUIRED)
 
+# generate the version file for the config file
+write_basic_package_version_file(
+  ${CMAKE_CURRENT_BINARY_DIR}/cmake/CMakeProject1ConfigVersion.cmake
+  VERSION ${version}
+  COMPATIBILITY AnyNewerVersion
+)
+
+# create config file
+configure_package_config_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/CMakeProject1Config.cmake.in
+    ${CMAKE_CURRENT_BINARY_DIR}/cmake/CMakeProject1Config.cmake
+  INSTALL_DESTINATION
+    ${CMAKE_INSTALL_LIBDIR}/cmake/CMakeProject1
+  NO_CHECK_REQUIRED_COMPONENTS_MACRO
+)
+
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/cmake/CMakeProject1Config.h.in
   ${CMAKE_CURRENT_BINARY_DIR}/cmake/CMakeProject1Config.h
 )
 
-# add source files to a target.
-target_sources(CMakeProject1
-  PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.h
-    ${CMAKE_CURRENT_BINARY_DIR}/cmake/CMakeProject1Config.h
+# install config files
+install(
+  FILES
+    ${CMAKE_CURRENT_BINARY_DIR}/cmake/CMakeProject1Config.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/cmake/CMakeProject1ConfigVersion.cmake
+  DESTINATION
+    ${CMAKE_INSTALL_LIBDIR}/cmake/CMakeProject1
 )
 
 # find_package (JUCE CONFIG REQUIRED)
 # find_package (fmt CONFIG REQUIRED)
+
+# Include sub-folder/projects.
+add_subdirectory (src)
+add_subdirectory (cmake)
 
 # link libraries and modules to other libraries or executables.
 target_link_libraries (CMakeProject1
@@ -89,9 +110,13 @@ target_link_libraries (CMakeProject1
     juce::juce_recommended_warning_flags
 )
 
-# Include sub-folder/projects.
-add_subdirectory (src)
-add_subdirectory (cmake)
+# add source files to a target.
+target_sources(CMakeProject1
+  PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.h
+    ${CMAKE_CURRENT_BINARY_DIR}/cmake/CMakeProject1Config.h
+)
 
 # Add some preprocessor definitions to our target.
 target_compile_definitions(CMakeProject1
