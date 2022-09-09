@@ -5,17 +5,12 @@
         "minor": 24,
         "patch": 1
     },
-    "include": [
-        "vcpkg.json",
-        "Directory.Build.props",
-        "Directory.Build.targets"
-    ],
     "configurePresets": [
         {
             "name": "windows-base",
             "description": "Target Windows with the Visual Studio development environment.",
             "hidden": true,
-            "generator": "Visual Studio 17 2022",
+            "generator": "Ninja Multi-Config",
             "binaryDir": "${sourceDir}/out/build/${presetName}",
             "installDir": "${sourceDir}/out/install/${presetName}",
             "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
