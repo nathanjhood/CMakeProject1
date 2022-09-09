@@ -18,10 +18,6 @@
 // Global app config header.
 #include <CMakeProject1Config.h>
 
-#ifndef CMAKEPROJECT1_CONFIG_H_INCLUDED
-    #include "../cmake/CMakeProject1Config.h.in"
-#endif
-
 // Standard C++ Library.
 #include <assert.h>
 #include <iostream>

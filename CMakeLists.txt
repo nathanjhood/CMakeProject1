@@ -40,7 +40,7 @@ set(description "Generic CMake Project with in-built package manager")
 set_property(TARGET CMakeProject1 PROPERTY PROJECT_DESCRIPTION ${description})
 
 # set homepage
-set(homepage https://stoneydsp.github.io/CMakeProject1/html/index.html)
+set(homepage "https://stoneydsp.github.io/CMakeProject1/html/index.html")
 set_property(TARGET CMakeProject1 PROPERTY HOMEPAGE_URL ${homepage})
 
 # set company/author name
@@ -114,7 +114,7 @@ target_link_libraries (CMakeProject1
 target_sources(CMakeProject1
   PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/CMakeProject1/main.h
     ${CMAKE_CURRENT_BINARY_DIR}/cmake/CMakeProject1Config.h
 )
 
