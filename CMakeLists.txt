@@ -8,6 +8,17 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
     cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 endif()
 
+# Run git submodule init command at configure time...
+find_package(Git QUIET)
+if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
+    execute_process(COMMAND ${GIT_EXECUTABLE} submodule update --init --recursive
+                    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                    RESULT_VARIABLE GIT_SUBMOD_RESULT)
+    if(NOT GIT_SUBMOD_RESULT EQUAL "0")
+        message(FATAL_ERROR "git submodule update --init --recursive failed with ${GIT_SUBMOD_RESULT}, please checkout submodules")
+    endif()
+endif()
+
 # Toolchain location. Stores result in the CMakeCache.
 set(CMAKE_TOOLCHAIN_FILE
   ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake
@@ -17,10 +28,16 @@ set(CMAKE_TOOLCHAIN_FILE
 set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 
 # Create a CMake project here.
-project (CMakeProject1 LANGUAGES CXX)
-
-# Add source to this project's executable.
-add_executable (CMakeProject1 ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
+project (CMakeProject1
+  VERSION
+    1.0.0.0
+  DESCRIPTION
+    "Generic CMake Project with in-built package manager"
+  HOMEPAGE_URL
+    "https://stoneydsp.github.io/CMakeProject1/html/index.html"
+  LANGUAGES
+    C CXX
+)
 
 # make cache variables for install destinations
 include(GNUInstallDirs)
@@ -28,43 +45,24 @@ include(GNUInstallDirs)
 # include CMakePackageConfigHelpers macro
 include(CMakePackageConfigHelpers)
 
-# set version
-set(version 0.0.0.1)
-set_property(TARGET CMakeProject1 PROPERTY VERSION ${version})
-set_property(TARGET CMakeProject1 PROPERTY SOVERSION 0)
-set_property(TARGET CMakeProject1 PROPERTY INTERFACE_CMakeProject1_MAJOR_VERSION 3)
-set_property(TARGET CMakeProject1 APPEND PROPERTY COMPATIBLE_INTERFACE_STRING CMakeProject1_MAJOR_VERSION)
-
-# set description
-set(description "Generic CMake Project with in-built package manager")
-set_property(TARGET CMakeProject1 PROPERTY PROJECT_DESCRIPTION ${description})
-
-# set homepage
-set(homepage "https://stoneydsp.github.io/CMakeProject1/html/index.html")
-set_property(TARGET CMakeProject1 PROPERTY HOMEPAGE_URL ${homepage})
-
-# set company/author name
-set (author "StoneyDSP" CACHE STRING "Company Name")
-set_property(TARGET CMakeProject1 PROPERTY AUTHOR ${author})
-
 # set CMake module path
-set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake ${CMAKE_MODULE_PATH})
 
 # specify the C++ standard
-#set(CMAKE_CXX_STANDARD 17)
-#set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # specify the C standard
-#set(CMAKE_C_STANDARD 17)
-#set(CMAKE_C_STANDARD_REQUIRED True)
+set(CMAKE_C_STANDARD 17)
+set(CMAKE_C_STANDARD_REQUIRED True)
 
 # specify the C++ standard
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET CMakeProject1 PROPERTY CXX_STANDARD 20)
-endif()
+#if (CMAKE_VERSION VERSION_GREATER 3.12)
+#  set_property(TARGET CMakeProject1 PROPERTY CXX_STANDARD 20)
+#endif()
 
-#find_package(JUCE CONFIG REQUIRED)
-#find_package(StoneyDSP CONFIG REQUIRED)
+find_package (fmt CONFIG REQUIRED)
+find_package(StoneyDSP CONFIG REQUIRED)
 
 # generate the version file for the config file
 write_basic_package_version_file(
@@ -96,19 +94,20 @@ install(
     ${CMAKE_INSTALL_LIBDIR}/cmake/CMakeProject1
 )
 
-find_package (fmt CONFIG REQUIRED)
-
 # Include sub-folder/projects.
-#add_subdirectory (cmake)
-#add_subdirectory (include)
+add_subdirectory (bin)
 add_subdirectory (docs)
 add_subdirectory (src)
 add_subdirectory (tests)
+
+# Add source to this project's executable.
+add_executable (CMakeProject1 ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
 # link libraries and modules to other libraries or executables.
 target_link_libraries (CMakeProject1
 	PRIVATE
     fmt::fmt
+    stoneydsp::stoneydsp_core
 	PUBLIC
 )
 
