@@ -17,16 +17,10 @@ set(CMAKE_TOOLCHAIN_FILE
 set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 
 # Create a CMake project here.
-project (CMakeProject1
-  VERSION
-    1.0.0.0
-  DESCRIPTION
-    "Generic CMake Project with in-built package manager"
-  HOMEPAGE_URL
-    "https://stoneydsp.github.io/CMakeProject1/html/index.html"
-  LANGUAGES
-    C CXX
-)
+project (CMakeProject1 LANGUAGES C CXX)
+
+# Add source to this project's executable.
+add_executable (CMakeProject1 ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
 # make cache variables for install destinations
 include(GNUInstallDirs)
@@ -34,24 +28,37 @@ include(GNUInstallDirs)
 # include CMakePackageConfigHelpers macro
 include(CMakePackageConfigHelpers)
 
-# set CMake module path
-set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake ${CMAKE_MODULE_PATH})
+# set version
+set(version 0.0.0.1)
+set_property(TARGET CMakeProject1 PROPERTY VERSION ${version})
+set_property(TARGET CMakeProject1 PROPERTY SOVERSION 0)
+set_property(TARGET CMakeProject1 PROPERTY INTERFACE_CMakeProject1_MAJOR_VERSION 3)
+set_property(TARGET CMakeProject1 APPEND PROPERTY COMPATIBLE_INTERFACE_STRING CMakeProject1_MAJOR_VERSION)
+
+# set description
+set(description "VS Console Application with CMake, vcpkg, Doxygen, and JUCE support")
+set_property(TARGET CMakeProject1 PROPERTY PROJECT_DESCRIPTION ${description})
+
+# set homepage
+set(homepage https://stoneydsp.github.io/ConsoleApplication/html/index.html)
+set_property(TARGET CMakeProject1 PROPERTY HOMEPAGE_URL ${homepage})
+
+# set company/author name
+set (author "StoneyDSP" CACHE STRING "Company Name")
+set_property(TARGET CMakeProject1 PROPERTY AUTHOR ${author})
 
 # specify the C++ standard
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+#set(CMAKE_CXX_STANDARD 17)
+#set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # specify the C standard
-set(CMAKE_C_STANDARD 17)
-set(CMAKE_C_STANDARD_REQUIRED True)
+#set(CMAKE_C_STANDARD 17)
+#set(CMAKE_C_STANDARD_REQUIRED True)
 
 # specify the C++ standard
-#if (CMAKE_VERSION VERSION_GREATER 3.12)
-#  set_property(TARGET CMakeProject1 PROPERTY CXX_STANDARD 20)
-#endif()
-
-find_package (fmt CONFIG REQUIRED)
-find_package(StoneyDSP CONFIG REQUIRED)
+if (CMAKE_VERSION VERSION_GREATER 3.12)
+  set_property(TARGET CMakeProject1 PROPERTY CXX_STANDARD 20)
+endif()
 
 # generate the version file for the config file
 write_basic_package_version_file(
@@ -83,32 +90,30 @@ install(
     ${CMAKE_INSTALL_LIBDIR}/cmake/CMakeProject1
 )
 
-# Include sub-folder/projects.
-add_subdirectory (bin)
-add_subdirectory (docs)
-add_subdirectory (src)
-add_subdirectory (tests)
+#find_package(JUCE CONFIG REQUIRED)
+#find_package(StoneyDSP CONFIG REQUIRED)
 
-# Add source to this project's executable.
-add_executable (CMakeProject1 ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
+# Include sub-folder/projects to the build tree.
+add_subdirectory (src)
+add_subdirectory (cmake)
 
 # link libraries and modules to other libraries or executables.
-target_link_libraries (CMakeProject1
-	PRIVATE
+target_link_libraries(CMakeProject1
+  PRIVATE
     fmt::fmt
     stoneydsp::stoneydsp_core
-	PUBLIC
+  PUBLIC
 )
 
 # add source files to a target.
-target_sources(CMakeProject1
+ target_sources(CMakeProject1
   PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/CMakeProject1/main.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.h
     ${CMAKE_CURRENT_BINARY_DIR}/cmake/CMakeProject1Config.h
 )
 
-# Add some preprocessor definitions to our target.
+# adds some preprocessor definitions to our target.
 target_compile_definitions(CMakeProject1
-    PRIVATE
+  PRIVATE
 )
