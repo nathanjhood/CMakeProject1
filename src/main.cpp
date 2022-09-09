@@ -22,7 +22,7 @@
 int main(int argc, char** argv)
 {
 	fmt::print("Hello, from {}!", projectName); std::cout << std::endl;
-	//fmt::print("Version {}!", projectVersion); std::cout << std::endl;
+	fmt::print("Version {}!", projectVersion); std::cout << std::endl;
 	fmt::print("Description: {}!", projectDescription); std::cout << std::endl;
 	fmt::print("Bought to you by {}!", companyName); std::cout << std::endl;
 	fmt::print("Find out more at {}!", projectWebsite); std::cout << std::endl;

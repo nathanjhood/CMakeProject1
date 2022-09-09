@@ -93,8 +93,8 @@ install(
     ${CMAKE_INSTALL_LIBDIR}/cmake/CMakeProject1
 )
 
-# find_package (JUCE CONFIG REQUIRED)
-# find_package (fmt CONFIG REQUIRED)
+find_package (JUCE CONFIG REQUIRED)
+find_package (fmt CONFIG REQUIRED)
 
 # Include sub-folder/projects.
 add_subdirectory (src)

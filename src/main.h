@@ -16,9 +16,9 @@
 #define MAIN_H_INCLUDED
 
 // Global app config header.
-#ifdef CMAKEPROJECT1_CONFIG_H_INCLUDED
-    #include "../cmake/CMakeProject1Config.h"
-#else
+#include <CMakeProject1Config.h>
+
+#ifndef CMAKEPROJECT1_CONFIG_H_INCLUDED
     #include "../cmake/CMakeProject1Config.h.in"
 #endif
 
