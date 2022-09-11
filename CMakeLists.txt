@@ -9,17 +9,14 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
 endif()
 
 # add required submodules
-if(GIT_FOUND)
+if(GIT_FOUND AND EXISTS ${CMAKE_SOURCE_DIR}/.git)
 else()
+    set_property(GLOBAL PROPERTY USE_FOLDERS YES)
     add_subdirectory(extern)
 endif()
 
 # Create a CMake project here.
 project (CMakeProject1 LANGUAGES C CXX)
-
-set_property(GLOBAL PROPERTY USE_FOLDERS YES)
-
-
 
 # Add source to this project's executable.
 add_executable (CMakeProject1 ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
