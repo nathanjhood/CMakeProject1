@@ -13,10 +13,12 @@ if (NOT EXISTS GIT_FOUND)
     add_subdirectory(extern)
 endif()
 
-set_property(GLOBAL PROPERTY USE_FOLDERS YES)
-
 # Create a CMake project here.
 project (CMakeProject1 LANGUAGES C CXX)
+
+set_property(GLOBAL PROPERTY USE_FOLDERS YES)
+
+
 
 # Add source to this project's executable.
 add_executable (CMakeProject1 ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
@@ -101,7 +103,7 @@ find_package(fmt CONFIG REQUIRED)
 find_package(StoneyDSP CONFIG REQUIRED)
 
 # Include sub-folder/projects to the build tree.
-add_subdirectory (bin)
+
 add_subdirectory (docs)
 add_subdirectory (src)
 add_subdirectory (cmake)
