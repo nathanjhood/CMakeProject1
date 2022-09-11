@@ -101,7 +101,7 @@ find_package(fmt CONFIG REQUIRED)
 find_package(StoneyDSP CONFIG REQUIRED)
 
 # Include sub-folder/projects to the build tree.
-add_subdirectory (bin)
+
 add_subdirectory (docs)
 add_subdirectory (src)
 add_subdirectory (cmake)

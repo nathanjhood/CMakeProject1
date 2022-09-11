@@ -54,8 +54,8 @@
 			"VCPKG_ROOT": "${vcpkgRoot}"
 		},
 		"cmake.configureOnOpen": true,
-		"cmake.configureOnEdit": true,
-		"cmake.skipConfigureIfCachePresent": false,
+		"cmake.configureOnEdit": false,
+		"cmake.skipConfigureIfCachePresent": true,
 		"cmake.saveBeforeBuild": true,
 		"cmake.clearOutputBeforeBuild": true,
 		"cmake.buildBeforeRun": true,

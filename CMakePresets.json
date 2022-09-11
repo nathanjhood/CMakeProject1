@@ -11,9 +11,9 @@
             "description": "Target Windows with the Visual Studio development environment.",
             "hidden": true,
             "generator": "Visual Studio 17 2022",
-            "binaryDir": "${sourceDir}/out/build/${presetName}",
-            "installDir": "${sourceDir}/out/install/${presetName}",
-            "toolchainFile": "${sourceDir}/extern/vcpkg/scripts/buildsystems/vcpkg.cmake",
+            "binaryDir": "${sourceDir}/bin/${presetName}",
+            "installDir": "${sourceDir}/install/${presetName}",
+            "toolchainFile": "E:/StoneyDSP/extern/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "environment": {},
             "debug": {
                 "find": false,
@@ -39,7 +39,7 @@
         },
         {
             "name": "x64-windows",
-            "displayName": "x64",
+            "displayName": "x64-windows",
             "description": "Target Windows (64-bit) with the Visual Studio development environment.",
             "inherits": "windows-base",
             "toolset": {
@@ -57,7 +57,7 @@
         },
         {
             "name": "x86-windows",
-            "displayName": "x86",
+            "displayName": "x86-windows",
             "description": "Target Windows (32-bit) with the Visual Studio development environment.",
             "inherits": "windows-base",
             "toolset": {
@@ -84,7 +84,7 @@
             "name": "x64 Debug",
             "displayName": "Debug",
             "description": "Target Windows (64-bit) with the Visual Studio development environment. (Debug)",
-            "configurePreset": "x64",
+            "configurePreset": "x64-windows",
             "configuration": "Debug",
             "inheritConfigureEnvironment": true,
             "verbose": true
@@ -93,7 +93,7 @@
             "name": "x64 Release",
             "displayName": "Release",
             "description": "Target Windows (64-bit) with the Visual Studio development environment. (Release)",
-            "configurePreset":  "x64-windows",
+            "configurePreset": "x64-windows",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
             "verbose": true
@@ -102,7 +102,7 @@
             "name": "x64 RelWithDebInfo",
             "displayName": "RelWithDebInfo",
             "description": "Target Windows (64-bit) with the Visual Studio development environment. (RelWithDebInfo)",
-            "configurePreset":  "x64-windows",
+            "configurePreset": "x64-windows",
             "configuration": "RelWithDebInfo",
             "inheritConfigureEnvironment": true,
             "verbose": true
@@ -186,7 +186,7 @@
             "hostOS": "Windows",
             "enableMicrosoftCodeAnalysis": true,
             "enableClangTidyCodeAnalysis": false,
-            "cacheRoot": "${sourceDir}",
+            "cacheRoot": "${sourceDir}/bin/${presetName}",
             "intelliSenseOptions": {
                 "useCompilerDefaults": true
             },
