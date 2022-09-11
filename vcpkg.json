@@ -1,6 +1,6 @@
 {
     "name": "cmakeproject1",
-    "version-string": "0.0.1",
+    "version": "0.0.0.1",
     "dependencies": [
         "fmt",
         "vcpkg-cmake",
