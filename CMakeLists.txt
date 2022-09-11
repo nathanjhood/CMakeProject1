@@ -110,6 +110,10 @@ add_subdirectory (src)
 add_subdirectory (cmake)
 add_subdirectory (scripts)
 
+if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
+    add_subdirectory(tests)
+endif()
+
 # link libraries and modules to other libraries or executables.
 target_link_libraries(CMakeProject1
   PRIVATE
