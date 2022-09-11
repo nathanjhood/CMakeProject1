@@ -12,12 +12,12 @@
 
 #include "main.h"
 
-/** Main.
+/** main.
  * @brief Entry point for program execution.
  *
- * @param argc int
- * @param argv char**
- * @return int
+ * @param argc Number of strings in array argv.
+ * @param argv Array of command-line argument strings.
+ * @return Exit code.
  */
 int main(int argc, char** argv)
 {
@@ -26,6 +26,8 @@ int main(int argc, char** argv)
 	fmt::print("Description: {}!", projectDescription); std::cout << std::endl;
 	fmt::print("Bought to you by {}!", companyName); std::cout << std::endl;
 	fmt::print("Find out more at {}!", projectWebsite); std::cout << std::endl;
+
+	stoneydsp::Double dbl {10.2};
 
 	std::cout << std::endl;
 

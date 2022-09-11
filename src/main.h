@@ -16,7 +16,7 @@
 #define MAIN_H_INCLUDED
 
 // Global app config header.
-#include "../cfg/CMakeProject1_Config.h"
+#include <CMakeProject1Config.h>
 
 // Standard C++ Library.
 #include <assert.h>
@@ -26,12 +26,14 @@
 // Third-Party packages.
 #include <fmt/format.h>
 
-/** Main.
+#include "stoneydsp_core/stoneydsp_core.h"
+
+/** main.
  * @brief Entry point for program execution.
  *
- * @param argc int
- * @param argv char**
- * @return int
+ * @param argc Number of strings in array argv.
+ * @param argv Array of command-line argument strings.
+ * @return Exit code.
  */
 int main(int argc, char** argv);
 
