@@ -28,10 +28,10 @@ include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
 # set version
-set(version 0.0.0.1)
+set(version 1.0.0.0)
 set_property(TARGET CMakeProject1 PROPERTY VERSION ${version})
-set_property(TARGET CMakeProject1 PROPERTY SOVERSION 0)
-set_property(TARGET CMakeProject1 PROPERTY INTERFACE_CMakeProject1_MAJOR_VERSION 3)
+set_property(TARGET CMakeProject1 PROPERTY SOVERSION 1)
+set_property(TARGET CMakeProject1 PROPERTY INTERFACE_CMakeProject1_MAJOR_VERSION 1)
 set_property(TARGET CMakeProject1 APPEND PROPERTY COMPATIBLE_INTERFACE_STRING CMakeProject1_MAJOR_VERSION)
 
 # set description
@@ -91,7 +91,7 @@ install(
 
 # install header file
 install(FILES
-        src/main.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/CMakeProject1/main.h
         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
@@ -119,7 +119,7 @@ target_link_libraries(CMakeProject1
  target_sources(CMakeProject1
   PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.h
+    ${CMAKE_INSTALL_INCLUDEDIR}/CMakeProject1/main.h
 )
 
 # adds some preprocessor definitions to our target.
