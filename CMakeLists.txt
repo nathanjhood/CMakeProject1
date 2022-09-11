@@ -10,6 +10,7 @@ endif()
 
 # add required submodules
 if(GIT_FOUND AND EXISTS ${CMAKE_SOURCE_DIR}/.git)
+    set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 else()
     set_property(GLOBAL PROPERTY USE_FOLDERS YES)
     add_subdirectory(extern)
@@ -19,7 +20,10 @@ endif()
 project (CMakeProject1 LANGUAGES C CXX)
 
 # Add source to this project's executable.
-add_executable (CMakeProject1 ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
+add_executable (CMakeProject1
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/CMakeProject1/main.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+)
 
 # make cache variables for install destinations
 include(GNUInstallDirs)
@@ -28,10 +32,10 @@ include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
 # set version
-set(version 0.0.0.1)
+set(version 1.0.0.0)
 set_property(TARGET CMakeProject1 PROPERTY VERSION ${version})
-set_property(TARGET CMakeProject1 PROPERTY SOVERSION 0)
-set_property(TARGET CMakeProject1 PROPERTY INTERFACE_CMakeProject1_MAJOR_VERSION 3)
+set_property(TARGET CMakeProject1 PROPERTY SOVERSION 1)
+set_property(TARGET CMakeProject1 PROPERTY INTERFACE_CMakeProject1_MAJOR_VERSION 1)
 set_property(TARGET CMakeProject1 APPEND PROPERTY COMPATIBLE_INTERFACE_STRING CMakeProject1_MAJOR_VERSION)
 
 # set description
@@ -91,8 +95,8 @@ install(
 
 # install header file
 install(FILES
-        src/main.h
-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/CMakeProject1/main.h
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/CMakeProject1}
 )
 
 
@@ -107,6 +111,10 @@ add_subdirectory (src)
 add_subdirectory (cmake)
 add_subdirectory (scripts)
 
+if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
+    add_subdirectory(tests)
+endif()
+
 # link libraries and modules to other libraries or executables.
 target_link_libraries(CMakeProject1
   PRIVATE
@@ -118,8 +126,8 @@ target_link_libraries(CMakeProject1
 # add source files to a target.
  target_sources(CMakeProject1
   PRIVATE
+    ${CMAKE_INSTALL_INCLUDEDIR}/CMakeProject1/main.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.h
 )
 
 # adds some preprocessor definitions to our target.
