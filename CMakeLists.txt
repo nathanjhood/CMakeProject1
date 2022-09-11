@@ -19,7 +19,10 @@ endif()
 project (CMakeProject1 LANGUAGES C CXX)
 
 # Add source to this project's executable.
-add_executable (CMakeProject1 ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
+add_executable (CMakeProject1
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/CMakeProject1/main.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+)
 
 # make cache variables for install destinations
 include(GNUInstallDirs)
@@ -92,7 +95,7 @@ install(
 # install header file
 install(FILES
         ${CMAKE_CURRENT_SOURCE_DIR}/include/CMakeProject1/main.h
-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/CMakeProject1}
 )
 
 
@@ -118,8 +121,8 @@ target_link_libraries(CMakeProject1
 # add source files to a target.
  target_sources(CMakeProject1
   PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
     ${CMAKE_INSTALL_INCLUDEDIR}/CMakeProject1/main.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
 )
 
 # adds some preprocessor definitions to our target.
