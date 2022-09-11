@@ -13,7 +13,6 @@
             "generator": "Visual Studio 17 2022",
             "binaryDir": "${sourceDir}/bin/${presetName}",
             "installDir": "${sourceDir}/install/${presetName}",
-            "toolchainFile": "E:/StoneyDSP/extern/vcpkg/scripts/buildsystems/vcpkg.cmake",
             "environment": {},
             "debug": {
                 "find": false,
