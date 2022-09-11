@@ -10,6 +10,7 @@ endif()
 
 # add required submodules
 if(GIT_FOUND AND EXISTS ${CMAKE_SOURCE_DIR}/.git)
+    set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 else()
     set_property(GLOBAL PROPERTY USE_FOLDERS YES)
     add_subdirectory(extern)
