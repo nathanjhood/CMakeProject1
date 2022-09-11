@@ -1,1 +1,9 @@
-
+[submodule "extern/StoneyDSP"]
+	path = extern/StoneyDSP
+	url = ../../StoneyDSP/StoneyDSP.git
+[submodule "extern/vcpkg"]
+	path = extern/vcpkg
+	url = ../../StoneyDSP/vcpkg.git
+[submodule "extern/doxygen"]
+	path = extern/doxygen
+	url = ../../StoneyDSP/doxygen.git
