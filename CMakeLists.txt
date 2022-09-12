@@ -12,6 +12,7 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
 endif()
 
 set_property(GLOBAL PROPERTY USE_FOLDERS YES)
+set(ENABLE_LOGGING = 1)
 
 message("Initiating CMake v${CMAKE_VERSION}")
 
@@ -159,7 +160,7 @@ configure_file(
   ${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}Config.h)
 message("Created config header file.")
 
-message("End configure files.\n")
+message(STATUS "End configure files.\n")
 
 # install header file
 install(
@@ -169,6 +170,7 @@ install(
     ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}
 )
 
+# ------------------------- Packages and Sub-Projects ------------------------ #
 
 #find_package(JUCE CONFIG REQUIRED)
 find_package(fmt CONFIG REQUIRED)
@@ -193,22 +195,21 @@ else()
     message(STATUS "Testing disabled. Skipping tests directory.")
 endif()
 
-message(STATUS "Adding link libraries to project...")
-
 # link libraries and modules to other libraries or executables.
+message(STATUS "Adding link libraries to project...")
 target_link_libraries(${PROJECT_NAME}
   PRIVATE
     fmt::fmt
     stoneydsp::stoneydsp_core
 )
-
 message(STATUS "...Link libraries added.")
 
 
-# ------------------------- Begin Generic CMake Variable Logging ------------------
+# ------------------------- Begin Generic CMake Variable Logging ------------- #
 
 # /*    C++ comment style not allowed   */
 
+if(ENABLE_LOGGING EQUAL 1)
 
 # if you are building in-source, this is the same as CMAKE_SOURCE_DIR, otherwise
 # this is the top level directory of your build tree
@@ -364,5 +365,7 @@ MESSAGE( STATUS "CMAKE_TOOLCHAIN_FILE: " ${CMAKE_TOOLCHAIN_FILE} )
 
 #
 #MESSAGE( STATUS ": " ${} )
+
+endif()
 
 # ------------------------- End of Generic CMake Variable Logging ------------------
