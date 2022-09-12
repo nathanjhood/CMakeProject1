@@ -38,7 +38,7 @@
         },
         {
             "name": "x64-windows",
-            "displayName": "x64-windows",
+            "displayName": "x64",
             "description": "Target Windows (64-bit) with the Visual Studio development environment.",
             "inherits": "windows-base",
             "toolset": {
@@ -56,7 +56,7 @@
         },
         {
             "name": "x86-windows",
-            "displayName": "x86-windows",
+            "displayName": "x86",
             "description": "Target Windows (32-bit) with the Visual Studio development environment.",
             "inherits": "windows-base",
             "toolset": {
