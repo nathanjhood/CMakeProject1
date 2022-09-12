@@ -1,2 +1,1 @@
-Set-Location E:\StoneyDSP\
-Import-Module 'E:\StoneyDSP\extern\vcpkg\scripts\posh-vcpkg'
+Import-Module '..\extern\vcpkg\scripts\posh-vcpkg'
