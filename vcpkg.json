@@ -13,5 +13,10 @@
         "vcpkg-cmake",
         "vcpkg-cmake-config",
         "vcpkg-cmake-get-vars"
-    ]
+    ],
+    "dev-dependencies": [
+        "catch2"
+    ],
+    "documentation": "https://github.com/StoneyDSP/CMakeProject1",
+    "license": "0BSD"
 }
