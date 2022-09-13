@@ -6,9 +6,9 @@
         "patch": 1
     },
     "include": [
-        "cmake/presets/windows/CMakeConfigurePresets.json",
-        "cmake/presets/windows/CMakeBuildPresets.json",
-        "cmake/presets/windows/CMakeVendorPresets.json",
-        "cmake/presets/windows/CMakeTestPresets.json"
+        "cmake/presets/Windows/CMakeConfigurePresets.json",
+        "cmake/presets/Windows/CMakeBuildPresets.json",
+        "cmake/presets/Windows/CMakeVendorPresets.json",
+        "cmake/presets/Windows/CMakeTestPresets.json"
     ]
 }
