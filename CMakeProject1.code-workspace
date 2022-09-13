@@ -215,10 +215,11 @@
 			},
 			{
 				"fileMatch": [
-					"cmake/presets/windows/CMakeBuildPresets.json",
-					"cmake/presets/windows/CMakeVendorPresets.json",
-					"cmake/presets/windows/CMakeConfigurePresets.json",
-					"cmake/presets/windows/CMakeTestPresets.json"
+					"scripts/windows/CMakeBuildPresets.json",
+					"scripts/windows/CMakeVendorPresets.json",
+					"scripts/windows/CMakeConfigurePresets.json",
+					"scripts/windows/CMakeTestPresets.json",
+					"scripts/windows/vcpkgVariables.json"
 				],
 				"url": "https://cmake.org/cmake/help/latest/_downloads/3e2d73bff478d88a7de0de736ba5e361/schema.json",
 			}
