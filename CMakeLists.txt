@@ -16,8 +16,6 @@ set(ENABLE_LOGGING = 1)
 
 message("Initiating CMake v${CMAKE_VERSION}")
 
-add_subdirectory(share)
-
 # ------------------------- Configure External Modules ----------------------- #
 
 # add required packages
@@ -25,7 +23,7 @@ message("Checking project dependencies...")
 if(GIT_FOUND)
   message(STATUS "git: already found. Using: ${CMAKE_PROJECT_NAME} submodules")
 else()
-  if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/.gitmodules)
+  if(EXISTS ${CMAKE_SOURCE_DIR}/.gitmodules)
     message(STATUS "git: adding local submodules...")
     add_subdirectory(extern)
   else()
@@ -58,7 +56,7 @@ message("${PROJECT_HOMEPAGE_URL}\n")
 
 # Add output target.
 message("Adding target...")
-add_executable (${PROJECT_NAME} src/main.cpp src/main.h)
+add_executable (${PROJECT_NAME} src/main.cpp include/${PROJECT_NAME}/CMakeProject.h)
 # Set target version
 set_property(TARGET ${PROJECT_NAME} PROPERTY VERSION ${PROJECT_VERSION})
 set_property(TARGET ${PROJECT_NAME} PROPERTY SOVERSION ${PROJECT_VERSION_MAJOR})
