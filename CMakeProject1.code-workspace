@@ -193,6 +193,15 @@
 					"/vcpkg.json"
 				],
 				"url": "https://raw.githubusercontent.com/microsoft/vcpkg/master/scripts/vcpkg.schema.json"
+			},
+			{
+				"fileMatch": [
+					"cmake/CMakeBuildPresets.json",
+					"cmake/CMakeVendorPresets.json",
+					"cmake/CMakeConfigurePresets.json",
+					"cmake/CMakeTestPresets.json"
+				],
+				"url": "https://cmake.org/cmake/help/latest/_downloads/3e2d73bff478d88a7de0de736ba5e361/schema.json",
 			}
 		],
 		"powershell.powerShellDefaultVersion": "PowerShell Core 7 (x64)",
