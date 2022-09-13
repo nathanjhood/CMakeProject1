@@ -71,10 +71,7 @@
 		"C_Cpp.loggingLevel": "Debug",
 		"C_Cpp.intelliSenseEngine": "Default",
 		"cmake.useCMakePresets": "auto",
-		"cmake.configureEnvironment": {
-			"VCPKG_DEFAULT_TRIPLET": "x64-windows",
-			"VCPKG_ROOT": "${vcpkgRoot}"
-		},
+		"cmake.configureEnvironment": {},
 		"cmake.configureOnOpen": true,
 		"cmake.configureOnEdit": false,
 		"cmake.skipConfigureIfCachePresent": true,
