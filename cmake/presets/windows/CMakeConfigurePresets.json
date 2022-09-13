@@ -14,7 +14,10 @@
             "binaryDir": "${sourceDir}/bin/${presetName}",
             "installDir": "${sourceDir}/install/${presetName}",
             "environment": {
-                "VCPKG_ROOT": "${sourceDir}/extern/vcpkg/"
+                "VCPKG_ROOT": "${sourceDir}",
+                "VCPKG_INSTALLED_DIR": "${sourceDir}/bin/${presetName}",
+                "VCPKG_DEFAULT_TRIPLET": "x64-windows",
+                "VCPKG_DOWNLOADS": "${sourceDir}"
             },
             "debug": {
                 "find": false,
