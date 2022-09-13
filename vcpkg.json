@@ -18,5 +18,5 @@
         "catch2"
     ],
     "documentation": "https://github.com/StoneyDSP/CMakeProject1",
-    "license": "0BSD"
+    "license": "BSD-3-clause"
 }
