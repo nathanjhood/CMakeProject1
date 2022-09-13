@@ -79,7 +79,6 @@ set_property(TARGET ${PROJECT_NAME} PROPERTY INTERFACE_${PROJECT_NAME}_MAJOR_VER
 set_property(TARGET ${PROJECT_NAME} APPEND PROPERTY COMPATIBLE_INTERFACE_STRING ${PROJECT_NAME}_MAJOR_VERSION)
 message("Added target: ${PROJECT_NAME}.exe")
 
-
 # include CMakePackageConfigHelpers macro.
 include(CMakePackageConfigHelpers)
 message(STATUS "Include (CMakePackageConfigHelpers)")
