@@ -13,12 +13,7 @@
             "generator": "Visual Studio 17 2022",
             "binaryDir": "${sourceDir}/bin/${presetName}",
             "installDir": "${sourceDir}/install/${presetName}",
-            "environment": {
-                "VCPKG_ROOT": "${sourceDir}",
-                "VCPKG_INSTALLED_DIR": "${sourceDir}/bin/${presetName}",
-                "VCPKG_DEFAULT_TRIPLET": "x64-windows",
-                "VCPKG_DOWNLOADS": "${sourceDir}"
-            },
+            "environment": {},
             "debug": {
                 "find": false,
                 "output": false,
