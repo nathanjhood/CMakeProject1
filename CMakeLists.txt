@@ -33,7 +33,7 @@ endif()
 
 # ------------------------- Configure Project -------------------------------- #
 
-message("${CMAKE_CURRENT_SOURCE_DIR}>")
+message("${CMAKE_CURRENT_SOURCE_DIR}/>")
 
 message("Detecting CMake project...")
 
@@ -131,7 +131,11 @@ write_basic_package_version_file(
   ${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}ConfigVersion.cmake
   VERSION ${PROJECT_VERSION}
   COMPATIBILITY AnyNewerVersion)
-message("- Done.")
+if(EXISTS ${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}ConfigVersion.cmake)
+  message("Created package version file.")
+else()
+  message(FATAL_ERROR "Creating package version file failed!")
+endif()
 
 # create config file
 message("Creating package config file...")
@@ -172,6 +176,10 @@ install(
 
 # ------------------------- Packages and Sub-Projects ------------------------ #
 
+#find_package(Catch2 CONFIG REQUIRED)
+find_package(Catch2 CONFIG REQUIRED)
+message("found CMake package: Catch2 CONFIG REQUIRED")
+
 #find_package(JUCE CONFIG REQUIRED)
 find_package(fmt CONFIG REQUIRED)
 message("found CMake package: fmt CONFIG REQUIRED")
@@ -186,7 +194,7 @@ add_subdirectory (src)
 add_subdirectory (cmake)
 message("... Subdirectories added.")
 
-message("${CMAKE_CURRENT_SOURCE_DIR}>")
+message("${CMAKE_CURRENT_SOURCE_DIR}/>")
 
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
     message(STATUS "Testing enabled. Adding to file tree.")
@@ -201,6 +209,8 @@ target_link_libraries(${PROJECT_NAME}
   PRIVATE
     fmt::fmt
     stoneydsp::stoneydsp_core
+    Catch2::Catch2
+    Catch2::Catch2WithMain
 )
 message(STATUS "...Link libraries added.")
 
