@@ -31,8 +31,11 @@ else()
   endif()
 endif()
 
-# ------------------------- Configure Project -------------------------------- #
-
+# ---------------------------------------------------------------------------- #
+#
+#                             Configure Project
+#
+# ---------------------------------------------------------------------------- #
 message("${CMAKE_CURRENT_SOURCE_DIR}/>")
 
 message("Detecting CMake project...")
@@ -54,24 +57,36 @@ message("${PROJECT_NAME} v${PROJECT_VERSION}")
 message("${PROJECT_DESCRIPTION}")
 message("${PROJECT_HOMEPAGE_URL}\n")
 
+# Check if we are in the top-level project or not:
+if (NOT CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+    message(STATUS "${PROJECT_NAME} is a sub-project of ${CMAKE_PROJECT_NAME}")
+else()
+    message(STATUS "${CMAKE_PROJECT_NAME} is a top-level project")
+endif()
+
 # Add output target.
 message("Adding target...")
-add_executable (${PROJECT_NAME} src/main.cpp include/${PROJECT_NAME}/CMakeProject.h)
+add_executable (${PROJECT_NAME}
+${PROJECT_SOURCE_DIR}/main.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/CMakeProject.h)
+message("Added target: ${PROJECT_NAME}.exe")
+
 # Set target version
 set_property(TARGET ${PROJECT_NAME} PROPERTY VERSION ${PROJECT_VERSION})
 set_property(TARGET ${PROJECT_NAME} PROPERTY SOVERSION ${PROJECT_VERSION_MAJOR})
 set_property(TARGET ${PROJECT_NAME} PROPERTY INTERFACE_${PROJECT_NAME}_MAJOR_VERSION ${PROJECT_VERSION_MAJOR})
 set_property(TARGET ${PROJECT_NAME} APPEND PROPERTY COMPATIBLE_INTERFACE_STRING ${PROJECT_NAME}_MAJOR_VERSION)
-message("Added target: ${PROJECT_NAME}.exe")
-
-# include CMakePackageConfigHelpers macro.
-include(CMakePackageConfigHelpers)
-message(STATUS "Include (CMakePackageConfigHelpers)")
+#message("Added target: ${PROJECT_NAME}.exe")
 
 # specify the C++ standard.
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 20)
 endif()
+
+
+# include CMakePackageConfigHelpers macro.
+include(CMakePackageConfigHelpers)
+message(STATUS "Include (CMakePackageConfigHelpers)")
 
 
 # include installer generator
@@ -96,7 +111,7 @@ set(CPACK_SOURCE_IGNORE_FILES
     /.github
     /.vs
     /.vscode
-    /bin
+    # /bin
     /installed
     /.*build.*
     /\\\\.DS_Store
@@ -108,17 +123,19 @@ message(STATUS "CPack ignores: ${CPACK_SOURCE_IGNORE_FILES}\n")
 # Configure folder structure.
 set(PROJECT_BINARY_DIR ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 set(PROJECT_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
-set(RUNTIME_OUTPUT_DIRECTORY /artefacts)
-set(ARCHIVE_OUTPUT_DIRECTORY /artefacts)
-set(LIBRARY_OUTPUT_DIRECTORY /artefacts)
-set(PDB_OUTPUT_DIRECTORY /bin)
+set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/artefacts)
+set(ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/artefacts)
+set(LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/artefacts)
+set(PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+set(CMAKE_INTDIR ${PROJECT_BINARY_DIR}/artefacts)
 
 message("set (PROJECT_BINARY_DIR) <${PROJECT_BINARY_DIR}>")
 message("set (PROJECT_SOURCE_DIR) <${PROJECT_SOURCE_DIR}>")
 message("set (RUNTIME_OUTPUT_DIRECTORY) <${RUNTIME_OUTPUT_DIRECTORY}>")
 message("set (ARCHIVE_OUTPUT_DIRECTORY) <${ARCHIVE_OUTPUT_DIRECTORY}>")
 message("set (LIBRARY_OUTPUT_DIRECTORY) <${LIBRARY_OUTPUT_DIRECTORY}>")
-message("set (PDB_OUTPUT_DIRECTORY) <${PDB_OUTPUT_DIRECTORY}>\n")
+message("set (PDB_OUTPUT_DIRECTORY) <${PDB_OUTPUT_DIRECTORY}>")
+message("set (CMAKE_INTDIR) <${CMAKE_INTDIR}>\n")
 
 # ------------------------- Configure config files --------------------------- #
 
@@ -175,6 +192,10 @@ install(
 
 # ------------------------- Packages and Sub-Projects ------------------------ #
 
+# To find and use catch2
+#find_path(CATCH_INCLUDE_DIR NAMES catch.hpp PATH_SUFFIXES catch2)
+#include_directories(${CATCH_INCLUDE_DIR})
+
 #find_package(Catch2 CONFIG REQUIRED)
 find_package(Catch2 CONFIG REQUIRED)
 message("found CMake package: Catch2 CONFIG REQUIRED")
@@ -200,14 +221,40 @@ else()
 endif()
 
 # link libraries and modules to other libraries or executables.
-message(STATUS "Adding link libraries to project...")
+message(STATUS "Adding link libraries to target...")
 target_link_libraries(${PROJECT_NAME}
-  INTERFACE
+  PRIVATE
     fmt::fmt
     Catch2::Catch2
     Catch2::Catch2WithMain
 )
 message(STATUS "...Link libraries added.")
+
+
+# Host handling:
+if(WIN32)
+    add_compile_definitions(WINDOWS=1)
+    message(STATUS "Setting Compile Definition WINDOWS=1")
+endif ()
+
+if (UNIX AND NOT APPLE)
+    add_compile_definitions(LINUX=1)
+    message(STATUS "Setting Compile Definition LINUX=1")
+endif ()
+
+if (APPLE)
+    add_compile_definitions(APPLE=1)
+    message(STATUS "Setting Compile Definition APPLE=1")
+endif ()
+
+# Debug definitions:
+if(${CMAKE_BUILD_TYPE} MATCHES Debug)
+    add_compile_definitions(_DEBUG=1)
+    message(STATUS "Setting Compile Definition _DEBUG=1")
+else()
+    add_compile_definitions(NDEBUG=1)
+    message(STATUS "Setting Compile Definition NDEBUG=1")
+endif(${CMAKE_BUILD_TYPE} MATCHES Debug)
 
 # ------------------------- Begin Generic CMake Variable Logging ------------- #
 
