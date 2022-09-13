@@ -9,13 +9,11 @@
     ],
     "homepage": "https://github.com/StoneyDSP/CMakeProject1",
     "dependencies": [
+        "catch2",
         "fmt",
         "vcpkg-cmake",
         "vcpkg-cmake-config",
         "vcpkg-cmake-get-vars"
-    ],
-    "dev-dependencies": [
-        "catch2"
     ],
     "documentation": "https://github.com/StoneyDSP/CMakeProject1",
     "license": "BSD-3-clause"
