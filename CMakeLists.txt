@@ -85,7 +85,7 @@ message("set (CMAKE_INTDIR) <${CMAKE_INTDIR}>\n")
 message("Adding target...")
 add_executable (${PROJECT_NAME}
 ${PROJECT_SOURCE_DIR}/main.cpp
-${CMAKE_CURRENT_SOURCE_DIR}/include/CMakeProject.h)
+${CMAKE_CURRENT_SOURCE_DIR}/include/CMakeProject1.h)
 message("Added target: ${PROJECT_NAME}.exe")
 
 # Set target version
@@ -187,7 +187,7 @@ message(STATUS "End configure files.\n")
 # install header file
 install(
   FILES
-    ${PROJECT_SOURCE_DIR}/main.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/main.h
   DESTINATION
     ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}
 )
@@ -231,7 +231,6 @@ target_link_libraries(${PROJECT_NAME}
     Catch2::Catch2WithMain
 )
 message(STATUS "...Link libraries added.")
-
 
 # Host handling:
 if(WIN32)
