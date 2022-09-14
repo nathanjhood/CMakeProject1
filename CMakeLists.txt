@@ -64,11 +64,28 @@ else()
     message(STATUS "${CMAKE_PROJECT_NAME} is a top-level project")
 endif()
 
+# Configure folder structure.
+set(PROJECT_BINARY_DIR ${CMAKE_CURRENT_SOURCE_DIR}/bin)
+set(PROJECT_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
+set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/artefacts)
+set(ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/artefacts)
+set(LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/artefacts)
+set(PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+set(CMAKE_INTDIR ${PROJECT_BINARY_DIR}/artefacts)
+
+message("set (PROJECT_BINARY_DIR) <${PROJECT_BINARY_DIR}>")
+message("set (PROJECT_SOURCE_DIR) <${PROJECT_SOURCE_DIR}>")
+message("set (RUNTIME_OUTPUT_DIRECTORY) <${RUNTIME_OUTPUT_DIRECTORY}>")
+message("set (ARCHIVE_OUTPUT_DIRECTORY) <${ARCHIVE_OUTPUT_DIRECTORY}>")
+message("set (LIBRARY_OUTPUT_DIRECTORY) <${LIBRARY_OUTPUT_DIRECTORY}>")
+message("set (PDB_OUTPUT_DIRECTORY) <${PDB_OUTPUT_DIRECTORY}>")
+message("set (CMAKE_INTDIR) <${CMAKE_INTDIR}>\n")
+
 # Add output target.
 message("Adding target...")
 add_executable (${PROJECT_NAME}
 ${PROJECT_SOURCE_DIR}/main.cpp
-${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/CMakeProject.h)
+${CMAKE_CURRENT_SOURCE_DIR}/include/CMakeProject.h)
 message("Added target: ${PROJECT_NAME}.exe")
 
 # Set target version
@@ -83,15 +100,9 @@ if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 20)
 endif()
 
-
 # include CMakePackageConfigHelpers macro.
 include(CMakePackageConfigHelpers)
 message(STATUS "Include (CMakePackageConfigHelpers)")
-
-
-# include installer generator
-include(CPack)
-message(STATUS "Include (CPack)")
 
 # make cache variables for install destinations
 include(GNUInstallDirs)
@@ -117,25 +128,12 @@ set(CPACK_SOURCE_IGNORE_FILES
     /\\\\.DS_Store
 )
 
+# include installer generator
+include(CPack)
+message(STATUS "Include (CPack)")
+
 message(STATUS "CPack generators: ${CPACK_SOURCE_GENERATOR}")
 message(STATUS "CPack ignores: ${CPACK_SOURCE_IGNORE_FILES}\n")
-
-# Configure folder structure.
-set(PROJECT_BINARY_DIR ${CMAKE_CURRENT_SOURCE_DIR}/bin)
-set(PROJECT_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
-set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/artefacts)
-set(ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/artefacts)
-set(LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/artefacts)
-set(PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
-set(CMAKE_INTDIR ${PROJECT_BINARY_DIR}/artefacts)
-
-message("set (PROJECT_BINARY_DIR) <${PROJECT_BINARY_DIR}>")
-message("set (PROJECT_SOURCE_DIR) <${PROJECT_SOURCE_DIR}>")
-message("set (RUNTIME_OUTPUT_DIRECTORY) <${RUNTIME_OUTPUT_DIRECTORY}>")
-message("set (ARCHIVE_OUTPUT_DIRECTORY) <${ARCHIVE_OUTPUT_DIRECTORY}>")
-message("set (LIBRARY_OUTPUT_DIRECTORY) <${LIBRARY_OUTPUT_DIRECTORY}>")
-message("set (PDB_OUTPUT_DIRECTORY) <${PDB_OUTPUT_DIRECTORY}>")
-message("set (CMAKE_INTDIR) <${CMAKE_INTDIR}>\n")
 
 # ------------------------- Configure config files --------------------------- #
 
@@ -144,10 +142,10 @@ message(STATUS "Begin configure files...\n")
 # generate the version file for the config file
 message("Creating package version file...")
 write_basic_package_version_file(
-  ${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}ConfigVersion.cmake
+  ${CMAKE_CURRENT_BINARY_DIR}/share/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake
   VERSION ${PROJECT_VERSION}
   COMPATIBILITY AnyNewerVersion)
-if(EXISTS ${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}ConfigVersion.cmake)
+if(EXISTS ${CMAKE_CURRENT_BINARY_DIR}/share/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake)
   message("Created package version file.\n")
 else()
   message(FATAL_ERROR "Creating package version file failed!\n")
@@ -157,27 +155,31 @@ endif()
 message("Creating package config file...")
 configure_package_config_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/cmake/${PROJECT_NAME}Config.cmake.in
-    ${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}Config.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/share/${PROJECT_NAME}/${PROJECT_NAME}Config.cmake
   INSTALL_DESTINATION
     ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
   NO_CHECK_REQUIRED_COMPONENTS_MACRO)
-message("Created package config file.\n")
+if(EXISTS ${CMAKE_CURRENT_BINARY_DIR}/share/${PROJECT_NAME}/${PROJECT_NAME}Config.cmake)
+  message("Created package config file.\n")
+else()
+  message(FATAL_ERROR "Creating package config file failed!\n")
+endif()
 
 # install config files
 message("Installing package config file...")
 install(
   FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}Config.cmake
-    ${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}ConfigVersion.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/share/${PROJECT_NAME}/${PROJECT_NAME}Config.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/share/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake
   DESTINATION
-    ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME})
+    ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
 message("Installed package config file.\n")
 
 # create config header for C++
 message("Creating config header file...")
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/cmake/${PROJECT_NAME}Config.h.in
-  ${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}Config.h)
+  ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/${PROJECT_NAME}Config.h)
 message("Created config header file.\n")
 
 message(STATUS "End configure files.\n")
@@ -185,7 +187,7 @@ message(STATUS "End configure files.\n")
 # install header file
 install(
   FILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.h
+    ${PROJECT_SOURCE_DIR}/main.h
   DESTINATION
     ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}
 )
@@ -205,13 +207,13 @@ find_package(fmt CONFIG REQUIRED)
 message("found CMake package: fmt CONFIG REQUIRED")
 
 # Include sub-folder/projects to the build tree.
-message("Adding subdirectories...")
-add_subdirectory (docs)
-add_subdirectory (src)
-add_subdirectory (cmake)
-message("... Subdirectories added.")
+#message("Adding subdirectories...")
+#add_subdirectory (docs)
+#add_subdirectory (src)
+#add_subdirectory (cmake)
+#message("... Subdirectories added.")
 
-message("${CMAKE_CURRENT_SOURCE_DIR}/>")
+#message("${CMAKE_CURRENT_SOURCE_DIR}/>")
 
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
     message(STATUS "Testing enabled. Adding to file tree.")
