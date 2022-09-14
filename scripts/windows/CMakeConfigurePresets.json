@@ -10,6 +10,9 @@
             "name": "windows-base",
             "description": "Target Windows with the Visual Studio development environment.",
             "hidden": true,
+            "inherits": [
+                "vcpkg-variables"
+            ],
             "generator": "Visual Studio 17 2022",
             "binaryDir": "${sourceDir}/bin/${presetName}",
             "installDir": "${sourceDir}/install/${presetName}",
