@@ -6,7 +6,8 @@
         "patch": 1
     },
     "include": [
-        "vcpkgVariables.json"
+        "vcpkgVariables.json",
+        "CMakeDebugPresets.json"
     ],
     "configurePresets": [
         {
@@ -14,28 +15,12 @@
             "description": "Target Windows with the Visual Studio development environment.",
             "hidden": true,
             "inherits": [
-                "vcpkg-variables"
+                "vcpkg-variables",
+                "debug-settings"
             ],
             "generator": "Visual Studio 17 2022",
             "binaryDir": "${sourceDir}/bin/${presetName}",
             "installDir": "${sourceDir}/install/${presetName}",
-            "environment": {},
-            "debug": {
-                "find": false,
-                "output": false,
-                "tryCompile": false
-            },
-            "errors": {
-                "deprecated": true,
-                "dev": true
-            },
-            "warnings": {
-                "deprecated": true,
-                "dev": true,
-                "systemVars": true,
-                "uninitialized": false,
-                "unusedCli": true
-            },
             "condition": {
                 "type": "equals",
                 "lhs": "${hostSystemName}",
@@ -59,9 +44,7 @@
                 "CMAKE_C_COMPILER": "cl.exe",
                 "CMAKE_CXX_COMPILER": "cl.exe"
             },
-            "environment": {
-                "VCPKG_DEFAULT_TRIPLET": "x64-windows"
-            },
+            "environment": {},
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {
                     "intelliSenseMode": "windows-msvc-x64"
@@ -85,9 +68,7 @@
                 "CMAKE_C_COMPILER": "cl.exe",
                 "CMAKE_CXX_COMPILER": "cl.exe"
             },
-            "environment": {
-                "VCPKG_DEFAULT_TRIPLET": "x86-windows"
-            },
+            "environment": {},
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {
                     "intelliSenseMode": "windows-msvc-x86"
