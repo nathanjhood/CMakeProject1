@@ -6,9 +6,6 @@
         "patch": 1
     },
     "include": [
-        "scripts/windows/CMakeConfigurePresets.json",
-        "scripts/windows/CMakeBuildPresets.json",
-        "scripts/windows/CMakeVendorPresets.json",
-        "scripts/windows/CMakeTestPresets.json"
+        "scripts/CMakePresetDefaults.json"
     ]
 }
