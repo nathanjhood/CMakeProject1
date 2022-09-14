@@ -5,6 +5,9 @@
         "minor": 24,
         "patch": 1
     },
+    "include": [
+        "vcpkgVariables.json"
+    ],
     "configurePresets": [
         {
             "name": "windows-base",
@@ -55,6 +58,14 @@
             "cacheVariables": {
                 "CMAKE_C_COMPILER": "cl.exe",
                 "CMAKE_CXX_COMPILER": "cl.exe"
+            },
+            "environment": {
+                "VCPKG_DEFAULT_TRIPLET": "x64-windows"
+            },
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "intelliSenseMode": "windows-msvc-x64"
+                }
             }
         },
         {
@@ -73,6 +84,9 @@
             "cacheVariables": {
                 "CMAKE_C_COMPILER": "cl.exe",
                 "CMAKE_CXX_COMPILER": "cl.exe"
+            },
+            "environment": {
+                "VCPKG_DEFAULT_TRIPLET": "x86-windows"
             },
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {

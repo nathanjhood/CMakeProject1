@@ -9,10 +9,11 @@
         {
             "name": "vcpkg-variables",
             "displayName": "vcpkg-variables",
+            "description": "Set the vcpkg ENV variables",
             "hidden": true,
             "environment": {
                 "VCPKG_ROOT": "${sourceDir}/bin/${presetName}",
-                "VCPKG_DEFAULT_TRIPLET": "${presetName}-windows",
+                "VCPKG_DEFAULT_TRIPLET": "${presetName}",
                 "VCPKG_DOWNLOADS": "${sourceDir}/bin/${presetName}"
             }
         }
