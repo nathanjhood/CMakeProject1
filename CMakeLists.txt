@@ -18,17 +18,20 @@ message("Initiating CMake v${CMAKE_VERSION}")
 
 # ------------------------- Configure External Modules ----------------------- #
 
-# add required packages
-message("Checking project dependencies...")
-if(GIT_FOUND)
-  message(STATUS "git: already found. Using: ${CMAKE_PROJECT_NAME} submodules")
-else()
-  if(EXISTS ${CMAKE_SOURCE_DIR}/.gitmodules)
-    message(STATUS "git: adding local submodules...")
-    #add_subdirectory(extern)
-    include(extern/CMakeLists.txt)
+option(USE_EXTERN "Use extern folder to resolve dependencies" ON)
+
+if(USE_EXTERN)
+  # add required packages
+  message("Checking project dependencies...")
+  if(GIT_FOUND)
+    message(STATUS "git: already found. Using: ${CMAKE_PROJECT_NAME} submodules")
   else()
-    message(STATUS "git: no submodule file found")
+    if(EXISTS ${CMAKE_SOURCE_DIR}/.gitmodules)
+      message(STATUS "git: adding local submodules...")
+      include(extern/CMakeLists.txt)
+    else()
+      message(STATUS "git: no submodule file found")
+    endif()
   endif()
 endif()
 
@@ -185,12 +188,10 @@ message("Created config header file.\n")
 
 message(STATUS "End configure files.\n")
 
-# install header file
-install(
-  FILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/main.h
-  DESTINATION
-    ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}
+target_include_directories(${PROJECT_NAME}
+  PUBLIC
+    ${PROJECT_BINARY_DIR}
+    ${PROJECT_SOURCE_DIR}
 )
 
 # ------------------------- Packages and Sub-Projects ------------------------ #
@@ -215,13 +216,6 @@ message("found CMake package: fmt CONFIG REQUIRED")
 #message("... Subdirectories added.")
 
 #message("${CMAKE_CURRENT_SOURCE_DIR}/>")
-
-if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
-    message(STATUS "Testing enabled. Adding to file tree.")
-    add_subdirectory(tests)
-else()
-    message(STATUS "Testing disabled. Skipping tests directory.")
-endif()
 
 # link libraries and modules to other libraries or executables.
 message(STATUS "Adding link libraries to target...")
@@ -257,6 +251,15 @@ else()
     add_compile_definitions(NDEBUG=1)
     message(STATUS "Setting Compile Definition NDEBUG=1")
 endif(${CMAKE_BUILD_TYPE} MATCHES Debug)
+
+# Testing...
+enable_testing()
+if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
+    message(STATUS "Testing enabled. Adding to file tree.")
+    add_subdirectory(tests)
+else()
+    message(STATUS "Testing disabled. Skipping tests directory.")
+endif()
 
 # ------------------------- Begin Generic CMake Variable Logging ------------- #
 
