@@ -23,14 +23,13 @@ endif()
 # This variable specifies an alternate folder containing a vcpkg.json manifest.
 # Defaults to ${CMAKE_SOURCE_DIR} if ${CMAKE_SOURCE_DIR}/vcpkg.json exists.
 if(DEFINED ${VCPKG_MANIFEST_DIR})
-  message(STATUS "Toolchain: VCPKG_MANIFEST_DIR Using ${VCPKG_MANIFEST_DIR}")
+  message(STATUS "Toolchain: VCPKG_MANIFEST_DIR = ${VCPKG_MANIFEST_DIR}")
 else()
   message(STATUS "Toolchain: VCPKG_MANIFEST_DIR - Setting variable...")
-  message(STATUS "Toolchain: VCPKG_MANIFEST_DIR From ${VCPKG_MANIFEST_DIR}")
   set(VCPKG_MANIFEST_DIR
-  ${CMAKE_CURRENT_SOURCE_DIR}
+  ${CMAKE_CURRENT_SOURCE_DIR}/extern
     CACHE STRING "vcpkg manifest file location")
-  message(STATUS "Toolchain: VCPKG_MANIFEST_DIR To ${VCPKG_MANIFEST_DIR}")
+  message(STATUS "Toolchain: VCPKG_MANIFEST_DIR = ${VCPKG_MANIFEST_DIR}")
 endif()
 
 
@@ -52,7 +51,7 @@ else()
   message(STATUS "Toolchain: VCPKG_INSTALLED_DIR = ${VCPKG_INSTALLED_DIR}")
   # Toolchain location. Stores result in the CMakeCache.
   set(CMAKE_TOOLCHAIN_FILE
-  ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake
+  ${CMAKE_CURRENT_SOURCE_DIR}/extern/vcpkg/scripts/buildsystems/vcpkg.cmake
     CACHE STRING "Toolchain file location")
   message(STATUS "Toolchain: Using local vcpkg submodule found at: ${CMAKE_TOOLCHAIN_FILE}")
 endif()
