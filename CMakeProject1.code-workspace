@@ -219,7 +219,8 @@
 					"scripts/windows/CMakeVendorPresets.json",
 					"scripts/windows/CMakeConfigurePresets.json",
 					"scripts/windows/CMakeTestPresets.json",
-					"scripts/windows/vcpkgVariables.json"
+					"scripts/windows/vcpkgVariables.json",
+					"scripts/CMakePresetDefaults.json"
 				],
 				"url": "https://cmake.org/cmake/help/latest/_downloads/3e2d73bff478d88a7de0de736ba5e361/schema.json",
 			}
@@ -296,7 +297,7 @@
 					"/Zi",
 					"/EHsc",
 					"/nologo",
-					"/Fe${workspaceRoot}\\out\\build\\x64\\${fileBasenameNoExtension}.exe",
+					"/Fe${workspaceRoot}\\bin\\x64-windows\\bin\\${fileBasenameNoExtension}.exe",
 					"${file}"
 				],
 				"promptOnClose": false,
@@ -335,7 +336,7 @@
 					"-g",
 					"${file}",
 					"-o",
-					"${workspaceRoot}\\out\\build\\x64\\${fileBasenameNoExtension}.exe"
+					"${workspaceRoot}\\bin\\x64-windows\\bin\\${fileBasenameNoExtension}.exe"
 				],
 				"presentation": {
 					"echo": true,
@@ -438,7 +439,7 @@
 				"name": "C/C++: cl.exe build and debug active file",
 				"type": "cppvsdbg",
 				"request": "launch",
-				"program": "${workspaceRoot}\\out\\build\\x64\\${fileBasenameNoExtension}.exe",
+				"program": "${workspaceRoot}\\bin\\x64-windows\\bin\\${fileBasenameNoExtension}.exe",
 				"args": [],
 				"stopAtEntry": false,
 				"cwd": "${workspaceRoot}",
@@ -450,7 +451,7 @@
 				"name": "C/C++: cpp.exe build and debug active file",
 				"type": "cppdbg",
 				"request": "launch",
-				"program": "${workspaceRoot}\\out\\build\\x64\\${fileBasenameNoExtension}.exe",
+				"program": "${workspaceRoot}\\bin\\x64-windows\\bin\\${fileBasenameNoExtension}.exe",
 				"args": [],
 				"stopAtEntry": false,
 				"cwd": "${workspaceRoot}",
