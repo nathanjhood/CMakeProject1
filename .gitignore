@@ -3,6 +3,7 @@
 ############################################################
 
 #*_Config.h
+/tools
 *.vcxproj*
 CMakeUserPresets.json
 MinSizeRel

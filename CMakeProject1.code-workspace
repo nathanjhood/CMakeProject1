@@ -17,9 +17,20 @@
 		"C_Cpp.default.browse.limitSymbolsToIncludedHeaders": true,
 		"C_Cpp.default.browse.path": [
 			"${default}",
-			"${workspaceFolder}/**",
-			"${vcpkgRoot}/x64-windows/include",
-			"${vcpkgRoot}/x86-windows/include"
+			"${vcpkgRoot}\\x64-windows\\include",
+			"${vcpkgRoot}\\x86-windows\\include",
+			"${workspaceFolder}\\bin\\x64-windows\\**",
+			"${workspaceFolder}\\cmake\\**",
+			"${workspaceFolder}\\extern\\**",
+			"${workspaceFolder}\\include\\**",
+			"${workspaceFolder}\\installed\\**",
+			"${workspaceFolder}\\scripts\\**",
+			"${workspaceFolder}\\src\\**",
+			"${workspaceFolder}\\tests\\**",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\ucrt",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\um",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\shared",
+			"${env.VCToolsInstallDir}\\include"
 		],
 		"C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
 		"C_Cpp.default.defines": [
@@ -28,9 +39,20 @@
 		],
 		"C_Cpp.default.includePath": [
 			"${default}",
-			"${workspaceFolder}/**",
-			"${vcpkgRoot}/x64-windows/include",
-			"${vcpkgRoot}/x86-windows/include"
+			"${vcpkgRoot}\\x64-windows\\include",
+			"${vcpkgRoot}\\x86-windows\\include",
+			"${workspaceFolder}\\bin\\x64-windows\\**",
+			"${workspaceFolder}\\cmake\\**",
+			"${workspaceFolder}\\extern\\**",
+			"${workspaceFolder}\\include\\**",
+			"${workspaceFolder}\\installed\\**",
+			"${workspaceFolder}\\scripts\\**",
+			"${workspaceFolder}\\src\\**",
+			"${workspaceFolder}\\tests\\**",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\ucrt",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\um",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\shared",
+			"${env.VCToolsInstallDir}\\include"
 		],
 		"C_Cpp.default.mergeConfigurations": true,
 		"C_Cpp.default.windowsSdkVersion": "10.0.20348.0",
@@ -49,10 +71,7 @@
 		"C_Cpp.loggingLevel": "Debug",
 		"C_Cpp.intelliSenseEngine": "Default",
 		"cmake.useCMakePresets": "auto",
-		"cmake.configureEnvironment": {
-			"VCPKG_DEFAULT_TRIPLET": "x64-windows",
-			"VCPKG_ROOT": "${vcpkgRoot}"
-		},
+		"cmake.configureEnvironment": {},
 		"cmake.configureOnOpen": true,
 		"cmake.configureOnEdit": false,
 		"cmake.skipConfigureIfCachePresent": true,
@@ -193,6 +212,17 @@
 					"/vcpkg.json"
 				],
 				"url": "https://raw.githubusercontent.com/microsoft/vcpkg/master/scripts/vcpkg.schema.json"
+			},
+			{
+				"fileMatch": [
+					"scripts/windows/CMakeBuildPresets.json",
+					"scripts/windows/CMakeVendorPresets.json",
+					"scripts/windows/CMakeConfigurePresets.json",
+					"scripts/windows/CMakeTestPresets.json",
+					"scripts/windows/vcpkgVariables.json",
+					"scripts/CMakePresetDefaults.json"
+				],
+				"url": "https://cmake.org/cmake/help/latest/_downloads/3e2d73bff478d88a7de0de736ba5e361/schema.json",
 			}
 		],
 		"powershell.powerShellDefaultVersion": "PowerShell Core 7 (x64)",
@@ -213,7 +243,8 @@
 		"git.requireGitUserConfig": true,
 		"git.pullTags": true,
 		"git.scanRepositories": [
-			"${workspaceFolder}"
+			"${workspaceFolder}",
+			"${workspaceFolder}\\extern\\**"
 		],
 		"git.showActionButton": {
 			"commit": true,
@@ -266,7 +297,7 @@
 					"/Zi",
 					"/EHsc",
 					"/nologo",
-					"/Fe${workspaceRoot}\\out\\build\\x64\\${fileBasenameNoExtension}.exe",
+					"/Fe${workspaceRoot}\\bin\\x64-windows\\bin\\${fileBasenameNoExtension}.exe",
 					"${file}"
 				],
 				"promptOnClose": false,
@@ -305,7 +336,7 @@
 					"-g",
 					"${file}",
 					"-o",
-					"${workspaceRoot}\\out\\build\\x64\\${fileBasenameNoExtension}.exe"
+					"${workspaceRoot}\\bin\\x64-windows\\bin\\${fileBasenameNoExtension}.exe"
 				],
 				"presentation": {
 					"echo": true,
@@ -408,7 +439,7 @@
 				"name": "C/C++: cl.exe build and debug active file",
 				"type": "cppvsdbg",
 				"request": "launch",
-				"program": "${workspaceRoot}\\out\\build\\x64\\${fileBasenameNoExtension}.exe",
+				"program": "${workspaceRoot}\\bin\\x64-windows\\bin\\${fileBasenameNoExtension}.exe",
 				"args": [],
 				"stopAtEntry": false,
 				"cwd": "${workspaceRoot}",
@@ -420,7 +451,7 @@
 				"name": "C/C++: cpp.exe build and debug active file",
 				"type": "cppdbg",
 				"request": "launch",
-				"program": "${workspaceRoot}\\out\\build\\x64\\${fileBasenameNoExtension}.exe",
+				"program": "${workspaceRoot}\\bin\\x64-windows\\bin\\${fileBasenameNoExtension}.exe",
 				"args": [],
 				"stopAtEntry": false,
 				"cwd": "${workspaceRoot}",

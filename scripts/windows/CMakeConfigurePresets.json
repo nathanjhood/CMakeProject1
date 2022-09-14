@@ -1,0 +1,98 @@
+{
+    "version": 5,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 24,
+        "patch": 1
+    },
+    "include": [
+        "vcpkgVariables.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "windows-base",
+            "description": "Target Windows with the Visual Studio development environment.",
+            "hidden": true,
+            "inherits": [
+                "vcpkg-variables"
+            ],
+            "generator": "Visual Studio 17 2022",
+            "binaryDir": "${sourceDir}/bin/${presetName}",
+            "installDir": "${sourceDir}/install/${presetName}",
+            "environment": {},
+            "debug": {
+                "find": false,
+                "output": false,
+                "tryCompile": false
+            },
+            "errors": {
+                "deprecated": true,
+                "dev": true
+            },
+            "warnings": {
+                "deprecated": true,
+                "dev": true,
+                "systemVars": true,
+                "uninitialized": false,
+                "unusedCli": true
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "x64-windows",
+            "displayName": "x64",
+            "description": "Target Windows (64-bit) with the Visual Studio development environment.",
+            "inherits": "windows-base",
+            "toolset": {
+                "value": "host=x64",
+                "strategy": "external"
+            },
+            "architecture": {
+                "value": "x64",
+                "strategy": "external"
+            },
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe"
+            },
+            "environment": {
+                "VCPKG_DEFAULT_TRIPLET": "x64-windows"
+            },
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "intelliSenseMode": "windows-msvc-x64"
+                }
+            }
+        },
+        {
+            "name": "x86-windows",
+            "displayName": "x86",
+            "description": "Target Windows (32-bit) with the Visual Studio development environment.",
+            "inherits": "windows-base",
+            "toolset": {
+                "value": "host=x86",
+                "strategy": "external"
+            },
+            "architecture": {
+                "value": "x86",
+                "strategy": "external"
+            },
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe"
+            },
+            "environment": {
+                "VCPKG_DEFAULT_TRIPLET": "x86-windows"
+            },
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "intelliSenseMode": "windows-msvc-x86"
+                }
+            }
+        }
+    ]
+}

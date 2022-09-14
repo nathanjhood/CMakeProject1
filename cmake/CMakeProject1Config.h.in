@@ -19,6 +19,7 @@
  * @brief Defined project configuration information.
  *
  */
+
 #define companyName "${CMAKE_COMPANY_NAME}"
 #define projectName "${PROJECT_NAME}"
 #define projectDescription "${PROJECT_DESCRIPTION}"

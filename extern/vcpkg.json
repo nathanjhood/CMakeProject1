@@ -1,0 +1,20 @@
+{
+    "name": "cmakeproject1",
+    "version": "1.0.0.0",
+    "maintainers": [
+        "StoneyDSP"
+    ],
+    "description": [
+        "VS Console Application with CMake, vcpkg, Doxygen, and JUCE support"
+    ],
+    "homepage": "https://github.com/StoneyDSP/CMakeProject1",
+    "dependencies": [
+        "catch2",
+        "fmt",
+        "vcpkg-cmake",
+        "vcpkg-cmake-config",
+        "vcpkg-cmake-get-vars"
+    ],
+    "documentation": "https://github.com/StoneyDSP/CMakeProject1",
+    "license": "BSD-3-clause"
+}
