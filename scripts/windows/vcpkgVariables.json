@@ -14,7 +14,8 @@
             "environment": {
                 "VCPKG_ROOT": "${sourceDir}/extern/vcpkg",
                 "VCPKG_DEFAULT_TRIPLET": "${presetName}",
-                "VCPKG_DOWNLOADS": "${sourceDir}/downloads"
+                "VCPKG_DEFAULT_HOST_TRIPLET": "${presetName}",
+                "VCPKG_DOWNLOADS": "${sourceDir}/extern/vcpkg/downloads"
             }
         }
     ]
