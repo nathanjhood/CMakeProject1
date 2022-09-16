@@ -251,4 +251,15 @@ install(
 install(
   FILES ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/cfg/${PROJECT_NAME}Config.h
   DESTINATION include/${PROJECT_NAME}/cfg
-  )
+)
+
+# ============================================================================ #
+#
+#                 Add tests to target: CMakeProject1-executable
+#
+# ============================================================================ #
+
+enable_testing()
+
+# does the application run
+add_test(NAME Runs COMMAND ${PROJECT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/${PROJECT_NAME}-Executable)
