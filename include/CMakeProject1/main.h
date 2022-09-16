@@ -1,11 +1,13 @@
 ﻿/*******************************************************************************
  * @file main.h
- * @author your name (you@domain.com)
- * @brief Reference headers your program requires here.
- * @version 0.1
+ * @author Nathan J. Hood ( @StoneyDSP )
+ * @brief Declares the main execution routine of the application.
+ * @version 1.0.0.0
  * @date 2022-08-23
  *
  * @copyright Copyright (c) 2022
+ *
+ * Reference headers your program requires here.
  *
  *******************************************************************************
 */
@@ -16,15 +18,36 @@
 #define MAIN_H_INCLUDED
 
 // Global app config header.
-#include <CMakeProject1Config.h>
+#include "CMakeProject1Config.h"
 
-// Standard C++ Library.
-#include <assert.h>
-#include <iostream>
-#include <string.h>
+// Including locally-defined class "Foo" which returns "bar"
+#ifdef USE_FOO
 
-// Third-Party packages.
-#include <fmt/format.h>
+    #include "foo.h"
+
+#else
+
+    #include <iostream>
+    #include <string.h>
+
+    class Foo
+    {
+    public:
+        Foo() : bar{5} {}
+
+        ~Foo(){ bar = 0; }
+
+        void tool() { std::cout << "Using std::iostream..." << std::endl; }
+
+        void message(std::string string) { std::cout << string << std::endl; }
+
+        void returnBar() { std::cout << bar << std::endl; }
+
+    private:
+        int bar {0};
+    };
+
+#endif
 
 /** main.
  * @brief Entry point for program execution.
@@ -34,5 +57,11 @@
  * @return Exit code.
  */
 int main(int argc, char** argv);
+
+/** Foo.
+ * @brief Object for handling config.h messages
+ *
+ */
+Foo foo;
 
 #endif // MAIN_H_INCLUDED

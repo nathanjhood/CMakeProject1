@@ -1,0 +1,39 @@
+/*******************************************************************************
+ * @file CMakeProject1Config.h
+ * @author Nathan J. Hood ( @StoneyDSP )
+ * @brief
+ * @version 1.0.0.0
+ * @date
+ *
+ * @copyright Copyright (c) 2022 @StoneyDSP
+ *
+ *******************************************************************************
+*/
+
+#pragma once
+
+#ifndef CMAKEPROJECT1_CONFIG_H_INCLUDED
+#define CMAKEPROJECT1_CONFIG_H_INCLUDED
+
+/**
+ * @brief Defined project configuration information.
+ *
+ */
+
+#define companyName "${CMAKE_COMPANY_NAME}"
+#define projectName "${PROJECT_NAME}"
+#define projectDescription "${PROJECT_DESCRIPTION}"
+#define projectVersion "${PROJECT_VERSION}"
+#define projectWebsite "${PROJECT_HOMEPAGE_URL}"
+#define projectSourceDir "${PROJECT_SOURCE_DIR}"
+#define projectBinaryDir "${PROJECT_BINARY_DIR}"
+
+#define cmakeVersion "${CMAKE_VERSION}"
+#define cmakeConfigType "${CMAKE_CONFIG_TYPE}"
+#define cmakeBuildType "${CMAKE_BUILD_TYPE}"
+#define cmakeToolchainFile "${CMAKE_TOOLCHAIN_FILE}"
+#define cmakeGenerator "${CMAKE_GENERATOR}"
+
+#cmakedefine USE_FOO
+
+#endif // CMAKEPROJECT1_CONFIG_H_INCLUDED

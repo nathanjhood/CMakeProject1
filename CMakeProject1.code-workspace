@@ -219,6 +219,7 @@
 					"scripts/windows/CMakeVendorPresets.json",
 					"scripts/windows/CMakeConfigurePresets.json",
 					"scripts/windows/CMakeTestPresets.json",
+					"scripts/windows/CMakeDebugPresets.json",
 					"scripts/windows/vcpkgVariables.json",
 					"scripts/CMakePresetDefaults.json"
 				],
