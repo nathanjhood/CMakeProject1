@@ -188,8 +188,13 @@ target_link_libraries(${PROJECT_NAME}-SharedCode
 )
 message("Linked vcpkg library fmt to target ${PROJECT_NAME}-SharedCode")
 
+# let's set the foo source folder as a usage requirement...
+target_include_directories(${PROJECT_NAME}-SharedCode
+  INTERFACE
+    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
+)
+
 list(APPEND EXTRA_LIBS ${PROJECT_NAME}-SharedCode)
-list(APPEND EXTRA_INCLUDES ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo)
 
 endif(USE_FOO)
 
@@ -214,8 +219,6 @@ target_include_directories(${PROJECT_NAME}-Executable
     ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}
     # let's include main.h...
     ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}
-    # from SharedCode...
-    ${EXTRA_INCLUDES}
 )
 message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
 
