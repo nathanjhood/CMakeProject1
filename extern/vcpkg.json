@@ -9,8 +9,6 @@
     ],
     "homepage": "https://github.com/StoneyDSP/CMakeProject1",
     "dependencies": [
-        "catch2",
-        "fmt",
         {
             "name": "vcpkg-cmake",
             "host": true
@@ -21,6 +19,14 @@
         },
         {
             "name": "vcpkg-cmake-get-vars",
+            "host": true
+        },
+        {
+            "name": "catch2",
+            "host": true
+        },
+        {
+            "name": "fmt",
             "host": true
         }
     ],

@@ -36,7 +36,6 @@ else()
   message("Toolchain: VCPKG_MANIFEST_DIR = ${VCPKG_MANIFEST_DIR}")
 endif()
 
-
 if(USE_VCPKG)
   if(DEFINED ${CMAKE_TOOLCHAIN_FILE})
     message("Toolchain: Using remote vcpkg found at: ${CMAKE_TOOLCHAIN_FILE}")
