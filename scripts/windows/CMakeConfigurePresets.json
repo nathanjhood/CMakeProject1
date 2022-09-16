@@ -20,7 +20,7 @@
             ],
             "generator": "Visual Studio 17 2022",
             "binaryDir": "${sourceDir}/bin/${presetName}",
-            "installDir": "${sourceDir}/install/${presetName}",
+            "installDir": "${sourceDir}/installed/${presetName}",
             "condition": {
                 "type": "equals",
                 "lhs": "${hostSystemName}",
