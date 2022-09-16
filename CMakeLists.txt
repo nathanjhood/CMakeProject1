@@ -35,7 +35,7 @@ message(STATUS "Initiating CMake v${CMAKE_VERSION}\n")
 
 message("Options:\n")
 set(CMAKE_COMPANY_NAME "StoneyDSP")
-option(USE_FOO "Use foo" OFF)
+option(USE_FOO "Use foo" ON)
 option(ENABLE_LOGGING "Log cache variables to console terminal" OFF)
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
 option(USE_EXTERN "Use extern folder to resolve dependencies" ON)
