@@ -9,8 +9,6 @@ CMakeUserPresets.json
 MinSizeRel
 RelWithDebInfo
 
-copy_**.**
-
 *.tcl
 *.dll
 compile_commands.json
