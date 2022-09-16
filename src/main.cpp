@@ -29,7 +29,6 @@ int main(int argc, char** argv)
 	foo.message(projectDescription);
 	foo.message(companyName);
 	foo.message(projectWebsite);
-	foo.message("\n");
 
 	foo.returnBar();
 
