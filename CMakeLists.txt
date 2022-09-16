@@ -154,7 +154,7 @@ message("CMAKE_INTDIR = ${CMAKE_INTDIR}\n")
 message("Creating config header file...")
 configure_file(
   ${PROJECT_SOURCE_DIR}/support/cmake/${PROJECT_NAME}Config.h.in
-  ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/${PROJECT_NAME}Config.h)
+  ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/cfg/${PROJECT_NAME}Config.h)
 message("Created config header file.\n")
 
 # ============================================================================ #
@@ -194,6 +194,18 @@ target_include_directories(${PROJECT_NAME}-SharedCode
     ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
 )
 
+# install the definition-containing library (.lib)
+install(
+  TARGETS ${PROJECT_NAME}-SharedCode
+  DESTINATION lib
+)
+
+# install the declaration-containing header (.h)
+install(
+  FILES ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo/foo.h
+  DESTINATION include/${PROJECT_NAME}/foo
+)
+
 list(APPEND EXTRA_LIBS ${PROJECT_NAME}-SharedCode)
 
 endif(USE_FOO)
@@ -213,10 +225,11 @@ message("Added target: ${PROJECT_NAME}-Executable.exe\n")
 # Add some headers.
 message("Adding ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}Config.h to target ${PROJECT_NAME}-Executable...")
 
+#include directories for our executable program
 target_include_directories(${PROJECT_NAME}-Executable
   PUBLIC
     # let's include the config.h...
-    ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}
+    ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/cfg
     # let's include main.h...
     ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}
 )
@@ -228,3 +241,14 @@ target_link_libraries(${PROJECT_NAME}-Executable
     ${EXTRA_LIBS}
 )
 message("Linked library ${PROJECT_NAME}-SharedCode to target ${PROJECT_NAME}-Executable")
+
+# install the definition-containing .exe
+install(
+  TARGETS ${PROJECT_NAME}-Executable
+  DESTINATION bin)
+
+# install the configured c++ header
+install(
+  FILES ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/cfg/${PROJECT_NAME}Config.h
+  DESTINATION include/${PROJECT_NAME}/cfg
+  )
