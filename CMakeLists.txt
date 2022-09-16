@@ -168,10 +168,8 @@ message("Added target: ${PROJECT_NAME}-SharedCode.lib\n")
 message("Adding ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}Config.h to target ${PROJECT_NAME}-SharedCode...")
 target_include_directories(${PROJECT_NAME}-SharedCode
   PUBLIC
-    # let's include the config.h...
-    ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}
-    # let's include main.h...
-    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}
+    # let's include foo folder...
+    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
 )
 message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
 
