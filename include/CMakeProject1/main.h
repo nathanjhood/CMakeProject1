@@ -28,6 +28,8 @@
 // Third-Party packages.
 //#include <fmt/format.h>
 
+#include "foo.h"
+
 /** main.
  * @brief Entry point for program execution.
  *
@@ -36,5 +38,7 @@
  * @return Exit code.
  */
 int main(int argc, char** argv);
+
+Foo foo;
 
 #endif // MAIN_H_INCLUDED

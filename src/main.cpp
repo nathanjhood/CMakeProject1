@@ -31,7 +31,10 @@ int main(int argc, char** argv)
 	// fmt::print("Bought to you by {}!", companyName); std::cout << std::endl;
 	// fmt::print("Find out more at {}!", projectWebsite); std::cout << std::endl;
 
+	std::cout << std::endl;
 	std::cout << "Using std::cout..." << std::endl;
+
+	std::cout << std::endl;
 	std::cout << projectName << std::endl;
 	std::cout << projectVersion << std::endl;
 	std::cout << projectDescription << std::endl;
@@ -39,6 +42,8 @@ int main(int argc, char** argv)
 	std::cout << projectWebsite << std::endl;
 
 	std::cout << std::endl;
+	std::cout << "Foo::bar equals " << foo.returnBar() << std::endl;
 
+	std::cout << std::endl;
 	return 0;
 }
