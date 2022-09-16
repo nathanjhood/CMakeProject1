@@ -15,6 +15,9 @@
 #ifndef FOO_H_INCLUDED
 #define FOO_H_INCLUDED
 
+// Third-Party packages.
+#include <fmt/format.h>
+
 class Foo
 {
 public:
@@ -22,7 +25,9 @@ public:
 
     ~Foo();
 
-    int returnBar();
+    void message(const char* string);
+
+    void returnBar();
 
 private:
 

@@ -165,7 +165,7 @@ add_library (${PROJECT_NAME}-SharedCode
     ${PROJECT_SOURCE_DIR}/src/foo.cpp)
 message("Added target: ${PROJECT_NAME}-SharedCode.lib\n")
 
-#message("Adding ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}Config.h to target ${PROJECT_NAME}-SharedCode...")
+message("Adding ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}Config.h to target ${PROJECT_NAME}-SharedCode...")
 target_include_directories(${PROJECT_NAME}-SharedCode
   PUBLIC
     # let's include the config.h...
@@ -174,6 +174,14 @@ target_include_directories(${PROJECT_NAME}-SharedCode
     ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}
 )
 message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
+
+# link our imported vcpkg package library "fmt" (and others) to our shared code target...
+find_package(fmt CONFIG REQUIRED)
+target_link_libraries(${PROJECT_NAME}-SharedCode
+  PUBLIC
+    fmt::fmt
+)
+message("Linked vcpkg library fmt to target ${PROJECT_NAME}-SharedCode")
 
 # ============================================================================ #
 #
@@ -189,6 +197,7 @@ message("Added target: ${PROJECT_NAME}-Executable.exe\n")
 
 # Add some headers.
 message("Adding ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}Config.h to target ${PROJECT_NAME}-Executable...")
+
 target_include_directories(${PROJECT_NAME}-Executable
   PUBLIC
     # let's include the config.h...
@@ -198,5 +207,9 @@ target_include_directories(${PROJECT_NAME}-Executable
 )
 message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
 
-message("Linking library ${PROJECT_NAME}-SharedCode to target ${PROJECT_NAME}-Executable")
-target_link_libraries(${PROJECT_NAME}-Executable PUBLIC ${PROJECT_NAME}-SharedCode)
+# Link our function library to our "main" out...
+target_link_libraries(${PROJECT_NAME}-Executable
+  PUBLIC
+    ${PROJECT_NAME}-SharedCode
+)
+message("Linked library ${PROJECT_NAME}-SharedCode to target ${PROJECT_NAME}-Executable")

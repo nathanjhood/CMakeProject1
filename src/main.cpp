@@ -24,26 +24,15 @@
  */
 int main(int argc, char** argv)
 {
-	// fmt::print("Using {}...", fmt); std::cout << std::endl;
-	// fmt::print("Hello, from {}!", projectName); std::cout << std::endl;
-	// fmt::print("Version {}!", projectVersion); std::cout << std::endl;
-	// fmt::print("Description: {}!", projectDescription); std::cout << std::endl;
-	// fmt::print("Bought to you by {}!", companyName); std::cout << std::endl;
-	// fmt::print("Find out more at {}!", projectWebsite); std::cout << std::endl;
+	foo.message(projectName);
+	foo.message(projectVersion);
+	foo.message(projectDescription);
+	foo.message(companyName);
+	foo.message(projectWebsite);
+	foo.message("\n");
 
-	std::cout << std::endl;
-	std::cout << "Using std::cout..." << std::endl;
+	foo.returnBar();
 
-	std::cout << std::endl;
-	std::cout << projectName << std::endl;
-	std::cout << projectVersion << std::endl;
-	std::cout << projectDescription << std::endl;
-	std::cout << companyName << std::endl;
-	std::cout << projectWebsite << std::endl;
-
-	std::cout << std::endl;
-	std::cout << "Foo::bar equals " << foo.returnBar() << std::endl;
-
-	std::cout << std::endl;
+	foo.message("\n");
 	return 0;
 }

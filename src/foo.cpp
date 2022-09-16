@@ -11,7 +11,13 @@ Foo::~Foo()
     bar = 0;
 }
 
-int Foo::returnBar()
+void Foo::message(const char* string = {"null"})
 {
-    return bar;
+    fmt::print("{}", string);
+    fmt::print("{}", "\n");
+}
+
+void Foo::returnBar()
+{
+    fmt::print("Foo::bar equals {}", bar);
 }

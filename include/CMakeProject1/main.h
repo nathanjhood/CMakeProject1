@@ -20,14 +20,6 @@
 // Global app config header.
 #include "CMakeProject1Config.h"
 
-// Standard C++ Library.
-#include <assert.h>
-#include <iostream>
-#include <string.h>
-
-// Third-Party packages.
-//#include <fmt/format.h>
-
 // Including locally-defined class "Foo" which returns "bar"
 #include "foo.h"
 
@@ -40,7 +32,7 @@
  */
 int main(int argc, char** argv);
 
-/**
+/** Foo.
  * @brief Instantiate locally-defined class "Foo"...
  *
  */
