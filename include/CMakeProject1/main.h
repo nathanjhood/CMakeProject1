@@ -1,11 +1,13 @@
 ﻿/*******************************************************************************
  * @file main.h
- * @author your name (you@domain.com)
- * @brief Reference headers your program requires here.
- * @version 0.1
+ * @author Nathan J. Hood ( @StoneyDSP )
+ * @brief Declares the main execution routine of the application.
+ * @version 1.0.0.0
  * @date 2022-08-23
  *
  * @copyright Copyright (c) 2022
+ *
+ * Reference headers your program requires here.
  *
  *******************************************************************************
 */
@@ -16,7 +18,7 @@
 #define MAIN_H_INCLUDED
 
 // Global app config header.
-#include <CMakeProject1Config.h>
+#include "CMakeProject1Config.h"
 
 // Standard C++ Library.
 #include <assert.h>
@@ -24,7 +26,7 @@
 #include <string.h>
 
 // Third-Party packages.
-#include <fmt/format.h>
+//#include <fmt/format.h>
 
 /** main.
  * @brief Entry point for program execution.
