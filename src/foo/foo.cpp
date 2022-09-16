@@ -11,6 +11,12 @@ Foo::~Foo()
     bar = 0;
 }
 
+void Foo::tool()
+{
+    fmt::print("Using {}...", "fmt::format");
+    fmt::print("{}", "\n");
+}
+
 void Foo::message(const char* string = {"null"})
 {
     fmt::print("{}", string);

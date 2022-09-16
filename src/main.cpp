@@ -24,6 +24,8 @@
  */
 int main(int argc, char** argv)
 {
+	foo.tool();
+
 	foo.message(projectName);
 	foo.message(projectVersion);
 	foo.message(projectDescription);

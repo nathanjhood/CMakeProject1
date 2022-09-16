@@ -21,7 +21,33 @@
 #include "CMakeProject1Config.h"
 
 // Including locally-defined class "Foo" which returns "bar"
-#include "foo.h"
+#ifdef USE_FOO
+
+    #include "foo.h"
+
+#else
+
+    #include <iostream>
+    #include <string.h>
+
+    class Foo
+    {
+    public:
+        Foo() : bar{5} {}
+
+        ~Foo(){ bar = 0; }
+
+        void tool() { std::cout << "Using std::iostream..." << std::endl; }
+
+        void message(std::string string) { std::cout << string << std::endl; }
+
+        void returnBar() { std::cout << bar << std::endl; }
+
+    private:
+        int bar {0};
+    };
+
+#endif
 
 /** main.
  * @brief Entry point for program execution.
@@ -33,7 +59,7 @@
 int main(int argc, char** argv);
 
 /** Foo.
- * @brief Instantiate locally-defined class "Foo"...
+ * @brief Object for handling config.h messages
  *
  */
 Foo foo;

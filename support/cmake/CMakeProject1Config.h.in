@@ -34,4 +34,6 @@
 #define cmakeToolchainFile "${CMAKE_TOOLCHAIN_FILE}"
 #define cmakeGenerator "${CMAKE_GENERATOR}"
 
+#cmakedefine USE_FOO
+
 #endif // CMAKEPROJECT1_CONFIG_H_INCLUDED

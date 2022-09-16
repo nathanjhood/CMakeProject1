@@ -25,13 +25,15 @@ public:
 
     ~Foo();
 
+    void tool();
+
     void message(const char* string);
 
     void returnBar();
 
 private:
 
-    int bar {1};
+    int bar {0};
 };
 
 #endif // FOO_H_INCLUDED

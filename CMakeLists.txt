@@ -23,7 +23,7 @@
 # CMake requirements.
 cmake_minimum_required(VERSION 3.7...3.24.2)
 
-# CMake policy.
+# Fallback for using newer policies on CMake <3.12.
 if(${CMAKE_VERSION} VERSION_LESS 3.12)
     cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 endif()
@@ -35,6 +35,7 @@ message(STATUS "Initiating CMake v${CMAKE_VERSION}\n")
 
 message("Options:\n")
 set(CMAKE_COMPANY_NAME "StoneyDSP")
+option(USE_FOO "Use foo" OFF)
 option(ENABLE_LOGGING "Log cache variables to console terminal" OFF)
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
 option(USE_EXTERN "Use extern folder to resolve dependencies" ON)
@@ -42,6 +43,7 @@ option(GIT_SUBMODULE "Check submodules during build" ON)
 option(USE_VCPKG "Use local vcpkg if found" ON)
 set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 
+message("USE_FOO = ${USE_FOO}")
 message("CMAKE_COMPANY_NAME = ${CMAKE_COMPANY_NAME}")
 message("ENABLE_LOGGING = ${ENABLE_LOGGING}")
 message("BUILD_SHARED_LIBS = ${BUILD_SHARED_LIBS}")
@@ -123,9 +125,10 @@ endif()
 #
 # ============================================================================ #
 
+# make cache variables for install destinations
+include(GNUInstallDirs)
+
 # Configure folder structure.
-#set(PROJECT_BINARY_DIR ${CMAKE_CURRENT_LIST_DIR}/bin)
-#set(PROJECT_SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/src)
 set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 set(ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 set(LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
@@ -160,6 +163,8 @@ message("Created config header file.\n")
 #
 # ============================================================================ #
 
+if(USE_FOO)
+
 # Add output target.
 message("Adding target...")
 add_library (${PROJECT_NAME}-SharedCode
@@ -183,6 +188,11 @@ target_link_libraries(${PROJECT_NAME}-SharedCode
 )
 message("Linked vcpkg library fmt to target ${PROJECT_NAME}-SharedCode")
 
+list(APPEND EXTRA_LIBS ${PROJECT_NAME}-SharedCode)
+list(APPEND EXTRA_INCLUDES ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo)
+
+endif(USE_FOO)
+
 # ============================================================================ #
 #
 #                    Add target: CMakeProject1-executable
@@ -204,12 +214,14 @@ target_include_directories(${PROJECT_NAME}-Executable
     ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}
     # let's include main.h...
     ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}
+    # from SharedCode...
+    ${EXTRA_INCLUDES}
 )
 message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
 
 # Link our function library to our "main" out...
 target_link_libraries(${PROJECT_NAME}-Executable
   PUBLIC
-    ${PROJECT_NAME}-SharedCode
+    ${EXTRA_LIBS}
 )
 message("Linked library ${PROJECT_NAME}-SharedCode to target ${PROJECT_NAME}-Executable")
