@@ -17,17 +17,14 @@
 
 class Foo
 {
-    Foo() : bar(1)
-    {}
-    ~Foo()
-    {
-        bar = 0;
-    }
+public:
+    Foo();
 
-    int returnBar()
-    {
-        return bar;
-    }
+    ~Foo();
+
+    int returnBar();
+
+private:
 
     int bar {1};
 };

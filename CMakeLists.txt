@@ -159,19 +159,20 @@ message("Created config header file.\n")
 # ============================================================================ #
 
 # Add output target.
-#message("Adding target...")
-#add_library (${PROJECT_NAME}-SharedCode)
-#message("Added target: ${PROJECT_NAME}.lib\n")
+message("Adding target...")
+add_library (${PROJECT_NAME}-SharedCode
+    ${PROJECT_SOURCE_DIR}/src/foo.cpp)
+message("Added target: ${PROJECT_NAME}-SharedCode.lib\n")
 
 #message("Adding ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}Config.h to target ${PROJECT_NAME}-SharedCode...")
-#target_include_directories(${PROJECT_NAME}-SharedCode
-#  PUBLIC
-#    # let's include the config.h...
-#    ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}
-#    # let's include main.h...
-#    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}
-#)
-#message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
+target_include_directories(${PROJECT_NAME}-SharedCode
+  PUBLIC
+    # let's include the config.h...
+    ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}
+    # let's include main.h...
+    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}
+)
+message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
 
 # ============================================================================ #
 #
@@ -183,7 +184,7 @@ message("Created config header file.\n")
 message("Adding target...")
 add_executable (${PROJECT_NAME}-Executable
     ${PROJECT_SOURCE_DIR}/src/main.cpp)
-message("Added target: ${PROJECT_NAME}.exe\n")
+message("Added target: ${PROJECT_NAME}-Executable.exe\n")
 
 # Add some headers.
 message("Adding ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}Config.h to target ${PROJECT_NAME}-Executable...")
