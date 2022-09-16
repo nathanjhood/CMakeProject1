@@ -28,6 +28,7 @@
 // Third-Party packages.
 //#include <fmt/format.h>
 
+// Including locally-defined class "Foo" which returns "bar"
 #include "foo.h"
 
 /** main.
@@ -39,6 +40,10 @@
  */
 int main(int argc, char** argv);
 
+/**
+ * @brief Instantiate locally-defined class "Foo"...
+ *
+ */
 Foo foo;
 
 #endif // MAIN_H_INCLUDED

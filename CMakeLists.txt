@@ -161,6 +161,7 @@ message("Created config header file.\n")
 # Add output target.
 message("Adding target...")
 add_library (${PROJECT_NAME}-SharedCode
+  STATIC
     ${PROJECT_SOURCE_DIR}/src/foo.cpp)
 message("Added target: ${PROJECT_NAME}-SharedCode.lib\n")
 
@@ -196,3 +197,6 @@ target_include_directories(${PROJECT_NAME}-Executable
     ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}
 )
 message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
+
+message("Linking library ${PROJECT_NAME}-SharedCode to target ${PROJECT_NAME}-Executable")
+target_link_libraries(${PROJECT_NAME}-Executable PUBLIC ${PROJECT_NAME}-SharedCode)
