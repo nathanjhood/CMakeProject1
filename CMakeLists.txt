@@ -156,6 +156,7 @@ configure_file(
   ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/cfg/${PROJECT_NAME}Config.h)
 message("Created config header file.\n")
 
+    ${PROJECT_SOURCE_DIR}/support/cmake/${PROJECT_NAME}Config.cmake.in
 # ============================================================================ #
 #
 #                    Add target: CMakeProject1-library
