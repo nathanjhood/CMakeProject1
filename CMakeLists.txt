@@ -34,7 +34,7 @@ message(STATUS "${CMAKE_CURRENT_LIST_DIR}/>\n")
 message(STATUS "Initiating CMake v${CMAKE_VERSION}\n")
 
 message("Options:\n")
-set(CMAKE_COMPANY_NAME "StoneyDSP")
+set(CMAKE_PROJECT_VENDOR "StoneyDSP")
 option(USE_FOO "Use foo" ON)
 option(USE_TESTS "Use tests" ON)
 option(ENABLE_LOGGING "Log cache variables to console terminal" OFF)
@@ -45,7 +45,7 @@ option(USE_VCPKG "Use local vcpkg if found" ON)
 set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 
 message("USE_FOO = ${USE_FOO}")
-message("CMAKE_COMPANY_NAME = ${CMAKE_COMPANY_NAME}")
+message("CMAKE_PROJECT_VENDOR = ${CMAKE_PROJECT_VENDOR}")
 message("ENABLE_LOGGING = ${ENABLE_LOGGING}")
 message("BUILD_SHARED_LIBS = ${BUILD_SHARED_LIBS}")
 message("USE_EXTERN = ${USE_EXTERN}")
@@ -85,7 +85,7 @@ message(STATUS "${CMAKE_CURRENT_LIST_DIR}/>\n")
 
 message("Detecting CMake project...")
 
-set(PROJECT_AUTHOR "StoneyDSP" CACHE STRING "Author/maintainer of this project:")
+set(PROJECT_VENDOR ${CMAKE_PROJECT_VENDOR} CACHE STRING "Author/maintainer of this project:")
 
 # Create a CMake project here.
 project (CMakeProject1
@@ -94,7 +94,7 @@ project (CMakeProject1
   DESCRIPTION
     "VS Console Application with CMake, vcpkg, Doxygen, and JUCE support"
   HOMEPAGE_URL
-    https://github.com/${PROJECT_AUTHOR}/CMakeProject1
+    https://github.com/${PROJECT_VENDOR}/CMakeProject1
   LANGUAGES
     C CXX
 )
@@ -111,7 +111,7 @@ message(STATUS "...Detected project:\n")
 message("${PROJECT_NAME} v${PROJECT_VERSION}")
 message("${PROJECT_DESCRIPTION}")
 message("${PROJECT_HOMEPAGE_URL}")
-message("by ${PROJECT_AUTHOR}\n")
+message("by ${PROJECT_VENDOR}\n")
 
 # Check if we are in the top-level project or not:
 if (NOT CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
@@ -259,5 +259,42 @@ install(
 # ============================================================================ #
 
 if(USE_TESTS)
+  message(STATUS "Testing enabled.")
   include(${PROJECT_SOURCE_DIR}/tests/CMakeLists.txt)
+else(USE_TESTS)
+  message(STATUS "Testing disabled.")
 endif(USE_TESTS)
+
+# ============================================================================ #
+#
+#                           Configure Installer
+#
+# ============================================================================ #
+
+include(InstallRequiredSystemLibraries)
+set(CPACK_PACKAGE_VENDOR ${CMAKE_PROJECT_VENDOR})
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY ${PROJECT_DESCRIPTION})
+set(CPACK_PACKAGE_VERSION_MAJOR ${PROJECT_VERSION_MAJOR})
+set(CPACK_PACKAGE_VERSION_MINOR ${PROJECT_VERSION_MINOR})
+set(CPACK_PACKAGE_VERSION_PATCH ${PROJECT_VERSION_PATCH})
+set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_CURRENT_LIST_DIR}/LICENCE)
+set(CPACK_RESOURCE_FILE_README ${CMAKE_CURRENT_LIST_DIR}/README.md)
+set(CPACK_SOURCE_GENERATOR TGZ;ZIP)
+set(CPACK_SOURCE_IGNORE_FILES
+    /.git
+    /.github
+    /.vs
+    /.vscode
+    # /bin
+    /installed
+    /.*build.*
+    /\\\\.DS_Store
+)
+
+# include installer generator
+include(CPack)
+message(STATUS "Include (CPack)")
+
+message("CPACK_PACKAGE_VENDOR = ${CPACK_PACKAGE_VENDOR}")
+message(STATUS "CPack generators: ${CPACK_SOURCE_GENERATOR}")
+message(STATUS "CPack ignores: ${CPACK_SOURCE_IGNORE_FILES}")
