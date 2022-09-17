@@ -1,5 +1,5 @@
 # CMake requirements.
-cmake_minimum_required(VERSION 3.7...3.24)
+cmake_minimum_required(VERSION 3.7...3.24.2)
 
 message("\n")
 message(STATUS "${CMAKE_CURRENT_LIST_DIR}/>\n")
