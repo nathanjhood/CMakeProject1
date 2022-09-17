@@ -1,4 +1,4 @@
-folder{
+{
 	"folders": [
 		{
 			"path": "."
@@ -23,8 +23,7 @@ folder{
 			"${workspaceFolder}\\cmake\\**",
 			"${workspaceFolder}\\extern\\**",
 			"${workspaceFolder}\\include\\**",
-			"${workspaceFolder}\\installed\\**",
-			"${workspaceFolder}\\scripts\\**",
+			"${workspaceFolder}\\support\\**",
 			"${workspaceFolder}\\src\\**",
 			"${workspaceFolder}\\tests\\**",
 			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\ucrt",
@@ -45,8 +44,7 @@ folder{
 			"${workspaceFolder}\\cmake\\**",
 			"${workspaceFolder}\\extern\\**",
 			"${workspaceFolder}\\include\\**",
-			"${workspaceFolder}\\installed\\**",
-			"${workspaceFolder}\\scripts\\**",
+			"${workspaceFolder}\\support\\**",
 			"${workspaceFolder}\\src\\**",
 			"${workspaceFolder}\\tests\\**",
 			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\ucrt",
@@ -55,7 +53,7 @@ folder{
 			"${env.VCToolsInstallDir}\\include"
 		],
 		"C_Cpp.default.mergeConfigurations": true,
-folder		"C_Cpp.default.windowsSdkVersion": "10.0.22000.0",
+		"C_Cpp.default.windowsSdkVersion": "10.0.22000.0",
 		"C_Cpp.dimInactiveRegions": true,
 		"C_Cpp.doxygen.generateOnType": true,
 		"C_Cpp.doxygen.generatedStyle": "/**",
@@ -215,13 +213,13 @@ folder		"C_Cpp.default.windowsSdkVersion": "10.0.22000.0",
 			},
 			{
 				"fileMatch": [
-					"scripts/windows/CMakeBuildPresets.json",
-					"scripts/windows/CMakeVendorPresets.json",
-					"scripts/windows/CMakeConfigurePresets.json",
-					"scripts/windows/CMakeTestPresets.json",
-					"scripts/windows/CMakeDebugPresets.json",
-					"scripts/windows/vcpkgVariables.json",
-					"scripts/CMakePresetDefaults.json"
+					"support/windows/CMakeBuildPresets.json",
+					"support/windows/CMakeVendorPresets.json",
+					"support/windows/CMakeConfigurePresets.json",
+					"support/windows/CMakeTestPresets.json",
+					"support/windows/CMakeDebugPresets.json",
+					"support/windows/vcpkgVariables.json",
+					"support/CMakePresetDefaults.json"
 				],
 				"url": "https://cmake.org/cmake/help/latest/_downloads/3e2d73bff478d88a7de0de736ba5e361/schema.json",
 			}
