@@ -22,7 +22,6 @@ CMakeCache.txt
 # CMake - Start
 ############################################################
 
-*.cmake
 *.ninja*
 CMakeFiles/
 

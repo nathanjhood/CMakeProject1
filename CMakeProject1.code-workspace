@@ -1,4 +1,4 @@
-{
+folder{
 	"folders": [
 		{
 			"path": "."
@@ -55,7 +55,7 @@
 			"${env.VCToolsInstallDir}\\include"
 		],
 		"C_Cpp.default.mergeConfigurations": true,
-		"C_Cpp.default.windowsSdkVersion": "10.0.20348.0",
+folder		"C_Cpp.default.windowsSdkVersion": "10.0.22000.0",
 		"C_Cpp.dimInactiveRegions": true,
 		"C_Cpp.doxygen.generateOnType": true,
 		"C_Cpp.doxygen.generatedStyle": "/**",
@@ -68,7 +68,7 @@
 			"**/css": true,
 			"**/docs": true
 		},
-		"C_Cpp.loggingLevel": "Debug",
+		"C_Cpp.loggingLevel": "Warning",
 		"C_Cpp.intelliSenseEngine": "Default",
 		"cmake.useCMakePresets": "auto",
 		"cmake.configureEnvironment": {},

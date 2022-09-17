@@ -36,6 +36,7 @@ message(STATUS "Initiating CMake v${CMAKE_VERSION}\n")
 message("Options:\n")
 set(CMAKE_COMPANY_NAME "StoneyDSP")
 option(USE_FOO "Use foo" ON)
+option(USE_TESTS "Use tests" ON)
 option(ENABLE_LOGGING "Log cache variables to console terminal" OFF)
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
 option(USE_EXTERN "Use extern folder to resolve dependencies" ON)
@@ -164,50 +165,48 @@ message("Created config header file.\n")
 # ============================================================================ #
 
 if(USE_FOO)
+  # Add output target.
+  message("Adding target...")
+  add_library (${PROJECT_NAME}-SharedCode
+    STATIC
+      ${PROJECT_SOURCE_DIR}/src/foo/foo.cpp)
+  message("Added target: ${PROJECT_NAME}-SharedCode.lib\n")
 
-# Add output target.
-message("Adding target...")
-add_library (${PROJECT_NAME}-SharedCode
-  STATIC
-    ${PROJECT_SOURCE_DIR}/src/foo/foo.cpp)
-message("Added target: ${PROJECT_NAME}-SharedCode.lib\n")
+  message("Adding ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}Config.h to target ${PROJECT_NAME}-SharedCode...")
+  target_include_directories(${PROJECT_NAME}-SharedCode
+    PUBLIC
+      # let's include foo folder...
+      ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
+  )
+  message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
 
-message("Adding ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}Config.h to target ${PROJECT_NAME}-SharedCode...")
-target_include_directories(${PROJECT_NAME}-SharedCode
-  PUBLIC
-    # let's include foo folder...
-    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
-)
-message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
+  # link our imported vcpkg package library "fmt" (and others) to our shared code target...
+  find_package(fmt CONFIG REQUIRED)
+  target_link_libraries(${PROJECT_NAME}-SharedCode
+    PUBLIC
+      fmt::fmt
+  )
+  message("Linked vcpkg library fmt to target ${PROJECT_NAME}-SharedCode")
 
-# link our imported vcpkg package library "fmt" (and others) to our shared code target...
-find_package(fmt CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME}-SharedCode
-  PUBLIC
-    fmt::fmt
-)
-message("Linked vcpkg library fmt to target ${PROJECT_NAME}-SharedCode")
+  # let's set the foo source folder as a usage requirement...
+  target_include_directories(${PROJECT_NAME}-SharedCode
+    INTERFACE
+      ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
+  )
 
-# let's set the foo source folder as a usage requirement...
-target_include_directories(${PROJECT_NAME}-SharedCode
-  INTERFACE
-    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
-)
+  # install the definition-containing library (.lib)
+  install(
+    TARGETS ${PROJECT_NAME}-SharedCode
+    DESTINATION lib
+  )
 
-# install the definition-containing library (.lib)
-install(
-  TARGETS ${PROJECT_NAME}-SharedCode
-  DESTINATION lib
-)
+  # install the declaration-containing header (.h)
+  install(
+    FILES ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo/foo.h
+    DESTINATION include/${PROJECT_NAME}/foo
+  )
 
-# install the declaration-containing header (.h)
-install(
-  FILES ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo/foo.h
-  DESTINATION include/${PROJECT_NAME}/foo
-)
-
-list(APPEND EXTRA_LIBS ${PROJECT_NAME}-SharedCode)
-
+  list(APPEND EXTRA_LIBS ${PROJECT_NAME}-SharedCode)
 endif(USE_FOO)
 
 # ============================================================================ #
@@ -259,7 +258,6 @@ install(
 #
 # ============================================================================ #
 
-enable_testing()
-
-# does the application run
-add_test(NAME Runs COMMAND ${PROJECT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/${PROJECT_NAME}-Executable)
+if(USE_TESTS)
+  include(${PROJECT_SOURCE_DIR}/tests/CMakeLists.txt)
+endif(USE_TESTS)
