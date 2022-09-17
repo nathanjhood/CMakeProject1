@@ -12,9 +12,6 @@
 
 #include "main.h"
 
-// Global app config header.
-#include "CMakeProject1Config.h"
-
 /** main.
  * @brief Entry point for program execution.
  *
