@@ -126,6 +126,9 @@ endif()
 #
 # ============================================================================ #
 
+# get access to helper functions for creating config files
+include(CMakePackageConfigHelpers)
+
 # make cache variables for install destinations
 include(GNUInstallDirs)
 
