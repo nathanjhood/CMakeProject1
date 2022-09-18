@@ -6,6 +6,6 @@
         "patch": 2
     },
     "include": [
-        "support/CMakePresetDefaults.json"
+        "support/cmake/CMakeDefaultPresets.json"
     ]
 }
