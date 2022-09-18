@@ -33,9 +33,13 @@ message(STATUS "${CMAKE_CURRENT_LIST_DIR}/>\n")
 
 message(STATUS "Initiating CMake v${CMAKE_VERSION}\n")
 
+message("CMAKE_DEFAULT_CONFIGS = ${CMAKE_DEFAULT_CONFIGS}")
+message("CMAKE_CONFIGURATION_TYPES = ${CMAKE_CONFIGURATION_TYPES}\n")
+
 message("Options:\n")
-set(CMAKE_COMPANY_NAME "StoneyDSP")
-option(USE_FOO "Use foo" ON)
+set(CMAKE_PROJECT_VENDOR "StoneyDSP")
+option(USE_FOO "Use foo" OFF)
+option(USE_TESTS "Use tests" ON)
 option(ENABLE_LOGGING "Log cache variables to console terminal" OFF)
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
 option(USE_EXTERN "Use extern folder to resolve dependencies" ON)
@@ -44,14 +48,14 @@ option(USE_VCPKG "Use local vcpkg if found" ON)
 set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 
 message("USE_FOO = ${USE_FOO}")
-message("CMAKE_COMPANY_NAME = ${CMAKE_COMPANY_NAME}")
+message("USE_TESTS = ${USE_TESTS}")
+message("CMAKE_PROJECT_VENDOR = ${CMAKE_PROJECT_VENDOR}")
 message("ENABLE_LOGGING = ${ENABLE_LOGGING}")
 message("BUILD_SHARED_LIBS = ${BUILD_SHARED_LIBS}")
 message("USE_EXTERN = ${USE_EXTERN}")
 message("GIT_SUBMODULE = ${GIT_SUBMODULE}")
 message("USE_VCPKG = ${USE_VCPKG}")
-message("USE_FOLDERS = ${USE_FOLDERS}")
-message("\n")
+message("USE_FOLDERS = ${USE_FOLDERS}\n")
 
 # ============================================================================ #
 #
@@ -84,16 +88,16 @@ message(STATUS "${CMAKE_CURRENT_LIST_DIR}/>\n")
 
 message("Detecting CMake project...")
 
-set(PROJECT_AUTHOR "StoneyDSP" CACHE STRING "Author/maintainer of this project:")
+set(PROJECT_VENDOR ${CMAKE_PROJECT_VENDOR} CACHE STRING "Author/maintainer of this project:")
 
 # Create a CMake project here.
 project (CMakeProject1
   VERSION
     1.0.0.0
   DESCRIPTION
-    "VS Console Application with CMake, vcpkg, Doxygen, and JUCE support"
+    "CMake project template with native git, vcpkg, and doxygen support."
   HOMEPAGE_URL
-    https://github.com/${PROJECT_AUTHOR}/CMakeProject1
+    https://github.com/${PROJECT_VENDOR}/CMakeProject1
   LANGUAGES
     C CXX
 )
@@ -110,7 +114,7 @@ message(STATUS "...Detected project:\n")
 message("${PROJECT_NAME} v${PROJECT_VERSION}")
 message("${PROJECT_DESCRIPTION}")
 message("${PROJECT_HOMEPAGE_URL}")
-message("by ${PROJECT_AUTHOR}\n")
+message("by ${PROJECT_VENDOR}\n")
 
 # Check if we are in the top-level project or not:
 if (NOT CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
@@ -125,24 +129,30 @@ endif()
 #
 # ============================================================================ #
 
+# get access to helper functions for creating config files
+include(CMakePackageConfigHelpers)
+
 # make cache variables for install destinations
 include(GNUInstallDirs)
 
 # Configure folder structure.
-set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
-set(ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
-set(LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
-set(PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
-set(CMAKE_INTDIR ${PROJECT_BINARY_DIR}/artefacts)
+#set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+#set(ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
+#set(LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
+#set(PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+#set(CMAKE_CFG_INTDIR ${PROJECT_BINARY_DIR}/artefacts)
+
+set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
+set(ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
+set(LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
+set(PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
 
 message(STATUS "Manually setting ${PROJECT_NAME} folder structure:\n")
-message("PROJECT_SOURCE_DIR = ${PROJECT_SOURCE_DIR}")
-message("PROJECT_BINARY_DIR = ${PROJECT_BINARY_DIR}")
 message("RUNTIME_OUTPUT_DIRECTORY = ${RUNTIME_OUTPUT_DIRECTORY}")
 message("ARCHIVE_OUTPUT_DIRECTORY = ${ARCHIVE_OUTPUT_DIRECTORY}")
 message("LIBRARY_OUTPUT_DIRECTORY = ${LIBRARY_OUTPUT_DIRECTORY}")
 message("PDB_OUTPUT_DIRECTORY = ${PDB_OUTPUT_DIRECTORY}")
-message("CMAKE_INTDIR = ${CMAKE_INTDIR}\n")
+message("CMAKE_CFG_INTDIR = ${CMAKE_CFG_INTDIR}\n")
 
 # ============================================================================ #
 #
@@ -154,8 +164,15 @@ message("CMAKE_INTDIR = ${CMAKE_INTDIR}\n")
 message("Creating config header file...")
 configure_file(
   ${PROJECT_SOURCE_DIR}/support/cmake/${PROJECT_NAME}Config.h.in
-  ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/cfg/${PROJECT_NAME}Config.h)
+  ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/${PROJECT_NAME}Config.h)
 message("Created config header file.\n")
+
+#configure_package_config_file(
+#    ${PROJECT_SOURCE_DIR}/support/cmake/${PROJECT_NAME}Config.cmake.in
+#    ${PROJECT_BINARY_DIR}/share/${PROJECT_NAME}/${PROJECT_NAME}Config.cmake
+#  INSTALL_DESTINATION
+#    ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
+#)
 
 # ============================================================================ #
 #
@@ -164,50 +181,52 @@ message("Created config header file.\n")
 # ============================================================================ #
 
 if(USE_FOO)
+  # Add output target.
+  message("Adding target...")
+  add_library (${PROJECT_NAME}-SharedCode
+    STATIC
+      ${PROJECT_SOURCE_DIR}/src/foo/foo.cpp)
+  message("Added target: ${PROJECT_NAME}-SharedCode.lib\n")
 
-# Add output target.
-message("Adding target...")
-add_library (${PROJECT_NAME}-SharedCode
-  STATIC
-    ${PROJECT_SOURCE_DIR}/src/foo/foo.cpp)
-message("Added target: ${PROJECT_NAME}-SharedCode.lib\n")
+  #message("Adding ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}Config.h to target ${PROJECT_NAME}-SharedCode...")
+  #target_include_directories(${PROJECT_NAME}-SharedCode
+  #  PUBLIC
+  #    # let's include foo folder...
+  #    #${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
+  #
+  #    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo>
+  #    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+  #)
+  #message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
 
-message("Adding ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}Config.h to target ${PROJECT_NAME}-SharedCode...")
-target_include_directories(${PROJECT_NAME}-SharedCode
-  PUBLIC
-    # let's include foo folder...
-    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
-)
-message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
+  # link our imported vcpkg package library "fmt" (and others) to our shared code target...
+  find_package(fmt CONFIG REQUIRED)
+  target_link_libraries(${PROJECT_NAME}-SharedCode
+    PUBLIC
+      fmt::fmt)
+  message("Linked vcpkg library fmt to target ${PROJECT_NAME}-SharedCode")
 
-# link our imported vcpkg package library "fmt" (and others) to our shared code target...
-find_package(fmt CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME}-SharedCode
-  PUBLIC
-    fmt::fmt
-)
-message("Linked vcpkg library fmt to target ${PROJECT_NAME}-SharedCode")
+  # let's set the foo source folder as a usage requirement...
+  target_include_directories(${PROJECT_NAME}-SharedCode
+    INTERFACE
+      ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
+      #<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+      #<INSTALL_INTERFACE:include>
+  )
 
-# let's set the foo source folder as a usage requirement...
-target_include_directories(${PROJECT_NAME}-SharedCode
-  INTERFACE
-    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
-)
+  # install the definition-containing library (.lib)
+  install(
+    TARGETS ${PROJECT_NAME}-SharedCode
+    DESTINATION lib
+  )
 
-# install the definition-containing library (.lib)
-install(
-  TARGETS ${PROJECT_NAME}-SharedCode
-  DESTINATION lib
-)
+  # install the declaration-containing header (.h)
+  install(
+    FILES ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo/foo.h
+    DESTINATION include/${PROJECT_NAME}/foo
+  )
 
-# install the declaration-containing header (.h)
-install(
-  FILES ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo/foo.h
-  DESTINATION include/${PROJECT_NAME}/foo
-)
-
-list(APPEND EXTRA_LIBS ${PROJECT_NAME}-SharedCode)
-
+  list(APPEND EXTRA_LIBS ${PROJECT_NAME}-SharedCode)
 endif(USE_FOO)
 
 # ============================================================================ #
@@ -223,35 +242,39 @@ add_executable (${PROJECT_NAME}-Executable
 message("Added target: ${PROJECT_NAME}-Executable.exe\n")
 
 # Add some headers.
-message("Adding ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}Config.h to target ${PROJECT_NAME}-Executable...")
-
+message("Adding to target ${PROJECT_NAME}-Executable...")
 #include directories for our executable program
 target_include_directories(${PROJECT_NAME}-Executable
   PUBLIC
+    # let's include the build tree...
+    ${PROJECT_BINARY_DIR}
     # let's include the config.h...
-    ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/cfg
+    ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}
     # let's include main.h...
     ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}
 )
+message("Added ${PROJECT_BINARY_DIR}")
 message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
+message("Added ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}")
 
-# Link our function library to our "main" out...
+# Link any extra libraries to our "main" out...
 target_link_libraries(${PROJECT_NAME}-Executable
   PUBLIC
     ${EXTRA_LIBS}
 )
 message("Linked library ${PROJECT_NAME}-SharedCode to target ${PROJECT_NAME}-Executable")
 
-# install the definition-containing .exe
+# install the .exe
 install(
   TARGETS ${PROJECT_NAME}-Executable
-  DESTINATION bin)
-
-# install the configured c++ header
-install(
-  FILES ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/cfg/${PROJECT_NAME}Config.h
-  DESTINATION include/${PROJECT_NAME}/cfg
+  DESTINATION bin
 )
+
+# install the configured c++ header (???)
+#install(
+#  FILES ${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.h
+#  DESTINATION include/${PROJECT_NAME}
+#)
 
 # ============================================================================ #
 #
@@ -259,7 +282,43 @@ install(
 #
 # ============================================================================ #
 
-enable_testing()
+if(USE_TESTS)
+  message(STATUS "Testing enabled.")
+  include(${PROJECT_SOURCE_DIR}/tests/CMakeLists.txt)
+else(USE_TESTS)
+  message(STATUS "Testing disabled.")
+endif(USE_TESTS)
 
-# does the application run
-add_test(NAME Runs COMMAND ${PROJECT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/${PROJECT_NAME}-Executable)
+# ============================================================================ #
+#
+#                           Configure Installer
+#
+# ============================================================================ #
+
+include(InstallRequiredSystemLibraries)
+set(CPACK_PACKAGE_VENDOR ${CMAKE_PROJECT_VENDOR})
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY ${PROJECT_DESCRIPTION})
+set(CPACK_PACKAGE_VERSION_MAJOR ${PROJECT_VERSION_MAJOR})
+set(CPACK_PACKAGE_VERSION_MINOR ${PROJECT_VERSION_MINOR})
+set(CPACK_PACKAGE_VERSION_PATCH ${PROJECT_VERSION_PATCH})
+set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_CURRENT_LIST_DIR}/LICENCE)
+set(CPACK_RESOURCE_FILE_README ${CMAKE_CURRENT_LIST_DIR}/README.md)
+set(CPACK_SOURCE_GENERATOR "TGZ;ZIP")
+set(CPACK_SOURCE_IGNORE_FILES
+    /.git
+    /.github
+    /.vs
+    /.vscode
+    /bin
+    /installed
+    /.*build.*
+    /\\\\.DS_Store
+)
+
+# include installer generator
+include(CPack)
+message(STATUS "Include (CPack)")
+
+message("CPACK_PACKAGE_VENDOR = ${CPACK_PACKAGE_VENDOR}")
+message(STATUS "CPack generators: ${CPACK_SOURCE_GENERATOR}")
+message(STATUS "CPack ignores: ${CPACK_SOURCE_IGNORE_FILES}")

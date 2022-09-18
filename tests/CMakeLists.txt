@@ -1,5 +1,5 @@
 # CMake requirements.
-cmake_minimum_required(VERSION 3.7...3.24)
+cmake_minimum_required(VERSION 3.7...3.24.2)
 
 # ============================================================================ #
 #
@@ -8,6 +8,8 @@ cmake_minimum_required(VERSION 3.7...3.24)
 # ============================================================================ #
 
 enable_testing()
+
+#include(run_from_bin_tree)
 
 # does the application run
 add_test(NAME Runs COMMAND ${PROJECT_BINARY_DIR}/${CMAKE_BUILD_TYPE}/${PROJECT_NAME}-Executable)

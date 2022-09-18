@@ -33,15 +33,17 @@
     class Foo
     {
     public:
-        Foo() : bar{5} {}
+        inline Foo() : bar(0) {}
 
-        ~Foo(){ bar = 0; }
+        inline ~Foo() noexcept { bar = 0; }
 
-        void tool() { std::cout << "Using std::iostream..." << std::endl; }
+        inline void tool() { std::cout << "Using std::iostream..." << std::endl; }
 
-        void message(std::string string) { std::cout << string << std::endl; }
+        inline void message(std::string string) { std::cout << string << std::endl; }
 
-        void returnBar() { std::cout << bar << std::endl; }
+        //inline void incBar(int inc) { bar += inc; }
+
+        inline void returnBar() { std::cout << "Foo::bar is " << bar << std::endl; }
 
     private:
         int bar {0};

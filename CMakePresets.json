@@ -6,6 +6,6 @@
         "patch": 2
     },
     "include": [
-        "scripts/CMakePresetDefaults.json"
+        "support/CMakePresetDefaults.json"
     ]
 }

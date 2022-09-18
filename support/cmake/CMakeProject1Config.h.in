@@ -36,4 +36,6 @@
 
 #cmakedefine USE_FOO
 
+
+
 #endif // CMAKEPROJECT1_CONFIG_H_INCLUDED
