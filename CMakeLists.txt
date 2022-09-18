@@ -33,8 +33,17 @@ message(STATUS "${CMAKE_CURRENT_LIST_DIR}/>\n")
 
 message(STATUS "Initiating CMake v${CMAKE_VERSION}\n")
 
-message("CMAKE_DEFAULT_CONFIGS = ${CMAKE_DEFAULT_CONFIGS}")
-message("CMAKE_CONFIGURATION_TYPES = ${CMAKE_CONFIGURATION_TYPES}\n")
+file(READ ${CMAKE_CURRENT_LIST_DIR}/VERSION LOCAL_VERSION)
+string(REGEX MATCH "VERSION_MAJOR ([0-9]*)" _ ${LOCAL_VERSION})
+set(LOCAL_VERSION_MAJOR ${CMAKE_MATCH_1})
+string(REGEX MATCH "VERSION_MINOR ([0-9]*)" _ ${LOCAL_VERSION})
+set(LOCAL_VERSION_MINOR ${CMAKE_MATCH_1})
+string(REGEX MATCH "VERSION_PATCH ([0-9]*)" _ ${LOCAL_VERSION})
+set(LOCAL_VERSION_PATCH ${CMAKE_MATCH_1})
+string(REGEX MATCH "VERSION_TWEAK ([0-9]*)" _ ${LOCAL_VERSION})
+set(LOCAL_VERSION_TWEAK ${CMAKE_MATCH_1})
+set(_ "")
+message("version: ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}")
 
 message("Options:\n")
 set(CMAKE_PROJECT_VENDOR "StoneyDSP")
@@ -93,7 +102,7 @@ set(PROJECT_VENDOR ${CMAKE_PROJECT_VENDOR} CACHE STRING "Author/maintainer of th
 # Create a CMake project here.
 project (CMakeProject1
   VERSION
-    1.0.0.0
+    ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}
   DESCRIPTION
     "CMake project template with native git, vcpkg, and doxygen support."
   HOMEPAGE_URL
@@ -237,12 +246,22 @@ endif(USE_FOO)
 
 # Add output target.
 message("Adding target...")
-add_executable (${PROJECT_NAME}-Executable
-    ${PROJECT_SOURCE_DIR}/src/main.cpp)
+add_executable (${PROJECT_NAME}-Executable)
 message("Added target: ${PROJECT_NAME}-Executable.exe\n")
 
+set_target_properties(${PROJECT_NAME}-Executable
+  PROPERTIES
+    VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK})
+message("Added target version ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}")
+
+target_sources(${PROJECT_NAME}-Executable
+  PUBLIC
+    ${PROJECT_SOURCE_DIR}/src/main.cpp
+    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/main.h
+)
+
 # Add some headers.
-message("Adding to target ${PROJECT_NAME}-Executable...")
+message("Adding to target ${PROJECT_NAME}-Executable...\n")
 #include directories for our executable program
 target_include_directories(${PROJECT_NAME}-Executable
   PUBLIC
@@ -255,14 +274,14 @@ target_include_directories(${PROJECT_NAME}-Executable
 )
 message("Added ${PROJECT_BINARY_DIR}")
 message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
-message("Added ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}")
+message("Added ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}\n")
 
 # Link any extra libraries to our "main" out...
 target_link_libraries(${PROJECT_NAME}-Executable
   PUBLIC
     ${EXTRA_LIBS}
 )
-message("Linked library ${PROJECT_NAME}-SharedCode to target ${PROJECT_NAME}-Executable")
+message("Linked library ${PROJECT_NAME}-SharedCode to target ${PROJECT_NAME}-Executable\n")
 
 # install the .exe
 install(
@@ -283,10 +302,10 @@ install(
 # ============================================================================ #
 
 if(USE_TESTS)
-  message(STATUS "Testing enabled.")
+  message(STATUS "Testing enabled.\n")
   include(${PROJECT_SOURCE_DIR}/tests/CMakeLists.txt)
 else(USE_TESTS)
-  message(STATUS "Testing disabled.")
+  message(STATUS "Testing disabled.\n")
 endif(USE_TESTS)
 
 # ============================================================================ #
@@ -298,9 +317,9 @@ endif(USE_TESTS)
 include(InstallRequiredSystemLibraries)
 set(CPACK_PACKAGE_VENDOR ${CMAKE_PROJECT_VENDOR})
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY ${PROJECT_DESCRIPTION})
-set(CPACK_PACKAGE_VERSION_MAJOR ${PROJECT_VERSION_MAJOR})
-set(CPACK_PACKAGE_VERSION_MINOR ${PROJECT_VERSION_MINOR})
-set(CPACK_PACKAGE_VERSION_PATCH ${PROJECT_VERSION_PATCH})
+set(CPACK_PACKAGE_VERSION_MAJOR ${LOCAL_VERSION_MAJOR})
+set(CPACK_PACKAGE_VERSION_MINOR ${LOCAL_VERSION_MINOR})
+set(CPACK_PACKAGE_VERSION_PATCH ${LOCAL_VERSION_PATCH})
 set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_CURRENT_LIST_DIR}/LICENCE)
 set(CPACK_RESOURCE_FILE_README ${CMAKE_CURRENT_LIST_DIR}/README.md)
 set(CPACK_SOURCE_GENERATOR "TGZ;ZIP")
@@ -317,8 +336,14 @@ set(CPACK_SOURCE_IGNORE_FILES
 
 # include installer generator
 include(CPack)
-message(STATUS "Include (CPack)")
+message(STATUS "Include (CPack)\n")
 
 message("CPACK_PACKAGE_VENDOR = ${CPACK_PACKAGE_VENDOR}")
-message(STATUS "CPack generators: ${CPACK_SOURCE_GENERATOR}")
-message(STATUS "CPack ignores: ${CPACK_SOURCE_IGNORE_FILES}")
+message("CPACK_PACKAGE_DESCRIPTION_SUMMARY = ${PROJECT_DESCRIPTION}")
+message("CPACK_PACKAGE_VERSION_MAJOR = ${LOCAL_VERSION_MAJOR}")
+message("CPACK_PACKAGE_VERSION_MINOR = ${LOCAL_VERSION_MINOR}")
+message("CPACK_PACKAGE_VERSION_PATCH = ${LOCAL_VERSION_PATCH}")
+message("CPACK_RESOURCE_FILE_LICENSE = ${CMAKE_CURRENT_LIST_DIR}/LICENCE")
+message("CPACK_RESOURCE_FILE_README = ${CMAKE_CURRENT_LIST_DIR}/README.md")
+message("CPACK_SOURCE_GENERATOR = ${CPACK_SOURCE_GENERATOR}")
+message("CPack ignores: ${CPACK_SOURCE_IGNORE_FILES}\n")
