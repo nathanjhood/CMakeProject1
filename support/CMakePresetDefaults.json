@@ -13,6 +13,6 @@
         "ubuntu/CMakeConfigurePresets.json",
         "ubuntu/CMakeBuildPresets.json",
         "ubuntu/CMakeTestPresets.json",
-        "ubuntu/CMakeVendorPresets.json",
+        "ubuntu/CMakeVendorPresets.json"
     ]
 }
