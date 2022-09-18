@@ -33,18 +33,6 @@ message(STATUS "${CMAKE_CURRENT_LIST_DIR}/>\n")
 
 message(STATUS "Initiating CMake v${CMAKE_VERSION}\n")
 
-file(READ ${CMAKE_CURRENT_LIST_DIR}/VERSION LOCAL_VERSION)
-string(REGEX MATCH "VERSION_MAJOR ([0-9]*)" _ ${LOCAL_VERSION})
-set(LOCAL_VERSION_MAJOR ${CMAKE_MATCH_1})
-string(REGEX MATCH "VERSION_MINOR ([0-9]*)" _ ${LOCAL_VERSION})
-set(LOCAL_VERSION_MINOR ${CMAKE_MATCH_1})
-string(REGEX MATCH "VERSION_PATCH ([0-9]*)" _ ${LOCAL_VERSION})
-set(LOCAL_VERSION_PATCH ${CMAKE_MATCH_1})
-string(REGEX MATCH "VERSION_TWEAK ([0-9]*)" _ ${LOCAL_VERSION})
-set(LOCAL_VERSION_TWEAK ${CMAKE_MATCH_1})
-set(_ "")
-message("version: ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}")
-
 message("Options:\n")
 set(CMAKE_PROJECT_VENDOR "StoneyDSP")
 option(USE_FOO "Use foo" OFF)
@@ -97,7 +85,20 @@ message(STATUS "${CMAKE_CURRENT_LIST_DIR}/>\n")
 
 message("Detecting CMake project...")
 
+# set project maintainer/vendor name
 set(PROJECT_VENDOR ${CMAKE_PROJECT_VENDOR} CACHE STRING "Author/maintainer of this project:")
+
+# set version using external "VERSION" file
+file(READ ${CMAKE_CURRENT_LIST_DIR}/VERSION LOCAL_VERSION)
+string(REGEX MATCH "VERSION_MAJOR ([0-9]*)" _ ${LOCAL_VERSION})
+set(LOCAL_VERSION_MAJOR ${CMAKE_MATCH_1})
+string(REGEX MATCH "VERSION_MINOR ([0-9]*)" _ ${LOCAL_VERSION})
+set(LOCAL_VERSION_MINOR ${CMAKE_MATCH_1})
+string(REGEX MATCH "VERSION_PATCH ([0-9]*)" _ ${LOCAL_VERSION})
+set(LOCAL_VERSION_PATCH ${CMAKE_MATCH_1})
+string(REGEX MATCH "VERSION_TWEAK ([0-9]*)" _ ${LOCAL_VERSION})
+set(LOCAL_VERSION_TWEAK ${CMAKE_MATCH_1})
+set(_ "")
 
 # Create a CMake project here.
 project (CMakeProject1
@@ -249,15 +250,18 @@ message("Adding target...")
 add_executable (${PROJECT_NAME}-Executable)
 message("Added target: ${PROJECT_NAME}-Executable.exe\n")
 
+# Set target version.
 set_target_properties(${PROJECT_NAME}-Executable
   PROPERTIES
     VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK})
 message("Added target version ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}")
 
+# Add source files and headers to target.
 target_sources(${PROJECT_NAME}-Executable
   PUBLIC
     ${PROJECT_SOURCE_DIR}/src/main.cpp
     ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/main.h
+    ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/${PROJECT_NAME}Config.h
 )
 
 # Add some headers.
