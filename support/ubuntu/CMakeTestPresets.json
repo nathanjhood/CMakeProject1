@@ -1,0 +1,23 @@
+{
+    "version": 5,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 24,
+        "patch": 2
+    },
+    "testPresets": [
+        {
+            "name": "core-test-linux",
+            "description": "Enable output on failure",
+            "configurePreset": "linux-debug",
+            "output": {
+                "outputOnFailure": true
+            }
+        },
+        {
+            "name": "core-test-windows",
+            "inherits": "core-test-linux",
+            "configurePreset": "x64-debug"
+        }
+    ]
+}

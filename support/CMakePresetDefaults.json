@@ -9,6 +9,10 @@
         "windows/CMakeConfigurePresets.json",
         "windows/CMakeBuildPresets.json",
         "windows/CMakeTestPresets.json",
-        "windows/CMakeVendorPresets.json"
+        "windows/CMakeVendorPresets.json",
+        "ubuntu/CMakeConfigurePresets.json",
+        "ubuntu/CMakeBuildPresets.json",
+        "ubuntu/CMakeTestPresets.json",
+        "ubuntu/CMakeVendorPresets.json",
     ]
 }

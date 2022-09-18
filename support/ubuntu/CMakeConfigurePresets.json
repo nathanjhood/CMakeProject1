@@ -1,0 +1,61 @@
+{
+    "version": 5,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 24,
+        "patch": 2
+    },
+    "include": [
+        "vcpkgVariables.json",
+        "CMakeDebugPresets.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "linux-base",
+            "description": "For more information: http://aka.ms/cmakepresetsvs",
+            "hidden": true,
+            "generator": "Ninja",
+            "inherits": [
+                "vcpkg-variables",
+                "debug-settings"
+            ],
+            "binaryDir": "${sourceDir}/bin/${presetName}",
+            "installDir": "${sourceDir}/installed/${presetName}",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
+            }
+        },
+        {
+            "name": "linux-debug",
+            "displayName": "Linux Debug",
+            "description": "Sets GCC",
+            "inherits": "base",
+            "cacheVariables": {
+              "CMAKE_C_COMPILER": "gcc",
+              "CMAKE_CXX_COMPILER": "g++",
+              "CMAKE_BUILD_TYPE": "Debug"
+            },
+            "condition": {
+              "type": "equals",
+              "lhs": "${hostSystemName}",
+              "rhs": "Linux"
+            },
+            "vendor": {
+                "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
+                "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}"
+            }
+            }
+        },
+        {
+            "name": "linux-release",
+            "displayName": "Linux Release",
+            "description": "Sets release build type",
+            "inherits": "linux-debug",
+            "cacheVariables": {
+              "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ]
+}
