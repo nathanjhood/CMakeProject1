@@ -12,11 +12,14 @@
             "description": "Set the vcpkg ENV variables",
             "hidden": true,
             "environment": {
+                "VCPKG_MANIFEST_MODE": "ON",
                 "VCPKG_ROOT": "${sourceDir}/extern/vcpkg",
                 "VCPKG_DEFAULT_TRIPLET": "${presetName}",
                 "VCPKG_DEFAULT_HOST_TRIPLET": "${presetName}",
                 "VCPKG_DOWNLOADS": "${sourceDir}/extern/vcpkg/downloads",
-                "VCPKG_FEATURE_FLAGS": "manifests,versions,binarycaching,registries"
+                "VCPKG_FEATURE_FLAGS": "manifests,versions,binarycaching,registries",
+                "VCPKG_INSTALLED_DIR": "${sourceDir}/extern/vcpkg/installed/${presetName}",
+                "VCPKG_MANIFEST_DIR": "${sourceDir}/extern"
             }
         }
     ]
