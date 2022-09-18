@@ -13,7 +13,7 @@
             "configurePreset": "x64-windows",
             "configuration": "Debug",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": false
         },
         {
             "name": "x64-windows-rel",
@@ -22,7 +22,7 @@
             "configurePreset": "x64-windows",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": false
         },
         {
             "name": "x64-windows-RelWithDebInfo",
@@ -31,7 +31,7 @@
             "configurePreset": "x64-windows",
             "configuration": "RelWithDebInfo",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": false
         },
         {
             "name": "x64-windows-MinSizeRel",
@@ -40,7 +40,7 @@
             "configurePreset": "x64-windows",
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": false
         },
         {
             "name": "x86-windows-dbg",
@@ -49,7 +49,7 @@
             "configurePreset": "x86-windows",
             "configuration": "Debug",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": false
         },
         {
             "name": "x86-windows-rel",
@@ -58,7 +58,7 @@
             "configurePreset": "x86-windows",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": false
         },
         {
             "name": "x86-windows-RelWithDebInfo",
@@ -67,7 +67,7 @@
             "configurePreset": "x86-windows",
             "configuration": "RelWithDebInfo",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": false
         },
         {
             "name": "x86-windows-MinSizeRel",
@@ -76,7 +76,7 @@
             "configurePreset": "x86-windows",
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
-            "verbose": true
+            "verbose": false
         }
     ]
 }

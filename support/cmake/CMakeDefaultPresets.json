@@ -6,6 +6,7 @@
         "patch": 2
     },
     "include": [
-        "support/cmake/CMakeDefaultPresets.json"
+        "windows/CMakeWindowsPresets.json",
+        "vcpkgVariables.json"
     ]
 }

@@ -6,6 +6,9 @@
         "patch": 2
     },
     "include": [
-        "support/cmake/CMakeDefaultPresets.json"
+        "CMakeConfigurePresets.json",
+        "CMakeBuildPresets.json",
+        "CMakeTestPresets.json",
+        "CMakeVendorPresets.json"
     ]
 }

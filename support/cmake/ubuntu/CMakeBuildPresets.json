@@ -1,0 +1,23 @@
+{
+    "version": 5,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 24,
+        "patch": 2
+    },
+    "buildPresets": [
+        {
+          "name": "default-build-linux",
+          "displayName": "Default",
+          "configurePreset": "linux-debug",
+          "description": "Vanilla build"
+        },
+        {
+          "name": "verbose-build-linux",
+          "displayName": "Verbose Build",
+          "description": "Passes -v to Ninja",
+          "configurePreset": "linux-debug",
+          "nativeToolOptions": [ "-v" ]
+        }
+    ]
+}

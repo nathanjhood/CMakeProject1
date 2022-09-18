@@ -31,7 +31,7 @@ if(DEFINED ${VCPKG_MANIFEST_DIR})
   message("Toolchain: VCPKG_MANIFEST_DIR = ${VCPKG_MANIFEST_DIR}")
 else()
   set(VCPKG_MANIFEST_DIR
-  ${CMAKE_CURRENT_SOURCE_DIR}/extern
+  ${CMAKE_CURRENT_LIST_DIR}
     CACHE STRING "vcpkg manifest file location")
   message("Toolchain: VCPKG_MANIFEST_DIR = ${VCPKG_MANIFEST_DIR}")
 endif()

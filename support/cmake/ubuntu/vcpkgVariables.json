@@ -15,7 +15,8 @@
                 "VCPKG_ROOT": "${sourceDir}/extern/vcpkg",
                 "VCPKG_DEFAULT_TRIPLET": "${presetName}",
                 "VCPKG_DEFAULT_HOST_TRIPLET": "${presetName}",
-                "VCPKG_DOWNLOADS": "${sourceDir}/extern/vcpkg/downloads"
+                "VCPKG_DOWNLOADS": "${sourceDir}/extern/vcpkg/downloads",
+                "VCPKG_FEATURE_FLAGS": "manifests,versions,binarycaching,registries"
             }
         }
     ]
