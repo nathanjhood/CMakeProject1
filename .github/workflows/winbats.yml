@@ -5,8 +5,17 @@ on:
   pull_request:
     branches: [ "develop" ]
 jobs:
-  check-bats-version:
+  check-win-bats-version:
     runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g bats
+      - run: bats -v
+  check-ubuntu-bats-version:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
