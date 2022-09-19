@@ -306,11 +306,11 @@ install(
   DESTINATION bin
 )
 
-# install the configured c++ header (???)
-#install(
-#  FILES ${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.h
-#  DESTINATION include/${PROJECT_NAME}
-#)
+# install the configured c++ header
+install(
+  FILES ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/${PROJECT_NAME}Config.h
+  DESTINATION include/${PROJECT_NAME}
+)
 
 if(ASAN_ENABLED)
   if(MSVC)
@@ -350,11 +350,12 @@ set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_CURRENT_LIST_DIR}/LICENCE)
 set(CPACK_RESOURCE_FILE_README ${CMAKE_CURRENT_LIST_DIR}/README.md)
 set(CPACK_SOURCE_GENERATOR "TGZ;ZIP")
 set(CPACK_SOURCE_IGNORE_FILES
-    /.git
+    /.git/*
     /.github
     /.vs
     /.vscode
-    /bin
+    /build
+    /downloads
     /installed
     /.*build.*
     /\\\\.DS_Store
