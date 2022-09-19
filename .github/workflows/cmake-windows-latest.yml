@@ -9,7 +9,6 @@ on:
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Debug
-  PATH: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Auxiliary/Build/vcvarsall.bat
 
 jobs:
   build:
@@ -30,7 +29,7 @@ jobs:
     - run: bats -v
 
     - name: Load
-      working-directory: ${{github.workspace}}
+      working-directory: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Auxiliary/Build
       run: vcvarsall.bat x64
 
     - name: Configure
