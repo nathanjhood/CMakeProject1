@@ -55,4 +55,4 @@ jobs:
 
     - name: Tar
       working-directory: ${{github.workspace}}/bin
-      run: cpack -G TAR -C ${{env.BUILD_TYPE}}
+      run: cpack -G TGZ -C ${{env.BUILD_TYPE}}
