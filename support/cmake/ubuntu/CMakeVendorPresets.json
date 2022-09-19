@@ -14,7 +14,7 @@
             "intelliSenseOptions": {
                 "useCompilerDefaults": true
             },
-            "intelliSenseMode": "linux-msvc-x64"
+            "intelliSenseMode": "windows-msvc-x64"
         },
         "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
             "sourceDir": "$env{HOME}/.vs/${sourceDirName}",

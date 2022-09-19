@@ -16,7 +16,10 @@
             "configurePreset": "x64-windows",
             "configuration": "Debug",
             "inheritConfigureEnvironment": true,
-            "verbose": false
+            "verbose": false,
+            "environment": {
+                "VCPKG_BUILD_TYPE": "debug"
+            }
         },
         {
             "name": "x64-windows-rel",
@@ -25,7 +28,10 @@
             "configurePreset": "x64-windows",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
-            "verbose": false
+            "verbose": false,
+            "environment": {
+                "VCPKG_BUILD_TYPE": "release"
+            }
         },
         {
             "name": "x64-windows-RelWithDebInfo",
@@ -34,7 +40,10 @@
             "configurePreset": "x64-windows",
             "configuration": "RelWithDebInfo",
             "inheritConfigureEnvironment": true,
-            "verbose": false
+            "verbose": false,
+            "environment": {
+                "VCPKG_BUILD_TYPE": "release"
+            }
         },
         {
             "name": "x64-windows-MinSizeRel",
@@ -43,7 +52,10 @@
             "configurePreset": "x64-windows",
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
-            "verbose": false
+            "verbose": false,
+            "environment": {
+                "VCPKG_BUILD_TYPE": "release"
+            }
         },
         {
             "name": "x86-windows-dbg",
@@ -52,7 +64,10 @@
             "configurePreset": "x86-windows",
             "configuration": "Debug",
             "inheritConfigureEnvironment": true,
-            "verbose": false
+            "verbose": false,
+            "environment": {
+                "VCPKG_BUILD_TYPE": "debug"
+            }
         },
         {
             "name": "x86-windows-rel",
@@ -61,7 +76,10 @@
             "configurePreset": "x86-windows",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
-            "verbose": false
+            "verbose": false,
+            "environment": {
+                "VCPKG_BUILD_TYPE": "release"
+            }
         },
         {
             "name": "x86-windows-RelWithDebInfo",
@@ -70,7 +88,10 @@
             "configurePreset": "x86-windows",
             "configuration": "RelWithDebInfo",
             "inheritConfigureEnvironment": true,
-            "verbose": false
+            "verbose": false,
+            "environment": {
+                "VCPKG_BUILD_TYPE": "release"
+            }
         },
         {
             "name": "x86-windows-MinSizeRel",
@@ -79,7 +100,10 @@
             "configurePreset": "x86-windows",
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
-            "verbose": false
+            "verbose": false,
+            "environment": {
+                "VCPKG_BUILD_TYPE": "release"
+            }
         }
     ]
 }
