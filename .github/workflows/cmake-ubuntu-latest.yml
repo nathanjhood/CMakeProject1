@@ -2,13 +2,15 @@ name: CMake-Ubuntu-latest
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "develop" ]
+    branches: [ "main" ]
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  CMAKE_CONFIGURATION_TYPES: Debug;Release;RelWithDebInfo;MinSizeRel
   BUILD_TYPE: Debug
+  VCPKG_BINARY_SOURCES: 'clear;nuget,GitHub,readwrite'
 
 jobs:
   build:
@@ -29,7 +31,7 @@ jobs:
       working-directory: ${{github.workspace}}
       # Configure CMake in a 'bin' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -B ${{github.workspace}}/bin -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_C_COMPILER=gnu -DCMAKE_CXX_COMPILER=gnu -Wdev -Wdeprecated --check-system-vars -Werror=dev -Werror=deprecated -G "Ninja"
+      run: cmake -B ${{github.workspace}}/bin -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_C_COMPILER=gcc-8 -DCMAKE_CXX_COMPILER=g++-8 -Wdev -Wdeprecated --check-system-vars -Werror=dev -Werror=deprecated -G "Ninja Multi-Config"
 
     - name: Build
       # Build your program with the given configuration
