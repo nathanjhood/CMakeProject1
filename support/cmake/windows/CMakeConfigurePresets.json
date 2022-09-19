@@ -19,8 +19,8 @@
                 "debug-settings"
             ],
             "generator": "Ninja Multi-Config",
-            "binaryDir": "${sourceDir}/out/build/${presetName}",
-            "installDir": "${sourceDir}/out/install/${presetName}",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "installDir": "${sourceDir}/install/${presetName}",
             "condition": {
                 "type": "equals",
                 "lhs": "${hostSystemName}",
