@@ -28,9 +28,9 @@ jobs:
     - run: npm install -g bats
     - run: bats -v
 
-    - name: LoadEnv
+    - name: Load
       working-directory: ${{github.workspace}}
-      run: "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Auxiliary/Build/vcvarsall.bat" x64
+      run: "C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Auxiliary/Build/vcvarsall.bat"
 
     - name: Configure
       working-directory: ${{github.workspace}}
