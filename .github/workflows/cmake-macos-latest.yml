@@ -1,4 +1,4 @@
-name: CMake-Ubuntu-latest
+name: CMake-MacOs-latest
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
     # You can convert this to a matrix build if you need cross-platform coverage.
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v3
@@ -29,7 +29,7 @@ jobs:
       working-directory: ${{github.workspace}}
       # Configure CMake in a 'bin' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -B ${{github.workspace}}/bin -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_C_COMPILER=gnu -DCMAKE_CXX_COMPILER=gnu -Wdev -Wdeprecated --check-system-vars -Werror=dev -Werror=deprecated -G "Ninja Multi-Config"
+      run: cmake -B ${{github.workspace}}/bin -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -Wdev -Wdeprecated --check-system-vars -Werror=dev -Werror=deprecated -G "Ninja Multi-Config"
 
     - name: Build
       # Build your program with the given configuration
