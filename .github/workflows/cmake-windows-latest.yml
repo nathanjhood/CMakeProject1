@@ -31,7 +31,7 @@ jobs:
 
     - name: Load
       working-directory: ${{github.workspace}}
-      run: vcvarsall.bat x64
+      run: C:\Program Files (x86)\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat x64
 
     - name: Configure
       working-directory: ${{github.workspace}}
