@@ -8,7 +8,9 @@
     "include": [
         "CMakeConfigurePresets.json",
         "CMakeBuildPresets.json",
+        "CMakeDebugPresets.json",
         "CMakeTestPresets.json",
+        "CMakeVcpkgPresets.json",
         "CMakeVendorPresets.json"
     ]
 }
