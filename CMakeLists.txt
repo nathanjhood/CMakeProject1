@@ -42,7 +42,7 @@ option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
 option(USE_EXTERN "Use extern folder to resolve dependencies" ON)
 option(GIT_SUBMODULE "Check submodules during build" ON)
 option(USE_VCPKG "Use local vcpkg if found" ON)
-option(ASAN_ENABLED "Build this target with AddressSanitizer" ON)
+option(ASAN_ENABLED "Build this target with AddressSanitizer" OFF)
 set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 
 message("USE_FOO = ${USE_FOO}")
