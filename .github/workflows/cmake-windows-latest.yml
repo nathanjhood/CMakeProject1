@@ -30,7 +30,7 @@ jobs:
 
     - name: Load
       working-directory: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Auxiliary/Build
-      run: vcvarsall.bat x64
+      run: vcvarsall
 
     - name: Configure
       working-directory: ${{github.workspace}}
