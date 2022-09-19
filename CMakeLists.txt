@@ -65,13 +65,13 @@ if(USE_EXTERN)
   # add required packages
   message(STATUS "Checking git...\n")
   if(GIT_FOUND)
-    message("git: already found. Using: ${CMAKE_PROJECT_NAME} submodules")
+    message("git: already found. Using: ${CMAKE_PROJECT_NAME} submodules\n")
   else()
     if(EXISTS ${CMAKE_CURRENT_LIST_DIR}/.gitmodules)
-      message("git: adding local submodules...")
+      message("git: adding local submodules...\n")
       include(extern/CMakeLists.txt)
     else()
-      message("git: no submodule file found")
+      message("git: no submodule file found\n")
     endif()
   endif()
   message(STATUS "${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt>\n")
@@ -83,7 +83,7 @@ endif()
 #
 # ============================================================================ #
 
-message("Detecting CMake project...")
+message("Detecting CMake project...\n")
 
 # set project maintainer/vendor name
 set(PROJECT_VENDOR ${CMAKE_PROJECT_VENDOR} CACHE STRING "Author/maintainer of this project:")
@@ -128,9 +128,9 @@ message("by ${PROJECT_VENDOR}\n")
 
 # Check if we are in the top-level project or not:
 if (NOT CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
-    message(STATUS "${PROJECT_NAME} is a sub-project of ${CMAKE_PROJECT_NAME}")
+    message(STATUS "${PROJECT_NAME} is a sub-project of ${CMAKE_PROJECT_NAME}\n")
 else()
-    message(STATUS "${CMAKE_PROJECT_NAME} is a top-level project")
+    message(STATUS "${CMAKE_PROJECT_NAME} is a top-level project\n")
 endif()
 
 # ============================================================================ #
@@ -146,10 +146,10 @@ include(CMakePackageConfigHelpers)
 include(GNUInstallDirs)
 
 # Configure folder structure.
-set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
-set(ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
-set(LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
-set(PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
+set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+set(ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+set(LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+set(PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 
 message(STATUS "Manually setting ${PROJECT_NAME} folder structure:\n")
 message("RUNTIME_OUTPUT_DIRECTORY = ${RUNTIME_OUTPUT_DIRECTORY}")

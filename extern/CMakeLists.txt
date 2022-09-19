@@ -47,12 +47,25 @@ if(USE_VCPKG)
     set(VCPKG_MANIFEST_MODE ON
       CACHE STRING "vcpkg manifest mode on/off")
     message("Toolchain: VCPKG_MANIFEST_MODE = ${VCPKG_MANIFEST_MODE}")
+    # This environment variable can be set to an existing directory to use for
+    # storing downloads instead of the internal downloads/ directory.
+    # It should always be set to an absolute path.
+    set(VCPKG_DOWNLOADS ${CMAKE_CURRENT_SOURCE_DIR}/downloads
+      CACHE STRING "vcpkg package downloads directory")
+    message("Toolchain: VCPKG_DOWNLOADS = ${VCPKG_DOWNLOADS}")
     # This variable sets the location where libraries will be installed and consumed from.
     # In manifest mode, the default is ${CMAKE_BINARY_DIR}/vcpkg_installed.
     # In classic mode, the default is ${VCPKG_ROOT}/installed.
-    #set(VCPKG_INSTALLED_DIR ${CMAKE_CURRENT_SOURCE_DIR}/out/install
-      #CACHE STRING "vcpkg installation directory")
-    #message("Toolchain: VCPKG_INSTALLED_DIR = ${VCPKG_INSTALLED_DIR}")
+    set(VCPKG_INSTALLED_DIR ${CMAKE_CURRENT_SOURCE_DIR}/installed
+      CACHE STRING "vcpkg package installation directory")
+    message("Toolchain: VCPKG_INSTALLED_DIR = ${VCPKG_INSTALLED_DIR}")
+    # location of .vcpkg-root file
+    set(VCPKG_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/extern/vcpkg
+      CACHE STRING "location of .vcpkg-root file")
+    message("Toolchain: VCPKG_ROOT = ${VCPKG_ROOT}")
+    # define vcpkg required feature flags
+    set(VCPKG_FEATURE_FLAGS "manifests,versions,binarycaching,registries")
+    message("Toolchain: VCPKG_FEATURE_FLAGS = ${VCPKG_FEATURE_FLAGS}")
     # Toolchain location. Stores result in the CMakeCache.
     set(CMAKE_TOOLCHAIN_FILE
     ${CMAKE_CURRENT_SOURCE_DIR}/extern/vcpkg/scripts/buildsystems/vcpkg.cmake
