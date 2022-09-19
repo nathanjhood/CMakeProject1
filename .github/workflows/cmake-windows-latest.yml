@@ -31,7 +31,7 @@ jobs:
 
     - name: Load
       working-directory: ${{github.workspace}}
-      run: vcvarsall.bat
+      run: vcvarsall.bat x64
 
     - name: Configure
       working-directory: ${{github.workspace}}
