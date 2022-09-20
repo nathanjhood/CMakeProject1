@@ -20,7 +20,7 @@
  *
  */
 
-#define companyName "${CMAKE_COMPANY_NAME}"
+#define companyName "${CMAKE_PROJECT_VENDOR}"
 #define projectName "${PROJECT_NAME}"
 #define projectDescription "${PROJECT_DESCRIPTION}"
 #define projectVersion "${PROJECT_VERSION}"
@@ -35,6 +35,14 @@
 #define cmakeGenerator "${CMAKE_GENERATOR}"
 
 #cmakedefine USE_FOO
+#cmakedefine USE_TESTS
+#cmakedefine CMAKE_PROJECT_VENDOR
+#cmakedefine ENABLE_LOGGING
+#cmakedefine BUILD_SHARED_LIBS
+#cmakedefine USE_EXTERN
+#cmakedefine GIT_SUBMODULE
+#cmakedefine USE_VCPKG
+#cmakedefine USE_FOLDERS
 
 
 

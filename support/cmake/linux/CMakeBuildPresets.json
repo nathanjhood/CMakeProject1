@@ -10,10 +10,10 @@
     ],
     "buildPresets": [
         {
-            "name": "x64-windows-dbg",
+            "name": "x64-linux-dbg",
             "displayName": "Debug",
             "description": "Target Windows (64-bit) with the Visual Studio development environment. (Debug)",
-            "configurePreset": "x64-windows",
+            "configurePreset": "x64-linux",
             "configuration": "Debug",
             "inheritConfigureEnvironment": true,
             "verbose": false,
@@ -22,10 +22,10 @@
             }
         },
         {
-            "name": "x64-windows-rel",
+            "name": "x64-linux-rel",
             "displayName": "Release",
             "description": "Target Windows (64-bit) with the Visual Studio development environment. (Release)",
-            "configurePreset": "x64-windows",
+            "configurePreset": "x64-linux",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
             "verbose": false,
@@ -34,10 +34,10 @@
             }
         },
         {
-            "name": "x64-windows-RelWithDebInfo",
+            "name": "x64-linux-RelWithDebInfo",
             "displayName": "RelWithDebInfo",
             "description": "Target Windows (64-bit) with the Visual Studio development environment. (RelWithDebInfo)",
-            "configurePreset": "x64-windows",
+            "configurePreset": "x64-linux",
             "configuration": "RelWithDebInfo",
             "inheritConfigureEnvironment": true,
             "verbose": false,
@@ -46,10 +46,10 @@
             }
         },
         {
-            "name": "x64-windows-MinSizeRel",
+            "name": "x64-linux-MinSizeRel",
             "displayName": "MinSizeRel",
             "description": "Target Windows (64-bit) with the Visual Studio development environment. (MinSizeRel)",
-            "configurePreset": "x64-windows",
+            "configurePreset": "x64-linux",
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
             "verbose": false,
@@ -58,10 +58,10 @@
             }
         },
         {
-            "name": "x86-windows-dbg",
+            "name": "x86-linux-dbg",
             "displayName": "Debug",
             "description": "x86 Debug",
-            "configurePreset": "x86-windows",
+            "configurePreset": "x86-linux",
             "configuration": "Debug",
             "inheritConfigureEnvironment": true,
             "verbose": false,
@@ -70,10 +70,10 @@
             }
         },
         {
-            "name": "x86-windows-rel",
+            "name": "x86-linux-rel",
             "displayName": "Release",
             "description": "x86 Release",
-            "configurePreset": "x86-windows",
+            "configurePreset": "x86-linux",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
             "verbose": false,
@@ -82,10 +82,10 @@
             }
         },
         {
-            "name": "x86-windows-RelWithDebInfo",
+            "name": "x86-linux-RelWithDebInfo",
             "displayName": "RelWithDebInfo",
             "description": "x86 RelWithDebInfo",
-            "configurePreset": "x86-windows",
+            "configurePreset": "x86-linux",
             "configuration": "RelWithDebInfo",
             "inheritConfigureEnvironment": true,
             "verbose": false,
@@ -94,10 +94,10 @@
             }
         },
         {
-            "name": "x86-windows-MinSizeRel",
+            "name": "x86-linux-MinSizeRel",
             "displayName": "MinSizeRel",
             "description": "x86 MinSizeRel",
-            "configurePreset": "x86-windows",
+            "configurePreset": "x86-linux",
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
             "verbose": false,

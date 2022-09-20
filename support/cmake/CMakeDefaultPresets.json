@@ -7,6 +7,6 @@
     },
     "include": [
         "windows/CMakeWindowsPresets.json",
-        "vcpkgVariables.json"
+        "linux/CMakeLinuxPresets.json"
     ]
 }

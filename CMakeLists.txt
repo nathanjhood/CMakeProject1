@@ -29,7 +29,7 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
 endif()
 
 message("\n")
-message(STATUS "${CMAKE_CURRENT_LIST_DIR}/>\n")
+message(STATUS "${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt>\n")
 
 message(STATUS "Initiating CMake v${CMAKE_VERSION}\n")
 
@@ -42,6 +42,7 @@ option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
 option(USE_EXTERN "Use extern folder to resolve dependencies" ON)
 option(GIT_SUBMODULE "Check submodules during build" ON)
 option(USE_VCPKG "Use local vcpkg if found" ON)
+option(ASAN_ENABLED "Build this target with AddressSanitizer" OFF)
 set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 
 message("USE_FOO = ${USE_FOO}")
@@ -64,15 +65,16 @@ if(USE_EXTERN)
   # add required packages
   message(STATUS "Checking git...\n")
   if(GIT_FOUND)
-    message("git: already found. Using: ${CMAKE_PROJECT_NAME} submodules")
+    message("git: already found. Using: ${CMAKE_PROJECT_NAME} submodules\n")
   else()
     if(EXISTS ${CMAKE_CURRENT_LIST_DIR}/.gitmodules)
-      message("git: adding local submodules...")
+      message("git: adding local submodules...\n")
       include(extern/CMakeLists.txt)
     else()
-      message("git: no submodule file found")
+      message("git: no submodule file found\n")
     endif()
   endif()
+  message(STATUS "${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt>\n")
 endif()
 
 # ============================================================================ #
@@ -81,9 +83,7 @@ endif()
 #
 # ============================================================================ #
 
-message(STATUS "${CMAKE_CURRENT_LIST_DIR}/>\n")
-
-message("Detecting CMake project...")
+message("Detecting CMake project...\n")
 
 # set project maintainer/vendor name
 set(PROJECT_VENDOR ${CMAKE_PROJECT_VENDOR} CACHE STRING "Author/maintainer of this project:")
@@ -128,9 +128,9 @@ message("by ${PROJECT_VENDOR}\n")
 
 # Check if we are in the top-level project or not:
 if (NOT CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
-    message(STATUS "${PROJECT_NAME} is a sub-project of ${CMAKE_PROJECT_NAME}")
+    message(STATUS "${PROJECT_NAME} is a sub-project of ${CMAKE_PROJECT_NAME}\n")
 else()
-    message(STATUS "${CMAKE_PROJECT_NAME} is a top-level project")
+    message(STATUS "${CMAKE_PROJECT_NAME} is a top-level project\n")
 endif()
 
 # ============================================================================ #
@@ -146,16 +146,10 @@ include(CMakePackageConfigHelpers)
 include(GNUInstallDirs)
 
 # Configure folder structure.
-#set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
-#set(ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
-#set(LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
-#set(PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
-#set(CMAKE_CFG_INTDIR ${PROJECT_BINARY_DIR}/artefacts)
-
-set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
-set(ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
-set(LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
-set(PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
+set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+set(ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+set(LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+set(PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 
 message(STATUS "Manually setting ${PROJECT_NAME} folder structure:\n")
 message("RUNTIME_OUTPUT_DIRECTORY = ${RUNTIME_OUTPUT_DIRECTORY}")
@@ -169,6 +163,24 @@ message("CMAKE_CFG_INTDIR = ${CMAKE_CFG_INTDIR}\n")
 #                           Configure Project
 #
 # ============================================================================ #
+
+if(MSVC)
+    # Use max Warning Level
+    string(REPLACE "/W3 " "/Wall " CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
+    string(REPLACE "/W3 " "/Wall " CMAKE_CXX_FLAGS_DEBUG ${CMAKE_CXX_FLAGS_DEBUG})
+    string(REPLACE "/W3 " "/Wall " CMAKE_CXX_FLAGS_RELEASE ${CMAKE_CXX_FLAGS_RELEASE})
+    string(REPLACE "/W3 " "/Wall " CMAKE_CXX_FLAGS_MINSIZEREL ${CMAKE_CXX_FLAGS_MINSIZEREL})
+    string(REPLACE "/W3 " "/Wall " CMAKE_CXX_FLAGS_RELWITHDEBINFO ${CMAKE_CXX_FLAGS_RELWITHDEBINFO})
+    # Library needs /EHsc (Enable C++ exceptions)
+endif()
+
+message("CMAKE_CXX_FLAGS = ${CMAKE_CXX_FLAGS}")
+message("CMAKE_CXX_FLAGS_DEBUG = ${CMAKE_CXX_FLAGS_DEBUG}")
+message("CMAKE_CXX_FLAGS_RELEASE = ${CMAKE_CXX_FLAGS_RELEASE}")
+message("CMAKE_CXX_FLAGS_MINSIZEREL = ${CMAKE_CXX_FLAGS_MINSIZEREL}")
+message("CMAKE_CXX_FLAGS_RELWITHDEBINFO = ${CMAKE_CXX_FLAGS_RELWITHDEBINFO}\n")
+
+message("CONFIGURATION = ${CONFIGURATION}\n")
 
 # create config header for C++
 message("Creating config header file...")
@@ -254,7 +266,7 @@ message("Added target: ${PROJECT_NAME}-Executable.exe\n")
 set_target_properties(${PROJECT_NAME}-Executable
   PROPERTIES
     VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK})
-message("Added target version ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}")
+message("Added target version ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}\n")
 
 # Add source files and headers to target.
 target_sources(${PROJECT_NAME}-Executable
@@ -285,7 +297,8 @@ target_link_libraries(${PROJECT_NAME}-Executable
   PUBLIC
     ${EXTRA_LIBS}
 )
-message("Linked library ${PROJECT_NAME}-SharedCode to target ${PROJECT_NAME}-Executable\n")
+message("Linked EXTRA_LIBS (if any) to target ${PROJECT_NAME}-Executable\n")
+message("EXTRA_LIBS = ${EXTRA_LIBS}\n")
 
 # install the .exe
 install(
@@ -293,11 +306,20 @@ install(
   DESTINATION bin
 )
 
-# install the configured c++ header (???)
-#install(
-#  FILES ${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.h
-#  DESTINATION include/${PROJECT_NAME}
-#)
+# install the configured c++ header
+install(
+  FILES ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/${PROJECT_NAME}Config.h
+  DESTINATION include/${PROJECT_NAME}
+)
+
+if(ASAN_ENABLED)
+  if(MSVC)
+    target_compile_options(${PROJECT_NAME}-Executable PUBLIC /fsanitize=address)
+  else()
+    target_compile_options(${PROJECT_NAME}-Executable PUBLIC -fsanitize=address)
+    target_link_options(${PROJECT_NAME}-Executable PUBLIC -fsanitize=address)
+  endif()
+endif()
 
 # ============================================================================ #
 #
@@ -328,11 +350,12 @@ set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_CURRENT_LIST_DIR}/LICENCE)
 set(CPACK_RESOURCE_FILE_README ${CMAKE_CURRENT_LIST_DIR}/README.md)
 set(CPACK_SOURCE_GENERATOR "TGZ;ZIP")
 set(CPACK_SOURCE_IGNORE_FILES
-    /.git
+    /.git/*
     /.github
     /.vs
     /.vscode
-    /bin
+    /build
+    /downloads
     /installed
     /.*build.*
     /\\\\.DS_Store

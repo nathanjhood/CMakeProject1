@@ -6,8 +6,8 @@
         "patch": 2
     },
     "include": [
-        "CMakeConfigurePresets.json",
         "CMakeBuildPresets.json",
+        "CMakeConfigurePresets.json",
         "CMakeDebugPresets.json",
         "CMakeTestPresets.json",
         "CMakeVendorPresets.json"

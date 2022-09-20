@@ -14,36 +14,54 @@
             "description": "Target Windows with the Visual Studio development environment.",
             "hidden": true,
             "inherits": [
-                "vcpkg-variables",
                 "debug-settings"
             ],
-            "generator": "Visual Studio 17 2022",
-            "binaryDir": "${sourceDir}/bin/${presetName}",
+            "generator": "Ninja Multi-Config",
+            "binaryDir": "${sourceDir}/build/${presetName}",
             "installDir": "${sourceDir}/installed/${presetName}",
             "condition": {
                 "type": "equals",
                 "lhs": "${hostSystemName}",
                 "rhs": "Windows"
+            },
+            "toolset":{
+                "value": "VCTargetsPath=${sourceDir}/support/msbuild",
+                "strategy": "external"
+            },
+            "environment": {
+                "CMAKE_CONFIGURATION_TYPES": "Debug;Release;RelWithDebInfo;MinSizeRel",
+                "VCPKG_DOWNLOADS": "${sourceDir}/downloads",
+                "VCPKG_CRT_LINKAGE": "dynamic",
+                "VCPKG_LIBRARY_LINKAGE": "dynamic",
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe"
             }
         },
         {
             "name": "x64-windows",
             "displayName": "x64",
             "description": "Target Windows (64-bit) with the Visual Studio development environment.",
-            "inherits": "windows-base",
+            "inherits":[
+                "windows-base"
+            ],
             "toolset": {
-                "value": "host=x64",
+                "value": "v143,host=x64,VCTargetsPath=${sourceDir}/support/msbuild",
                 "strategy": "external"
             },
             "architecture": {
                 "value": "x64",
                 "strategy": "external"
             },
+            "environment": {
+                "VCPKG_DEFAULT_TRIPLET": "x64-windows",
+                "VCPKG_DEFAULT_HOST_TRIPLET": "x64-windows",
+                "VCPKG_TARGET_TRIPLET": "x64-windows",
+                "VCPKG_TARGET_ARCHITECTURE": "x64"
+            },
             "cacheVariables": {
                 "CMAKE_C_COMPILER": "cl.exe",
                 "CMAKE_CXX_COMPILER": "cl.exe"
             },
-            "environment": {},
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {
                     "intelliSenseMode": "windows-msvc-x64"
@@ -54,20 +72,27 @@
             "name": "x86-windows",
             "displayName": "x86",
             "description": "Target Windows (32-bit) with the Visual Studio development environment.",
-            "inherits": "windows-base",
+            "inherits": [
+                "windows-base"
+            ],
             "toolset": {
-                "value": "host=x86",
+                "value": "v143,host=x86,VCTargetsPath=${sourceDir}/support/msbuild",
                 "strategy": "external"
             },
             "architecture": {
                 "value": "x86",
                 "strategy": "external"
             },
+            "environment": {
+                "VCPKG_DEFAULT_TRIPLET": "x86-windows",
+                "VCPKG_DEFAULT_HOST_TRIPLET": "x86-windows",
+                "VCPKG_TARGET_TRIPLET": "x86-windows",
+                "VCPKG_TARGET_ARCHITECTURE": "x86"
+            },
             "cacheVariables": {
                 "CMAKE_C_COMPILER": "cl.exe",
                 "CMAKE_CXX_COMPILER": "cl.exe"
             },
-            "environment": {},
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {
                     "intelliSenseMode": "windows-msvc-x86"
