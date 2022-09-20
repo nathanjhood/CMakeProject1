@@ -62,8 +62,8 @@
             "cacheVariables": {
 				"CMAKE_C_COMPILER": "gcc.exe",
                 "CMAKE_CXX_COMPILER": "g++.exe",
-				"VCPKG_TARGET_TRIPLET": "x86-mingw-static",
-				"VCPKG_HOST_TRIPLET": "x86-mingw-static"
+				"VCPKG_TARGET_TRIPLET": "x64-mingw-static",
+				"VCPKG_HOST_TRIPLET": "x64-mingw-static"
             },
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {

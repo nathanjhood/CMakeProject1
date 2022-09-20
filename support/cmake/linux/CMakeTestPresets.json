@@ -1,0 +1,39 @@
+{
+    "version": 5,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 24,
+        "patch": 2
+    },
+    "include": [
+        "CMakeConfigurePresets.json"
+    ],
+    "testPresets": [
+        {
+            "name": "x64 Test",
+            "displayName": "Test",
+            "description": "x64 Test",
+            "configurePreset": "x64-linux",
+            "configuration": "Debug",
+            "inheritConfigureEnvironment": true,
+            "output": { "outputOnFailure": true },
+            "execution": {
+                "noTestsAction": "error",
+                "stopOnFailure": true
+            }
+        },
+        {
+            "name": "x86 Test",
+            "displayName": "Test",
+            "description": "x86 Test",
+            "configurePreset": "x86-linux",
+            "configuration": "Debug",
+            "inheritConfigureEnvironment": true,
+            "output": { "outputOnFailure": true },
+            "execution": {
+                "noTestsAction": "error",
+                "stopOnFailure": true
+            }
+        }
+    ]
+}

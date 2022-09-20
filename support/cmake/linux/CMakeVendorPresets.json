@@ -14,10 +14,10 @@
             "intelliSenseOptions": {
                 "useCompilerDefaults": true
             },
-            "intelliSenseMode": "windows-msvc-x64"
+            "intelliSenseMode": "linux-gcc-x64"
         },
         "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
-            "sourceDir": "$env{HOME}/.vs/${sourceDirName}",
+            "sourceDir": "$env{HOME}/.vs/ms${sourceDirName}",
             "copyBuildOutput": false,
             "copySources": true,
             "forceWSL1Toolset": false,
