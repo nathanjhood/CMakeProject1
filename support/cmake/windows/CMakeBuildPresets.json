@@ -60,7 +60,7 @@
         {
             "name": "x86-windows-dbg",
             "displayName": "Debug",
-            "description": "x86 Debug",
+            "description": "Target Windows (32-bit) with the Visual Studio development environment. (Debug)",
             "configurePreset": "x86-windows",
             "configuration": "Debug",
             "inheritConfigureEnvironment": true,
@@ -72,7 +72,7 @@
         {
             "name": "x86-windows-rel",
             "displayName": "Release",
-            "description": "x86 Release",
+            "description": "Target Windows (32-bit) with the Visual Studio development environment. (Release)",
             "configurePreset": "x86-windows",
             "configuration": "Release",
             "inheritConfigureEnvironment": true,
@@ -84,7 +84,7 @@
         {
             "name": "x86-windows-RelWithDebInfo",
             "displayName": "RelWithDebInfo",
-            "description": "x86 RelWithDebInfo",
+            "description": "Target Windows (32-bit) with the Visual Studio development environment. (RelWithDebInfo)",
             "configurePreset": "x86-windows",
             "configuration": "RelWithDebInfo",
             "inheritConfigureEnvironment": true,
@@ -96,7 +96,7 @@
         {
             "name": "x86-windows-MinSizeRel",
             "displayName": "MinSizeRel",
-            "description": "x86 MinSizeRel",
+            "description": "Target Windows (32-bit) with the Visual Studio development environment. (MinSizeRel)",
             "configurePreset": "x86-windows",
             "configuration": "MinSizeRel",
             "inheritConfigureEnvironment": true,
