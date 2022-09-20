@@ -102,28 +102,4 @@ if(USE_VCPKG)
   endif(DEFINED ${CMAKE_TOOLCHAIN_FILE})
 endif(USE_VCPKG)
 
-#if(WIN64)
-#set(VCPKG_CXX_FLAGS STRING ' /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /GR /EHsc /MP ')
-
-#VCPKG_CXX_FLAGS:STRING=' /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /GR /EHsc /MP '
-
-#VCPKG_CXX_FLAGS_DEBUG:STRING='/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 '
-
-#//Flags used by the CXX compiler during MINSIZEREL builds.
-#VCPKG_CXX_FLAGS_MINSIZEREL:STRING=/O1 /Ob1 /DNDEBUG
-
-#VCPKG_CXX_FLAGS_RELEASE:STRING='/MD /O2 /Oi /Gy /DNDEBUG /Z7 '
-
-#//Flags used by the CXX compiler during RELWITHDEBINFO builds.
-#VCPKG_CXX_FLAGS_RELWITHDEBINFO:STRING=/Zi /O2 /Ob1 /DNDEBUG
-
-#//No help, variable specified on the command line.
-#VCPKG_LINKER_FLAGS:UNINITIALIZED=
-
-#//No help, variable specified on the command line.
-#VCPKG_LINKER_FLAGS_DEBUG:UNINITIALIZED=
-
-#//No help, variable specified on the command line.
-#VCPKG_LINKER_FLAGS_RELEASE:UNINITIALIZED=
-
 message("\n")

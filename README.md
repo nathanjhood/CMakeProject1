@@ -7,16 +7,14 @@ Generic CMake Project template for a full CI pipeline, with in-built package dep
 - Microsoft vcpkg toolchain for package dependency management
 - Support for git submodule import
 - Doxygen html document generator
+- Run multi-platform tests on your code via Git Actions and workflows
 - Host a github Page for your project documentation at the click of a button
 - Full Intellisense support for all modules
 
 ## Requirements;
 
-- Windows PowerShell or Developer Command Prompt (or similar)
 - GitHub client & account
-- Visual Studio 19 2022 Community (or higher) with CMake workload
-*or*
-- Visual Studio Code with MS CMake extension and MSBuild Tools 2022
+- CMake-enabled IDE for C/C++ development
 
 <a href= "https://stoneydsp.github.io/CMakeProject1/html/index.html">Manual - v0.0.0.1</a>
 
@@ -60,72 +58,7 @@ Generic CMake Project template for a full CI pipeline, with in-built package dep
 # How to use it?
 Just <a href= "https://github.com/StoneyDSP/CMakeProject1.git">clone the repo</a>, generate the project build files, and run.
 
-## Get vcpkg for dependency management;
-
-Note; This is a global configuration step, and thus only needs to be performed once, and once only, on the entire operating system.
-
-The following references the steps provider by in the official documentation at: https://vcpkg.io/en/getting-started.html
-
-Step 1: Clone (or Fork) the vcpkg repo
-
-    git clone https://github.com/Microsoft/vcpkg.git
-
-Step 2: Run the bootstrap script to build vcpkg
-
-    .\vcpkg\bootstrap-vcpkg.bat
-
-Step 3: Run the vcpkg IDE Integration installer command
-
-    .\vcpkg\vcpkg integrate install
-
-Step 4: Create a new Environment variable called VCPKG_ROOT pointing to the root folder of your local vcpkg repo
-
-    Windows:
-
-    1. Hit "search" button in the Windows taskbar, and type "env...";
-
-    2. Choose "Edit the system environment variables" from Control Panel;
-
-    3. Click the "Environment Variables..." button;
-
-    4. Under the "System Variables" entries, click "New...";
-
-    5. For "Variable name", enter "VCPKG_ROOT" (all caps, no quotation marks!)
-
-    6. For "Variable value", enter the absolute path to your local vcpkg repo's root folder, i.e., C:/path/to/vcpkg
-
-    Example:
-
-    Edit system variable
-
-    Variable name: VCPKG_ROOT
-    Variable value: C:/Code/vcpkg
-
-    Click "ok" and restart your Powershell.
-
-Once complete, vcpkg should now be cloned into your chosen directory, with an environment variable pointing to that directory. The "bootstrap" and "integrate" commands in steps 2 and 3 have set up the host machine for vcpkg dependency management. A couple of special files in our build take care of all the rest (keep reading for more).
-
-You now have everything you need to begin your CMake project. You may go ahead and open the cloned repo's root folder (containing the upper-most "CMakeLists.txt" file) in your IDE of choice (i.e., Visual Studio 2022 or VSCode!), where the project will begin configuring several Cache files (and downloading/resolving package dependencies via vcpkg), generating the binary build files in the process.
-
-*Tip: To see a full list of available packages in vcpkg with a short description and version number, run the following command from the PowerShell (where "\path\to\" should be your local directory):
-
-    C:\path\to\vcpkg .\vcpkg search
-
-*Tip: Although the build system will take of this automatically in project builds, it is possible to manually install a package locally for global reference.
-
-To install a package, run the following command from the PowerShell (where "\path\to\" should be your local directory):
-
-    C:\path\to\vcpkg .\vcpkg install <package_name>
-
-e.g.,
-
-    C:\path\to\vcpkg .\vcpkg install portaudio
-
-You can also specify an architecture to use for the package, such as x86 or x64 (and others in some cases):
-
-    C:\path\to\vcpkg .\vcpkg install zlib:x64-windows
-
-
+*more coming soon, but it really is that simple!*
 
 # Further reading
 
