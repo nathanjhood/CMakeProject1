@@ -1,0 +1,30 @@
+{
+    "version": 5,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 24,
+        "patch": 2
+    },
+    "configurePresets": [
+        {
+            "name": "debug-settings",
+            "hidden": true,
+            "debug": {
+                "find": false,
+                "output": false,
+                "tryCompile": false
+            },
+            "errors": {
+                "deprecated": true,
+                "dev": true
+            },
+            "warnings": {
+                "deprecated": true,
+                "dev": true,
+                "systemVars": true,
+                "uninitialized": false,
+                "unusedCli": true
+            }
+        }
+    ]
+}
