@@ -16,7 +16,7 @@
             "inherits": [
                 "debug-settings"
             ],
-            "generator": "Ninja Multi-Config",
+            "generator": "Visual Studio 17 2022",
             "binaryDir": "${sourceDir}/build/${presetName}",
             "installDir": "${sourceDir}/installed/${presetName}",
             "condition": {
