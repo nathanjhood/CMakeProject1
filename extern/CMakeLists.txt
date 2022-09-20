@@ -1,5 +1,24 @@
+# ============================================================================ #
+#
+# @file CMakeLists.txt
+#
+# @author Nathan J. Hood ( @StoneyDSP )
+# @brief Defines the main configuration routine of the top-level project.
+# @version 1.0.0.0
+# @date 2022-08-23
+#
+# @copyright Copyright (c) 2022
+#
+# ============================================================================ #
+
 # CMake requirements.
 cmake_minimum_required(VERSION 3.7...3.24.2)
+
+# ============================================================================ #
+#
+#                           Configure Submodules
+#
+# ============================================================================ #
 
 message("\n")
 message(STATUS "${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt>\n")
@@ -24,6 +43,14 @@ else(GIT_FOUND)
   message(FATAL_ERROR "Running git submodule update --init failed; git not found!\n")
 endif(GIT_FOUND)
 
+message("\n")
+
+# ============================================================================ #
+#
+#                               Configure vcpkg
+#
+# ============================================================================ #
+
 # This variable specifies an alternate folder containing a vcpkg.json manifest.
 # Defaults to ${CMAKE_SOURCE_DIR} if ${CMAKE_SOURCE_DIR}/vcpkg.json exists.
 if(DEFINED ${VCPKG_MANIFEST_DIR})
@@ -31,7 +58,7 @@ if(DEFINED ${VCPKG_MANIFEST_DIR})
   message("Toolchain: VCPKG_MANIFEST_DIR = ${VCPKG_MANIFEST_DIR}")
 else(DEFINED ${VCPKG_MANIFEST_DIR})
   set(VCPKG_MANIFEST_DIR
-  ${CMAKE_CURRENT_LIST_DIR}
+  ${CMAKE_CURRENT_SOURCE_DIR}/support/vcpkg
     CACHE STRING "vcpkg manifest file location")
   message("Toolchain: VCPKG_MANIFEST_DIR = ${VCPKG_MANIFEST_DIR}")
 endif(DEFINED ${VCPKG_MANIFEST_DIR})
@@ -41,6 +68,7 @@ if(USE_VCPKG)
     message("Toolchain: Using remote vcpkg found at: ${CMAKE_TOOLCHAIN_FILE}")
   else(DEFINED ${CMAKE_TOOLCHAIN_FILE})
     message("Toolchain: CMAKE_TOOLCHAIN_FILE not defined - Searching for submodule...")
+    option(VCPKG_VERBOSE "verbose vcpkg output logging" ON)
     # This variable forces vcpkg to operate in either manifest mode or classic mode.
     # Defaults to ON when VCPKG_MANIFEST_DIR is non-empty or ${CMAKE_SOURCE_DIR}/vcpkg.json exists.
     # To disable manifest mode while a vcpkg.json is detected, set this to OFF.
@@ -73,3 +101,29 @@ if(USE_VCPKG)
     message("Toolchain: Using local vcpkg submodule found at: ${CMAKE_TOOLCHAIN_FILE}\n")
   endif(DEFINED ${CMAKE_TOOLCHAIN_FILE})
 endif(USE_VCPKG)
+
+#if(WIN64)
+#set(VCPKG_CXX_FLAGS STRING ' /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /GR /EHsc /MP ')
+
+#VCPKG_CXX_FLAGS:STRING=' /nologo /DWIN32 /D_WINDOWS /W3 /utf-8 /GR /EHsc /MP '
+
+#VCPKG_CXX_FLAGS_DEBUG:STRING='/D_DEBUG /MDd /Z7 /Ob0 /Od /RTC1 '
+
+#//Flags used by the CXX compiler during MINSIZEREL builds.
+#VCPKG_CXX_FLAGS_MINSIZEREL:STRING=/O1 /Ob1 /DNDEBUG
+
+#VCPKG_CXX_FLAGS_RELEASE:STRING='/MD /O2 /Oi /Gy /DNDEBUG /Z7 '
+
+#//Flags used by the CXX compiler during RELWITHDEBINFO builds.
+#VCPKG_CXX_FLAGS_RELWITHDEBINFO:STRING=/Zi /O2 /Ob1 /DNDEBUG
+
+#//No help, variable specified on the command line.
+#VCPKG_LINKER_FLAGS:UNINITIALIZED=
+
+#//No help, variable specified on the command line.
+#VCPKG_LINKER_FLAGS_DEBUG:UNINITIALIZED=
+
+#//No help, variable specified on the command line.
+#VCPKG_LINKER_FLAGS_RELEASE:UNINITIALIZED=
+
+message("\n")
