@@ -7,7 +7,9 @@
     "description": [
         "VS Console Application with CMake, vcpkg, Doxygen, and JUCE support"
     ],
+    "documentation": "https://github.com/StoneyDSP/CMakeProject1",
     "homepage": "https://github.com/StoneyDSP/CMakeProject1",
+    "license": "MIT",
     "dependencies": [
         {
             "name": "vcpkg-cmake",
@@ -29,7 +31,5 @@
             "name": "fmt",
             "host": true
         }
-    ],
-    "documentation": "https://github.com/StoneyDSP/CMakeProject1",
-    "license": "BSD-3-clause"
+    ]
 }
