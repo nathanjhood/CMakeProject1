@@ -23,11 +23,11 @@ int main(int argc, char** argv)
 {
 	foo.tool();
 
-	foo.message(projectName);
-	foo.message(projectVersion);
-	foo.message(projectDescription);
-	foo.message(companyName);
-	foo.message(projectWebsite);
+	foo.message(PROJECT_NAME);
+	foo.message(PROJECT_VERSION);
+	foo.message(PROJECT_DESCRIPTION);
+	foo.message(PROJECT_VENDOR);
+	foo.message(PROJECT_HOMEPAGE_URL);
 
 	foo.returnBar();
 

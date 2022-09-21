@@ -3,7 +3,7 @@ Generic CMake Project template for a full CI pipeline, with in-built package dep
 
 ## Features;
 
-- Flexible build targets drrven by CMake
+- Flexible build targets driven by CMake
 - Microsoft vcpkg toolchain for package dependency management
 - Support for git submodule import
 - Doxygen html document generator
@@ -22,7 +22,7 @@ Generic CMake Project template for a full CI pipeline, with in-built package dep
  <img src="https://github.com/StoneyDSP/CMakeProject1/blob/main/CMakeProject1_Logo.gif?raw=true"/></a>
 </p>
 
-*Please note; this project template is provided as-is under the BSD3 clause, as required by CMake. The author shall not be held liable for any damages arising from misuse of this intellectual property.*
+*Please note; this project is currently in beta phase and as such, may contain unexpected behaviour in unfamiliar use cases. The author shall not be held liable for any damages arising from misuse of this intellectual property.*
 
 <p align="center">
 <a href= "https://stoneydsp.github.io/html/index.html">
@@ -58,7 +58,19 @@ Generic CMake Project template for a full CI pipeline, with in-built package dep
 # How to use it?
 Just <a href= "https://github.com/StoneyDSP/CMakeProject1.git">clone the repo</a>, generate the project build files, and run.
 
-*more coming soon, but it really is that simple!*
+You will find a project named "CMakeProject1" with some useful default settings in place; namely, a pre-defined executable target, and an optional library ("foo") that contains links to the imported third-party packages (as specified by the user in "support/vcpkg/vcpkg.json").
+
+You will also notice a variety of new folders appear in the source tree, post-configuration; "downloads", "build", and "installed" - these folders are all outputs from the configure and build processes, and can be safely removed/rebuilt at any time (but will require re-compiling on next run, once deleted).
+
+Use CMake-GUI to get a direct view of the options stored in the CMakeCache post-config, and control/expand your project accordingly.
+
+It is possible to store the downloaded packages and in some cases, the built binaries, generated from git/vcpkg either inside your "extern" folder - where 'git clean' can friends can look after it - or even in NuGet packages hosted on your git.
+
+Once you make any changes and push to your develop branch, switch to Github's "actions" tab to watch multi-platform tests (defined in ".github/workflows" and "tests/CMakeLists.txt") performed remotely on git servers, to ensure your code remains portable even on systems out of reach from within your usual develop environment (while enabling you to continue running your own machine locally, remaining productive).
+
+There's a whole lot more going on in here, and other bits and pieces that I'm tapping into bit by bit. Once I'm happy to use it for my own projects, I will share a v1.0.0.0 binary release here on git with a full manual...
+
+*more coming soon, but for now, it really is that simple!*
 
 # Further reading
 
