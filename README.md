@@ -86,6 +86,8 @@ It is possible to store the downloaded packages and in some cases, the built bin
 
 Once you make any changes and push to your develop branch, switch to Github's "actions" tab to watch multi-platform tests (defined in ".github/workflows" and "tests/CMakeLists.txt") performed remotely on git servers, to ensure your code remains portable even on systems out of reach from within your usual develop environment (while enabling you to continue running your own machine locally, remaining productive). Note that the vcpkg package builds can be stashed and cached in your NuGet host/server, further spedding up both the remote testing AND the local building processes (stay tuned).
 
+Next, click the "setting" button on your Github repository, and head to the "Pages" tab on the left. You will be faced with an option to "deploy" from your "docs" folder - if this is selected, a website will be built at https://github.com/YourName.io/CMakeProject1 using the default Jekyll "minima" theme, and built from this exact readme.me file :) - you can easily expand this using Doxygen to provide a fully automated online code manual for your project... (stay tuned).
+
 # What else?
 
 There's a more going on in here currently undocumented, and a whole lot more other bits and pieces that I'm tapping into bit by bit. Once I'm happy to use it for my own projects, I will share a v1.0.0.0 binary release here on git with a full manual...
