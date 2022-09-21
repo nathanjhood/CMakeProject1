@@ -1,0 +1,51 @@
+\hypertarget{main_8h_source}{}\doxysection{main.\+h}
+\label{main_8h_source}\index{include/CMakeProject1/main.h@{include/CMakeProject1/main.h}}
+\mbox{\hyperlink{main_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00015}00015 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00017}00017 \textcolor{preprocessor}{\#ifndef MAIN\_H\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00018}00018 \textcolor{preprocessor}{\#define MAIN\_H\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00020}00020 \textcolor{comment}{// Global app config header.}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00021}00021 \textcolor{preprocessor}{\#include "{}CMakeProject1Config.h"{}}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00023}00023 \textcolor{comment}{// Including locally-\/defined class "{}Foo"{} which returns "{}bar"{}}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00024}00024 \textcolor{preprocessor}{\#ifdef USE\_FOO}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00026}00026 \textcolor{preprocessor}{    \#include "{}\mbox{\hyperlink{foo_8h}{foo.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00028}00028 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00030}00030 \textcolor{preprocessor}{    \#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00031}00031 \textcolor{preprocessor}{    \#include <string.h>}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00033}\mbox{\hyperlink{class_foo}{00033}}     \textcolor{keyword}{class }\mbox{\hyperlink{class_foo}{Foo}}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00034}00034     \{}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00035}00035     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00036}00036         \textcolor{keyword}{inline} \mbox{\hyperlink{class_foo}{Foo}}() : bar(0) \{\}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00038}00038         \textcolor{keyword}{inline} \mbox{\hyperlink{class_foo}{\string~Foo}}() \textcolor{keyword}{noexcept} \{ bar = 0; \}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00040}00040         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} tool() \{ std::cout << \textcolor{stringliteral}{"{}Using std::iostream..."{}} << std::endl; \}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00042}00042         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} message(std::string \textcolor{keywordtype}{string}) \{ std::cout << \textcolor{keywordtype}{string} << std::endl; \}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00044}00044         \textcolor{comment}{//inline void incBar(int inc) \{ bar += inc; \}}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00046}00046         \textcolor{keyword}{inline} \textcolor{keywordtype}{void} returnBar() \{ std::cout << \textcolor{stringliteral}{"{}Foo::bar is "{}} << bar << std::endl; \}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00048}00048     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00049}00049         \textcolor{keywordtype}{int} bar \{0\};}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00050}00050     \};}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00052}00052 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00061}00061 \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8h_a3c04138a5bfe5d72780bb7e82a18e627}{main}}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}** argv);}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00067}\mbox{\hyperlink{main_8h_a924b6e674eb7ce38365242b820f177e1}{00067}} \mbox{\hyperlink{class_foo}{Foo}} \mbox{\hyperlink{main_8h_a924b6e674eb7ce38365242b820f177e1}{foo}};}
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{main_8h_source_l00069}00069 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MAIN\_H\_INCLUDED}}
+
+\end{DoxyCode}
