@@ -54,9 +54,9 @@ Coffee! That's how I get things done!! If you'd like to see me get more things d
 
 <a href= "https://stoneydsp.github.io/CMakeProject1/html/index.html">Manual - v0.0.0.1</a>
 
-Just <a href= "https://github.com/StoneyDSP/CMakeProject1.git">clone or fork the repo</a>, generate the project build files, and run.
+Just <a href= "https://github.com/StoneyDSP/CMakeProject1.git">clone or fork the repo</a> and open the folder in your CMake-enabled IDE, generate the project build files and open them, then run the example CMake project.
 
-The project's executable target will launch, printing a variety of system and project variables to the console terminal, before exiting.
+The example project's executable target will launch, printing a variety of system and project variables to the console terminal, before exiting.
 
 Depending on the optional settings described below,these variables shall be printed either using the C++ standard library ("iostream.h"), *or* by the popular third-party package fmt ("fmt/format.h"), supplied by vcpkg package manager as a simple example project.
 
@@ -67,6 +67,12 @@ In the top-level "CMakeLists.txt" - the main script that our application is conf
 Once CMake's configuration step has completed in your CMake-enabled IDE, you will also notice a variety of new folders appear in the source tree; "downloads", "build", and "installed" - these folders are all outputs from the configure and build processes, and can be safely removed/rebuilt at any time (but will require re-compiling on next run, once deleted).
 
 If you're new to CMake, or unfamiliar with what you see in the terminal during the configure step; Go to the kitware website and download the latest CMake binary installer for your system and install. Use the generated "CMake-GUI.exe" and point it at this project, to get a direct view of the options stored in the CMakeCache post-config, and control/expand your project accordingly.
+
+Typically, when creating a new C++ project, a user would specify all the required files and third-party libraries (i.e., "dependencies") along with environment variables such as, which compiler and build tools to use (Visual Studio, MinGW, XCode et al.), and will then be given a project, or "solution", file to launch in the IDE and begin working on. This might be an ".sln" file, or it could have some other, less obvious extension, but launching this fileset in an IDE produces what most users will be familiar with as a working project environment. This is known as the "configure" step, and is often abstracted away from the user by project frameworks and other software (for example, audio software developers will often use JUCE's "projucer" to accomplish the configuration step and generate the build files).
+
+By default, the configured "build files" which one would typically work from in their project solution, will be located in and launched from "/build/(presetName)". An installation step is also provided, which installs your code into "installed/(presetName)". Both of these folders are on the .gitignore list initially, so be sure to configure into a seperate directory when you want to put the things you build under Git version control.
+
+Further instructions will be provided in due course for producing clean, new projects that should interface with Git straight from the box.
 
 # How does it work?
 
