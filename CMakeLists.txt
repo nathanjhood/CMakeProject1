@@ -41,9 +41,13 @@ message("CMAKE_GENERATOR_PLATFORM = ${CMAKE_GENERATOR_PLATFORM}")
 message("CMAKE_GENERATOR_TOOLSET = ${CMAKE_GENERATOR_TOOLSET}")
 message("CMAKE_GENERATOR_INSTANCE = ${CMAKE_GENERATOR_INSTANCE}\n")
 
-#if(WIN32)
-#  include(${CMAKE_CURRENT_LIST_DIR}/support/cmake/windows/CMAKE_DEFAULT_FLAGS_WIN32.txt)
-#endif(WIN32)
+if(WIN32)
+  include(${CMAKE_CURRENT_LIST_DIR}/support/cmake/windows/CMAKE_DEFAULT_FLAGS_WIN32_MSVC.txt)
+endif(WIN32)
+
+if (UNIX AND NOT APPLE)
+  include(${CMAKE_CURRENT_LIST_DIR}/support/cmake/linux/CMAKE_DEFAULT_FLAGS_LINUX_GNUC.txt)
+endif ()
 
 message("Options:\n")
 set(CMAKE_PROJECT_VENDOR "StoneyDSP")
