@@ -1,0 +1,75 @@
+\hypertarget{main_8cpp}{}\doxysection{src/main.cpp File Reference}
+\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+
+
+Defines the main execution routine of the application.  
+
+
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em main. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Nathan J. Hood ( @\+Stoney\+DSP ) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/08-\/23
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+Definition in file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+Entry point for program execution.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of strings in array argv. \\
+\hline
+{\em argv} & Array of command-\/line argument strings. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Exit code. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023 \{}
+\DoxyCodeLine{00024     \mbox{\hyperlink{main_8h_a924b6e674eb7ce38365242b820f177e1}{foo}}.tool();}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     \mbox{\hyperlink{main_8h_a924b6e674eb7ce38365242b820f177e1}{foo}}.message(PROJECT\_NAME);}
+\DoxyCodeLine{00027     \mbox{\hyperlink{main_8h_a924b6e674eb7ce38365242b820f177e1}{foo}}.message(PROJECT\_VERSION);}
+\DoxyCodeLine{00028     \mbox{\hyperlink{main_8h_a924b6e674eb7ce38365242b820f177e1}{foo}}.message(PROJECT\_DESCRIPTION);}
+\DoxyCodeLine{00029     \mbox{\hyperlink{main_8h_a924b6e674eb7ce38365242b820f177e1}{foo}}.message(PROJECT\_VENDOR);}
+\DoxyCodeLine{00030     \mbox{\hyperlink{main_8h_a924b6e674eb7ce38365242b820f177e1}{foo}}.message(PROJECT\_HOMEPAGE\_URL);}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     \mbox{\hyperlink{main_8h_a924b6e674eb7ce38365242b820f177e1}{foo}}.returnBar();}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \mbox{\hyperlink{main_8h_a924b6e674eb7ce38365242b820f177e1}{foo}}.message(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00035     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00036 \}}
+
+\end{DoxyCode}
