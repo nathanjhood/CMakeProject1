@@ -48,27 +48,41 @@ Generic CMake Project template for a full CI pipeline, with in-built package dep
 
 ## Features;
 
-- Flexible build targets driven by CMake and MSBuild
-- Microsoft vcpkg toolchain for package dependency management
+- Flexible project management and build targets driven by CMake
+- An expansive range of CMake build, configure, test, and debug presets
 - Support for Git submodule import
+- Microsoft vcpkg toolchain for package dependency management (via Git)
+- NuGet package hosting and cacheing support
+- Git Action workflows that run a set of simple CTest presets on your code
+- Clean and intuituve process documentation and result logging
 - Doxygen html document generator
 - Host a GitHub Page for your project documentation at the click of a button
-- Full IntelliSense support for all modules
+- Full IntelliSense support for all imported modules (where available)
+- Create shared and static libraries (.dll, .lib), executables (.exe), and all sorts of custom targets using modern, cutting-edge and well-supported toolsets
+- Target, test, build, and deploy for a wide range of operating systems, architectures, compilers, and configurations from the very beginning of your project and beyond!
 
 # How to use it?
 Just <a href= "https://github.com/StoneyDSP/CMakeProject1.git">clone the repo</a>, generate the project build files, and run.
 
 You will find a project named "CMakeProject1" with some useful default settings in place; namely, a pre-defined executable target, and an optional library ("foo") that contains links to the imported third-party packages (as specified by the user in "support/vcpkg/vcpkg.json").
 
+By default, the project will detect and use your local Git instance, which will scan fora list of submodules in the project folder. A default submodule at "StoneyDSP/vcpkg.git" will be detected and cloned into this folder (you can switch to your own or the official branch at will; my branch will be tested against my original repo periodically and sync'd if no issues occur). At this point, the "extern" folder - the hub of our git and vcpkg package management - will be populated with the full vcpkg runtime binary, and it's supporting build scripts.
+
 You will also notice a variety of new folders appear in the source tree, post-configuration; "downloads", "build", and "installed" - these folders are all outputs from the configure and build processes, and can be safely removed/rebuilt at any time (but will require re-compiling on next run, once deleted).
 
-Use CMake-GUI to get a direct view of the options stored in the CMakeCache post-config, and control/expand your project accordingly.
+By default, git will pull vcpkg into your "extern" folder, and vcpkg will be activated by the project creation in the CMake files. "vcpkg.json" will be read, and the packages listed under "dependencies" will be pulled from Git and built into the "installed" folder, where your project may link to them as needed.
+
+A further default behaviour is that the use of vcpkg, and also the git detection, is specified as an optional parameter - these may be set to "off", and the project will resort to using the C++ standard library in order to successfully build and run it's usual task.
+
+If you're new to CMake, or unfamiliar with what you see in the terminal during the configure step; Go to the kitware website and download the latest CMake binary installer for your system and install. Use the generated "CMake-GUI.exe" and point it at this project, to get a direct view of the options stored in the CMakeCache post-config, and control/expand your project accordingly.
 
 It is possible to store the downloaded packages and in some cases, the built binaries, generated from git/vcpkg either inside your "extern" folder - where 'git clean' can friends can look after it - or even in NuGet packages hosted on your git.
 
 Once you make any changes and push to your develop branch, switch to Github's "actions" tab to watch multi-platform tests (defined in ".github/workflows" and "tests/CMakeLists.txt") performed remotely on git servers, to ensure your code remains portable even on systems out of reach from within your usual develop environment (while enabling you to continue running your own machine locally, remaining productive).
 
-There's a whole lot more going on in here, and other bits and pieces that I'm tapping into bit by bit. Once I'm happy to use it for my own projects, I will share a v1.0.0.0 binary release here on git with a full manual...
+There's a more going on in here currently undocumented, and a whole lot more other bits and pieces that I'm tapping into bit by bit. Once I'm happy to use it for my own projects, I will share a v1.0.0.0 binary release here on git with a full manual...
+
+I hope to expand my generic Console Application as a kinf shell for this project, and then build a GUI project from it which might control the entire project interface...
 
 *more coming soon, but for now, it really is that simple!*
 
