@@ -58,6 +58,8 @@ Just <a href= "https://github.com/StoneyDSP/CMakeProject1.git">clone or fork the
 
 The project's executable target will launch, printing a variety of system and project variables to the console terminal, before exiting.
 
+Depending on the optional settings described below (see)
+
 In the top-level "CMakeLists.txt" - the main script that our application is configured and built from - you will find a project definition named "CMakeProject1" with some useful default settings in place; namely, a pre-defined executable target, and an optional library ("foo") that contains links to the imported third-party packages.
 
 Once CMake's configuration step has completed in your CMake-enabled IDE, you will also notice a variety of new folders appear in the source tree; "downloads", "build", and "installed" - these folders are all outputs from the configure and build processes, and can be safely removed/rebuilt at any time (but will require re-compiling on next run, once deleted).
@@ -72,15 +74,17 @@ A default submodule at "StoneyDSP/vcpkg.git" will be detected and cloned into th
 
 vcpkg will be activated by the project creation in the CMake files. "support/vcpkg/vcpkg.json" will be read, and the packages listed under "dependencies" will be pulled from Git and built into the "installed" folder, where your project may link to them as needed. CMakeProject1 currently ships with some dependencies for demonstration purposes only - it has no actual dependencies of it's own outside of a CMake-enabled IDE - but the ones provided allow the demonstration use case to proceed.
 
-The CMake option "USE_FOO" controls whether we include our C++ files, "foo.h" and "foo.cpp". In the shipment example, these two files are where the third-party vcpkg are "#included" and their usage defined. This is all linked into our CMake executable as an *optional* linked library, it's linkage controlled at configure-time by the "USE_FOO" option. Setting "USE_FOO" to off will, in this example, exclude the linked vcpkg packages and resort to a "default" behaviour using the C++ standard library, defined in "main.h" and "main.cpp", which themeselves comprise the necessary source files for our .exe output target - the "foo" library being expressed as an optional inclusion.
+A default CMake target library named "Foo" will be located - this library is comprised of source files which define a console-logging function, using a popular third-party package that uses classic "printf()"-style behaviour.
 
 # Optional behaviours - a beginning...
 
-*You can switch to your own or the official vcpkg branch at will; my fork will be tested against this repo periodically and sync'd if no issues occur to ensure stability.
+The CMake option "USE_FOO" controls whether we include our C++ files, "foo.h" and "foo.cpp". In the shipment example, these two files are where the third-party vcpkg are "#included" and their usage defined, and default to "ON". This option links the "Foo" library into our CMake executable as an *optional* linked library. Setting "USE_FOO" to off will, in this example, exclude the linked vcpkg packages and resort to a "default" behaviour using the C++ standard library, defined in "main.h" and "main.cpp", which themeselves comprise the necessary source files for our .exe output target - the "foo" library being expressed as an optional inclusion.
 
 You may add, remove, clean, and manage Git submodules in the "extern" folder in the usual ways as needed, but keep in mind that all Git commands should be run relative to the project's root folder (hence, "etern/vcpkg"). Note that vcpkg can happily store it's downloaded packages here too - that is infact it's own default behaviour - but this has been changed to allow a much easier workflow, where package source and header files sit safely next to our own project files while still being safely managed by vcpkg.
 
-A further default behaviour is that the use of vcpkg itself, and also the git detection, is specified as an optional parameter - these may be set to "off", and the project will resort to using the C++ standard library in order to successfully build and run it's usual task. Be careful switching the Git option to "OFF" as this may cause the project to fail at configing itself in some cases (you should at least have an active Git instance running in the background).
+You can switch to your own or the official vcpkg branch at will; my fork will be tested against this repo periodically and sync'd if no issues occur to ensure stability.
+
+The project's useage of vcpkg itself ("USE_VCPKG"), and also the git detection ("USE_GIT"), is specified as an optional parameter - these may be set to "OFF", and the project will resort to using the C++ standard library in order to successfully build and run it's usual task. Be careful switching the Git option to "OFF", as this *may* cause the project to fail at configuring itself in *some* cases (you should at least have an active Git instance running in the background).
 
 # Continuous integration
 
