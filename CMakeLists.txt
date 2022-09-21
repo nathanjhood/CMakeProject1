@@ -31,9 +31,23 @@ endif()
 message("\n")
 message(STATUS "${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt>\n")
 
+message(STATUS "CMake found at: ${CMAKE_COMMAND}\n")
+
 message(STATUS "Initiating CMake v${CMAKE_VERSION}\n")
 
-message("WIN32 = ${WIN32}")
+# is TRUE on all UNIX-like OS's, including Apple OS X and CygWin
+message(STATUS "UNIX: ${UNIX}")
+# is TRUE on Windows, including CygWin
+message(STATUS "WIN32: ${WIN32}")
+# is TRUE on Apple OS X
+message(STATUS "APPLE: ${APPLE}\n")
+message("\n")
+
+message("CMAKE_SYSTEM_NAME = ${CMAKE_SYSTEM_NAME}")
+message("CMAKE_SYSTEM = ${CMAKE_SYSTEM}")
+message("CMAKE_SYSTEM_VERSION = ${CMAKE_SYSTEM_VERSION}")
+message("CMAKE_SYSTEM_PROCESSOR: ${CMAKE_SYSTEM_PROCESSOR}\n")
+
 message("CMAKE_GENERATOR = ${CMAKE_GENERATOR}")
 message("CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}")
 message("CMAKE_CONFIGURATION_TYPES = ${CMAKE_CONFIGURATION_TYPES}")
@@ -48,6 +62,7 @@ endif(WIN32)
 if (UNIX AND NOT APPLE)
   include(${CMAKE_CURRENT_LIST_DIR}/support/cmake/linux/CMAKE_DEFAULT_FLAGS_LINUX_GNUC.txt)
 endif ()
+message("\n")
 
 message("Options:\n")
 set(CMAKE_PROJECT_VENDOR "StoneyDSP")
