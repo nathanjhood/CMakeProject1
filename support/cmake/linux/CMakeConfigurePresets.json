@@ -19,9 +19,6 @@
             ],
 			"binaryDir": "${sourceDir}/build/${presetName}",
 			"installDir": "${sourceDir}/installed/${presetName}",
-			"cacheVariables": {
-				"CMAKE_BUILD_TYPE": "Debug"
-			},
 			"environment": {
                 "CMAKE_CONFIGURATION_TYPES": "Debug;Release;RelWithDebInfo;MinSizeRel",
                 "VCPKG_DOWNLOADS": "${sourceDir}/downloads",
