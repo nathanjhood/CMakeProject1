@@ -1,15 +1,23 @@
 ﻿# ============================================================================ #
 #
-# @file main.cpp
+# @file CMakeLists.txt
 #
 # @author Nathan J. Hood ( @StoneyDSP )
-# @brief Defines the main execution routine of the application.
+# @brief Defines the main configuration routine of the top-level project.
 # @version 1.0.0.0
 # @date 2022-08-23
 #
 # @copyright Copyright (c) 2022
 #
 # ============================================================================ #
+
+# CMake requirements.
+cmake_minimum_required(VERSION 3.7...3.24.2)
+
+# Fallback for using newer policies on CMake <3.12.
+if(${CMAKE_VERSION} VERSION_LESS 3.12)
+    cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
+endif()
 
 # ============================================================================ #
 #
@@ -20,18 +28,22 @@
 # Top-level CMake project file, do global configuration
 # and include sub-projects here.
 
-# CMake requirements.
-cmake_minimum_required(VERSION 3.7...3.24.2)
-
-# Fallback for using newer policies on CMake <3.12.
-if(${CMAKE_VERSION} VERSION_LESS 3.12)
-    cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
-endif()
-
 message("\n")
 message(STATUS "${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt>\n")
 
 message(STATUS "Initiating CMake v${CMAKE_VERSION}\n")
+
+message("WIN32 = ${WIN32}")
+message("CMAKE_GENERATOR = ${CMAKE_GENERATOR}")
+message("CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}")
+message("CMAKE_CONFIGURATION_TYPES = ${CMAKE_CONFIGURATION_TYPES}")
+message("CMAKE_GENERATOR_PLATFORM = ${CMAKE_GENERATOR_PLATFORM}")
+message("CMAKE_GENERATOR_TOOLSET = ${CMAKE_GENERATOR_TOOLSET}")
+message("CMAKE_GENERATOR_INSTANCE = ${CMAKE_GENERATOR_INSTANCE}\n")
+
+#if(WIN32)
+#  include(${CMAKE_CURRENT_LIST_DIR}/support/cmake/windows/CMAKE_DEFAULT_FLAGS_WIN32.txt)
+#endif(WIN32)
 
 message("Options:\n")
 set(CMAKE_PROJECT_VENDOR "StoneyDSP")
@@ -52,8 +64,9 @@ message("ENABLE_LOGGING = ${ENABLE_LOGGING}")
 message("BUILD_SHARED_LIBS = ${BUILD_SHARED_LIBS}")
 message("USE_EXTERN = ${USE_EXTERN}")
 message("GIT_SUBMODULE = ${GIT_SUBMODULE}")
-message("USE_VCPKG = ${USE_VCPKG}")
-message("USE_FOLDERS = ${USE_FOLDERS}\n")
+message("USE_VCPKG = ${USE_VCPKG}\n")
+
+message("\n")
 
 # ============================================================================ #
 #
@@ -64,6 +77,7 @@ message("USE_FOLDERS = ${USE_FOLDERS}\n")
 if(USE_EXTERN)
   # add required packages
   message(STATUS "Checking git...\n")
+  message("\n")
   if(GIT_FOUND)
     message("git: already found. Using: ${CMAKE_PROJECT_NAME} submodules\n")
   else()
@@ -76,6 +90,8 @@ if(USE_EXTERN)
   endif()
   message(STATUS "${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt>\n")
 endif()
+
+message("\n")
 
 # ============================================================================ #
 #
@@ -105,7 +121,7 @@ project (CMakeProject1
   VERSION
     ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}
   DESCRIPTION
-    "CMake project template with native git, vcpkg, and doxygen support."
+    "CMake project template for multi-platform continuous-integration pipelines, with native extensible git, vcpkg, and 3rd-party module support."
   HOMEPAGE_URL
     https://github.com/${PROJECT_VENDOR}/CMakeProject1
   LANGUAGES
@@ -133,6 +149,8 @@ else()
     message(STATUS "${CMAKE_PROJECT_NAME} is a top-level project\n")
 endif()
 
+message("\n")
+
 # ============================================================================ #
 #
 #                           Configure Folders
@@ -155,8 +173,9 @@ message(STATUS "Manually setting ${PROJECT_NAME} folder structure:\n")
 message("RUNTIME_OUTPUT_DIRECTORY = ${RUNTIME_OUTPUT_DIRECTORY}")
 message("ARCHIVE_OUTPUT_DIRECTORY = ${ARCHIVE_OUTPUT_DIRECTORY}")
 message("LIBRARY_OUTPUT_DIRECTORY = ${LIBRARY_OUTPUT_DIRECTORY}")
-message("PDB_OUTPUT_DIRECTORY = ${PDB_OUTPUT_DIRECTORY}")
-message("CMAKE_CFG_INTDIR = ${CMAKE_CFG_INTDIR}\n")
+message("PDB_OUTPUT_DIRECTORY = ${PDB_OUTPUT_DIRECTORY}\n")
+
+message("\n")
 
 # ============================================================================ #
 #
@@ -180,7 +199,25 @@ message("CMAKE_CXX_FLAGS_RELEASE = ${CMAKE_CXX_FLAGS_RELEASE}")
 message("CMAKE_CXX_FLAGS_MINSIZEREL = ${CMAKE_CXX_FLAGS_MINSIZEREL}")
 message("CMAKE_CXX_FLAGS_RELWITHDEBINFO = ${CMAKE_CXX_FLAGS_RELWITHDEBINFO}\n")
 
-message("CONFIGURATION = ${CONFIGURATION}\n")
+message("CMAKE_C_FLAGS = ${CMAKE_C_FLAGS}")
+message("CMAKE_C_FLAGS_DEBUG = ${CMAKE_C_FLAGS_DEBUG}")
+message("CMAKE_C_FLAGS_RELEASE = ${CMAKE_C_FLAGS_RELEASE}")
+message("CMAKE_C_FLAGS_MINSIZEREL = ${CMAKE_C_FLAGS_MINSIZEREL}")
+message("CMAKE_C_FLAGS_RELWITHDEBINFO = ${CMAKE_C_FLAGS_RELWITHDEBINFO}\n")
+
+if(USE_VCPKG)
+  set(VCPKG_CXX_FLAGS ${CMAKE_CXX_FLAGS})
+  set(VCPKG_CXX_FLAGS_DEBUG ${CMAKE_CXX_FLAGS_DEBUG})
+  set(VCPKG_CXX_FLAGS_RELEASE ${CMAKE_CXX_FLAGS_RELEASE})
+  set(VCPKG_CXX_FLAGS_MINSIZEREL ${CMAKE_CXX_FLAGS_MINSIZEREL})
+  set(VCPKG_CXX_FLAGS_RELWITHDEBINFO ${CMAKE_CXX_FLAGS_RELWITHDEBINFO})
+
+  set(VCPKG_C_FLAGS ${CMAKE_C_FLAGS})
+  set(VCPKG_C_FLAGS_DEBUG ${CMAKE_C_FLAGS_DEBUG})
+  set(VCPKG_C_FLAGS_RELEASE ${CMAKE_C_FLAGS_RELEASE})
+  set(VCPKG_C_FLAGS_MINSIZEREL ${CMAKE_C_FLAGS_MINSIZEREL})
+  set(VCPKG_C_FLAGS_RELWITHDEBINFO ${CMAKE_C_FLAGS_RELWITHDEBINFO})
+endif(USE_VCPKG)
 
 # create config header for C++
 message("Creating config header file...")
@@ -195,6 +232,8 @@ message("Created config header file.\n")
 #  INSTALL_DESTINATION
 #    ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
 #)
+
+message("\n")
 
 # ============================================================================ #
 #
@@ -251,6 +290,8 @@ if(USE_FOO)
   list(APPEND EXTRA_LIBS ${PROJECT_NAME}-SharedCode)
 endif(USE_FOO)
 
+message("\n")
+
 # ============================================================================ #
 #
 #                    Add target: CMakeProject1-executable
@@ -282,7 +323,7 @@ message("Adding to target ${PROJECT_NAME}-Executable...\n")
 target_include_directories(${PROJECT_NAME}-Executable
   PUBLIC
     # let's include the build tree...
-    ${PROJECT_BINARY_DIR}
+    #${PROJECT_BINARY_DIR}
     # let's include the config.h...
     ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}
     # let's include main.h...
@@ -312,6 +353,7 @@ install(
   DESTINATION include/${PROJECT_NAME}
 )
 
+# Address sanitizer
 if(ASAN_ENABLED)
   if(MSVC)
     target_compile_options(${PROJECT_NAME}-Executable PUBLIC /fsanitize=address)
@@ -320,6 +362,8 @@ if(ASAN_ENABLED)
     target_link_options(${PROJECT_NAME}-Executable PUBLIC -fsanitize=address)
   endif()
 endif()
+
+message("\n")
 
 # ============================================================================ #
 #
@@ -333,6 +377,8 @@ if(USE_TESTS)
 else(USE_TESTS)
   message(STATUS "Testing disabled.\n")
 endif(USE_TESTS)
+
+message("\n")
 
 # ============================================================================ #
 #
@@ -374,3 +420,5 @@ message("CPACK_RESOURCE_FILE_LICENSE = ${CMAKE_CURRENT_LIST_DIR}/LICENCE")
 message("CPACK_RESOURCE_FILE_README = ${CMAKE_CURRENT_LIST_DIR}/README.md")
 message("CPACK_SOURCE_GENERATOR = ${CPACK_SOURCE_GENERATOR}")
 message("CPack ignores: ${CPACK_SOURCE_IGNORE_FILES}\n")
+
+message("\n")
