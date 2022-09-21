@@ -58,7 +58,9 @@ Just <a href= "https://github.com/StoneyDSP/CMakeProject1.git">clone or fork the
 
 The project's executable target will launch, printing a variety of system and project variables to the console terminal, before exiting.
 
-Depending on the optional settings described below (see)
+Depending on the optional settings described below,these variables shall be printed either using the C++ standard library ("iostream.h"), *or* by the popular third-party package fmt ("fmt/format.h"), supplied by vcpkg package manager as a simple example project.
+
+# Getting started
 
 In the top-level "CMakeLists.txt" - the main script that our application is configured and built from - you will find a project definition named "CMakeProject1" with some useful default settings in place; namely, a pre-defined executable target, and an optional library ("foo") that contains links to the imported third-party packages.
 
