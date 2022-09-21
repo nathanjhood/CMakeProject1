@@ -7,20 +7,21 @@ Generic CMake Project template for a full CI pipeline, with in-built CMake prese
 
 - Flexible project management and build targets driven by CMake
 - An expansive range of CMake build, configure, test, and debug presets
-- Support for Git submodule import
+- Project-automated support for Git submodule management
 - Microsoft vcpkg toolchain for package dependency management (via Git)
-- NuGet package hosting and cacheing support
-- Git Action workflows that run a set of simple CTest presets on your code
+- NuGet package hosting and cacheing support (via Git)
+- Git Action workflows that run a set of simple CTest presets on your code (via Git Actions)
+- Host a GitHub Page for your project documentation at the click of a button (via Git Pages)
+- HTML documentation generator (via Doxygen)
+- Full IntelliSense support for all imported vcpkg modules (where available)
 - Clean and intuituve process documentation and result logging
-- Doxygen html document generator
-- Host a GitHub Page for your project documentation at the click of a button
-- Full IntelliSense support for all imported modules (where available)
-- Create shared and static libraries (.dll, .lib), executables (.exe), and all sorts of custom targets using modern, cutting-edge and well-supported toolsets
+- Create shared and static libraries (.dll, .lib), executables (.exe), and all sorts of custom targets using modern workflows, with cutting-edge and well-supported toolsets
 - Target, test, build, and deploy for a wide range of operating systems, architectures, compilers, and configurations from the very beginning of your project and beyond!
 
 ## Requirements;
 
 - GitHub client & account
+- C/C++ compiler (MSVC, Clang, GNUC, etc...)
 - CMake-enabled IDE for C/C++ development*
 
 *(I recommend Visual Studio Code with the official CMake Tools extension enabled, to allow full use of the supplied CMake presets)
@@ -68,25 +69,27 @@ Once CMake's configuration step has completed in your CMake-enabled IDE, you wil
 
 If you're new to CMake, or unfamiliar with what you see in the terminal during the configure step; Go to the kitware website and download the latest CMake binary installer for your system and install. Use the generated "CMake-GUI.exe" and point it at this project, to get a direct view of the options stored in the CMakeCache post-config, and control/expand your project accordingly.
 
-Typically, when creating a new C++ project, a user would specify all the required files and third-party libraries (i.e., "dependencies") along with environment variables such as, which compiler and build tools to use (Visual Studio, MinGW, XCode et al.), and will then be given a project, or "solution", file to launch in the IDE and begin working on. This might be an ".sln" file, or it could have some other, less obvious extension, but launching this fileset in an IDE produces what most users will be familiar with as a working project environment. This is known as the "configure" step, and is often abstracted away from the user by project frameworks and other software (for example, audio software developers will often use JUCE's "projucer" to accomplish the configuration step and generate the build files).
+# How to use it?
 
-By default, the configured "build files" which one would typically work from in their project solution, will be located in and launched from "/build/(presetName)". An installation step is also provided, which installs your code into "installed/(presetName)". Both of these folders are on the .gitignore list initially, so be sure to configure into a seperate directory when you want to put the things you build under Git version control.
+Typically, when creating a new C++ project, a user would specify things like project names, desired output "targets" (like .exe, for examole), as well as all the required files and third-party libraries (i.e., "dependencies") along with environment variables such as, which compiler and build tools to use (Visual Studio, MinGW, XCode et al.), which platform, host, and architecture to use, and so on. In return, our build system will then generate for us a project - or "solution" - file to launch in the IDE and begin working from. This might be an ".sln" file, or it could have some other, less obvious extension, but launching this fileset in an IDE produces what most users will be familiar with as a working project environment. The above-outlined process is known as the "configure" step, and is quite often abstracted away from the user by project frameworks and other software (for example, audio software developers will often use JUCE's "projucer" to accomplish the configuration step and generate the build files).
 
-Further instructions will be provided in due course for producing clean, new projects that should interface with Git straight from the box.
+By default, the configured "build files" which one would typically work from in their project solution, will be located in and launched from "/build/(presetName)". A "vanilla" installation step is also provided, which installs your code into "installed/(presetName)". Both of these folders are on the .gitignore list initially, so be sure to configure into a seperate directory when you want to put the things you build under Git version control.
+
+Further instructions will be provided in due course for using CMakeProject1 to produce clean, new C++ projects with powerful extension support and configurability while maintaining a streamlined workflow, all straight from the box. There are also further ideas afloat about putting the entirety of the project management under the control of some kind of singular interface.
+
+Please stay tuned :)
 
 # How does it work?
 
-By default, CMake will run and detect the project "CMakeProject1" as specified in the top-level "CMakeLists.txt". CMake will then activate your local Git instance, which will scan for a list of submodules (".gitmodules") in the project's top-level folder.
+By default, CMake will run and detect the project "CMakeProject1" as specified in the top-level "CMakeLists.txt". CMakeProject1 will then activate your local Git instance, which will scan for a list of submodules (".gitmodules") in the project's top-level folder.
 
 A default submodule at "StoneyDSP/vcpkg.git" will be detected and cloned into the "extern" folder*. At this point, the "extern" folder - the hub of all of our git and vcpkg package management - will be populated with the full vcpkg runtime binary, and it's supporting build scripts, meaning it is ready to inject packages into our project.
 
 vcpkg will be activated by the project creation in the CMake files. "support/vcpkg/vcpkg.json" will be read, and the packages listed under "dependencies" will be pulled from Git and built into the "installed" folder, where your project may link to them as needed. CMakeProject1 currently ships with some dependencies for demonstration purposes only - it has no actual dependencies of it's own outside of a CMake-enabled IDE - but the ones provided allow the demonstration use case to proceed.
 
-A default CMake target library named "Foo" will be located - this library is comprised of source files which define a console-logging function, using a popular third-party package that uses classic "printf()"-style behaviour.
-
 # Optional behaviours - a beginning...
 
-The CMake option "USE_FOO" controls whether we include our C++ files, "foo.h" and "foo.cpp". In the shipment example, these two files are where the third-party vcpkg are "#included" and their usage defined, and default to "ON". This option links the "Foo" library into our CMake executable as an *optional* linked library. Setting "USE_FOO" to off will, in this example, exclude the linked vcpkg packages and resort to a "default" behaviour using the C++ standard library, defined in "main.h" and "main.cpp", which themeselves comprise the necessary source files for our .exe output target - the "foo" library being expressed as an optional inclusion.
+The CMake option "USE_FOO" controls whether we include our C++ files, "foo.h" and "foo.cpp". In the shipment example, these two files are where the third-party vcpkg are "#included" and their usage defined, and default to "ON". This option links the "Foo" library into our CMake executable as an *optional* linked library. Setting "USE_FOO" to off will, in this example, exclude the linked vcpkg packages and resort to a "default" behaviour using the C++ standard library, as declared and defined in "main.h" and "main.cpp"; these two source files themeselves comprise the necessary source files for our .exe output target - the "foo" library being expressed as an optional inclusion. Thus, our .exe runs "main.h" and "main.cpp" under all circumstances, but the function named "foo.message" will be different (std library or fmt library), depending on the selection made at "USE_FOO".
 
 You may add, remove, clean, and manage Git submodules in the "extern" folder in the usual ways as needed, but keep in mind that all Git commands should be run relative to the project's root folder (hence, "etern/vcpkg"). Note that vcpkg can happily store it's downloaded packages here too - that is infact it's own default behaviour - but this has been changed to allow a much easier workflow, where package source and header files sit safely next to our own project files while still being safely managed by vcpkg.
 
