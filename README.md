@@ -14,7 +14,8 @@ Generic CMake Project template for a full CI pipeline, with in-built CMake prese
 - Host a GitHub Page for your project documentation at the click of a button (via Git Pages)
 - HTML documentation generator (via Doxygen)
 - Full IntelliSense support for all imported vcpkg modules (where available)
-- Clean and intuituve process documentation and result logging
+- Instant configure-build-install-test-debug workflow support for the latest Windows, Linux/Ubuntu and OSX systems
+- Clean and intuituve process documentation and status logging with support for automation
 - Create shared and static libraries (.dll, .lib), executables (.exe), and all sorts of custom targets using modern workflows, with cutting-edge and well-supported toolsets
 - Target, test, build, and deploy for a wide range of operating systems, architectures, compilers, and configurations from the very beginning of your project and beyond!
 
@@ -73,7 +74,7 @@ If you're new to CMake, or unfamiliar with what you see in the terminal during t
 
 Typically, when creating a new C++ project, a user would specify things like a project name, some desired output "targets" (like .exe, for examole), any pre-requisite files and third-party libraries (i.e., "dependencies"), as well as some environment variables, such as; which compiler and build tools to use (Visual Studio, MinGW, XCode et al.), which platform, host, and architecture to use, and so on. In return, our build system will then generate for us a project - or "solution" - file to launch in the IDE and begin working from. This might be an ".sln" file, or it could have some other, less obvious extension, but launching this fileset in an IDE produces what most users will be familiar with as a working project environment. The above-outlined process is known as the "configure" step, and is quite often abstracted away from the user by the IDE, project frameworks, or other "helper" software (for example, audio software developers will often use JUCE's "projucer" to accomplish the configuration step and generate the build files).
 
-For the shipped example project, by default, the locally-configured "build tree" which one would typically work from, will be located in and launched from "/build/(presetName)". A "vanilla" installation step is also provided, which installs your code into "installed/(presetName)". Both of these folders are on the .gitignore list initially, so be sure to configure into a seperate directory when you want to put your build tree under Git version control (not a common practice, mind you). Once the confugured project solution (".sln" or so forth) files are generated and appear under "build/(presetName)", you can launch that project file in your IDE and begin work on your new project from there.
+For the shipped example project, by default, the locally-configured "build tree" which one would typically work from, will be located in and launched from "/build/(presetName)". A "vanilla" installation step is also provided, which installs your code into "installed/(presetName)". Both of these folders are on the .gitignore list initially, so be sure to configure into a seperate directory when you want to put your build tree under Git version control (not a common practice, mind you). Once the configured project solution (".sln" or so forth) files are generated and appear under "build/(presetName)", you can launch that project file in your IDE and begin work on your new project from there.
 
 Further instructions will be provided in due course for using CMakeProject1 to produce clean, new C++ projects with powerful extension support and configurability while maintaining a streamlined workflow, all straight from the box. There are also further ideas afloat about putting the entirety of the project management under the control of some kind of singular interface.
 
@@ -99,7 +100,7 @@ The project's useage of vcpkg itself ("USE_VCPKG"), and also the git detection (
 
 # Continuous integration
 
-It is possible to store the downloaded packages and in some cases, the built binaries, generated from git/vcpkg either inside your "extern" folder - where 'git clean' can friends can look after it - or even in NuGet packages hosted on your git.
+It is possible to store the downloaded packages and in some cases, the built binaries, generated from git/vcpkg either inside your "extern" folder - where 'git clean' and friends can look after it - or even in NuGet packages hosted on your git.
 
 Once you make any changes and push to your develop branch, switch to Github's "actions" tab to watch multi-platform tests (defined in ".github/workflows" and "tests/CMakeLists.txt") performed remotely on git servers, to ensure your code remains portable even on systems out of reach from within your usual develop environment (while enabling you to continue running your own machine locally, remaining productive). Note that the vcpkg package builds can be stashed and cached in your NuGet host/server, further speeding up both the remote testing AND the local building processes (stay tuned).
 
