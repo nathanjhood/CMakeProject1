@@ -53,11 +53,6 @@
             "cacheVariables": {
                 "CMAKE_C_COMPILER": "clang-cl.exe",
                 "CMAKE_CXX_COMPILER": "clang-cl.exe"
-            },
-            "vendor": {
-                "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "intelliSenseMode": "macos-clang-x64"
-                }
             }
         },
         {
@@ -80,11 +75,6 @@
             "cacheVariables": {
                 "CMAKE_C_COMPILER": "clang-cl.exe",
                 "CMAKE_CXX_COMPILER": "clang-cl.exe"
-            },
-            "vendor": {
-                "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "intelliSenseMode": "macos-clang-x86"
-                }
             }
         }
     ]
