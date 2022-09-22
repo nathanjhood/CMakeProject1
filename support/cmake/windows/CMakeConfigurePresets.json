@@ -25,7 +25,7 @@
                 "rhs": "Windows"
             },
             "toolset":{
-                "value": "VCTargetsPath=${sourceDir}/support/msbuild",
+                "value": "VCTargetsPath=${sourceDir}/support/msbuild/**",
                 "strategy": "external"
             },
             "environment": {
@@ -44,10 +44,6 @@
             "inherits":[
                 "windows-base"
             ],
-            "toolset": {
-                "value": "v143,host=x64,VCTargetsPath=${sourceDir}/support/msbuild",
-                "strategy": "external"
-            },
             "architecture": {
                 "value": "x64",
                 "strategy": "external"
@@ -75,10 +71,6 @@
             "inherits": [
                 "windows-base"
             ],
-            "toolset": {
-                "value": "v143,host=x86,VCTargetsPath=${sourceDir}/support/msbuild",
-                "strategy": "external"
-            },
             "architecture": {
                 "value": "x86",
                 "strategy": "external"

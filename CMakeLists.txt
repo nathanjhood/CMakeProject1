@@ -32,38 +32,41 @@ message("\n")
 message(STATUS "${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt>\n")
 
 message(STATUS "CMake found at: ${CMAKE_COMMAND}\n")
-
 message(STATUS "Initiating CMake v${CMAKE_VERSION}\n")
+message("\n")
 
 # is TRUE on all UNIX-like OS's, including Apple OS X and CygWin
-message(STATUS "UNIX: ${UNIX}")
+message(STATUS "UNIX = " ${UNIX})
 # is TRUE on Windows, including CygWin
-message(STATUS "WIN32: ${WIN32}")
+message(STATUS "WIN32 = " ${WIN32})
 # is TRUE on Apple OS X
-message(STATUS "APPLE: ${APPLE}\n")
+message(STATUS "APPLE = " ${APPLE})
 message("\n")
 
-message("CMAKE_SYSTEM_NAME = ${CMAKE_SYSTEM_NAME}")
-message("CMAKE_SYSTEM = ${CMAKE_SYSTEM}")
-message("CMAKE_SYSTEM_VERSION = ${CMAKE_SYSTEM_VERSION}")
-message("CMAKE_SYSTEM_PROCESSOR: ${CMAKE_SYSTEM_PROCESSOR}\n")
-
-message("CMAKE_GENERATOR = ${CMAKE_GENERATOR}")
-message("CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}")
-message("CMAKE_CONFIGURATION_TYPES = ${CMAKE_CONFIGURATION_TYPES}")
-message("CMAKE_GENERATOR_PLATFORM = ${CMAKE_GENERATOR_PLATFORM}")
-message("CMAKE_GENERATOR_TOOLSET = ${CMAKE_GENERATOR_TOOLSET}")
-message("CMAKE_GENERATOR_INSTANCE = ${CMAKE_GENERATOR_INSTANCE}\n")
-
-if(WIN32)
-  include(${CMAKE_CURRENT_LIST_DIR}/support/cmake/windows/CMAKE_DEFAULT_FLAGS_WIN32_MSVC.txt)
-endif(WIN32)
-
-if (UNIX AND NOT APPLE)
-  include(${CMAKE_CURRENT_LIST_DIR}/support/cmake/linux/CMAKE_DEFAULT_FLAGS_LINUX_GNUC.txt)
-endif ()
+message("CMAKE_SYSTEM_NAME = " ${CMAKE_SYSTEM_NAME})
+message("CMAKE_SYSTEM = " ${CMAKE_SYSTEM})
+message("CMAKE_SYSTEM_VERSION = " ${CMAKE_SYSTEM_VERSION})
+message("CMAKE_SYSTEM_PROCESSOR = " ${CMAKE_SYSTEM_PROCESSOR})
 message("\n")
 
+message("CMAKE_GENERATOR = " ${CMAKE_GENERATOR})
+message("CMAKE_BUILD_TYPE = " ${CMAKE_BUILD_TYPE})
+message("CMAKE_CONFIGURATION_TYPES = " ${CMAKE_CONFIGURATION_TYPES})
+message("CMAKE_GENERATOR_PLATFORM = " ${CMAKE_GENERATOR_PLATFORM})
+message("CMAKE_GENERATOR_TOOLSET = " ${CMAKE_GENERATOR_TOOLSET})
+message("CMAKE_GENERATOR_INSTANCE = " ${CMAKE_GENERATOR_INSTANCE})
+message("\n")
+
+
+#if(WIN32)
+#  include(${CMAKE_CURRENT_LIST_DIR}/support/cmake/windows/CMAKE_DEFAULT_FLAGS_WIN32_MSVC.txt)
+#endif(WIN32)
+
+#if (UNIX AND NOT APPLE)
+#  include(${CMAKE_CURRENT_LIST_DIR}/support/cmake/linux/CMAKE_DEFAULT_FLAGS_LINUX_GNUC.txt)
+#endif ()
+
+# We can define some useful options and set defaults here...
 message("Options:\n")
 set(CMAKE_PROJECT_VENDOR "StoneyDSP")
 option(USE_FOO "Use foo" OFF)
@@ -202,42 +205,6 @@ message("\n")
 #
 # ============================================================================ #
 
-if(MSVC)
-    # Use max Warning Level
-    string(REPLACE "/W3 " "/Wall " CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
-    string(REPLACE "/W3 " "/Wall " CMAKE_CXX_FLAGS_DEBUG ${CMAKE_CXX_FLAGS_DEBUG})
-    string(REPLACE "/W3 " "/Wall " CMAKE_CXX_FLAGS_RELEASE ${CMAKE_CXX_FLAGS_RELEASE})
-    string(REPLACE "/W3 " "/Wall " CMAKE_CXX_FLAGS_MINSIZEREL ${CMAKE_CXX_FLAGS_MINSIZEREL})
-    string(REPLACE "/W3 " "/Wall " CMAKE_CXX_FLAGS_RELWITHDEBINFO ${CMAKE_CXX_FLAGS_RELWITHDEBINFO})
-    # Library needs /EHsc (Enable C++ exceptions)
-endif()
-
-message("CMAKE_CXX_FLAGS = ${CMAKE_CXX_FLAGS}")
-message("CMAKE_CXX_FLAGS_DEBUG = ${CMAKE_CXX_FLAGS_DEBUG}")
-message("CMAKE_CXX_FLAGS_RELEASE = ${CMAKE_CXX_FLAGS_RELEASE}")
-message("CMAKE_CXX_FLAGS_MINSIZEREL = ${CMAKE_CXX_FLAGS_MINSIZEREL}")
-message("CMAKE_CXX_FLAGS_RELWITHDEBINFO = ${CMAKE_CXX_FLAGS_RELWITHDEBINFO}\n")
-
-message("CMAKE_C_FLAGS = ${CMAKE_C_FLAGS}")
-message("CMAKE_C_FLAGS_DEBUG = ${CMAKE_C_FLAGS_DEBUG}")
-message("CMAKE_C_FLAGS_RELEASE = ${CMAKE_C_FLAGS_RELEASE}")
-message("CMAKE_C_FLAGS_MINSIZEREL = ${CMAKE_C_FLAGS_MINSIZEREL}")
-message("CMAKE_C_FLAGS_RELWITHDEBINFO = ${CMAKE_C_FLAGS_RELWITHDEBINFO}\n")
-
-if(USE_VCPKG)
-  set(VCPKG_CXX_FLAGS ${CMAKE_CXX_FLAGS})
-  set(VCPKG_CXX_FLAGS_DEBUG ${CMAKE_CXX_FLAGS_DEBUG})
-  set(VCPKG_CXX_FLAGS_RELEASE ${CMAKE_CXX_FLAGS_RELEASE})
-  set(VCPKG_CXX_FLAGS_MINSIZEREL ${CMAKE_CXX_FLAGS_MINSIZEREL})
-  set(VCPKG_CXX_FLAGS_RELWITHDEBINFO ${CMAKE_CXX_FLAGS_RELWITHDEBINFO})
-
-  set(VCPKG_C_FLAGS ${CMAKE_C_FLAGS})
-  set(VCPKG_C_FLAGS_DEBUG ${CMAKE_C_FLAGS_DEBUG})
-  set(VCPKG_C_FLAGS_RELEASE ${CMAKE_C_FLAGS_RELEASE})
-  set(VCPKG_C_FLAGS_MINSIZEREL ${CMAKE_C_FLAGS_MINSIZEREL})
-  set(VCPKG_C_FLAGS_RELWITHDEBINFO ${CMAKE_C_FLAGS_RELWITHDEBINFO})
-endif(USE_VCPKG)
-
 # create config header for C++
 message("Creating config header file...")
 configure_file(
@@ -263,10 +230,21 @@ message("\n")
 if(USE_FOO)
   # Add output target.
   message("Adding target...")
-  add_library (${PROJECT_NAME}-SharedCode
-    STATIC
-      ${PROJECT_SOURCE_DIR}/src/foo/foo.cpp)
+  add_library (${PROJECT_NAME}-SharedCode)
   message("Added target: ${PROJECT_NAME}-SharedCode.lib\n")
+
+  # Set target version.
+set_target_properties(${PROJECT_NAME}-SharedCode
+PROPERTIES
+  VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK})
+message("Added target version ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}\n")
+
+# Add source files and headers to target.
+target_sources(${PROJECT_NAME}-SharedCode
+  PUBLIC
+    ${PROJECT_SOURCE_DIR}/src/main.cpp
+    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/main.h
+)
 
   #message("Adding ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}Config.h to target ${PROJECT_NAME}-SharedCode...")
   #target_include_directories(${PROJECT_NAME}-SharedCode
@@ -279,32 +257,32 @@ if(USE_FOO)
   #)
   #message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
 
-  # link our imported vcpkg package library "fmt" (and others) to our shared code target...
-  find_package(fmt CONFIG REQUIRED)
-  target_link_libraries(${PROJECT_NAME}-SharedCode
-    PUBLIC
-      fmt::fmt)
-  message("Linked vcpkg library fmt to target ${PROJECT_NAME}-SharedCode")
+#  # link our imported vcpkg package library "fmt" (and others) to our shared code target...
+#  find_package(fmt CONFIG REQUIRED)
+#  target_link_libraries(${PROJECT_NAME}-SharedCode
+#    PUBLIC
+#      fmt::fmt)
+#  message("Linked vcpkg library fmt to target ${PROJECT_NAME}-SharedCode")
 
-  # let's set the foo source folder as a usage requirement...
-  target_include_directories(${PROJECT_NAME}-SharedCode
-    INTERFACE
-      ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
-      #<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-      #<INSTALL_INTERFACE:include>
+#  # let's set the foo source folder as a usage requirement...
+#  target_include_directories(${PROJECT_NAME}-SharedCode
+#    INTERFACE
+#      ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
+#      #<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+#      #<INSTALL_INTERFACE:include>
   )
 
-  # install the definition-containing library (.lib)
-  install(
-    TARGETS ${PROJECT_NAME}-SharedCode
-    DESTINATION lib
-  )
+#  # install the definition-containing library (.lib)
+#  install(
+#    TARGETS ${PROJECT_NAME}-SharedCode
+#    DESTINATION lib
+#  )
 
-  # install the declaration-containing header (.h)
-  install(
-    FILES ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo/foo.h
-    DESTINATION include/${PROJECT_NAME}/foo
-  )
+#  # install the declaration-containing header (.h)
+#  install(
+#    FILES ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo/foo.h
+#    DESTINATION include/${PROJECT_NAME}/foo
+#  )
 
   list(APPEND EXTRA_LIBS ${PROJECT_NAME}-SharedCode)
 endif(USE_FOO)
