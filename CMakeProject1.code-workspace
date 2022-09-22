@@ -203,7 +203,7 @@
 			"xlocmon": "cpp",
 			"xloctime": "cpp",
 			"xtree": "cpp",
-			"*.in": "cpp"
+			"*.h.in": "cpp"
 		},
 		"json.schemaDownload.enable": true,
 		"json.validate.enable": true,

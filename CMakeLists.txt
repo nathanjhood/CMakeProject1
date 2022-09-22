@@ -306,26 +306,18 @@ add_executable (${PROJECT_NAME}-Executable)
 message("Added target: ${PROJECT_NAME}-Executable.exe\n")
 
 # Set target version.
-set_property(TARGET ${PROJECT_NAME}-Executable PROPERTY VERSION ${LOCAL_VERSION})
-set_property(TARGET ${PROJECT_NAME}-Executable PROPERTY SOVERSION ${LOCAL_VERSION_MAJOR})
-set_property(TARGET ${PROJECT_NAME}-Executable PROPERTY INTERFACE_${PROJECT_NAME}-Executable_MAJOR_VERSION ${LOCAL_VERSION_MAJOR})
-set_property(TARGET ${PROJECT_NAME}-Executable APPEND PROPERTY COMPATIBLE_INTERFACE_STRING ${PROJECT_NAME}-Executable_MAJOR_VERSION)
-message("Added target version ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}\n")
+#set_property(TARGET ${PROJECT_NAME}-Executable PROPERTY VERSION ${LOCAL_VERSION})
+#set_property(TARGET ${PROJECT_NAME}-Executable PROPERTY SOVERSION ${LOCAL_VERSION_MAJOR})
+#set_property(TARGET ${PROJECT_NAME}-Executable PROPERTY INTERFACE_${PROJECT_NAME}-Executable_MAJOR_VERSION ${LOCAL_VERSION_MAJOR})
+#set_property(TARGET ${PROJECT_NAME}-Executable APPEND PROPERTY COMPATIBLE_INTERFACE_STRING ${PROJECT_NAME}-Executable_MAJOR_VERSION)
+#message("Added target version ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}\n")
 
 
 # Set target version.
-#set_target_properties(${PROJECT_NAME}-Executable
-#PROPERTIES
-#  VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}
-#  SOVERSION ${LOCAL_VERSION_MAJOR}
-#  INTERFACE_${PROJECT_NAME}-Executable_MAJOR_VERSION
-#  )
-#message("Added target version ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}\n")
-
-#set_property(TARGET ${PROJECT_NAME}-Executable
-#  APPEND PROPERTY
-#    COMPATIBLE_INTERFACE_STRING ${PROJECT_NAME}-Executable_MAJOR_VERSION
-#)
+set_target_properties(${PROJECT_NAME}-Executable
+  PROPERTIES
+    VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK})
+message("Added target version ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}\n")
 
 # Add source files and headers to target.
 target_sources(${PROJECT_NAME}-Executable
@@ -356,16 +348,16 @@ target_link_libraries(${PROJECT_NAME}-Executable
 message("Linked EXTRA_LIBS (if any) to target ${PROJECT_NAME}-Executable\n")
 message("EXTRA_LIBS = ${EXTRA_LIBS}\n")
 
-# install the .exe
-install(
-  TARGETS ${PROJECT_NAME}-Executable
-  DESTINATION bin
-)
-
 # install the configured c++ header
 install(
   FILES ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/${PROJECT_NAME}Config.h
   DESTINATION include/${PROJECT_NAME}
+)
+
+# install the .exe
+install(
+  TARGETS ${PROJECT_NAME}-Executable
+  DESTINATION bin
 )
 
 # Address sanitizer
