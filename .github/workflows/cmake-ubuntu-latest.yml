@@ -13,6 +13,7 @@ env:
   VCPKG_BINARY_SOURCES: 'clear;nuget,GitHub,readwrite'
   CMAKE_C_COMPILER: "gcc.exe"
   CMAKE_CXX_COMPILER: "g++.exe"
+  GITHUB_TOKEN: ${{ github.token }}
 
 jobs:
   build:
