@@ -179,9 +179,6 @@ message("\n")
 #
 # ============================================================================ #
 
-# get access to helper functions for creating config files
-include(CMakePackageConfigHelpers)
-
 # make cache variables for install destinations
 include(GNUInstallDirs)
 
@@ -205,6 +202,9 @@ message("\n")
 #
 # ============================================================================ #
 
+# get access to helper functions for creating config files
+include(CMakePackageConfigHelpers)
+
 # create config header for C++
 message("Creating config header file...")
 configure_file(
@@ -212,12 +212,19 @@ configure_file(
   ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/${PROJECT_NAME}Config.h)
 message("Created config header file.\n")
 
-#configure_package_config_file(
-#    ${PROJECT_SOURCE_DIR}/support/cmake/${PROJECT_NAME}Config.cmake.in
-#    ${PROJECT_BINARY_DIR}/share/${PROJECT_NAME}/${PROJECT_NAME}Config.cmake
-#  INSTALL_DESTINATION
-#    ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
-#)
+configure_package_config_file(
+    ${PROJECT_SOURCE_DIR}/support/cmake/${PROJECT_NAME}Config.cmake.in
+    ${PROJECT_BINARY_DIR}/share/${PROJECT_NAME}/${PROJECT_NAME}Config.cmake
+  INSTALL_DESTINATION
+    ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
+)
+
+# generate the version file for the config file
+write_basic_package_version_file(
+  ${CMAKE_CURRENT_BINARY_DIR}/support/cmake/${PROJECT_NAME}ConfigConfigVersion.cmake
+  VERSION LOCAL_VERSION
+  COMPATIBILITY AnyNewerVersion
+)
 
 message("\n")
 
@@ -229,40 +236,41 @@ message("\n")
 
 if(USE_FOO)
   # Add output target.
-  message("Adding target...")
-  add_library (${PROJECT_NAME}-SharedCode)
-  message("Added target: ${PROJECT_NAME}-SharedCode.lib\n")
+message("Adding target...")
+add_library (${PROJECT_NAME}-SharedCode)
+message("Added target: ${PROJECT_NAME}-SharedCode.lib\n")
 
-  # Set target version.
-set_target_properties(${PROJECT_NAME}-SharedCode
-PROPERTIES
-  VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK})
+# Set target version.
+set_property(TARGET ${PROJECT_NAME}-SharedCode PROPERTY VERSION ${LOCAL_VERSION})
+set_property(TARGET ${PROJECT_NAME}-SharedCode PROPERTY SOVERSION ${LOCAL_VERSION_MAJOR})
+set_property(TARGET ${PROJECT_NAME}-SharedCode PROPERTY INTERFACE_${PROJECT_NAME}-SharedCode_MAJOR_VERSION ${LOCAL_VERSION_MAJOR})
+set_property(TARGET ${PROJECT_NAME}-SharedCode APPEND PROPERTY COMPATIBLE_INTERFACE_STRING ${PROJECT_NAME}-SharedCode_MAJOR_VERSION)
 message("Added target version ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}\n")
 
 # Add source files and headers to target.
 target_sources(${PROJECT_NAME}-SharedCode
   PUBLIC
-    ${PROJECT_SOURCE_DIR}/src/main.cpp
-    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/main.h
+    ${PROJECT_SOURCE_DIR}/src/foo/foo.cpp
+    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo/foo.h
 )
 
-  #message("Adding ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}Config.h to target ${PROJECT_NAME}-SharedCode...")
-  #target_include_directories(${PROJECT_NAME}-SharedCode
-  #  PUBLIC
-  #    # let's include foo folder...
-  #    #${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
-  #
-  #    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo>
-  #    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
-  #)
-  #message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
+# Add some headers.
+message("Including headers in target ${PROJECT_NAME}-SharedCode...\n")
+#include directories for our executable program
+target_include_directories(${PROJECT_NAME}-SharedCode
+  PUBLIC
+    # let's include the foo.h...
+    ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/foo
+)
+message("Added ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}\n")
 
-#  # link our imported vcpkg package library "fmt" (and others) to our shared code target...
-#  find_package(fmt CONFIG REQUIRED)
-#  target_link_libraries(${PROJECT_NAME}-SharedCode
-#    PUBLIC
-#      fmt::fmt)
-#  message("Linked vcpkg library fmt to target ${PROJECT_NAME}-SharedCode")
+# link our imported vcpkg package library "fmt" (and others) to our shared code target...
+find_package(fmt CONFIG REQUIRED)
+target_link_libraries(${PROJECT_NAME}-SharedCode
+  PRIVATE
+    fmt::fmt
+)
+message("Linked vcpkg library fmt to target ${PROJECT_NAME}-SharedCode")
 
 #  # let's set the foo source folder as a usage requirement...
 #  target_include_directories(${PROJECT_NAME}-SharedCode
@@ -270,7 +278,7 @@ target_sources(${PROJECT_NAME}-SharedCode
 #      ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
 #      #<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
 #      #<INSTALL_INTERFACE:include>
-  )
+#  )
 
 #  # install the definition-containing library (.lib)
 #  install(
@@ -301,10 +309,26 @@ add_executable (${PROJECT_NAME}-Executable)
 message("Added target: ${PROJECT_NAME}-Executable.exe\n")
 
 # Set target version.
-set_target_properties(${PROJECT_NAME}-Executable
-  PROPERTIES
-    VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK})
+set_property(TARGET ${PROJECT_NAME}-Executable PROPERTY VERSION ${LOCAL_VERSION})
+set_property(TARGET ${PROJECT_NAME}-Executable PROPERTY SOVERSION ${LOCAL_VERSION_MAJOR})
+set_property(TARGET ${PROJECT_NAME}-Executable PROPERTY INTERFACE_${PROJECT_NAME}-Executable_MAJOR_VERSION ${LOCAL_VERSION_MAJOR})
+set_property(TARGET ${PROJECT_NAME}-Executable APPEND PROPERTY COMPATIBLE_INTERFACE_STRING ${PROJECT_NAME}-Executable_MAJOR_VERSION)
 message("Added target version ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}\n")
+
+
+# Set target version.
+#set_target_properties(${PROJECT_NAME}-Executable
+#PROPERTIES
+#  VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}
+#  SOVERSION ${LOCAL_VERSION_MAJOR}
+#  INTERFACE_${PROJECT_NAME}-Executable_MAJOR_VERSION
+#  )
+#message("Added target version ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}\n")
+
+#set_property(TARGET ${PROJECT_NAME}-Executable
+#  APPEND PROPERTY
+#    COMPATIBLE_INTERFACE_STRING ${PROJECT_NAME}-Executable_MAJOR_VERSION
+#)
 
 # Add source files and headers to target.
 target_sources(${PROJECT_NAME}-Executable
@@ -315,18 +339,15 @@ target_sources(${PROJECT_NAME}-Executable
 )
 
 # Add some headers.
-message("Adding to target ${PROJECT_NAME}-Executable...\n")
+message("Including headers in target ${PROJECT_NAME}-Executable...\n")
 #include directories for our executable program
 target_include_directories(${PROJECT_NAME}-Executable
   PUBLIC
-    # let's include the build tree...
-    #${PROJECT_BINARY_DIR}
     # let's include the config.h...
     ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}
     # let's include main.h...
     ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}
 )
-message("Added ${PROJECT_BINARY_DIR}")
 message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
 message("Added ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}\n")
 

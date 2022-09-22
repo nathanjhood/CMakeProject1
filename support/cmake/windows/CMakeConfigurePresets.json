@@ -16,7 +16,7 @@
             "inherits": [
                 "debug-settings"
             ],
-            "generator": "Visual Studio 17 2022",
+            "generator": "Ninja Multi-Config",
             "binaryDir": "${sourceDir}/build/${presetName}",
             "installDir": "${sourceDir}/installed/${presetName}",
             "condition": {
@@ -30,6 +30,8 @@
             },
             "environment": {
                 "CMAKE_CONFIGURATION_TYPES": "Debug;Release;RelWithDebInfo;MinSizeRel",
+                "VCPKG_BINARY_SOURCES": "clear;nuget,GitHub,readwrite",
+                "VCPKG_USE_NUGET_CACHE": "true",
                 "VCPKG_DOWNLOADS": "${sourceDir}/downloads",
                 "VCPKG_CRT_LINKAGE": "dynamic",
                 "VCPKG_LIBRARY_LINKAGE": "dynamic",
@@ -44,6 +46,10 @@
             "inherits":[
                 "windows-base"
             ],
+            "toolset":{
+                "value": "host=x64",
+                "strategy": "external"
+            },
             "architecture": {
                 "value": "x64",
                 "strategy": "external"
@@ -71,6 +77,10 @@
             "inherits": [
                 "windows-base"
             ],
+            "toolset":{
+                "value": "host=x86",
+                "strategy": "external"
+            },
             "architecture": {
                 "value": "x86",
                 "strategy": "external"

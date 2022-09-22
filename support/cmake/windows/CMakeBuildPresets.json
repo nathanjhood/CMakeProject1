@@ -18,7 +18,8 @@
             "inheritConfigureEnvironment": true,
             "verbose": false,
             "environment": {
-                "VCPKG_BUILD_TYPE": "debug"
+                "CMAKE_BUILD_TYPE": "Debug",
+                "VCPKG_BUILD_TYPE": "Debug"
             }
         },
         {
@@ -30,6 +31,7 @@
             "inheritConfigureEnvironment": true,
             "verbose": false,
             "environment": {
+                "CMAKE_BUILD_TYPE": "Release",
                 "VCPKG_BUILD_TYPE": "release"
             }
         },
@@ -42,6 +44,7 @@
             "inheritConfigureEnvironment": true,
             "verbose": false,
             "environment": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
                 "VCPKG_BUILD_TYPE": "release"
             }
         },
@@ -54,7 +57,8 @@
             "inheritConfigureEnvironment": true,
             "verbose": false,
             "environment": {
-                "VCPKG_BUILD_TYPE": "release"
+                "CMAKE_BUILD_TYPE": "MinSizeRel",
+                "VCPKG_BUILD_TYPE": "MinSizeRel"
             }
         },
         {
