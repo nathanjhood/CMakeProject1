@@ -79,15 +79,14 @@ option(USE_VCPKG "Use local vcpkg if found" ON)
 option(ASAN_ENABLED "Build this target with AddressSanitizer" OFF)
 set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 
-message("USE_FOO = ${USE_FOO}")
-message("USE_TESTS = ${USE_TESTS}")
-message("CMAKE_PROJECT_VENDOR = ${CMAKE_PROJECT_VENDOR}")
-message("ENABLE_LOGGING = ${ENABLE_LOGGING}")
-message("BUILD_SHARED_LIBS = ${BUILD_SHARED_LIBS}")
-message("USE_EXTERN = ${USE_EXTERN}")
-message("GIT_SUBMODULE = ${GIT_SUBMODULE}")
-message("USE_VCPKG = ${USE_VCPKG}\n")
-
+message("USE_FOO = " ${USE_FOO})
+message("USE_TESTS = " ${USE_TESTS})
+message("CMAKE_PROJECT_VENDOR = " ${CMAKE_PROJECT_VENDOR})
+message("ENABLE_LOGGING = " ${ENABLE_LOGGING})
+message("BUILD_SHARED_LIBS = " ${BUILD_SHARED_LIBS})
+message("USE_EXTERN = " ${USE_EXTERN})
+message("GIT_SUBMODULE = " ${GIT_SUBMODULE})
+message("USE_VCPKG = " ${USE_VCPKG})
 message("\n")
 
 # ============================================================================ #

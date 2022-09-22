@@ -11,8 +11,8 @@ env:
   CMAKE_CONFIGURATION_TYPES: Debug;Release;RelWithDebInfo;MinSizeRel
   BUILD_TYPE: Debug
   VCPKG_BINARY_SOURCES: 'clear;nuget,GitHub,readwrite'
-  CMAKE_C_COMPILER: "gcc.exe"
-  CMAKE_CXX_COMPILER: "g++.exe"
+  CMAKE_C_COMPILER: gcc
+  CMAKE_CXX_COMPILER: g++
   GITHUB_TOKEN: ${{ github.token }}
 
 jobs:
