@@ -221,8 +221,8 @@ configure_package_config_file(
 
 # generate the version file for the config file
 write_basic_package_version_file(
-  ${CMAKE_CURRENT_BINARY_DIR}/support/cmake/${PROJECT_NAME}ConfigConfigVersion.cmake
-  VERSION LOCAL_VERSION
+  ${CMAKE_CURRENT_BINARY_DIR}/share/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake
+  VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}
   COMPATIBILITY AnyNewerVersion
 )
 
@@ -272,25 +272,23 @@ target_link_libraries(${PROJECT_NAME}-SharedCode
 )
 message("Linked vcpkg library fmt to target ${PROJECT_NAME}-SharedCode")
 
-#  # let's set the foo source folder as a usage requirement...
-#  target_include_directories(${PROJECT_NAME}-SharedCode
-#    INTERFACE
-#      ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
-#      #<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-#      #<INSTALL_INTERFACE:include>
-#  )
+# let's set the foo source folder as a usage requirement...
+target_include_directories(${PROJECT_NAME}-SharedCode
+  INTERFACE
+    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
+)
 
-#  # install the definition-containing library (.lib)
-#  install(
-#    TARGETS ${PROJECT_NAME}-SharedCode
-#    DESTINATION lib
-#  )
+# install the definition-containing library (.lib)
+install(
+  TARGETS ${PROJECT_NAME}-SharedCode
+  DESTINATION lib
+)
 
-#  # install the declaration-containing header (.h)
-#  install(
-#    FILES ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo/foo.h
-#    DESTINATION include/${PROJECT_NAME}/foo
-#  )
+# install the declaration-containing header (.h)
+install(
+  FILES ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo/foo.h
+  DESTINATION include/${PROJECT_NAME}/foo
+)
 
   list(APPEND EXTRA_LIBS ${PROJECT_NAME}-SharedCode)
 endif(USE_FOO)
