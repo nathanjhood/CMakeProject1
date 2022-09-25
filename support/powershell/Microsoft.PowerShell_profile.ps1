@@ -1,3 +1,2 @@
-.\extern\vcpkg\bootstrap-vcpkg.bat
-.\extern\vcpkg\vcpkg.exe list
-Import-Module 'E:\CMakeProject1\scripts\posh-vcpkg'
+Set-Location E:\CMakeProject1\
+Import-Module 'E:\CMakeProject1\extern\vcpkg\scripts\posh-vcpkg'
