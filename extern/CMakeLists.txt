@@ -58,7 +58,7 @@ if(DEFINED ${VCPKG_MANIFEST_DIR})
   message("Toolchain: VCPKG_MANIFEST_DIR = ${VCPKG_MANIFEST_DIR}")
 else(DEFINED ${VCPKG_MANIFEST_DIR})
   set(VCPKG_MANIFEST_DIR
-  ${CMAKE_CURRENT_SOURCE_DIR}/support/vcpkg
+  ${CMAKE_CURRENT_SOURCE_DIR}/extern
     CACHE STRING "vcpkg manifest file location")
   message("Toolchain: VCPKG_MANIFEST_DIR = ${VCPKG_MANIFEST_DIR}")
 endif(DEFINED ${VCPKG_MANIFEST_DIR})
@@ -84,7 +84,7 @@ if(USE_VCPKG)
     # This variable sets the location where libraries will be installed and consumed from.
     # In manifest mode, the default is ${CMAKE_BINARY_DIR}/vcpkg_installed.
     # In classic mode, the default is ${VCPKG_ROOT}/installed.
-    set(VCPKG_INSTALLED_DIR ${CMAKE_CURRENT_SOURCE_DIR}/installed
+    set(VCPKG_INSTALLED_DIR ${CMAKE_CURRENT_SOURCE_DIR}/build
       CACHE STRING "vcpkg package installation directory")
     message("Toolchain: VCPKG_INSTALLED_DIR = ${VCPKG_INSTALLED_DIR}")
     # location of .vcpkg-root file
@@ -101,5 +101,9 @@ if(USE_VCPKG)
     message("Toolchain: Using local vcpkg submodule found at: ${CMAKE_TOOLCHAIN_FILE}\n")
   endif(DEFINED ${CMAKE_TOOLCHAIN_FILE})
 endif(USE_VCPKG)
+
+#vcpkg_cmake_get_vars(CMAKE_VARS_FILE)
+#include(${CMAKE_VARS_FILE})
+#message(STATUS "detected CXX flags: ${VCPKG_DETECTED_CMAKE_CXX_FLAGS}")
 
 message("\n")
