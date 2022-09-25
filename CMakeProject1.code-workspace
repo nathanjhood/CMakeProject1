@@ -17,8 +17,7 @@
 		"C_Cpp.default.browse.limitSymbolsToIncludedHeaders": true,
 		"C_Cpp.default.browse.path": [
 			"${default}",
-			"${vcpkgRoot}\\x86-windows\\include",
-			"${vcpkgRoot}\\x64-windows\\include",
+			"${workspaceFolder}\\build\\**",
 			"${workspaceFolder}\\extern\\**",
 			"${workspaceFolder}\\include\\**",
 			"${workspaceFolder}\\support\\**",
@@ -30,14 +29,14 @@
 			"${env.VCToolsInstallDir}\\include"
 		],
 		"C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+		"C_Cpp.formatting": "Default",
 		"C_Cpp.default.defines": [
 			"UNICODE",
             "_UNICODE"
 		],
 		"C_Cpp.default.includePath": [
 			"${default}",
-			"${vcpkgRoot}\\x86-windows\\include",
-			"${vcpkgRoot}\\x64-windows\\include",
+			"${workspaceFolder}\\build\\**",
 			"${workspaceFolder}\\extern\\**",
 			"${workspaceFolder}\\include\\**",
 			"${workspaceFolder}\\support\\**",
@@ -477,9 +476,7 @@
 	"extensions": {
 		"recommendations": [
 			"ms-vscode.cpptools",
-			"ms-vscode.cmake-tools",
-			"ms-vscode.powershell",
-			"cschlosser.doxdocgen"
+			"ms-vscode.cmake-tools"
 		]
 	}
 }
