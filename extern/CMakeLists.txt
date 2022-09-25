@@ -102,6 +102,11 @@ if(USE_VCPKG)
   endif(DEFINED ${CMAKE_TOOLCHAIN_FILE})
 endif(USE_VCPKG)
 
+#"VCPKG_CRT_LINKAGE": "dynamic",
+#"VCPKG_LIBRARY_LINKAGE": "dynamic",
+#"VCPKG_VISUAL_STUDIO_PATH": "C:/Program Files/Microsoft Visual Studio/2022/Community"
+
+#include(E:/CMakeProject1/extern/vcpkg/scripts/get_cmake_vars/CMakeLists.txt)
 #vcpkg_cmake_get_vars(CMAKE_VARS_FILE)
 #include(${CMAKE_VARS_FILE})
 #message(STATUS "detected CXX flags: ${VCPKG_DETECTED_CMAKE_CXX_FLAGS}")
