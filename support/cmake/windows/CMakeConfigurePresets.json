@@ -24,17 +24,16 @@
                 "lhs": "${hostSystemName}",
                 "rhs": "Windows"
             },
-            "toolset":{
-                "value": "VCTargetsPath=${sourceDir}/support/msbuild/**",
-                "strategy": "external"
-            },
             "environment": {
-                "CMAKE_CONFIGURATION_TYPES": "Debug;Release;RelWithDebInfo;MinSizeRel",
+                "VCPKG_DOWNLOADS": "${sourceDir}/downloads",
                 "VCPKG_BINARY_SOURCES": "clear;nuget,GitHub,readwrite",
                 "VCPKG_USE_NUGET_CACHE": "true",
-                "VCPKG_DOWNLOADS": "${sourceDir}/downloads",
                 "VCPKG_CRT_LINKAGE": "dynamic",
                 "VCPKG_LIBRARY_LINKAGE": "dynamic",
+                "VCPKG_VISUAL_STUDIO_PATH": "C:/Program Files/Microsoft Visual Studio/2022/Community"
+            },
+            "cacheVariables": {
+                "CMAKE_CONFIGURATION_TYPES": "Debug;Release;RelWithDebInfo;MinSizeRel",
                 "CMAKE_C_COMPILER": "cl.exe",
                 "CMAKE_CXX_COMPILER": "cl.exe"
             }
@@ -53,12 +52,6 @@
             "architecture": {
                 "value": "x64",
                 "strategy": "external"
-            },
-            "environment": {
-                "VCPKG_DEFAULT_TRIPLET": "x64-windows",
-                "VCPKG_DEFAULT_HOST_TRIPLET": "x64-windows",
-                "VCPKG_TARGET_TRIPLET": "x64-windows",
-                "VCPKG_TARGET_ARCHITECTURE": "x64"
             },
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {
