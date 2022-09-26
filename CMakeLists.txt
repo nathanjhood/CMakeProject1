@@ -30,63 +30,31 @@ endif()
 
 message("\n")
 message(STATUS "${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt>\n")
-
 message(STATUS "CMake found at: ${CMAKE_COMMAND}\n")
 message(STATUS "Initiating CMake v${CMAKE_VERSION}\n")
 message("\n")
 
-# is TRUE on all UNIX-like OS's, including Apple OS X and CygWin
-message(STATUS "UNIX = " ${UNIX})
-# is TRUE on Windows, including CygWin
-message(STATUS "WIN32 = " ${WIN32})
-# is TRUE on Apple OS X
-message(STATUS "APPLE = " ${APPLE})
-message("\n")
-
-message("CMAKE_SYSTEM_NAME = " ${CMAKE_SYSTEM_NAME})
-message("CMAKE_SYSTEM = " ${CMAKE_SYSTEM})
-message("CMAKE_SYSTEM_VERSION = " ${CMAKE_SYSTEM_VERSION})
-message("CMAKE_SYSTEM_PROCESSOR = " ${CMAKE_SYSTEM_PROCESSOR})
-message("\n")
-
-message("CMAKE_GENERATOR = " ${CMAKE_GENERATOR})
-message("CMAKE_BUILD_TYPE = " ${CMAKE_BUILD_TYPE})
-message("CMAKE_CONFIGURATION_TYPES = " ${CMAKE_CONFIGURATION_TYPES})
-message("CMAKE_GENERATOR_PLATFORM = " ${CMAKE_GENERATOR_PLATFORM})
-message("CMAKE_GENERATOR_TOOLSET = " ${CMAKE_GENERATOR_TOOLSET})
-message("CMAKE_GENERATOR_INSTANCE = " ${CMAKE_GENERATOR_INSTANCE})
-message("\n")
-
-
-#if(WIN32)
-#  include(${CMAKE_CURRENT_LIST_DIR}/support/cmake/windows/CMAKE_DEFAULT_FLAGS_WIN32_MSVC.txt)
-#endif(WIN32)
-
-#if (UNIX AND NOT APPLE)
-#  include(${CMAKE_CURRENT_LIST_DIR}/support/cmake/linux/CMAKE_DEFAULT_FLAGS_LINUX_GNUC.txt)
-#endif ()
-
 # We can define some useful options and set defaults here...
 message("Options:\n")
 set(CMAKE_PROJECT_VENDOR "StoneyDSP")
+option(USE_EXTERN "Use extern folder to resolve dependencies" ON)
+option(GIT_SUBMODULE "Check submodules during build" ON)
+option(USE_VCPKG "Use local vcpkg if found" ON)
 option(USE_FOO "Use foo" OFF)
 option(USE_TESTS "Use tests" ON)
 option(ENABLE_LOGGING "Log cache variables to console terminal" OFF)
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
-option(USE_EXTERN "Use extern folder to resolve dependencies" ON)
-option(GIT_SUBMODULE "Check submodules during build" ON)
-option(USE_VCPKG "Use local vcpkg if found" ON)
 option(ASAN_ENABLED "Build this target with AddressSanitizer" OFF)
-set_property(GLOBAL PROPERTY USE_FOLDERS YES)
 
-message("USE_FOO = " ${USE_FOO})
-message("USE_TESTS = " ${USE_TESTS})
 message("CMAKE_PROJECT_VENDOR = " ${CMAKE_PROJECT_VENDOR})
-message("ENABLE_LOGGING = " ${ENABLE_LOGGING})
-message("BUILD_SHARED_LIBS = " ${BUILD_SHARED_LIBS})
 message("USE_EXTERN = " ${USE_EXTERN})
 message("GIT_SUBMODULE = " ${GIT_SUBMODULE})
 message("USE_VCPKG = " ${USE_VCPKG})
+message("USE_FOO = " ${USE_FOO})
+message("USE_TESTS = " ${USE_TESTS})
+message("ENABLE_LOGGING = " ${ENABLE_LOGGING})
+message("BUILD_SHARED_LIBS = " ${BUILD_SHARED_LIBS})
+message("ASAN_ENABLED = " ${ASAN_ENABLED})
 message("\n")
 
 # ============================================================================ #
@@ -122,20 +90,7 @@ message("\n")
 
 message("Detecting CMake project...\n")
 
-# set project maintainer/vendor name
-set(PROJECT_VENDOR ${CMAKE_PROJECT_VENDOR} CACHE STRING "Author/maintainer of this project:")
-
-# set version using external "VERSION" file
-file(READ ${CMAKE_CURRENT_LIST_DIR}/VERSION LOCAL_VERSION)
-string(REGEX MATCH "VERSION_MAJOR ([0-9]*)" _ ${LOCAL_VERSION})
-set(LOCAL_VERSION_MAJOR ${CMAKE_MATCH_1})
-string(REGEX MATCH "VERSION_MINOR ([0-9]*)" _ ${LOCAL_VERSION})
-set(LOCAL_VERSION_MINOR ${CMAKE_MATCH_1})
-string(REGEX MATCH "VERSION_PATCH ([0-9]*)" _ ${LOCAL_VERSION})
-set(LOCAL_VERSION_PATCH ${CMAKE_MATCH_1})
-string(REGEX MATCH "VERSION_TWEAK ([0-9]*)" _ ${LOCAL_VERSION})
-set(LOCAL_VERSION_TWEAK ${CMAKE_MATCH_1})
-set(_ "")
+include(${CMAKE_CURRENT_LIST_DIR}/support/cmake/version-handling.cmake)
 
 # Create a CMake project here.
 project (CMakeProject1
@@ -148,6 +103,9 @@ project (CMakeProject1
   LANGUAGES
     C CXX
 )
+
+# set project maintainer/vendor name
+set(PROJECT_VENDOR ${CMAKE_PROJECT_VENDOR} CACHE STRING "Author/maintainer of this project:")
 
 # specify the C standard
 set(CMAKE_C_STANDARD 17)
@@ -229,6 +187,21 @@ message("\n")
 
 # ============================================================================ #
 #
+#                             Add tests to project
+#
+# ============================================================================ #
+
+if(USE_TESTS)
+  message(STATUS "Testing enabled.\n")
+  include(${PROJECT_SOURCE_DIR}/tests/CMakeLists.txt)
+else(USE_TESTS)
+  message(STATUS "Testing disabled.\n")
+endif(USE_TESTS)
+
+message("\n")
+
+# ============================================================================ #
+#
 #                    Add target: CMakeProject1-library
 #
 # ============================================================================ #
@@ -236,50 +209,50 @@ message("\n")
 if(USE_FOO)
   # Add output target.
 message("Adding target...")
-add_library (${PROJECT_NAME}-SharedCode)
-message("Added target: ${PROJECT_NAME}-SharedCode.lib\n")
+add_library (Foo)
+message("Added target: Foo.lib\n")
 
 # Set target version.
-set_property(TARGET ${PROJECT_NAME}-SharedCode PROPERTY VERSION ${LOCAL_VERSION})
-set_property(TARGET ${PROJECT_NAME}-SharedCode PROPERTY SOVERSION ${LOCAL_VERSION_MAJOR})
-set_property(TARGET ${PROJECT_NAME}-SharedCode PROPERTY INTERFACE_${PROJECT_NAME}-SharedCode_MAJOR_VERSION ${LOCAL_VERSION_MAJOR})
-set_property(TARGET ${PROJECT_NAME}-SharedCode APPEND PROPERTY COMPATIBLE_INTERFACE_STRING ${PROJECT_NAME}-SharedCode_MAJOR_VERSION)
+set_property(TARGET Foo PROPERTY VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK})
+set_property(TARGET Foo PROPERTY SOVERSION ${LOCAL_VERSION_MAJOR})
+set_property(TARGET Foo PROPERTY INTERFACE_Foo_MAJOR_VERSION ${LOCAL_VERSION_MAJOR})
+set_property(TARGET Foo APPEND PROPERTY COMPATIBLE_INTERFACE_STRING Foo_MAJOR_VERSION)
 message("Added target version ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}\n")
 
 # Add source files and headers to target.
-target_sources(${PROJECT_NAME}-SharedCode
+target_sources(Foo
   PUBLIC
     ${PROJECT_SOURCE_DIR}/src/foo/foo.cpp
     ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo/foo.h
 )
 
 # Add some headers.
-message("Including headers in target ${PROJECT_NAME}-SharedCode...\n")
+message("Including headers in target Foo.lib...\n")
 #include directories for our executable program
-target_include_directories(${PROJECT_NAME}-SharedCode
+target_include_directories(Foo
   PUBLIC
     # let's include the foo.h...
-    ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/foo
+    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
 )
 message("Added ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}\n")
 
 # link our imported vcpkg package library "fmt" (and others) to our shared code target...
 find_package(fmt CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME}-SharedCode
-  PRIVATE
+target_link_libraries(Foo
+  PUBLIC
     fmt::fmt
 )
-message("Linked vcpkg library fmt to target ${PROJECT_NAME}-SharedCode")
+message("Linked vcpkg library fmt to target Foo.lib")
 
 # let's set the foo source folder as a usage requirement...
-target_include_directories(${PROJECT_NAME}-SharedCode
+target_include_directories(Foo
   INTERFACE
     ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
 )
 
 # install the definition-containing library (.lib)
 install(
-  TARGETS ${PROJECT_NAME}-SharedCode
+  TARGETS Foo
   DESTINATION lib
 )
 
@@ -289,7 +262,17 @@ install(
   DESTINATION include/${PROJECT_NAME}/foo
 )
 
-  list(APPEND EXTRA_LIBS ${PROJECT_NAME}-SharedCode)
+# Address sanitizer
+if(ASAN_ENABLED)
+  if(MSVC)
+    target_compile_options(Foo PUBLIC /fsanitize=address)
+  else()
+    target_compile_options(Foo PUBLIC -fsanitize=address)
+    target_link_options(Foo PUBLIC -fsanitize=address)
+  endif()
+endif()
+
+list(APPEND EXTRA_LIBS Foo)
 endif(USE_FOO)
 
 message("\n")
@@ -302,25 +285,20 @@ message("\n")
 
 # Add output target.
 message("Adding target...")
-add_executable (${PROJECT_NAME}-Executable)
-message("Added target: ${PROJECT_NAME}-Executable.exe\n")
+add_executable (Main)
+message("Added target: Main.exe\n")
 
 # Set target version.
-#set_property(TARGET ${PROJECT_NAME}-Executable PROPERTY VERSION ${LOCAL_VERSION})
-#set_property(TARGET ${PROJECT_NAME}-Executable PROPERTY SOVERSION ${LOCAL_VERSION_MAJOR})
-#set_property(TARGET ${PROJECT_NAME}-Executable PROPERTY INTERFACE_${PROJECT_NAME}-Executable_MAJOR_VERSION ${LOCAL_VERSION_MAJOR})
-#set_property(TARGET ${PROJECT_NAME}-Executable APPEND PROPERTY COMPATIBLE_INTERFACE_STRING ${PROJECT_NAME}-Executable_MAJOR_VERSION)
-#message("Added target version ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}\n")
-
-
-# Set target version.
-set_target_properties(${PROJECT_NAME}-Executable
+set_target_properties(Main
   PROPERTIES
-    VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK})
+    VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}
+    SOVERSION ${LOCAL_VERSION_MAJOR}
+    INTERFACE_Main_MAJOR_VERSION ${LOCAL_VERSION_MAJOR})
+set_property(TARGET Main APPEND PROPERTY COMPATIBLE_INTERFACE_STRING Main_MAJOR_VERSION)
 message("Added target version ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}\n")
 
 # Add source files and headers to target.
-target_sources(${PROJECT_NAME}-Executable
+target_sources(Main
   PUBLIC
     ${PROJECT_SOURCE_DIR}/src/main.cpp
     ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/main.h
@@ -328,9 +306,9 @@ target_sources(${PROJECT_NAME}-Executable
 )
 
 # Add some headers.
-message("Including headers in target ${PROJECT_NAME}-Executable...\n")
+message("Including headers in target Main.exe...\n")
 #include directories for our executable program
-target_include_directories(${PROJECT_NAME}-Executable
+target_include_directories(Main
   PUBLIC
     # let's include the config.h...
     ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}
@@ -341,11 +319,11 @@ message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
 message("Added ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}\n")
 
 # Link any extra libraries to our "main" out...
-target_link_libraries(${PROJECT_NAME}-Executable
+target_link_libraries(Main
   PUBLIC
     ${EXTRA_LIBS}
 )
-message("Linked EXTRA_LIBS (if any) to target ${PROJECT_NAME}-Executable\n")
+message("Linked EXTRA_LIBS (if any) to target Main.exe\n")
 message("EXTRA_LIBS = ${EXTRA_LIBS}\n")
 
 # install the configured c++ header
@@ -356,34 +334,19 @@ install(
 
 # install the .exe
 install(
-  TARGETS ${PROJECT_NAME}-Executable
+  TARGETS Main
   DESTINATION bin
 )
 
 # Address sanitizer
 if(ASAN_ENABLED)
   if(MSVC)
-    target_compile_options(${PROJECT_NAME}-Executable PUBLIC /fsanitize=address)
+    target_compile_options(Main PUBLIC /fsanitize=address)
   else()
-    target_compile_options(${PROJECT_NAME}-Executable PUBLIC -fsanitize=address)
-    target_link_options(${PROJECT_NAME}-Executable PUBLIC -fsanitize=address)
+    target_compile_options(Main PUBLIC -fsanitize=address)
+    target_link_options(Main PUBLIC -fsanitize=address)
   endif()
 endif()
-
-message("\n")
-
-# ============================================================================ #
-#
-#                 Add tests to target: CMakeProject1-executable
-#
-# ============================================================================ #
-
-if(USE_TESTS)
-  message(STATUS "Testing enabled.\n")
-  include(${PROJECT_SOURCE_DIR}/tests/CMakeLists.txt)
-else(USE_TESTS)
-  message(STATUS "Testing disabled.\n")
-endif(USE_TESTS)
 
 message("\n")
 
@@ -410,6 +373,7 @@ set(CPACK_SOURCE_IGNORE_FILES
     /build
     /downloads
     /installed
+    /vcpkg
     /.*build.*
     /\\\\.DS_Store
 )
