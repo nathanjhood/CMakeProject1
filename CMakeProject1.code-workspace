@@ -20,7 +20,15 @@
 			"${workspaceFolder}\\build\\**",
 			"${workspaceFolder}\\installed\\**",
 			"${workspaceFolder}\\src\\**",
-			"${workspaceFolder}\\tests\\**"
+			"${workspaceFolder}\\tests\\**",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\ucrt",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\um",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\shared",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\winrt",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\cppwinrt",
+			"${env.VCToolsInstallDir}\\include",
+			"${env:SystemDrive}\\msys64\\mingw64\\include",
+			"${env:SystemDrive}\\msys64\\usr\\include"
 		],
 		"C_Cpp.default.browse.databaseFilename": "${workspaceFolder}\\.vscode\\browse",
 		"C_Cpp.default.compilerPath": "${env.VCToolsInstallDir}\\**",
@@ -35,7 +43,15 @@
 			"${workspaceFolder}\\build\\**",
 			"${workspaceFolder}\\include\\**",
 			"${workspaceFolder}\\installed\\**",
-			"${workspaceFolder}\\tests\\**"
+			"${workspaceFolder}\\tests\\**",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\ucrt",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\um",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\shared",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\winrt",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\cppwinrt",
+			"${env.VCToolsInstallDir}\\include",
+			"${env:SystemDrive}\\msys64\\mingw64\\include",
+			"${env:SystemDrive}\\msys64\\usr\\include"
 		],
 		"C_Cpp.default.intelliSenseMode": "windows-msvc-x64",
 		"C_Cpp.default.mergeConfigurations": true,
