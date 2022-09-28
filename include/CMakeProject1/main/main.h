@@ -23,7 +23,7 @@
 // Including locally-defined class "Foo" which returns "bar"
 #ifdef USE_FOO
 
-    #include "foo.h"
+    #include "../foo/foo.h"
 
 #else
 

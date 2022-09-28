@@ -10,7 +10,7 @@
  *******************************************************************************
 */
 
-#include "../include/CMakeProject1/main.h"
+#include "main.h"
 
 /** main.
  * @brief Entry point for program execution.
