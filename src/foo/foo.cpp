@@ -1,5 +1,5 @@
 
-#include "../../include/CMakeProject1/foo/foo.h"
+#include "foo.h"
 
 Foo::Foo() : bar(1)
 {
