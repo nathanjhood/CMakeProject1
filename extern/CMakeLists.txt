@@ -110,10 +110,6 @@ if(USE_VCPKG)
   endif(DEFINED ${CMAKE_TOOLCHAIN_FILE})
 endif(USE_VCPKG)
 
-#vcpkg_cmake_get_vars(CMAKE_VARS_FILE)
-#include(${CMAKE_VARS_FILE})
-#message(STATUS "detected CXX flags: ${VCPKG_DETECTED_CMAKE_CXX_FLAGS}\n")
-
 message("CMAKE_CXX_FLAGS = ${CMAKE_CXX_FLAGS}")
 message("CMAKE_CXX_FLAGS_DEBUG = ${CMAKE_CXX_FLAGS_DEBUG}")
 message("CMAKE_CXX_FLAGS_RELEASE = ${CMAKE_CXX_FLAGS_RELEASE}")
@@ -155,5 +151,9 @@ message("VCPKG_C_FLAGS_RELWITHDEBINFO = ${VCPKG_C_FLAGS_RELWITHDEBINFO}\n")
 #if (CMAKE_GENERATOR MATCHES "Visual Studio")
 #  add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/support/msbuild)
 #endif()
+
+#vcpkg_cmake_get_vars(CMAKE_VARS_FILE)
+#include(${CMAKE_VARS_FILE})
+#message(STATUS "detected CXX flags: ${VCPKG_DETECTED_CMAKE_CXX_FLAGS}\n")
 
 message("\n")

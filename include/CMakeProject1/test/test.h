@@ -18,7 +18,9 @@
 #define TEST_H_INCLUDED
 
 // Catch2 header.
-#include "catch.hpp"
+//#include "catch.hpp"
+
+#include "catch2/catch_all.hpp"
 
 
 #endif // TEST_H_INCLUDED

@@ -26,8 +26,14 @@
 #endif
 
 // Third-Party packages.
+#include "fmt/core.h"
 #include "fmt/format.h"
+#include "fmt/ostream.h"
+#include "fmt/printf.h"
 
+/** Foo
+* @brief Message handler using fmt library.
+*/
 class Foo
 {
 public:
@@ -43,6 +49,9 @@ public:
 
 private:
 
+    /** bar
+    * @brief Generic integer value for testing purposes.
+    */
     int bar {0};
 };
 
