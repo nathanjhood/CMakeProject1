@@ -318,6 +318,9 @@ endif(USE_FOO)
 
 if(USE_TESTS)
 
+message(STATUS "Testing enabled.\n")
+message(STATUS "Adding target...\n")
+
 #enable CMake-style tests
 enable_testing()
 
@@ -375,6 +378,11 @@ install(
 list(APPEND EXTRA_LIBS Tests)
 list(APPEND INSTALL_TARGETS Tests)
 
+message("Added target: Tests.lib\n")
+
+else(USE_TESTS)
+message(STATUS "Testing disabled.\n")
+
 endif(USE_TESTS)
 
 # ============================================================================ #
@@ -382,6 +390,8 @@ endif(USE_TESTS)
 #                            Add target: "Main.lib"
 #
 # ============================================================================ #
+
+message(STATUS "Adding target...\n")
 
 #add_library(Main STATIC ${CM_VARS_CONFIG})
 #add_library(CMakeProject1::Main ALIAS Main)
@@ -434,6 +444,8 @@ install(
 
 #list(APPEND EXTRA_LIBS Main)
 list(APPEND INSTALL_TARGETS Main)
+
+message("Added target: Main.exe\n")
 
 # ============================================================================ #
 #
