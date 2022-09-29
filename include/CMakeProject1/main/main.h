@@ -23,7 +23,7 @@
 // Including locally-defined class "Foo" which returns "bar"
 #ifdef USE_FOO
 
-    #include "foo.h"
+    #include "../foo/foo.h"
 
 #else
 
@@ -53,12 +53,9 @@
 
 /** main.
  * @brief Entry point for program execution.
- *
- * @param argc Number of strings in array argv.
- * @param argv Array of command-line argument strings.
  * @return Exit code.
  */
-int main(int argc, char** argv);
+int main();
 
 /** Foo.
  * @brief Object for handling config.h messages

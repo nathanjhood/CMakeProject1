@@ -17,32 +17,41 @@
 		"C_Cpp.default.browse.limitSymbolsToIncludedHeaders": true,
 		"C_Cpp.default.browse.path": [
 			"${default}",
-			"${vcpkgRoot}\\x86-windows\\include",
-			"${vcpkgRoot}\\x64-windows\\include",
-			"${workspaceFolder}\\extern\\**",
-			"${workspaceFolder}\\include\\**",
-			"${workspaceFolder}\\support\\**",
+			"${workspaceFolder}\\build\\**",
+			"${workspaceFolder}\\installed\\**",
 			"${workspaceFolder}\\src\\**",
 			"${workspaceFolder}\\tests\\**",
 			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\ucrt",
 			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\um",
 			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\shared",
-			"${env.VCToolsInstallDir}\\include"
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\winrt",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\cppwinrt",
+			"${env.VCToolsInstallDir}\\include",
+			"${env:SystemDrive}\\msys64\\mingw64\\include",
+			"${env:SystemDrive}\\msys64\\usr\\include"
 		],
+		"C_Cpp.default.browse.databaseFilename": "${workspaceFolder}\\.vscode\\browse",
+		"C_Cpp.default.compilerPath": "${env.VCToolsInstallDir}\\**",
 		"C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+		"C_Cpp.formatting": "Default",
 		"C_Cpp.default.defines": [
 			"UNICODE",
             "_UNICODE"
 		],
 		"C_Cpp.default.includePath": [
 			"${default}",
-			"${vcpkgRoot}\\x86-windows\\include",
-			"${vcpkgRoot}\\x64-windows\\include",
-			"${workspaceFolder}\\extern\\**",
+			"${workspaceFolder}\\build\\**",
 			"${workspaceFolder}\\include\\**",
-			"${workspaceFolder}\\support\\**",
-			"${workspaceFolder}\\src\\**",
-			"${workspaceFolder}\\tests\\**"
+			"${workspaceFolder}\\installed\\**",
+			"${workspaceFolder}\\tests\\**",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\ucrt",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\um",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\shared",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\winrt",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\cppwinrt",
+			"${env.VCToolsInstallDir}\\include",
+			"${env:SystemDrive}\\msys64\\mingw64\\include",
+			"${env:SystemDrive}\\msys64\\usr\\include"
 		],
 		"C_Cpp.default.intelliSenseMode": "windows-msvc-x64",
 		"C_Cpp.default.mergeConfigurations": true,
@@ -51,7 +60,11 @@
 			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\ucrt",
 			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\um",
 			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\shared",
-			"${env.VCToolsInstallDir}\\include"
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\winrt",
+			"${env.WindowsSdkDir}\\include\\${env.WindowsSDKVersion}\\cppwinrt",
+			"${env.VCToolsInstallDir}\\include",
+			"${env:SystemDrive}\\msys64\\mingw64\\include",
+			"${env:SystemDrive}\\msys64\\usr\\include"
 		],
 		"C_Cpp.intelliSenseCachePath": "${workspaceFolder}\\.vscode\\browse",
 		"C_Cpp.dimInactiveRegions": true,
@@ -72,8 +85,13 @@
 		"C_Cpp.intelliSenseEngineFallback": "Disabled",
 		"C_Cpp.intelliSenseMemoryLimit": 4096,
 		"cmake.loggingLevel": "info",
+		"cmake.sourceDirectory": "${workspaceFolder}",
+		"cmake.buildDirectory": "${workspaceFolder}\\build",
+		"cmake.installPrefix": "${workspaceFolder}\\installed",
 		"cmake.useCMakePresets": "auto",
 		"cmake.configureEnvironment": {},
+		"cmake.toolset": "x64",
+		"cmake.platform": "x64",
 		"cmake.configureOnOpen": true,
 		"cmake.configureOnEdit": false,
 		"cmake.skipConfigureIfCachePresent": true,
@@ -111,6 +129,9 @@
 		"files.trimFinalNewlines": true,
 		"files.trimTrailingWhitespace": true,
 		"files.associations": {
+			"*.cmake": "cmake",
+			"*.cmake.in": "cmake",
+			"*.h.in": "cpp",
 			"atomic": "cpp",
 			"bit": "cpp",
 			"cctype": "cpp",
@@ -202,8 +223,7 @@
 			"xlocmes": "cpp",
 			"xlocmon": "cpp",
 			"xloctime": "cpp",
-			"xtree": "cpp",
-			"*.in": "cpp"
+			"xtree": "cpp"
 		},
 		"json.schemaDownload.enable": true,
 		"json.validate.enable": true,
@@ -225,6 +245,7 @@
 		],
 		"powershell.powerShellDefaultVersion": "PowerShell Core 7 (x64)",
 		"powershell.enableProfileLoading": true,
+		"powershell.cwd": "${workspaceFolder}",
 		"powershell.startAutomatically": true,
 		"powershell.promptToUpdatePowerShell": true,
 		"breadcrumbs.enabled": true,
@@ -237,6 +258,7 @@
 		"git.detectSubmodules": true,
 		"git.detectSubmodulesLimit": 10,
 		"git.enabled": true,
+		"git.logLevel": "Info",
 		"git.ignoreSubmodules": false,
 		"git.requireGitUserConfig": true,
 		"git.pullTags": true,
@@ -477,9 +499,7 @@
 	"extensions": {
 		"recommendations": [
 			"ms-vscode.cpptools",
-			"ms-vscode.cmake-tools",
-			"ms-vscode.powershell",
-			"cschlosser.doxdocgen"
+			"ms-vscode.cmake-tools"
 		]
 	}
 }

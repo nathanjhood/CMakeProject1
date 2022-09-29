@@ -14,12 +14,9 @@
 
 /** main.
  * @brief Entry point for program execution.
- *
- * @param argc Number of strings in array argv.
- * @param argv Array of command-line argument strings.
  * @return Exit code.
  */
-int main(int argc, char** argv)
+int main()
 {
 	foo.tool();
 
