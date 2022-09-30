@@ -28,7 +28,16 @@ endif()
 # Top-level CMake project file, do global configuration
 # and include sub-projects here.
 
-# We can also define some useful options and set defaults here...
+# Determine if fmt is built as a subproject (using add_subdirectory)
+# or if it is the master project.
+if (CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
+  message(STATUS "CMake found at: ${CMAKE_COMMAND}\n")
+  message(STATUS "Initiating CMake v${CMAKE_VERSION}\n")
+else()
+  message(STATUS "${CMAKE_PROJECT_NAME} is the top-level project\n")
+endif ()
+
+# We can define some useful options and set defaults here...
 set(CMAKE_PROJECT_VENDOR "StoneyDSP")
 option(ENABLE_LOGGING "Log cache variables to console terminal" OFF)
 option(USE_EXTERN "Use extern folder to resolve dependencies" ON)
@@ -38,10 +47,14 @@ option(USE_FOO "Use foo" ON)
 option(USE_TESTS "Use tests" ON)
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
 option(ASAN_ENABLED "Build this target with AddressSanitizer" OFF)
+
+# https://stackoverflow.com/questions/48580399/how-to-ensure-a-generated-config-h-file-is-in-the-include-path
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 # Use external version file (could be optional?)
 include(${CMAKE_CURRENT_LIST_DIR}/support/cmake/version-handling.cmake)
+
+#include_directories(${CMAKE_CURRENT_LIST_DIR}/support/msbuild)
 
 # get access to helper functions for creating config files
 include(CMakePackageConfigHelpers)
@@ -306,7 +319,7 @@ install(
 list(APPEND EXTRA_LIBS Foo)
 list(APPEND INSTALL_TARGETS Foo)
 
-message("Added target: Foo.lib\n")
+message(STATUS "Added target: Foo.lib\n")
 
 endif(USE_FOO)
 
@@ -378,7 +391,7 @@ install(
 list(APPEND EXTRA_LIBS Tests)
 list(APPEND INSTALL_TARGETS Tests)
 
-message("Added target: Tests.lib\n")
+message(STATUS "Added target: Tests.lib\n")
 
 else(USE_TESTS)
 message(STATUS "Testing disabled.\n")
@@ -445,7 +458,7 @@ install(
 #list(APPEND EXTRA_LIBS Main)
 list(APPEND INSTALL_TARGETS Main)
 
-message("Added target: Main.exe\n")
+message(STATUS "Added target: Main.exe\n")
 
 # ============================================================================ #
 #
