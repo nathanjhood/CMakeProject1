@@ -45,6 +45,8 @@ public:
 
     void message(const char* string);
 
+    void message(std::string string);
+
     void returnBar();
 
 private:

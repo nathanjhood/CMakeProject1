@@ -39,7 +39,9 @@
 
         inline void tool() { std::cout << "Using std::iostream..." << std::endl; }
 
-        inline void message(std::string string) { std::cout << string << std::endl; }
+        inline void message(const char* string = { "null" }) { std::cout << string << std::endl; }
+
+        inline void message(std::string string = { "null" }) { std::cout << string << std::endl; }
 
         //inline void incBar(int inc) { bar += inc; }
 
