@@ -44,6 +44,4 @@
 #cmakedefine USE_VCPKG
 #cmakedefine USE_FOLDERS
 
-
-
 #endif // CMAKEPROJECT1_CONFIG_H_INCLUDED
