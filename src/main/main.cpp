@@ -44,9 +44,9 @@ int main()
 	foo.message("\n");
 
 	// Keep app running (if you want...)
-	while (true)
-	{
-	}
+	// while (true)
+	// {
+	// }
 
 	// Exit application...
 	return 0;
