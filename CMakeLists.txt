@@ -171,6 +171,13 @@ message("${PROJECT_DESCRIPTION}")
 message("${PROJECT_HOMEPAGE_URL}")
 message("@ ${PROJECT_VENDOR}\n")
 
+# Check if we are in the top-level project or not:
+if (NOT PROJECT_IS_TOP_LEVEL)
+    message(STATUS "${PROJECT_NAME} is a sub-project of ${CMAKE_PROJECT_NAME}\n")
+else()
+    message(STATUS "${CMAKE_PROJECT_NAME} is a top-level project\n")
+endif()
+
 message("\n")
 
 # ============================================================================ #
@@ -272,9 +279,11 @@ configure_file(
   @ONLY)
 
 # create config header
+message("Creating config header file...")
 configure_file(
 	${PROJECT_SOURCE_DIR}/support/cmake/${PROJECT_NAME}Config.h.in
 	${CM_VARS_CONFIG})
+message("Created config header file.\n")
 
 # install config header
 install(
