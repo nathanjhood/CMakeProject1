@@ -28,17 +28,40 @@ endif()
 # Top-level CMake project file, do global configuration
 # and include sub-projects here.
 
-# Determine if fmt is built as a subproject (using add_subdirectory)
-# or if it is the master project.
+# PROJECT_IS_TOP_LEVEL determines whether the project is being used from root
+# or if it is added as a dependency (through add_subdirectory for example).
 if (CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
+  set(PROJECT_IS_TOP_LEVEL TRUE)
   message(STATUS "CMake found at: ${CMAKE_COMMAND}\n")
   message(STATUS "Initiating CMake v${CMAKE_VERSION}\n")
 else()
+  set(PROJECT_IS_TOP_LEVEL FALSE)
   message(STATUS "${CMAKE_PROJECT_NAME} is the top-level project\n")
+endif ()
+
+# Ensure a valid build type is set
+if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+    if(PROJECT_IS_TOP_LEVEL)
+        set(DEFAULT_BUILD_TYPE Debug)
+    else()
+        message(WARNING "Default build type is not set (CMAKE_BUILD_TYPE)")
+    endif()
+    message(STATUS "Setting build type to '${DEFAULT_BUILD_TYPE}' as none was specified.")
+    set(CMAKE_BUILD_TYPE "${DEFAULT_BUILD_TYPE}" CACHE STRING "Choose the type of build." FORCE)
+    set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
+endif()
+
+# Print the flags for the user
+if (DEFINED CMAKE_BUILD_TYPE)
+    message(STATUS "Generated build type: ${CMAKE_BUILD_TYPE}")
+else ()
+    message(STATUS "Generated config types: ${CMAKE_CONFIGURATION_TYPES}")
 endif ()
 
 # We can define some useful options and set defaults here...
 set(CMAKE_PROJECT_VENDOR "StoneyDSP")
+# Get the list of ignored files from .gitignore.
+set(GIT_IGNORE ${PROJECT_SOURCE_DIR}/.gitignore)
 option(ENABLE_LOGGING "Log cache variables to console terminal" OFF)
 option(USE_EXTERN "Use extern folder to resolve dependencies" ON)
 option(GIT_SUBMODULE "Check submodules during build" ON)
@@ -46,7 +69,8 @@ option(USE_VCPKG "Use local vcpkg if found" ON)
 option(USE_FOO "Use foo" ON)
 option(USE_TESTS "Use tests" ON)
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
-option(ASAN_ENABLED "Build this target with AddressSanitizer" OFF)
+option(ASAN_ENABLED "Build with AddressSanitizer" OFF)
+set(USE_FOLDERS ON)
 
 # https://stackoverflow.com/questions/48580399/how-to-ensure-a-generated-config-h-file-is-in-the-include-path
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -56,19 +80,15 @@ include(${CMAKE_CURRENT_LIST_DIR}/support/cmake/version-handling.cmake)
 
 #include_directories(${CMAKE_CURRENT_LIST_DIR}/support/msbuild)
 
-# get access to helper functions for creating config files
-include(CMakePackageConfigHelpers)
-
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
-set(is_x64 TRUE)
+  set(USE_X64 TRUE)
 else()
-set(is_x64 FALSE)
+  set(USE_X64 FALSE)
 endif()
 
 set(CMAKE_MODULE_PATH
   ${CMAKE_MODULE_PATH}
   ${CMAKE_CURRENT_SOURCE_DIR}/support/cmake
-  ${CMAKE_CURRENT_SOURCE_DIR}/installed/share
 )
 
 message("Options:\n")
@@ -82,6 +102,7 @@ message("USE_TESTS = " ${USE_TESTS})
 message("BUILD_SHARED_LIBS = " ${BUILD_SHARED_LIBS})
 message("ASAN_ENABLED = " ${ASAN_ENABLED})
 message("CMAKE_INCLUDE_CURRENT_DIR = " ${CMAKE_INCLUDE_CURRENT_DIR})
+
 message("\n")
 
 # ============================================================================ #
@@ -89,9 +110,6 @@ message("\n")
 #                           Configure Dependencies
 #
 # ============================================================================ #
-
-# Get the list of ignored files from .gitignore.
-set(GIT_IGNORE ${PROJECT_SOURCE_DIR}/.gitignore)
 
 if(USE_EXTERN)
   # add required packages
@@ -109,6 +127,8 @@ if(USE_EXTERN)
   endif()
   message(STATUS "${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt>\n")
 endif()
+
+message("\n")
 
 # ============================================================================ #
 #
@@ -150,6 +170,8 @@ message("${PROJECT_NAME} v${PROJECT_VERSION}")
 message("${PROJECT_DESCRIPTION}")
 message("${PROJECT_HOMEPAGE_URL}")
 message("@ ${PROJECT_VENDOR}\n")
+
+message("\n")
 
 # ============================================================================ #
 #
@@ -195,26 +217,19 @@ message("CPack ignores: ${CPACK_SOURCE_IGNORE_FILES}\n")
 # include installer generator
 include(CPack)
 
-# ============================================================================ #
-#
-#                           Configure Folders
-#
-# ============================================================================ #
-
 # make cache variables for install destinations
 include(GNUInstallDirs)
 
-# Configure folder structure.
-set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
-set(ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
-set(LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
-set(PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+message("\n")
 
 # ============================================================================ #
 #
 #                           Configure Project
 #
 # ============================================================================ #
+
+# get access to helper functions for creating config files
+include(CMakePackageConfigHelpers)
 
 set(${PROJECT_NAME}_CMAKE_DIR ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME} CACHE STRING "Installation directory for cmake files, a relative path that will be joined with ${CMAKE_INSTALL_PREFIX} or an absolute path.")
 set(${PROJECT_NAME}_INC_DIR ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME} CACHE STRING "Installation directory for include files, a relative path that will be joined with ${CMAKE_INSTALL_PREFIX} or an absolute path.")
@@ -225,6 +240,16 @@ set(PKGCONFIG ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.pc)
 set(TARGETS_EXPORT_NAME ${PROJECT_NAME}Targets)
 set(${PROJECT_NAME}_LIB_DIR ${CMAKE_INSTALL_LIBDIR} CACHE STRING "Installation directory for libraries, a relative path that will be joined to ${CMAKE_INSTALL_PREFIX} or an absolute path.")
 set(${PROJECT_NAME}_PKGCONFIG_DIR ${CMAKE_INSTALL_LIBDIR}/pkgconfig CACHE PATH "Installation directory for pkgconfig (.pc) files, a relative path that will be joined with ${CMAKE_INSTALL_PREFIX} or an absolute path.")
+
+# Configure folder structure.
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib CACHE PATH "Archive output dir.")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib CACHE PATH "Library output dir.")
+set(CMAKE_PDB_OUTPUT_DIRECTORY     ${CMAKE_BINARY_DIR}/bin CACHE PATH "PDB (MSVC debug symbol)output dir.")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin CACHE PATH "Executable/dll output dir.")
+
+include(JoinPaths)
+join_paths(libdir_for_pc_file "\${exec_prefix}" "${CMAKE_INSTALL_LIBDIR}")
+join_paths(includedir_for_pc_file "\${prefix}" "${CMAKE_INSTALL_INCLUDEDIR}")
 
 # create config file
 configure_package_config_file(
@@ -257,6 +282,8 @@ install(
   DESTINATION ${${PROJECT_NAME}_INC_DIR}
 )
 
+message("\n")
+
 # ============================================================================ #
 #
 #                            Add target: "Foo.lib"
@@ -264,64 +291,59 @@ install(
 # ============================================================================ #
 
 if(USE_FOO)
+  message(STATUS "Foo enabled.")
+  message(STATUS "Adding target...")
 
-message(STATUS "Adding target...\n")
+  # create library
+  add_library(Foo STATIC)
+  add_library(CMakeProject1::Foo ALIAS Foo)
 
-# create library
-add_library(Foo STATIC)
-add_library(CMakeProject1::Foo ALIAS Foo)
+  # Set target version.
+  set_target_properties(Foo
+    PROPERTIES
+      VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}
+      SOVERSION ${LOCAL_VERSION_MAJOR}
+      INTERFACE_Foo_MAJOR_VERSION ${LOCAL_VERSION_MAJOR})
+  set_property(TARGET Foo APPEND PROPERTY COMPATIBLE_INTERFACE_STRING Foo_MAJOR_VERSION)
 
-# Set target version.
-set_target_properties(Foo
-  PROPERTIES
-    VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}
-    SOVERSION ${LOCAL_VERSION_MAJOR}
-    INTERFACE_Foo_MAJOR_VERSION ${LOCAL_VERSION_MAJOR})
-set_property(TARGET Foo APPEND PROPERTY COMPATIBLE_INTERFACE_STRING Foo_MAJOR_VERSION)
+  # find and link to fmt package via vcpkg
+  find_package(fmt CONFIG REQUIRED)
+  target_link_libraries(Foo
+    PUBLIC
+      fmt::fmt
+  )
 
-# find and link to fmt package via vcpkg
-find_package(fmt CONFIG REQUIRED)
-target_link_libraries(Foo
-  PUBLIC
-    fmt::fmt
-)
+  # Add source files and headers to target.
+  target_sources(Foo
+    PRIVATE
+      ${PROJECT_SOURCE_DIR}/src/foo/foo.cpp
+      ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo/foo.h
+  )
 
-# Add source files and headers to target.
-target_sources(Foo
-  PRIVATE
-    ${PROJECT_SOURCE_DIR}/src/foo/foo.cpp
-    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo/foo.h
-)
+  # add include directories
+  target_include_directories(Foo
+    PUBLIC
+      $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo>
+      $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/foo>
+  )
 
-# add include directories
-target_include_directories(Foo
-	PUBLIC
-    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo>
-    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/foo>
-)
+  # install the c++ "foo" headers
+  install(
+    FILES ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo/foo.h
+    DESTINATION ${${PROJECT_NAME}_INC_DIR}/foo
+  )
 
-# Address sanitizer
-if(ASAN_ENABLED)
-  if(MSVC)
-    target_compile_options(Foo PUBLIC /fsanitize=address)
-  else()
-    target_compile_options(Foo PUBLIC -fsanitize=address)
-    target_link_options(Foo PUBLIC -fsanitize=address)
-  endif()
-endif()
+  list(APPEND EXTRA_LIBS Foo)
+  list(APPEND INSTALL_TARGETS Foo)
 
-# install the c++ "foo" headers
-install(
-  FILES ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo/foo.h
-  DESTINATION ${${PROJECT_NAME}_INC_DIR}/foo
-)
+  message(STATUS "Added target: Foo.lib\n")
 
-list(APPEND EXTRA_LIBS Foo)
-list(APPEND INSTALL_TARGETS Foo)
-
-message(STATUS "Added target: Foo.lib\n")
+else(USE_FOO)
+  message(STATUS "Foo disabled.\n")
 
 endif(USE_FOO)
+
+message("\n")
 
 # ============================================================================ #
 #
@@ -331,72 +353,65 @@ endif(USE_FOO)
 
 if(USE_TESTS)
 
-message(STATUS "Testing enabled.\n")
-message(STATUS "Adding target...\n")
+  message(STATUS "Testing enabled.")
+  message(STATUS "Adding target...")
 
-#enable CMake-style tests
-enable_testing()
+  #enable CMake-style tests
+  enable_testing()
 
-# test - does the application run?
-include(${CMAKE_CURRENT_LIST_DIR}/tests/run_from_bin_tree.cmake)
+  # test - does the application run?
+  include(${CMAKE_CURRENT_LIST_DIR}/tests/run_from_bin_tree.cmake)
 
-# create library
-add_library(Tests STATIC)
-add_library(CMakeProject1::Tests ALIAS Tests)
+  # create library
+  add_library(Tests STATIC)
+  add_library(CMakeProject1::Tests ALIAS Tests)
 
-# Set target version.
-set_target_properties(Tests
-  PROPERTIES
-    VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}
-    SOVERSION ${LOCAL_VERSION_MAJOR}
-    INTERFACE_Tests_MAJOR_VERSION ${LOCAL_VERSION_MAJOR})
-set_property(TARGET Tests APPEND PROPERTY COMPATIBLE_INTERFACE_STRING Tests_MAJOR_VERSION)
+  # Set target version.
+  set_target_properties(Tests
+    PROPERTIES
+      VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}
+      SOVERSION ${LOCAL_VERSION_MAJOR}
+      INTERFACE_Tests_MAJOR_VERSION ${LOCAL_VERSION_MAJOR})
+  set_property(TARGET Tests APPEND PROPERTY COMPATIBLE_INTERFACE_STRING Tests_MAJOR_VERSION)
 
-find_package(Catch2 CONFIG REQUIRED)
-target_link_libraries(Tests
-  PUBLIC
-	  Catch2::Catch2
-)
+  find_package(Catch2 CONFIG REQUIRED)
+  target_link_libraries(Tests
+    PUBLIC
+      Catch2::Catch2
+  )
 
-# Add source files and headers to target.
-target_sources(Tests
-  PRIVATE
-    ${PROJECT_SOURCE_DIR}/src/test/test.cpp
-    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/test/test.h
-)
+  # Add source files and headers to target.
+  target_sources(Tests
+    PRIVATE
+      ${PROJECT_SOURCE_DIR}/src/test/test.cpp
+      ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/test/test.h
+  )
 
-# add include directories
-target_include_directories(Tests
-	PUBLIC
-    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/test>
-    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/test>
-)
+  # add include directories
+  target_include_directories(Tests
+    PUBLIC
+      $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/test>
+      $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/test>
+  )
 
-# Address sanitizer
-if(ASAN_ENABLED)
-  if(MSVC)
-    target_compile_options(Tests PUBLIC /fsanitize=address)
-  else()
-    target_compile_options(Tests PUBLIC -fsanitize=address)
-    target_link_options(Tests PUBLIC -fsanitize=address)
-  endif()
-endif()
+  # install the c++ "test" headers
+  install(
+    FILES ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/test/test.h
+    DESTINATION ${${PROJECT_NAME}_INC_DIR}/test
+  )
 
-# install the c++ "test" headers
-install(
-  FILES ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/test/test.h
-  DESTINATION ${${PROJECT_NAME}_INC_DIR}/test
-)
+  list(APPEND EXTRA_LIBS Tests)
+  list(APPEND INSTALL_TARGETS Tests)
 
-list(APPEND EXTRA_LIBS Tests)
-list(APPEND INSTALL_TARGETS Tests)
-
-message(STATUS "Added target: Tests.lib\n")
+  message(STATUS "Added target: Tests.lib\n")
 
 else(USE_TESTS)
-message(STATUS "Testing disabled.\n")
+
+  message(STATUS "Testing disabled.\n")
 
 endif(USE_TESTS)
+
+message("\n")
 
 # ============================================================================ #
 #
@@ -404,7 +419,7 @@ endif(USE_TESTS)
 #
 # ============================================================================ #
 
-message(STATUS "Adding target...\n")
+message(STATUS "Adding target...")
 
 #add_library(Main STATIC ${CM_VARS_CONFIG})
 #add_library(CMakeProject1::Main ALIAS Main)
@@ -431,6 +446,8 @@ target_include_directories(Main
   PUBLIC
     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/main>
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}/main>
+  PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 # Link any extra libraries to our "main" out...
@@ -438,16 +455,6 @@ target_link_libraries(Main
   PUBLIC
     ${EXTRA_LIBS}
 )
-
-# Address sanitizer
-if(ASAN_ENABLED)
-  if(MSVC)
-    target_compile_options(Main PUBLIC /fsanitize=address)
-  else()
-    target_compile_options(Main PUBLIC -fsanitize=address)
-    target_link_options(Main PUBLIC -fsanitize=address)
-  endif()
-endif()
 
 # install the c++ "main" headers
 install(
@@ -459,6 +466,8 @@ install(
 list(APPEND INSTALL_TARGETS Main)
 
 message(STATUS "Added target: Main.exe\n")
+
+message("\n")
 
 # ============================================================================ #
 #
@@ -478,6 +487,16 @@ message(STATUS "Added target: Main.exe\n")
 
 #list(APPEND INSTALL_TARGETS Executable)
 
+# Address sanitizer
+if(ASAN_ENABLED)
+  if(MSVC)
+    target_compile_options(${INSTALL_TARGETS} PUBLIC /fsanitize=address)
+  else()
+    target_compile_options(${INSTALL_TARGETS} PUBLIC -fsanitize=address)
+    target_link_options(${INSTALL_TARGETS} PUBLIC -fsanitize=address)
+  endif()
+endif()
+
 # ============================================================================ #
 #
 #                               Install block
@@ -490,8 +509,9 @@ install(
   EXPORT ${TARGETS_EXPORT_NAME}
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}/${PROJECT_NAME}
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
   INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}
+  PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}
   FRAMEWORK DESTINATION "."
 )
 
@@ -529,3 +549,5 @@ install(
 #  DESTINATION
 #    ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME} OPTIONAL
 #)
+
+message("\n")
