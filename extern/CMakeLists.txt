@@ -27,7 +27,6 @@ find_package(Git)
 
 # Update submodules as needed
 if(GIT_FOUND)
-  #option(GIT_SUBMODULE "Check submodules during build" ON)
   if(GIT_SUBMODULE)
     message(STATUS "Running git submodule update --init")
     execute_process(COMMAND ${GIT_EXECUTABLE} submodule update --init
@@ -147,10 +146,6 @@ message("VCPKG_C_FLAGS_DEBUG = ${VCPKG_C_FLAGS_DEBUG}")
 message("VCPKG_C_FLAGS_RELEASE = ${VCPKG_C_FLAGS_RELEASE}")
 message("VCPKG_C_FLAGS_MINSIZEREL = ${VCPKG_C_FLAGS_MINSIZEREL}")
 message("VCPKG_C_FLAGS_RELWITHDEBINFO = ${VCPKG_C_FLAGS_RELWITHDEBINFO}\n")
-
-#if (CMAKE_GENERATOR MATCHES "Visual Studio")
-#  add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/support/msbuild)
-#endif()
 
 #vcpkg_cmake_get_vars(CMAKE_VARS_FILE)
 #include(${CMAKE_VARS_FILE})
