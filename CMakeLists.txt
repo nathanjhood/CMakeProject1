@@ -39,6 +39,22 @@ else()
   message(STATUS "${CMAKE_PROJECT_NAME} is the top-level project\n")
 endif ()
 
+message(STATUS "Detecting Compiler...\n")
+include(${CMAKE_CURRENT_LIST_DIR}/extern/vcpkg/scripts/detect_compiler/CMakeLists.txt)
+message(STATUS "Compiler detected.\n")
+
+message("CMAKE_CXX_FLAGS = ${CMAKE_CXX_FLAGS}")
+message("CMAKE_CXX_FLAGS_DEBUG = ${CMAKE_CXX_FLAGS_DEBUG}")
+message("CMAKE_CXX_FLAGS_RELEASE = ${CMAKE_CXX_FLAGS_RELEASE}")
+message("CMAKE_CXX_FLAGS_MINSIZEREL = ${CMAKE_CXX_FLAGS_MINSIZEREL}")
+message("CMAKE_CXX_FLAGS_RELWITHDEBINFO = ${CMAKE_CXX_FLAGS_RELWITHDEBINFO}\n")
+
+message("CMAKE_C_FLAGS = ${CMAKE_C_FLAGS}")
+message("CMAKE_C_FLAGS_DEBUG = ${CMAKE_C_FLAGS_DEBUG}")
+message("CMAKE_C_FLAGS_RELEASE = ${CMAKE_C_FLAGS_RELEASE}")
+message("CMAKE_C_FLAGS_MINSIZEREL = ${CMAKE_C_FLAGS_MINSIZEREL}")
+message("CMAKE_C_FLAGS_RELWITHDEBINFO = ${CMAKE_C_FLAGS_RELWITHDEBINFO}\n")
+
 # Ensure a valid build type is set
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
     if(PROJECT_IS_TOP_LEVEL)
@@ -65,10 +81,10 @@ set(GIT_IGNORE ${PROJECT_SOURCE_DIR}/.gitignore)
 option(ENABLE_LOGGING "Log cache variables to console terminal" OFF)
 option(USE_EXTERN "Use extern folder to resolve dependencies" ON)
 option(GIT_SUBMODULE "Check submodules during build" ON)
-option(USE_VCPKG "Use local vcpkg if found" ON)
+option(VCPKG_TOOLCHAIN "Use local vcpkg if found" ON)
 option(USE_FOO "Use foo" ON)
 option(USE_TESTS "Use tests" ON)
-option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
+option(BUILD_SHARED_LIBS "Build using shared libraries. if this is set to ON, then all libraries are built as shared libraries by default." ON)
 option(ASAN_ENABLED "Build with AddressSanitizer" OFF)
 set(USE_FOLDERS ON)
 
@@ -78,8 +94,6 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 # Use external version file (could be optional?)
 include(${CMAKE_CURRENT_LIST_DIR}/support/cmake/version-handling.cmake)
 
-#include_directories(${CMAKE_CURRENT_LIST_DIR}/support/msbuild)
-
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
   set(USE_X64 TRUE)
 else()
@@ -87,8 +101,7 @@ else()
 endif()
 
 set(CMAKE_MODULE_PATH
-  ${CMAKE_MODULE_PATH}
-  ${CMAKE_CURRENT_SOURCE_DIR}/support/cmake
+  ${CMAKE_MODULE_PATH};${CMAKE_CURRENT_SOURCE_DIR}/support/cmake;${CMAKE_CURRENT_SOURCE_DIR}/extern/vcpkg/scripts/ports.cmake
 )
 
 message("Options:\n")
@@ -96,7 +109,7 @@ message("CMAKE_PROJECT_VENDOR = " ${CMAKE_PROJECT_VENDOR})
 message("ENABLE_LOGGING = " ${ENABLE_LOGGING})
 message("USE_EXTERN = " ${USE_EXTERN})
 message("GIT_SUBMODULE = " ${GIT_SUBMODULE})
-message("USE_VCPKG = " ${USE_VCPKG})
+message("VCPKG_TOOLCHAIN = " ${VCPKG_TOOLCHAIN})
 message("USE_FOO = " ${USE_FOO})
 message("USE_TESTS = " ${USE_TESTS})
 message("BUILD_SHARED_LIBS = " ${BUILD_SHARED_LIBS})
@@ -149,6 +162,9 @@ project (CMakeProject1
   LANGUAGES
     C CXX
 )
+
+string(TOUPPER ${PROJECT_NAME} PROJECT_NAME_UPPER)
+string(TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
 
 # set project maintainer/vendor name
 set(PROJECT_VENDOR ${CMAKE_PROJECT_VENDOR} CACHE STRING "Author/maintainer of this project:")
@@ -238,33 +254,38 @@ message("\n")
 # get access to helper functions for creating config files
 include(CMakePackageConfigHelpers)
 
-set(${PROJECT_NAME}_CMAKE_DIR ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME} CACHE STRING "Installation directory for cmake files, a relative path that will be joined with ${CMAKE_INSTALL_PREFIX} or an absolute path.")
-set(${PROJECT_NAME}_INC_DIR ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME} CACHE STRING "Installation directory for include files, a relative path that will be joined with ${CMAKE_INSTALL_PREFIX} or an absolute path.")
-set(VERSION_CONFIG ${PROJECT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake)
-set(PROJECT_CONFIG ${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.cmake)
-set(CM_VARS_CONFIG ${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.h)
-set(PKGCONFIG ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.pc)
-set(TARGETS_EXPORT_NAME ${PROJECT_NAME}Targets)
-set(${PROJECT_NAME}_LIB_DIR ${CMAKE_INSTALL_LIBDIR} CACHE STRING "Installation directory for libraries, a relative path that will be joined to ${CMAKE_INSTALL_PREFIX} or an absolute path.")
-set(${PROJECT_NAME}_PKGCONFIG_DIR ${CMAKE_INSTALL_LIBDIR}/pkgconfig CACHE PATH "Installation directory for pkgconfig (.pc) files, a relative path that will be joined with ${CMAKE_INSTALL_PREFIX} or an absolute path.")
-
 # Configure folder structure.
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib CACHE PATH "Archive output dir.")
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib CACHE PATH "Library output dir.")
-set(CMAKE_PDB_OUTPUT_DIRECTORY     ${CMAKE_BINARY_DIR}/bin CACHE PATH "PDB (MSVC debug symbol)output dir.")
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin CACHE PATH "Executable/dll output dir.")
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY  ${CMAKE_BINARY_DIR}/lib                       CACHE PATH "Archive output dir.")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY  ${CMAKE_BINARY_DIR}/lib                       CACHE PATH "Library output dir.")
+set(CMAKE_PDB_OUTPUT_DIRECTORY      ${CMAKE_BINARY_DIR}/bin                       CACHE PATH "PDB (MSVC debug symbol)output dir.")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY  ${CMAKE_BINARY_DIR}/bin                       CACHE PATH "Executable/dll output dir.")
+set(${PROJECT_NAME}_INC_DIR         ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}   CACHE PATH "Installation directory for include files, a relative path that will be joined with ${CMAKE_INSTALL_PREFIX} or an absolute path.")
+set(${PROJECT_NAME}_LIB_DIR         ${CMAKE_INSTALL_LIBDIR}                       CACHE PATH "Installation directory for libraries, a relative path that will be joined to ${CMAKE_INSTALL_PREFIX} or an absolute path.")
+set(${PROJECT_NAME}_CMAKE_DIR       ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME} CACHE PATH "Installation directory for CMake (.cmake) files, a relative path that will be joined with ${CMAKE_INSTALL_PREFIX} or an absolute path.")
+set(${PROJECT_NAME}_PKGCONFIG_DIR   ${CMAKE_INSTALL_LIBDIR}/pkgconfig             CACHE PATH "Installation directory for pkgconfig (.pc) files, a relative path that will be joined with ${CMAKE_INSTALL_PREFIX} or an absolute path.")
+
+# Configure files.
+set(VERSION_CONFIG                  ${PROJECT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake)
+set(PROJECT_CONFIG                  ${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.cmake)
+set(CM_VARS_CONFIG                  ${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.h)
+set(PACKAGE_CONFIG                  ${PROJECT_BINARY_DIR}/${PROJECT_NAME_LOWER}.pc)
+set(VCPKG_MNFST                     ${PROJECT_BINARY_DIR}/vcpkg.json)
+set(VCPKG_CONFIG                    ${PROJECT_BINARY_DIR}/vcpkg-configuration.json)
+set(PORT_FILE                       ${PROJECT_BINARY_DIR}/${PROJECT_NAME_LOWER}-portfile.cmake)
+set(TARGETS_EXPORT_NAME             ${PROJECT_NAME}Targets)
 
 include(JoinPaths)
 join_paths(libdir_for_pc_file "\${exec_prefix}" "${CMAKE_INSTALL_LIBDIR}")
 join_paths(includedir_for_pc_file "\${prefix}" "${CMAKE_INSTALL_INCLUDEDIR}")
 
 # create config file
+message("Creating project config file...")
 configure_package_config_file(
     ${PROJECT_SOURCE_DIR}/support/cmake/${PROJECT_NAME}Config.cmake.in
     ${PROJECT_CONFIG}
   INSTALL_DESTINATION
-    ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
-)
+    ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME})
+message("Created project config file at ${PROJECT_CONFIG}\n")
 
 # generate the version file for the config file
 write_basic_package_version_file(
@@ -273,23 +294,37 @@ write_basic_package_version_file(
 	COMPATIBILITY AnyNewerVersion
 )
 
+message("Creating package config file...")
 configure_file(
   ${PROJECT_SOURCE_DIR}/support/cmake/${PROJECT_NAME}.pc.in
-  ${PKGCONFIG}
+  ${PACKAGE_CONFIG}
   @ONLY)
+message("Created package config file at ${PACKAGE_CONFIG}\n")
+
+message("Creating vcpkg manifest...")
+configure_file(
+  ${PROJECT_SOURCE_DIR}/support/vcpkg/vcpkg.json.in
+  ${VCPKG_MNFST})
+message("Created vcpkg manifest at ${VCPKG_MNFST}\n")
+
+message("Creating vcpkg configuration...")
+configure_file(
+  ${PROJECT_SOURCE_DIR}/support/vcpkg/vcpkg-configuration.json.in
+  ${VCPKG_CONFIG})
+message("Created vcpkg configuration at ${VCPKG_CONFIG}\n")
+
+message("Creating portfile...")
+configure_file(
+  ${PROJECT_SOURCE_DIR}/support/vcpkg/portfile.in.cmake
+  ${PORT_FILE})
+message("Created portfile at ${PORT_FILE}\n")
 
 # create config header
 message("Creating config header file...")
 configure_file(
 	${PROJECT_SOURCE_DIR}/support/cmake/${PROJECT_NAME}Config.h.in
 	${CM_VARS_CONFIG})
-message("Created config header file.\n")
-
-# install config header
-install(
-  FILES ${CM_VARS_CONFIG}
-  DESTINATION ${${PROJECT_NAME}_INC_DIR}
-)
+message("Created config header file at ${CM_VARS_CONFIG}\n")
 
 message("\n")
 
@@ -512,6 +547,12 @@ endif()
 #
 # ============================================================================ #
 
+# install config header
+install(
+  FILES ${CM_VARS_CONFIG}
+  DESTINATION ${${PROJECT_NAME}_INC_DIR}
+)
+
 # Install the library and headers.
 install(
   TARGETS ${INSTALL_TARGETS}
@@ -548,8 +589,8 @@ install(
 )
 
 install(
-  FILES ${PKGCONFIG}
-  DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig
+  FILES ${PACKAGE_CONFIG}
+  DESTINATION ${${PROJECT_NAME}_PKGCONFIG_DIR}
 )
 
 #install(
