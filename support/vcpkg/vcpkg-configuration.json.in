@@ -1,14 +1,14 @@
 {
 	"default-registry": {
-	  "kind": "git",
-	  "repository": "https://github.com/StoneyDSP/vcpkg.git",
-	  "baseline": "5f144173006dbeea7b9cb017775675606666a207"
-	},
-	"registries": [
-	  {
 		"kind": "git",
 		"repository": "https://github.com/StoneyDSP/vcpkg.git",
 		"baseline": "5f144173006dbeea7b9cb017775675606666a207"
-	  }
+	},
+	"registries": [
+		{
+			"kind": "git",
+			"repository": "https://github.com/StoneyDSP/vcpkg.git",
+			"baseline": "5f144173006dbeea7b9cb017775675606666a207"
+		}
 	]
-  }
+}
