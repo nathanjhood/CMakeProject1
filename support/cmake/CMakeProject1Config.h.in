@@ -20,6 +20,7 @@
  *
  */
 
+#cmakedefine CMAKE_PROJECT_VENDOR "${CMAKE_PROJECT_VENDOR}"
 #cmakedefine PROJECT_VENDOR "${PROJECT_VENDOR}"
 #cmakedefine PROJECT_NAME "${PROJECT_NAME}"
 #cmakedefine PROJECT_DESCRIPTION "${PROJECT_DESCRIPTION}"
@@ -34,8 +35,6 @@
 
 #cmakedefine USE_FOO
 #cmakedefine USE_TESTS
-#cmakedefine CMAKE_PROJECT_VENDOR
-#cmakedefine ENABLE_LOGGING
 #cmakedefine BUILD_SHARED_LIBS
 #cmakedefine USE_EXTERN
 #cmakedefine GIT_SUBMODULE
