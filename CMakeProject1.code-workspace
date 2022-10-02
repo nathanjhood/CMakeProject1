@@ -130,6 +130,7 @@
 		"files.trimFinalNewlines": true,
 		"files.trimTrailingWhitespace": true,
 		"files.associations": {
+			"*.json.in": "json",
 			"*.cmake": "cmake",
 			"*.cmake.in": "cmake",
 			"*.h.in": "cpp",
@@ -224,7 +225,8 @@
 			"xlocmes": "cpp",
 			"xlocmon": "cpp",
 			"xloctime": "cpp",
-			"xtree": "cpp"
+			"xtree": "cpp",
+			"*.in": "cpp"
 		},
 		"json.schemaDownload.enable": true,
 		"json.validate.enable": true,
@@ -233,7 +235,8 @@
 		"json.schemas": [
 			{
 				"fileMatch": [
-					"/vcpkg.json"
+					"/vcpkg.json",
+					"vcpkg.json.in"
 				],
 				"url": "https://raw.githubusercontent.com/microsoft/vcpkg/master/scripts/vcpkg.schema.json"
 			},
