@@ -17,10 +17,16 @@ void Foo::tool()
     fmt::print("{}", "\n");
 }
 
-void Foo::message(const char* string = {"null"})
+void Foo::message(const char* string = { "null" })
 {
     fmt::print("{}", string);
     fmt::print("{}", "\n");
+}
+
+void Foo::message(std::string string = { "null" }) 
+{
+	fmt::print("{}", string);
+	fmt::print("{}", "\n");
 }
 
 void Foo::returnBar()

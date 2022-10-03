@@ -7,7 +7,7 @@
     "description": [
         "VS Console Application with CMake, vcpkg, Doxygen, and JUCE support"
     ],
-    "documentation": "https://github.com/StoneyDSP/CMakeProject1",
+    "documentation": "https://github.com/StoneyDSP/CMakeProject1/README.md",
     "homepage": "https://github.com/StoneyDSP/CMakeProject1",
     "license": "MIT",
     "dependencies": [
@@ -31,5 +31,38 @@
             "name": "fmt",
             "host": true
         }
+    ],
+    "features": {
+        "foo":
+        {
+            "dependencies": [
+                "fmt"
+            ],
+            "description":[
+                "Third-party library used for printing to terminal"
+            ]
+        },
+        "tests":
+        {
+            "dependencies": [
+                "catch2"
+            ],
+            "description":[
+                "Cpp Unit Testing Framework"
+            ]
+        },
+        "main":{
+            "dependencies": [
+                "vcpkg-cmake",
+                "vcpkg-cmake-config",
+                "vcpkg-cmake-get-vars"
+            ],
+            "description":[
+                "Defines an 'int main()' for program execution"
+            ]
+        }
+    },
+    "default-features": [
+        "main"
     ]
 }
