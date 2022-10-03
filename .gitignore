@@ -8,6 +8,12 @@
 CMakeUserPresets.json
 MinSizeRel
 RelWithDebInfo
+downloads
+
+CMakeUserPresets.json
+
+# Visual Studio work directory
+.vs/
 
 *.tcl
 *.dll
