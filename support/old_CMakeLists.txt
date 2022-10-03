@@ -1,0 +1,436 @@
+﻿# ============================================================================ #
+#
+# @file CMakeLists.txt [Root] - CMakeProject1
+#
+# @author Nathan J. Hood ( @StoneyDSP )
+# @brief Defines the main configuration routine of the top-level project.
+# @version 1.0.0.0
+# @date 2022-08-23
+#
+# @copyright Copyright (c) 2022
+#
+# ============================================================================ #
+
+# CMake requirements.
+cmake_minimum_required(VERSION 3.7...3.24.2)
+
+# Fallback for using newer policies on CMake <3.12.
+if(${CMAKE_VERSION} VERSION_LESS 3.12)
+    cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
+endif()
+
+# ============================================================================ #
+#
+#                             Configure CMake
+#
+# ============================================================================ #
+
+# Top-level CMake project file, do global configuration
+# and include sub-projects here.
+
+message("\n")
+message(STATUS "${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt>\n")
+message(STATUS "CMake found at: ${CMAKE_COMMAND}\n")
+message(STATUS "Initiating CMake v${CMAKE_VERSION}\n")
+message("\n")
+
+# We can define some useful options and set defaults here...
+message("Options:\n")
+set(CMAKE_PROJECT_VENDOR "StoneyDSP")
+option(USE_EXTERN "Use extern folder to resolve dependencies" ON)
+option(GIT_SUBMODULE "Check submodules during build" ON)
+option(USE_VCPKG "Use local vcpkg if found" ON)
+option(USE_FOO "Use foo" OFF)
+option(USE_TESTS "Use tests" ON)
+option(ENABLE_LOGGING "Log cache variables to console terminal" OFF)
+option(BUILD_SHARED_LIBS "Build using shared libraries" ON)
+option(ASAN_ENABLED "Build this target with AddressSanitizer" OFF)
+
+message("CMAKE_PROJECT_VENDOR = " ${CMAKE_PROJECT_VENDOR})
+message("USE_EXTERN = " ${USE_EXTERN})
+message("GIT_SUBMODULE = " ${GIT_SUBMODULE})
+message("USE_VCPKG = " ${USE_VCPKG})
+message("USE_FOO = " ${USE_FOO})
+message("USE_TESTS = " ${USE_TESTS})
+message("ENABLE_LOGGING = " ${ENABLE_LOGGING})
+message("BUILD_SHARED_LIBS = " ${BUILD_SHARED_LIBS})
+message("ASAN_ENABLED = " ${ASAN_ENABLED})
+message("\n")
+
+# ============================================================================ #
+#
+#                           Configure Dependencies
+#
+# ============================================================================ #
+
+if(USE_EXTERN)
+  # add required packages
+  message(STATUS "Checking git...\n")
+  message("\n")
+  if(GIT_FOUND)
+    message("git: already found. Using: ${CMAKE_PROJECT_NAME} submodules\n")
+  else()
+    if(EXISTS ${CMAKE_CURRENT_LIST_DIR}/.gitmodules)
+      message("git: adding local submodules...\n")
+      include(extern/CMakeLists.txt)
+    else()
+      message("git: no submodule file found\n")
+    endif()
+  endif()
+  message(STATUS "${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt>\n")
+endif()
+
+message("\n")
+
+# ============================================================================ #
+#
+#                           Create New Project
+#
+# ============================================================================ #
+
+message("Detecting CMake project...\n")
+
+include(${CMAKE_CURRENT_LIST_DIR}/support/cmake/version-handling.cmake)
+
+# Create a CMake project here.
+project (CMakeProject1
+  VERSION
+    ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}
+  DESCRIPTION
+    "CMake project template for multi-platform continuous-integration pipelines, with native extensible git, vcpkg, and 3rd-party module support."
+  HOMEPAGE_URL
+    https://github.com/${PROJECT_VENDOR}/CMakeProject1
+  LANGUAGES
+    C CXX
+)
+
+# set project maintainer/vendor name
+set(PROJECT_VENDOR ${CMAKE_PROJECT_VENDOR} CACHE STRING "Author/maintainer of this project:")
+
+# specify the C standard
+set(CMAKE_C_STANDARD 17)
+set(CMAKE_C_STANDARD_REQUIRED True)
+
+# specify the C++ standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+message(STATUS "...Detected project:\n")
+message("${PROJECT_NAME} v${PROJECT_VERSION}")
+message("${PROJECT_DESCRIPTION}")
+message("${PROJECT_HOMEPAGE_URL}")
+message("by ${PROJECT_VENDOR}\n")
+
+# Check if we are in the top-level project or not:
+if (NOT CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+    message(STATUS "${PROJECT_NAME} is a sub-project of ${CMAKE_PROJECT_NAME}\n")
+else()
+    message(STATUS "${CMAKE_PROJECT_NAME} is a top-level project\n")
+endif()
+
+message("\n")
+
+# ============================================================================ #
+#
+#                           Configure Folders
+#
+# ============================================================================ #
+
+# make cache variables for install destinations
+include(GNUInstallDirs)
+
+# Configure folder structure.
+set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+set(ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+set(LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+set(PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+
+message(STATUS "Manually setting ${PROJECT_NAME} folder structure:\n")
+message("RUNTIME_OUTPUT_DIRECTORY = ${RUNTIME_OUTPUT_DIRECTORY}")
+message("ARCHIVE_OUTPUT_DIRECTORY = ${ARCHIVE_OUTPUT_DIRECTORY}")
+message("LIBRARY_OUTPUT_DIRECTORY = ${LIBRARY_OUTPUT_DIRECTORY}")
+message("PDB_OUTPUT_DIRECTORY = ${PDB_OUTPUT_DIRECTORY}\n")
+
+message("\n")
+
+# ============================================================================ #
+#
+#                           Configure Project
+#
+# ============================================================================ #
+
+# get access to helper functions for creating config files
+include(CMakePackageConfigHelpers)
+
+# create config header for C++
+message("Creating config header file...")
+configure_file(
+  ${PROJECT_SOURCE_DIR}/support/cmake/${PROJECT_NAME}Config.h.in
+  ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/${PROJECT_NAME}Config.h)
+message("Created config header file.\n")
+
+configure_package_config_file(
+    ${PROJECT_SOURCE_DIR}/support/cmake/${PROJECT_NAME}Config.cmake.in
+    ${PROJECT_BINARY_DIR}/share/${PROJECT_NAME}/${PROJECT_NAME}Config.cmake
+  INSTALL_DESTINATION
+    ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
+  NO_CHECK_REQUIRED_COMPONENTS_MACRO
+)
+
+# generate the version file for the config file
+write_basic_package_version_file(
+  ${CMAKE_CURRENT_BINARY_DIR}/share/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake
+  VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}
+  COMPATIBILITY AnyNewerVersion
+)
+
+# install config files
+install(
+  FILES
+    ${CMAKE_CURRENT_BINARY_DIR}/share/${PROJECT_NAME}/${PROJECT_NAME}Config.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/share/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake
+  DESTINATION
+    ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
+)
+
+message("\n")
+
+# ============================================================================ #
+#
+#                             Add tests to project
+#
+# ============================================================================ #
+
+if(USE_TESTS)
+  message(STATUS "Testing enabled.\n")
+  include(${PROJECT_SOURCE_DIR}/tests/CMakeLists.txt)
+else(USE_TESTS)
+  message(STATUS "Testing disabled.\n")
+endif(USE_TESTS)
+
+message("\n")
+
+# ============================================================================ #
+#
+#                    Add target: CMakeProject1-library
+#
+# ============================================================================ #
+
+if(USE_FOO)
+  # Add output target.
+message("Adding target...")
+add_library(Foo STATIC)
+add_library(stoneydsp::Foo ALIAS Foo)
+message("Added target: Foo.lib\n")
+
+# Set target version.
+set_target_properties(Foo
+  PROPERTIES
+    VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}
+    SOVERSION ${LOCAL_VERSION_MAJOR}
+    INTERFACE_Foo_MAJOR_VERSION ${LOCAL_VERSION_MAJOR})
+set_property(TARGET Foo APPEND PROPERTY COMPATIBLE_INTERFACE_STRING Foo_MAJOR_VERSION)
+# specify the C++ standard
+if (CMAKE_VERSION VERSION_GREATER 3.12)
+  set_property(TARGET Foo PROPERTY CXX_STANDARD 20)
+endif()
+message("Added target version ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}\n")
+
+# Add source files and headers to target.
+target_sources(Foo
+  PUBLIC
+    ${PROJECT_SOURCE_DIR}/src/foo/foo.cpp
+    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo/foo.h
+)
+
+# Add some headers.
+message("Including headers in target Foo.lib...\n")
+#include directories for our executable program
+target_include_directories(Foo
+  PUBLIC
+    # let's include the foo.h...
+    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
+)
+message("Added ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}\n")
+
+# link our imported vcpkg package library "fmt" (and others) to our shared code target...
+find_package(fmt CONFIG REQUIRED)
+target_link_libraries(Foo
+  PUBLIC
+    fmt::fmt
+)
+message("Linked vcpkg library fmt to target Foo.lib")
+
+# let's set the foo source folder as a usage requirement...
+target_include_directories(Foo
+  INTERFACE
+    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo
+)
+
+# install the definition-containing library (.lib)
+install(
+  TARGETS Foo
+  DESTINATION lib
+)
+
+# install the declaration-containing header (.h)
+install(
+  FILES ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/foo/foo.h
+  DESTINATION include/${PROJECT_NAME}/foo
+)
+
+# Address sanitizer
+if(ASAN_ENABLED)
+  if(MSVC)
+    target_compile_options(Foo PUBLIC /fsanitize=address)
+  else()
+    target_compile_options(Foo PUBLIC -fsanitize=address)
+    target_link_options(Foo PUBLIC -fsanitize=address)
+  endif()
+endif()
+
+list(APPEND EXTRA_LIBS Foo)
+endif(USE_FOO)
+
+message("\n")
+
+# ============================================================================ #
+#
+#                    Add target: CMakeProject1-executable
+#
+# ============================================================================ #
+
+# Add output target.
+message("Adding target...")
+add_executable (Main)
+message("Added target: Main.exe\n")
+
+# Set target version.
+set_target_properties(Main
+  PROPERTIES
+    VERSION ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}
+    SOVERSION ${LOCAL_VERSION_MAJOR}
+    INTERFACE_Main_MAJOR_VERSION ${LOCAL_VERSION_MAJOR})
+set_property(TARGET Main APPEND PROPERTY COMPATIBLE_INTERFACE_STRING Main_MAJOR_VERSION)
+# specify the C++ standard
+if (CMAKE_VERSION VERSION_GREATER 3.12)
+  set_property(TARGET Main PROPERTY CXX_STANDARD 20)
+endif()
+message("Added target version ${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}\n")
+
+# Add source files and headers to target.
+#target_sources(Main
+#  PUBLIC
+#    ${PROJECT_SOURCE_DIR}/src/main.cpp
+#    ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}/main.h
+#    ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/${PROJECT_NAME}Config.h
+#)
+
+# Add some headers.
+message("Including headers in target Main.exe...\n")
+#include directories for our executable program
+target_include_directories(Main
+  INTERFACE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+  #PUBLIC
+    # let's include the config.h...
+    #${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}
+    # let's include main.h...
+    #${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}
+)
+message("Added ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}")
+message("Added ${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}\n")
+
+# Link any extra libraries to our "main" out...
+target_link_libraries(Main
+  PUBLIC
+    ${EXTRA_LIBS}
+)
+message("Linked EXTRA_LIBS (if any) to target Main.exe\n")
+message("EXTRA_LIBS = ${EXTRA_LIBS}\n")
+
+# install the configured c++ header
+install(
+  FILES
+    ${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/${PROJECT_NAME}Config.h
+  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}
+)
+
+# install the .exe
+#install(
+#  TARGETS Main
+#  DESTINATION bin
+#)
+
+# install the target and create export-set
+install(TARGETS Main
+        EXPORT Main_Targets
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+        INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}
+)
+
+# generate and install export file
+install(EXPORT ${PROJECT_NAME}_Targets
+        FILE ${PROJECT_NAME}_Targets.cmake
+        NAMESPACE stoneydsp::
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/${PROJECT_NAME}
+)
+
+# Address sanitizer
+if(ASAN_ENABLED)
+  if(MSVC)
+    target_compile_options(Main PUBLIC /fsanitize=address)
+  else()
+    target_compile_options(Main PUBLIC -fsanitize=address)
+    target_link_options(Main PUBLIC -fsanitize=address)
+  endif()
+endif()
+
+message("\n")
+
+# ============================================================================ #
+#
+#                           Configure Installer
+#
+# ============================================================================ #
+
+include(InstallRequiredSystemLibraries)
+set(CPACK_PACKAGE_VENDOR ${CMAKE_PROJECT_VENDOR})
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY ${PROJECT_DESCRIPTION})
+set(CPACK_PACKAGE_VERSION_MAJOR ${LOCAL_VERSION_MAJOR})
+set(CPACK_PACKAGE_VERSION_MINOR ${LOCAL_VERSION_MINOR})
+set(CPACK_PACKAGE_VERSION_PATCH ${LOCAL_VERSION_PATCH})
+set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_CURRENT_LIST_DIR}/LICENCE)
+set(CPACK_RESOURCE_FILE_README ${CMAKE_CURRENT_LIST_DIR}/README.md)
+set(CPACK_SOURCE_GENERATOR "TGZ;ZIP")
+set(CPACK_SOURCE_IGNORE_FILES
+    /.git/*
+    /.github
+    /.vs
+    /.vscode
+    /build
+    /downloads
+    /installed
+    /vcpkg
+    /.*build.*
+    /\\\\.DS_Store
+)
+
+# include installer generator
+include(CPack)
+message(STATUS "Include (CPack)\n")
+
+message("CPACK_PACKAGE_VENDOR = ${CPACK_PACKAGE_VENDOR}")
+message("CPACK_PACKAGE_DESCRIPTION_SUMMARY = ${PROJECT_DESCRIPTION}")
+message("CPACK_PACKAGE_VERSION_MAJOR = ${LOCAL_VERSION_MAJOR}")
+message("CPACK_PACKAGE_VERSION_MINOR = ${LOCAL_VERSION_MINOR}")
+message("CPACK_PACKAGE_VERSION_PATCH = ${LOCAL_VERSION_PATCH}")
+message("CPACK_RESOURCE_FILE_LICENSE = ${CMAKE_CURRENT_LIST_DIR}/LICENCE")
+message("CPACK_RESOURCE_FILE_README = ${CMAKE_CURRENT_LIST_DIR}/README.md")
+message("CPACK_SOURCE_GENERATOR = ${CPACK_SOURCE_GENERATOR}")
+message("CPack ignores: ${CPACK_SOURCE_IGNORE_FILES}\n")
+
+message("\n")
