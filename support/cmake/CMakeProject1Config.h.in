@@ -1,5 +1,5 @@
 /*******************************************************************************
- * @file CMakeProject1Config.h
+ * @file ${PROJECT_NAME}Config.h
  * @author Nathan J. Hood ( @StoneyDSP )
  * @brief
  * @version 1.0.0.0
@@ -12,8 +12,8 @@
 
 #pragma once
 
-#ifndef CMAKEPROJECT1_CONFIG_H_INCLUDED
-#define CMAKEPROJECT1_CONFIG_H_INCLUDED
+#ifndef ${PROJECT_NAME_UPPER}_CONFIG_H_INCLUDED
+#define ${PROJECT_NAME_UPPER}_CONFIG_H_INCLUDED
 
 /**
  * @brief Defined project configuration information.
@@ -187,4 +187,4 @@
 #cmakedefine CMAKE_AR "${CMAKE_AR}"
 #cmakedefine CMAKE_RANLIB "${CMAKE_RANLIB}"
 
-#endif // CMAKEPROJECT1_CONFIG_H_INCLUDED
+#endif // ${PROJECT_NAME_UPPER}_CONFIG_H_INCLUDED
