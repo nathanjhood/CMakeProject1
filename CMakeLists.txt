@@ -313,7 +313,7 @@ message("\n")
 # ============================================================================ #
 
 message(STATUS "Detecting CMake project...\n")
-
+#${LOCAL_VERSION_MAJOR}.${LOCAL_VERSION_MINOR}.${LOCAL_VERSION_PATCH}.${LOCAL_VERSION_TWEAK}
 # Create a CMake project here.
 project (CMakeProject1
   VERSION
@@ -766,10 +766,6 @@ install(
 #  DESTINATION
 #    ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME} OPTIONAL
 # )
-
-message(STATUS "EXTRA_LIBS: \n" ${EXTRA_LIBS})
-message("\n")
-
 message(STATUS "CMAKE_MODULE_PATH: \n" ${CMAKE_MODULE_PATH})
 message("\n")
 
