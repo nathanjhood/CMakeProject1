@@ -2,15 +2,15 @@ name: CMake-Ubuntu-latest
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "develop", "application" ]
   pull_request:
-    branches: [ "develop" ]
+    branches: [ "main" ]
+
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   CMAKE_CONFIGURATION_TYPES: Debug;Release;RelWithDebInfo;MinSizeRel
   BUILD_TYPE: Debug
-  VCPKG_BINARY_SOURCES: 'clear;nuget,GitHub,readwrite'
 
 jobs:
   build:
