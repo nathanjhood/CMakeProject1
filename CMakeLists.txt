@@ -4,7 +4,9 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/share/cmake/Modules" "${CMAKE_M
 
 project(application)
 
-# get_source_info()
+include(GetSourceInfo)
+
+get_source_info()
 
 set(PROJECT_VERSION_MAJOR 1)
 set(PROJECT_VERSION_MINOR 0)
