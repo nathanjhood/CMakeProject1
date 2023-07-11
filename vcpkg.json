@@ -1,6 +1,6 @@
 {
     "name": "cmakeproject1",
-    "version-string": "1.0.0-931fce243783a036d15bc1bfe0052b2feb449fbe",
+    "version-string": "1.0.0-2275190fab350ff9947419fd853ce405f6cb610f",
     "description": [ "A simple CMake project for testing build configs, toolchains, and more." ],
     "maintainers": [ "Nathan J. Hood (StoneyDSP) <nathanjhood@googlemail.com>" ],
     "documentation": "https://github.com/StoneyDSP/CMakeProject1/README.md",
