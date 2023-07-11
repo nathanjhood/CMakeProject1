@@ -16,3 +16,5 @@ lib
 Makefile
 
 usr
+
+vcpkg_installed
