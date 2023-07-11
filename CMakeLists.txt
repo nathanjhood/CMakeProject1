@@ -5,7 +5,6 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/share/cmake/Modules" "${CMAKE_M
 project(application)
 
 include(GetSourceInfo)
-
 get_source_info()
 
 set(PROJECT_VERSION_MAJOR 1)
@@ -57,10 +56,9 @@ endif ()
 
 
 
-
-# An interface library is a target that can be linked with, except that it
-# doesn't generate any compiled output of it's own - it's just for other
-# parts of our project to consume.
+#[===[
+An interface library is a target that can be linked with, except that it doesn't generate any compiled output of it's own - it's just for other parts of our project to consume.
+]===]
 add_library (configuration                                      INTERFACE)
 add_library (${PROJECT_NAME}::configuration                     ALIAS configuration)
 # add_library (${PROJECT_VENDOR}::${PROJECT_NAME}::configuration    ALIAS configuration)
@@ -73,10 +71,11 @@ target_include_directories (configuration
         $<INSTALL_INTERFACE:include>
 )
 
-# This configured header is 'Public', meaning it can be included by anything
-# that links to this target. However, it stays in a project-named folder so
-# that other projects cannot (or shouldn't be able to) include it using
-# system header "<>" syntax
+#[===[
+This configured header is 'Public', meaning it can be included by anything that links to this target.
+
+However, it stays in a project-named folder so that other projects cannot (or shouldn't be able to) include it using system header "<>" syntax.
+]===]
 target_sources (configuration
 
     PUBLIC
@@ -135,8 +134,9 @@ target_sources (implementation
             $<INSTALL_INTERFACE:include/${PROJECT_NAME}/impl/library.h>
 )
 
-# Implementation sources MUST be PUBLIC, otherwise nothing can link
-# to the code definitions contained therein
+#[===[
+Implementation sources MUST be PUBLIC, otherwise nothing can link to the code definitions contained therein.
+]===]
 target_sources (implementation
 
     PUBLIC
@@ -159,7 +159,7 @@ set_target_properties (implementation
 
 add_library (static                                         STATIC)
 add_library (${PROJECT_NAME}::static                        ALIAS static)
-# add_library (${PROJECT_NAME}::${PROJECT_NAME}::static       ALIAS static)
+# add_library (${PROJECT_VENDOR}::${PROJECT_NAME}::static       ALIAS static)
 
 target_include_directories (static
 
@@ -211,7 +211,7 @@ target_link_libraries (static
 
 add_library (shared                                         SHARED)
 add_library (${PROJECT_NAME}::shared                        ALIAS shared)
-# add_library (${PROJECT_NAME}::${PROJECT_NAME}::shared       ALIAS shared)
+# add_library (${PROJECT_VENDOR}::${PROJECT_NAME}::shared       ALIAS shared)
 
 target_include_directories (shared
 
@@ -264,15 +264,15 @@ target_link_libraries (shared
 
 add_executable (executable)
 add_executable (${PROJECT_NAME}::executable ALIAS executable)
-# add_executable (${PROJECT_VENDOR}::${PROJECT_NAME}::executable ALIAS executable)
+add_executable (${PROJECT_VENDOR}::${PROJECT_NAME}::executable ALIAS executable)
 
-# Note that we *shouldn't* use ${PROJECT_BINARY_DIR} as the include directory
-# for user installations of your packages. Once configuration is complete, that
-# variable will now be pointing at a fixed location, only consumed when 'building',
-# i.e., developing and working on your files within the binarytree.
+#[===[
+Note that we *shouldn't* use ${PROJECT_BINARY_DIR} as the include directory for user installations of your packages.
 
-# CMake will not 'fix' the location variable stored in <INSTALL_INTERFACE>, unless
-# or until the 'install' command is used.
+Once configuration is complete, that variable will now be pointing at a fixed location, only consumed when 'building', i.e., developing and working on your files within the binarytree.
+
+CMake will not 'fix' the location variable stored in <INSTALL_INTERFACE>, unless - or, until - the 'install' command is used.
+]===]
 target_include_directories(executable
 
     PRIVATE
@@ -288,9 +288,11 @@ target_sources (executable
 
         FILE_SET executable_PRIVATE_HEADERS
         TYPE HEADERS
-        # 'Private' headers go into a target-named folder,
-        # since they aren't intended to be 'shared' among other
-        # binaries and libraries.
+        #[===[
+        'Private' headers go into a target-named folder,
+        since they aren't intended to be 'shared' among other
+        binaries and libraries.
+        ]===]
         BASE_DIRS
             $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/runtime>
             $<INSTALL_INTERFACE:include/${PROJECT_NAME}/runtime>
