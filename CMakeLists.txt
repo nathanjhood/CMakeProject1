@@ -11,12 +11,13 @@ Pull git commit ref and apply it to our project version info... :)
 
 #]===]
 
+set(PROJECT_VERSION_MAJOR 1)
+set(PROJECT_VERSION_MINOR 0)
+set(PROJECT_VERSION_PATCH 1)
+
 include(GetSourceInfo)
 get_source_info()
 
-set(PROJECT_VERSION_MAJOR 1)
-set(PROJECT_VERSION_MINOR 0)
-set(PROJECT_VERSION_PATCH 0)
 set(PROJECT_VERSION_TWEAK "${git_revision}")
 
 enable_language(C)
@@ -55,6 +56,8 @@ if (NOT ${PROJECT_SOURCE_DIR} EQUAL ${PROJECT_BINARY_DIR})
     configure_file ("include/application/staticlib.h"           "include/${PROJECT_NAME}/staticlib.h")
     configure_file ("include/application/sharedlib.h"           "include/${PROJECT_NAME}/sharedlib.h")
     configure_file ("include/application/runtime/main.h"        "include/${PROJECT_NAME}/runtime/main.h")
+
+    configure_file ("include/application/version.h"             "include/${PROJECT_NAME}/version.h")
 
     #[===[.md
 
@@ -111,6 +114,11 @@ target_sources (configuration
             # include/application/configuration.h
             $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/configuration.h>
             $<INSTALL_INTERFACE:include/${PROJECT_NAME}/configuration.h>
+
+            # include/application/version.h
+            $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/version.h>
+            $<INSTALL_INTERFACE:include/${PROJECT_NAME}/version.h>
+
 )
 
 # target_compile_options (configuration
