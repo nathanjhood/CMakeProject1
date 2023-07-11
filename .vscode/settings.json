@@ -1,0 +1,9 @@
+{
+    "cmake.sourceDirectory": "${workspaceFolder}",
+    "cmake.buildDirectory": "${workspaceFolder}/usr",
+    "cmake.installPrefix": "${workspaceFolder}/usr/local",
+    "cmake.useCMakePresets": "never",
+    "cmake.configureOnEdit": false,
+    "cmake.configureOnOpen": false,
+    "cmake.automaticReconfigure": false
+}

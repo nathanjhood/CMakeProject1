@@ -1,3 +1,0 @@
-[submodule "extern/vcpkg"]
-	path = extern/vcpkg
-	url = ../../StoneyDSP/vcpkg.git
