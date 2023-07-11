@@ -1,0 +1,15 @@
+{
+    "name": "cmakeproject1",
+    "version-string": "1.0.0-351a0c9e2d0b268398adc706ea25e92e372662b4",
+    "description": [ "A simple CMake project for testing build configs, toolchains, and more." ],
+    "maintainers": [ "Nathan J. Hood (StoneyDSP) <nathanjhood@googlemail.com>" ],
+    "documentation": "https://github.com/StoneyDSP/CMakeProject1/README.md",
+    "homepage": "https://github.com/StoneyDSP/CMakeProject1",
+    "license": "MIT",
+    "dependencies": [
+        {
+            "name": "vcpkg-cmake",
+            "host": true
+        }
+    ]
+}
