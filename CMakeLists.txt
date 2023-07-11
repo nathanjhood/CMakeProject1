@@ -4,6 +4,13 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/share/cmake/Modules" "${CMAKE_M
 
 project(application)
 
+
+#[===[.md
+
+Pull git commit ref and apply it to our project version info... :)
+
+#]===]
+
 include(GetSourceInfo)
 get_source_info()
 
@@ -24,13 +31,11 @@ set (${PROJECT_NAME}_VENDOR "StoneyDSP" CACHE STRING "Name of the vendor of ${PR
 set (${PROJECT_NAME}_VERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}-${PROJECT_VERSION_TWEAK}" CACHE STRING "Value given to the ``VERSION`` option of the most recent call to the ``project()`` command, if any." FORCE)
 set (${PROJECT_NAME}_DESCRIPTION "A simple CMake project for testing build configs, toolchains, and more." CACHE STRING "Short project description given to the project command." FORCE)
 set (${PROJECT_NAME}_HOMEPAGE_URL "https://github.com/StoneyDSP/CMakeProject1.git" CACHE STRING "The homepage URL of the project." FORCE)
-# The configured include directory for other projects to use when linking to this project
-set (${PROJECT_NAME}_INC_DIR "${CMAKE_INSTALL_INCLUDEDIR}" CACHE PATH "Installation directory for include files, a relative path that will be joined with ${CMAKE_INSTALL_PREFIX} or an absolute path.")
-# The top-level source and binary directories.
-set (${PROJECT_NAME}_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR} CACHE PATH "")
+
+set (${PROJECT_NAME}_INC_DIR "${CMAKE_INSTALL_INCLUDEDIR}" CACHE PATH "The configured include directory for other projects to use when linking to this project.")
+set (${PROJECT_NAME}_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR} CACHE PATH "The top-level source and binary directories.")
 set (${PROJECT_NAME}_BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR} CACHE PATH "")
-# The top-level directory in which the project is being built.
-set (${PROJECT_NAME}_BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR} CACHE PATH "")
+set (${PROJECT_NAME}_BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR} CACHE PATH "The top-level directory in which the project is being built.")
 
 # set (GCC_CXX "$<CXX_COMPILER_ID:GNU,Clang,AppleClang,ARMClang,LCC>")
 # set (MSVC_CXX "$<CXX_COMPILER_ID:MSVC,Clang-cl>")
@@ -39,14 +44,24 @@ set (${PROJECT_NAME}_BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR} CACHE PATH "")
 
 if (NOT ${PROJECT_SOURCE_DIR} EQUAL ${PROJECT_BINARY_DIR})
 
-    # Note that the output file automatically falls into the binary dir
+    #[===[.md
+
+    Note that the output file automatically falls into the binary dir...
+
+    #]===]
+
     configure_file ("include/application/configuration.h"       "include/${PROJECT_NAME}/configuration.h")
     configure_file ("include/application/impl/library.h"        "include/${PROJECT_NAME}/impl/library.h")
     configure_file ("include/application/staticlib.h"           "include/${PROJECT_NAME}/staticlib.h")
     configure_file ("include/application/sharedlib.h"           "include/${PROJECT_NAME}/sharedlib.h")
     configure_file ("include/application/runtime/main.h"        "include/${PROJECT_NAME}/runtime/main.h")
 
-    # Copy sources too...
+    #[===[.md
+
+    Copy sources too...
+
+    #]===]
+
     configure_file ("src/application/impl/library.cpp"          "src/${PROJECT_NAME}/impl/library.cpp")
     configure_file ("src/application/staticlib.cpp"             "src/${PROJECT_NAME}/staticlib.cpp")
     configure_file ("src/application/sharedlib.cpp"             "src/${PROJECT_NAME}/sharedlib.cpp")
@@ -56,9 +71,12 @@ endif ()
 
 
 
-#[===[
+#[===[.md
+
 An interface library is a target that can be linked with, except that it doesn't generate any compiled output of it's own - it's just for other parts of our project to consume.
-]===]
+
+#]===]
+
 add_library (configuration                                      INTERFACE)
 add_library (${PROJECT_NAME}::configuration                     ALIAS configuration)
 # add_library (${PROJECT_VENDOR}::${PROJECT_NAME}::configuration    ALIAS configuration)
@@ -71,11 +89,15 @@ target_include_directories (configuration
         $<INSTALL_INTERFACE:include>
 )
 
-#[===[
+
+#[===[.md
+
 This configured header is 'Public', meaning it can be included by anything that links to this target.
 
 However, it stays in a project-named folder so that other projects cannot (or shouldn't be able to) include it using system header "<>" syntax.
-]===]
+
+#]===]
+
 target_sources (configuration
 
     PUBLIC
@@ -134,9 +156,13 @@ target_sources (implementation
             $<INSTALL_INTERFACE:include/${PROJECT_NAME}/impl/library.h>
 )
 
-#[===[
+
+#[===[.md
+
 Implementation sources MUST be PUBLIC, otherwise nothing can link to the code definitions contained therein.
-]===]
+
+#]===]
+
 target_sources (implementation
 
     PUBLIC
@@ -264,15 +290,19 @@ target_link_libraries (shared
 
 add_executable (executable)
 add_executable (${PROJECT_NAME}::executable ALIAS executable)
-add_executable (${PROJECT_VENDOR}::${PROJECT_NAME}::executable ALIAS executable)
+# add_executable (${PROJECT_VENDOR}::${PROJECT_NAME}::executable ALIAS executable)
 
-#[===[
+
+#[===[.md
+
 Note that we *shouldn't* use ${PROJECT_BINARY_DIR} as the include directory for user installations of your packages.
 
 Once configuration is complete, that variable will now be pointing at a fixed location, only consumed when 'building', i.e., developing and working on your files within the binarytree.
 
 CMake will not 'fix' the location variable stored in <INSTALL_INTERFACE>, unless - or, until - the 'install' command is used.
-]===]
+
+#]===]
+
 target_include_directories(executable
 
     PRIVATE
@@ -288,11 +318,13 @@ target_sources (executable
 
         FILE_SET executable_PRIVATE_HEADERS
         TYPE HEADERS
-        #[===[
-        'Private' headers go into a target-named folder,
-        since they aren't intended to be 'shared' among other
-        binaries and libraries.
-        ]===]
+
+        #[===[.md
+
+        'Private' headers go into a target-named folder, since they aren't intended to be 'shared' among other binaries and libraries.
+
+        #]===]
+
         BASE_DIRS
             $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/include/${PROJECT_NAME}/runtime>
             $<INSTALL_INTERFACE:include/${PROJECT_NAME}/runtime>
@@ -327,11 +359,14 @@ target_link_libraries (executable
 )
 
 
+#[===[.md
 
+---------------
+ CPACK
+---------------
 
-#---------------
-# CPACK
-#---------------
+#]===]
+
 # include(JoinPaths)
 # join_paths(libdir_for_pc_file "\${exec_prefix}" "${CMAKE_INSTALL_LIBDIR}")
 # join_paths(includedir_for_pc_file "\${prefix}" "${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}")
@@ -344,7 +379,13 @@ target_link_libraries (executable
 # )
 # # message(STATUS "Created pkgconfig file at ${${PROJECT_NAME_UPPER}_PACKAGE_CONFIG}\n")
 
-# Configure CPack
+
+#[===[.md
+
+Configure CPack.
+
+#]===]
+
 set(CPACK_PACKAGE_VENDOR ${PROJECT_VENDOR})
 set(CPACK_PACKAGE_NAME "${PROJECT_NAME}-${PROJECT_VERSION}")
 set(CPACK_PACKAGE_FILE_NAME "${PROJECT_NAME}-${PROJECT_VERSION}-${CMAKE_SYSTEM_NAME}-${CMAKE_SYSTEM_PROCESSOR}") # Compiled binary distribution
@@ -392,9 +433,13 @@ set(CPACK_SOURCE_IGNORE_FILES
 include(CPack)
 
 
-#---------------
-# EXPORT TARGETS
-#---------------
+#[===[.md
+
+---------------
+ EXPORT TARGETS
+---------------
+
+#]===]
 
 set (${PROJECT_NAME}_TARGETS shared static executable implementation configuration CACHE STRING "Targets to be built." FORCE)
 
