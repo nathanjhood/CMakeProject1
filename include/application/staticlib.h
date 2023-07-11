@@ -1,7 +1,7 @@
 #ifndef APPLICATION_STATIC_LIB_H_INCLUDED
 #define APPLICATION_STATIC_LIB_H_INCLUDED
 
-#include "impl/library.h"
+#include "../../include/application/impl/library.h"
 
 namespace application
 {
